@@ -24,11 +24,12 @@ def dump(name, obj):
 # cost: gold + manpower (thousand men == 1 regiment) + materials; up = gold upkeep per turn; sup = food per turn
 U = {}
 def unit(uid, cls, en, tr, fire, shock, df, mor, mv, gold, up, sup, siege=0, tech=None, mats=None, cultures=None,
-         countries=None, naval=False, cap=0, nat=None):
+         countries=None, naval=False, cap=0, nat=None, **extra):
     U[uid] = dict(id=uid, cls=cls, name=N(en, tr), fire=fire, shock=shock, defense=df, morale=mor, move=mv,
                   cost=dict(gold=gold, manpower=0 if naval else 1.0, **(mats or {})), upkeep=round(up * 2.5, 2), supply=sup,
                   siege=siege, tech=tech, cultures=cultures or [], countries=countries or [], naval=naval,
                   transport=cap)
+    U[uid].update(extra)   # workstream E: tags, year_min/year_max, tech_also, naval role, upgrades_to, approximate
 # infantry
 unit('spearmen', 'infantry', 'Spearmen', 'Mızraklılar', 0, 4, 5, 4, 2, 6, 0.4, 0.8)
 unit('pikemen', 'infantry', 'Pikemen', 'Pikeciler', 0, 5, 8, 5, 2, 8, 0.5, 0.8, tech=['infantry_tactics', 1])
@@ -81,7 +82,156 @@ unit('cossacks', 'cavalry', 'Cossacks', 'Kazaklar', 3, 8, 5, 7, 4, 12, 0.7, 1.2,
 unit('horse_archers', 'cavalry', 'Horse Archers', 'Atlı Okçular', 7, 4, 3, 6, 5, 11, 0.6, 1.3, cultures=['turkic', 'sinic'])
 unit('war_elephants', 'heavy_cavalry', 'War Elephants', 'Savaş Filleri', 2, 13, 8, 6, 2, 22, 1.5, 2.0, cultures=['indic'])
 unit('hoplites_phalanx', 'infantry', 'Phalanx Guard', 'Falanks Muhafızları', 0, 6, 10, 7, 2, 12, 0.7, 0.8, tech=['infantry_tactics', 1], countries=['BYZ'])
+
+# ---- workstream E (military/naval overhaul): extra units, tags, naval roles, upgrade paths ----------------------
+# tags drive combat counters (pike = anti-cavalry, firearm, bow, light, mountain, bridging); naval roles drive the
+# naval system: role (line/cruiser/raider/transport/galley), raid = commerce-raiding power, escort = convoy escort
+# value, endurance = turns a squadron may stay away from a friendly port before attrition. year_min/year_max gate
+# units to the historical period where they existed; every stat is approximate.
+TAGS = {
+    'spearmen': ['pike'], 'pikemen': ['pike'], 'swiss_pikemen': ['pike'], 'hoplites_phalanx': ['pike'], 'halberdiers': ['pike'],
+    'musketeers': ['firearm'], 'line_infantry': ['firearm'], 'riflemen': ['firearm'], 'grenadiers': ['firearm'],
+    'guard_infantry': ['firearm'], 'tercios': ['pike', 'firearm'], 'janissaries': ['firearm'], 'skirmishers': ['firearm', 'light'],
+    'sharpshooters': ['firearm', 'light'], 'archers': ['bow'], 'crossbowmen': ['bow'], 'longbowmen': ['bow'], 'horse_archers': ['bow', 'light'],
+    'light_cavalry': ['light'], 'hussars': ['light'], 'cossacks': ['light'], 'lancers': ['light'], 'mounted_rifles': ['firearm', 'light'],
+    'landsknechts': ['pike', 'firearm'],
+}
+for _u, _t in TAGS.items():
+    U[_u]['tags'] = _t
+U['janissaries'].update(year_min=1350, year_max=1826)
+U['samurai'].update(year_max=1870)
+U['longbowmen'].update(year_max=1560)
+unit('housecarls', 'heavy_infantry', 'Housecarls', 'Huscarllar', 0, 10, 9, 9, 2, 17, 1.3, 0.9, mats=dict(iron=0.4), countries=['ENG'],
+     year_max=1100, approximate=True, tags=['axe'])
+unit('sipahis', 'heavy_cavalry', 'Sipahis', 'Sipahiler', 2, 12, 7, 8, 3, 17, 1.2, 1.4, countries=['OTT'], year_max=1830,
+     approximate=True, tags=['bow'])
+unit('streltsy', 'infantry', 'Streltsy', 'Streltsy Tüfekçileri', 7, 6, 6, 7, 2, 13, 0.9, 0.9, tech=['infantry_tactics', 2],
+     countries=['RUS', 'MOS', 'NOV'], year_min=1540, year_max=1720, approximate=True, tags=['firearm'])
+unit('ashigaru', 'infantry', 'Ashigaru Arquebusiers', 'Ashigaru Arkebüzcüleri', 6, 4, 5, 6, 2, 10, 0.7, 0.8, tech=['infantry_tactics', 2],
+     cultures=['japonic'], year_min=1543, year_max=1868, approximate=True, tags=['firearm'])
+unit('rocket_corps', 'artillery', 'Rocket Corps', 'Roket Birliği', 13, 1, 2, 5, 2, 24, 1.5, 0.9, siege=2, tech=['artillery', 3],
+     countries=['MYS', 'EIC', 'GBR', 'FRA'], year_min=1780, year_max=1870, approximate=True, mats=dict(iron=0.8))
+unit('dragoons', 'cavalry', 'Dragoons', 'Dragonlar', 6, 7, 5, 7, 4, 14, 1.0, 1.3, tech=['cavalry_doctrine', 2], mats=dict(iron=0.2),
+     year_min=1600, tags=['firearm'])
+unit('jaegers', 'archers', 'Jaegers', 'Av Birlikleri', 12, 3, 4, 7, 3, 13, 0.8, 0.8, tech=['infantry_tactics', 3], mats=dict(iron=0.3),
+     year_min=1740, tags=['firearm', 'light', 'mountain'])
+unit('mountain_troops', 'infantry', 'Mountain Troops', 'Dağ Birlikleri', 11, 6, 8, 8, 3, 15, 1.0, 0.9, tech=['infantry_tactics', 4],
+     mats=dict(iron=0.4), year_min=1850, tags=['firearm', 'mountain'])
+unit('horse_artillery', 'artillery', 'Horse Artillery', 'Atlı Topçu', 15, 1, 3, 6, 3, 32, 2.0, 1.1, siege=4, tech=['artillery', 3],
+     tech_also=['cavalry_doctrine', 2], mats=dict(iron=1.2), year_min=1790)
+unit('pontonniers', 'engineer', 'Pontonniers', 'Köprücüler', 0, 2, 5, 6, 2, 16, 0.9, 0.8, siege=3, tech=['engineering', 2],
+     mats=dict(wood=0.4), tags=['bridging'], year_min=1500)
+# naval: role / raid / escort / blockade / endurance / draft
+NAVAL = {
+    'galley': dict(role='galley', raid=0.8, escort=0.6, blockade=0.9, endurance=2, rough=1.6),
+    'cog': dict(role='transport', raid=0.3, escort=0.4, blockade=0.5, endurance=3, rough=1.0),
+    'carrack': dict(role='line', raid=1.0, escort=1.0, blockade=1.0, endurance=4, rough=1.0),
+    'galleon': dict(role='line', raid=1.2, escort=1.2, blockade=1.2, endurance=5, rough=0.9),
+    'ship_of_the_line': dict(role='line', raid=0.8, escort=1.3, blockade=1.6, endurance=5, rough=0.8),
+    'ironclad': dict(role='line', raid=0.7, escort=1.2, blockade=1.5, endurance=4, rough=0.7),
+}
+for _u, _t in NAVAL.items():
+    U[_u].update(_t)
+U['galley'].update(upgrades_to='carrack')
+unit('dromon', 'naval', 'Dromons', 'Dromonlar', 4, 5, 3, 6, 3, 15, 0.9, 0.5, mats=dict(wood=1.0), naval=True, cap=1,
+     role='galley', raid=0.8, escort=0.6, blockade=0.9, endurance=2, rough=1.6, countries=['BYZ'], year_max=1204, approximate=True)
+unit('longship', 'naval', 'Longships', 'Uzun Gemiler', 2, 5, 2, 5, 4, 10, 0.7, 0.4, mats=dict(wood=0.8), naval=True, cap=2,
+     role='raider', raid=1.7, escort=0.3, blockade=0.6, endurance=3, rough=1.2, countries=['NOR', 'DEN', 'SWE'], year_max=1200,
+     approximate=True)
+unit('xebec', 'naval', 'Xebecs', 'Şebeklər', 5, 4, 3, 6, 4, 18, 1.0, 0.5, mats=dict(wood=1.0), naval=True, cap=1,
+     role='raider', raid=1.9, escort=0.5, blockade=0.8, endurance=3, rough=1.1, countries=['ALG', 'TUN', 'MOR', 'OTT', 'LIB'],
+     tech=['naval_warfare', 1], year_min=1500, year_max=1830, approximate=True)
+unit('war_junk', 'naval', 'War Junks', 'Savaş Yelkenlileri', 5, 5, 5, 6, 3, 18, 1.0, 0.5, mats=dict(wood=1.2), naval=True, cap=3,
+     role='line', raid=0.8, escort=0.9, blockade=1.0, endurance=5, rough=0.9, cultures=['sinic'], approximate=True)
+unit('fluyt', 'naval', 'Fluyts', 'Fluytlar', 2, 1, 3, 4, 3, 17, 1.0, 0.4, mats=dict(wood=1.2), naval=True, cap=7,
+     role='transport', raid=0.3, escort=0.3, blockade=0.5, endurance=6, rough=0.9, tech=['naval_warfare', 2], tech_also=['trade', 2],
+     year_min=1590, approximate=True)
+unit('frigate', 'naval', 'Frigates', 'Fırkateynler', 11, 4, 5, 7, 4, 28, 1.3, 0.6, mats=dict(wood=1.4, iron=0.3), naval=True, cap=2,
+     role='cruiser', raid=2.0, escort=1.5, blockade=1.2, endurance=6, rough=0.8, tech=['naval_warfare', 3], year_min=1700, approximate=True)
+unit('steam_cruiser', 'naval', 'Steam Cruisers', 'Buharlı Kruvazörler', 20, 5, 7, 8, 5, 44, 2.2, 0.8, mats=dict(iron=1.6, coal=0.8),
+     naval=True, cap=2, role='cruiser', raid=2.4, escort=1.8, blockade=1.5, endurance=7, rough=0.6, tech=['naval_warfare', 4],
+     tech_also=['industry', 3], year_min=1860, approximate=True)
+unit('steam_transport', 'naval', 'Steam Transports', 'Buharlı Nakliye Gemileri', 2, 1, 5, 5, 4, 30, 1.2, 0.6, mats=dict(iron=1.2, coal=0.6),
+     naval=True, cap=10, role='transport', raid=0.2, escort=0.2, blockade=0.5, endurance=8, rough=0.6, tech=['naval_warfare', 4],
+     tech_also=['industry', 3], year_min=1850, approximate=True)
+UP = {'spearmen': 'pikemen', 'pikemen': 'musketeers', 'musketeers': 'line_infantry', 'line_infantry': 'riflemen',
+      'men_at_arms': 'halberdiers', 'halberdiers': 'grenadiers', 'grenadiers': 'guard_infantry',
+      'archers': 'crossbowmen', 'crossbowmen': 'skirmishers', 'skirmishers': 'sharpshooters',
+      'light_cavalry': 'hussars', 'hussars': 'lancers', 'lancers': 'mounted_rifles',
+      'knights': 'gendarmes', 'gendarmes': 'cuirassiers',
+      'bombards': 'cannons', 'cannons': 'field_guns', 'field_guns': 'rifled_artillery', 'sappers': 'field_engineers',
+      'cog': 'fluyt', 'carrack': 'galleon', 'galleon': 'ship_of_the_line', 'ship_of_the_line': 'ironclad', 'frigate': 'steam_cruiser',
+      'fluyt': 'steam_transport'}
+for _u, _t in UP.items():
+    U[_u]['upgrades_to'] = _t
 dump('units.json', U)
+
+# ---------------------------------------------------------------- doctrines (workstream E)
+# Two slots per country: "land" and "naval". unlock = every [tech line, level] listed (+ optional year_min).
+# mods use the national modifier keys read by Combat / MilitarySystem / NavalSystem. Every figure is a game-balance
+# abstraction of the historical style it is named after, not a measured value.
+DOC = {}
+def doctrine(did, slot, en, tr, den, dtr, unlock, mods, year_min=None, switch=1.0):
+    DOC[did] = dict(id=did, slot=slot, name=N(en, tr), desc=N(den, dtr), unlock=unlock, year_min=year_min,
+                    mods=mods, switch_cost=switch)
+doctrine('feudal_levy', 'land', 'Feudal Host', 'Feodal Ordu',
+         'Mounted nobles and levied retinues: strong charges and cheap upkeep, poor drill and supply.',
+         'Atlı soylular ve derlenen birlikler: güçlü hücum ve ucuz bakım; talim ve ikmal zayıf.',
+         [], {'cav_atk': 0.12, 'morale': 0.04, 'manpower': 0.08, 'army_upkeep': -0.10, 'discipline': -0.05, 'supply': -0.05}, switch=0.6)
+doctrine('fortress_defence', 'land', 'Defence in Depth', 'Derinlemesine Savunma',
+         'Fortified lines and patient defence: better forts and defence, slower manoeuvre.',
+         'Tahkimli hatlar ve sabırlı savunma: daha iyi kaleler ve savunma, yavaş manevra.',
+         [['fortification', 1]], {'fort_def': 0.25, 'inf_def': 0.08, 'attrition': -0.05, 'move': -0.05, 'siege_def': 0.10})
+doctrine('mounted_manoeuvre', 'land', 'Mounted Manoeuvre', 'Atlı Manevra',
+         'Fast columns and relentless pursuit: strong cavalry, speed, river fording; weaker supply.',
+         'Hızlı kollar ve amansız takip: güçlü süvari, hız, nehir geçişi; zayıf ikmal.',
+         [['cavalry_doctrine', 1]], {'cav_atk': 0.15, 'move': 0.12, 'pursuit': 0.5, 'supply': -0.05, 'river_pen': -0.15})
+doctrine('pike_and_shot', 'land', 'Pike and Shot', 'Pike ve Ateşli Silah',
+         'Pike blocks protecting musketeers: sturdy infantry that resists cavalry.',
+         'Tüfekçileri koruyan pike kareleri: süvariye direnen sağlam piyade.',
+         [['infantry_tactics', 2]], {'inf_atk': 0.10, 'inf_def': 0.10, 'morale': 0.03, 'discipline': 0.04, 'anti_cav': 0.15})
+doctrine('grand_battery', 'land', 'Grand Battery', 'Büyük Batarya',
+         'Massed guns decide battles and sieges; the army moves slowly and costs more.',
+         'Yığılmış toplar muharebe ve kuşatmaları belirler; ordu yavaş ve pahalıdır.',
+         [['artillery', 2]], {'art_atk': 0.20, 'siege': 0.20, 'move': -0.06, 'army_upkeep': 0.05})
+doctrine('linear_firepower', 'land', 'Linear Firepower', 'Hat Ateşi',
+         'Drilled volley fire in lines: devastating firepower from disciplined troops.',
+         'Hatlar halinde talimli yaylım ateşi: disiplinli birliklerden yıkıcı ateş gücü.',
+         [['infantry_tactics', 3]], {'inf_atk': 0.18, 'discipline': 0.08, 'morale': 0.04, 'cav_atk': -0.04})
+doctrine('corps_system', 'land', 'Corps System', 'Kolordu Sistemi',
+         'Self-contained corps living off the land: mobile, balanced and hard to starve.',
+         'Araziden beslenen bağımsız kolordular: hareketli, dengeli, aç bırakılması zor.',
+         [['infantry_tactics', 3], ['artillery', 3], ['cavalry_doctrine', 2]],
+         {'move': 0.08, 'inf_atk': 0.08, 'art_atk': 0.10, 'cav_atk': 0.08, 'supply': 0.08, 'pursuit': 0.2}, year_min=1790)
+doctrine('nation_in_arms', 'land', 'Nation in Arms', 'Silahlı Millet',
+         'Mass conscription and patriotic fervour: huge reserves, but less drilled troops.',
+         'Kitlesel askerlik ve vatansever coşku: devasa yedekler, ama daha az talimli birlikler.',
+         [['infantry_tactics', 3], ['centralization', 2]], {'manpower': 0.25, 'manpower_recovery': 0.25, 'morale': 0.06, 'army_upkeep': -0.08, 'discipline': -0.04}, year_min=1790)
+doctrine('logistical_warfare', 'land', 'Logistical Warfare', 'İkmal Harbi',
+         'Magazines, depots and marching schedules: armies stay fed and arrive in shape.',
+         'Ambarlar, depolar ve yürüyüş çizelgeleri: ordular beslenir ve formda varır.',
+         [['logistics', 2]], {'supply': 0.25, 'attrition': -0.20, 'move': 0.05, 'discipline': 0.02})
+doctrine('modern_firepower', 'land', 'Rifle and Rail', 'Tüfek ve Ray',
+         'Rifled weapons moved and fed by rail: the late-century standard of firepower.',
+         'Raylarla taşınan ve beslenen yivli silahlar: yüzyıl sonunun ateş gücü standardı.',
+         [['infantry_tactics', 4], ['logistics', 3]], {'inf_atk': 0.22, 'inf_def': 0.10, 'discipline': 0.10, 'supply': 0.15, 'art_atk': 0.10}, year_min=1840)
+doctrine('sea_power', 'naval', 'Blue-Water Battle Fleet', 'Açık Deniz Muharebe Filosu',
+         'Fleets of heavy ships to win the sea: stronger battle line, blockade and transport.',
+         'Denizi kazanmak için ağır gemi filoları: güçlü muharebe hattı, abluka ve nakliye.',
+         [['naval_warfare', 2]], {'naval_atk': 0.15, 'naval_morale': 0.05, 'blockade': 0.20, 'naval_transport': 0.10})
+doctrine('commerce_raiding', 'naval', 'Guerre de Course', 'Ticaret Baskını (Guerre de Course)',
+         'Fast raiders hunt enemy merchantmen instead of seeking battle: strong raiding, cheap navy.',
+         'Hızlı akıncılar savaşı değil düşman tüccar gemilerini arar: güçlü baskın, ucuz donanma.',
+         [['naval_warfare', 1], ['trade', 1]], {'raid': 0.35, 'naval_atk': -0.05, 'blockade': -0.10, 'navy_upkeep': -0.10})
+doctrine('convoy_system', 'naval', 'Convoy System', 'Konvoy Sistemi',
+         'Escorted merchant convoys: trade and transports are protected, raiders are less effective.',
+         'Eskortlu ticaret konvoyları: ticaret ve nakliye korunur, akıncılar daha az etkilidir.',
+         [['naval_warfare', 2], ['trade', 2]], {'convoy': 0.35, 'naval_transport': 0.20, 'raid': -0.20, 'blockade': 0.05})
+doctrine('steam_battle_line', 'naval', 'Steam and Armour', 'Buhar ve Zırh',
+         'Steam propulsion, armour and rifled naval guns: the industrial battle fleet.',
+         'Buhar makinesi, zırh ve yivli deniz topları: sanayi çağı muharebe filosu.',
+         [['naval_warfare', 4], ['industry', 3]], {'naval_atk': 0.25, 'naval_morale': 0.05, 'blockade': 0.25, 'raid': 0.15}, year_min=1850)
+dump('doctrines.json', DOC)
 
 # ---------------------------------------------------------------- technologies
 # lines: id -> (branch, [(en,tr) x4], modifiers per level (list of 4 dicts), cross prerequisite for L>=2 (line, level))

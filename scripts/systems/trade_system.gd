@@ -71,12 +71,7 @@ static func edge_ok(s: Dictionary, pa: String, pb: String, link: String) -> bool
 	return true
 
 static func _blockaded_province(s: Dictionary, pid: String) -> bool:
-	var owner: String = s["provinces"][pid]["controller"]
-	for aid in GS.armies_at(s, pid):
-		var a: Dictionary = s["armies"][aid]
-		if a.get("naval", false) and a["owner"] != owner and GS.at_war(s, a["owner"], owner):
-			return true
-	return false
+	return NavalSystem.is_blockaded(s, pid)
 
 static func compute(s: Dictionary) -> Dictionary:
 	var ids: Array = Defs.province_ids
@@ -192,6 +187,7 @@ static func compute(s: Dictionary) -> Dictionary:
 		if hops >= 1 and hops <= 12:
 			flows.append([pid, hpid, gross])
 	var res := {"turn": s["turn"], "income": income, "by_province": by_province, "flows": flows, "power": power}
+	NavalSystem.adjust_trade(s, res)
 	s["_c"]["trade"] = res
 	return res
 

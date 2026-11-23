@@ -145,8 +145,8 @@ func test_terrain_favours_defender() -> void:
 
 func test_cavalry_terrain_and_composition() -> void:
 	var s := _arena()
-	var steppe := _win_rate(s, _terrain_province("steppe"), {"light_cavalry": 8.0}, {"spearmen": 8.0}, 40)
-	var mount := _win_rate(s, _terrain_province("mountains"), {"light_cavalry": 8.0}, {"spearmen": 8.0}, 40)
+	var steppe := _win_rate(s, _terrain_province("steppe"), {"light_cavalry": 8.0}, {"archers": 8.0}, 40)
+	var mount := _win_rate(s, _terrain_province("mountains"), {"light_cavalry": 8.0}, {"archers": 8.0}, 40)
 	ok(steppe > mount + 0.1, "cavalry performs better on open ground (%.2f vs %.2f)" % [steppe, mount])
 
 func test_technology_advantage_wins() -> void:

@@ -301,6 +301,7 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 		s["ai"][cid] = AISystem.new_ai_state(s, cid, str(cdefs.get(cid, {}).get("ai", "")))
 	# statistics bookkeeping + first economy snapshot
 	GS.save_rng(s)
+	NavalSystem.ensure_fields(s)
 	return s
 
 const BASE_PRICE := {"food": 1.2, "iron": 4.0, "wood": 2.0, "stone": 3.0, "coal": 3.0, "lux": 8.0}
