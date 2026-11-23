@@ -1,0 +1,2058 @@
+[
+ {
+  "id": "rnd_peasant_unrest",
+  "category": "uprising",
+  "historical": false,
+  "title": {
+   "en": "Peasants Murmur Against the Lords",
+   "tr": "Köylüler Beylere Karşı Mırıldanıyor"
+  },
+  "text": {
+   "en": "In the villages of {country}, men gather after dark to speak of unpaid labour, seized pastures and the justice of the pitchfork.",
+   "tr": "{country}'nin köylerinde adamlar karanlık çökünce toplanıp karşılıksız angaryadan, el konulan meralardan ve tırpanın adaletinden söz ediyor."
+  },
+  "image": "uprising",
+  "trigger": {
+   "conds": [
+    {
+     "type": "class_sat_below",
+     "class": "peasants",
+     "value": 45
+    }
+   ]
+  },
+  "mtth": 45,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "concede",
+    "name": {
+     "en": "Ease labour dues",
+     "tr": "Angaryayı hafiflet"
+    },
+    "tip": {
+     "en": "Peasants +8, Nobility -5, Gold -30.",
+     "tr": "Köylü +8, Soylular -5, Altın -30."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 8
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": -5
+     },
+     {
+      "type": "gold",
+      "value": -30
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "preach",
+    "name": {
+     "en": "Send preachers to calm them",
+     "tr": "Teskin için vaizler gönder"
+    },
+    "tip": {
+     "en": "Gold -40, Clergy +3, Peasants +3.",
+     "tr": "Altın -40, Ruhban +3, Köylü +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 3
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1.2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "garrison",
+    "name": {
+     "en": "Garrison the villages",
+     "tr": "Köylere garnizon yerleştir"
+    },
+    "tip": {
+     "en": "Stability +2, Peasants -6, Manpower -1.",
+     "tr": "İstikrar +2, Köylü -6, İşgücü -1."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -6
+     },
+     {
+      "type": "manpower",
+      "value": -1
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "ignore",
+    "name": {
+     "en": "Dismiss it as idle talk",
+     "tr": "Boş laf diyerek önemseme"
+    },
+    "tip": {
+     "en": "Rebels may rise.",
+     "tr": "İsyancılar çıkabilir."
+    },
+    "effects": [
+     {
+      "type": "spawn_rebels",
+      "value": 2
+     },
+     {
+      "type": "stability",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.3
+   }
+  ]
+ },
+ {
+  "id": "rnd_religious_clash",
+  "category": "religious",
+  "historical": false,
+  "title": {
+   "en": "Believers Clash in the Streets",
+   "tr": "Sokaklarda İnananlar Çatışıyor"
+  },
+  "text": {
+   "en": "Processions of two rival faiths met at a crossroads in {province}, and what began as shouting ended with broken heads and burning shops.",
+   "tr": "{province}'de iki rakip inancın alayları bir kavşakta karşılaştı; bağırışmayla başlayan olay kırık başlar ve yanan dükkânlarla bitti."
+  },
+  "image": "church",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 55,
+  "cooldown": 40,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "religion_differs"
+   },
+   {
+    "type": "pop_above",
+    "value": 30
+   }
+  ],
+  "options": [
+   {
+    "id": "tolerate",
+    "name": {
+     "en": "Impose an edict of toleration",
+     "tr": "Hoşgörü fermanı çıkar"
+    },
+    "tip": {
+     "en": "Province unrest -3, Clergy -4, Prestige +5.",
+     "tr": "Eyalet huzursuzluğu -3, Ruhban -4, Prestij +5."
+    },
+    "effects": [
+     {
+      "type": "province_unrest",
+      "value": -3
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -4
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1.3
+   },
+   {
+    "id": "favour",
+    "name": {
+     "en": "Side with the state faith",
+     "tr": "Devlet inancının yanında yer al"
+    },
+    "tip": {
+     "en": "Clergy +5, province unrest +4, Stability -1.",
+     "tr": "Ruhban +5, eyalet huzursuzluğu +4, İstikrar -1."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     },
+     {
+      "type": "province_unrest",
+      "value": 4
+     },
+     {
+      "type": "stability",
+      "value": -1
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "convert",
+    "name": {
+     "en": "Fund missionaries and chapels",
+     "tr": "Misyoner ve ibadethanelere para ver"
+    },
+    "tip": {
+     "en": "Gold -60, province unrest -4, Clergy +4.",
+     "tr": "Altın -60, eyalet huzursuzluğu -4, Ruhban +4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "province_unrest",
+      "value": -4
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 0.8,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_heresy",
+  "category": "religious",
+  "historical": false,
+  "title": {
+   "en": "A Heretical Preacher",
+   "tr": "Sapkın Bir Vaiz"
+  },
+  "text": {
+   "en": "A wandering preacher is drawing crowds in {country}, denouncing the wealth of the clergy and proclaiming a purer way. The bishops demand action.",
+   "tr": "Gezgin bir vaiz {country}'de kalabalıkları toplayıp din adamlarının servetini kınıyor ve daha arı bir yol ilan ediyor. Piskoposlar harekete geçilmesini istiyor."
+  },
+  "image": "church",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 25
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "suppress",
+    "name": {
+     "en": "Suppress the movement",
+     "tr": "Hareketi bastır"
+    },
+    "tip": {
+     "en": "Clergy +6, Peasants -5, Stability -2.",
+     "tr": "Ruhban +6, Köylü -5, İstikrar -2."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 6
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -5
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "debate",
+    "name": {
+     "en": "Hold a public disputation",
+     "tr": "Açık münazara düzenle"
+    },
+    "tip": {
+     "en": "Prestige +10, Gold -30, Clergy -2.",
+     "tr": "Prestij +10, Altın -30, Ruhban -2."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "embrace",
+    "name": {
+     "en": "Welcome the reformers",
+     "tr": "Reformcuları kabul et"
+    },
+    "tip": {
+     "en": "Peasants +6, Clergy -8, Legitimacy -3.",
+     "tr": "Köylü +6, Ruhban -8, Meşruiyet -3."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 6
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -8
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.6
+   }
+  ]
+ },
+ {
+  "id": "rnd_pilgrimage",
+  "category": "religious",
+  "historical": false,
+  "title": {
+   "en": "A Great Pilgrimage",
+   "tr": "Büyük Hac Yolculuğu"
+  },
+  "text": {
+   "en": "Thousands of the faithful from {country} prepare for a long pilgrimage. They ask the crown for safe-conduct, bread and a blessing.",
+   "tr": "{country}'nin binlerce müminî uzun bir hac yolculuğuna hazırlanıyor. Taçtan güvenli geçiş, ekmek ve bir dua istiyorlar."
+  },
+  "image": "church",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 65,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "sponsor",
+    "name": {
+     "en": "Sponsor the pilgrims",
+     "tr": "Hacıları destekle"
+    },
+    "tip": {
+     "en": "Gold -80, Prestige +20, Clergy +5.",
+     "tr": "Altın -80, Prestij +20, Ruhban +5."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "prestige",
+      "value": 20
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "lead",
+    "name": {
+     "en": "Join the procession in person",
+     "tr": "Alaya bizzat katıl"
+    },
+    "tip": {
+     "en": "Legitimacy +6, Admin -10 while away.",
+     "tr": "Meşruiyet +6, yokluğunda İdare -10."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 6
+     },
+     {
+      "type": "admin",
+      "value": -10
+     },
+     {
+      "type": "prestige",
+      "value": 8
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "tax",
+    "name": {
+     "en": "Tax the pilgrims' passage",
+     "tr": "Hacıların geçişini vergilendir"
+    },
+    "tip": {
+     "en": "Gold +60, Clergy -4.",
+     "tr": "Altın +60, Ruhban -4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 60
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "rnd_plague_outbreak",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "The Pestilence Arrives",
+   "tr": "Veba Geldi"
+  },
+  "text": {
+   "en": "Sailors and caravaneers have carried a deadly sickness into {country}. Bodies are carted from the towns at dawn, and doors are marked with chalk.",
+   "tr": "Denizciler ve kervancılar ölümcül bir hastalığı {country}'ye taşıdı. Kasabalardan şafak vakti cesetler arabalarla çıkarılıyor, kapılar tebeşirle işaretleniyor."
+  },
+  "image": "plague",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_at_least",
+     "value": 900
+    }
+   ]
+  },
+  "mtth": 110,
+  "cooldown": 80,
+  "options": [
+   {
+    "id": "quarantine",
+    "name": {
+     "en": "Quarantine the afflicted towns",
+     "tr": "Hastalıklı kasabaları karantinaya al"
+    },
+    "tip": {
+     "en": "Gold -80, Population -2%, Merchants -4.",
+     "tr": "Altın -80, Nüfus -%2, Tüccar -4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "pop_pct",
+      "value": -2
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -4
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "pray",
+    "name": {
+     "en": "Call for prayer and penance",
+     "tr": "Dua ve tövbe çağrısı yap"
+    },
+    "tip": {
+     "en": "Clergy +6, Population -6%.",
+     "tr": "Ruhban +6, Nüfus -%6."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 6
+     },
+     {
+      "type": "pop_pct",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 0.8
+   },
+   {
+    "id": "flee",
+    "name": {
+     "en": "The court withdraws to the countryside",
+     "tr": "Saray kırsala çekilsin"
+    },
+    "tip": {
+     "en": "Population -8%, Legitimacy -6, Stability -3.",
+     "tr": "Nüfus -%8, Meşruiyet -6, İstikrar -3."
+    },
+    "effects": [
+     {
+      "type": "pop_pct",
+      "value": -8
+     },
+     {
+      "type": "legitimacy",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.3
+   }
+  ]
+ },
+ {
+  "id": "rnd_epidemic_city",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "Fever in the City",
+   "tr": "Şehirde Humma"
+  },
+  "text": {
+   "en": "A fever has taken hold in the crowded streets of {province}. The sick are shut in their homes and trade falls quiet.",
+   "tr": "{province}'nin kalabalık sokaklarında bir humma yayıldı. Hastalar evlerine kapatılıyor, ticaret sessizleşiyor."
+  },
+  "image": "plague",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 60,
+  "cooldown": 30,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "pop_above",
+    "value": 40
+   }
+  ],
+  "options": [
+   {
+    "id": "hospital",
+    "name": {
+     "en": "Open an emergency hospital",
+     "tr": "Acil bir hastane aç"
+    },
+    "tip": {
+     "en": "Gold -60, province population -2%.",
+     "tr": "Altın -60, eyalet nüfusu -%2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -2
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "cordon",
+    "name": {
+     "en": "Cordon off the quarter",
+     "tr": "Mahalleyi kordon altına al"
+    },
+    "tip": {
+     "en": "Gold -20, province population -5%, unrest +2.",
+     "tr": "Altın -20, eyalet nüfusu -%5, huzursuzluk +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -20
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -5
+     },
+     {
+      "type": "province_unrest",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "pray",
+    "name": {
+     "en": "Rely on prayer alone",
+     "tr": "Yalnızca duaya güven"
+    },
+    "tip": {
+     "en": "Province population -9%, Clergy +4.",
+     "tr": "Eyalet nüfusu -%9, Ruhban +4."
+    },
+    "effects": [
+     {
+      "type": "province_pop_pct",
+      "value": -9
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 0.4
+   }
+  ]
+ },
+ {
+  "id": "rnd_epidemic_port",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "Sickness Lands with the Ships",
+   "tr": "Hastalık Gemilerle Karaya Çıktı"
+  },
+  "text": {
+   "en": "A vessel carrying fever-stricken sailors docked at {province} before anyone thought to stop it. The harbour district is already sick.",
+   "tr": "Hummalı denizcileri taşıyan bir gemi, kimse durdurmayı akıl etmeden {province} limanına yanaştı. Liman mahallesi şimdiden hasta."
+  },
+  "image": "harbor",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "coastal"
+   }
+  ],
+  "options": [
+   {
+    "id": "harbour",
+    "name": {
+     "en": "Close the harbour",
+     "tr": "Limanı kapat"
+    },
+    "tip": {
+     "en": "Gold -70, province population -2%, trade loss.",
+     "tr": "Altın -70, eyalet nüfusu -%2, ticaret kaybı."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -2
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": -0.03
+      },
+      "turns": 6
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 90
+     }
+    ]
+   },
+   {
+    "id": "burn",
+    "name": {
+     "en": "Burn the ship and its cargo",
+     "tr": "Gemiyi ve yükünü yak"
+    },
+    "tip": {
+     "en": "Gold -30, province population -4%.",
+     "tr": "Altın -30, eyalet nüfusu -%4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -4
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1.2
+   },
+   {
+    "id": "trade",
+    "name": {
+     "en": "Keep trading regardless",
+     "tr": "Her şeye rağmen ticarete devam et"
+    },
+    "tip": {
+     "en": "Gold +30, province population -10%.",
+     "tr": "Altın +30, eyalet nüfusu -%10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 30
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -10
+     },
+     {
+      "type": "province_unrest",
+      "value": 3
+     }
+    ],
+    "ai_weight": 0.4
+   }
+  ]
+ },
+ {
+  "id": "rnd_city_fire",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "Fire in the City",
+   "tr": "Şehirde Yangın"
+  },
+  "text": {
+   "en": "Flames leap from roof to roof in the timber-built streets of {province}. Bucket chains fail and the wind carries sparks across the river.",
+   "tr": "Ahşap sokaklarında alevler çatıdan çatıya atlıyor, {province}. Kova zincirleri işe yaramıyor, rüzgâr kıvılcımları nehrin ötesine taşıyor."
+  },
+  "image": "fire",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 65,
+  "cooldown": 40,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "pop_above",
+    "value": 30
+   }
+  ],
+  "options": [
+   {
+    "id": "firebreak",
+    "name": {
+     "en": "Pull down houses to make a firebreak",
+     "tr": "Yangın kesmek için evleri yık"
+    },
+    "tip": {
+     "en": "Gold -30, province population -2%, saves the centre.",
+     "tr": "Altın -30, eyalet nüfusu -%2, merkezi kurtarır."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "rebuild",
+    "name": {
+     "en": "Fund rebuilding in stone",
+     "tr": "Taşla yeniden inşayı finanse et"
+    },
+    "tip": {
+     "en": "Gold -90, development +1, Stability +1.",
+     "tr": "Altın -90, gelişim +1, İstikrar +1."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -90
+     },
+     {
+      "type": "province_dev",
+      "value": 1
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1.2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 110
+     }
+    ]
+   },
+   {
+    "id": "relief",
+    "name": {
+     "en": "Hand out alms to the homeless",
+     "tr": "Evsizlere sadaka dağıt"
+    },
+    "tip": {
+     "en": "Gold -40, unrest -2, Clergy +3.",
+     "tr": "Altın -40, huzursuzluk -2, Ruhban +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "province_unrest",
+      "value": -2
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1.3,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_earthquake",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "The Earth Shakes",
+   "tr": "Yer Sarsıldı"
+  },
+  "text": {
+   "en": "A violent earthquake struck {province}. Walls and bridges collapsed, and survivors camp in fields under the open sky.",
+   "tr": "Şiddetli bir deprem {province}'yi vurdu. Surlar ve köprüler yıkıldı, hayatta kalanlar açık gökyüzü altında tarlalarda kamp kuruyor."
+  },
+  "image": "storm",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 110,
+  "cooldown": 60,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "terrain_is",
+    "value": "mountains"
+   }
+  ],
+  "options": [
+   {
+    "id": "rescue",
+    "name": {
+     "en": "Send engineers and relief",
+     "tr": "Mühendis ve yardım gönder"
+    },
+    "tip": {
+     "en": "Gold -100, province population -3%, Prestige +10.",
+     "tr": "Altın -100, eyalet nüfusu -%3, Prestij +10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -100
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -3
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 120
+     }
+    ]
+   },
+   {
+    "id": "tax",
+    "name": {
+     "en": "Remit taxes for a few years",
+     "tr": "Birkaç yıl vergiden muaf tut"
+    },
+    "tip": {
+     "en": "Gold -40, unrest -3, devastation +0.1.",
+     "tr": "Altın -40, huzursuzluk -3, tahribat +0.1."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "province_unrest",
+      "value": -3
+     },
+     {
+      "type": "province_devastation",
+      "value": 0.1
+     }
+    ],
+    "ai_weight": 1.3,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "omen",
+    "name": {
+     "en": "Proclaim it divine wrath and urge penance",
+     "tr": "İlahi gazap ilan et, tövbe çağır"
+    },
+    "tip": {
+     "en": "Clergy +5, province population -8%, Stability -2.",
+     "tr": "Ruhban +5, eyalet nüfusu -%8, İstikrar -2."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -8
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_great_storm",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "A Great Storm",
+   "tr": "Büyük Fırtına"
+  },
+  "text": {
+   "en": "A gale of terrible force has scattered shipping along the coast of {country}. Quays are smashed, boats lost, and fishermen's families wait for news.",
+   "tr": "Müthiş bir fırtına {country} kıyılarındaki gemileri savurdu. İskeleler paramparça, tekneler kayıp; balıkçı aileleri haber bekliyor."
+  },
+  "image": "storm",
+  "trigger": {
+   "conds": [
+    {
+     "type": "capital_coastal"
+    }
+   ]
+  },
+  "mtth": 75,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "repair",
+    "name": {
+     "en": "Repair harbours at the crown's cost",
+     "tr": "Limanları hazine hesabına onar"
+    },
+    "tip": {
+     "en": "Gold -80, +8% trade for 8 turns.",
+     "tr": "Altın -80, 8 tur boyunca %8 ticaret."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.08
+      },
+      "turns": 8
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "widows",
+    "name": {
+     "en": "Support the families of the lost",
+     "tr": "Kayıpların ailelerine destek ol"
+    },
+    "tip": {
+     "en": "Gold -40, Peasants +4, Legitimacy +2.",
+     "tr": "Altın -40, Köylü +4, Meşruiyet +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 4
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1.3,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "leave",
+    "name": {
+     "en": "Leave it to the port towns",
+     "tr": "Liman kasabalarına bırak"
+    },
+    "tip": {
+     "en": "Merchants -4, trade -6% for 8 turns.",
+     "tr": "Tüccar -4, 8 tur boyunca ticaret -%6."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -4
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": -0.06
+      },
+      "turns": 8
+     }
+    ],
+    "ai_weight": 0.6
+   }
+  ]
+ },
+ {
+  "id": "rnd_refugees",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "Refugees at the Border",
+   "tr": "Sınırda Mülteciler"
+  },
+  "text": {
+   "en": "Columns of destitute families, driven from their homes by war and hunger elsewhere, arrive at the frontiers of {country}.",
+   "tr": "Başka yerlerde savaş ve açlık yüzünden yurtlarından sürülen yoksul aile kafileleri {country}'nin sınırlarına varıyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 65,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "welcome",
+    "name": {
+     "en": "Welcome and settle them",
+     "tr": "Karşıla ve yerleştir"
+    },
+    "tip": {
+     "en": "Gold -50, Population +2%, Peasants -2.",
+     "tr": "Altın -50, Nüfus +%2, Köylü -2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "pop_pct",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -2
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "skilled",
+    "name": {
+     "en": "Admit only craftsmen and scholars",
+     "tr": "Yalnızca zanaatkâr ve âlimleri kabul et"
+    },
+    "tip": {
+     "en": "Research +15, Merchants +3.",
+     "tr": "Araştırma +15, Tüccar +3."
+    },
+    "effects": [
+     {
+      "type": "research_points",
+      "value": 15
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1.3
+   },
+   {
+    "id": "turn",
+    "name": {
+     "en": "Turn them back",
+     "tr": "Geri çevir"
+    },
+    "tip": {
+     "en": "Prestige -10, Stability +1.",
+     "tr": "Prestij -10, İstikrar +1."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -10
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 0.8
+   }
+  ]
+ },
+ {
+  "id": "rnd_learned_society",
+  "category": "tech",
+  "historical": false,
+  "title": {
+   "en": "Scholars Seek a Patron",
+   "tr": "Âlimler Himaye Arıyor"
+  },
+  "text": {
+   "en": "A circle of scholars in {country} asks for a charter and a house of their own where they may study, argue and publish their findings.",
+   "tr": "{country}'deki bir âlimler çevresi, çalışabilecekleri, tartışabilecekleri ve bulgularını yayımlayabilecekleri bir ferman ve kendi mekânlarını istiyor."
+  },
+  "image": "science",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_at_least",
+     "value": 1100
+    },
+    {
+     "type": "stability_above",
+     "value": 40
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 50,
+  "options": [
+   {
+    "id": "charter",
+    "name": {
+     "en": "Grant a royal charter",
+     "tr": "Kraliyet fermanı ver"
+    },
+    "tip": {
+     "en": "Gold -70, Research +30, Prestige +10.",
+     "tr": "Altın -70, Araştırma +30, Prestij +10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "research_points",
+      "value": 30
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 90
+     }
+    ]
+   },
+   {
+    "id": "church",
+    "name": {
+     "en": "Place them under church oversight",
+     "tr": "Kilise gözetimine ver"
+    },
+    "tip": {
+     "en": "Research +12, Clergy +5.",
+     "tr": "Araştırma +12, Ruhban +5."
+    },
+    "effects": [
+     {
+      "type": "research_points",
+      "value": 12
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "decline",
+    "name": {
+     "en": "Decline; coin is better spent elsewhere",
+     "tr": "Reddet; para başka yerde daha iyi harcanır"
+    },
+    "tip": {
+     "en": "Gold +20, scholars emigrate: Prestige -5.",
+     "tr": "Altın +20, âlimler göç eder: Prestij -5."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -5
+     },
+     {
+      "type": "gold",
+      "value": 20
+     }
+    ],
+    "ai_weight": 0.4
+   }
+  ]
+ },
+ {
+  "id": "rnd_printing_press",
+  "category": "tech",
+  "historical": false,
+  "title": {
+   "en": "The Printing Press Spreads",
+   "tr": "Matbaa Yayılıyor"
+  },
+  "text": {
+   "en": "Printers have set up workshops in {country}, producing books, almanacs and broadsheets faster than any scribe. Authorities are unsure whether to fear or welcome them.",
+   "tr": "Matbaacılar {country}'de atölye açtı; kitap, takvim ve bildirileri hiçbir kâtibin yetişemeyeceği hızda basıyorlar. Yetkililer onlardan korkmalı mı, onları desteklemeli mi bilemiyor."
+  },
+  "image": "science",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_at_least",
+     "value": 1460
+    }
+   ]
+  },
+  "mtth": 90,
+  "once": true,
+  "cooldown": 100,
+  "options": [
+   {
+    "id": "support",
+    "name": {
+     "en": "License and support the printers",
+     "tr": "Matbaacılara ruhsat ver ve destekle"
+    },
+    "tip": {
+     "en": "Gold -50, Research +25, +5% research for 20 turns.",
+     "tr": "Altın -50, Araştırma +25, 20 tur boyunca %5 araştırma."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "research_points",
+      "value": 25
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "research": 0.05
+      },
+      "turns": 20
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "censor",
+    "name": {
+     "en": "Impose censorship",
+     "tr": "Sansür uygula"
+    },
+    "tip": {
+     "en": "Stability +2, Clergy +4, Research +5.",
+     "tr": "İstikrar +2, Ruhban +4, Araştırma +5."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     },
+     {
+      "type": "research_points",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "ban",
+    "name": {
+     "en": "Ban the presses",
+     "tr": "Matbaaları yasakla"
+    },
+    "tip": {
+     "en": "Clergy +6, Merchants -4, Prestige -8.",
+     "tr": "Ruhban +6, Tüccar -4, Prestij -8."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 6
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -4
+     },
+     {
+      "type": "prestige",
+      "value": -8
+     }
+    ],
+    "ai_weight": 0.4
+   }
+  ]
+ },
+ {
+  "id": "rnd_newspapers_pamphlets",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "Newspapers and Pamphlets",
+   "tr": "Gazeteler ve Risaleler"
+  },
+  "text": {
+   "en": "Newsheets now circulate in the cafes of {country}, mocking ministers and debating the affairs of state. Public opinion has become a force of its own.",
+   "tr": "{country}'nin kahvehanelerinde gazeteler dolaşıyor; bakanlarla alay edip devlet işlerini tartışıyor. Kamuoyu başlı başına bir güç haline geldi."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_at_least",
+     "value": 1700
+    }
+   ]
+  },
+  "mtth": 70,
+  "once": true,
+  "cooldown": 100,
+  "options": [
+   {
+    "id": "free",
+    "name": {
+     "en": "Allow a free press",
+     "tr": "Basın özgürlüğüne izin ver"
+    },
+    "tip": {
+     "en": "Legitimacy +4, Stability -2, Prestige +10.",
+     "tr": "Meşruiyet +4, İstikrar -2, Prestij +10."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 4
+     },
+     {
+      "type": "stability",
+      "value": -2
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     }
+    ],
+    "ai_weight": 1.2
+   },
+   {
+    "id": "official",
+    "name": {
+     "en": "Found an official gazette",
+     "tr": "Resmî bir gazete kur"
+    },
+    "tip": {
+     "en": "Gold -40, Stability +3.",
+     "tr": "Altın -40, İstikrar +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "license",
+    "name": {
+     "en": "Tighten licensing and fines",
+     "tr": "Ruhsat ve cezaları sıkılaştır"
+    },
+    "tip": {
+     "en": "Gold +40, Stability +1, Merchants -3.",
+     "tr": "Altın +40, İstikrar +1, Tüccar -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 40
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -3
+     },
+     {
+      "type": "legitimacy",
+      "value": -2
+     }
+    ],
+    "ai_weight": 0.8
+   }
+  ]
+ },
+ {
+  "id": "rnd_art_patronage",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Master Seeks Patronage",
+   "tr": "Bir Usta Himaye Arıyor"
+  },
+  "text": {
+   "en": "A painter and architect of great renown has arrived at the court of {ruler}, offering to adorn the capital if the crown will fund the work.",
+   "tr": "Büyük şöhretli bir ressam ve mimar {ruler}'in sarayına gelip hazine masrafı üstlenirse başkenti süsleyeceğini söylüyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 40
+    },
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 75,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "palace",
+    "name": {
+     "en": "Commission a grand work",
+     "tr": "Büyük bir eser ısmarla"
+    },
+    "tip": {
+     "en": "Gold -120, Prestige +30, Legitimacy +3.",
+     "tr": "Altın -120, Prestij +30, Meşruiyet +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -120
+     },
+     {
+      "type": "prestige",
+      "value": 30
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 140
+     }
+    ]
+   },
+   {
+    "id": "chapel",
+    "name": {
+     "en": "Commission a modest chapel",
+     "tr": "Mütevazı bir şapel ısmarla"
+    },
+    "tip": {
+     "en": "Gold -50, Prestige +12, Clergy +4.",
+     "tr": "Altın -50, Prestij +12, Ruhban +4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "prestige",
+      "value": 12
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "send",
+    "name": {
+     "en": "Send him away",
+     "tr": "Savuştur"
+    },
+    "tip": {
+     "en": "Prestige -5, no cost.",
+     "tr": "Prestij -5, masraf yok."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -5
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 1
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_famous_general",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "A Brilliant Commander Rises",
+   "tr": "Parlak Bir Komutan Yükseliyor"
+  },
+  "text": {
+   "en": "A young officer of {country} has won fame in a skirmish by reckless courage and clever tactics. Soldiers will follow him anywhere.",
+   "tr": "{country}'nin genç bir subayı, cüretkâr yiğitliği ve akıllı taktikleriyle bir çatışmada ün kazandı. Askerler onu her yere izler."
+  },
+  "image": "battle",
+  "trigger": {
+   "conds": [
+    {
+     "type": "armies_at_least",
+     "value": 1
+    }
+   ]
+  },
+  "mtth": 75,
+  "cooldown": 50,
+  "options": [
+   {
+    "id": "promote",
+    "name": {
+     "en": "Give him a command",
+     "tr": "Ona komuta ver"
+    },
+    "tip": {
+     "en": "Military +6, Prestige +10, Gold -40.",
+     "tr": "Asker +6, Prestij +10, Altın -40."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 6
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "morale": 0.05
+      },
+      "turns": 16
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "academy",
+    "name": {
+     "en": "Make him an instructor",
+     "tr": "Eğitmen yap"
+    },
+    "tip": {
+     "en": "Research +20, Manpower +1.",
+     "tr": "Araştırma +20, İşgücü +1."
+    },
+    "effects": [
+     {
+      "type": "research_points",
+      "value": 20
+     },
+     {
+      "type": "manpower",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1.2
+   },
+   {
+    "id": "watch",
+    "name": {
+     "en": "Keep him at a distance",
+     "tr": "Uzak tut"
+    },
+    "tip": {
+     "en": "Legitimacy +2, Military -3.",
+     "tr": "Meşruiyet +2, Asker -3."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.6
+   }
+  ]
+ },
+ {
+  "id": "rnd_discovery",
+  "category": "tech",
+  "historical": false,
+  "title": {
+   "en": "An Unexpected Discovery",
+   "tr": "Beklenmedik Bir Keşif"
+  },
+  "text": {
+   "en": "A craftsman in {country} has stumbled on a better method of working metal, spinning thread or reckoning accounts. Word of it spreads among the guilds.",
+   "tr": "{country}'de bir usta, madeni işlemenin, iplik eğirmenin veya hesap tutmanın daha iyi bir yolunu tesadüfen buldu. Haberi loncalar arasında yayılıyor."
+  },
+  "image": "science",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 35
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "sponsor",
+    "name": {
+     "en": "Fund his workshop",
+     "tr": "Atölyesini finanse et"
+    },
+    "tip": {
+     "en": "Gold -60, Research +40.",
+     "tr": "Altın -60, Araştırma +40."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "research_points",
+      "value": 40
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "guild",
+    "name": {
+     "en": "Share it with the guilds",
+     "tr": "Loncalarla paylaş"
+    },
+    "tip": {
+     "en": "Research +15, Merchants +4.",
+     "tr": "Araştırma +15, Tüccar +4."
+    },
+    "effects": [
+     {
+      "type": "research_points",
+      "value": 15
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1.3
+   },
+   {
+    "id": "secret",
+    "name": {
+     "en": "Keep it a state secret",
+     "tr": "Devlet sırrı olarak sakla"
+    },
+    "tip": {
+     "en": "Research +10, +6% production for 12 turns.",
+     "tr": "Araştırma +10, 12 tur boyunca %6 üretim."
+    },
+    "effects": [
+     {
+      "type": "research_points",
+      "value": 10
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "prod": 0.06
+      },
+      "turns": 12
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "rnd_factory_strike",
+  "category": "uprising",
+  "historical": false,
+  "title": {
+   "en": "The Factory Hands Strike",
+   "tr": "Fabrika İşçileri Greve Gitti"
+  },
+  "text": {
+   "en": "Thousands of workers in the mills and foundries of {country} have downed tools, demanding shorter hours and a living wage.",
+   "tr": "{country}'nin fabrika ve dökümhanelerinde binlerce işçi, daha kısa mesai ve geçimlik ücret talep ederek işi bıraktı."
+  },
+  "image": "uprising",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_at_least",
+     "value": 1830
+    },
+    {
+     "type": "has_tech",
+     "line": "industry",
+     "level": 1
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "wages",
+    "name": {
+     "en": "Mediate and raise wages",
+     "tr": "Arabuluculuk yap, ücretleri artır"
+    },
+    "tip": {
+     "en": "Gold -40, Artisans +6, Merchants -3.",
+     "tr": "Altın -40, Zanaatkâr +6, Tüccar -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "class_sat",
+      "class": "artisans",
+      "value": 6
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "troops",
+    "name": {
+     "en": "Send in the troops",
+     "tr": "Askerleri gönder"
+    },
+    "tip": {
+     "en": "Stability -3, Artisans -8, Merchants +4.",
+     "tr": "İstikrar -3, Zanaatkâr -8, Tüccar +4."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -3
+     },
+     {
+      "type": "class_sat",
+      "class": "artisans",
+      "value": -8
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 4
+     }
+    ],
+    "ai_weight": 0.9
+   },
+   {
+    "id": "law",
+    "name": {
+     "en": "Pass a factory act",
+     "tr": "Fabrika yasası çıkar"
+    },
+    "tip": {
+     "en": "Admin -15, Stability +3, Prestige +10.",
+     "tr": "İdare -15, İstikrar +3, Prestij +10."
+    },
+    "effects": [
+     {
+      "type": "admin",
+      "value": -15
+     },
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "class_sat",
+      "class": "artisans",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1.2
+   }
+  ]
+ }
+]

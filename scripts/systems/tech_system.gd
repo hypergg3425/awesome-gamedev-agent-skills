@@ -163,3 +163,23 @@ static func available(s: Dictionary, cid: String) -> Array:
 			out.append(tid)
 	out.sort()
 	return out
+
+## Convert gold into research points (a deliberate, diminishing-returns sink for surplus treasure).
+static func invest_cost_per_point(s: Dictionary, cid: String) -> float:
+	var c: Dictionary = s["countries"][cid]
+	var bought := float(c["research"].get("bought_turn_pts", 0.0)) if int(c["research"].get("bought_turn", -1)) == int(s["turn"]) else 0.0
+	return 2.5 * (1.0 + float(c.get("inflation", 0.0))) * (1.0 + bought / 150.0)
+
+static func invest(s: Dictionary, cid: String, gold: float) -> Dictionary:
+	var c: Dictionary = s["countries"][cid]
+	if gold <= 0.0 or float(c["gold"]) < gold:
+		return {"ok": false, "reason": "ERR_NO_GOLD", "params": {"need": int(gold)}}
+	var pts := gold / invest_cost_per_point(s, cid)
+	c["gold"] = float(c["gold"]) - gold
+	c["research"]["bank"] = float(c["research"].get("bank", 0.0)) + pts
+	if int(c["research"].get("bought_turn", -1)) != int(s["turn"]):
+		c["research"]["bought_turn"] = s["turn"]
+		c["research"]["bought_turn_pts"] = 0.0
+	c["research"]["bought_turn_pts"] = float(c["research"]["bought_turn_pts"]) + pts
+	GS.stat_add(s, cid, "gold_invested_research", gold)
+	return {"ok": true, "points": pts}

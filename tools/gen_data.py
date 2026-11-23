@@ -26,7 +26,7 @@ U = {}
 def unit(uid, cls, en, tr, fire, shock, df, mor, mv, gold, up, sup, siege=0, tech=None, mats=None, cultures=None,
          countries=None, naval=False, cap=0, nat=None):
     U[uid] = dict(id=uid, cls=cls, name=N(en, tr), fire=fire, shock=shock, defense=df, morale=mor, move=mv,
-                  cost=dict(gold=gold, manpower=0 if naval else 1.0, **(mats or {})), upkeep=up, supply=sup,
+                  cost=dict(gold=gold, manpower=0 if naval else 1.0, **(mats or {})), upkeep=round(up * 2.5, 2), supply=sup,
                   siege=siege, tech=tech, cultures=cultures or [], countries=countries or [], naval=naval,
                   transport=cap)
 # infantry

@@ -22,7 +22,7 @@ static func prov(s: Dictionary, pid: String) -> Dictionary:
 static func alive_countries(s: Dictionary) -> Array:
 	var out: Array = []
 	for cid in s["countries"]:
-		if s["countries"][cid].get("alive", false):
+		if s["countries"][cid].get("alive", false) and cid != "REB":
 			out.append(cid)
 	out.sort()
 	return out
@@ -52,7 +52,10 @@ static func rebuild_caches(s: Dictionary) -> void:
 		if not armies_at.has(loc):
 			armies_at[loc] = []
 		armies_at[loc].append(aid)
+	var old_rng: Variant = s["_c"].get("rng") if s.has("_c") else null
 	s["_c"] = {"owned": owned, "controlled": ctrl, "armies_at": armies_at, "mods": {}, "mods_turn": -1}
+	if old_rng != null:
+		s["_c"]["rng"] = old_rng
 
 static func owned(s: Dictionary, cid: String) -> Array:
 	var c: Dictionary = s["_c"]
@@ -82,6 +85,8 @@ static func armies_of(s: Dictionary, cid: String) -> Array:
 static func invalidate_mods(s: Dictionary) -> void:
 	if not s["_c"].is_empty():
 		s["_c"]["mods"] = {}
+		s["_c"].erase("pcalc")
+		s["_c"].erase("admin_cap")
 
 static func set_owner(s: Dictionary, pid: String, cid: String, also_controller: bool = true) -> void:
 	var p: Dictionary = s["provinces"][pid]
@@ -238,3 +243,31 @@ static func vassals_of(s: Dictionary, cid: String) -> Array:
 		if c.get("alive", false) and c.get("overlord", "") == cid:
 			out.append(oid)
 	return out
+
+## Round every float in the state to a 1e-6 grid. Applied at the end of each turn and right after
+## loading a save, so that JSON float round-trips (which can differ in the last bit) can never make
+## a restored campaign diverge from an uninterrupted one.
+static func quantize(v: Variant) -> Variant:
+	if v is float:
+		return snappedf(v, 0.000001)
+	if v is Dictionary:
+		var d: Dictionary = v
+		for k in d.keys():
+			if k == "_c":
+				continue
+			var x: Variant = d[k]
+			if x is float:
+				d[k] = snappedf(x, 0.000001)
+			elif x is Dictionary or x is Array:
+				quantize(x)
+		return d
+	if v is Array:
+		var a: Array = v
+		for i in a.size():
+			var x: Variant = a[i]
+			if x is float:
+				a[i] = snappedf(x, 0.000001)
+			elif x is Dictionary or x is Array:
+				quantize(x)
+		return a
+	return v

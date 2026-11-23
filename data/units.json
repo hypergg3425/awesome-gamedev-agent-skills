@@ -15,7 +15,7 @@
    "gold": 6,
    "manpower": 1.0
   },
-  "upkeep": 0.4,
+  "upkeep": 1.0,
   "supply": 0.8,
   "siege": 0,
   "tech": null,
@@ -40,7 +40,7 @@
    "gold": 8,
    "manpower": 1.0
   },
-  "upkeep": 0.5,
+  "upkeep": 1.25,
   "supply": 0.8,
   "siege": 0,
   "tech": [
@@ -69,7 +69,7 @@
    "manpower": 1.0,
    "iron": 0.3
   },
-  "upkeep": 0.7,
+  "upkeep": 1.75,
   "supply": 0.9,
   "siege": 0,
   "tech": [
@@ -98,7 +98,7 @@
    "manpower": 1.0,
    "iron": 0.4
   },
-  "upkeep": 0.8,
+  "upkeep": 2.0,
   "supply": 1.0,
   "siege": 0,
   "tech": [
@@ -127,7 +127,7 @@
    "manpower": 1.0,
    "iron": 0.5
   },
-  "upkeep": 1.0,
+  "upkeep": 2.5,
   "supply": 1.0,
   "siege": 0,
   "tech": [
@@ -156,7 +156,7 @@
    "manpower": 1.0,
    "iron": 0.3
   },
-  "upkeep": 0.8,
+  "upkeep": 2.0,
   "supply": 0.9,
   "siege": 0,
   "tech": null,
@@ -182,7 +182,7 @@
    "manpower": 1.0,
    "iron": 0.3
   },
-  "upkeep": 0.8,
+  "upkeep": 2.0,
   "supply": 0.9,
   "siege": 0,
   "tech": [
@@ -211,7 +211,7 @@
    "manpower": 1.0,
    "iron": 0.5
   },
-  "upkeep": 1.1,
+  "upkeep": 2.75,
   "supply": 1.0,
   "siege": 0,
   "tech": [
@@ -240,7 +240,7 @@
    "manpower": 1.0,
    "iron": 0.6
   },
-  "upkeep": 1.4,
+  "upkeep": 3.5,
   "supply": 1.0,
   "siege": 0,
   "tech": [
@@ -269,7 +269,7 @@
    "manpower": 1.0,
    "wood": 0.2
   },
-  "upkeep": 0.4,
+  "upkeep": 1.0,
   "supply": 0.7,
   "siege": 0,
   "tech": null,
@@ -296,7 +296,7 @@
    "wood": 0.2,
    "iron": 0.1
   },
-  "upkeep": 0.5,
+  "upkeep": 1.25,
   "supply": 0.7,
   "siege": 0,
   "tech": [
@@ -325,7 +325,7 @@
    "manpower": 1.0,
    "iron": 0.2
   },
-  "upkeep": 0.6,
+  "upkeep": 1.5,
   "supply": 0.8,
   "siege": 0,
   "tech": [
@@ -354,7 +354,7 @@
    "manpower": 1.0,
    "iron": 0.4
   },
-  "upkeep": 0.9,
+  "upkeep": 2.25,
   "supply": 0.9,
   "siege": 0,
   "tech": [
@@ -382,7 +382,7 @@
    "gold": 10,
    "manpower": 1.0
   },
-  "upkeep": 0.7,
+  "upkeep": 1.75,
   "supply": 1.4,
   "siege": 0,
   "tech": null,
@@ -407,7 +407,7 @@
    "gold": 13,
    "manpower": 1.0
   },
-  "upkeep": 0.9,
+  "upkeep": 2.25,
   "supply": 1.4,
   "siege": 0,
   "tech": [
@@ -435,7 +435,7 @@
    "gold": 16,
    "manpower": 1.0
   },
-  "upkeep": 1.0,
+  "upkeep": 2.5,
   "supply": 1.4,
   "siege": 0,
   "tech": [
@@ -464,7 +464,7 @@
    "manpower": 1.0,
    "iron": 0.3
   },
-  "upkeep": 1.2,
+  "upkeep": 3.0,
   "supply": 1.4,
   "siege": 0,
   "tech": [
@@ -493,7 +493,7 @@
    "manpower": 1.0,
    "iron": 0.4
   },
-  "upkeep": 1.2,
+  "upkeep": 3.0,
   "supply": 1.5,
   "siege": 0,
   "tech": null,
@@ -519,7 +519,7 @@
    "manpower": 1.0,
    "iron": 0.5
   },
-  "upkeep": 1.3,
+  "upkeep": 3.25,
   "supply": 1.5,
   "siege": 0,
   "tech": [
@@ -548,7 +548,7 @@
    "manpower": 1.0,
    "iron": 0.6
   },
-  "upkeep": 1.5,
+  "upkeep": 3.75,
   "supply": 1.5,
   "siege": 0,
   "tech": [
@@ -577,7 +577,7 @@
    "manpower": 1.0,
    "iron": 1.0
   },
-  "upkeep": 1.4,
+  "upkeep": 3.5,
   "supply": 1.0,
   "siege": 3,
   "tech": [
@@ -606,7 +606,7 @@
    "manpower": 1.0,
    "iron": 1.2
   },
-  "upkeep": 1.6,
+  "upkeep": 4.0,
   "supply": 1.0,
   "siege": 5,
   "tech": [
@@ -635,7 +635,7 @@
    "manpower": 1.0,
    "iron": 1.4
   },
-  "upkeep": 1.8,
+  "upkeep": 4.5,
   "supply": 1.0,
   "siege": 6,
   "tech": [
@@ -665,7 +665,7 @@
    "iron": 1.8,
    "coal": 0.3
   },
-  "upkeep": 2.1,
+  "upkeep": 5.25,
   "supply": 1.0,
   "siege": 9,
   "tech": [
@@ -694,7 +694,7 @@
    "manpower": 1.0,
    "wood": 0.3
   },
-  "upkeep": 0.8,
+  "upkeep": 2.0,
   "supply": 0.8,
   "siege": 4,
   "tech": [
@@ -724,7 +724,7 @@
    "wood": 0.3,
    "iron": 0.2
   },
-  "upkeep": 1.0,
+  "upkeep": 2.5,
   "supply": 0.8,
   "siege": 8,
   "tech": [
@@ -753,7 +753,7 @@
    "manpower": 0,
    "wood": 1.0
   },
-  "upkeep": 0.8,
+  "upkeep": 2.0,
   "supply": 0.5,
   "siege": 0,
   "tech": null,
@@ -779,7 +779,7 @@
    "manpower": 0,
    "wood": 1.0
   },
-  "upkeep": 0.9,
+  "upkeep": 2.25,
   "supply": 0.5,
   "siege": 0,
   "tech": null,
@@ -805,7 +805,7 @@
    "manpower": 0,
    "wood": 1.4
   },
-  "upkeep": 1.1,
+  "upkeep": 2.75,
   "supply": 0.6,
   "siege": 0,
   "tech": [
@@ -835,7 +835,7 @@
    "wood": 1.6,
    "iron": 0.3
   },
-  "upkeep": 1.4,
+  "upkeep": 3.5,
   "supply": 0.6,
   "siege": 0,
   "tech": [
@@ -865,7 +865,7 @@
    "wood": 2.0,
    "iron": 0.6
   },
-  "upkeep": 1.9,
+  "upkeep": 4.75,
   "supply": 0.7,
   "siege": 0,
   "tech": [
@@ -895,7 +895,7 @@
    "iron": 2.0,
    "coal": 1.0
   },
-  "upkeep": 2.6,
+  "upkeep": 6.5,
   "supply": 0.8,
   "siege": 0,
   "tech": [
@@ -923,7 +923,7 @@
    "gold": 18,
    "manpower": 1.0
   },
-  "upkeep": 1.1,
+  "upkeep": 2.75,
   "supply": 0.9,
   "siege": 0,
   "tech": [
@@ -955,7 +955,7 @@
    "gold": 21,
    "manpower": 1.0
   },
-  "upkeep": 1.4,
+  "upkeep": 3.5,
   "supply": 1.5,
   "siege": 0,
   "tech": [
@@ -988,7 +988,7 @@
    "gold": 20,
    "manpower": 1.0
   },
-  "upkeep": 1.3,
+  "upkeep": 3.25,
   "supply": 0.9,
   "siege": 0,
   "tech": [
@@ -1019,7 +1019,7 @@
    "manpower": 1.0,
    "wood": 0.3
   },
-  "upkeep": 0.6,
+  "upkeep": 1.5,
   "supply": 0.7,
   "siege": 0,
   "tech": [
@@ -1050,7 +1050,7 @@
    "gold": 14,
    "manpower": 1.0
   },
-  "upkeep": 0.9,
+  "upkeep": 2.25,
   "supply": 0.9,
   "siege": 0,
   "tech": [
@@ -1082,7 +1082,7 @@
    "gold": 18,
    "manpower": 1.0
   },
-  "upkeep": 1.1,
+  "upkeep": 2.75,
   "supply": 0.9,
   "siege": 0,
   "tech": [
@@ -1113,7 +1113,7 @@
    "gold": 14,
    "manpower": 1.0
   },
-  "upkeep": 0.8,
+  "upkeep": 2.0,
   "supply": 0.8,
   "siege": 0,
   "tech": [
@@ -1143,7 +1143,7 @@
    "gold": 12,
    "manpower": 1.0
   },
-  "upkeep": 0.7,
+  "upkeep": 1.75,
   "supply": 1.2,
   "siege": 0,
   "tech": [
@@ -1174,7 +1174,7 @@
    "gold": 11,
    "manpower": 1.0
   },
-  "upkeep": 0.6,
+  "upkeep": 1.5,
   "supply": 1.3,
   "siege": 0,
   "tech": null,
@@ -1202,7 +1202,7 @@
    "gold": 22,
    "manpower": 1.0
   },
-  "upkeep": 1.5,
+  "upkeep": 3.75,
   "supply": 2.0,
   "siege": 0,
   "tech": null,
@@ -1229,7 +1229,7 @@
    "gold": 12,
    "manpower": 1.0
   },
-  "upkeep": 0.7,
+  "upkeep": 1.75,
   "supply": 0.8,
   "siege": 0,
   "tech": [

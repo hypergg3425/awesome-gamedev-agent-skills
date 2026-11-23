@@ -3,7 +3,7 @@ extends RefCounted
 ## Deterministic national economy. All numbers per turn (one season). Everything here is a pure
 ## function of the state (plus the state's seeded RNG), so it is fully testable.
 
-const TAX_PER_KPOP := 0.06
+const TAX_PER_KPOP := 0.016
 const FOOD_PER_KPOP := 1.0
 const MANPOWER_RATE := 0.010
 const BASE_PRICE := {"food": 1.2, "iron": 4.0, "wood": 2.0, "stone": 3.0, "coal": 3.0, "lux": 8.0}
@@ -13,6 +13,19 @@ static func labor(pop: float) -> float:
 
 ## Detailed numbers for one province (read-only).
 static func province_calc(s: Dictionary, pid: String) -> Dictionary:
+	var cache: Dictionary = s["_c"].get("pcalc", {})
+	if cache.has(pid):
+		return cache[pid]
+	var r := _province_calc(s, pid)
+	cache[pid] = r
+	s["_c"]["pcalc"] = cache
+	return r
+
+static func invalidate_calc(s: Dictionary) -> void:
+	s["_c"].erase("pcalc")
+	s["_c"].erase("admin_cap")
+
+static func _province_calc(s: Dictionary, pid: String) -> Dictionary:
 	var p: Dictionary = s["provinces"][pid]
 	var pd: Dictionary = Defs.provinces[pid]
 	var owner: String = p["owner"]
@@ -32,7 +45,7 @@ static func province_calc(s: Dictionary, pid: String) -> Dictionary:
 	r["tax"] = pop * tax_rate * TAX_PER_KPOP * tax_mult * stab_f * (1.0 - devast)
 	var peas := float(cls.get("peasants", 0.7))
 	var fert := float(pd["fert"])
-	r["food_prod"] = pop * peas * fert * 2.2 * (1.0 + float(m.get("food", 0.0)) + float(pm.get("food_mult", 0.0))) * (1.0 - devast)
+	r["food_prod"] = pop * peas * fert * 1.4 * (1.0 + float(m.get("food", 0.0)) + float(pm.get("food_mult", 0.0))) * (1.0 - devast)
 	var lab := labor(pop) * (1.0 - devast)
 	var mine_mult := 1.0 + float(m.get("mine", 0.0)) + float(pm.get("mine_mult", 0.0))
 	var prodm := 1.0 + float(m.get("prod", 0.0))
@@ -47,8 +60,8 @@ static func province_calc(s: Dictionary, pid: String) -> Dictionary:
 	if int(p["buildings"].get("workshop", 0)) > 0 and int(c.get("tech_level", {}).get("industry", 0)) >= 3:
 		# steam-era workshops burn coal; handled at country level (coal_need)
 		r["coal_need"] = 0.3 * float(p["buildings"]["workshop"])
-	r["production"] = pop * float(cls.get("artisans", 0.03)) * 0.18 * (1.0 + float(pm.get("prod_mult", 0.0)) + float(m.get("prod", 0.0))) * (1.0 - devast) * stab_f
-	r["commerce"] = pop * float(p.get("urban", 0.05)) * 0.12 * (1.0 + float(m.get("trade", 0.0)) + 0.1 * float(p["buildings"].get("market", 0))
+	r["production"] = pop * float(cls.get("artisans", 0.03)) * 0.05 * (1.0 + float(pm.get("prod_mult", 0.0)) + float(m.get("prod", 0.0))) * (1.0 - devast) * stab_f
+	r["commerce"] = pop * float(p.get("urban", 0.05)) * 0.035 * (1.0 + float(m.get("trade", 0.0)) + 0.1 * float(p["buildings"].get("market", 0))
 		+ 2.0 * float(cls.get("merchants", 0.0))) * (1.0 - devast) * stab_f
 	r["manpower"] = pop * MANPOWER_RATE * (1.0 + float(pm.get("manpower_mult", 0.0)) + float(m.get("manpower", 0.0))) * (1.0 - devast) * clampf(1.2 - unrest / 100.0, 0.3, 1.0)
 	var up := 0.0
@@ -69,6 +82,15 @@ static func manpower_max(s: Dictionary, cid: String) -> float:
 	return tot
 
 static func admin_capacity(s: Dictionary, cid: String) -> Dictionary:
+	var cache: Dictionary = s["_c"].get("admin_cap", {})
+	if cache.has(cid) and int(cache[cid]["turn"]) == int(s["turn"]):
+		return cache[cid]["v"]
+	var v := _admin_capacity_calc(s, cid)
+	cache[cid] = {"turn": s["turn"], "v": v}
+	s["_c"]["admin_cap"] = cache
+	return v
+
+static func _admin_capacity_calc(s: Dictionary, cid: String) -> Dictionary:
 	var c: Dictionary = s["countries"][cid]
 	var m := Mods.country(s, cid)
 	var cap := 10.0
@@ -239,7 +261,8 @@ static func process_turn(s: Dictionary, cid: String) -> Dictionary:
 	c["stock"]["food"] = minf(stock, granary_cap)
 	# food surplus above the granary is sold cheaply
 	if stock > granary_cap and TradeSystem.has_market_access(s, cid):
-		c["gold"] = float(c["gold"]) + (stock - granary_cap) * 0.5
+		# surplus beyond the granary spoils; only a small, bounded share is sold
+		c["gold"] = float(c["gold"]) + minf((stock - granary_cap) * 0.02 * float(s["market"].get("food", {}).get("price", 1.2)), float(b["food_cons"]) * 0.004)
 	# --- admin points
 	var gain := 2.0 + sqrt(float(b["pop"]) / 400.0) * 0.8 + float(b["admin_cap"]) * 0.04
 	gain *= 1.0 + float(m.get("admin_cap", 0.0)) * 0.5
@@ -254,6 +277,7 @@ static func process_turn(s: Dictionary, cid: String) -> Dictionary:
 		c["manpower"] = mpmax
 	# --- inflation decays; borrowing is handled after
 	c["inflation"] = float(c["inflation"]) * 0.92
+	c["budget"] = b
 	# --- debt / bankruptcy
 	if float(c["gold"]) < 0.0:
 		var deficit := -float(c["gold"])
@@ -270,6 +294,12 @@ static func process_turn(s: Dictionary, cid: String) -> Dictionary:
 		var pay := minf(float(c["debt"]), float(c["gold"]) - (150.0 + float(b["income"]) * 2.0))
 		c["debt"] = float(c["debt"]) - pay
 		c["gold"] = float(c["gold"]) - pay
+	# --- idle treasure leaks away (court waste, embezzlement, minor expenses)
+	var idle_cap := 10.0 * maxf(float(b["income"]), 50.0)
+	if float(c["gold"]) > idle_cap:
+		var leak := (float(c["gold"]) - idle_cap) * 0.04
+		c["gold"] = float(c["gold"]) - leak
+		b["leak"] = leak
 	# --- bookkeeping
 	c["budget"] = b
 	GS.stat_add(s, cid, "total_income", float(b["income"]))
@@ -278,6 +308,18 @@ static func process_turn(s: Dictionary, cid: String) -> Dictionary:
 	if hist.size() > 40:
 		hist.pop_front()
 	return b
+
+## Buy administrative points with gold (5 gold each, plus inflation).
+static func buy_admin(s: Dictionary, cid: String, points: float) -> Dictionary:
+	var c: Dictionary = s["countries"][cid]
+	var cost := points * 5.0 * (1.0 + float(c.get("inflation", 0.0)))
+	if float(c["gold"]) < cost:
+		return {"ok": false, "reason": "ERR_NO_GOLD", "params": {"need": int(cost)}}
+	if float(c["admin"]) + points > 500.0:
+		return {"ok": false, "reason": "ECON_ERR_ADMIN_CAP"}
+	c["gold"] = float(c["gold"]) - cost
+	c["admin"] = float(c["admin"]) + points
+	return {"ok": true}
 
 static func _bankruptcy(s: Dictionary, cid: String, overshoot: float) -> void:
 	var c: Dictionary = s["countries"][cid]

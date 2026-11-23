@@ -45,7 +45,6 @@ func load_all() -> void:
 	governments = _read_dict("res://data/governments.json")
 	reforms = _read_dict("res://data/reforms.json")
 	gov_transitions = _read_dict("res://data/government_transitions.json")
-	countries = _read_dict("res://data/countries.json")
 	map_meta = _read_dict("res://data/map/map_meta.json")
 	var sl: Variant = _read_json("res://data/map/seas.json")
 	if sl is Array:

@@ -1,0 +1,1065 @@
+[
+ {
+  "id": "rnd_food_shortage",
+  "category": "food",
+  "historical": false,
+  "title": {
+   "en": "Bread Grows Scarce",
+   "tr": "Ekmek Kıtlaşıyor"
+  },
+  "text": {
+   "en": "The granaries of {country} are nearly bare. Bakers close their ovens at noon and angry crowds form at the gates of the great houses.",
+   "tr": "{country}'nin ambarları neredeyse boş. Fırıncılar öğlen ocaklarını söndürüyor, büyük konakların kapısında öfkeli kalabalıklar toplanıyor."
+  },
+  "image": "famine",
+  "trigger": {
+   "conds": [
+    {
+     "type": "food_ratio_below",
+     "value": 0.85
+    }
+   ]
+  },
+  "mtth": 30,
+  "cooldown": 16,
+  "options": [
+   {
+    "id": "import",
+    "name": {
+     "en": "Import grain from abroad",
+     "tr": "Dışarıdan tahıl ithal et"
+    },
+    "tip": {
+     "en": "Gold -120, +40 food stock, Stability +2.",
+     "tr": "Altın -120, +40 gıda stoku, İstikrar +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -120
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": 40
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 140
+     }
+    ]
+   },
+   {
+    "id": "requisition",
+    "name": {
+     "en": "Requisition grain and halt exports",
+     "tr": "Tahılı iaşe olarak topla, ihracatı durdur"
+    },
+    "tip": {
+     "en": "+25 food stock, Merchants -6, Peasants -4.",
+     "tr": "+25 gıda stoku, Tüccar -6, Köylü -4."
+    },
+    "effects": [
+     {
+      "type": "stock",
+      "res": "food",
+      "value": 25
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -6
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1.2
+   },
+   {
+    "id": "invest",
+    "name": {
+     "en": "Invest in agriculture",
+     "tr": "Tarıma yatırım yap"
+    },
+    "tip": {
+     "en": "Gold -80, +12% food for 20 turns; hunger persists for now.",
+     "tr": "Altın -80, 20 tur boyunca %12 gıda; açlık şimdilik sürer."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "food": 0.12
+      },
+      "turns": 20
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "ration",
+    "name": {
+     "en": "Impose strict rationing",
+     "tr": "Sıkı karne uygula"
+    },
+    "tip": {
+     "en": "Stability -4, Legitimacy +3, +15 food stock.",
+     "tr": "İstikrar -4, Meşruiyet +3, +15 gıda stoku."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -4
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": 15
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "rnd_locusts",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "A Plague of Locusts",
+   "tr": "Çekirge Istilası"
+  },
+  "text": {
+   "en": "A dark cloud rises from the south and settles on the fields of {province}. In a single day the green crops are stripped bare.",
+   "tr": "Güneyden kara bir bulut yükselip {province} tarlalarına çöküyor. Bir günde yemyeşil ekinler çırılçıplak kalıyor."
+  },
+  "image": "famine",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "terrain_is",
+    "value": "plains"
+   }
+  ],
+  "options": [
+   {
+    "id": "fires",
+    "name": {
+     "en": "Burn the fields to stop the swarm",
+     "tr": "Sürüyü durdurmak için tarlaları yak"
+    },
+    "tip": {
+     "en": "Province devastation +0.15, unrest +2, spares neighbouring lands.",
+     "tr": "Eyalet tahribatı +0.15, huzursuzluk +2, komşu toprakları korur."
+    },
+    "effects": [
+     {
+      "type": "province_devastation",
+      "value": 0.15
+     },
+     {
+      "type": "province_unrest",
+      "value": 2
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "aid",
+    "name": {
+     "en": "Send grain relief",
+     "tr": "Tahıl yardımı gönder"
+    },
+    "tip": {
+     "en": "Gold -60, unrest -2, -10 food stock.",
+     "tr": "Altın -60, huzursuzluk -2, -10 gıda stoku."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "province_unrest",
+      "value": -2
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -10
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "pray",
+    "name": {
+     "en": "Order public prayers",
+     "tr": "Halka dua ve ibadet emret"
+    },
+    "tip": {
+     "en": "Clergy +5, province unrest +4, -20 food stock.",
+     "tr": "Ruhban +5, eyalet huzursuzluğu +4, -20 gıda stoku."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     },
+     {
+      "type": "province_unrest",
+      "value": 4
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -20
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ },
+ {
+  "id": "rnd_great_flood",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "The River Breaks Its Banks",
+   "tr": "Nehir Taştı"
+  },
+  "text": {
+   "en": "Weeks of rain have swollen the rivers around {province}. Dikes give way overnight and whole villages stand in brown water.",
+   "tr": "Haftalarca süren yağmur {province} çevresindeki nehirleri şişirdi. Bentler gece yarısı çöktü, bütün köyler çamurlu suyun içinde kaldı."
+  },
+  "image": "storm",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "terrain_is",
+    "value": "plains"
+   }
+  ],
+  "options": [
+   {
+    "id": "dikes",
+    "name": {
+     "en": "Build new dikes and relief camps",
+     "tr": "Yeni bentler ve yardım kampları yaptır"
+    },
+    "tip": {
+     "en": "Gold -80, devastation -0.05, unrest -2.",
+     "tr": "Altın -80, tahribat -0.05, huzursuzluk -2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "province_unrest",
+      "value": -2
+     },
+     {
+      "type": "province_dev",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "evacuate",
+    "name": {
+     "en": "Evacuate the lowlands",
+     "tr": "Alçak bölgeleri tahliye et"
+    },
+    "tip": {
+     "en": "Gold -30, province population -3%.",
+     "tr": "Altın -30, eyalet nüfusu -%3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "province_pop_pct",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1.2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "endure",
+    "name": {
+     "en": "Let the people shift for themselves",
+     "tr": "Halkı kendi haline bırak"
+    },
+    "tip": {
+     "en": "Province population -6%, unrest +4.",
+     "tr": "Eyalet nüfusu -%6, huzursuzluk +4."
+    },
+    "effects": [
+     {
+      "type": "province_pop_pct",
+      "value": -6
+     },
+     {
+      "type": "province_unrest",
+      "value": 4
+     },
+     {
+      "type": "province_devastation",
+      "value": 0.1
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_drought",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "The Rains Fail",
+   "tr": "Yağmurlar Kesildi"
+  },
+  "text": {
+   "en": "Wells run dry and the soil cracks in the fields of {country}. Farmers eye the empty sky and old women mutter of ill omens.",
+   "tr": "{country}'de kuyular kuruyor, tarlalarda toprak çatlıyor. Çiftçiler boş göğe bakıyor, yaşlı kadınlar uğursuzluktan söz ediyor."
+  },
+  "image": "famine",
+  "trigger": {
+   "conds": [
+    {
+     "type": "season_is",
+     "value": "summer"
+    }
+   ]
+  },
+  "mtth": 65,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "wells",
+    "name": {
+     "en": "Dig wells and channels",
+     "tr": "Kuyu ve kanallar kazdır"
+    },
+    "tip": {
+     "en": "Gold -70, +10% food for 12 turns.",
+     "tr": "Altın -70, 12 tur boyunca %10 gıda."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "food": 0.1
+      },
+      "turns": 12
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 90
+     }
+    ]
+   },
+   {
+    "id": "stocks",
+    "name": {
+     "en": "Open the granaries",
+     "tr": "Ambarları aç"
+    },
+    "tip": {
+     "en": "-25 food stock, Peasants +4, Stability +1.",
+     "tr": "-25 gıda stoku, Köylü +4, İstikrar +1."
+    },
+    "effects": [
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -25
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 4
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "procession",
+    "name": {
+     "en": "Hold processions for rain",
+     "tr": "Yağmur duası alayları düzenle"
+    },
+    "tip": {
+     "en": "Clergy +5, food -10%, for 6 turns.",
+     "tr": "Ruhban +5, 6 tur boyunca gıda -%10."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "food": -0.1
+      },
+      "turns": 6
+     }
+    ],
+    "ai_weight": 0.8
+   }
+  ]
+ },
+ {
+  "id": "rnd_grain_speculation",
+  "category": "food",
+  "historical": false,
+  "title": {
+   "en": "Grain Speculators",
+   "tr": "Tahıl Vurguncuları"
+  },
+  "text": {
+   "en": "Wealthy dealers in {country} are buying up the harvest to sell dear in the lean months. Bread prices begin to rise.",
+   "tr": "{country}'de zengin tüccarlar, kıtlık aylarında pahalıya satmak için hasadı topluyor. Ekmek fiyatları yükselmeye başlıyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "food_ratio_below",
+     "value": 0.95
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "seize",
+    "name": {
+     "en": "Seize the hoarded grain",
+     "tr": "İstif edilen tahılı müsadere et"
+    },
+    "tip": {
+     "en": "+20 food stock, Merchants -7, Peasants +4.",
+     "tr": "+20 gıda stoku, Tüccar -7, Köylü +4."
+    },
+    "effects": [
+     {
+      "type": "stock",
+      "res": "food",
+      "value": 20
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -7
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1.3
+   },
+   {
+    "id": "tax",
+    "name": {
+     "en": "Tax the speculators' profits",
+     "tr": "Vurguncuların kazancını vergilendir"
+    },
+    "tip": {
+     "en": "Gold +60, Merchants -3, Peasants -2.",
+     "tr": "Altın +60, Tüccar -3, Köylü -2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 60
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -3
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "allow",
+    "name": {
+     "en": "Let the market decide",
+     "tr": "Piyasaya bırak"
+    },
+    "tip": {
+     "en": "Merchants +4, Peasants -6, Stability -2.",
+     "tr": "Tüccar +4, Köylü -6, İstikrar -2."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 4
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ },
+ {
+  "id": "rnd_cattle_plague",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "Murrain Among the Herds",
+   "tr": "Hayvanlar Arasında Salgın"
+  },
+  "text": {
+   "en": "A sickness sweeps through the cattle and sheep of {country}. Carcasses lie in pastures and the price of meat and wool soars.",
+   "tr": "{country}'nin sığır ve koyunları arasında bir hastalık yayılıyor. Meralarda leşler yatıyor, et ve yün fiyatları fırlıyor."
+  },
+  "image": "famine",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 75,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "cull",
+    "name": {
+     "en": "Cull the infected herds",
+     "tr": "Hasta sürüleri itlaf et"
+    },
+    "tip": {
+     "en": "Gold -50, food stock -10, plague halted.",
+     "tr": "Altın -50, gıda stoku -10, salgın durur."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -10
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "food": 0.04
+      },
+      "turns": 12
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "compensate",
+    "name": {
+     "en": "Compensate the herders",
+     "tr": "Çobanlara tazminat öde"
+    },
+    "tip": {
+     "en": "Gold -90, Peasants +6.",
+     "tr": "Altın -90, Köylü +6."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -90
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 6
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 110
+     }
+    ]
+   },
+   {
+    "id": "ignore",
+    "name": {
+     "en": "Do nothing",
+     "tr": "Hiçbir şey yapma"
+    },
+    "tip": {
+     "en": "-25 food stock, Peasants -4, +trade loss.",
+     "tr": "-25 gıda stoku, Köylü -4, ticaret kaybı."
+    },
+    "effects": [
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -25
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -4
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": -0.04
+      },
+      "turns": 8
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_hard_winter",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "A Killing Winter",
+   "tr": "Öldüren Kış"
+  },
+  "text": {
+   "en": "Snow lies deep in {country} and rivers freeze solid. Livestock die in their pens and woodcutters cannot reach the forests.",
+   "tr": "{country}'de kar derin, nehirler katı buz tuttu. Hayvanlar ağıllarında ölüyor, oduncular ormanlara ulaşamıyor."
+  },
+  "image": "storm",
+  "trigger": {
+   "conds": [
+    {
+     "type": "season_is",
+     "value": "winter"
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "fuel",
+    "name": {
+     "en": "Distribute fuel and bread",
+     "tr": "Odun ve ekmek dağıt"
+    },
+    "tip": {
+     "en": "Gold -70, -10 wood, Stability +2.",
+     "tr": "Altın -70, -10 odun, İstikrar +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "stock",
+      "res": "wood",
+      "value": -10
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 90
+     }
+    ]
+   },
+   {
+    "id": "shelter",
+    "name": {
+     "en": "Open the churches and halls",
+     "tr": "Kilise ve salonları aç"
+    },
+    "tip": {
+     "en": "Clergy +4, Gold -20, pop -1%.",
+     "tr": "Ruhban +4, Altın -20, nüfus -%1."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     },
+     {
+      "type": "gold",
+      "value": -20
+     },
+     {
+      "type": "pop_pct",
+      "value": -1
+     }
+    ],
+    "ai_weight": 1.2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "id": "endure",
+    "name": {
+     "en": "Offer nothing",
+     "tr": "Hiçbir yardım sunma"
+    },
+    "tip": {
+     "en": "Population -3%, Peasants -5.",
+     "tr": "Nüfus -%3, Köylü -5."
+    },
+    "effects": [
+     {
+      "type": "pop_pct",
+      "value": -3
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -5
+     }
+    ],
+    "ai_weight": 0.4
+   }
+  ]
+ },
+ {
+  "id": "rnd_granary_rot",
+  "category": "food",
+  "historical": false,
+  "title": {
+   "en": "Rot in the Granaries",
+   "tr": "Ambarlarda Çürüme"
+  },
+  "text": {
+   "en": "Damp has got into the state granaries of {country}. Inspectors find mould in nearly a third of the stored grain.",
+   "tr": "{country}'nin devlet ambarlarına nem girdi. Müfettişler depolanan tahılın neredeyse üçte birinde küf buluyor."
+  },
+  "image": "famine",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 20
+    }
+   ]
+  },
+  "mtth": 80,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "sift",
+    "name": {
+     "en": "Sift and salvage the grain",
+     "tr": "Tahılı ayıkla ve kurtar"
+    },
+    "tip": {
+     "en": "Gold -30, food stock -10.",
+     "tr": "Altın -30, gıda stoku -10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -10
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "build",
+    "name": {
+     "en": "Build new dry storehouses",
+     "tr": "Yeni kuru depolar inşa et"
+    },
+    "tip": {
+     "en": "Gold -80, +15 food stock over time.",
+     "tr": "Altın -80, zamanla +15 gıda stoku."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": 15
+     },
+     {
+      "type": "admin",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1.2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "blame",
+    "name": {
+     "en": "Punish the granary keepers",
+     "tr": "Ambar görevlilerini cezalandır"
+    },
+    "tip": {
+     "en": "Stability +1, food stock -25, Legitimacy -2.",
+     "tr": "İstikrar +1, gıda stoku -25, Meşruiyet -2."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -25
+     },
+     {
+      "type": "legitimacy",
+      "value": -2
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ },
+ {
+  "id": "rnd_new_crops",
+  "category": "food",
+  "historical": false,
+  "title": {
+   "en": "Farmers Try a New Crop",
+   "tr": "Çiftçiler Yeni Bir Ürün Deniyor"
+  },
+  "text": {
+   "en": "Travellers have brought seeds of an unfamiliar crop to {country}. A few landowners are eager to try it, though villagers distrust anything new.",
+   "tr": "Yolcular {country}'ye alışılmadık bir ürünün tohumlarını getirdi. Birkaç toprak sahibi denemeye hevesli, köylüler ise yeniye güvenmiyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 35
+    },
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 85,
+  "once": true,
+  "cooldown": 60,
+  "options": [
+   {
+    "id": "promote",
+    "name": {
+     "en": "Promote it with royal seed grants",
+     "tr": "Kraliyet tohum yardımıyla yaygınlaştır"
+    },
+    "tip": {
+     "en": "Gold -50, +10% food for 24 turns.",
+     "tr": "Altın -50, 24 tur boyunca %10 gıda."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "food": 0.1
+      },
+      "turns": 24
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "estates",
+    "name": {
+     "en": "Leave it to the great estates",
+     "tr": "Büyük çiftliklere bırak"
+    },
+    "tip": {
+     "en": "+6% food for 12 turns, Nobility +3.",
+     "tr": "12 tur boyunca %6 gıda, Soylular +3."
+    },
+    "effects": [
+     {
+      "type": "temp_mod",
+      "mods": {
+       "food": 0.06
+      },
+      "turns": 12
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "forbid",
+    "name": {
+     "en": "Forbid it as unwholesome",
+     "tr": "Zararlı diyerek yasakla"
+    },
+    "tip": {
+     "en": "Clergy +4, no benefit.",
+     "tr": "Ruhban +4, kazanç yok."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     },
+     {
+      "type": "prestige",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.3
+   }
+  ]
+ }
+]

@@ -208,8 +208,9 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 			for pid in groups[key]:
 				owner_of[pid] = nid
 	# rebel pseudo-country
-	s["countries"]["REB"] = {"id": "REB", "alive": true, "rebel": true, "name": {"en": "Rebels", "tr": "İsyancılar"}, "color": "#444444",
-		"gov": "military_government", "gold": 0.0, "stats": {}, "flag": {}, "is_player": false}
+	var reb := _make_country(s, "REB", {"name": {"en": "Rebels", "tr": "İsyancılar"}, "color": "#444444", "gov": "military_government", "playable": false})
+	reb["rebel"] = true
+	s["countries"]["REB"] = reb
 	# 3. provinces ------------------------------------------------------------------------------
 	var rel_over: Dictionary = def.get("religion_overrides", {})
 	var cul_over: Dictionary = def.get("culture_overrides", {})
@@ -227,7 +228,7 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 			elif float(pd["lat"]) < 50.0 and float(pd["lon"]) < 16.0:
 				dens *= 1.15
 		var fert := float(pd["fert"])
-		var pop := float(pd["area_km2"]) * dens * TERRAIN_POP.get(pd["terrain"], 0.7) * (0.55 + 0.9 * fert) / 1000.0
+		var pop: float = float(pd["area_km2"]) * dens * TERRAIN_POP.get(pd["terrain"], 0.7) * (0.55 + 0.9 * fert) / 1000.0
 		pop = maxf(pop, 6.0)
 		var civ: String = str(cstate.get("civ", "average"))
 		var dev := clampf(log(maxf(pop, 20.0) / 25.0) / log(2.1), 0.0, 9.0)
@@ -312,18 +313,18 @@ static func _default_classes(pd: Dictionary, dev: float) -> Dictionary:
 static func _make_country(s: Dictionary, cid: String, cd: Dictionary) -> Dictionary:
 	var gov: String = str(cd.get("gov", "feudal_kingdom"))
 	var c := {
-		"id": cid, "alive": true, "name": cd.get("name", {"en": cid, "tr": cid}), "short": cd.get("short", cd.get("name", {"en": cid, "tr": cid})),
-		"color": str(cd.get("color", "#888888")), "flag": cd.get("flag", {}), "culture": str(cd.get("culture", "")),
+		"id": cid, "alive": true, "name": (cd.get("name", {"en": cid, "tr": cid}) as Dictionary).duplicate(true), "short": (cd.get("short", cd.get("name", {"en": cid, "tr": cid})) as Dictionary).duplicate(true),
+		"color": str(cd.get("color", "#888888")), "flag": (cd.get("flag", {}) as Dictionary).duplicate(true), "culture": str(cd.get("culture", "")),
 		"religion": str(cd.get("religion", "")), "gov": gov, "civ": str(cd.get("civ", "average")),
 		"capital": str(cd.get("capital", "")), "is_player": false, "native": bool(cd.get("native", false)),
 		"playable": bool(cd.get("playable", true)) and not bool(cd.get("native", false)),
-		"ruler": _make_ruler(cd.get("ruler", {}), gov), "heir": cd.get("heir", null), "dynasty": str(cd.get("ruler", {}).get("dynasty", "")),
+		"ruler": _make_ruler(cd.get("ruler", {}), gov), "heir": (cd["heir"] as Dictionary).duplicate(true) if cd.get("heir") is Dictionary else null, "dynasty": str(cd.get("ruler", {}).get("dynasty", "")),
 		"gold": float(cd.get("treasury", 0.0)), "debt": 0.0, "inflation": 0.0, "stock": {"food": 30.0, "iron": 10.0, "wood": 20.0, "stone": 10.0, "coal": 0.0, "lux": 0.0},
 		"manpower": 0.0, "manpower_max": 0.0, "stability": float(cd.get("stability", 55.0)), "legitimacy": 60.0, "prestige": float(cd.get("prestige", 0.0)),
 		"admin": 50.0, "tax_rate": 0.25, "army_funding": 1.0, "import_food": true,
 		"researched": {}, "tech_level": {}, "research": {"current": {}, "progress": {}, "alloc": {"military": 1.0, "economic": 1.0, "administration": 1.0, "society": 1.0}, "bank": 0.0, "last_points": 0.0},
-		"reforms": [], "classes": {}, "mods": cd.get("mods", {}), "temp_mods": [], "special_units": cd.get("special_units", []),
-		"traditions": cd.get("traditions", []), "overlord": "", "stats": {}, "flags": {}, "recruit_queue": [], "budget": {}, "history_income": [],
+		"reforms": [], "classes": {}, "mods": (cd.get("mods", {}) as Dictionary).duplicate(true), "temp_mods": [], "special_units": (cd.get("special_units", []) as Array).duplicate(true),
+		"traditions": (cd.get("traditions", []) as Array).duplicate(true), "overlord": "", "stats": {}, "flags": {}, "recruit_queue": [], "budget": {}, "history_income": [],
 		"unrest_streak": 0, "election_turn": 0, "bankrupt_turns": 0, "war_exhaustion": 0.0, "regency": 0,
 	}
 	c["tag_alias"] = str(cd.get("alias", cid))
@@ -448,14 +449,14 @@ static func _make_armies(s: Dictionary, cid: String, cd: Dictionary) -> void:
 			MilitarySystem.create_army(s, cid, loc, units, ad.get("general", null))
 		return
 	var level: String = str(cd.get("military", "medium"))
-	var factor := {"low": 0.6, "medium": 1.0, "high": 1.6}.get(level, 1.0)
+	var factor: float = {"low": 0.6, "medium": 1.0, "high": 1.6}.get(level, 1.0)
 	if bool(cd.get("native", false)):
 		factor = 0.7
 	var total_pop := 0.0
 	for pid in GS.owned(s, cid):
 		total_pop += float(s["provinces"][pid]["pop"])
 	var mods := Mods.country(s, cid)
-	var n := total_pop * 0.0016 * factor * (1.0 + float(mods.get("manpower", 0.0)))
+	var n: float = total_pop * 0.0021 * factor * (1.0 + float(mods.get("manpower", 0.0)))
 	n = clampf(n, 2.0, 60.0)
 	if n < 2.0:
 		return

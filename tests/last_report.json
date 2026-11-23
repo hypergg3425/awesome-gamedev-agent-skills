@@ -1,0 +1,14 @@
+{
+  "checks": 54,
+  "failures": 0,
+  "godot": "4.7.2-stable (official)",
+  "suites": [
+    {
+      "checks": 54,
+      "failures": [],
+      "ms": 33133,
+      "status": "PASS",
+      "suite": "save"
+    }
+  ]
+}
