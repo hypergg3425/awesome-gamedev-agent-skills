@@ -1,14 +1,21 @@
 {
-  "checks": 37,
+  "checks": 25,
   "failures": 0,
   "godot": "4.7.2-stable (official)",
   "suites": [
     {
-      "checks": 37,
+      "checks": 7,
       "failures": [],
-      "ms": 624,
+      "ms": 2641,
       "status": "PASS",
-      "suite": "tutorial"
+      "suite": "smoke"
+    },
+    {
+      "checks": 18,
+      "failures": [],
+      "ms": 832,
+      "status": "PASS",
+      "suite": "tech"
     }
   ]
 }

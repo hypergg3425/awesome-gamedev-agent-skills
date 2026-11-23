@@ -46,6 +46,16 @@ func apply_volumes() -> void:
 static func _db(v: float) -> float:
 	return -80.0 if v <= 0.001 else linear_to_db(v)
 
+## Release every stream reference at shutdown so the engine exits without leaked playbacks / resources.
+func _exit_tree() -> void:
+	if _tween != null and _tween.is_valid():
+		_tween.kill()
+	for p in [_music_a, _music_b] + _voices:
+		if p != null and is_instance_valid(p):
+			p.stop()
+			p.stream = null
+	_cache.clear()
+
 func _stream(name: String, loop: bool) -> AudioStream:
 	var key := "%s|%s" % [name, loop]
 	if _cache.has(key):
