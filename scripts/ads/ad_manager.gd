@@ -155,10 +155,13 @@ func reserved_height() -> float:
 	var win := DisplayServer.window_get_size()
 	var vs := get_viewport().get_visible_rect().size
 	var ratio := vs.y / maxf(float(win.y), 1.0)
+	var h: float
 	if _banner_px > 0:
-		return float(_banner_px) * ratio
-	# not measured yet: reserve the typical adaptive banner height (dp -> px via screen scale)
-	return FALLBACK_DP * DisplayServer.screen_get_scale() * ratio
+		h = float(_banner_px) * ratio
+	else:
+		# not measured yet: reserve the typical adaptive banner height (dp -> px via screen scale)
+		h = FALLBACK_DP * DisplayServer.screen_get_scale() * ratio
+	return clampf(h, 0.0, vs.y * 0.2)
 
 ## UMP privacy options form (required to be reachable from settings when privacy_options_required).
 func show_privacy_options() -> void:

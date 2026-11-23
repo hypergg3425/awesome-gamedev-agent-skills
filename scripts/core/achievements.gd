@@ -9,7 +9,7 @@ const DEFS: Array = [
 	{"id": "great_diplomat", "icon": "diplomacy"},
 	{"id": "economic_powerhouse", "icon": "gold"},
 	{"id": "military_supremacy", "icon": "military"},
-	{"id": "world_conqueror", "icon": "crown"},
+	{"id": "world_conqueror", "icon": "prestige"},
 	{"id": "peaceful_expansion", "icon": "peace"},
 	{"id": "technological_pioneer", "icon": "technology"},
 	{"id": "survived_against_all_odds", "icon": "fort"},

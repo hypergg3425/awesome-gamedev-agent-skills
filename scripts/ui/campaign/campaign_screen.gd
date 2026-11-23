@@ -32,6 +32,8 @@ func _ready() -> void:
 	_build()
 	Game.state_changed.connect(_queue_refresh)
 	Game.command_failed.connect(_on_command_failed)
+	Game.achievement_unlocked.connect(func(aid: String) -> void:
+		toast("%s: %s" % [Loc.t("MENU_ACHIEVEMENTS"), Loc.t("ACH_" + aid.to_upper())], "prestige", 4.5))
 	Loc.language_changed.connect(func(_l: String) -> void: _rebuild_static())
 	Settings.changed.connect(func(k: String) -> void:
 		if k in ["map_labels", "army_markers", "colorblind"]:
@@ -571,6 +573,18 @@ func _show_pending_events() -> void:
 
 func _show_end_screen() -> void:
 	EndScreen.show_end(self)
+
+## Android back button: dismiss panels first, otherwise open the pause menu (never quits mid-campaign).
+func on_back_requested() -> void:
+	if overlay_layer.get_child_count() > 0:
+		return   # a modal dialog is up; it must be answered explicitly
+	if open_sheet_name != "":
+		close_sheets()
+	elif province_panel != null and province_panel.visible:
+		province_panel.visible = false
+		cmap.select("")
+	else:
+		_open_menu()
 
 func _open_menu() -> void:
 	PauseMenu.show_menu(overlay_layer, self)

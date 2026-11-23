@@ -18,6 +18,21 @@ var selected_province := ""
 var selected_army := ""
 var in_campaign := false
 
+## Android back button / gesture. Screens may define on_back_requested(); otherwise sub-screens return
+## to the main menu and the main menu quits.
+func _notification(what: int) -> void:
+	if what != NOTIFICATION_WM_GO_BACK_REQUEST:
+		return
+	var scene := get_tree().current_scene
+	if scene == null:
+		return
+	if scene.has_method("on_back_requested"):
+		scene.call("on_back_requested")
+	elif scene.scene_file_path.ends_with("main_menu.tscn") or scene.scene_file_path.ends_with("boot.tscn"):
+		get_tree().quit()
+	else:
+		Nav.go(get_tree(), "menu")
+
 func has_state() -> bool:
 	return not state.is_empty()
 

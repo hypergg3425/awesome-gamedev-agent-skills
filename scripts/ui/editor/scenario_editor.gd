@@ -98,7 +98,7 @@ func _build_ui() -> void:
 	bar.theme_type_variation = "Hud"
 	var bh := HBoxContainer.new()
 	bar.add_child(bh)
-	bh.add_child(UI.icon_button("back", func() -> void: Dialogs.confirm(self, Loc.t("ED_LEAVE"), Loc.t("ED_LEAVE_Q"), func() -> void: Nav.go(get_tree(), "menu"), "", true), Loc.t("UI_BACK"), 52.0))
+	bh.add_child(UI.icon_button("back", func() -> void: on_back_requested(), Loc.t("UI_BACK"), 52.0))
 	bh.add_child(UI.label(Loc.t("MENU_EDITOR"), "Heading"))
 	status = UI.label("", "Small")
 	status.size_flags_horizontal = Control.SIZE_EXPAND_FILL
@@ -498,3 +498,6 @@ func _test_play() -> void:
 		Nav.go(get_tree(), "campaign")
 	else:
 		Dialogs.info(self, Loc.t("ERR_GENERIC"), NoteFmt.error_text(str(r.get("reason", ""))))
+
+func on_back_requested() -> void:
+	Dialogs.confirm(self, Loc.t("ED_LEAVE"), Loc.t("ED_LEAVE_Q"), func() -> void: Nav.go(get_tree(), "menu"), "", true)

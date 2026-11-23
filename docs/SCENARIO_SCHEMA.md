@@ -82,3 +82,8 @@ patterns: `plain` (1 colour), `hstripes` (2-3), `vstripes` (2-3), `cross` (field
 `saltire` (field, cross), `canton` (field, canton colour), `bend` (field, band), `chevron` (field, chevron), `quartered` (c1,c2),
 `disc` (field, disc), `border` (field, border), `pale` (3 vertical, centre wide). charges: `none`, `star`, `crescent`, `sun`,
 `fleur`, `cross`, `crown`, `tower`, `eagle`, `lion`, `dragon`, `anchor`.
+
+## MODS — modifier keys
+Modifier dictionaries (government `mods`, tech `effects`, reform advantages, building `effects`, scenario/country `mods`, event `temp_mod`) use these keys; each has a localised label `MOD_<KEY>` in `strings.json`. Values are fractions (0.10 = +10 %) except flat keys (`trade_power`, `fort_level`, `*_slots`, …) which are shown unscaled.
+
+admin_cap, army_upkeep, artisans_sat, artisan_share, art_atk, attrition, build_cost, build_speed, cav_atk, clergy_sat, clergy_share, corruption, cost_inflation, credit, diplo, disease, disease_resist, food, food_mult, fort_def, fort_level, general_skill, happiness, happiness_local, infra, inf_atk, inf_def, interest, legit, legit_conquest, literacy, manpower, manpower_mult, manpower_recovery, mercenary_cost, merchants_sat, merchant_share, mine, mine_mult, morale, move, move_bonus, naval_atk, naval_slots, naval_transport, nobility_sat, overextension, peasants_sat, pop_cap, pop_growth, prestige, prod, prod_military, prod_mult, recruit_cost, recruit_speed, reform_cost, religion_unity, research, research_pts, siege, siege_def, stability, stability_local, supply, tariff, tax, tax_mult, trade, trade_power, unrest, unrest_minority, war_exhaustion, wood_mult, xp_gain
