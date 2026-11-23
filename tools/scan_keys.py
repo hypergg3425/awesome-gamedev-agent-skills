@@ -54,7 +54,7 @@ fams['MOD_'] = sorted(m.upper() for m in mods)
 out = set(keys)
 for p, vs in fams.items():
     for v in vs: out.add(p + v)
-json.dump(sorted(out), open('/tmp/claude-0/keys.json','w'), indent=0)
+json.dump(sorted(out), open(__import__('os').environ.get('KEYS_JSON','/tmp/claude-0/keys.json'),'w'), indent=0)
 mods_l = sorted(mods)
 json.dump(mods_l, open('/tmp/claude-0/mods.json','w'))
 print(len(keys), 'literal keys;', len(out), 'total')
