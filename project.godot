@@ -1,0 +1,51 @@
+; Engine configuration file.
+config_version=5
+
+[application]
+
+config/name="Imperium: Age of Crowns"
+config/name_localized={
+"tr": "Imperium: Tacların Çağı"
+}
+config/description="Original premium turn-based grand strategy game."
+run/main_scene="res://scenes/main/boot.tscn"
+config/features=PackedStringArray("4.7", "GL Compatibility")
+run/max_fps=60
+boot_splash/bg_color=Color(0.06, 0.07, 0.13, 1)
+config/icon="res://assets/icon.svg"
+
+[autoload]
+
+Settings="*res://scripts/core/settings.gd"
+Loc="*res://scripts/localization/loc.gd"
+Defs="*res://scripts/data/defs.gd"
+Audio="*res://scripts/managers/audio_manager.gd"
+Ads="*res://scripts/ads/ad_manager.gd"
+Saves="*res://scripts/save/save_manager.gd"
+Game="*res://scripts/managers/game_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[internationalization]
+
+locale/fallback="en"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+anti_aliasing/quality/msaa_2d=0
+environment/defaults/default_clear_color=Color(0.07, 0.11, 0.2, 1)

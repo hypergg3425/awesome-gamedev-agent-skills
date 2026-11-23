@@ -1,0 +1,580 @@
+{
+ "farm": {
+  "id": "farm",
+  "category": "economic",
+  "name": {
+   "en": "Farms",
+   "tr": "Çiftlikler"
+  },
+  "cost": {
+   "gold": 30,
+   "wood": 4
+  },
+  "time": 2,
+  "upkeep": 0.2,
+  "max_level": 3,
+  "effects": {
+   "food_mult": 0.15,
+   "pop_cap": 0.05
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "market": {
+  "id": "market",
+  "category": "economic",
+  "name": {
+   "en": "Market",
+   "tr": "Pazar"
+  },
+  "cost": {
+   "gold": 45,
+   "wood": 5,
+   "stone": 3
+  },
+  "time": 3,
+  "upkeep": 0.5,
+  "max_level": 3,
+  "effects": {
+   "tax_mult": 0.1,
+   "trade_power": 1.0,
+   "merchant_share": 0.01
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "workshop": {
+  "id": "workshop",
+  "category": "economic",
+  "name": {
+   "en": "Workshop",
+   "tr": "Atölye"
+  },
+  "cost": {
+   "gold": 55,
+   "wood": 6,
+   "stone": 4
+  },
+  "time": 3,
+  "upkeep": 0.7,
+  "max_level": 3,
+  "effects": {
+   "prod_mult": 0.15,
+   "artisan_share": 0.01,
+   "tax_mult": 0.05
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "mine": {
+  "id": "mine",
+  "category": "economic",
+  "name": {
+   "en": "Mine",
+   "tr": "Maden"
+  },
+  "cost": {
+   "gold": 60,
+   "wood": 8,
+   "stone": 4
+  },
+  "time": 4,
+  "upkeep": 0.8,
+  "max_level": 3,
+  "effects": {
+   "mine_mult": 0.35
+  },
+  "requires": {
+   "terrain": [
+    "hills",
+    "mountains",
+    "plains",
+    "desert",
+    "steppe",
+    "forest"
+   ]
+  },
+  "slots": 1
+ },
+ "sawmill": {
+  "id": "sawmill",
+  "category": "economic",
+  "name": {
+   "en": "Lumber Camp",
+   "tr": "Kereste Ocağı"
+  },
+  "cost": {
+   "gold": 30,
+   "wood": 2
+  },
+  "time": 2,
+  "upkeep": 0.3,
+  "max_level": 3,
+  "effects": {
+   "wood_mult": 0.3
+  },
+  "requires": {
+   "terrain": [
+    "forest",
+    "jungle",
+    "hills",
+    "mountains",
+    "marsh"
+   ]
+  },
+  "slots": 1
+ },
+ "port": {
+  "id": "port",
+  "category": "economic",
+  "name": {
+   "en": "Port",
+   "tr": "Liman"
+  },
+  "cost": {
+   "gold": 70,
+   "wood": 10,
+   "stone": 5
+  },
+  "time": 4,
+  "upkeep": 0.8,
+  "max_level": 3,
+  "effects": {
+   "trade_power": 1.5,
+   "naval_slots": 1,
+   "tax_mult": 0.05
+  },
+  "requires": {
+   "coastal": true
+  },
+  "slots": 1
+ },
+ "trading_center": {
+  "id": "trading_center",
+  "category": "economic",
+  "name": {
+   "en": "Trading Center",
+   "tr": "Ticaret Merkezi"
+  },
+  "cost": {
+   "gold": 120,
+   "wood": 8,
+   "stone": 8
+  },
+  "time": 5,
+  "upkeep": 1.4,
+  "max_level": 2,
+  "effects": {
+   "trade_power": 3.0,
+   "merchant_share": 0.02
+  },
+  "requires": {
+   "building": [
+    "market",
+    1
+   ],
+   "min_dev": 3
+  },
+  "slots": 1
+ },
+ "barracks": {
+  "id": "barracks",
+  "category": "military",
+  "name": {
+   "en": "Barracks",
+   "tr": "Kışla"
+  },
+  "cost": {
+   "gold": 50,
+   "wood": 6,
+   "stone": 4
+  },
+  "time": 3,
+  "upkeep": 0.6,
+  "max_level": 3,
+  "effects": {
+   "manpower_mult": 0.2,
+   "recruit_speed": 0.1
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "fort": {
+  "id": "fort",
+  "category": "military",
+  "name": {
+   "en": "Fort",
+   "tr": "Kale"
+  },
+  "cost": {
+   "gold": 80,
+   "stone": 14
+  },
+  "time": 4,
+  "upkeep": 1.0,
+  "max_level": 4,
+  "effects": {
+   "fort_level": 1
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "arsenal": {
+  "id": "arsenal",
+  "category": "military",
+  "name": {
+   "en": "Arsenal",
+   "tr": "Cephanelik"
+  },
+  "cost": {
+   "gold": 90,
+   "wood": 8,
+   "iron": 6
+  },
+  "time": 4,
+  "upkeep": 1.2,
+  "max_level": 2,
+  "effects": {
+   "recruit_cost": -0.1,
+   "naval_slots": 1
+  },
+  "requires": {
+   "min_dev": 2
+  },
+  "slots": 1
+ },
+ "military_academy": {
+  "id": "military_academy",
+  "category": "military",
+  "name": {
+   "en": "Military Academy",
+   "tr": "Harp Okulu"
+  },
+  "cost": {
+   "gold": 110,
+   "stone": 8,
+   "wood": 6
+  },
+  "time": 5,
+  "upkeep": 1.5,
+  "max_level": 2,
+  "effects": {
+   "general_skill": 0.5,
+   "xp_gain": 0.15
+  },
+  "requires": {
+   "min_dev": 3
+  },
+  "slots": 1
+ },
+ "government_office": {
+  "id": "government_office",
+  "category": "administrative",
+  "name": {
+   "en": "Government Office",
+   "tr": "Hükümet Konağı"
+  },
+  "cost": {
+   "gold": 50,
+   "wood": 5,
+   "stone": 4
+  },
+  "time": 3,
+  "upkeep": 0.5,
+  "max_level": 3,
+  "effects": {
+   "admin_cap": 1.0,
+   "stability_local": 1
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "court": {
+  "id": "court",
+  "category": "administrative",
+  "name": {
+   "en": "Court",
+   "tr": "Mahkeme"
+  },
+  "cost": {
+   "gold": 55,
+   "stone": 6
+  },
+  "time": 3,
+  "upkeep": 0.5,
+  "max_level": 2,
+  "effects": {
+   "stability_local": 2,
+   "legit": 0.1
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "tax_office": {
+  "id": "tax_office",
+  "category": "administrative",
+  "name": {
+   "en": "Tax Office",
+   "tr": "Vergi Dairesi"
+  },
+  "cost": {
+   "gold": 60,
+   "wood": 4,
+   "stone": 4
+  },
+  "time": 3,
+  "upkeep": 0.6,
+  "max_level": 3,
+  "effects": {
+   "tax_mult": 0.15
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "admin_center": {
+  "id": "admin_center",
+  "category": "administrative",
+  "name": {
+   "en": "Administrative Center",
+   "tr": "İdari Merkez"
+  },
+  "cost": {
+   "gold": 140,
+   "wood": 8,
+   "stone": 12
+  },
+  "time": 6,
+  "upkeep": 1.5,
+  "max_level": 2,
+  "effects": {
+   "admin_cap": 3.0,
+   "overextension": -0.05
+  },
+  "requires": {
+   "min_dev": 4
+  },
+  "slots": 1
+ },
+ "road": {
+  "id": "road",
+  "category": "infrastructure",
+  "name": {
+   "en": "Roads",
+   "tr": "Yollar"
+  },
+  "cost": {
+   "gold": 25,
+   "stone": 4
+  },
+  "time": 2,
+  "upkeep": 0.2,
+  "max_level": 3,
+  "effects": {
+   "infra": 1,
+   "trade_power": 0.2
+  },
+  "requires": {},
+  "slots": 1
+ },
+ "bridge": {
+  "id": "bridge",
+  "category": "infrastructure",
+  "name": {
+   "en": "Bridges",
+   "tr": "Köprüler"
+  },
+  "cost": {
+   "gold": 45,
+   "stone": 10,
+   "wood": 4
+  },
+  "time": 3,
+  "upkeep": 0.3,
+  "max_level": 1,
+  "effects": {
+   "infra": 1,
+   "move_bonus": 0.25
+  },
+  "requires": {
+   "tech": [
+    "infrastructure",
+    2
+   ],
+   "building": [
+    "road",
+    1
+   ]
+  },
+  "slots": 1
+ },
+ "canal": {
+  "id": "canal",
+  "category": "infrastructure",
+  "name": {
+   "en": "Canals",
+   "tr": "Kanallar"
+  },
+  "cost": {
+   "gold": 90,
+   "stone": 14,
+   "wood": 6
+  },
+  "time": 5,
+  "upkeep": 0.6,
+  "max_level": 2,
+  "effects": {
+   "trade_power": 0.8,
+   "food_mult": 0.08
+  },
+  "requires": {
+   "tech": [
+    "infrastructure",
+    2
+   ],
+   "terrain": [
+    "plains",
+    "marsh",
+    "steppe"
+   ]
+  },
+  "slots": 1
+ },
+ "railway": {
+  "id": "railway",
+  "category": "infrastructure",
+  "name": {
+   "en": "Railway",
+   "tr": "Demiryolu"
+  },
+  "cost": {
+   "gold": 160,
+   "iron": 12,
+   "coal": 6,
+   "stone": 8
+  },
+  "time": 5,
+  "upkeep": 1.2,
+  "max_level": 2,
+  "effects": {
+   "infra": 2,
+   "trade_power": 1.0,
+   "move_bonus": 0.5
+  },
+  "requires": {
+   "tech": [
+    "infrastructure",
+    4
+   ],
+   "building": [
+    "road",
+    2
+   ]
+  },
+  "slots": 1
+ },
+ "university": {
+  "id": "university",
+  "category": "social",
+  "name": {
+   "en": "University",
+   "tr": "Üniversite"
+  },
+  "cost": {
+   "gold": 110,
+   "stone": 10,
+   "wood": 6
+  },
+  "time": 5,
+  "upkeep": 1.4,
+  "max_level": 3,
+  "effects": {
+   "research_pts": 1.2,
+   "literacy": 0.02
+  },
+  "requires": {
+   "tech": [
+    "education",
+    1
+   ],
+   "min_dev": 3
+  },
+  "slots": 1
+ },
+ "hospital": {
+  "id": "hospital",
+  "category": "social",
+  "name": {
+   "en": "Hospital",
+   "tr": "Hastane"
+  },
+  "cost": {
+   "gold": 65,
+   "stone": 6,
+   "wood": 4
+  },
+  "time": 3,
+  "upkeep": 0.8,
+  "max_level": 3,
+  "effects": {
+   "disease_resist": 0.12,
+   "pop_growth": 0.01
+  },
+  "requires": {
+   "tech": [
+    "medicine",
+    1
+   ]
+  },
+  "slots": 1
+ },
+ "cultural_institution": {
+  "id": "cultural_institution",
+  "category": "social",
+  "name": {
+   "en": "Cultural Institution",
+   "tr": "Kültür Kurumu"
+  },
+  "cost": {
+   "gold": 90,
+   "stone": 8,
+   "lux": 1
+  },
+  "time": 4,
+  "upkeep": 1.0,
+  "max_level": 2,
+  "effects": {
+   "prestige": 0.15,
+   "happiness_local": 3
+  },
+  "requires": {
+   "tech": [
+    "culture",
+    1
+   ],
+   "min_dev": 2
+  },
+  "slots": 1
+ },
+ "religious_building": {
+  "id": "religious_building",
+  "category": "social",
+  "name": {
+   "en": "Religious Building",
+   "tr": "Dini Yapı"
+  },
+  "cost": {
+   "gold": 45,
+   "stone": 8
+  },
+  "time": 3,
+  "upkeep": 0.4,
+  "max_level": 3,
+  "effects": {
+   "stability_local": 1,
+   "clergy_share": 0.005,
+   "religion_unity": 0.05
+  },
+  "requires": {},
+  "slots": 1
+ }
+}

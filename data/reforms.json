@@ -1,0 +1,432 @@
+{
+ "standing_army": {
+  "id": "standing_army",
+  "name": {
+   "en": "Standing Army",
+   "tr": "Daimi Ordu"
+  },
+  "cost_admin": 40,
+  "cost_gold": 120,
+  "advantages": {
+   "morale": 0.1,
+   "manpower_recovery": 0.25
+  },
+  "disadvantages": {
+   "army_upkeep": 0.15
+  },
+  "requires": {
+   "tech": [
+    "infantry_tactics",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "conscription": {
+  "id": "conscription",
+  "name": {
+   "en": "Conscription",
+   "tr": "Zorunlu Askerlik"
+  },
+  "cost_admin": 50,
+  "cost_gold": 150,
+  "advantages": {
+   "manpower": 0.3
+  },
+  "disadvantages": {
+   "unrest": 0.06,
+   "peasants_sat": -6
+  },
+  "requires": {
+   "tech": [
+    "infantry_tactics",
+    3
+   ]
+  },
+  "governments": [],
+  "excludes": [
+   "mercenary_contracts"
+  ]
+ },
+ "mercenary_contracts": {
+  "id": "mercenary_contracts",
+  "name": {
+   "en": "Mercenary Contracts",
+   "tr": "Paralı Asker Sözleşmeleri"
+  },
+  "cost_admin": 25,
+  "cost_gold": 80,
+  "advantages": {
+   "recruit_cost": -0.15,
+   "recruit_speed": 0.3
+  },
+  "disadvantages": {
+   "army_upkeep": 0.2,
+   "morale": -0.05
+  },
+  "requires": {},
+  "governments": [],
+  "excludes": [
+   "conscription"
+  ]
+ },
+ "professional_officers": {
+  "id": "professional_officers",
+  "name": {
+   "en": "Professional Officer Corps",
+   "tr": "Profesyonel Subay Kadrosu"
+  },
+  "cost_admin": 45,
+  "cost_gold": 140,
+  "advantages": {
+   "general_skill": 0.5,
+   "xp_gain": 0.2
+  },
+  "disadvantages": {
+   "nobility_sat": -5
+  },
+  "requires": {
+   "tech": [
+    "infantry_tactics",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "naval_doctrine": {
+  "id": "naval_doctrine",
+  "name": {
+   "en": "Naval Doctrine",
+   "tr": "Deniz Doktrini"
+  },
+  "cost_admin": 35,
+  "cost_gold": 100,
+  "advantages": {
+   "naval_atk": 0.15,
+   "naval_transport": 0.15
+  },
+  "disadvantages": {
+   "tax": -0.03
+  },
+  "requires": {
+   "tech": [
+    "naval_warfare",
+    1
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "centralization_edict": {
+  "id": "centralization_edict",
+  "name": {
+   "en": "Centralization Edict",
+   "tr": "Merkezileşme Fermanı"
+  },
+  "cost_admin": 40,
+  "cost_gold": 100,
+  "advantages": {
+   "tax": 0.1,
+   "admin_cap": 0.15,
+   "legit": 0.3
+  },
+  "disadvantages": {
+   "nobility_sat": -8,
+   "unrest": 0.03
+  },
+  "requires": {
+   "tech": [
+    "centralization",
+    1
+   ]
+  },
+  "governments": [
+   "absolute_monarchy",
+   "empire",
+   "feudal_kingdom",
+   "military_government",
+   "constitutional_monarchy"
+  ],
+  "excludes": []
+ },
+ "parliament_charter": {
+  "id": "parliament_charter",
+  "name": {
+   "en": "Parliament Charter",
+   "tr": "Meclis Beyannamesi"
+  },
+  "cost_admin": 35,
+  "cost_gold": 80,
+  "advantages": {
+   "stability": 1,
+   "legit": 0.4,
+   "research": 0.05
+  },
+  "disadvantages": {
+   "tax": -0.05,
+   "army_upkeep": 0.05
+  },
+  "requires": {
+   "tech": [
+    "legal_reform",
+    1
+   ]
+  },
+  "governments": [
+   "constitutional_monarchy",
+   "feudal_kingdom",
+   "absolute_monarchy"
+  ],
+  "excludes": []
+ },
+ "guild_charters": {
+  "id": "guild_charters",
+  "name": {
+   "en": "Guild Charters",
+   "tr": "Lonca Fermanları"
+  },
+  "cost_admin": 30,
+  "cost_gold": 80,
+  "advantages": {
+   "prod": 0.1,
+   "artisans_sat": 6
+  },
+  "disadvantages": {
+   "trade": -0.05,
+   "peasants_sat": -2
+  },
+  "requires": {
+   "tech": [
+    "industry",
+    1
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "free_trade_act": {
+  "id": "free_trade_act",
+  "name": {
+   "en": "Free Trade Act",
+   "tr": "Serbest Ticaret Yasası"
+  },
+  "cost_admin": 35,
+  "cost_gold": 90,
+  "advantages": {
+   "trade": 0.2,
+   "merchants_sat": 8
+  },
+  "disadvantages": {
+   "tax": -0.05,
+   "artisans_sat": -4
+  },
+  "requires": {
+   "tech": [
+    "trade",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": [
+   "mercantilism"
+  ]
+ },
+ "mercantilism": {
+  "id": "mercantilism",
+  "name": {
+   "en": "Mercantilism",
+   "tr": "Merkantilizm"
+  },
+  "cost_admin": 35,
+  "cost_gold": 90,
+  "advantages": {
+   "tariff": 0.05,
+   "prod": 0.08,
+   "merchants_sat": 3
+  },
+  "disadvantages": {
+   "trade": -0.05
+  },
+  "requires": {
+   "tech": [
+    "trade",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": [
+   "free_trade_act"
+  ]
+ },
+ "abolish_serfdom": {
+  "id": "abolish_serfdom",
+  "name": {
+   "en": "Abolish Serfdom",
+   "tr": "Serfliğin Kaldırılması"
+  },
+  "cost_admin": 45,
+  "cost_gold": 120,
+  "advantages": {
+   "pop_growth": 0.05,
+   "tax": 0.05,
+   "peasants_sat": 10
+  },
+  "disadvantages": {
+   "nobility_sat": -12,
+   "manpower": -0.05
+  },
+  "requires": {
+   "tech": [
+    "legal_reform",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "religious_tolerance": {
+  "id": "religious_tolerance",
+  "name": {
+   "en": "Religious Tolerance",
+   "tr": "Dini Hoşgörü"
+  },
+  "cost_admin": 30,
+  "cost_gold": 60,
+  "advantages": {
+   "unrest": -0.1,
+   "trade": 0.03
+  },
+  "disadvantages": {
+   "clergy_sat": -8
+  },
+  "requires": {
+   "tech": [
+    "legal_reform",
+    1
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "state_church": {
+  "id": "state_church",
+  "name": {
+   "en": "State Church",
+   "tr": "Devlet Kilisesi"
+  },
+  "cost_admin": 30,
+  "cost_gold": 70,
+  "advantages": {
+   "stability": 1,
+   "religion_unity": 0.15,
+   "clergy_sat": 8
+  },
+  "disadvantages": {
+   "research": -0.05,
+   "unrest_minority": 0.1
+  },
+  "requires": {},
+  "governments": [],
+  "excludes": []
+ },
+ "public_education": {
+  "id": "public_education",
+  "name": {
+   "en": "Public Education Act",
+   "tr": "Halk Eğitimi Yasası"
+  },
+  "cost_admin": 45,
+  "cost_gold": 130,
+  "advantages": {
+   "research": 0.15,
+   "literacy": 0.04
+  },
+  "disadvantages": {
+   "tax": -0.03
+  },
+  "requires": {
+   "tech": [
+    "education",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "bureaucratic_reform": {
+  "id": "bureaucratic_reform",
+  "name": {
+   "en": "Bureaucratic Reform",
+   "tr": "Bürokratik Reform"
+  },
+  "cost_admin": 40,
+  "cost_gold": 100,
+  "advantages": {
+   "admin_cap": 0.2,
+   "corruption": -0.1
+  },
+  "disadvantages": {
+   "army_upkeep": 0.05
+  },
+  "requires": {
+   "tech": [
+    "bureaucracy",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "land_reform": {
+  "id": "land_reform",
+  "name": {
+   "en": "Land Reform",
+   "tr": "Toprak Reformu"
+  },
+  "cost_admin": 45,
+  "cost_gold": 110,
+  "advantages": {
+   "food": 0.1,
+   "peasants_sat": 8
+  },
+  "disadvantages": {
+   "nobility_sat": -10,
+   "tax": -0.03
+  },
+  "requires": {
+   "tech": [
+    "agriculture",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ },
+ "war_economy": {
+  "id": "war_economy",
+  "name": {
+   "en": "War Economy Act",
+   "tr": "Savaş Ekonomisi Yasası"
+  },
+  "cost_admin": 30,
+  "cost_gold": 60,
+  "advantages": {
+   "recruit_cost": -0.2,
+   "prod_military": 0.15
+  },
+  "disadvantages": {
+   "trade": -0.1,
+   "merchants_sat": -6
+  },
+  "requires": {
+   "tech": [
+    "industry",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": []
+ }
+}
