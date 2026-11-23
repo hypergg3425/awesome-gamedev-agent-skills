@@ -1,0 +1,1246 @@
+{
+ "spearmen": {
+  "id": "spearmen",
+  "cls": "infantry",
+  "name": {
+   "en": "Spearmen",
+   "tr": "Mızraklılar"
+  },
+  "fire": 0,
+  "shock": 4,
+  "defense": 5,
+  "morale": 4,
+  "move": 2,
+  "cost": {
+   "gold": 6,
+   "manpower": 1.0
+  },
+  "upkeep": 1.0,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "pikemen": {
+  "id": "pikemen",
+  "cls": "infantry",
+  "name": {
+   "en": "Pikemen",
+   "tr": "Pikeciler"
+  },
+  "fire": 0,
+  "shock": 5,
+  "defense": 8,
+  "morale": 5,
+  "move": 2,
+  "cost": {
+   "gold": 8,
+   "manpower": 1.0
+  },
+  "upkeep": 1.25,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "musketeers": {
+  "id": "musketeers",
+  "cls": "infantry",
+  "name": {
+   "en": "Musketeers",
+   "tr": "Tüfekçiler"
+  },
+  "fire": 6,
+  "shock": 5,
+  "defense": 6,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 11,
+   "manpower": 1.0,
+   "iron": 0.3
+  },
+  "upkeep": 1.75,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "line_infantry": {
+  "id": "line_infantry",
+  "cls": "infantry",
+  "name": {
+   "en": "Line Infantry",
+   "tr": "Hat Piyadesi"
+  },
+  "fire": 9,
+  "shock": 5,
+  "defense": 7,
+  "morale": 7,
+  "move": 2,
+  "cost": {
+   "gold": 13,
+   "manpower": 1.0,
+   "iron": 0.4
+  },
+  "upkeep": 2.0,
+  "supply": 1.0,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "riflemen": {
+  "id": "riflemen",
+  "cls": "infantry",
+  "name": {
+   "en": "Riflemen",
+   "tr": "Tüfekli Piyade"
+  },
+  "fire": 14,
+  "shock": 5,
+  "defense": 8,
+  "morale": 8,
+  "move": 2,
+  "cost": {
+   "gold": 16,
+   "manpower": 1.0,
+   "iron": 0.5
+  },
+  "upkeep": 2.5,
+  "supply": 1.0,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "men_at_arms": {
+  "id": "men_at_arms",
+  "cls": "heavy_infantry",
+  "name": {
+   "en": "Men-at-Arms",
+   "tr": "Zırhlı Piyade"
+  },
+  "fire": 0,
+  "shock": 7,
+  "defense": 8,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 12,
+   "manpower": 1.0,
+   "iron": 0.3
+  },
+  "upkeep": 2.0,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "halberdiers": {
+  "id": "halberdiers",
+  "cls": "heavy_infantry",
+  "name": {
+   "en": "Halberdiers",
+   "tr": "Teber Piyadesi"
+  },
+  "fire": 0,
+  "shock": 9,
+  "defense": 9,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 13,
+   "manpower": 1.0,
+   "iron": 0.3
+  },
+  "upkeep": 2.0,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "grenadiers": {
+  "id": "grenadiers",
+  "cls": "heavy_infantry",
+  "name": {
+   "en": "Grenadiers",
+   "tr": "Humbaracılar"
+  },
+  "fire": 7,
+  "shock": 9,
+  "defense": 9,
+  "morale": 8,
+  "move": 2,
+  "cost": {
+   "gold": 17,
+   "manpower": 1.0,
+   "iron": 0.5
+  },
+  "upkeep": 2.75,
+  "supply": 1.0,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "guard_infantry": {
+  "id": "guard_infantry",
+  "cls": "heavy_infantry",
+  "name": {
+   "en": "Guard Infantry",
+   "tr": "Muhafız Piyadesi"
+  },
+  "fire": 12,
+  "shock": 11,
+  "defense": 11,
+  "morale": 10,
+  "move": 2,
+  "cost": {
+   "gold": 22,
+   "manpower": 1.0,
+   "iron": 0.6
+  },
+  "upkeep": 3.5,
+  "supply": 1.0,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "archers": {
+  "id": "archers",
+  "cls": "archers",
+  "name": {
+   "en": "Archers",
+   "tr": "Okçular"
+  },
+  "fire": 5,
+  "shock": 2,
+  "defense": 3,
+  "morale": 4,
+  "move": 2,
+  "cost": {
+   "gold": 7,
+   "manpower": 1.0,
+   "wood": 0.2
+  },
+  "upkeep": 1.0,
+  "supply": 0.7,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "crossbowmen": {
+  "id": "crossbowmen",
+  "cls": "archers",
+  "name": {
+   "en": "Crossbowmen",
+   "tr": "Tatar Yayı Okçuları"
+  },
+  "fire": 7,
+  "shock": 2,
+  "defense": 3,
+  "morale": 5,
+  "move": 2,
+  "cost": {
+   "gold": 9,
+   "manpower": 1.0,
+   "wood": 0.2,
+   "iron": 0.1
+  },
+  "upkeep": 1.25,
+  "supply": 0.7,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "skirmishers": {
+  "id": "skirmishers",
+  "cls": "archers",
+  "name": {
+   "en": "Skirmishers",
+   "tr": "Avcı Tüfekçileri"
+  },
+  "fire": 9,
+  "shock": 3,
+  "defense": 3,
+  "morale": 6,
+  "move": 3,
+  "cost": {
+   "gold": 11,
+   "manpower": 1.0,
+   "iron": 0.2
+  },
+  "upkeep": 1.5,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "sharpshooters": {
+  "id": "sharpshooters",
+  "cls": "archers",
+  "name": {
+   "en": "Sharpshooters",
+   "tr": "Keskin Nişancılar"
+  },
+  "fire": 15,
+  "shock": 3,
+  "defense": 4,
+  "morale": 8,
+  "move": 3,
+  "cost": {
+   "gold": 15,
+   "manpower": 1.0,
+   "iron": 0.4
+  },
+  "upkeep": 2.25,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "light_cavalry": {
+  "id": "light_cavalry",
+  "cls": "cavalry",
+  "name": {
+   "en": "Light Cavalry",
+   "tr": "Hafif Süvari"
+  },
+  "fire": 0,
+  "shock": 6,
+  "defense": 3,
+  "morale": 5,
+  "move": 4,
+  "cost": {
+   "gold": 10,
+   "manpower": 1.0
+  },
+  "upkeep": 1.75,
+  "supply": 1.4,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "hussars": {
+  "id": "hussars",
+  "cls": "cavalry",
+  "name": {
+   "en": "Hussars",
+   "tr": "Hafif Atlı Birlikleri"
+  },
+  "fire": 2,
+  "shock": 8,
+  "defense": 4,
+  "morale": 7,
+  "move": 4,
+  "cost": {
+   "gold": 13,
+   "manpower": 1.0
+  },
+  "upkeep": 2.25,
+  "supply": 1.4,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "lancers": {
+  "id": "lancers",
+  "cls": "cavalry",
+  "name": {
+   "en": "Lancers",
+   "tr": "Mızraklı Süvari"
+  },
+  "fire": 3,
+  "shock": 10,
+  "defense": 5,
+  "morale": 8,
+  "move": 4,
+  "cost": {
+   "gold": 16,
+   "manpower": 1.0
+  },
+  "upkeep": 2.5,
+  "supply": 1.4,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "mounted_rifles": {
+  "id": "mounted_rifles",
+  "cls": "cavalry",
+  "name": {
+   "en": "Mounted Rifles",
+   "tr": "Atlı Tüfekçiler"
+  },
+  "fire": 8,
+  "shock": 9,
+  "defense": 6,
+  "morale": 9,
+  "move": 4,
+  "cost": {
+   "gold": 19,
+   "manpower": 1.0,
+   "iron": 0.3
+  },
+  "upkeep": 3.0,
+  "supply": 1.4,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "knights": {
+  "id": "knights",
+  "cls": "heavy_cavalry",
+  "name": {
+   "en": "Knights",
+   "tr": "Şövalyeler"
+  },
+  "fire": 0,
+  "shock": 11,
+  "defense": 7,
+  "morale": 7,
+  "move": 3,
+  "cost": {
+   "gold": 18,
+   "manpower": 1.0,
+   "iron": 0.4
+  },
+  "upkeep": 3.0,
+  "supply": 1.5,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "gendarmes": {
+  "id": "gendarmes",
+  "cls": "heavy_cavalry",
+  "name": {
+   "en": "Gendarmes",
+   "tr": "Jandarmalar"
+  },
+  "fire": 1,
+  "shock": 13,
+  "defense": 9,
+  "morale": 8,
+  "move": 3,
+  "cost": {
+   "gold": 20,
+   "manpower": 1.0,
+   "iron": 0.5
+  },
+  "upkeep": 3.25,
+  "supply": 1.5,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   1
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "cuirassiers": {
+  "id": "cuirassiers",
+  "cls": "heavy_cavalry",
+  "name": {
+   "en": "Cuirassiers",
+   "tr": "Zırhlı Süvari"
+  },
+  "fire": 5,
+  "shock": 14,
+  "defense": 10,
+  "morale": 9,
+  "move": 3,
+  "cost": {
+   "gold": 23,
+   "manpower": 1.0,
+   "iron": 0.6
+  },
+  "upkeep": 3.75,
+  "supply": 1.5,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "bombards": {
+  "id": "bombards",
+  "cls": "artillery",
+  "name": {
+   "en": "Bombards",
+   "tr": "Balyemez Topları"
+  },
+  "fire": 8,
+  "shock": 1,
+  "defense": 2,
+  "morale": 4,
+  "move": 1,
+  "cost": {
+   "gold": 22,
+   "manpower": 1.0,
+   "iron": 1.0
+  },
+  "upkeep": 3.5,
+  "supply": 1.0,
+  "siege": 3,
+  "tech": [
+   "artillery",
+   1
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "cannons": {
+  "id": "cannons",
+  "cls": "artillery",
+  "name": {
+   "en": "Cannons",
+   "tr": "Toplar"
+  },
+  "fire": 12,
+  "shock": 1,
+  "defense": 3,
+  "morale": 5,
+  "move": 1,
+  "cost": {
+   "gold": 26,
+   "manpower": 1.0,
+   "iron": 1.2
+  },
+  "upkeep": 4.0,
+  "supply": 1.0,
+  "siege": 5,
+  "tech": [
+   "artillery",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "field_guns": {
+  "id": "field_guns",
+  "cls": "artillery",
+  "name": {
+   "en": "Field Guns",
+   "tr": "Sahra Topları"
+  },
+  "fire": 17,
+  "shock": 1,
+  "defense": 3,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 30,
+   "manpower": 1.0,
+   "iron": 1.4
+  },
+  "upkeep": 4.5,
+  "supply": 1.0,
+  "siege": 6,
+  "tech": [
+   "artillery",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "rifled_artillery": {
+  "id": "rifled_artillery",
+  "cls": "artillery",
+  "name": {
+   "en": "Rifled Artillery",
+   "tr": "Yivli Toplar"
+  },
+  "fire": 24,
+  "shock": 1,
+  "defense": 4,
+  "morale": 7,
+  "move": 2,
+  "cost": {
+   "gold": 36,
+   "manpower": 1.0,
+   "iron": 1.8,
+   "coal": 0.3
+  },
+  "upkeep": 5.25,
+  "supply": 1.0,
+  "siege": 9,
+  "tech": [
+   "artillery",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "sappers": {
+  "id": "sappers",
+  "cls": "engineer",
+  "name": {
+   "en": "Sappers",
+   "tr": "Lağımcılar"
+  },
+  "fire": 0,
+  "shock": 2,
+  "defense": 4,
+  "morale": 5,
+  "move": 2,
+  "cost": {
+   "gold": 14,
+   "manpower": 1.0,
+   "wood": 0.3
+  },
+  "upkeep": 2.0,
+  "supply": 0.8,
+  "siege": 4,
+  "tech": [
+   "fortification",
+   1
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "field_engineers": {
+  "id": "field_engineers",
+  "cls": "engineer",
+  "name": {
+   "en": "Field Engineers",
+   "tr": "Istihkam Birlikleri"
+  },
+  "fire": 2,
+  "shock": 2,
+  "defense": 5,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 18,
+   "manpower": 1.0,
+   "wood": 0.3,
+   "iron": 0.2
+  },
+  "upkeep": 2.5,
+  "supply": 0.8,
+  "siege": 8,
+  "tech": [
+   "fortification",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "cog": {
+  "id": "cog",
+  "cls": "naval",
+  "name": {
+   "en": "Cogs",
+   "tr": "Kogalar"
+  },
+  "fire": 1,
+  "shock": 2,
+  "defense": 3,
+  "morale": 4,
+  "move": 3,
+  "cost": {
+   "gold": 14,
+   "manpower": 0,
+   "wood": 1.0
+  },
+  "upkeep": 2.0,
+  "supply": 0.5,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 3
+ },
+ "galley": {
+  "id": "galley",
+  "cls": "naval",
+  "name": {
+   "en": "Galleys",
+   "tr": "Kadırgalar"
+  },
+  "fire": 3,
+  "shock": 5,
+  "defense": 3,
+  "morale": 5,
+  "move": 3,
+  "cost": {
+   "gold": 16,
+   "manpower": 0,
+   "wood": 1.0
+  },
+  "upkeep": 2.25,
+  "supply": 0.5,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 1
+ },
+ "carrack": {
+  "id": "carrack",
+  "cls": "naval",
+  "name": {
+   "en": "Carracks",
+   "tr": "Karaka Gemileri"
+  },
+  "fire": 6,
+  "shock": 5,
+  "defense": 5,
+  "morale": 6,
+  "move": 3,
+  "cost": {
+   "gold": 22,
+   "manpower": 0,
+   "wood": 1.4
+  },
+  "upkeep": 2.75,
+  "supply": 0.6,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   1
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 4
+ },
+ "galleon": {
+  "id": "galleon",
+  "cls": "naval",
+  "name": {
+   "en": "Galleons",
+   "tr": "Kalyonlar"
+  },
+  "fire": 10,
+  "shock": 6,
+  "defense": 6,
+  "morale": 7,
+  "move": 3,
+  "cost": {
+   "gold": 28,
+   "manpower": 0,
+   "wood": 1.6,
+   "iron": 0.3
+  },
+  "upkeep": 3.5,
+  "supply": 0.6,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 4
+ },
+ "ship_of_the_line": {
+  "id": "ship_of_the_line",
+  "cls": "naval",
+  "name": {
+   "en": "Ships of the Line",
+   "tr": "Hat Gemileri"
+  },
+  "fire": 16,
+  "shock": 7,
+  "defense": 8,
+  "morale": 8,
+  "move": 3,
+  "cost": {
+   "gold": 38,
+   "manpower": 0,
+   "wood": 2.0,
+   "iron": 0.6
+  },
+  "upkeep": 4.75,
+  "supply": 0.7,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 3
+ },
+ "ironclad": {
+  "id": "ironclad",
+  "cls": "naval",
+  "name": {
+   "en": "Ironclads",
+   "tr": "Zırhlılar"
+  },
+  "fire": 24,
+  "shock": 8,
+  "defense": 12,
+  "morale": 9,
+  "move": 4,
+  "cost": {
+   "gold": 52,
+   "manpower": 0,
+   "iron": 2.0,
+   "coal": 1.0
+  },
+  "upkeep": 6.5,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 6
+ },
+ "janissaries": {
+  "id": "janissaries",
+  "cls": "infantry",
+  "name": {
+   "en": "Janissaries",
+   "tr": "Yeniçeriler"
+  },
+  "fire": 5,
+  "shock": 8,
+  "defense": 8,
+  "morale": 9,
+  "move": 2,
+  "cost": {
+   "gold": 18,
+   "manpower": 1.0
+  },
+  "upkeep": 2.75,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [
+   "turkic"
+  ],
+  "countries": [
+   "OTT"
+  ],
+  "naval": false,
+  "transport": 0
+ },
+ "mamluks": {
+  "id": "mamluks",
+  "cls": "heavy_cavalry",
+  "name": {
+   "en": "Mamluks",
+   "tr": "Memlükler"
+  },
+  "fire": 3,
+  "shock": 13,
+  "defense": 8,
+  "morale": 9,
+  "move": 3,
+  "cost": {
+   "gold": 21,
+   "manpower": 1.0
+  },
+  "upkeep": 3.5,
+  "supply": 1.5,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   1
+  ],
+  "cultures": [
+   "arabic"
+  ],
+  "countries": [
+   "MAM",
+   "EGY"
+  ],
+  "naval": false,
+  "transport": 0
+ },
+ "samurai": {
+  "id": "samurai",
+  "cls": "heavy_infantry",
+  "name": {
+   "en": "Samurai",
+   "tr": "Samuraylar"
+  },
+  "fire": 4,
+  "shock": 11,
+  "defense": 8,
+  "morale": 10,
+  "move": 2,
+  "cost": {
+   "gold": 20,
+   "manpower": 1.0
+  },
+  "upkeep": 3.25,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [
+   "japonic"
+  ],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "longbowmen": {
+  "id": "longbowmen",
+  "cls": "archers",
+  "name": {
+   "en": "Longbowmen",
+   "tr": "Uzun Yay Okçuları"
+  },
+  "fire": 9,
+  "shock": 2,
+  "defense": 3,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 11,
+   "manpower": 1.0,
+   "wood": 0.3
+  },
+  "upkeep": 1.5,
+  "supply": 0.7,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [],
+  "countries": [
+   "ENG",
+   "GBR"
+  ],
+  "naval": false,
+  "transport": 0
+ },
+ "landsknechts": {
+  "id": "landsknechts",
+  "cls": "infantry",
+  "name": {
+   "en": "Landsknechts",
+   "tr": "Landsknechtler"
+  },
+  "fire": 3,
+  "shock": 9,
+  "defense": 8,
+  "morale": 7,
+  "move": 2,
+  "cost": {
+   "gold": 14,
+   "manpower": 1.0
+  },
+  "upkeep": 2.25,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   2
+  ],
+  "cultures": [],
+  "countries": [
+   "HRE",
+   "AUS",
+   "GER"
+  ],
+  "naval": false,
+  "transport": 0
+ },
+ "tercios": {
+  "id": "tercios",
+  "cls": "infantry",
+  "name": {
+   "en": "Tercios",
+   "tr": "Tercio Piyadeleri"
+  },
+  "fire": 8,
+  "shock": 8,
+  "defense": 10,
+  "morale": 9,
+  "move": 2,
+  "cost": {
+   "gold": 18,
+   "manpower": 1.0
+  },
+  "upkeep": 2.75,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   2
+  ],
+  "cultures": [],
+  "countries": [
+   "SPA",
+   "HAB"
+  ],
+  "naval": false,
+  "transport": 0
+ },
+ "swiss_pikemen": {
+  "id": "swiss_pikemen",
+  "cls": "infantry",
+  "name": {
+   "en": "Swiss Pikemen",
+   "tr": "İsviçreli Pikeciler"
+  },
+  "fire": 0,
+  "shock": 8,
+  "defense": 11,
+  "morale": 8,
+  "move": 2,
+  "cost": {
+   "gold": 14,
+   "manpower": 1.0
+  },
+  "upkeep": 2.0,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [],
+  "countries": [
+   "SWI"
+  ],
+  "naval": false,
+  "transport": 0
+ },
+ "cossacks": {
+  "id": "cossacks",
+  "cls": "cavalry",
+  "name": {
+   "en": "Cossacks",
+   "tr": "Kazaklar"
+  },
+  "fire": 3,
+  "shock": 8,
+  "defense": 5,
+  "morale": 7,
+  "move": 4,
+  "cost": {
+   "gold": 12,
+   "manpower": 1.0
+  },
+  "upkeep": 1.75,
+  "supply": 1.2,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   1
+  ],
+  "cultures": [],
+  "countries": [
+   "RUS",
+   "MOS"
+  ],
+  "naval": false,
+  "transport": 0
+ },
+ "horse_archers": {
+  "id": "horse_archers",
+  "cls": "cavalry",
+  "name": {
+   "en": "Horse Archers",
+   "tr": "Atlı Okçular"
+  },
+  "fire": 7,
+  "shock": 4,
+  "defense": 3,
+  "morale": 6,
+  "move": 5,
+  "cost": {
+   "gold": 11,
+   "manpower": 1.0
+  },
+  "upkeep": 1.5,
+  "supply": 1.3,
+  "siege": 0,
+  "tech": null,
+  "cultures": [
+   "turkic",
+   "sinic"
+  ],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "war_elephants": {
+  "id": "war_elephants",
+  "cls": "heavy_cavalry",
+  "name": {
+   "en": "War Elephants",
+   "tr": "Savaş Filleri"
+  },
+  "fire": 2,
+  "shock": 13,
+  "defense": 8,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 22,
+   "manpower": 1.0
+  },
+  "upkeep": 3.75,
+  "supply": 2.0,
+  "siege": 0,
+  "tech": null,
+  "cultures": [
+   "indic"
+  ],
+  "countries": [],
+  "naval": false,
+  "transport": 0
+ },
+ "hoplites_phalanx": {
+  "id": "hoplites_phalanx",
+  "cls": "infantry",
+  "name": {
+   "en": "Phalanx Guard",
+   "tr": "Falanks Muhafızları"
+  },
+  "fire": 0,
+  "shock": 6,
+  "defense": 10,
+  "morale": 7,
+  "move": 2,
+  "cost": {
+   "gold": 12,
+   "manpower": 1.0
+  },
+  "upkeep": 1.75,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   1
+  ],
+  "cultures": [],
+  "countries": [
+   "BYZ"
+  ],
+  "naval": false,
+  "transport": 0
+ }
+}

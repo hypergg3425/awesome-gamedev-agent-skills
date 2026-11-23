@@ -1,0 +1,1439 @@
+[
+ {
+  "id": "rnd_succession_dispute",
+  "category": "succession",
+  "historical": false,
+  "title": {
+   "en": "A Disputed Succession",
+   "tr": "Tartışmalı Veraset"
+  },
+  "text": {
+   "en": "{country} has no clear heir, and ambitious cousins and great lords are already gathering followers. {ruler} must settle the matter before rivals do it with swords.",
+   "tr": "{country}'in açık bir varisi yok; hırslı kuzenler ve büyük beyler şimdiden taraftar topluyor. {ruler}, rakipler kılıçla halletmeden meseleyi çözmek zorunda."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "heir_missing"
+    }
+   ]
+  },
+  "mtth": 45,
+  "cooldown": 24,
+  "options": [
+   {
+    "id": "cadet",
+    "name": {
+     "en": "Name a cadet-branch heir",
+     "tr": "Yan koldan bir varis belirle"
+    },
+    "tip": {
+     "en": "Legitimacy +6, nobles resent the choice.",
+     "tr": "Meşruiyet +6, soylular seçime içerliyor."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 6
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": -4
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "pay",
+    "name": {
+     "en": "Buy the great lords' loyalty",
+     "tr": "Büyük beylerin sadakatini satın al"
+    },
+    "tip": {
+     "en": "Gold -100, Stability +3, Legitimacy +3.",
+     "tr": "Altın -100, İstikrar +3, Meşruiyet +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -100
+     },
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 120
+     }
+    ]
+   },
+   {
+    "id": "council",
+    "name": {
+     "en": "Convene a council of succession",
+     "tr": "Veraset meclisi topla"
+    },
+    "tip": {
+     "en": "Prestige +10, Stability -2 amid the wrangling.",
+     "tr": "Prestij +10, çekişme yüzünden İstikrar -2."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "stability",
+      "value": -2
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "ignore",
+    "name": {
+     "en": "Let the matter drift",
+     "tr": "Meseleyi kendi haline bırak"
+    },
+    "tip": {
+     "en": "Legitimacy -8, rebels may rise.",
+     "tr": "Meşruiyet -8, isyancılar baş kaldırabilir."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": -8
+     },
+     {
+      "type": "stability",
+      "value": -3
+     },
+     {
+      "type": "set_flag",
+      "flag": "succession_unsettled",
+      "turns": 12
+     }
+    ],
+    "ai_weight": 0.2
+   }
+  ]
+ },
+ {
+  "id": "rnd_ruler_ill_health",
+  "category": "succession",
+  "historical": false,
+  "title": {
+   "en": "The Ruler Grows Frail",
+   "tr": "Hükümdar Zayıf Düşüyor"
+  },
+  "text": {
+   "en": "Physicians whisper that {ruler} no longer rides, and barely rises from the throne. Factions at court already weigh who will hold power when the end comes.",
+   "tr": "Hekimler fısıldıyor: {ruler} artık ata binemiyor, tahttan güçlükle kalkıyor. Saraydaki hizipler, son geldiğinde iktidarın kimde olacağını şimdiden tartıyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "ruler_age_above",
+     "value": 58
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "regency",
+    "name": {
+     "en": "Establish a regency council",
+     "tr": "Naiplik heyeti kur"
+    },
+    "tip": {
+     "en": "Stability +3, Admin -20.",
+     "tr": "İstikrar +3, İdare -20."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "admin",
+      "value": -20
+     },
+     {
+      "type": "legitimacy",
+      "value": -2
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "heir",
+    "name": {
+     "en": "Show the heir to the people",
+     "tr": "Veliahtı halka göster"
+    },
+    "tip": {
+     "en": "Legitimacy +5, Gold -40 for the pageantry.",
+     "tr": "Meşruiyet +5, tören için Altın -40."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 5
+     },
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "secret",
+    "name": {
+     "en": "Hide the ruler's condition",
+     "tr": "Hükümdarın durumunu gizle"
+    },
+    "tip": {
+     "en": "Legitimacy -4 if rumours leak; no cost now.",
+     "tr": "Söylentiler yayılırsa Meşruiyet -4; şimdilik masraf yok."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": -4
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_pretender_rises",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Pretender Raises His Banner",
+   "tr": "Bir Hak İddiacısı Sancak Açıyor"
+  },
+  "text": {
+   "en": "A man of dubious blood claims that {ruler} sits on a stolen throne. Malcontents in {country} flock to him and his story grows with every retelling.",
+   "tr": "Kanı şüpheli bir adam, {ruler}'in çalıntı bir tahtta oturduğunu iddia ediyor. {country}'deki hoşnutsuzlar etrafında toplanıyor, hikâyesi her anlatışta büyüyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "legitimacy_below",
+     "value": 45
+    }
+   ]
+  },
+  "mtth": 50,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "crush",
+    "name": {
+     "en": "Hunt him down",
+     "tr": "Peşine düş ve ez"
+    },
+    "tip": {
+     "en": "Spawns rebels, Manpower -2, Legitimacy +3.",
+     "tr": "İsyancılar çıkar, İşgücü -2, Meşruiyet +3."
+    },
+    "effects": [
+     {
+      "type": "spawn_rebels",
+      "value": 2
+     },
+     {
+      "type": "manpower",
+      "value": -2
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "buyoff",
+    "name": {
+     "en": "Buy the pretender off",
+     "tr": "Hak iddiacısını parayla sustur"
+    },
+    "tip": {
+     "en": "Gold -90, Legitimacy +4.",
+     "tr": "Altın -90, Meşruiyet +4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -90
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 110
+     }
+    ]
+   },
+   {
+    "id": "proclaim",
+    "name": {
+     "en": "Proclaim the pretender a fraud",
+     "tr": "İddiacıyı sahtekâr ilan et"
+    },
+    "tip": {
+     "en": "Prestige -10, Stability +2.",
+     "tr": "Prestij -10, İstikrar +2."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -10
+     },
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "rnd_constitutional_crisis",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Constitutional Crisis",
+   "tr": "Anayasal Kriz"
+  },
+  "text": {
+   "en": "The assembly and the executive of {country} each claim the final word. Lawyers cite precedents, pamphleteers cite principle, and the street cites neither.",
+   "tr": "{country}'de meclis ve yürütme, son sözün kendisinde olduğunu savunuyor. Hukukçular emsallere, risale yazarları ilkelere başvuruyor; sokak ise hiçbirine."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "gov_in",
+     "values": [
+      "constitutional_monarchy",
+      "republic",
+      "merchant_republic"
+     ]
+    },
+    {
+     "type": "stability_below",
+     "value": 60
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "assembly",
+    "name": {
+     "en": "Side with the assembly",
+     "tr": "Meclisin yanında yer al"
+    },
+    "tip": {
+     "en": "Legitimacy +5, Prestige -5, nobles protest.",
+     "tr": "Meşruiyet +5, Prestij -5, soylular itiraz ediyor."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 5
+     },
+     {
+      "type": "prestige",
+      "value": -5
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "exec",
+    "name": {
+     "en": "Strengthen the executive",
+     "tr": "Yürütmeyi güçlendir"
+    },
+    "tip": {
+     "en": "Admin +20, Stability -4.",
+     "tr": "İdare +20, İstikrar -4."
+    },
+    "effects": [
+     {
+      "type": "admin",
+      "value": 20
+     },
+     {
+      "type": "stability",
+      "value": -4
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "compromise",
+    "name": {
+     "en": "Broker a compromise",
+     "tr": "Uzlaşı sağla"
+    },
+    "tip": {
+     "en": "Gold -50, Stability +3.",
+     "tr": "Altın -50, İstikrar +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_court_intrigue",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "Poison in the Cup",
+   "tr": "Kadehteki Zehir"
+  },
+  "text": {
+   "en": "A chamberlain of {ruler} is found with a vial of poison and a list of names. Whose hand guided him is the question every courtier is afraid to ask.",
+   "tr": "{ruler}'in bir saray görevlisi, yanında bir şişe zehir ve bir isim listesiyle yakalandı. Elini kimin yönlendirdiği, her saraylının sormaya korktuğu soru."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_below",
+     "value": 70
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "purge",
+    "name": {
+     "en": "Purge the court",
+     "tr": "Sarayı temizle"
+    },
+    "tip": {
+     "en": "Stability +3, Legitimacy -3, Prestige -5.",
+     "tr": "İstikrar +3, Meşruiyet -3, Prestij -5."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     },
+     {
+      "type": "prestige",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "inquiry",
+    "name": {
+     "en": "Open a quiet inquiry",
+     "tr": "Sessiz bir soruşturma aç"
+    },
+    "tip": {
+     "en": "Gold -40, Legitimacy +4.",
+     "tr": "Altın -40, Meşruiyet +4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "hush",
+    "name": {
+     "en": "Hush it up",
+     "tr": "Olayı örtbas et"
+    },
+    "tip": {
+     "en": "Nothing is solved; Stability -2.",
+     "tr": "Hiçbir şey çözülmez; İstikrar -2."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -2
+     },
+     {
+      "type": "set_flag",
+      "flag": "court_plot_hushed",
+      "turns": 16
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_election_turmoil",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "Election Turmoil",
+   "tr": "Seçim Karışıklığı"
+  },
+  "text": {
+   "en": "The annual election in {country} has produced two rival slates, each claiming fraud. Mobs gather outside the council hall.",
+   "tr": "{country}'deki yıllık seçim, her biri hile iddia eden iki rakip liste çıkardı. Meclis binasının önünde kalabalıklar toplanıyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "gov_in",
+     "values": [
+      "republic",
+      "merchant_republic"
+     ]
+    }
+   ]
+  },
+  "mtth": 50,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "recount",
+    "name": {
+     "en": "Order a public recount",
+     "tr": "Açık bir yeniden sayım emret"
+    },
+    "tip": {
+     "en": "Gold -30, Legitimacy +5.",
+     "tr": "Altın -30, Meşruiyet +5."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "legitimacy",
+      "value": 5
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "guard",
+    "name": {
+     "en": "Call out the city guard",
+     "tr": "Şehir muhafızlarını çağır"
+    },
+    "tip": {
+     "en": "Stability +2, Merchants' satisfaction -5.",
+     "tr": "İstikrar +2, Tüccar memnuniyeti -5."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "faction",
+    "name": {
+     "en": "Back the wealthier faction",
+     "tr": "Zengin hizbi destekle"
+    },
+    "tip": {
+     "en": "Gold +60, Peasants' satisfaction -6, Legitimacy -4.",
+     "tr": "Altın +60, Köylü memnuniyeti -6, Meşruiyet -4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 60
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -6
+     },
+     {
+      "type": "legitimacy",
+      "value": -4
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ },
+ {
+  "id": "rnd_theocratic_schism",
+  "category": "religious",
+  "historical": false,
+  "title": {
+   "en": "A Schism Among the Clergy",
+   "tr": "Din Adamları Arasında Bölünme"
+  },
+  "text": {
+   "en": "Two senior clerics in {country} denounce each other as false interpreters of doctrine, and each has a party among the faithful.",
+   "tr": "{country}'de iki üst düzey din adamı birbirini yanlış yorum yapmakla suçluyor; her birinin müminler arasında bir tarafı var."
+  },
+  "image": "church",
+  "trigger": {
+   "conds": [
+    {
+     "type": "gov_is",
+     "value": "theocracy"
+    }
+   ]
+  },
+  "mtth": 45,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "council",
+    "name": {
+     "en": "Summon a council",
+     "tr": "Bir konsil topla"
+    },
+    "tip": {
+     "en": "Gold -60, Legitimacy +5, Clergy +5.",
+     "tr": "Altın -60, Meşruiyet +5, Ruhban +5."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "legitimacy",
+      "value": 5
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "orthodox",
+    "name": {
+     "en": "Back the stricter party",
+     "tr": "Daha katı tarafı destekle"
+    },
+    "tip": {
+     "en": "Stability +3, Peasants -4, Clergy +4.",
+     "tr": "İstikrar +3, Köylü -4, Ruhban +4."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -4
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "tolerate",
+    "name": {
+     "en": "Permit both schools",
+     "tr": "İki mektebe de izin ver"
+    },
+    "tip": {
+     "en": "Stability -4, Prestige +10, Legitimacy -3.",
+     "tr": "İstikrar -4, Prestij +10, Meşruiyet -3."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -4
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ },
+ {
+  "id": "rnd_army_mutiny",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "The Army Mutinies",
+   "tr": "Ordu İsyan Ediyor"
+  },
+  "text": {
+   "en": "Soldiers in {country} have gone unpaid for months. Officers report that whole companies are refusing orders and electing their own spokesmen.",
+   "tr": "{country}'de askerler aylardır maaş alamıyor. Subaylar, bütün bölüklerin emirleri reddettiğini ve kendi sözcülerini seçtiğini bildiriyor."
+  },
+  "image": "battle",
+  "trigger": {
+   "conds": [
+    {
+     "type": "treasury_below",
+     "value": 40
+    },
+    {
+     "type": "armies_at_least",
+     "value": 2
+    }
+   ]
+  },
+  "mtth": 40,
+  "cooldown": 24,
+  "options": [
+   {
+    "id": "pay",
+    "name": {
+     "en": "Pay the arrears",
+     "tr": "Birikmiş maaşları öde"
+    },
+    "tip": {
+     "en": "Gold -100, Stability +2.",
+     "tr": "Altın -100, İstikrar +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -100
+     },
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "manpower",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "hang",
+    "name": {
+     "en": "Hang the ringleaders",
+     "tr": "Elebaşılarını as"
+    },
+    "tip": {
+     "en": "Manpower -3, Legitimacy -3, order restored.",
+     "tr": "İşgücü -3, Meşruiyet -3, düzen sağlanır."
+    },
+    "effects": [
+     {
+      "type": "manpower",
+      "value": -3
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "disband",
+    "name": {
+     "en": "Disband the unreliable regiments",
+     "tr": "Güvenilmez alayları dağıt"
+    },
+    "tip": {
+     "en": "Disbands 20% of the army, saves upkeep.",
+     "tr": "Ordunun %20'si dağıtılır, bakım masrafı azalır."
+    },
+    "effects": [
+     {
+      "type": "disband_pct",
+      "value": 20
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_military_coup_plot",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "Whispers of a Coup",
+   "tr": "Darbe Fısıltıları"
+  },
+  "text": {
+   "en": "A popular general in {country} is said to host officers at night, and speak of a state run by those who defend it rather than those who tax it.",
+   "tr": "{country}'de sevilen bir komutanın geceleri subayları ağırladığı ve devleti vergi toplayanların değil koruyanların yönetmesinden söz ettiği konuşuluyor."
+  },
+  "image": "battle",
+  "trigger": {
+   "conds": [
+    {
+     "type": "armies_at_least",
+     "value": 3
+    },
+    {
+     "type": "legitimacy_below",
+     "value": 65
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "promote",
+    "name": {
+     "en": "Promote and reward him",
+     "tr": "Terfi ettir ve ödüllendir"
+    },
+    "tip": {
+     "en": "Gold -70, Legitimacy +2, military satisfaction +6.",
+     "tr": "Altın -70, Meşruiyet +2, Asker memnuniyeti +6."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 6
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 90
+     }
+    ]
+   },
+   {
+    "id": "arrest",
+    "name": {
+     "en": "Arrest him",
+     "tr": "Tutuklat"
+    },
+    "tip": {
+     "en": "Stability -4, Legitimacy +3, Military -5.",
+     "tr": "İstikrar -4, Meşruiyet +3, Asker -5."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -4
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "posting",
+    "name": {
+     "en": "Send him to a distant garrison",
+     "tr": "Uzak bir garnizona gönder"
+    },
+    "tip": {
+     "en": "Legitimacy +1, plot postponed.",
+     "tr": "Meşruiyet +1, komplo ertelenir."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 1
+     },
+     {
+      "type": "prestige",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "rnd_corruption_scandal",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Corruption Scandal",
+   "tr": "Yolsuzluk Skandalı"
+  },
+  "text": {
+   "en": "Auditors reveal that tax revenues of {country} have been vanishing into the purses of provincial officials for years.",
+   "tr": "Müfettişler, {country}'nin vergi gelirlerinin yıllardır vilayet görevlilerinin keselerine aktığını ortaya çıkardı."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "income_above",
+     "value": 20
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "trial",
+    "name": {
+     "en": "Hold a public trial",
+     "tr": "Açık yargılama yap"
+    },
+    "tip": {
+     "en": "Gold +60 from seizures, Stability -2, Prestige +10.",
+     "tr": "Müsadereden Altın +60, İstikrar -2, Prestij +10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 60
+     },
+     {
+      "type": "stability",
+      "value": -2
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "fine",
+    "name": {
+     "en": "Quietly fine the officials",
+     "tr": "Görevlilere sessizce ceza kes"
+    },
+    "tip": {
+     "en": "Gold +30, Legitimacy -3.",
+     "tr": "Altın +30, Meşruiyet -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 30
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "reform",
+    "name": {
+     "en": "Reform the tax offices",
+     "tr": "Vergi dairelerini yeniden düzenle"
+    },
+    "tip": {
+     "en": "Gold -80, +5% tax for 20 turns.",
+     "tr": "Altın -80, 20 tur boyunca %5 vergi."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "tax": 0.05
+      },
+      "turns": 20
+     },
+     {
+      "type": "admin",
+      "value": 10
+     }
+    ],
+    "ai_weight": 1.2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_noble_faction",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "The Nobles Make Demands",
+   "tr": "Soylular Taleplerde Bulunuyor"
+  },
+  "text": {
+   "en": "Great landholders of {country} meet behind closed doors and draw up a list of privileges they expect from the crown.",
+   "tr": "{country}'nin büyük toprak sahipleri kapalı kapılar ardında toplanıp tacın kendilerine tanımasını bekledikleri imtiyazların listesini hazırlıyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "class_sat_below",
+     "class": "nobility",
+     "value": 40
+    }
+   ]
+  },
+  "mtth": 45,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "grant",
+    "name": {
+     "en": "Grant new privileges",
+     "tr": "Yeni imtiyazlar tanı"
+    },
+    "tip": {
+     "en": "Nobility +8, Stability +1, Peasants -4, Legitimacy -2.",
+     "tr": "Soylular +8, İstikrar +1, Köylü -4, Meşruiyet -2."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": 8
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -4
+     },
+     {
+      "type": "legitimacy",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1.2
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Refuse flatly",
+     "tr": "Kesin biçimde reddet"
+    },
+    "tip": {
+     "en": "Nobility -6, Legitimacy +3, Prestige +5.",
+     "tr": "Soylular -6, Meşruiyet +3, Prestij +5."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": -6
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "offices",
+    "name": {
+     "en": "Offer them posts at court",
+     "tr": "Onlara saray makamları ver"
+    },
+    "tip": {
+     "en": "Gold -50, Nobility +6.",
+     "tr": "Altın -50, Soylular +6."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": 6
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_royal_favourite",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Favourite at Court",
+   "tr": "Sarayda Gözde"
+  },
+  "text": {
+   "en": "{ruler} has taken a clever commoner into favour, and the old courtiers are livid. The favourite, for his part, promises reforms and good counsel.",
+   "tr": "{ruler}, zeki bir halktan insanı gözdesi yaptı; eski saraylılar öfkeli. Gözde ise reformlar ve iyi öğütler vaat ediyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 40
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "embrace",
+    "name": {
+     "en": "Give him real power",
+     "tr": "Ona gerçek yetki ver"
+    },
+    "tip": {
+     "en": "Admin +25, Nobility -6.",
+     "tr": "İdare +25, Soylular -6."
+    },
+    "effects": [
+     {
+      "type": "admin",
+      "value": 25
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": -6
+     }
+    ],
+    "ai_weight": 1.3
+   },
+   {
+    "id": "dismiss",
+    "name": {
+     "en": "Dismiss him",
+     "tr": "Azlet"
+    },
+    "tip": {
+     "en": "Nobility +4, Stability +1, Admin -5.",
+     "tr": "Soylular +4, İstikrar +1, İdare -5."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": 4
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "admin",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "balance",
+    "name": {
+     "en": "Keep him but limit his role",
+     "tr": "Tut ama rolünü sınırla"
+    },
+    "tip": {
+     "en": "Legitimacy +2, Admin +8.",
+     "tr": "Meşruiyet +2, İdare +8."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 2
+     },
+     {
+      "type": "admin",
+      "value": 8
+     }
+    ],
+    "ai_weight": 1.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_kurultai_dispute",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "The Kurultai Quarrels",
+   "tr": "Kurultay'da Anlaşmazlık"
+  },
+  "text": {
+   "en": "Clan chiefs of {country} gather for the great council and cannot agree on the leadership of the next campaign season.",
+   "tr": "{country}'nin boy beyleri büyük kurultay için toplandı ve gelecek sefer mevsiminin komutası konusunda anlaşamıyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "gov_is",
+     "value": "tribal_confederation"
+    }
+   ]
+  },
+  "mtth": 50,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "gifts",
+    "name": {
+     "en": "Distribute gifts and horses",
+     "tr": "Hediyeler ve atlar dağıt"
+    },
+    "tip": {
+     "en": "Gold -60, Stability +4, Legitimacy +3.",
+     "tr": "Altın -60, İstikrar +4, Meşruiyet +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "stability",
+      "value": 4
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "duel",
+    "name": {
+     "en": "Let the chiefs settle it by contest",
+     "tr": "Beyler yarışarak karar versin"
+    },
+    "tip": {
+     "en": "Prestige +15, Manpower -2, Stability -2.",
+     "tr": "Prestij +15, İşgücü -2, İstikrar -2."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 15
+     },
+     {
+      "type": "manpower",
+      "value": -2
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "decree",
+    "name": {
+     "en": "Decide by the ruler's will",
+     "tr": "Hükümdarın iradesiyle karar ver"
+    },
+    "tip": {
+     "en": "Legitimacy -5, Admin +10.",
+     "tr": "Meşruiyet -5, İdare +10."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": -5
+     },
+     {
+      "type": "admin",
+      "value": 10
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ }
+]

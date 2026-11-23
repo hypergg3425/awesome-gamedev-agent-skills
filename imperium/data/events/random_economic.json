@@ -1,0 +1,1016 @@
+[
+ {
+  "id": "rnd_recession",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "A Trade Recession",
+   "tr": "Ticaret Durgunluğu"
+  },
+  "text": {
+   "en": "Warehouses in {country} fill with unsold goods while merchants shut their doors. Coin is scarce, and everyone blames someone else.",
+   "tr": "{country}'de ambarlar satılmamış mallarla doluyor, tüccarlar dükkân kapatıyor. Akçe kıt ve herkes suçu başkasına atıyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "income_below",
+     "value": 40
+    },
+    {
+     "type": "stability_below",
+     "value": 65
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 36,
+  "options": [
+   {
+    "id": "relief",
+    "name": {
+     "en": "Cut duties temporarily",
+     "tr": "Gümrükleri geçici olarak indir"
+    },
+    "tip": {
+     "en": "Gold -60, +10% trade for 12 turns.",
+     "tr": "Altın -60, 12 tur boyunca %10 ticaret."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.1
+      },
+      "turns": 12
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "loans",
+    "name": {
+     "en": "Offer state loans to merchants",
+     "tr": "Tüccarlara devlet kredisi ver"
+    },
+    "tip": {
+     "en": "Gold -100, Merchants +6.",
+     "tr": "Altın -100, Tüccar +6."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -100
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 6
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.05
+      },
+      "turns": 16
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 120
+     }
+    ]
+   },
+   {
+    "id": "wait",
+    "name": {
+     "en": "Weather the storm",
+     "tr": "Fırtınanın dinmesini bekle"
+    },
+    "tip": {
+     "en": "Gold -30 in lost revenue, Merchants -4.",
+     "tr": "Kaybedilen gelirden Altın -30, Tüccar -4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "rnd_banking_crisis",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "A Banking Crisis",
+   "tr": "Bankacılık Krizi"
+  },
+  "text": {
+   "en": "A great banking house lending to half the merchants of {country} has failed, and depositors besiege other counting-houses demanding their money.",
+   "tr": "{country}'deki tüccarların yarısına kredi veren büyük bir banka iflas etti; mevduat sahipleri diğer sarrafları kuşatıp paralarını istiyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_at_least",
+     "value": 1250
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 60,
+  "options": [
+   {
+    "id": "bailout",
+    "name": {
+     "en": "Bail out the bank",
+     "tr": "Bankayı kurtar"
+    },
+    "tip": {
+     "en": "Gold -140, Merchants +5, Stability +2.",
+     "tr": "Altın -140, Tüccar +5, İstikrar +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -140
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 5
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 160
+     }
+    ]
+   },
+   {
+    "id": "guarantee",
+    "name": {
+     "en": "Guarantee small deposits only",
+     "tr": "Yalnızca küçük mevduatları güvenceye al"
+    },
+    "tip": {
+     "en": "Gold -60, Merchants -3.",
+     "tr": "Altın -60, Tüccar -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -3
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "fail",
+    "name": {
+     "en": "Let the bank fall",
+     "tr": "Bankanın batmasına izin ver"
+    },
+    "tip": {
+     "en": "Inflation +0.04, Stability -4, Merchants -8.",
+     "tr": "Enflasyon +0.04, İstikrar -4, Tüccar -8."
+    },
+    "effects": [
+     {
+      "type": "inflation",
+      "value": 0.04
+     },
+     {
+      "type": "stability",
+      "value": -4
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -8
+     }
+    ],
+    "ai_weight": 0.6
+   }
+  ]
+ },
+ {
+  "id": "rnd_inflation_surge",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "Prices Climb Out of Reach",
+   "tr": "Fiyatlar Erişilmez Oluyor"
+  },
+  "text": {
+   "en": "Bread, cloth and iron cost more every season in {country}. Clerks argue that too much coin chases too few goods.",
+   "tr": "{country}'de ekmek, kumaş ve demir her mevsim daha pahalı. Kâtipler, çok az mala çok fazla paranın kovaladığını söylüyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "inflation_above",
+     "value": 0.08
+    }
+   ]
+  },
+  "mtth": 40,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "recoin",
+    "name": {
+     "en": "Call in and recoin the currency",
+     "tr": "Parayı toplatıp yeniden bastır"
+    },
+    "tip": {
+     "en": "Gold -50, Inflation -0.06.",
+     "tr": "Altın -50, Enflasyon -0.06."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "inflation",
+      "value": -0.06
+     },
+     {
+      "type": "admin",
+      "value": -5
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "price",
+    "name": {
+     "en": "Fix maximum prices",
+     "tr": "Azami fiyat belirle"
+    },
+    "tip": {
+     "en": "Inflation -0.03, Merchants -6, Stability +2.",
+     "tr": "Enflasyon -0.03, Tüccar -6, İstikrar +2."
+    },
+    "effects": [
+     {
+      "type": "inflation",
+      "value": -0.03
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "austerity",
+    "name": {
+     "en": "Cut court spending",
+     "tr": "Saray harcamalarını kıs"
+    },
+    "tip": {
+     "en": "Inflation -0.04, Legitimacy -3, Nobility -4.",
+     "tr": "Enflasyon -0.04, Meşruiyet -3, Soylular -4."
+    },
+    "effects": [
+     {
+      "type": "inflation",
+      "value": -0.04
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1.3
+   }
+  ]
+ },
+ {
+  "id": "rnd_trade_boom",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "A Boom in Trade",
+   "tr": "Ticarette Canlanma"
+  },
+  "text": {
+   "en": "Caravans and ships crowd the markets of {country}. Customs officers report record receipts and merchants plan new ventures.",
+   "tr": "{country}'nin pazarlarında kervanlar ve gemiler birbirine giriyor. Gümrük memurları rekor gelir bildiriyor, tüccarlar yeni girişimler planlıyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 50
+    },
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 65,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "tax",
+    "name": {
+     "en": "Raise the customs duties",
+     "tr": "Gümrük vergilerini artır"
+    },
+    "tip": {
+     "en": "Gold +100, Merchants -3.",
+     "tr": "Altın +100, Tüccar -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 100
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1.3
+   },
+   {
+    "id": "invest",
+    "name": {
+     "en": "Invest in docks and roads",
+     "tr": "Rıhtım ve yollara yatırım yap"
+    },
+    "tip": {
+     "en": "Gold -50, +12% trade for 16 turns.",
+     "tr": "Altın -50, 16 tur boyunca %12 ticaret."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.12
+      },
+      "turns": 16
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "fair",
+    "name": {
+     "en": "Hold a great fair",
+     "tr": "Büyük bir panayır düzenle"
+    },
+    "tip": {
+     "en": "Prestige +15, Gold -30.",
+     "tr": "Prestij +15, Altın -30."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 15
+     },
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_guild_demands",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "The Merchant Guilds Petition",
+   "tr": "Tüccar Loncaları Dilekçe Veriyor"
+  },
+  "text": {
+   "en": "The guilds of {country} petition the crown: grant them monopolies, they say, and they will pay handsomely for the privilege.",
+   "tr": "{country}'nin loncaları taca başvuruyor: kendilerine tekel tanınırsa bu ayrıcalık için cömertçe ödeyeceklerini söylüyorlar."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "class_sat_below",
+     "class": "merchants",
+     "value": 50
+    }
+   ]
+  },
+  "mtth": 45,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "monopoly",
+    "name": {
+     "en": "Sell the monopolies",
+     "tr": "Tekelleri sat"
+    },
+    "tip": {
+     "en": "Gold +90, Peasants -4, Inflation +0.02.",
+     "tr": "Altın +90, Köylü -4, Enflasyon +0.02."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 90
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -4
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 5
+     },
+     {
+      "type": "inflation",
+      "value": 0.02
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "charter",
+    "name": {
+     "en": "Grant a limited charter",
+     "tr": "Sınırlı bir ferman ver"
+    },
+    "tip": {
+     "en": "Merchants +6, Gold +30.",
+     "tr": "Tüccar +6, Altın +30."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 6
+     },
+     {
+      "type": "gold",
+      "value": 30
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "deny",
+    "name": {
+     "en": "Deny the petition",
+     "tr": "Dilekçeyi reddet"
+    },
+    "tip": {
+     "en": "Merchants -6, Peasants +3, Prestige +5.",
+     "tr": "Tüccar -6, Köylü +3, Prestij +5."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -6
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 3
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 0.8
+   }
+  ]
+ },
+ {
+  "id": "rnd_tax_revolt",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "A Tax Revolt",
+   "tr": "Vergi İsyanı"
+  },
+  "text": {
+   "en": "Collectors have been beaten out of villages in {country}. The rumour goes that the crown's new levies are an outrage against ancient custom.",
+   "tr": "{country}'de tahsildarlar köylerden dövülerek kovuldu. Söylentiye göre tacın yeni vergileri eski âdetlere bir saldırıdır."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "income_above",
+     "value": 30
+    },
+    {
+     "type": "class_sat_below",
+     "class": "peasants",
+     "value": 45
+    }
+   ]
+  },
+  "mtth": 50,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "soldiers",
+    "name": {
+     "en": "Send soldiers with the collectors",
+     "tr": "Tahsildarlarla asker gönder"
+    },
+    "tip": {
+     "en": "Spawns rebels, Gold +40, Stability -3.",
+     "tr": "İsyancılar çıkar, Altın +40, İstikrar -3."
+    },
+    "effects": [
+     {
+      "type": "spawn_rebels",
+      "value": 2
+     },
+     {
+      "type": "gold",
+      "value": 40
+     },
+     {
+      "type": "stability",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.8
+   },
+   {
+    "id": "lower",
+    "name": {
+     "en": "Lower the levy",
+     "tr": "Vergiyi düşür"
+    },
+    "tip": {
+     "en": "Gold -50, Peasants +8, Stability +2.",
+     "tr": "Altın -50, Köylü +8, İstikrar +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 8
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "exempt",
+    "name": {
+     "en": "Exempt the worst-hit districts",
+     "tr": "En çok etkilenen bölgeleri muaf tut"
+    },
+    "tip": {
+     "en": "Gold -20, Peasants +3.",
+     "tr": "Altın -20, Köylü +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -20
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 3
+     },
+     {
+      "type": "set_flag",
+      "flag": "tax_exemption",
+      "turns": 8
+     }
+    ],
+    "ai_weight": 1.2
+   }
+  ]
+ },
+ {
+  "id": "rnd_mine_discovery",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "A Rich Vein Is Discovered",
+   "tr": "Zengin Bir Damar Bulundu"
+  },
+  "text": {
+   "en": "Prospectors strike a promising vein of ore in the hills of {province}, and rumour of it spreads faster than the surveyors can mark it.",
+   "tr": "Kâşifler {province} tepelerinde ümit verici bir cevher damarı buldu; söylenti, haritacıların işaretlemesinden hızlı yayılıyor."
+  },
+  "image": "mine",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 80,
+  "cooldown": 50,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "terrain_is",
+    "value": "mountains"
+   }
+  ],
+  "options": [
+   {
+    "id": "crown",
+    "name": {
+     "en": "Claim it for the crown",
+     "tr": "Taç adına el koy"
+    },
+    "tip": {
+     "en": "Gold -40, +4 development, +15 iron.",
+     "tr": "Altın -40, +4 gelişim, +15 demir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "province_dev",
+      "value": 4
+     },
+     {
+      "type": "stock",
+      "res": "iron",
+      "value": 15
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "license",
+    "name": {
+     "en": "License it to private miners",
+     "tr": "Özel madencilere ruhsat ver"
+    },
+    "tip": {
+     "en": "Gold +70, Merchants +3.",
+     "tr": "Altın +70, Tüccar +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 70
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "quiet",
+    "name": {
+     "en": "Keep it quiet",
+     "tr": "Gizli tut"
+    },
+    "tip": {
+     "en": "Nothing changes.",
+     "tr": "Hiçbir şey değişmez."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 0.2
+   }
+  ]
+ },
+ {
+  "id": "rnd_bumper_harvest",
+  "category": "food",
+  "historical": false,
+  "title": {
+   "en": "A Bumper Harvest",
+   "tr": "Bereketli Hasat"
+  },
+  "text": {
+   "en": "Fine weather and good rains have filled the barns of {country}. Peasants sing in the fields and granaries creak under the weight.",
+   "tr": "Güzel hava ve bol yağmur {country}'nin ambarlarını doldurdu. Köylüler tarlada şarkı söylüyor, tahıl ambarları ağırlıktan gıcırdıyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "min_turn": 4,
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 30
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 24,
+  "options": [
+   {
+    "id": "store",
+    "name": {
+     "en": "Fill the state granaries",
+     "tr": "Devlet ambarlarını doldur"
+    },
+    "tip": {
+     "en": "+30 food stock, Gold -20.",
+     "tr": "+30 gıda stoku, Altın -20."
+    },
+    "effects": [
+     {
+      "type": "stock",
+      "res": "food",
+      "value": 30
+     },
+     {
+      "type": "gold",
+      "value": -20
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "sell",
+    "name": {
+     "en": "Sell the surplus abroad",
+     "tr": "Fazlayı dışarıya sat"
+    },
+    "tip": {
+     "en": "Gold +80.",
+     "tr": "Altın +80."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 80
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "feast",
+    "name": {
+     "en": "Hold a harvest feast",
+     "tr": "Hasat şenliği yap"
+    },
+    "tip": {
+     "en": "Stability +4, Peasants +4, Gold -30.",
+     "tr": "İstikrar +4, Köylü +4, Altın -30."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 4
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 4
+     },
+     {
+      "type": "gold",
+      "value": -30
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_market_fire",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "The Great Market Burns",
+   "tr": "Büyük Çarşı Yanıyor"
+  },
+  "text": {
+   "en": "A lamp overturned in a cloth merchant's stall set the whole market of {province} alight. By dawn the stalls are ash and the traders ruined.",
+   "tr": "Bir kumaşçının tezgâhında devrilen kandil, {province} çarşısını baştan başa tutuşturdu. Sabaha kadar tezgâhlar küle, esnaf yıkıma döndü."
+  },
+  "image": "fire",
+  "trigger": {
+   "conds": []
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "has_building",
+    "value": "market"
+   }
+  ],
+  "options": [
+   {
+    "id": "rebuild",
+    "name": {
+     "en": "Fund a rebuilding in stone",
+     "tr": "Çarşıyı taşla yeniden inşa ettir"
+    },
+    "tip": {
+     "en": "Gold -90, development +2, Merchants +4.",
+     "tr": "Altın -90, gelişim +2, Tüccar +4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -90
+     },
+     {
+      "type": "province_dev",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "loans",
+    "name": {
+     "en": "Offer loans to the traders",
+     "tr": "Esnafa kredi ver"
+    },
+    "tip": {
+     "en": "Gold -45, unrest eases.",
+     "tr": "Altın -45, huzursuzluk azalır."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -45
+     },
+     {
+      "type": "province_unrest",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "neglect",
+    "name": {
+     "en": "Leave them to recover alone",
+     "tr": "Kendi hallerine bırak"
+    },
+    "tip": {
+     "en": "Province unrest +4, Merchants -4.",
+     "tr": "Eyalet huzursuzluğu +4, Tüccar -4."
+    },
+    "effects": [
+     {
+      "type": "province_unrest",
+      "value": 4
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -4
+     },
+     {
+      "type": "province_devastation",
+      "value": 0.1
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ }
+]

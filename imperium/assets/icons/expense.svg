@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<ellipse cx="32" cy="42" rx="20" ry="8"/>
+<path d="M12 42 V48 Q12 56 32 56 Q52 56 52 48 V42"/>
+<polyline points="32,28 32,8"/>
+<polyline points="24,16 32,8 40,16"/>
+</g>
+</svg>

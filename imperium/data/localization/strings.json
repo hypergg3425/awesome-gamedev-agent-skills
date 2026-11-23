@@ -1,0 +1,3886 @@
+{
+"ACHD_ECONOMIC_POWERHOUSE": {
+"en": "Reach a huge income or a quarter of world income.",
+"tr": "Çok büyük bir gelire veya dünya gelirinin dörtte birine ulaşın."
+},
+"ACHD_FIRST_CONQUEST": {
+"en": "Take your first province from another nation.",
+"tr": "Başka bir devletten ilk eyaletinizi alın."
+},
+"ACHD_GREAT_DIPLOMAT": {
+"en": "Form three alliances or hold two vassals.",
+"tr": "Üç ittifak kurun veya iki tâbiye sahip olun."
+},
+"ACHD_MILITARY_SUPREMACY": {
+"en": "Field 80 regiments or win three wars.",
+"tr": "80 alay çıkarın veya üç savaş kazanın."
+},
+"ACHD_PEACEFUL_EXPANSION": {
+"en": "Grow by four provinces without ever fighting a war.",
+"tr": "Hiç savaşmadan dört eyalet büyüyün."
+},
+"ACHD_SURVIVED_AGAINST_ALL_ODDS": {
+"en": "Start with three or fewer provinces and stay independent for 100 turns.",
+"tr": "Üç veya daha az eyaletle başlayıp 100 tur bağımsız kalın."
+},
+"ACHD_TECHNOLOGICAL_PIONEER": {
+"en": "Reach an average technology level of 3.5.",
+"tr": "Ortalama 3,5 teknoloji seviyesine ulaşın."
+},
+"ACHD_WORLD_CONQUEROR": {
+"en": "Win by territorial domination.",
+"tr": "Toprak üstünlüğüyle kazanın."
+},
+"ACH_ECONOMIC_POWERHOUSE": {
+"en": "Economic Powerhouse",
+"tr": "Ekonomik Güç Merkezi"
+},
+"ACH_FIRST_CONQUEST": {
+"en": "First Conquest",
+"tr": "İlk Fetih"
+},
+"ACH_GREAT_DIPLOMAT": {
+"en": "Great Diplomat",
+"tr": "Büyük Diplomat"
+},
+"ACH_LOCKED": {
+"en": "Locked",
+"tr": "Kilitli"
+},
+"ACH_MILITARY_SUPREMACY": {
+"en": "Military Supremacy",
+"tr": "Askerî Üstünlük"
+},
+"ACH_PEACEFUL_EXPANSION": {
+"en": "Peaceful Expansion",
+"tr": "Barışçıl Genişleme"
+},
+"ACH_SURVIVED_AGAINST_ALL_ODDS": {
+"en": "Survived Against All Odds",
+"tr": "Tüm Zorluklara Rağmen Hayatta"
+},
+"ACH_TECHNOLOGICAL_PIONEER": {
+"en": "Technological Pioneer",
+"tr": "Teknoloji Öncüsü"
+},
+"ACH_UNLOCKED": {
+"en": "Unlocked",
+"tr": "Kazanıldı"
+},
+"ACH_WORLD_CONQUEROR": {
+"en": "World Conqueror",
+"tr": "Dünya Fatihi"
+},
+"ACTD_ACCESS": {
+"en": "Allows your armies to cross their land.",
+"tr": "Ordularınızın topraklarından geçmesine izin verir."
+},
+"ACTD_ALLIANCE": {
+"en": "A mutual defence pact. Allies join your wars when asked and defend you when attacked.",
+"tr": "Karşılıklı savunma paktı. Müttefikler istendiğinde savaşlarınıza katılır, saldırıya uğradığınızda sizi savunur."
+},
+"ACTD_ANNEX_VASSAL": {
+"en": "Integrate the vassal completely (costs administrative points).",
+"tr": "Tâbiyi tamamen bünyenize katın (idari puan harcar)."
+},
+"ACTD_ASSIST": {
+"en": "Ask your ally to join your current wars.",
+"tr": "Müttefikinizden mevcut savaşlarınıza katılmasını isteyin."
+},
+"ACTD_BREAK_ALLIANCE": {
+"en": "Ends the alliance. Costs prestige and angers your former partner.",
+"tr": "İttifakı sona erdirir. Prestij kaybettirir ve eski ortağınızı kızdırır."
+},
+"ACTD_COALITION": {
+"en": "Rally nations that fear an infamous aggressor.",
+"tr": "Kötü şöhretli bir saldırgandan çekinen devletleri toplayın."
+},
+"ACTD_DEFENSIVE": {
+"en": "They will defend you if attacked, without joining your offensive wars.",
+"tr": "Saldırıya uğrarsanız sizi savunur, ama saldırı savaşlarınıza katılmaz."
+},
+"ACTD_EMBARGO": {
+"en": "Cuts all trade between you. They will resent it.",
+"tr": "Aranızdaki tüm ticareti keser. Bundan nefret ederler."
+},
+"ACTD_GIFT": {
+"en": "Gold given as a gift improves their opinion.",
+"tr": "Hediye edilen altın görüşlerini düzeltir."
+},
+"ACTD_GUARANTEE": {
+"en": "You promise to defend their independence.",
+"tr": "Bağımsızlıklarını savunacağınıza söz verirsiniz."
+},
+"ACTD_IMPROVE": {
+"en": "Spend 10 administrative points to improve relations over the next turns.",
+"tr": "Önümüzdeki turlarda ilişkileri düzeltmek için 10 idari puan harcarsınız."
+},
+"ACTD_NAP": {
+"en": "Neither side may declare war for a long time. Breaking it costs prestige.",
+"tr": "Uzun süre iki taraf da savaş ilan edemez. Bozmak prestij kaybettirir."
+},
+"ACTD_RELEASE_VASSAL": {
+"en": "Grants independence. Greatly improves their opinion.",
+"tr": "Bağımsızlık verir. Görüşlerini büyük ölçüde düzeltir."
+},
+"ACTD_SANCTION": {
+"en": "Economic pressure that angers them.",
+"tr": "Onları kızdıran ekonomik baskı."
+},
+"ACTD_TRADE": {
+"en": "Lower tariffs and a trade bonus for both sides.",
+"tr": "İki taraf için düşük gümrük ve ticaret bonusu."
+},
+"ACTD_TRANSFER": {
+"en": "Swap provinces and gold.",
+"tr": "Eyalet ve altın takası."
+},
+"ACTD_VASSALIZE": {
+"en": "They become your vassal: they follow you to war and pay tribute.",
+"tr": "Tâbiiniz olur: sizi savaşa izler ve haraç öder."
+},
+"ACT_ACCESS": {
+"en": "Request military access",
+"tr": "Askerî geçiş izni iste"
+},
+"ACT_ALLIANCE": {
+"en": "Propose alliance",
+"tr": "İttifak öner"
+},
+"ACT_ANNEX_VASSAL": {
+"en": "Annex vassal",
+"tr": "Tâbiyi ilhak et"
+},
+"ACT_ASSIST": {
+"en": "Call ally to arms",
+"tr": "Müttefiki yardıma çağır"
+},
+"ACT_BREAK_ALLIANCE": {
+"en": "Break alliance",
+"tr": "İttifakı boz"
+},
+"ACT_COALITION": {
+"en": "Form coalition",
+"tr": "Koalisyon kur"
+},
+"ACT_DECLARE_WAR": {
+"en": "Declare war",
+"tr": "Savaş ilan et"
+},
+"ACT_DEFENSIVE": {
+"en": "Defensive agreement",
+"tr": "Savunma anlaşması"
+},
+"ACT_EMBARGO": {
+"en": "Embargo",
+"tr": "Ambargo"
+},
+"ACT_GIFT": {
+"en": "Send gift",
+"tr": "Hediye gönder"
+},
+"ACT_GUARANTEE": {
+"en": "Guarantee independence",
+"tr": "Bağımsızlığı garanti et"
+},
+"ACT_IMPROVE": {
+"en": "Improve relations",
+"tr": "İlişkileri geliştir"
+},
+"ACT_NAP": {
+"en": "Non-aggression pact",
+"tr": "Saldırmazlık paktı"
+},
+"ACT_PEACE": {
+"en": "Negotiate peace",
+"tr": "Barış görüş"
+},
+"ACT_RELEASE_VASSAL": {
+"en": "Release vassal",
+"tr": "Tâbiyi serbest bırak"
+},
+"ACT_SANCTION": {
+"en": "Impose sanctions",
+"tr": "Yaptırım uygula"
+},
+"ACT_TRADE": {
+"en": "Trade agreement",
+"tr": "Ticaret anlaşması"
+},
+"ACT_TRANSFER": {
+"en": "Negotiate territory",
+"tr": "Toprak pazarlığı"
+},
+"ACT_VASSALIZE": {
+"en": "Offer vassalage",
+"tr": "Tâbiiyet öner"
+},
+"ADS_STATE_CONSENT": {
+"en": "waiting for consent",
+"tr": "onay bekleniyor"
+},
+"ADS_STATE_FAILED": {
+"en": "failed to load (the game is unaffected)",
+"tr": "yüklenemedi (oyun etkilenmez)"
+},
+"ADS_STATE_HIDDEN": {
+"en": "hidden",
+"tr": "gizli"
+},
+"ADS_STATE_IDLE": {
+"en": "idle",
+"tr": "beklemede"
+},
+"ADS_STATE_INITIALIZING": {
+"en": "starting",
+"tr": "başlatılıyor"
+},
+"ADS_STATE_LOADED": {
+"en": "showing",
+"tr": "gösteriliyor"
+},
+"ADS_STATE_LOADING": {
+"en": "loading",
+"tr": "yükleniyor"
+},
+"ADS_STATE_UNAVAILABLE": {
+"en": "not available on this device",
+"tr": "bu cihazda kullanılamıyor"
+},
+"ADV_FOOD": {
+"en": "Famine looms: build farms, import food or reduce the army.",
+"tr": "Kıtlık yaklaşıyor: çiftlik kurun, gıda ithal edin veya orduyu küçültün."
+},
+"ADV_NONE": {
+"en": "The realm is calm.",
+"tr": "Devlet sakin."
+},
+"ADV_OVEREXT": {
+"en": "Your administration is overstretched: build government offices or administrative centres.",
+"tr": "İdareniz fazla gerilmiş: hükûmet konağı veya idari merkez kurun."
+},
+"ADV_TAXES": {
+"en": "Taxes are high: expect discontent among peasants and merchants.",
+"tr": "Vergiler yüksek: köylüler ve tüccarlar arasında hoşnutsuzluk bekleyin."
+},
+"ADV_WAR": {
+"en": "War weariness is spreading: seek peace soon.",
+"tr": "Savaş bıkkınlığı yayılıyor: yakında barış arayın."
+},
+"AI_AGGRESSIVE": {
+"en": "Aggressive",
+"tr": "Saldırgan"
+},
+"AI_DEFENSIVE": {
+"en": "Defensive",
+"tr": "Savunmacı"
+},
+"AI_DIPLOMATIC": {
+"en": "Diplomatic",
+"tr": "Diplomatik"
+},
+"AI_ECONOMIC": {
+"en": "Economic",
+"tr": "Ekonomik"
+},
+"AI_EXPANSIONIST": {
+"en": "Expansionist",
+"tr": "Yayılmacı"
+},
+"AI_ISOLATIONIST": {
+"en": "Isolationist",
+"tr": "İzolasyoncu"
+},
+"AI_OPPORTUNISTIC": {
+"en": "Opportunistic",
+"tr": "Fırsatçı"
+},
+"APP_SUBTITLE": {
+"en": "Age of Crowns",
+"tr": "Tacların Çağı"
+},
+"BCAT_ADMINISTRATIVE": {
+"en": "Administrative",
+"tr": "İdarî"
+},
+"BCAT_ECONOMIC": {
+"en": "Economic",
+"tr": "Ekonomik"
+},
+"BCAT_INFRASTRUCTURE": {
+"en": "Infrastructure",
+"tr": "Altyapı"
+},
+"BCAT_MILITARY": {
+"en": "Military",
+"tr": "Askerî"
+},
+"BCAT_SOCIAL": {
+"en": "Social",
+"tr": "Sosyal"
+},
+"BRANCH_ADMINISTRATION": {
+"en": "Administration",
+"tr": "İdarî"
+},
+"BRANCH_ECONOMIC": {
+"en": "Economic",
+"tr": "İktisadî"
+},
+"BRANCH_MILITARY": {
+"en": "Military",
+"tr": "Askerî"
+},
+"BRANCH_SOCIETY": {
+"en": "Society & science",
+"tr": "Toplum ve bilim"
+},
+"BR_ATTACKER": {
+"en": "Attacker",
+"tr": "Saldıran"
+},
+"BR_DEFENDER": {
+"en": "Defender",
+"tr": "Savunan"
+},
+"BR_FORT": {
+"en": "fortification {n}",
+"tr": "tahkimat {n}"
+},
+"BR_MEN": {
+"en": "about {n} men lost",
+"tr": "yaklaşık {n} kişi kaybedildi"
+},
+"BR_STRENGTH": {
+"en": "{start} regiments, losses {loss}, survivors {end}",
+"tr": "{start} alay, kayıp {loss}, hayatta kalan {end}"
+},
+"BR_TITLE": {
+"en": "Battle of {province}",
+"tr": "{province} Muharebesi"
+},
+"BR_WHY": {
+"en": "Why {winner} won",
+"tr": "{winner} neden kazandı"
+},
+"BR_WIDTH": {
+"en": "front width {n}",
+"tr": "cephe genişliği {n}"
+},
+"BUD_ADMIN": {
+"en": "Administration",
+"tr": "İdare"
+},
+"BUD_ARMY": {
+"en": "Army upkeep",
+"tr": "Ordu masrafı"
+},
+"BUD_BUILDINGS": {
+"en": "Building upkeep",
+"tr": "Bina masrafı"
+},
+"BUD_BUY_ADMIN": {
+"en": "Buy 10 administrative points (5 gold each)",
+"tr": "10 idari puan satın al (tanesi 5 altın)"
+},
+"BUD_CREDIT": {
+"en": "Remaining credit",
+"tr": "Kalan kredi"
+},
+"BUD_DEBT": {
+"en": "Debt",
+"tr": "Borç"
+},
+"BUD_EXPENSES": {
+"en": "Expenses",
+"tr": "Gider"
+},
+"BUD_EXPORT": {
+"en": "Exports",
+"tr": "İhracat"
+},
+"BUD_FOOD_IMPORT": {
+"en": "Food imports",
+"tr": "Gıda ithalatı"
+},
+"BUD_FUNDING": {
+"en": "Army funding",
+"tr": "Ordu finansmanı"
+},
+"BUD_FUNDING_HINT": {
+"en": "Lower funding saves gold but weakens morale.",
+"tr": "Düşük finansman altın tasarrufu sağlar ama morali zayıflatır."
+},
+"BUD_IMPORT_FOOD": {
+"en": "Import food automatically when short",
+"tr": "Gıda yetersizse otomatik ithal et"
+},
+"BUD_INCOME": {
+"en": "Income",
+"tr": "Gelir"
+},
+"BUD_INFLATION": {
+"en": "Inflation",
+"tr": "Enflasyon"
+},
+"BUD_INTEREST": {
+"en": "Interest",
+"tr": "Faiz"
+},
+"BUD_INVEST": {
+"en": "Investments",
+"tr": "Yatırımlar"
+},
+"BUD_INVEST_RESEARCH": {
+"en": "Invest gold in research ({cost} gold per point)",
+"tr": "Araştırmaya altın yatır (puan başına {cost} altın)"
+},
+"BUD_INVEST_RESEARCH_D": {
+"en": "Convert gold into research points. Returns diminish within the same turn.",
+"tr": "Altını araştırma puanına çevirir. Aynı turda getirisi azalır."
+},
+"BUD_INVEST_RESEARCH_T": {
+"en": "Invest in research",
+"tr": "Araştırmaya yatırım"
+},
+"BUD_LOOT": {
+"en": "Occupation income",
+"tr": "İşgal geliri"
+},
+"BUD_NAVY": {
+"en": "Navy upkeep",
+"tr": "Donanma masrafı"
+},
+"BUD_NET": {
+"en": "Net per turn",
+"tr": "Tur başına net"
+},
+"BUD_POLICIES": {
+"en": "Policies",
+"tr": "Politikalar"
+},
+"BUD_PRODUCTION": {
+"en": "Production",
+"tr": "Üretim"
+},
+"BUD_SUBSIDY": {
+"en": "Tribute to overlord",
+"tr": "Hükümdara haraç"
+},
+"BUD_TAX": {
+"en": "Taxes",
+"tr": "Vergiler"
+},
+"BUD_TAX_HINT": {
+"en": "Peasants and merchants dislike taxes above ~25%. High taxes raise unrest.",
+"tr": "Köylüler ve tüccarlar ~%25 üzerindeki vergiyi sevmez. Yüksek vergi huzursuzluğu artırır."
+},
+"BUD_TAX_RATE": {
+"en": "Tax rate",
+"tr": "Vergi oranı"
+},
+"BUD_TOTAL_EXPENSES": {
+"en": "Total expenses",
+"tr": "Toplam gider"
+},
+"BUD_TOTAL_INCOME": {
+"en": "Total income",
+"tr": "Toplam gelir"
+},
+"BUD_TRADE": {
+"en": "Trade",
+"tr": "Ticaret"
+},
+"BUD_TREASURY": {
+"en": "Treasury",
+"tr": "Hazine"
+},
+"BUD_TRIBUTE": {
+"en": "Vassal tribute",
+"tr": "Tâbi haracı"
+},
+"BUILD_BUY_TEXT": {
+"en": "Buy the missing materials on the market for {gold} gold (150% of market price)?",
+"tr": "Eksik malzemeler piyasadan {gold} altına (piyasa fiyatının %150'si) satın alınsın mı?"
+},
+"BUILD_BUY_TITLE": {
+"en": "Missing materials",
+"tr": "Eksik malzemeler"
+},
+"BUILD_ERR_BUILDING": {
+"en": "Requires {b} first.",
+"tr": "Önce {b} gerekir."
+},
+"BUILD_ERR_COASTAL": {
+"en": "Needs a coastal province.",
+"tr": "Kıyı eyaleti gerekir."
+},
+"BUILD_ERR_DEV": {
+"en": "Needs development {dev}.",
+"tr": "{dev} gelişmişlik gerekir."
+},
+"BUILD_ERR_GOV": {
+"en": "Your form of government cannot build this.",
+"tr": "Hükûmet biçiminiz bunu inşa edemez."
+},
+"BUILD_ERR_MATERIALS": {
+"en": "Missing materials: {what} (buy for {gold} gold).",
+"tr": "Eksik malzeme: {what} ({gold} altına satın alınabilir)."
+},
+"BUILD_ERR_MAX": {
+"en": "Maximum level reached.",
+"tr": "Azami seviyeye ulaşıldı."
+},
+"BUILD_ERR_QUEUED": {
+"en": "Already under construction.",
+"tr": "Zaten inşa ediliyor."
+},
+"BUILD_ERR_QUEUE_FULL": {
+"en": "The construction queue is full.",
+"tr": "İnşaat kuyruğu dolu."
+},
+"BUILD_ERR_SIEGE": {
+"en": "Not possible under siege.",
+"tr": "Kuşatma altında mümkün değil."
+},
+"BUILD_ERR_SLOTS": {
+"en": "No free building slot (develop the province).",
+"tr": "Boş bina yuvası yok (eyaleti geliştirin)."
+},
+"BUILD_ERR_TECH": {
+"en": "Requires technology: {tech}.",
+"tr": "Teknoloji gerekir: {tech}."
+},
+"BUILD_ERR_TERRAIN": {
+"en": "The terrain does not allow this.",
+"tr": "Arazi buna elverişli değil."
+},
+"CBD_CLAIM": {
+"en": "You hold a claim on their land: little infamy.",
+"tr": "Topraklarında iddianız var: az kötü şöhret."
+},
+"CBD_CONQUEST": {
+"en": "Heavy infamy; other nations grow hostile.",
+"tr": "Ağır kötü şöhret; diğer devletler düşmanlaşır."
+},
+"CBD_CONTAINMENT": {
+"en": "They are infamous; the world tolerates your war.",
+"tr": "Kötü şöhretli; dünya savaşınızı hoş görür."
+},
+"CBD_HOLY_WAR": {
+"en": "Against another faith, as a theocracy.",
+"tr": "Teokrasi olarak başka inanca karşı."
+},
+"CB_CLAIM": {
+"en": "Territorial claim",
+"tr": "Toprak iddiası"
+},
+"CB_COALITION": {
+"en": "Coalition war",
+"tr": "Koalisyon savaşı"
+},
+"CB_CONQUEST": {
+"en": "Conquest (no justification)",
+"tr": "Fetih (gerekçesiz)"
+},
+"CB_CONTAINMENT": {
+"en": "Containment of an aggressor",
+"tr": "Saldırganı sınırlama"
+},
+"CB_HOLY_WAR": {
+"en": "Holy war",
+"tr": "Kutsal savaş"
+},
+"CB_LIBERATION": {
+"en": "Liberation",
+"tr": "Kurtuluş"
+},
+"CB_RECONQUEST": {
+"en": "Reconquest",
+"tr": "Geri alım"
+},
+"CLASS_ARTISANS": {
+"en": "Artisans",
+"tr": "Esnaf"
+},
+"CLASS_CLERGY": {
+"en": "Clergy",
+"tr": "Din adamları"
+},
+"CLASS_MERCHANTS": {
+"en": "Merchants",
+"tr": "Tüccarlar"
+},
+"CLASS_MILITARY": {
+"en": "Military class",
+"tr": "Asker sınıfı"
+},
+"CLASS_NOBILITY": {
+"en": "Nobility",
+"tr": "Soylular"
+},
+"CLASS_PEASANTS": {
+"en": "Peasants",
+"tr": "Köylüler"
+},
+"CLASS_WANTS_ARTISANS": {
+"en": "Wants: workshops, fair taxes.",
+"tr": "İster: atölyeler, adil vergi."
+},
+"CLASS_WANTS_CLERGY": {
+"en": "Wants: religious buildings, a single faith.",
+"tr": "İster: dini yapılar, tek inanç."
+},
+"CLASS_WANTS_MERCHANTS": {
+"en": "Wants: trade, ports, low taxes.",
+"tr": "İster: ticaret, limanlar, düşük vergi."
+},
+"CLASS_WANTS_MILITARY": {
+"en": "Wants: funded armies, victories.",
+"tr": "İster: finanse edilen ordu, zaferler."
+},
+"CLASS_WANTS_NOBILITY": {
+"en": "Wants: strong armies, privileges, no centralisation.",
+"tr": "İster: güçlü ordu, imtiyaz, merkezileşmeme."
+},
+"CLASS_WANTS_PEASANTS": {
+"en": "Wants: food, low taxes, peace.",
+"tr": "İster: gıda, düşük vergi, barış."
+},
+"COALITION_AGAINST_YOU": {
+"en": "A coalition against you has formed: {members}.",
+"tr": "Aleyhinize bir koalisyon kuruldu: {members}."
+},
+"COALITION_FORMED": {
+"en": "A coalition forms against {country}.",
+"tr": "{country} aleyhine bir koalisyon kuruluyor."
+},
+"COALITION_HINT": {
+"en": "Choose the nation the coalition is aimed at.",
+"tr": "Koalisyonun hedefleneceği devleti seçin."
+},
+"COALITION_NONE": {
+"en": "No nation is infamous enough.",
+"tr": "Yeterince kötü şöhretli bir devlet yok."
+},
+"CONFIRM_CANCEL_BUILD": {
+"en": "Cancel this construction? Half of the gold is refunded, materials are lost.",
+"tr": "Bu inşaat iptal edilsin mi? Altının yarısı iade edilir, malzemeler kaybolur."
+},
+"CONFIRM_QUIT_MENU": {
+"en": "The campaign will be autosaved and you will return to the main menu.",
+"tr": "Kampanya otomatik kaydedilecek ve ana menüye döneceksiniz."
+},
+"CONSENT_NOT_REQUIRED": {
+"en": "not required in your region",
+"tr": "bölgenizde gerekli değil"
+},
+"CONSENT_OBTAINED": {
+"en": "given",
+"tr": "verildi"
+},
+"CONSENT_REQUIRED": {
+"en": "required",
+"tr": "gerekli"
+},
+"CONSENT_UNKNOWN": {
+"en": "not requested yet",
+"tr": "henüz istenmedi"
+},
+"CREDITS_ADS": {
+"en": "Advertising",
+"tr": "Reklam"
+},
+"CREDITS_ART": {
+"en": "Artwork",
+"tr": "Görseller"
+},
+"CREDITS_AUDIO": {
+"en": "Music & sound",
+"tr": "Müzik ve ses"
+},
+"CREDITS_ENGINE": {
+"en": "Engine",
+"tr": "Oyun motoru"
+},
+"CREDITS_FONTS": {
+"en": "Typefaces",
+"tr": "Yazı tipleri"
+},
+"CREDITS_HISTORY": {
+"en": "History",
+"tr": "Tarih"
+},
+"CREDITS_INTRO": {
+"en": "An original grand strategy game for mobile.",
+"tr": "Mobil için özgün bir büyük strateji oyunu."
+},
+"CREDITS_MAPDATA": {
+"en": "Map data",
+"tr": "Harita verisi"
+},
+"CS_ADD_HOTSEAT": {
+"en": "Add as hot-seat player",
+"tr": "Aynı cihazda oyuncu olarak ekle"
+},
+"CS_DIFFICULTY": {
+"en": "Difficulty",
+"tr": "Zorluk"
+},
+"CS_HOTSEAT": {
+"en": "Hot-seat players",
+"tr": "Aynı cihazdaki oyuncular"
+},
+"CS_NEIGHBOURS": {
+"en": "Neighbours",
+"tr": "Komşular"
+},
+"CS_RATING": {
+"en": "Starting position",
+"tr": "Başlangıç konumu"
+},
+"CS_RATING_EASY": {
+"en": "Strong",
+"tr": "Güçlü"
+},
+"CS_RATING_HARD": {
+"en": "Challenging",
+"tr": "Zorlu"
+},
+"CS_RATING_MEDIUM": {
+"en": "Balanced",
+"tr": "Dengeli"
+},
+"CS_START": {
+"en": "Begin campaign",
+"tr": "Kampanyayı başlat"
+},
+"CS_TITLE": {
+"en": "Choose your nation",
+"tr": "Devletinizi seçin"
+},
+"CULT_AFRICAN": {
+"en": "African",
+"tr": "Afrika"
+},
+"CULT_ARABIC": {
+"en": "Arabic",
+"tr": "Arap"
+},
+"CULT_CAUCASIAN": {
+"en": "Caucasian",
+"tr": "Kafkas"
+},
+"CULT_GERMANIC": {
+"en": "Germanic",
+"tr": "Cermen"
+},
+"CULT_HELLENIC": {
+"en": "Hellenic",
+"tr": "Helen"
+},
+"CULT_INDIC": {
+"en": "Indic",
+"tr": "Hint"
+},
+"CULT_IRANIAN": {
+"en": "Iranian",
+"tr": "İran"
+},
+"CULT_JAPONIC": {
+"en": "Japonic",
+"tr": "Japon"
+},
+"CULT_LATIN": {
+"en": "Latin",
+"tr": "Latin"
+},
+"CULT_LATIN_AMERICAN": {
+"en": "Latin American",
+"tr": "Latin Amerikalı"
+},
+"CULT_MAGYAR_FINNIC": {
+"en": "Magyar-Finnic",
+"tr": "Macar-Fin"
+},
+"CULT_NATIVE": {
+"en": "Native",
+"tr": "Yerli"
+},
+"CULT_NATIVE_AMERICAN": {
+"en": "Native American",
+"tr": "Yerli Amerikan"
+},
+"CULT_OCEANIAN": {
+"en": "Oceanian",
+"tr": "Okyanusyalı"
+},
+"CULT_SINIC": {
+"en": "Sinic",
+"tr": "Çin"
+},
+"CULT_SLAVIC": {
+"en": "Slavic",
+"tr": "Slav"
+},
+"CULT_SOUTHEAST_ASIAN": {
+"en": "Southeast Asian",
+"tr": "Güneydoğu Asya"
+},
+"CULT_TURKIC": {
+"en": "Turkic",
+"tr": "Türk"
+},
+"C_ADMIN": {
+"en": "Administrative points",
+"tr": "İdari puan"
+},
+"C_ADMIN_CAP": {
+"en": "Administration",
+"tr": "İdare kapasitesi"
+},
+"C_AGE": {
+"en": "Age",
+"tr": "Yaş"
+},
+"C_HEIR": {
+"en": "Heir",
+"tr": "Varis"
+},
+"C_INCOME": {
+"en": "Net income",
+"tr": "Net gelir"
+},
+"C_INFAMY": {
+"en": "Infamy",
+"tr": "Kötü şöhret"
+},
+"C_LEGITIMACY": {
+"en": "Legitimacy",
+"tr": "Meşruiyet"
+},
+"C_MANPOWER": {
+"en": "Manpower",
+"tr": "İnsan gücü"
+},
+"C_MILITARY": {
+"en": "Armed forces",
+"tr": "Silahlı kuvvetler"
+},
+"C_MODIFIERS": {
+"en": "Modifiers",
+"tr": "Etkiler"
+},
+"C_NAME": {
+"en": "Name",
+"tr": "Ad"
+},
+"C_NO_HEIR": {
+"en": "No heir: a death would trigger a succession crisis!",
+"tr": "Varis yok: bir ölüm veraset krizi başlatır!"
+},
+"C_POPULATION": {
+"en": "Population",
+"tr": "Nüfus"
+},
+"C_PRESTIGE": {
+"en": "Prestige",
+"tr": "Prestij"
+},
+"C_PROVINCES": {
+"en": "Provinces",
+"tr": "Eyaletler"
+},
+"C_REGENCY": {
+"en": "Regency for {n} more turns",
+"tr": "{n} tur daha naiplik"
+},
+"C_RELIGION": {
+"en": "State religion",
+"tr": "Devlet dini"
+},
+"C_RULER": {
+"en": "Ruler",
+"tr": "Hükümdar"
+},
+"C_STABILITY": {
+"en": "Stability",
+"tr": "İstikrar"
+},
+"C_STATE": {
+"en": "State of the realm",
+"tr": "Devletin durumu"
+},
+"C_TECH": {
+"en": "Average technology",
+"tr": "Ortalama teknoloji"
+},
+"DEV_ERR_CAP": {
+"en": "Development limit reached (improve administration and engineering).",
+"tr": "Gelişmişlik sınırına ulaşıldı (idare ve mühendisliği geliştirin)."
+},
+"DIFFD_EASY": {
+"en": "The AI hesitates and plans poorly. No resource bonuses of any kind.",
+"tr": "Yapay zekâ tereddüt eder ve zayıf plan yapar. Hiçbir kaynak bonusu yoktur."
+},
+"DIFFD_EXPERT": {
+"en": "As Hard, and the AI also knows the exact size of every army (documented information advantage). No resource bonuses.",
+"tr": "Zor'a ek olarak yapay zekâ her ordunun tam büyüklüğünü bilir (belgelenmiş bilgi avantajı). Kaynak bonusu yoktur."
+},
+"DIFFD_HARD": {
+"en": "Sharper planning, bigger armies, better war targets. No resource bonuses.",
+"tr": "Daha keskin planlama, daha büyük ordular, daha iyi savaş hedefleri. Kaynak bonusu yoktur."
+},
+"DIFFD_NORMAL": {
+"en": "A competent AI that plays by the same rules as you.",
+"tr": "Sizinle aynı kurallarla oynayan yetkin bir yapay zekâ."
+},
+"DIFF_EASY": {
+"en": "Easy",
+"tr": "Kolay"
+},
+"DIFF_EXPERT": {
+"en": "Expert",
+"tr": "Uzman"
+},
+"DIFF_HARD": {
+"en": "Hard",
+"tr": "Zor"
+},
+"DIFF_NORMAL": {
+"en": "Normal",
+"tr": "Normal"
+},
+"DIPLO_ACTIONS": {
+"en": "Actions",
+"tr": "Eylemler"
+},
+"DIPLO_AT_WAR_WITH": {
+"en": "At war. Your war score: {score}",
+"tr": "Savaştasınız. Savaş skorunuz: {score}"
+},
+"DIPLO_DONE": {
+"en": "{action}: agreed with {country}.",
+"tr": "{action}: {country} ile anlaşıldı."
+},
+"DIPLO_ERR_AT_WAR": {
+"en": "Not possible while at war.",
+"tr": "Savaş sırasında mümkün değil."
+},
+"DIPLO_ERR_CANNOT_JOIN": {
+"en": "Your ally cannot join.",
+"tr": "Müttefikiniz katılamıyor."
+},
+"DIPLO_ERR_EMBARGO": {
+"en": "An embargo is in place.",
+"tr": "Ambargo var."
+},
+"DIPLO_ERR_HAVE": {
+"en": "Already in force.",
+"tr": "Zaten yürürlükte."
+},
+"DIPLO_ERR_NOT_VASSAL": {
+"en": "That nation is not your vassal.",
+"tr": "Bu devlet tâbiiniz değil."
+},
+"DIPLO_ERR_NO_ALLIANCE": {
+"en": "No alliance exists.",
+"tr": "İttifak yok."
+},
+"DIPLO_ERR_NO_COALITION": {
+"en": "Not enough nations resent that target.",
+"tr": "Yeterli sayıda devlet bu hedeften rahatsız değil."
+},
+"DIPLO_ERR_NO_ROUTE": {
+"en": "No trade route connects you.",
+"tr": "Sizi bağlayan bir ticaret yolu yok."
+},
+"DIPLO_ERR_TOO_EARLY": {
+"en": "Too early to annex this vassal.",
+"tr": "Bu tâbiyi ilhak etmek için erken."
+},
+"DIPLO_ERR_VASSAL": {
+"en": "Vassals cannot conduct independent diplomacy.",
+"tr": "Tâbi devletler bağımsız diplomasi yürütemez."
+},
+"DIPLO_INTRO": {
+"en": "Choose a nation. At war and allied nations are listed first.",
+"tr": "Bir devlet seçin. Savaştaki ve müttefik devletler önce listelenir."
+},
+"DIPLO_LIKELY_ACCEPT": {
+"en": "Likely accepted",
+"tr": "Kabul edilmesi olası"
+},
+"DIPLO_LIKELY_REFUSE": {
+"en": "Likely refused",
+"tr": "Reddedilmesi olası"
+},
+"DIPLO_NO_PROPOSALS": {
+"en": "No pending proposals.",
+"tr": "Bekleyen teklif yok."
+},
+"DIPLO_OFFER_BALANCE": {
+"en": "Offer balance",
+"tr": "Teklif dengesi"
+},
+"DIPLO_OPINION": {
+"en": "Their opinion of you",
+"tr": "Sizin hakkınızdaki görüşü"
+},
+"DIPLO_OVERLORD": {
+"en": "Overlord",
+"tr": "Hükümdar"
+},
+"DIPLO_PROPOSE": {
+"en": "Propose",
+"tr": "Teklif et"
+},
+"DIPLO_REFUSED": {
+"en": "{country} declined.",
+"tr": "{country} reddetti."
+},
+"DIPLO_THEIR_OPINION": {
+"en": "Your standing in their eyes",
+"tr": "Gözlerindeki konumunuz"
+},
+"DIPLO_TRUCE": {
+"en": "Truce",
+"tr": "Ateşkes"
+},
+"DIPLO_TRUST": {
+"en": "Trust",
+"tr": "Güven"
+},
+"DR_ALLIES": {
+"en": "Allies",
+"tr": "Müttefikler"
+},
+"DR_BORDER_FRICTION": {
+"en": "Border friction",
+"tr": "Sınır sürtüşmesi"
+},
+"DR_CLAIMS": {
+"en": "Territorial claims",
+"tr": "Toprak iddiaları"
+},
+"DR_COMMON_ENEMY": {
+"en": "Common enemies",
+"tr": "Ortak düşmanlar"
+},
+"DR_CULTURE": {
+"en": "Shared culture",
+"tr": "Ortak kültür"
+},
+"DR_DISLIKE_TARGET": {
+"en": "Dislike of the target",
+"tr": "Hedeften hoşlanmama"
+},
+"DR_EXHAUSTION": {
+"en": "War exhaustion",
+"tr": "Savaş yorgunluğu"
+},
+"DR_INFAMY": {
+"en": "Your infamy",
+"tr": "Kötü şöhretiniz"
+},
+"DR_INFAMY_TARGET": {
+"en": "Target's infamy",
+"tr": "Hedefin kötü şöhreti"
+},
+"DR_MUTUAL_GAIN": {
+"en": "Mutual gain",
+"tr": "Karşılıklı kazanç"
+},
+"DR_OFFER_VALUE": {
+"en": "Value of the offer",
+"tr": "Teklifin değeri"
+},
+"DR_OPINION": {
+"en": "Opinion of you",
+"tr": "Sizin hakkınızdaki görüş"
+},
+"DR_PAYMENT": {
+"en": "Payment",
+"tr": "Ödeme"
+},
+"DR_PERSONALITY": {
+"en": "National character",
+"tr": "Ulusal karakter"
+},
+"DR_PROTECTION": {
+"en": "Protection",
+"tr": "Koruma"
+},
+"DR_RECENT_WAR": {
+"en": "Recent war",
+"tr": "Yakın zamanda savaş"
+},
+"DR_RELIGION_DIFF": {
+"en": "Different religion",
+"tr": "Farklı din"
+},
+"DR_RELIGION_SAME": {
+"en": "Same religion",
+"tr": "Aynı din"
+},
+"DR_STRENGTH": {
+"en": "Relative strength",
+"tr": "Göreli güç"
+},
+"DR_TERMS_COST": {
+"en": "Cost of the terms",
+"tr": "Şartların bedeli"
+},
+"DR_THREAT": {
+"en": "Threat from your power",
+"tr": "Gücünüzden duyulan tehdit"
+},
+"DR_THREATENED": {
+"en": "They feel threatened",
+"tr": "Kendilerini tehdit altında hissediyorlar"
+},
+"DR_TRADE_PARTNER": {
+"en": "Trade partners",
+"tr": "Ticaret ortakları"
+},
+"DR_TRUST": {
+"en": "Trust",
+"tr": "Güven"
+},
+"DR_WARSCORE": {
+"en": "War score",
+"tr": "Savaş skoru"
+},
+"DR_WAR_LENGTH": {
+"en": "Length of the war",
+"tr": "Savaşın uzunluğu"
+},
+"ECON_ERR_ADMIN_CAP": {
+"en": "Administrative points are capped at 500.",
+"tr": "İdari puan üst sınırı 500."
+},
+"ED_AI": {
+"en": "AI personality",
+"tr": "Yapay zekâ kişiliği"
+},
+"ED_ASSIGN": {
+"en": "Give to brush nation",
+"tr": "Fırça devletine ver"
+},
+"ED_ASSIGN_REGION": {
+"en": "Give the whole modern country",
+"tr": "Modern ülkenin tamamını ver"
+},
+"ED_BRUSH": {
+"en": "Brush nation",
+"tr": "Fırça devleti"
+},
+"ED_BRUSH_ACTIVE": {
+"en": "Active brush",
+"tr": "Etkin fırça"
+},
+"ED_BRUSH_THIS": {
+"en": "Use as brush",
+"tr": "Fırça yap"
+},
+"ED_CAPITAL": {
+"en": "Capital",
+"tr": "Başkent"
+},
+"ED_COLOR": {
+"en": "Colour",
+"tr": "Renk"
+},
+"ED_COUNTRY_A": {
+"en": "Country A",
+"tr": "A devleti"
+},
+"ED_COUNTRY_B": {
+"en": "Country B",
+"tr": "B devleti"
+},
+"ED_DEFAULT_PLAYER": {
+"en": "Default nation",
+"tr": "Varsayılan devlet"
+},
+"ED_DELETE_COUNTRY": {
+"en": "Delete country",
+"tr": "Devleti sil"
+},
+"ED_DELETE_Q": {
+"en": "Its provinces become unclaimed. Delete the country?",
+"tr": "Eyaletleri sahipsiz kalır. Devlet silinsin mi?"
+},
+"ED_DESC_EN": {
+"en": "Description (English)",
+"tr": "Açıklama (İngilizce)"
+},
+"ED_DESC_TR": {
+"en": "Description (Turkish)",
+"tr": "Açıklama (Türkçe)"
+},
+"ED_ERA": {
+"en": "Technology era (0-4)",
+"tr": "Teknoloji çağı (0-4)"
+},
+"ED_ERR_DUP_NAME": {
+"en": "Two countries share the name {a}",
+"tr": "İki devlet {a} adını paylaşıyor"
+},
+"ED_ERR_EMPTY_NAME": {
+"en": "{a}: the name is empty",
+"tr": "{a}: ad boş"
+},
+"ED_ERR_NO_PLAYER": {
+"en": "Choose a default nation that exists.",
+"tr": "Var olan bir varsayılan devlet seçin."
+},
+"ED_ERR_TWO_COUNTRIES": {
+"en": "At least two countries are required.",
+"tr": "En az iki devlet gerekli."
+},
+"ED_EXISTING": {
+"en": "Existing relations",
+"tr": "Mevcut ilişkiler"
+},
+"ED_GOV": {
+"en": "Government",
+"tr": "Hükûmet"
+},
+"ED_LEAVE": {
+"en": "Leave the editor",
+"tr": "Düzenleyiciden çık"
+},
+"ED_LEAVE_Q": {
+"en": "Unsaved changes will be lost.",
+"tr": "Kaydedilmemiş değişiklikler kaybolur."
+},
+"ED_MAP_HINT": {
+"en": "While this tab is open, tapping a province gives it to the brush nation.",
+"tr": "Bu sekme açıkken bir eyalete dokunmak onu fırça devletine verir."
+},
+"ED_MILITARY": {
+"en": "Army size",
+"tr": "Ordu büyüklüğü"
+},
+"ED_MIL_HIGH": {
+"en": "Large",
+"tr": "Büyük"
+},
+"ED_MIL_LOW": {
+"en": "Small",
+"tr": "Küçük"
+},
+"ED_MIL_MEDIUM": {
+"en": "Medium",
+"tr": "Orta"
+},
+"ED_NAME_EN": {
+"en": "Name (English)",
+"tr": "Ad (İngilizce)"
+},
+"ED_NAME_TR": {
+"en": "Name (Turkish)",
+"tr": "Ad (Türkçe)"
+},
+"ED_NEED_TWO": {
+"en": "Create at least two countries first.",
+"tr": "Önce en az iki devlet oluşturun."
+},
+"ED_NEW_COUNTRY": {
+"en": "New country",
+"tr": "Yeni devlet"
+},
+"ED_OWNED_COUNT": {
+"en": "{n} of {total} provinces assigned",
+"tr": "{total} eyaletin {n} tanesi atandı"
+},
+"ED_SAME_COUNTRY": {
+"en": "Choose two different countries.",
+"tr": "İki farklı devlet seçin."
+},
+"ED_SAVED": {
+"en": "Saved.",
+"tr": "Kaydedildi."
+},
+"ED_START_MONTH": {
+"en": "Start month",
+"tr": "Başlangıç ayı"
+},
+"ED_START_REGIMENTS": {
+"en": "Starting regiments",
+"tr": "Başlangıç alayları"
+},
+"ED_START_YEAR": {
+"en": "Start year",
+"tr": "Başlangıç yılı"
+},
+"ED_STATUS": {
+"en": "{n} problem(s)",
+"tr": "{n} sorun"
+},
+"ED_TAB_COUNTRIES": {
+"en": "Countries",
+"tr": "Devletler"
+},
+"ED_TAB_INFO": {
+"en": "Scenario",
+"tr": "Senaryo"
+},
+"ED_TAB_MAP": {
+"en": "Provinces",
+"tr": "Eyaletler"
+},
+"ED_TAB_RELATIONS": {
+"en": "Relations",
+"tr": "İlişkiler"
+},
+"ED_TERRITORY_PCT": {
+"en": "Territory victory (% of map)",
+"tr": "Toprak zaferi (haritanın %)"
+},
+"ED_TEST": {
+"en": "Test play",
+"tr": "Deneme oyunu"
+},
+"ED_TREASURY": {
+"en": "Starting gold",
+"tr": "Başlangıç altını"
+},
+"ED_TURN_LIMIT": {
+"en": "Turn limit",
+"tr": "Tur sınırı"
+},
+"ED_UNASSIGN": {
+"en": "Make unclaimed",
+"tr": "Sahipsiz yap"
+},
+"ED_UNCLAIMED": {
+"en": "Unclaimed (becomes tribal land)",
+"tr": "Sahipsiz (kabile toprağı olur)"
+},
+"ED_VALIDATE": {
+"en": "Validate",
+"tr": "Doğrula"
+},
+"ED_VALID_OK": {
+"en": "The scenario is valid.",
+"tr": "Senaryo geçerli."
+},
+"ED_VASSAL": {
+"en": "A is overlord of B",
+"tr": "A, B'nin hükümdarı"
+},
+"ED_WAR": {
+"en": "A at war with B",
+"tr": "A, B ile savaşta"
+},
+"END_DEFEAT": {
+"en": "DEFEAT",
+"tr": "YENİLGİ"
+},
+"END_MENU": {
+"en": "Main menu",
+"tr": "Ana menü"
+},
+"END_REASON_DEFEAT": {
+"en": "Your realm has fallen.",
+"tr": "Devletiniz yıkıldı."
+},
+"END_REASON_DIPLOMATIC": {
+"en": "Your bloc of allies and vassals rules the world.",
+"tr": "Müttefik ve tâbi bloğunuz dünyayı yönetiyor."
+},
+"END_REASON_ECONOMIC": {
+"en": "Your wealth outshines every rival.",
+"tr": "Servetiniz tüm rakiplerinizin üzerinde."
+},
+"END_REASON_SCENARIO": {
+"en": "You achieved the scenario's great goals.",
+"tr": "Senaryonun büyük hedeflerine ulaştınız."
+},
+"END_REASON_SCORE": {
+"en": "The campaign ended; the highest score decides.",
+"tr": "Kampanya sona erdi; en yüksek puan belirler."
+},
+"END_REASON_SURVIVAL": {
+"en": "Against all odds, your realm endured and stayed independent.",
+"tr": "Tüm olumsuzluklara rağmen devletiniz ayakta kaldı ve bağımsızlığını korudu."
+},
+"END_REASON_TECHNOLOGICAL": {
+"en": "Your realm leads the age in science and craft.",
+"tr": "Devletiniz çağa bilim ve sanatta önderlik ediyor."
+},
+"END_REASON_TERRITORY": {
+"en": "You dominate the known world.",
+"tr": "Bilinen dünyaya hükmediyorsunuz."
+},
+"END_STATS": {
+"en": "Statistics",
+"tr": "İstatistikler"
+},
+"END_VICTORY": {
+"en": "VICTORY",
+"tr": "ZAFER"
+},
+"END_WINNER": {
+"en": "{country} prevailed.",
+"tr": "{country} galip geldi."
+},
+"ERR_GENERIC": {
+"en": "That is not possible.",
+"tr": "Bu mümkün değil."
+},
+"ERR_INVALID": {
+"en": "Invalid action.",
+"tr": "Geçersiz eylem."
+},
+"ERR_NOT_YOURS": {
+"en": "That is not yours.",
+"tr": "Bu size ait değil."
+},
+"ERR_NO_ADMIN": {
+"en": "Not enough administrative points (need {need}).",
+"tr": "İdari puan yetersiz ({need} gerekli)."
+},
+"ERR_NO_GOLD": {
+"en": "Not enough gold (need {need}).",
+"tr": "Altın yetersiz ({need} gerekli)."
+},
+"ERR_SC_BAD_ARMY_LOC": {
+"en": "{a}: an army is placed in a province that does not exist",
+"tr": "{a}: bir ordu var olmayan bir eyalete yerleştirilmiş"
+},
+"ERR_SC_BAD_CAPITAL": {
+"en": "{a}: capital does not exist",
+"tr": "{a}: başkent yok"
+},
+"ERR_SC_BAD_GOV": {
+"en": "Unknown government type: {a}",
+"tr": "Bilinmeyen hükûmet türü: {a}"
+},
+"ERR_SC_BAD_PROVINCE": {
+"en": "{a}: province pattern matches nothing ({b})",
+"tr": "{a}: eyalet deseni hiçbir şeyle eşleşmiyor ({b})"
+},
+"ERR_SC_BAD_UNIT": {
+"en": "{a}: unknown unit {b}",
+"tr": "{a}: bilinmeyen birlik {b}"
+},
+"ERR_SC_CAPITAL_NOT_OWNED": {
+"en": "{a}: the capital is not owned by the country",
+"tr": "{a}: başkent bu devlete ait değil"
+},
+"ERR_SC_EMPTY_COUNTRY": {
+"en": "{a}: the country owns no province",
+"tr": "{a}: devletin hiç eyaleti yok"
+},
+"ERR_SC_NO_COUNTRIES": {
+"en": "The scenario has no countries.",
+"tr": "Senaryoda devlet yok."
+},
+"ERR_SC_NO_ID": {
+"en": "The scenario has no id.",
+"tr": "Senaryonun kimliği yok."
+},
+"ERR_SC_NO_NAME": {
+"en": "{a}: missing name",
+"tr": "{a}: ad eksik"
+},
+"ERR_SC_NO_START": {
+"en": "The scenario has no start date.",
+"tr": "Senaryonun başlangıç tarihi yok."
+},
+"ERR_SC_REL_UNKNOWN": {
+"en": "Relation refers to unknown country {b}",
+"tr": "İlişki bilinmeyen {b} devletine başvuruyor"
+},
+"EVT_HISTORICAL": {
+"en": "HISTORICAL EVENT",
+"tr": "TARİHÎ OLAY"
+},
+"EVT_OPEN": {
+"en": "Decide now",
+"tr": "Şimdi karar ver"
+},
+"EVT_PENDING": {
+"en": "{n} event(s) await your decision.",
+"tr": "{n} olay kararınızı bekliyor."
+},
+"EVT_RANDOM": {
+"en": "RANDOM EVENT",
+"tr": "RASTGELE OLAY"
+},
+"EVT_SOURCE": {
+"en": "Source: {src}",
+"tr": "Kaynak: {src}"
+},
+"FACTOR_COMPOSITION": {
+"en": "Army composition",
+"tr": "Ordu bileşimi"
+},
+"FACTOR_FORT": {
+"en": "Fortifications",
+"tr": "Tahkimat"
+},
+"FACTOR_GENERAL": {
+"en": "General's skill",
+"tr": "Komutan yeteneği"
+},
+"FACTOR_LUCK": {
+"en": "The fortunes of war",
+"tr": "Savaşın kaderi"
+},
+"FACTOR_MORALE": {
+"en": "Morale",
+"tr": "Moral"
+},
+"FACTOR_NUMBERS": {
+"en": "Numbers",
+"tr": "Sayısal üstünlük"
+},
+"FACTOR_SUPPLY": {
+"en": "Supply",
+"tr": "İkmal"
+},
+"FACTOR_TECH": {
+"en": "Technology",
+"tr": "Teknoloji"
+},
+"FACTOR_TERRAIN": {
+"en": "Terrain",
+"tr": "Arazi"
+},
+"FACTOR_WEATHER": {
+"en": "Weather",
+"tr": "Hava"
+},
+"FEAT_COUP_RISK": {
+"en": "Generals may seize power.",
+"tr": "Generaller iktidarı ele geçirebilir."
+},
+"FEAT_ELECTIONS": {
+"en": "Leaders are elected periodically.",
+"tr": "Liderler düzenli aralıklarla seçilir."
+},
+"FEAT_FACTIONS_STRONG": {
+"en": "Political factions are very influential.",
+"tr": "Siyasi hizipler çok etkilidir."
+},
+"FEAT_HOLY_WAR": {
+"en": "May wage holy wars.",
+"tr": "Kutsal savaş açabilir."
+},
+"FEAT_MERCENARIES": {
+"en": "Hires mercenaries cheaply and quickly.",
+"tr": "Paralı askeri ucuza ve hızlıca tutar."
+},
+"FEAT_NO_ADVANCED_BUILDINGS": {
+"en": "Cannot build advanced institutions.",
+"tr": "Gelişmiş kurumlar kuramaz."
+},
+"FEAT_PARLIAMENT": {
+"en": "A parliament shares power.",
+"tr": "Bir meclis gücü paylaşır."
+},
+"FEAT_PRESTIGE_LEGIT": {
+"en": "Legitimacy follows prestige.",
+"tr": "Meşruiyet prestije bağlıdır."
+},
+"FEAT_RAIDING": {
+"en": "Strong in raiding and war.",
+"tr": "Akında ve savaşta güçlüdür."
+},
+"FEAT_RELIGIOUS_UNITY_MATTERS": {
+"en": "Religious unity decides legitimacy.",
+"tr": "Dinî birlik meşruiyeti belirler."
+},
+"FEAT_RULER_SKILL_MATTERS": {
+"en": "The ruler's skills matter greatly.",
+"tr": "Hükümdarın yetenekleri çok önemlidir."
+},
+"FEAT_SUCCESSION_CRISIS": {
+"en": "Hereditary succession: no heir means crisis.",
+"tr": "Soyaçekim: varissizlik krize yol açar."
+},
+"FEAT_VASSALS": {
+"en": "Powerful vassal lords.",
+"tr": "Güçlü tâbi beyler."
+},
+"GAME_OVER": {
+"en": "The campaign is over.",
+"tr": "Kampanya sona erdi."
+},
+"GIFT_HINT": {
+"en": "How much gold do you send?",
+"tr": "Ne kadar altın gönderiyorsunuz?"
+},
+"GOV_CHANGE": {
+"en": "Change",
+"tr": "Değiştir"
+},
+"GOV_CHANGE_CONFIRM": {
+"en": "Change the government to {gov}? This is costly and destabilising; reforms tied to the old system are lost.",
+"tr": "Hükûmet {gov} olarak değiştirilsin mi? Bu maliyetli ve istikrarı bozucudur; eski sisteme bağlı reformlar kaybolur."
+},
+"GOV_ERR_SIZE": {
+"en": "Your realm is too small.",
+"tr": "Devletiniz çok küçük."
+},
+"GOV_NEXT_CHANGE": {
+"en": "Next leadership change",
+"tr": "Sonraki liderlik değişimi"
+},
+"GOV_TRANSITIONS": {
+"en": "Change of government",
+"tr": "Hükûmet değişimi"
+},
+"GOV_TURNS": {
+"en": "{n} turns",
+"tr": "{n} tur"
+},
+"HIST_ALLIANCE": {
+"en": "Alliance with {other}.",
+"tr": "{other} ile ittifak."
+},
+"HIST_ALLIANCE_BROKEN": {
+"en": "Broke the alliance with {other}.",
+"tr": "{other} ile ittifak bozuldu."
+},
+"HIST_ANNEXED": {
+"en": "{other} was annexed.",
+"tr": "{other} ilhak edildi."
+},
+"HIST_BANKRUPT": {
+"en": "The state went bankrupt.",
+"tr": "Devlet iflas etti."
+},
+"HIST_COALITION_WAR": {
+"en": "A coalition went to war against {other}.",
+"tr": "Bir koalisyon {other} devletine savaş açtı."
+},
+"HIST_COUP": {
+"en": "A coup brought {ruler} to power.",
+"tr": "Bir darbe {ruler} kişisini iktidara getirdi."
+},
+"HIST_DESTROYED": {
+"en": "The realm fell.",
+"tr": "Devlet yıkıldı."
+},
+"HIST_ELECTION": {
+"en": "{ruler} was elected leader.",
+"tr": "{ruler} lider seçildi."
+},
+"HIST_EVENT": {
+"en": "{event}: {option}",
+"tr": "{event}: {option}"
+},
+"HIST_GOV_CHANGED": {
+"en": "Government changed to {gov}.",
+"tr": "Hükûmet biçimi {gov} oldu."
+},
+"HIST_INCOME_TITLE": {
+"en": "Income per turn",
+"tr": "Tur başına gelir"
+},
+"HIST_OBJECTIVE": {
+"en": "Objective achieved: {obj}.",
+"tr": "Hedef gerçekleşti: {obj}."
+},
+"HIST_PEACE_LOST": {
+"en": "Lost a war to {other}.",
+"tr": "{other} karşısında savaş kaybedildi."
+},
+"HIST_PEACE_WHITE": {
+"en": "White peace with {other}.",
+"tr": "{other} ile beraberlik barışı."
+},
+"HIST_PEACE_WON": {
+"en": "Won a war against {other}.",
+"tr": "{other} karşısında savaş kazanıldı."
+},
+"HIST_REFORM": {
+"en": "Adopted the reform: {reform}.",
+"tr": "Reform uygulandı: {reform}."
+},
+"HIST_REVOLT": {
+"en": "Revolt in {province}.",
+"tr": "{province} eyaletinde isyan."
+},
+"HIST_RULER_DIED": {
+"en": "{ruler} died.",
+"tr": "{ruler} öldü."
+},
+"HIST_SUCCESSION_CRISIS": {
+"en": "Succession crisis: {ruler} seized the throne.",
+"tr": "Veraset krizi: {ruler} tahtı ele geçirdi."
+},
+"HIST_TECH": {
+"en": "Mastered {tech}.",
+"tr": "{tech} öğrenildi."
+},
+"HIST_VASSAL": {
+"en": "{other} became a vassal.",
+"tr": "{other} tâbi oldu."
+},
+"HIST_VASSAL_RELEASED": {
+"en": "{other} was released.",
+"tr": "{other} serbest bırakıldı."
+},
+"HIST_WAR_DECLARED": {
+"en": "War declared on {other} ({cb}).",
+"tr": "{other} devletine savaş ilan edildi ({cb})."
+},
+"HOTSEAT_PASS": {
+"en": "Pass the device to",
+"tr": "Cihazı şu oyuncuya verin"
+},
+"HOTSEAT_READY": {
+"en": "I am ready",
+"tr": "Hazırım"
+},
+"ISL_POOL": {
+"en": "Island peoples",
+"tr": "Ada halkları"
+},
+"LOG_EMPTY": {
+"en": "No notifications yet.",
+"tr": "Henüz bildirim yok."
+},
+"MENU_ACHIEVEMENTS": {
+"en": "Achievements",
+"tr": "Başarımlar"
+},
+"MENU_CONTINUE": {
+"en": "Continue",
+"tr": "Devam"
+},
+"MENU_CREDITS": {
+"en": "Credits",
+"tr": "Emeği geçenler"
+},
+"MENU_CUSTOM": {
+"en": "Custom scenarios",
+"tr": "Özel senaryolar"
+},
+"MENU_EDITOR": {
+"en": "Map & scenario editor",
+"tr": "Harita ve senaryo düzenleyici"
+},
+"MENU_LOAD": {
+"en": "Load game",
+"tr": "Oyun yükle"
+},
+"MENU_NEW": {
+"en": "New campaign",
+"tr": "Yeni kampanya"
+},
+"MENU_SCENARIOS": {
+"en": "Scenarios",
+"tr": "Senaryolar"
+},
+"MENU_SETTINGS": {
+"en": "Settings",
+"tr": "Ayarlar"
+},
+"MENU_STATISTICS": {
+"en": "Statistics",
+"tr": "İstatistikler"
+},
+"MIL_AT_SEA": {
+"en": "At sea",
+"tr": "Denizde"
+},
+"MIL_DISBAND": {
+"en": "Disband",
+"tr": "Dağıt"
+},
+"MIL_DISBAND_CONFIRM": {
+"en": "Disband this army? Part of the manpower returns to your pool.",
+"tr": "Bu ordu dağıtılsın mı? İnsan gücünün bir kısmı havuza döner."
+},
+"MIL_GENERAL": {
+"en": "General",
+"tr": "Komutan"
+},
+"MIL_IN_TRANSIT": {
+"en": "Sailing to {to} ({n} turns)",
+"tr": "{to} eyaletine yelken açtı ({n} tur)"
+},
+"MIL_LOCKED_CLASS": {
+"en": "Not yet available: research the matching technology.",
+"tr": "Henüz mevcut değil: ilgili teknolojiyi araştırın."
+},
+"MIL_MANPOWER": {
+"en": "Manpower",
+"tr": "İnsan gücü"
+},
+"MIL_MERGE": {
+"en": "Merge",
+"tr": "Birleştir"
+},
+"MIL_MORALE": {
+"en": "Morale",
+"tr": "Moral"
+},
+"MIL_MOVING_TO": {
+"en": "Moving to {to}",
+"tr": "{to} eyaletine ilerliyor"
+},
+"MIL_NO_ARMIES": {
+"en": "You have no armies.",
+"tr": "Hiç ordunuz yok."
+},
+"MIL_NO_GENERAL": {
+"en": "No general",
+"tr": "Komutan yok"
+},
+"MIL_ORDERS": {
+"en": "Orders",
+"tr": "Emirler"
+},
+"MIL_QUEUE": {
+"en": "In training",
+"tr": "Eğitimde"
+},
+"MIL_RECRUIT_AT": {
+"en": "Recruiting in",
+"tr": "Asker toplanan eyalet"
+},
+"MIL_RECRUIT_HERE": {
+"en": "Recruit here",
+"tr": "Burada asker topla"
+},
+"MIL_RECRUIT_HINT": {
+"en": "Select one of your provinces on the map to recruit there. Ships need a port.",
+"tr": "Orada asker almak için haritada eyaletlerinizden birini seçin. Gemiler için liman gerekir."
+},
+"MIL_REGIMENTS": {
+"en": "Land regiments",
+"tr": "Kara alayları"
+},
+"MIL_SELECT": {
+"en": "Select / give orders",
+"tr": "Seç / emir ver"
+},
+"MIL_SELECTED": {
+"en": "Selected",
+"tr": "Seçili"
+},
+"MIL_SHIPS": {
+"en": "Ship squadrons",
+"tr": "Gemi filoları"
+},
+"MIL_SPLIT": {
+"en": "Split",
+"tr": "Böl"
+},
+"MIL_SPLIT_HINT": {
+"en": "How many regiments should form a new army?",
+"tr": "Kaç alay yeni bir ordu oluştursun?"
+},
+"MIL_STOP": {
+"en": "Stop",
+"tr": "Durdur"
+},
+"MIL_UPKEEP": {
+"en": "Upkeep per turn",
+"tr": "Tur başına masraf"
+},
+"MODE_DIPLOMATIC": {
+"en": "Diplomatic",
+"tr": "Diplomatik"
+},
+"MODE_ECONOMIC": {
+"en": "Economic",
+"tr": "Ekonomik"
+},
+"MODE_MILITARY": {
+"en": "Military",
+"tr": "Askerî"
+},
+"MODE_POLITICAL": {
+"en": "Political",
+"tr": "Siyasi"
+},
+"MODE_POPULATION": {
+"en": "Population",
+"tr": "Nüfus"
+},
+"MODE_SUPPLY": {
+"en": "Supply",
+"tr": "İkmal"
+},
+"MODE_TERRAIN": {
+"en": "Terrain",
+"tr": "Arazi"
+},
+"MODE_TRADE": {
+"en": "Trade",
+"tr": "Ticaret"
+},
+"MOD_ADMIN_CAP": {
+"en": "Administrative capacity",
+"tr": "İdari kapasite"
+},
+"MOD_ARMY_UPKEEP": {
+"en": "Army upkeep",
+"tr": "Ordu masrafı"
+},
+"MOD_ARTISANS_SAT": {
+"en": "Artisan satisfaction",
+"tr": "Esnaf memnuniyeti"
+},
+"MOD_ARTISAN_SHARE": {
+"en": "Artisans",
+"tr": "Esnaf payı"
+},
+"MOD_ART_ATK": {
+"en": "Artillery attack",
+"tr": "Topçu hücumu"
+},
+"MOD_ATTRITION": {
+"en": "Attrition",
+"tr": "Yıpranma"
+},
+"MOD_BUILD_COST": {
+"en": "Construction cost",
+"tr": "İnşaat maliyeti"
+},
+"MOD_BUILD_SPEED": {
+"en": "Construction speed",
+"tr": "İnşaat hızı"
+},
+"MOD_CAV_ATK": {
+"en": "Cavalry attack",
+"tr": "Süvari hücumu"
+},
+"MOD_CLERGY_SAT": {
+"en": "Clergy satisfaction",
+"tr": "Din adamı memnuniyeti"
+},
+"MOD_CLERGY_SHARE": {
+"en": "Clergy",
+"tr": "Din adamı payı"
+},
+"MOD_CORRUPTION": {
+"en": "Corruption",
+"tr": "Yolsuzluk"
+},
+"MOD_COST_INFLATION": {
+"en": "Inflation",
+"tr": "Enflasyon"
+},
+"MOD_CREDIT": {
+"en": "Credit limit",
+"tr": "Kredi sınırı"
+},
+"MOD_DIPLO": {
+"en": "Diplomatic reputation",
+"tr": "Diplomatik itibar"
+},
+"MOD_DISEASE": {
+"en": "Disease",
+"tr": "Hastalık"
+},
+"MOD_DISEASE_RESIST": {
+"en": "Disease resistance",
+"tr": "Hastalığa direnç"
+},
+"MOD_FOOD": {
+"en": "Food production",
+"tr": "Gıda üretimi"
+},
+"MOD_FOOD_MULT": {
+"en": "Food output",
+"tr": "Gıda çıktısı"
+},
+"MOD_FORT_DEF": {
+"en": "Fortress defence",
+"tr": "Kale savunması"
+},
+"MOD_FORT_LEVEL": {
+"en": "Fortification level",
+"tr": "Tahkimat seviyesi"
+},
+"MOD_GENERAL_SKILL": {
+"en": "General skill",
+"tr": "Komutan yeteneği"
+},
+"MOD_HAPPINESS": {
+"en": "Happiness",
+"tr": "Mutluluk"
+},
+"MOD_HAPPINESS_LOCAL": {
+"en": "Local happiness",
+"tr": "Yerel mutluluk"
+},
+"MOD_INFRA": {
+"en": "Infrastructure",
+"tr": "Altyapı"
+},
+"MOD_INF_ATK": {
+"en": "Infantry attack",
+"tr": "Piyade hücumu"
+},
+"MOD_INF_DEF": {
+"en": "Infantry defence",
+"tr": "Piyade savunması"
+},
+"MOD_INTEREST": {
+"en": "Interest rate",
+"tr": "Faiz oranı"
+},
+"MOD_LEGIT": {
+"en": "Legitimacy",
+"tr": "Meşruiyet"
+},
+"MOD_LEGIT_CONQUEST": {
+"en": "Legitimacy from conquest",
+"tr": "Fetihten meşruiyet"
+},
+"MOD_LITERACY": {
+"en": "Literacy growth",
+"tr": "Okuryazarlık artışı"
+},
+"MOD_MANPOWER": {
+"en": "Manpower",
+"tr": "İnsan gücü"
+},
+"MOD_MANPOWER_MULT": {
+"en": "Local manpower",
+"tr": "Yerel insan gücü"
+},
+"MOD_MANPOWER_RECOVERY": {
+"en": "Manpower recovery",
+"tr": "İnsan gücü toparlanması"
+},
+"MOD_MERCENARY_COST": {
+"en": "Mercenary cost",
+"tr": "Paralı asker maliyeti"
+},
+"MOD_MERCHANTS_SAT": {
+"en": "Merchant satisfaction",
+"tr": "Tüccar memnuniyeti"
+},
+"MOD_MERCHANT_SHARE": {
+"en": "Merchants",
+"tr": "Tüccar payı"
+},
+"MOD_MINE": {
+"en": "Mining output",
+"tr": "Maden çıktısı"
+},
+"MOD_MINE_MULT": {
+"en": "Mine output",
+"tr": "Maden çıktısı"
+},
+"MOD_MORALE": {
+"en": "Army morale",
+"tr": "Ordu morali"
+},
+"MOD_MOVE": {
+"en": "Movement speed",
+"tr": "Hareket hızı"
+},
+"MOD_MOVE_BONUS": {
+"en": "Movement bonus",
+"tr": "Hareket bonusu"
+},
+"MOD_NAVAL_ATK": {
+"en": "Naval attack",
+"tr": "Deniz hücumu"
+},
+"MOD_NAVAL_SLOTS": {
+"en": "Naval slots",
+"tr": "Donanma yuvası"
+},
+"MOD_NAVAL_TRANSPORT": {
+"en": "Naval transport",
+"tr": "Deniz nakliyesi"
+},
+"MOD_NOBILITY_SAT": {
+"en": "Noble satisfaction",
+"tr": "Soylu memnuniyeti"
+},
+"MOD_OVEREXTENSION": {
+"en": "Overextension",
+"tr": "Aşırı genişleme"
+},
+"MOD_PEASANTS_SAT": {
+"en": "Peasant satisfaction",
+"tr": "Köylü memnuniyeti"
+},
+"MOD_POP_CAP": {
+"en": "Population capacity",
+"tr": "Nüfus kapasitesi"
+},
+"MOD_POP_GROWTH": {
+"en": "Population growth",
+"tr": "Nüfus artışı"
+},
+"MOD_PRESTIGE": {
+"en": "Prestige gain",
+"tr": "Prestij kazancı"
+},
+"MOD_PROD": {
+"en": "Production",
+"tr": "Üretim"
+},
+"MOD_PROD_MILITARY": {
+"en": "Military production",
+"tr": "Askerî üretim"
+},
+"MOD_PROD_MULT": {
+"en": "Local production",
+"tr": "Yerel üretim"
+},
+"MOD_RECRUIT_COST": {
+"en": "Recruitment cost",
+"tr": "Asker toplama maliyeti"
+},
+"MOD_RECRUIT_SPEED": {
+"en": "Recruitment speed",
+"tr": "Asker toplama hızı"
+},
+"MOD_REFORM_COST": {
+"en": "Reform cost",
+"tr": "Reform maliyeti"
+},
+"MOD_RELIGION_UNITY": {
+"en": "Religious unity",
+"tr": "Dinî birlik"
+},
+"MOD_RESEARCH": {
+"en": "Research speed",
+"tr": "Araştırma hızı"
+},
+"MOD_RESEARCH_PTS": {
+"en": "Research points",
+"tr": "Araştırma puanı"
+},
+"MOD_SIEGE": {
+"en": "Siege strength",
+"tr": "Kuşatma gücü"
+},
+"MOD_SIEGE_DEF": {
+"en": "Siege resistance",
+"tr": "Kuşatmaya direnç"
+},
+"MOD_STABILITY": {
+"en": "Stability",
+"tr": "İstikrar"
+},
+"MOD_STABILITY_LOCAL": {
+"en": "Local stability",
+"tr": "Yerel istikrar"
+},
+"MOD_SUPPLY": {
+"en": "Supply capacity",
+"tr": "İkmal kapasitesi"
+},
+"MOD_TARIFF": {
+"en": "Tariffs",
+"tr": "Gümrük"
+},
+"MOD_TAX": {
+"en": "Tax income",
+"tr": "Vergi geliri"
+},
+"MOD_TAX_MULT": {
+"en": "Local taxes",
+"tr": "Yerel vergi"
+},
+"MOD_TRADE": {
+"en": "Trade income",
+"tr": "Ticaret geliri"
+},
+"MOD_TRADE_POWER": {
+"en": "Trade power",
+"tr": "Ticaret gücü"
+},
+"MOD_UNREST": {
+"en": "Unrest",
+"tr": "Huzursuzluk"
+},
+"MOD_UNREST_MINORITY": {
+"en": "Minority unrest",
+"tr": "Azınlık huzursuzluğu"
+},
+"MOD_WAR_EXHAUSTION": {
+"en": "War exhaustion",
+"tr": "Savaş yorgunluğu"
+},
+"MOD_WOOD_MULT": {
+"en": "Wood output",
+"tr": "Kereste çıktısı"
+},
+"MOD_XP_GAIN": {
+"en": "Experience gain",
+"tr": "Tecrübe kazanımı"
+},
+"MONTHS": {
+"en": "January,February,March,April,May,June,July,August,September,October,November,December",
+"tr": "Ocak,Şubat,Mart,Nisan,Mayıs,Haziran,Temmuz,Ağustos,Eylül,Ekim,Kasım,Aralık"
+},
+"MOVE_ERR_NO_ACCESS": {
+"en": "You may not enter that territory (declare war or get military access).",
+"tr": "Bu topraklara giremezsiniz (savaş ilan edin veya askerî geçiş izni alın)."
+},
+"MOVE_ERR_NO_PATH": {
+"en": "No route exists (islands need a fleet and a port).",
+"tr": "Güzergâh yok (adalar için donanma ve liman gerekir)."
+},
+"MOVE_ERR_TRANSIT": {
+"en": "The army is at sea.",
+"tr": "Ordu denizde."
+},
+"MOVE_PREVIEW": {
+"en": "March to {to}: about {n} turns",
+"tr": "{to} eyaletine yürüyüş: yaklaşık {n} tur"
+},
+"MOVE_TAP_TARGET": {
+"en": "Tap a destination province.",
+"tr": "Bir hedef eyalete dokunun."
+},
+"NOTE_ALLY_JOINED": {
+"en": "{other}'s ally has joined the war.",
+"tr": "{other} devletinin müttefiki savaşa katıldı."
+},
+"NOTE_ARMY_DESTROYED": {
+"en": "An army was destroyed near {province}: no line of retreat.",
+"tr": "{province} yakınında bir ordu yok oldu: çekilme yolu kalmadı."
+},
+"NOTE_ATTRITION": {
+"en": "Attrition in {province}: the army lost {pct}% of its men to hunger and weather.",
+"tr": "{province} bölgesinde yıpranma: ordu açlık ve hava yüzünden adamlarının %{pct}'ini kaybetti."
+},
+"NOTE_BANKRUPT": {
+"en": "The state is bankrupt! Mercenaries leave, stability collapses.",
+"tr": "Devlet iflas etti! Paralı askerler ayrılıyor, istikrar çöküyor."
+},
+"NOTE_BATTLE": {
+"en": "Battle at {province}: {won}",
+"tr": "{province} muharebesi: {won}"
+},
+"NOTE_BUILT": {
+"en": "Construction finished: {b} (level {lv}).",
+"tr": "İnşaat tamamlandı: {b} (seviye {lv})."
+},
+"NOTE_COALITION": {
+"en": "A coalition forms against {other}.",
+"tr": "{other} aleyhine bir koalisyon kuruluyor."
+},
+"NOTE_COALITION_AGAINST_YOU": {
+"en": "{count} nations form a coalition against you!",
+"tr": "{count} devlet aleyhinize koalisyon kuruyor!"
+},
+"NOTE_COUNTRY_FELL": {
+"en": "{country} has ceased to exist.",
+"tr": "{country} ortadan kalktı."
+},
+"NOTE_COUP": {
+"en": "A coup! {ruler} seizes power.",
+"tr": "Darbe! {ruler} iktidarı ele geçirdi."
+},
+"NOTE_DESTROYED": {
+"en": "Your realm has fallen.",
+"tr": "Devletiniz yıkıldı."
+},
+"NOTE_ELECTION": {
+"en": "Elections held: {ruler} is the new leader.",
+"tr": "Seçim yapıldı: yeni lider {ruler}."
+},
+"NOTE_EVENT": {
+"en": "An event requires your decision: {event}",
+"tr": "Kararınızı bekleyen bir olay: {event}"
+},
+"NOTE_FAMINE": {
+"en": "Famine! {pct}% of the people's food needs cannot be met.",
+"tr": "Kıtlık! Halkın gıda ihtiyacının %{pct}'i karşılanamıyor."
+},
+"NOTE_GAME_OVER": {
+"en": "The campaign has ended.",
+"tr": "Kampanya sona erdi."
+},
+"NOTE_GOV_CHANGED": {
+"en": "The government is now: {gov}.",
+"tr": "Yeni hükûmet biçimi: {gov}."
+},
+"NOTE_HEIR_BORN": {
+"en": "An heir has been born.",
+"tr": "Bir varis doğdu."
+},
+"NOTE_LOAN": {
+"en": "The treasury was empty: a loan of {amount} gold was taken.",
+"tr": "Hazine boştu: {amount} altın borç alındı."
+},
+"NOTE_MOVE_BLOCKED": {
+"en": "Your army cannot enter {province}.",
+"tr": "Ordunuz {province} eyaletine giremiyor."
+},
+"NOTE_NEW_RULER": {
+"en": "{ruler} now rules.",
+"tr": "{ruler} tahta çıktı."
+},
+"NOTE_OBJECTIVE_DONE": {
+"en": "Objective achieved: {obj}",
+"tr": "Hedef gerçekleşti: {obj}"
+},
+"NOTE_OUTBREAK": {
+"en": "A disease outbreak strikes {province}.",
+"tr": "{province} eyaletinde salgın çıktı."
+},
+"NOTE_PACT": {
+"en": "{other} accepted: {action}.",
+"tr": "{other} kabul etti: {action}."
+},
+"NOTE_PEACE_OFFER": {
+"en": "{other} offers peace.",
+"tr": "{other} barış öneriyor."
+},
+"NOTE_PROPOSAL": {
+"en": "{other} proposes: {action}.",
+"tr": "{other} öneriyor: {action}."
+},
+"NOTE_PROVINCE_GAINED": {
+"en": "{province} is now yours.",
+"tr": "{province} artık sizin."
+},
+"NOTE_PROVINCE_LOST_OCC": {
+"en": "{province} has been occupied by the enemy!",
+"tr": "{province} düşman tarafından işgal edildi!"
+},
+"NOTE_PROVINCE_OCCUPIED": {
+"en": "Your army occupied {province}.",
+"tr": "Ordunuz {province} eyaletini işgal etti."
+},
+"NOTE_REFORM": {
+"en": "Reform adopted: {reform}.",
+"tr": "Reform uygulandı: {reform}."
+},
+"NOTE_REGENCY": {
+"en": "{ruler} is a minor: a regency governs.",
+"tr": "{ruler} reşit değil: naiplik yönetiyor."
+},
+"NOTE_REVOLT": {
+"en": "Revolt in {province}!",
+"tr": "{province} eyaletinde isyan!"
+},
+"NOTE_RULER_DIED": {
+"en": "{ruler} has died.",
+"tr": "{ruler} öldü."
+},
+"NOTE_SUCCESSION_CRISIS": {
+"en": "Succession crisis! {ruler} claims the throne without a clear right.",
+"tr": "Veraset krizi! {ruler} açık bir hakkı olmadan tahta çıkıyor."
+},
+"NOTE_TECH_DONE": {
+"en": "Research complete: {tech}.",
+"tr": "Araştırma tamamlandı: {tech}."
+},
+"NOTE_WAR_ON_YOU": {
+"en": "{other} declared war on you ({cb})!",
+"tr": "{other} size savaş ilan etti ({cb})!"
+},
+"OBJ_BY_TURN": {
+"en": "By turn {n}",
+"tr": "{n}. tura kadar"
+},
+"OBJ_INTRO": {
+"en": "Scenario objectives grant score and prestige. Some lead to victory.",
+"tr": "Senaryo hedefleri puan ve prestij kazandırır. Bazıları zafere götürür."
+},
+"OBJ_SCORE": {
+"en": "{n} points",
+"tr": "{n} puan"
+},
+"OBJ_VICTORY": {
+"en": "Victory objective",
+"tr": "Zafer hedefi"
+},
+"PANEL_COUNTRY": {
+"en": "Country",
+"tr": "Devlet"
+},
+"PANEL_DIPLOMACY": {
+"en": "Diplomacy",
+"tr": "Diplomasi"
+},
+"PANEL_ECONOMY": {
+"en": "Economy",
+"tr": "Ekonomi"
+},
+"PANEL_EVENTS": {
+"en": "Events & notifications",
+"tr": "Olaylar ve bildirimler"
+},
+"PANEL_MILITARY": {
+"en": "Military",
+"tr": "Ordu"
+},
+"PANEL_OBJECTIVES": {
+"en": "Objectives & victory",
+"tr": "Hedefler ve zafer"
+},
+"PANEL_POLITICS": {
+"en": "Population & politics",
+"tr": "Nüfus ve siyaset"
+},
+"PANEL_TECH": {
+"en": "Technology",
+"tr": "Teknoloji"
+},
+"PEACE_COST": {
+"en": "cost",
+"tr": "bedel"
+},
+"PEACE_GOLD": {
+"en": "Demand {gold} gold",
+"tr": "{gold} altın talep et"
+},
+"PEACE_HINT_LOSE": {
+"en": "You are losing: offer concessions, or ask for a white peace.",
+"tr": "Kaybediyorsunuz: taviz önerin ya da beraberlik barışı isteyin."
+},
+"PEACE_HINT_WIN": {
+"en": "You are winning: demand provinces, gold or vassalage up to the value of your war score.",
+"tr": "Kazanıyorsunuz: savaş skorunuz kadar eyalet, altın veya tâbiilik isteyebilirsiniz."
+},
+"PEACE_MADE": {
+"en": "Peace with {country}.",
+"tr": "{country} ile barış yapıldı."
+},
+"PEACE_OCCUPIED": {
+"en": "occupied",
+"tr": "işgal altında"
+},
+"PEACE_OFFER_TERMS": {
+"en": "peace on their terms",
+"tr": "kendi şartlarıyla barış"
+},
+"PEACE_OFFER_WHITE": {
+"en": "a white peace",
+"tr": "beraberlik barışı"
+},
+"PEACE_PROVINCES_LOSE": {
+"en": "Cede provinces",
+"tr": "Eyalet bırak"
+},
+"PEACE_PROVINCES_WIN": {
+"en": "Demand provinces",
+"tr": "Eyalet talep et"
+},
+"PEACE_REFUSED": {
+"en": "They refused.",
+"tr": "Reddettiler."
+},
+"PEACE_SEND": {
+"en": "Send proposal",
+"tr": "Teklifi gönder"
+},
+"PEACE_TITLE": {
+"en": "Peace with {country}",
+"tr": "{country} ile barış"
+},
+"PEACE_VASSALIZE": {
+"en": "Make them your vassal",
+"tr": "Tâbiiniz yap"
+},
+"POP_CAPACITY": {
+"en": "Use of land capacity",
+"tr": "Toprak kapasitesi kullanımı"
+},
+"POP_CULTURES": {
+"en": "Cultures",
+"tr": "Kültürler"
+},
+"POP_LITERACY": {
+"en": "Literacy",
+"tr": "Okuryazarlık"
+},
+"POP_OUTBREAKS": {
+"en": "Disease outbreaks",
+"tr": "Salgın vakaları"
+},
+"POP_PROVINCES": {
+"en": "Most populous provinces",
+"tr": "En kalabalık eyaletler"
+},
+"POP_RELIGIONS": {
+"en": "Religions",
+"tr": "Dinler"
+},
+"POP_URBAN": {
+"en": "Urbanisation",
+"tr": "Şehirleşme"
+},
+"PROPOSAL_GENERIC": {
+"en": "{country} proposes: {action}.",
+"tr": "{country} öneriyor: {action}."
+},
+"PROPOSAL_PEACE": {
+"en": "{country} offers {what}.",
+"tr": "{country} {what} öneriyor."
+},
+"PROPOSAL_TITLE": {
+"en": "Diplomatic proposal",
+"tr": "Diplomatik teklif"
+},
+"PTAB_ARMY": {
+"en": "Armies",
+"tr": "Ordular"
+},
+"PTAB_BUILD": {
+"en": "Build",
+"tr": "İnşaat"
+},
+"PTAB_INFO": {
+"en": "Info",
+"tr": "Bilgi"
+},
+"P_CLAIMS": {
+"en": "Claims",
+"tr": "İddialar"
+},
+"P_COMMERCE": {
+"en": "Commerce",
+"tr": "Ticaret"
+},
+"P_CULTURE": {
+"en": "Culture",
+"tr": "Kültür"
+},
+"P_DEFENCE": {
+"en": "Defence & supply",
+"tr": "Savunma ve ikmal"
+},
+"P_DEV": {
+"en": "Development",
+"tr": "Gelişmişlik"
+},
+"P_DEVELOP": {
+"en": "Develop (+0.5): {gold} gold, {admin} admin",
+"tr": "Geliştir (+0,5): {gold} altın, {admin} idari puan"
+},
+"P_ECONOMY": {
+"en": "Economy",
+"tr": "Ekonomi"
+},
+"P_FOOD": {
+"en": "Food balance",
+"tr": "Gıda bilançosu"
+},
+"P_FORT": {
+"en": "Fortification",
+"tr": "Tahkimat"
+},
+"P_MANPOWER": {
+"en": "Manpower",
+"tr": "İnsan gücü"
+},
+"P_NOT_YOURS": {
+"en": "You can only build in your own provinces.",
+"tr": "Yalnızca kendi eyaletlerinizde inşa edebilirsiniz."
+},
+"P_NO_ARMIES": {
+"en": "No armies here.",
+"tr": "Burada ordu yok."
+},
+"P_OCCUPIED_BY": {
+"en": "Occupied by",
+"tr": "İşgalci"
+},
+"P_OPEN_DIPLO": {
+"en": "Diplomacy with {country}",
+"tr": "{country} ile diplomasi"
+},
+"P_OWNER": {
+"en": "Owner",
+"tr": "Sahip"
+},
+"P_POP": {
+"en": "Population",
+"tr": "Nüfus"
+},
+"P_PRODUCTION": {
+"en": "Production",
+"tr": "Üretim"
+},
+"P_RELIGION": {
+"en": "Religion",
+"tr": "Din"
+},
+"P_SIEGE": {
+"en": "Siege",
+"tr": "Kuşatma"
+},
+"P_SLOTS": {
+"en": "Building slots",
+"tr": "Bina yuvaları"
+},
+"P_SUPPLY": {
+"en": "Supply capacity",
+"tr": "İkmal kapasitesi"
+},
+"P_TAX": {
+"en": "Taxes",
+"tr": "Vergi"
+},
+"P_UNREST": {
+"en": "Unrest",
+"tr": "Huzursuzluk"
+},
+"RECRUIT_ERR_LIMIT": {
+"en": "This province cannot train more units this turn.",
+"tr": "Bu eyalet bu tur daha fazla birlik eğitemez."
+},
+"RECRUIT_ERR_MANPOWER": {
+"en": "Not enough manpower.",
+"tr": "İnsan gücü yetersiz."
+},
+"RECRUIT_ERR_MATERIAL": {
+"en": "Not enough {what}.",
+"tr": "{what} yetersiz."
+},
+"RECRUIT_ERR_PORT": {
+"en": "Ships need a province with a port.",
+"tr": "Gemiler için limanı olan bir eyalet gerekir."
+},
+"RECRUIT_ERR_TECH": {
+"en": "Technology required.",
+"tr": "Teknoloji gerekir."
+},
+"REFORMS": {
+"en": "Reforms",
+"tr": "Reformlar"
+},
+"REFORM_ADOPTED": {
+"en": "Adopted",
+"tr": "Uygulanıyor"
+},
+"REFORM_CONFIRM": {
+"en": "Adopt this reform? Cost: {cost}.",
+"tr": "Bu reform uygulansın mı? Maliyet: {cost}."
+},
+"REFORM_ERR_EXCLUDES": {
+"en": "Incompatible with {r}.",
+"tr": "{r} ile uyumsuz."
+},
+"REFORM_ERR_GOV": {
+"en": "Not available to your government.",
+"tr": "Hükûmetiniz için uygun değil."
+},
+"REFORM_ERR_HAVE": {
+"en": "Already adopted.",
+"tr": "Zaten uygulanıyor."
+},
+"REFORM_ERR_TECH": {
+"en": "Requires {tech}.",
+"tr": "{tech} gerekir."
+},
+"REL_ANIMIST": {
+"en": "Animist",
+"tr": "Animist"
+},
+"REL_BUDDHIST": {
+"en": "Buddhist",
+"tr": "Budist"
+},
+"REL_CATHOLIC": {
+"en": "Catholic",
+"tr": "Katolik"
+},
+"REL_EASTERN_FAITHS": {
+"en": "Eastern faiths",
+"tr": "Doğu inançları"
+},
+"REL_HINDU": {
+"en": "Hindu",
+"tr": "Hindu"
+},
+"REL_JEWISH": {
+"en": "Jewish",
+"tr": "Yahudi"
+},
+"REL_ORTHODOX": {
+"en": "Orthodox",
+"tr": "Ortodoks"
+},
+"REL_PAGAN": {
+"en": "Pagan",
+"tr": "Pagan"
+},
+"REL_PROTESTANT": {
+"en": "Protestant",
+"tr": "Protestan"
+},
+"REL_SECULAR": {
+"en": "Secular",
+"tr": "Seküler"
+},
+"REL_SHIA": {
+"en": "Shia",
+"tr": "Şii"
+},
+"REL_SHINTO": {
+"en": "Shinto",
+"tr": "Şinto"
+},
+"REL_SUNNI": {
+"en": "Sunni",
+"tr": "Sünni"
+},
+"REL_TENGRI": {
+"en": "Tengrist",
+"tr": "Tengrici"
+},
+"RES_ADMIN": {
+"en": "Administrative points",
+"tr": "İdari puan"
+},
+"RES_ARMY_SUPPLY": {
+"en": "Army supply",
+"tr": "Ordu ikmali"
+},
+"RES_BALANCE": {
+"en": "Balance",
+"tr": "Bilanço"
+},
+"RES_COAL": {
+"en": "Coal",
+"tr": "Kömür"
+},
+"RES_CONSUMPTION": {
+"en": "Consumption",
+"tr": "Tüketim"
+},
+"RES_EXPORT_HINT": {
+"en": "Materials above your reserve are sold automatically at market price.",
+"tr": "Rezerv üzerindeki malzemeler piyasa fiyatından otomatik satılır."
+},
+"RES_FOOD": {
+"en": "Food",
+"tr": "Gıda"
+},
+"RES_GOLD": {
+"en": "Gold",
+"tr": "Altın"
+},
+"RES_IRON": {
+"en": "Iron",
+"tr": "Demir"
+},
+"RES_LUX": {
+"en": "Luxury goods",
+"tr": "Lüks mallar"
+},
+"RES_MANPOWER": {
+"en": "Manpower",
+"tr": "İnsan gücü"
+},
+"RES_MARKET": {
+"en": "Market prices",
+"tr": "Piyasa fiyatları"
+},
+"RES_MATERIALS": {
+"en": "Materials",
+"tr": "Malzemeler"
+},
+"RES_PRESTIGE": {
+"en": "Prestige",
+"tr": "Prestij"
+},
+"RES_PRICE": {
+"en": "price",
+"tr": "fiyat"
+},
+"RES_PRODUCTION": {
+"en": "Production",
+"tr": "Üretim"
+},
+"RES_STOCK": {
+"en": "Stockpile",
+"tr": "Stok"
+},
+"RES_STONE": {
+"en": "Stone",
+"tr": "Taş"
+},
+"RES_WOOD": {
+"en": "Wood",
+"tr": "Kereste"
+},
+"SAVE_AUTO": {
+"en": "Autosave",
+"tr": "Otomatik kayıt"
+},
+"SAVE_CORRUPT": {
+"en": "Damaged save",
+"tr": "Hasarlı kayıt"
+},
+"SAVE_DELETE": {
+"en": "Delete save",
+"tr": "Kaydı sil"
+},
+"SAVE_DELETE_Q": {
+"en": "Delete this save permanently?",
+"tr": "Bu kayıt kalıcı olarak silinsin mi?"
+},
+"SAVE_EMPTY": {
+"en": "Empty slot",
+"tr": "Boş yuva"
+},
+"SAVE_ERR_CHECKSUM": {
+"en": "The save file failed verification (damaged or modified).",
+"tr": "Kayıt dosyası doğrulamayı geçemedi (hasarlı veya değiştirilmiş)."
+},
+"SAVE_ERR_CORRUPT": {
+"en": "The save file is corrupt.",
+"tr": "Kayıt dosyası bozuk."
+},
+"SAVE_ERR_INVALID": {
+"en": "The save contains invalid game data.",
+"tr": "Kayıt geçersiz oyun verisi içeriyor."
+},
+"SAVE_ERR_MISSING": {
+"en": "The save file does not exist.",
+"tr": "Kayıt dosyası yok."
+},
+"SAVE_ERR_NEWER": {
+"en": "This save comes from a newer version of the game.",
+"tr": "Bu kayıt oyunun daha yeni bir sürümünden."
+},
+"SAVE_ERR_WRITE": {
+"en": "The file could not be written.",
+"tr": "Dosya yazılamadı."
+},
+"SAVE_LAST": {
+"en": "Latest save",
+"tr": "Son kayıt"
+},
+"SAVE_LOAD_FAILED": {
+"en": "Could not load the save",
+"tr": "Kayıt yüklenemedi"
+},
+"SAVE_NONE": {
+"en": "No saves found.",
+"tr": "Kayıt bulunamadı."
+},
+"SAVE_OVERWRITE": {
+"en": "Overwrite save",
+"tr": "Kaydın üzerine yaz"
+},
+"SAVE_OVERWRITE_Q": {
+"en": "This slot already contains a save. Overwrite it?",
+"tr": "Bu yuvada zaten bir kayıt var. Üzerine yazılsın mı?"
+},
+"SAVE_RECOVERED": {
+"en": "Save recovered",
+"tr": "Kayıt kurtarıldı"
+},
+"SAVE_RECOVERED_D": {
+"en": "The main file was damaged; the previous backup was loaded instead. The damaged file was kept as .corrupt.",
+"tr": "Ana dosya hasarlıydı; bunun yerine önceki yedek yüklendi. Hasarlı dosya .corrupt olarak saklandı."
+},
+"SCORE_DEVELOPMENT": {
+"en": "Development",
+"tr": "Gelişmişlik"
+},
+"SCORE_DIPLOMACY": {
+"en": "Diplomacy",
+"tr": "Diplomasi"
+},
+"SCORE_ECONOMY": {
+"en": "Economy",
+"tr": "Ekonomi"
+},
+"SCORE_MILITARY": {
+"en": "Military achievements",
+"tr": "Askerî başarılar"
+},
+"SCORE_OBJECTIVES": {
+"en": "Objectives",
+"tr": "Hedefler"
+},
+"SCORE_POPULATION": {
+"en": "Population",
+"tr": "Nüfus"
+},
+"SCORE_PRESTIGE": {
+"en": "Prestige",
+"tr": "Prestij"
+},
+"SCORE_TECH": {
+"en": "Technology",
+"tr": "Teknoloji"
+},
+"SCORE_TERRITORY": {
+"en": "Territory",
+"tr": "Toprak"
+},
+"SC_APPROX_DEFAULT": {
+"en": "Borders, rulers and statistics are approximations built on modern-geometry regions.",
+"tr": "Sınırlar, hükümdarlar ve istatistikler modern coğrafya bölgeleri üzerinde kurulmuş yaklaşık değerlerdir."
+},
+"SC_APPROX_TITLE": {
+"en": "Historical approximation",
+"tr": "Tarihsel yaklaşıklık"
+},
+"SC_CHOOSE_NATION": {
+"en": "Choose nation",
+"tr": "Devlet seç"
+},
+"SC_COUNTRIES": {
+"en": "nations",
+"tr": "devlet"
+},
+"SC_DELETE_Q": {
+"en": "Delete this custom scenario permanently?",
+"tr": "Bu özel senaryo kalıcı olarak silinsin mi?"
+},
+"SC_EDIT": {
+"en": "Edit",
+"tr": "Düzenle"
+},
+"SC_ERR_INVALID": {
+"en": "The scenario data is invalid.",
+"tr": "Senaryo verisi geçersiz."
+},
+"SC_ERR_UNKNOWN": {
+"en": "Unknown scenario.",
+"tr": "Bilinmeyen senaryo."
+},
+"SC_HISTORICAL": {
+"en": "Historical scenario",
+"tr": "Tarihî senaryo"
+},
+"SC_INVALID": {
+"en": "This scenario has errors",
+"tr": "Bu senaryoda hatalar var"
+},
+"SC_NO_CUSTOM": {
+"en": "No custom scenarios yet.",
+"tr": "Henüz özel senaryo yok."
+},
+"SC_NO_CUSTOM_HINT": {
+"en": "Create your own scenario in the editor: assign provinces, set armies, relations and victory conditions.",
+"tr": "Düzenleyicide kendi senaryonuzu oluşturun: eyalet atayın, ordu, ilişki ve zafer koşullarını belirleyin."
+},
+"SC_PLAY": {
+"en": "Play",
+"tr": "Oyna"
+},
+"SC_TURNS": {
+"en": "{n} turns (3 months each)",
+"tr": "{n} tur (her biri 3 ay)"
+},
+"SEASON_AUTUMN": {
+"en": "Autumn",
+"tr": "Sonbahar"
+},
+"SEASON_SPRING": {
+"en": "Spring",
+"tr": "İlkbahar"
+},
+"SEASON_SUMMER": {
+"en": "Summer",
+"tr": "Yaz"
+},
+"SEASON_WINTER": {
+"en": "Winter",
+"tr": "Kış"
+},
+"SET_ABOUT": {
+"en": "About",
+"tr": "Hakkında"
+},
+"SET_ADS_INFO": {
+"en": "The game shows one small banner at the bottom of the screen. There are no pop-up, video or forced ads, and ads never interrupt play.",
+"tr": "Oyun ekranın altında tek bir küçük afiş gösterir. Açılır pencere, video veya zorunlu reklam yoktur; reklamlar oyunu asla kesmez."
+},
+"SET_ADS_STATUS": {
+"en": "Banner status",
+"tr": "Afiş durumu"
+},
+"SET_ADS_TEST": {
+"en": "Test ads are active (development build).",
+"tr": "Test reklamları etkin (geliştirme sürümü)."
+},
+"SET_ANIMATIONS": {
+"en": "Animations",
+"tr": "Animasyonlar"
+},
+"SET_ARMY_MARKERS": {
+"en": "Show army markers",
+"tr": "Ordu işaretlerini göster"
+},
+"SET_AUDIO": {
+"en": "Audio",
+"tr": "Ses"
+},
+"SET_AUTOSAVE": {
+"en": "Autosave every turn",
+"tr": "Her turda otomatik kaydet"
+},
+"SET_COLORBLIND": {
+"en": "Colour-blind friendly map colours",
+"tr": "Renk körlüğüne uygun harita renkleri"
+},
+"SET_CONFIRM": {
+"en": "Ask for confirmation on important actions",
+"tr": "Önemli eylemlerde onay iste"
+},
+"SET_CONSENT": {
+"en": "Ad consent",
+"tr": "Reklam onayı"
+},
+"SET_DISPLAY": {
+"en": "Display & accessibility",
+"tr": "Görüntü ve erişilebilirlik"
+},
+"SET_GAMEPLAY": {
+"en": "Gameplay",
+"tr": "Oynanış"
+},
+"SET_GRAPHICS": {
+"en": "Graphics quality",
+"tr": "Grafik kalitesi"
+},
+"SET_GRAPHICS_HINT": {
+"en": "Lower quality saves battery on older phones.",
+"tr": "Düşük kalite eski telefonlarda pil tasarrufu sağlar."
+},
+"SET_LANGUAGE": {
+"en": "Language",
+"tr": "Dil"
+},
+"SET_MAP_LABELS": {
+"en": "Show map labels",
+"tr": "Harita etiketlerini göster"
+},
+"SET_MUSIC": {
+"en": "Music volume",
+"tr": "Müzik sesi"
+},
+"SET_MUTE": {
+"en": "Mute all audio",
+"tr": "Tüm sesi kapat"
+},
+"SET_PERFORMANCE": {
+"en": "Performance",
+"tr": "Performans"
+},
+"SET_PRIVACY": {
+"en": "Privacy & advertising",
+"tr": "Gizlilik ve reklam"
+},
+"SET_PRIVACY_OPTIONS": {
+"en": "Privacy options",
+"tr": "Gizlilik seçenekleri"
+},
+"SET_QUALITY_0": {
+"en": "Low (30 fps)",
+"tr": "Düşük (30 fps)"
+},
+"SET_QUALITY_1": {
+"en": "Medium (60 fps)",
+"tr": "Orta (60 fps)"
+},
+"SET_QUALITY_2": {
+"en": "High (60 fps)",
+"tr": "Yüksek (60 fps)"
+},
+"SET_SFX": {
+"en": "Effects volume",
+"tr": "Efekt sesi"
+},
+"SET_TEXT_SCALE": {
+"en": "Text size",
+"tr": "Yazı boyutu"
+},
+"SKILL_ADM": {
+"en": "Administration",
+"tr": "İdare"
+},
+"SKILL_DIP": {
+"en": "Diplomacy",
+"tr": "Diplomasi"
+},
+"SKILL_MIL": {
+"en": "Military",
+"tr": "Askerlik"
+},
+"SOC_DISFAVOURED": {
+"en": "Disfavoured by your government",
+"tr": "Hükûmetiniz tarafından dışlanıyor"
+},
+"SOC_FAVOURED": {
+"en": "Favoured by your government",
+"tr": "Hükûmetiniz tarafından kayrılıyor"
+},
+"SOC_INTRO": {
+"en": "Every social class has interests. Policies please some and anger others; powerful, unhappy classes destabilise the realm.",
+"tr": "Her toplumsal sınıfın çıkarları vardır. Politikalar kimini memnun eder kimini öfkelendirir; güçlü ve mutsuz sınıflar devleti istikrarsızlaştırır."
+},
+"SOC_SATISFACTION": {
+"en": "Satisfaction",
+"tr": "Memnuniyet"
+},
+"SOC_SHARE_POWER": {
+"en": "{share} of people · {power} political power",
+"tr": "Nüfusun {share} · {power} siyasi güç"
+},
+"SOC_UNREST_SPOTS": {
+"en": "Unrest hot spots",
+"tr": "Huzursuzluk odakları"
+},
+"STAB_ADVICE": {
+"en": "Advisers say",
+"tr": "Danışmanlar diyor ki"
+},
+"STAB_FACTION": {
+"en": "Class satisfaction",
+"tr": "Sınıf memnuniyeti"
+},
+"STAB_FACTORS": {
+"en": "What shapes stability",
+"tr": "İstikrarı belirleyenler"
+},
+"STAB_GOV": {
+"en": "Government type",
+"tr": "Hükûmet türü"
+},
+"STAB_HUNGER": {
+"en": "Hunger",
+"tr": "Açlık"
+},
+"STAB_LUXURY": {
+"en": "Luxuries lacking",
+"tr": "Lüks eksikliği"
+},
+"STAB_OVEREXT": {
+"en": "Overextension",
+"tr": "Aşırı genişleme"
+},
+"STAB_PRESTIGE": {
+"en": "Prestige",
+"tr": "Prestij"
+},
+"STAB_WAR": {
+"en": "War exhaustion",
+"tr": "Savaş yorgunluğu"
+},
+"STATS_BEST_SCORE": {
+"en": "Best score",
+"tr": "En iyi puan"
+},
+"STATS_CAMPAIGNS": {
+"en": "Campaigns finished",
+"tr": "Tamamlanan kampanyalar"
+},
+"STATS_LIFETIME": {
+"en": "Lifetime statistics",
+"tr": "Tüm zamanların istatistikleri"
+},
+"STATS_TURNS": {
+"en": "Turns played",
+"tr": "Oynanan turlar"
+},
+"STATS_UNLOCKED": {
+"en": "Achievements unlocked",
+"tr": "Kazanılan başarımlar"
+},
+"STATS_VICTORIES": {
+"en": "Campaign victories",
+"tr": "Kampanya zaferleri"
+},
+"STAT_ALLIANCES": {
+"en": "Alliances formed",
+"tr": "Kurulan ittifaklar"
+},
+"STAT_ANNEXED": {
+"en": "Countries annexed",
+"tr": "İlhak edilen devletler"
+},
+"STAT_BATTLES": {
+"en": "Battles",
+"tr": "Savaşlar"
+},
+"STAT_BUILDINGS": {
+"en": "Buildings constructed",
+"tr": "İnşa edilen binalar"
+},
+"STAT_CAMPAIGN": {
+"en": "Campaign",
+"tr": "Kampanya"
+},
+"STAT_CASUALTIES": {
+"en": "Own casualties",
+"tr": "Kendi kayıplarımız"
+},
+"STAT_CONQUERED": {
+"en": "Provinces conquered",
+"tr": "Fethedilen eyalet"
+},
+"STAT_DURATION": {
+"en": "Campaign duration",
+"tr": "Kampanya süresi"
+},
+"STAT_INFLICTED": {
+"en": "Enemy casualties",
+"tr": "Düşman kayıpları"
+},
+"STAT_SCORE": {
+"en": "Score",
+"tr": "Puan"
+},
+"STAT_TECHS": {
+"en": "Technologies researched",
+"tr": "Araştırılan teknolojiler"
+},
+"STAT_TOTAL_INCOME": {
+"en": "Total income earned",
+"tr": "Toplam kazanılan gelir"
+},
+"STAT_VICTORIES": {
+"en": "Battle victories",
+"tr": "Muharebe zaferleri"
+},
+"STAT_WARS_WON": {
+"en": "Wars won",
+"tr": "Kazanılan savaşlar"
+},
+"STAT_YEARS": {
+"en": "{n} years",
+"tr": "{n} yıl"
+},
+"TAB_ARMIES": {
+"en": "Armies",
+"tr": "Ordular"
+},
+"TAB_BUDGET": {
+"en": "Budget",
+"tr": "Bütçe"
+},
+"TAB_GOVERNMENT": {
+"en": "Government",
+"tr": "Hükûmet"
+},
+"TAB_HISTORY": {
+"en": "Charts",
+"tr": "Grafikler"
+},
+"TAB_LOG": {
+"en": "Notifications",
+"tr": "Bildirimler"
+},
+"TAB_OBJECTIVES": {
+"en": "Objectives",
+"tr": "Hedefler"
+},
+"TAB_OVERVIEW": {
+"en": "Overview",
+"tr": "Genel"
+},
+"TAB_POPULATION": {
+"en": "Population",
+"tr": "Nüfus"
+},
+"TAB_PROPOSALS": {
+"en": "Proposals",
+"tr": "Teklifler"
+},
+"TAB_RECRUIT": {
+"en": "Recruit",
+"tr": "Asker al"
+},
+"TAB_RELATIONS": {
+"en": "Relations",
+"tr": "İlişkiler"
+},
+"TAB_RESOURCES": {
+"en": "Resources",
+"tr": "Kaynaklar"
+},
+"TAB_SOCIETY": {
+"en": "Society",
+"tr": "Toplum"
+},
+"TAB_STABILITY": {
+"en": "Stability",
+"tr": "İstikrar"
+},
+"TAB_STATS": {
+"en": "Score & statistics",
+"tr": "Puan ve istatistik"
+},
+"TAB_TIMELINE": {
+"en": "Timeline",
+"tr": "Zaman çizelgesi"
+},
+"TAB_TRADE": {
+"en": "Trade",
+"tr": "Ticaret"
+},
+"TAB_VICTORY": {
+"en": "Victory paths",
+"tr": "Zafer yolları"
+},
+"TAB_WARS": {
+"en": "Wars",
+"tr": "Savaşlar"
+},
+"TECH_CANCEL": {
+"en": "Abandon research",
+"tr": "Araştırmayı bırak"
+},
+"TECH_CANCEL_CONFIRM": {
+"en": "Abandon this research? Progress is kept but the fee is not refunded.",
+"tr": "Bu araştırma bırakılsın mı? İlerleme saklanır ama ücret iade edilmez."
+},
+"TECH_COST_RP": {
+"en": "{rp} research points (roughly {turns} turns)",
+"tr": "{rp} araştırma puanı (yaklaşık {turns} tur)"
+},
+"TECH_DONE": {
+"en": "Researched",
+"tr": "Araştırıldı"
+},
+"TECH_ERR_BUSY": {
+"en": "This branch is already researching something.",
+"tr": "Bu kol zaten bir şey araştırıyor."
+},
+"TECH_ERR_DONE": {
+"en": "Already researched.",
+"tr": "Zaten araştırıldı."
+},
+"TECH_ERR_PREREQ": {
+"en": "Requires {tech} first.",
+"tr": "Önce {tech} gerekir."
+},
+"TECH_ERR_UNKNOWN": {
+"en": "Unknown technology.",
+"tr": "Bilinmeyen teknoloji."
+},
+"TECH_FOCUS": {
+"en": "Focus",
+"tr": "Odak"
+},
+"TECH_POINTS": {
+"en": "Research points",
+"tr": "Araştırma puanı"
+},
+"TECH_PREREQ": {
+"en": "Requires",
+"tr": "Gerektirir"
+},
+"TECH_RESEARCHING": {
+"en": "Researching: {tech}",
+"tr": "Araştırılıyor: {tech}"
+},
+"TECH_START": {
+"en": "Start research",
+"tr": "Araştırmayı başlat"
+},
+"TECH_UNLOCKS": {
+"en": "Unlocks",
+"tr": "Açar"
+},
+"TERRAIN_ARCTIC": {
+"en": "Arctic",
+"tr": "Kutup"
+},
+"TERRAIN_DESERT": {
+"en": "Desert",
+"tr": "Çöl"
+},
+"TERRAIN_FOREST": {
+"en": "Forest",
+"tr": "Ormanlık"
+},
+"TERRAIN_HILLS": {
+"en": "Hills",
+"tr": "Tepelik"
+},
+"TERRAIN_JUNGLE": {
+"en": "Jungle",
+"tr": "Cangıl"
+},
+"TERRAIN_MARSH": {
+"en": "Marsh",
+"tr": "Bataklık"
+},
+"TERRAIN_MOUNTAINS": {
+"en": "Mountains",
+"tr": "Dağlık"
+},
+"TERRAIN_PLAINS": {
+"en": "Plains",
+"tr": "Ova"
+},
+"TERRAIN_STEPPE": {
+"en": "Steppe",
+"tr": "Bozkır"
+},
+"TIMELINE_EMPTY": {
+"en": "Nothing noteworthy has happened yet.",
+"tr": "Henüz kayda değer bir şey olmadı."
+},
+"TIP_ADMIN": {
+"en": "Administrative points: spent on reforms, development and annexation",
+"tr": "İdari puan: reform, kalkınma ve ilhak için harcanır"
+},
+"TIP_ADMIN_CAP": {
+"en": "Administrative capacity. Exceeding it causes overextension: less tax, more unrest.",
+"tr": "İdari kapasite. Aşılırsa aşırı genişleme olur: daha az vergi, daha çok huzursuzluk."
+},
+"TIP_CREDIT": {
+"en": "Remaining credit before bankruptcy",
+"tr": "İflastan önce kalan kredi"
+},
+"TIP_DEV": {
+"en": "Development level (0-10): more building slots and income",
+"tr": "Gelişmişlik seviyesi (0-10): daha fazla bina yuvası ve gelir"
+},
+"TIP_FOOD": {
+"en": "Food stockpile (balance per turn)",
+"tr": "Gıda stoku (tur başına bilanço)"
+},
+"TIP_GOLD": {
+"en": "Treasury (net income per turn)",
+"tr": "Hazine (tur başına net gelir)"
+},
+"TIP_INFAMY": {
+"en": "Infamy from aggressive wars. High infamy invites coalitions.",
+"tr": "Saldırgan savaşlardan doğan kötü şöhret. Yüksek şöhret koalisyonları davet eder."
+},
+"TIP_LEGITIMACY": {
+"en": "Legitimacy of the ruling order. Low legitimacy risks coups and succession crises.",
+"tr": "Yönetimin meşruiyeti. Düşük meşruiyet darbe ve veraset krizi riski taşır."
+},
+"TIP_MANPOWER": {
+"en": "Available / maximum manpower in thousands",
+"tr": "Mevcut / azami insan gücü (bin kişi)"
+},
+"TIP_POP": {
+"en": "Population",
+"tr": "Nüfus"
+},
+"TIP_POP_CAP": {
+"en": "Population as a share of what the land can feed",
+"tr": "Nüfusun, toprağın besleyebileceği orana oranı"
+},
+"TIP_PRESTIGE": {
+"en": "Prestige: gained from victories and achievements",
+"tr": "Prestij: zaferler ve başarılardan kazanılır"
+},
+"TIP_RESEARCH": {
+"en": "Research points generated per turn",
+"tr": "Tur başına üretilen araştırma puanı"
+},
+"TIP_SKILL_ADM": {
+"en": "Administration: taxes and administrative capacity",
+"tr": "İdare: vergi ve idari kapasite"
+},
+"TIP_SKILL_DIP": {
+"en": "Diplomacy: relations and diplomatic reach",
+"tr": "Diplomasi: ilişkiler ve diplomatik etki"
+},
+"TIP_SKILL_MIL": {
+"en": "Military: generals and morale",
+"tr": "Askerlik: komutanlar ve moral"
+},
+"TIP_STABILITY": {
+"en": "National stability (0-100). Low stability reduces income and invites revolts.",
+"tr": "Ulusal istikrar (0-100). Düşük istikrar geliri azaltır ve isyanları davet eder."
+},
+"TIP_TAX_RATE": {
+"en": "Higher taxes bring gold but anger peasants and merchants.",
+"tr": "Yüksek vergi altın getirir ama köylüleri ve tüccarları öfkelendirir."
+},
+"TRADE_AGREEMENTS": {
+"en": "Agreements",
+"tr": "Anlaşmalar"
+},
+"TRADE_DOMESTIC": {
+"en": "Domestic commerce",
+"tr": "İç ticaret"
+},
+"TRADE_FOREIGN": {
+"en": "Commerce via foreign hubs",
+"tr": "Yabancı merkezler üzerinden ticaret"
+},
+"TRADE_HINT": {
+"en": "Commerce flows to the nearest trade hub over land and sea lanes. Wars, embargoes and blockades cut routes; transit nations collect tariffs.",
+"tr": "Ticaret, kara ve deniz yollarıyla en yakın ticaret merkezine akar. Savaşlar, ambargolar ve abluka yolları keser; geçiş ülkeleri gümrük alır."
+},
+"TRADE_HUBS": {
+"en": "Your main trade hubs",
+"tr": "Başlıca ticaret merkezleriniz"
+},
+"TRADE_INCOME": {
+"en": "Trade income",
+"tr": "Ticaret geliri"
+},
+"TRADE_NO_HUB": {
+"en": "No hub reachable",
+"tr": "Ulaşılabilir merkez yok"
+},
+"TRANSFER_GIVE": {
+"en": "You give",
+"tr": "Siz verirsiniz"
+},
+"TRANSFER_HINT": {
+"en": "Tick the provinces each side hands over.",
+"tr": "Her tarafın devrettiği eyaletleri işaretleyin."
+},
+"TRANSFER_WANT": {
+"en": "You receive",
+"tr": "Siz alırsınız"
+},
+"TURN_ERR_EVENTS": {
+"en": "Resolve all pending events first.",
+"tr": "Önce bekleyen olayları çözün."
+},
+"UCLASS_ARCHERS": {
+"en": "Ranged",
+"tr": "Menzilli birlikler"
+},
+"UCLASS_ARTILLERY": {
+"en": "Artillery",
+"tr": "Topçu"
+},
+"UCLASS_CAVALRY": {
+"en": "Cavalry",
+"tr": "Süvari"
+},
+"UCLASS_ENGINEER": {
+"en": "Engineers",
+"tr": "Istihkâm"
+},
+"UCLASS_HEAVY_CAVALRY": {
+"en": "Heavy cavalry",
+"tr": "Ağır süvari"
+},
+"UCLASS_HEAVY_INFANTRY": {
+"en": "Heavy infantry",
+"tr": "Ağır piyade"
+},
+"UCLASS_INFANTRY": {
+"en": "Infantry",
+"tr": "Piyade"
+},
+"UCLASS_NAVAL": {
+"en": "Naval",
+"tr": "Deniz"
+},
+"UI_ACCEPT": {
+"en": "Accept",
+"tr": "Kabul et"
+},
+"UI_ADOPT": {
+"en": "Adopt",
+"tr": "Kabul et"
+},
+"UI_BACK": {
+"en": "Back",
+"tr": "Geri"
+},
+"UI_BUILD": {
+"en": "Build",
+"tr": "İnşa et"
+},
+"UI_BUILD_TIME": {
+"en": "Build time: {n} turns",
+"tr": "İnşaat süresi: {n} tur"
+},
+"UI_BUY_AND_BUILD": {
+"en": "Buy & build",
+"tr": "Satın al ve inşa et"
+},
+"UI_CANCEL": {
+"en": "Cancel",
+"tr": "İptal"
+},
+"UI_CANCEL_BUILD": {
+"en": "Cancel construction",
+"tr": "İnşaatı iptal et"
+},
+"UI_CLOSE": {
+"en": "Close",
+"tr": "Kapat"
+},
+"UI_CONFIRM": {
+"en": "Confirm",
+"tr": "Onayla"
+},
+"UI_DECLINE": {
+"en": "Decline",
+"tr": "Reddet"
+},
+"UI_DEFEAT": {
+"en": "Defeat",
+"tr": "Yenilgi"
+},
+"UI_END_TURN": {
+"en": "End turn",
+"tr": "Turu bitir"
+},
+"UI_FOCUS": {
+"en": "Show on map",
+"tr": "Haritada göster"
+},
+"UI_LOADING": {
+"en": "Loading…",
+"tr": "Yükleniyor…"
+},
+"UI_LOAD_GAME": {
+"en": "Load game",
+"tr": "Oyun yükle"
+},
+"UI_MAP_MODES": {
+"en": "Map modes",
+"tr": "Harita kipleri"
+},
+"UI_MENU": {
+"en": "Menu",
+"tr": "Menü"
+},
+"UI_NEXT": {
+"en": "Next",
+"tr": "İleri"
+},
+"UI_NONE": {
+"en": "None",
+"tr": "Yok"
+},
+"UI_OK": {
+"en": "OK",
+"tr": "Tamam"
+},
+"UI_QUIT_TO_MENU": {
+"en": "Quit to main menu",
+"tr": "Ana menüye dön"
+},
+"UI_RECRUIT": {
+"en": "Recruit",
+"tr": "Asker al"
+},
+"UI_REGIMENTS": {
+"en": "regiments",
+"tr": "alay"
+},
+"UI_RESOLVING_TURN": {
+"en": "Resolving turn…",
+"tr": "Tur işleniyor…"
+},
+"UI_RESUME": {
+"en": "Resume",
+"tr": "Devam et"
+},
+"UI_SAVE_GAME": {
+"en": "Save game",
+"tr": "Oyunu kaydet"
+},
+"UI_TURN": {
+"en": "Turn",
+"tr": "Tur"
+},
+"UI_TURN_N": {
+"en": "Turn {n}",
+"tr": "{n}. tur"
+},
+"UI_TURN_SHORT": {
+"en": "turn",
+"tr": "tur"
+},
+"UI_UPGRADE": {
+"en": "Upgrade",
+"tr": "Yükselt"
+},
+"UI_VICTORY": {
+"en": "Victory",
+"tr": "Zafer"
+},
+"UNIT_LINE": {
+"en": "Upkeep {up} · Move {mv} · Morale {mo}",
+"tr": "Masraf {up} · Hareket {mv} · Moral {mo}"
+},
+"UNIT_STATS": {
+"en": "Fire {f} · Shock {s} · Defence {d} · Morale {m} · Move {mv} · Upkeep {up}",
+"tr": "Ateş {f} · Şok {s} · Savunma {d} · Moral {m} · Hareket {mv} · Masraf {up}"
+},
+"UNREST_BUILDINGS": {
+"en": "Courts, offices, temples",
+"tr": "Mahkemeler, konaklar, ibadethaneler"
+},
+"UNREST_CLASSES": {
+"en": "Unhappy classes",
+"tr": "Mutsuz sınıflar"
+},
+"UNREST_CONQUEST": {
+"en": "Recent conquest",
+"tr": "Yeni fetih"
+},
+"UNREST_CULTURE": {
+"en": "Foreign culture",
+"tr": "Yabancı kültür"
+},
+"UNREST_GARRISON": {
+"en": "Garrison",
+"tr": "Garnizon"
+},
+"UNREST_GOV": {
+"en": "Government",
+"tr": "Hükûmet"
+},
+"UNREST_HUNGER": {
+"en": "Hunger",
+"tr": "Açlık"
+},
+"UNREST_OCCUPIED": {
+"en": "Under occupation",
+"tr": "İşgal altında"
+},
+"UNREST_OVEREXT": {
+"en": "Overextension",
+"tr": "Aşırı genişleme"
+},
+"UNREST_RELIGION": {
+"en": "Foreign religion",
+"tr": "Yabancı din"
+},
+"UNREST_STABILITY": {
+"en": "National stability",
+"tr": "Ulusal istikrar"
+},
+"UNREST_TAX": {
+"en": "Taxation",
+"tr": "Vergilendirme"
+},
+"UNREST_WAR": {
+"en": "War exhaustion",
+"tr": "Savaş yorgunluğu"
+},
+"VICD_DIPLOMATIC": {
+"en": "Lead a bloc of allies and vassals that dominates the world.",
+"tr": "Dünyaya hâkim bir müttefik ve tâbi bloğuna önderlik edin."
+},
+"VICD_ECONOMIC": {
+"en": "Command a large share of world income, far ahead of any rival.",
+"tr": "Dünya gelirinin büyük bir payını, her rakibin çok önünde elinizde tutun."
+},
+"VICD_TECHNOLOGICAL": {
+"en": "Reach near-complete mastery of all technologies.",
+"tr": "Tüm teknolojilerde neredeyse tam hâkimiyete ulaşın."
+},
+"VICD_TERRITORY": {
+"en": "Own the required share of the map.",
+"tr": "Haritanın gereken payına sahip olun."
+},
+"VIC_DIPLOMATIC": {
+"en": "Diplomatic supremacy",
+"tr": "Diplomatik üstünlük"
+},
+"VIC_ECONOMIC": {
+"en": "Economic supremacy",
+"tr": "Ekonomik üstünlük"
+},
+"VIC_HOLD": {
+"en": "Held for {n} of {need} turns",
+"tr": "{n} / {need} tur boyunca korundu"
+},
+"VIC_INTRO": {
+"en": "Several roads lead to victory. Hold the condition for several turns to win.",
+"tr": "Zafere giden birkaç yol var. Kazanmak için koşulu birkaç tur boyunca koruyun."
+},
+"VIC_SURVIVAL": {
+"en": "Survival & independence",
+"tr": "Hayatta kalma ve bağımsızlık"
+},
+"VIC_SURVIVAL_D": {
+"en": "If you start small and are still independent at turn {turn}, you win.",
+"tr": "Küçük başlayıp {turn}. turda hâlâ bağımsızsanız kazanırsınız."
+},
+"VIC_TECHNOLOGICAL": {
+"en": "Technological supremacy",
+"tr": "Teknolojik üstünlük"
+},
+"VIC_TERRITORY": {
+"en": "Territorial domination",
+"tr": "Toprak üstünlüğü"
+},
+"WARN_IDLE_RESEARCH": {
+"en": "Most research branches are idle.",
+"tr": "Araştırma kollarının çoğu boşta."
+},
+"WARN_NEGATIVE_GOLD": {
+"en": "Your treasury is empty: you will take loans and pay interest.",
+"tr": "Hazineniz boş: borçlanacak ve faiz ödeyeceksiniz."
+},
+"WARN_TITLE": {
+"en": "Before you end the turn",
+"tr": "Turu bitirmeden önce"
+},
+"WAR_CB_HINT": {
+"en": "Choose a reason for war. Unjustified conquest builds infamy and invites coalitions.",
+"tr": "Savaş gerekçesi seçin. Haksız fetih kötü şöhret yaratır ve koalisyonları davet eder."
+},
+"WAR_CONFIRM": {
+"en": "Declare war on {country} ({cb})? This cannot be undone.",
+"tr": "{country} devletine savaş ilan edilsin mi ({cb})? Bu geri alınamaz."
+},
+"WAR_DECLARE_TITLE": {
+"en": "War on {country}",
+"tr": "{country} devletine savaş"
+},
+"WAR_ERR_ALLIED": {
+"en": "You must end the alliance first.",
+"tr": "Önce ittifakı sona erdirmelisiniz."
+},
+"WAR_ERR_ALREADY": {
+"en": "Already at war.",
+"tr": "Zaten savaştasınız."
+},
+"WAR_ERR_NO_REACH": {
+"en": "That nation cannot be reached by land, strait or from your ports.",
+"tr": "O devlete kara, boğaz veya limanlarınızdan ulaşılamıyor."
+},
+"WAR_ERR_TRUCE": {
+"en": "A truce is in force for {turns} more turns.",
+"tr": "Ateşkes {turns} tur daha geçerli."
+},
+"WAR_ERR_VASSAL": {
+"en": "You cannot attack your overlord.",
+"tr": "Hükümdarınıza saldıramazsınız."
+},
+"WAR_EXHAUSTION": {
+"en": "War exhaustion",
+"tr": "Savaş yorgunluğu"
+},
+"WAR_LENGTH": {
+"en": "Duration",
+"tr": "Süre"
+},
+"WAR_NEGOTIATE": {
+"en": "Negotiate peace",
+"tr": "Barış görüşmesi"
+},
+"WAR_NONE": {
+"en": "You are at peace.",
+"tr": "Barış içindesiniz."
+},
+"WAR_OUR_SIDE": {
+"en": "Our side",
+"tr": "Bizim taraf"
+},
+"WAR_SCORE": {
+"en": "War score",
+"tr": "Savaş skoru"
+},
+"WAR_THEIR_SIDE": {
+"en": "Enemy side",
+"tr": "Düşman taraf"
+}
+}

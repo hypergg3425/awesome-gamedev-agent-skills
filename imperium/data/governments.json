@@ -1,0 +1,292 @@
+{
+ "absolute_monarchy": {
+  "id": "absolute_monarchy",
+  "name": {
+   "en": "Absolute Monarchy",
+   "tr": "Mutlak Monarşi"
+  },
+  "succession": "hereditary",
+  "term_turns": 0,
+  "mods": {
+   "tax": 0.1,
+   "admin_cap": 0.15,
+   "stability": 0,
+   "manpower": 0.05,
+   "research": -0.05,
+   "army_upkeep": 0.0,
+   "unrest": -0.05,
+   "war_exhaustion": -0.1
+  },
+  "features": [
+   "ruler_skill_matters",
+   "succession_crisis"
+  ],
+  "class_favor": {
+   "nobility": 1,
+   "clergy": 1,
+   "military": 0,
+   "merchants": -1,
+   "peasants": 0,
+   "artisans": 0
+  },
+  "legit_start": 60
+ },
+ "constitutional_monarchy": {
+  "id": "constitutional_monarchy",
+  "name": {
+   "en": "Constitutional Monarchy",
+   "tr": "Meşruti Monarşi"
+  },
+  "succession": "hereditary",
+  "term_turns": 0,
+  "mods": {
+   "tax": -0.05,
+   "stability": 1,
+   "research": 0.08,
+   "trade": 0.05,
+   "admin_cap": 0.0,
+   "war_exhaustion": 0.1,
+   "unrest": -0.08
+  },
+  "features": [
+   "parliament",
+   "succession_crisis"
+  ],
+  "class_favor": {
+   "nobility": 0,
+   "merchants": 1,
+   "artisans": 1,
+   "peasants": 0,
+   "clergy": 0,
+   "military": 0
+  },
+  "legit_start": 60
+ },
+ "republic": {
+  "id": "republic",
+  "name": {
+   "en": "Republic",
+   "tr": "Cumhuriyet"
+  },
+  "succession": "elective",
+  "term_turns": 20,
+  "mods": {
+   "tax": 0.0,
+   "trade": 0.08,
+   "research": 0.05,
+   "manpower": -0.05,
+   "war_exhaustion": 0.2,
+   "stability": 0,
+   "unrest": -0.03
+  },
+  "features": [
+   "elections",
+   "factions_strong"
+  ],
+  "class_favor": {
+   "merchants": 1,
+   "artisans": 1,
+   "peasants": 1,
+   "nobility": -1,
+   "clergy": -1,
+   "military": 0
+  },
+  "legit_start": 60
+ },
+ "merchant_republic": {
+  "id": "merchant_republic",
+  "name": {
+   "en": "Merchant Republic",
+   "tr": "Tüccar Cumhuriyeti"
+  },
+  "succession": "elective",
+  "term_turns": 16,
+  "mods": {
+   "trade": 0.25,
+   "tax": 0.05,
+   "manpower": -0.25,
+   "mercenary_cost": -0.3,
+   "army_upkeep": 0.05,
+   "war_exhaustion": 0.25,
+   "stability": 0,
+   "research": 0.03
+  },
+  "features": [
+   "elections",
+   "mercenaries",
+   "factions_strong"
+  ],
+  "class_favor": {
+   "merchants": 2,
+   "artisans": 1,
+   "nobility": -1,
+   "peasants": -1,
+   "clergy": 0,
+   "military": -1
+  },
+  "legit_start": 60
+ },
+ "empire": {
+  "id": "empire",
+  "name": {
+   "en": "Empire",
+   "tr": "İmparatorluk"
+  },
+  "succession": "hereditary",
+  "term_turns": 0,
+  "mods": {
+   "admin_cap": 0.25,
+   "manpower": 0.1,
+   "tax": 0.0,
+   "overextension": -0.3,
+   "stability": 0,
+   "legit_conquest": 0.4,
+   "unrest": 0.0,
+   "war_exhaustion": -0.05
+  },
+  "features": [
+   "ruler_skill_matters",
+   "succession_crisis",
+   "prestige_legit"
+  ],
+  "class_favor": {
+   "military": 1,
+   "nobility": 1,
+   "clergy": 0,
+   "merchants": 0,
+   "peasants": -1,
+   "artisans": 0
+  },
+  "legit_start": 60
+ },
+ "tribal_confederation": {
+  "id": "tribal_confederation",
+  "name": {
+   "en": "Tribal Confederation",
+   "tr": "Kabile Konfederasyonu"
+  },
+  "succession": "elective",
+  "term_turns": 24,
+  "mods": {
+   "manpower": 0.35,
+   "recruit_cost": -0.2,
+   "tax": -0.2,
+   "admin_cap": -0.25,
+   "research": -0.2,
+   "morale": 0.1,
+   "stability": 0,
+   "trade": -0.15,
+   "army_upkeep": -0.15
+  },
+  "features": [
+   "elections",
+   "raiding",
+   "no_advanced_buildings"
+  ],
+  "class_favor": {
+   "military": 2,
+   "nobility": 1,
+   "peasants": 0,
+   "merchants": -1,
+   "clergy": 0,
+   "artisans": -1
+  },
+  "legit_start": 60
+ },
+ "theocracy": {
+  "id": "theocracy",
+  "name": {
+   "en": "Theocracy",
+   "tr": "Teokrasi"
+  },
+  "succession": "theocratic",
+  "term_turns": 12,
+  "mods": {
+   "stability": 1,
+   "tax": 0.0,
+   "research": -0.1,
+   "unrest": -0.1,
+   "prestige": 0.1,
+   "religion_unity": 0.15,
+   "manpower": 0.0,
+   "trade": -0.05
+  },
+  "features": [
+   "religious_unity_matters",
+   "holy_war"
+  ],
+  "class_favor": {
+   "clergy": 2,
+   "peasants": 0,
+   "nobility": 0,
+   "merchants": -1,
+   "artisans": -1,
+   "military": 0
+  },
+  "legit_start": 60
+ },
+ "feudal_kingdom": {
+  "id": "feudal_kingdom",
+  "name": {
+   "en": "Feudal Kingdom",
+   "tr": "Feodal Krallık"
+  },
+  "succession": "hereditary",
+  "term_turns": 0,
+  "mods": {
+   "manpower": 0.2,
+   "tax": -0.15,
+   "admin_cap": -0.1,
+   "army_upkeep": -0.1,
+   "recruit_cost": -0.1,
+   "stability": 0,
+   "trade": -0.05,
+   "unrest": 0.0
+  },
+  "features": [
+   "vassals",
+   "ruler_skill_matters",
+   "succession_crisis"
+  ],
+  "class_favor": {
+   "nobility": 2,
+   "clergy": 1,
+   "peasants": -1,
+   "merchants": -1,
+   "military": 0,
+   "artisans": 0
+  },
+  "legit_start": 60
+ },
+ "military_government": {
+  "id": "military_government",
+  "name": {
+   "en": "Military Government",
+   "tr": "Askeri Yönetim"
+  },
+  "succession": "military",
+  "term_turns": 0,
+  "mods": {
+   "army_upkeep": -0.15,
+   "morale": 0.1,
+   "manpower": 0.1,
+   "stability": -1,
+   "tax": 0.0,
+   "research": -0.05,
+   "war_exhaustion": -0.15,
+   "unrest": -0.02
+  },
+  "features": [
+   "coup_risk"
+  ],
+  "class_favor": {
+   "military": 2,
+   "nobility": 0,
+   "clergy": 0,
+   "peasants": -1,
+   "merchants": -1,
+   "artisans": 0
+  },
+  "legit_start": 60
+ }
+}

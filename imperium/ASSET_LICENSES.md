@@ -1,0 +1,14 @@
+# Asset & third-party licences
+
+| Asset | Source | Licence |
+|---|---|---|
+| Map geometry (provinces, seas, coast) | Natural Earth (admin-0 50m, admin-1 10m, geography regions 10m, marine polys 10m, land 50m, lakes 50m), processed by `tools/gen_map_step1.py`, `gen_map_step2.py` | Public domain |
+| Fonts: Cinzel, EB Garamond, Noto Sans | Google Fonts | SIL Open Font License 1.1 (`docs/licenses/OFL-fonts.txt`); Turkish glyphs verified |
+| UI icons (`assets/icons`, 163 SVG), flags, emblems | Original, generated/hand-authored in this project (`tools/assets/`) | Project's own |
+| Audio (`assets/audio`, 27 OGG) | Original procedural synthesis (`tools/assets/gen_audio.py`), no samples | Project's own (docs/AUDIO.md) |
+| Illustrations, backgrounds, splash, app icon, store graphic | Original, generated procedurally (`tools/assets/`, docs/ART_ASSETS.md) | Project's own |
+| Godot Engine 4.7.2 | godotengine.org | MIT |
+| AdMob plugin (poingstudios/godot-admob-plugin) | Installed at build time by `tools/ci/install_admob.sh`; not vendored | MIT |
+| Google Mobile Ads SDK / UMP SDK | Pulled by the plugin at export time | Google terms |
+
+Historical data (rulers, borders, dates) is the author's approximation compiled for gameplay and labelled as such in each scenario's `note`/`approximate` fields; it is not a scholarly source.

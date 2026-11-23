@@ -1,0 +1,129 @@
+{
+ "absolute_monarchy": {
+  "constitutional_monarchy": {
+   "cost_admin": 80,
+   "stability_hit": 15,
+   "requires": {
+    "tech": [
+     "legal_reform",
+     3
+    ]
+   }
+  },
+  "empire": {
+   "cost_admin": 60,
+   "stability_hit": 8,
+   "requires": {
+    "provinces": 12
+   }
+  }
+ },
+ "feudal_kingdom": {
+  "absolute_monarchy": {
+   "cost_admin": 70,
+   "stability_hit": 12,
+   "requires": {
+    "tech": [
+     "centralization",
+     2
+    ]
+   }
+  },
+  "empire": {
+   "cost_admin": 60,
+   "stability_hit": 10,
+   "requires": {
+    "provinces": 12
+   }
+  }
+ },
+ "constitutional_monarchy": {
+  "republic": {
+   "cost_admin": 90,
+   "stability_hit": 20,
+   "requires": {
+    "tech": [
+     "legal_reform",
+     3
+    ]
+   }
+  }
+ },
+ "republic": {
+  "merchant_republic": {
+   "cost_admin": 40,
+   "stability_hit": 6,
+   "requires": {
+    "tech": [
+     "trade",
+     2
+    ]
+   }
+  },
+  "military_government": {
+   "cost_admin": 30,
+   "stability_hit": 15,
+   "requires": {}
+  }
+ },
+ "merchant_republic": {
+  "republic": {
+   "cost_admin": 40,
+   "stability_hit": 6,
+   "requires": {}
+  }
+ },
+ "tribal_confederation": {
+  "feudal_kingdom": {
+   "cost_admin": 60,
+   "stability_hit": 10,
+   "requires": {
+    "tech": [
+     "bureaucracy",
+     1
+    ]
+   }
+  }
+ },
+ "theocracy": {
+  "absolute_monarchy": {
+   "cost_admin": 70,
+   "stability_hit": 18,
+   "requires": {
+    "tech": [
+     "centralization",
+     1
+    ]
+   }
+  }
+ },
+ "military_government": {
+  "republic": {
+   "cost_admin": 50,
+   "stability_hit": 14,
+   "requires": {
+    "tech": [
+     "legal_reform",
+     2
+    ]
+   }
+  },
+  "absolute_monarchy": {
+   "cost_admin": 50,
+   "stability_hit": 10,
+   "requires": {}
+  }
+ },
+ "empire": {
+  "constitutional_monarchy": {
+   "cost_admin": 90,
+   "stability_hit": 20,
+   "requires": {
+    "tech": [
+     "legal_reform",
+     3
+    ]
+   }
+  }
+ }
+}

@@ -1,0 +1,411 @@
+# id|name|lon|lat|culture|terrain|C=coastal  (provinces are modern-geometry regions; see data/map/provinces.json for adjacency)
+afg_badakhshan|Badakhshan|68.63|35.84|iranian|mountains|
+afg_hilmand|Hilmand|64.37|32.58|iranian|plains|
+ago_malanje|Malanje|15.22|-11.78|african|steppe|C
+ago_moxico|Moxico|20.18|-12.87|african|plains|
+alb_albania|Albania|20.05|41.14|hellenic|hills|C
+are_united_arab_emirates|United Arab Emirates|54.3|23.91|arabic|steppe|C
+arg_buenos_aires|Buenos Aires|-64.58|-38.06|latin_american|plains|C
+arg_cordoba|Córdoba|-62.99|-31.96|latin_american|marsh|C
+arg_salta|Salta|-64.7|-26.89|latin_american|mountains|
+arg_santa_cruz|Santa Cruz|-69.2|-46.89|latin_american|plains|C
+arm_armenia|Armenia|44.93|40.29|caucasian|mountains|
+aus_new_south_wales|New South Wales|147.02|-32.18|oceanian|hills|C
+aus_northern_territory|Northern Territory|133.37|-19.42|oceanian|hills|C
+aus_queensland|Queensland|144.55|-22.57|oceanian|hills|C
+aus_south_australia|South Australia|137.52|-31.46|oceanian|plains|C
+aus_tasmania|Tasmania|146.6|-41.93|oceanian|plains|C
+aus_western_australia|Western Australia|122.18|-25.47|oceanian|hills|C
+aut_austria|Austria|15.24|48.15|germanic|hills|
+aut_styria|Styria & Carinthia|14.27|47.16|germanic|mountains|
+aut_tyrol|Tyrol|11.22|47.2|germanic|mountains|
+aze_azerbaijan|Azerbaijan|47.54|40.29|turkic|hills|
+bdi_burundi|Burundi|29.88|-3.36|african|jungle|
+bel_flanders|Flanders|3.96|50.89|latin|plains|C
+bel_wallonia|Wallonia|5.32|50.38|latin|hills|
+ben_benin|Benin|2.33|9.64|african|plains|C
+bfa_burkina_faso|Burkina Faso|-1.76|12.27|african|plains|
+bgd_bangladesh|Bangladesh|90.24|23.85|indic|marsh|C
+bgr_moesia|Northern Bulgaria (Moesia)|25.27|43.33|slavic|hills|C
+bgr_thrace_bg|Southern Bulgaria (Thrace)|25.16|42.16|slavic|plains|C
+bhs_bahamas|Bahamas|-77.17|24.77|native_american|plains|C
+bih_bosnia_and_herz|Bosnia and Herz.|17.77|44.17|slavic|mountains|
+blr_belarus|Belarus|28.03|53.53|slavic|forest|
+blz_belize|Belize|-88.7|17.21|native_american|hills|C
+bol_bolivia|Bolivia|-64.68|-16.71|latin_american|mountains|
+bra_amazonas|Amazonas|-64.58|-4.65|latin_american|jungle|
+bra_maranhao|Maranhão|-46.7|-7.43|latin_american|hills|C
+bra_mato_grosso|Mato Grosso|-55.93|-12.96|latin_american|hills|
+bra_mato_grosso_do_sul|Mato Grosso do Sul|-52.27|-18.23|latin_american|hills|
+bra_minas_gerais|Minas Gerais|-43.12|-15.97|latin_american|hills|C
+bra_para|Pará|-53.02|-3.49|latin_american|hills|C
+bra_piaui|Piauí|-40.0|-7.06|latin_american|desert|C
+bra_rio_grande_do_sul|Rio Grande do Sul|-51.22|-26.0|latin_american|hills|C
+brn_brunei|Brunei|114.73|4.52|southeast_asian|jungle|C
+btn_bhutan|Bhutan|90.41|27.42|indic|mountains|
+bwa_botswana|Botswana|23.8|-22.19|african|desert|
+caf_central_african_rep|Central African Rep.|20.47|6.57|african|jungle|
+can_alberta|Alberta|-110.29|54.8|native_american|forest|
+can_british_columbia|British Columbia|-124.75|54.76|native_american|mountains|C
+can_newfoundland_and_labrador|Newfoundland and Labrador|-60.52|52.87|native_american|arctic|C
+can_northwest_territories|Northwest Territories|-119.01|66.35|native_american|arctic|C
+can_nunavut|Nunavut|-88.9|71.03|native_american|arctic|C
+can_ontario|Ontario|-90.51|52.02|native_american|arctic|C
+can_quebec|Québec|-71.31|52.87|native_american|arctic|C
+can_yukon|Yukon|-135.51|63.63|native_american|mountains|C
+che_switzerland|Switzerland|8.21|46.8|germanic|mountains|
+chl_antofagasta|Antofagasta|-70.39|-28.87|latin_american|desert|C
+chl_magallanes_y_antartica_chilena|Magallanes y Antártica Chilena|-72.51|-48.24|latin_american|mountains|C
+chn_guangxi|Guangxi|114.0|25.37|sinic|plains|C
+chn_heilongjiang|Heilongjiang|127.75|47.88|sinic|hills|
+chn_hunan|Hunan|114.19|31.14|sinic|plains|C
+chn_inner_mongol|Inner Mongol|113.91|44.08|sinic|desert|
+chn_jilin|Jilin|119.29|39.93|sinic|plains|C
+chn_qinghai|Qinghai|98.19|36.55|sinic|hills|
+chn_sichuan|Sichuan|104.6|32.02|sinic|hills|
+chn_xinjiang|Xinjiang|85.19|41.1|sinic|hills|
+chn_xizang|Xizang|88.12|31.69|sinic|hills|
+chn_yunnan|Yunnan|103.8|26.15|sinic|hills|
+civ_cote_d_ivoire|Côte d'Ivoire|-5.57|7.63|african|jungle|C
+cmr_cameroon|Cameroon|12.74|5.69|african|hills|C
+cod_bandundu|Bandundu|18.85|-4.8|african|jungle|C
+cod_katanga|Katanga|26.04|-6.66|african|hills|
+cod_orientale|Orientale|24.09|1.49|african|jungle|
+cog_congo|Congo|15.22|-0.84|african|jungle|C
+col_amazonas|Amazonas|-72.46|1.91|latin_american|mountains|C
+col_antioquia|Antioquia|-74.14|7.29|latin_american|mountains|C
+cri_costa_rica|Costa Rica|-84.19|9.98|native_american|plains|C
+cub_cuba|Cuba|-79.03|21.62|native_american|plains|C
+cyp_cyprus|Cyprus|33.24|35.05|hellenic|plains|C
+cze_bohemia|Bohemia|14.25|49.89|slavic|forest|
+cze_moravia|Moravia|16.81|49.5|slavic|hills|
+deu_bavaria|Bavaria|11.41|48.94|germanic|forest|
+deu_brandenburg|Brandenburg|12.72|52.28|germanic|plains|
+deu_hesse_thuringia|Hesse & Thuringia|9.9|50.73|germanic|forest|
+deu_holstein|Holstein|9.84|54.15|germanic|plains|C
+deu_lower_saxony|Lower Saxony|9.15|52.77|germanic|plains|C
+deu_mecklenburg|Mecklenburg & Pomerania|12.51|53.75|germanic|plains|C
+deu_rhineland|Rhineland|7.49|50.84|germanic|forest|
+deu_saxony|Saxony|13.34|51.05|germanic|hills|
+deu_swabia|Swabia|9.05|48.54|germanic|forest|
+dji_djibouti|Djibouti|42.57|11.75|african|desert|C
+dnk_jutland|Jutland|9.48|56.13|germanic|forest|C
+dnk_zealand|Zealand & Funen|12.02|55.4|germanic|forest|C
+dom_dominican_rep|Dominican Rep.|-70.5|18.9|native_american|plains|C
+dza_algerian_sahara|Algerian Sahara|3.9|26.15|arabic|desert|
+dza_algiers|Algiers|3.27|34.91|arabic|mountains|C
+dza_constantine|Constantine|6.62|34.78|arabic|desert|C
+dza_oran|Oran|-2.63|30.61|arabic|desert|C
+ecu_ecuador|Ecuador|-78.39|-1.45|latin_american|mountains|C
+egy_cairo|Cairo|30.42|29.09|arabic|desert|C
+egy_delta|Alexandria & Delta|27.47|29.86|arabic|desert|C
+egy_sinai|Sinai & Red Sea|33.76|29.7|arabic|plains|C
+egy_upper_egypt|Upper Egypt|30.13|24.87|arabic|desert|C
+eri_eritrea|Eritrea|38.85|15.36|african|desert|C
+esp_andalusia|Andalusia|-4.28|37.45|latin|hills|C
+esp_aragon|Aragon|-1.0|41.53|latin|hills|
+esp_asturias|Asturias & Cantabria|-5.59|42.95|latin|mountains|C
+esp_catalonia|Catalonia|1.71|41.5|latin|hills|C
+esp_extremadura|Extremadura|-6.29|38.88|latin|hills|C
+esp_galicia|Galicia|-7.91|42.76|latin|hills|C
+esp_navarre|Navarre & Basque Country|-2.16|42.7|latin|hills|C
+esp_new_castile|New Castile|-3.29|39.84|latin|hills|
+esp_old_castile|Old Castile & León|-4.87|41.57|latin|hills|
+esp_valencia|Valencia & Murcia|-1.19|38.91|latin|hills|C
+est_estonia|Estonia|25.54|58.67|slavic|plains|C
+eth_oromiya|Oromiya|38.19|9.26|african|mountains|
+eth_somali|Somali|43.32|6.95|african|jungle|
+fin_north_finland|Northern Finland|26.72|66.67|magyar_finnic|arctic|C
+fin_south_finland|Southern Finland|25.79|62.13|magyar_finnic|forest|C
+fji_fiji|Fiji|166.5|-17.45|oceanian|plains|C
+flk_falkland_is|Falkland Is.|-59.37|-51.73|latin_american|plains|C
+fra_alsace|Alsace|7.4|48.28|latin|hills|
+fra_aquitaine|Aquitaine & Gascony|-0.12|44.16|latin|plains|C
+fra_auvergne|Auvergne|3.01|45.55|latin|hills|
+fra_brittany|Brittany|-2.61|48.02|latin|plains|C
+fra_burgundy|Burgundy|4.77|47.23|latin|plains|
+fra_champagne|Champagne|4.54|48.73|latin|forest|
+fra_dauphine|Dauphiné & Lyonnais|5.57|45.31|latin|mountains|
+fra_guyane_francaise|Guyane française|-53.25|3.92|latin|hills|C
+fra_ile_de_france|Île-de-France|2.18|48.42|latin|plains|
+fra_languedoc|Languedoc|2.36|43.67|latin|hills|C
+fra_loire|Loire Valley|0.99|47.34|latin|plains|
+fra_lorraine|Lorraine|6.15|48.76|latin|forest|
+fra_normandy|Normandy|-0.01|48.98|latin|plains|C
+fra_picardy|Picardy & Flanders|2.76|49.97|latin|plains|C
+fra_poitou|Poitou|-0.1|46.22|latin|plains|C
+fra_provence|Provence|6.77|43.4|latin|hills|C
+gab_gabon|Gabon|11.79|-0.59|african|hills|C
+gbr_east_anglia|East Anglia|0.41|52.67|germanic|forest|C
+gbr_highland_scotland|Highland Scotland|-4.31|57.68|germanic|forest|C
+gbr_home_counties|London & Home Counties|-0.35|51.43|germanic|forest|C
+gbr_lowland_scotland|Lowland Scotland|-4.03|55.9|germanic|forest|C
+gbr_midlands|The Midlands|-1.82|52.68|germanic|forest|C
+gbr_northumbria|Northumbria|-1.89|54.35|germanic|forest|C
+gbr_ulster|Ulster|-6.7|54.61|germanic|forest|C
+gbr_wales|Wales|-3.67|52.35|germanic|hills|C
+gbr_wessex|Wessex & Cornwall|-3.28|50.91|germanic|forest|C
+geo_georgia|Georgia|43.5|42.17|caucasian|mountains|C
+gha_ghana|Ghana|-1.22|7.95|african|jungle|C
+gin_guinea|Guinea|-10.94|10.43|african|hills|C
+gmb_gambia|Gambia|-15.41|13.45|african|plains|C
+gnb_guinea_bissau|Guinea-Bissau|-14.97|12.03|african|plains|C
+gnq_eq_guinea|Eq. Guinea|10.34|1.71|african|jungle|C
+grc_aegean_isles|Aegean Islands|26.28|37.66|hellenic|plains|C
+grc_central_greece|Thessaly & Epirus|21.52|39.71|hellenic|hills|C
+grc_crete|Crete|24.85|35.23|hellenic|plains|C
+grc_macedonia|Macedonia|22.94|40.73|hellenic|plains|C
+grc_morea|Morea & Attica|22.46|38.06|hellenic|plains|C
+grc_thrace_greece|Western Thrace|25.12|41.15|hellenic|plains|C
+grl_greenland|Greenland|-41.35|74.74|native_american|arctic|C
+gtm_guatemala|Guatemala|-90.36|15.7|native_american|plains|C
+guy_guyana|Guyana|-58.98|4.79|latin_american|hills|C
+hnd_honduras|Honduras|-86.63|14.82|native_american|plains|C
+hrv_croatia|Croatia & Slavonia|16.44|45.46|slavic|hills|C
+hrv_dalmatia|Dalmatia|16.27|43.83|slavic|mountains|C
+hti_haiti|Haiti|-72.68|18.94|native_american|plains|C
+hun_great_plain|Great Hungarian Plain|20.48|47.35|magyar_finnic|plains|
+hun_transdanubia|Transdanubia|17.74|46.88|magyar_finnic|plains|
+idn_jawa_timur|Jawa Timur|111.51|-7.56|southeast_asian|jungle|C
+idn_kalimantan_tengah|Kalimantan Tengah|112.66|-1.1|southeast_asian|jungle|C
+idn_kalimantan_timur|Kalimantan Timur|118.76|-0.33|southeast_asian|jungle|C
+idn_maluku|Maluku|129.74|-4.67|southeast_asian|jungle|C
+idn_maluku_utara|Maluku Utara|127.55|0.23|southeast_asian|jungle|C
+idn_nusa_tenggara_timur|Nusa Tenggara Timur|122.19|-9.25|southeast_asian|plains|C
+idn_papua|Papua|137.33|-4.03|southeast_asian|hills|C
+idn_riau|Riau|103.1|-1.93|southeast_asian|jungle|C
+idn_sumatera_utara|Sumatera Utara|98.11|3.1|southeast_asian|jungle|C
+ind_arunachal_pradesh|Arunachal Pradesh|93.43|26.31|indic|mountains|
+ind_bihar|Bihar|86.43|24.53|indic|plains|C
+ind_karnataka|Karnataka|78.14|15.82|indic|hills|C
+ind_ladakh|Ladakh|76.93|31.71|indic|hills|
+ind_madhya_pradesh|Madhya Pradesh|79.29|25.04|indic|plains|
+ind_maharashtra|Maharashtra|76.1|19.46|indic|plains|C
+ind_odisha|Odisha|83.31|20.86|indic|hills|C
+ind_rajasthan|Rajasthan|73.05|25.26|indic|plains|C
+ind_tamil_nadu|Tamil Nadu|77.96|10.88|indic|mountains|C
+irl_connacht|Connacht|-8.61|53.99|germanic|forest|C
+irl_leinster|Leinster|-6.96|53.24|germanic|forest|C
+irl_munster|Munster|-8.77|52.3|germanic|forest|C
+irn_azerbaijan_persia|Azerbaijan (Tabriz)|46.74|36.98|iranian|plains|
+irn_fars|Fars (Shiraz)|52.9|29.23|iranian|mountains|C
+irn_isfahan|Isfahan|53.93|32.8|iranian|plains|
+irn_jibal|Media (Tehran)|52.38|35.7|iranian|hills|
+irn_kerman|Kerman & Baluchistan|58.5|28.47|iranian|plains|C
+irn_khorasan|Khorasan|58.92|34.66|iranian|plains|
+irn_khuzestan|Khuzestan|48.69|32.15|iranian|mountains|C
+irq_baghdad|Baghdad|42.88|32.92|arabic|desert|
+irq_basra|Basra|46.13|30.64|arabic|plains|C
+irq_mosul|Mosul|43.58|35.98|arabic|plains|
+isl_arctic|Arctic Islands|20.08|60.12|oceanian|forest|C
+isl_atlantic|Atlantic Islands|-18.08|32.48|african|plains|C
+isl_caribbean|Caribbean Islands|-65.63|16.69|oceanian|plains|C
+isl_iceland|Iceland|-18.6|65.0|germanic|forest|C
+isl_indian_ocean|Indian Ocean Islands|73.87|-3.33|african|jungle|C
+isl_mediterranean|Mediterranean Islands|6.56|40.28|oceanian|mountains|C
+isl_melanesia|Melanesia Islands|166.35|-10.8|oceanian|plains|C
+isl_micronesia|Micronesia Islands|134.03|8.64|oceanian|jungle|C
+isl_polynesia|Polynesia Islands|-157.08|7.78|oceanian|jungle|C
+isr_galilee|Galilee|35.35|32.87|arabic|plains|C
+isr_judea|Judea & Jerusalem|35.13|31.93|arabic|plains|C
+isr_negev|Negev|34.85|30.84|arabic|desert|C
+ita_apulia|Apulia|16.71|40.6|latin|hills|C
+ita_calabria|Calabria|16.35|39.07|latin|mountains|C
+ita_campania|Campania|14.93|41.29|latin|hills|C
+ita_emilia|Emilia-Romagna|11.07|44.53|latin|hills|C
+ita_lazio|Lazio & Rome|12.98|42.4|latin|mountains|C
+ita_liguria|Liguria|8.82|44.46|latin|plains|C
+ita_lombardy|Lombardy|9.5|45.63|latin|hills|
+ita_piedmont|Piedmont|7.62|45.06|latin|mountains|
+ita_sardinia|Sardinia|9.03|40.09|latin|plains|C
+ita_sicily|Sicily|14.15|37.59|latin|plains|C
+ita_tuscany|Tuscany|11.59|43.43|latin|hills|C
+ita_veneto|Veneto|11.88|46.03|latin|mountains|C
+jam_jamaica|Jamaica|-77.32|18.16|native_american|plains|C
+jor_jordan|Jordan|36.77|31.24|arabic|plains|
+jpn_hokkaido|Hokkaidō|142.38|43.11|japonic|plains|C
+jpn_iwate|Iwate|139.98|38.35|japonic|plains|C
+jpn_nagano|Nagano|135.17|34.67|japonic|plains|C
+jpn_okinawa|Okinawa|127.73|26.7|japonic|plains|C
+kaz_aqtobe|Aqtöbe|58.28|49.17|turkic|plains|C
+kaz_east_kazakhstan|East Kazakhstan|76.94|46.07|turkic|hills|
+kaz_qaraghandy|Qaraghandy|69.89|48.64|turkic|plains|
+ken_kenya|Kenya|37.82|0.55|african|jungle|C
+kgz_kyrgyzstan|Kyrgyzstan|74.53|41.46|turkic|mountains|
+khm_cambodia|Cambodia|104.9|12.72|southeast_asian|plains|C
+kor_gangwon|Gangwon|127.7|37.27|sinic|plains|C
+kor_north_gyeongsang|North Gyeongsang|127.94|35.58|sinic|plains|C
+kos_kosovo|Kosovo|20.87|42.57|slavic|hills|
+kwt_kuwait|Kuwait|47.6|29.34|arabic|plains|C
+lao_laos|Laos|103.74|18.5|southeast_asian|mountains|
+lbn_lebanon|Lebanon|35.88|33.92|arabic|mountains|C
+lbr_liberia|Liberia|-9.32|6.45|african|jungle|C
+lby_cyrenaica|Cyrenaica|21.87|26.63|arabic|desert|C
+lby_fezzan|Fezzan|14.86|26.11|arabic|desert|
+lby_tripolitania|Tripolitania|12.83|30.69|arabic|desert|C
+lka_sri_lanka|Sri Lanka|80.7|7.62|indic|jungle|C
+lso_lesotho|Lesotho|28.23|-29.58|african|mountains|
+ltu_lithuania|Lithuania|23.89|55.33|slavic|plains|C
+lux_luxembourg|Luxembourg|6.07|49.77|latin|hills|
+lva_latvia|Latvia|24.91|56.85|slavic|plains|C
+mar_fez|Fez & Rif|-4.15|33.32|arabic|mountains|C
+mar_marrakesh|Marrakesh|-10.51|28.11|arabic|desert|C
+mda_moldova|Moldova|28.46|47.19|latin|plains|
+mdg_madagascar|Madagascar|46.71|-19.37|african|plains|C
+mex_campeche|Campeche|-89.23|19.65|native_american|plains|C
+mex_chihuahua|Chihuahua|-103.63|26.94|native_american|desert|C
+mex_jalisco|Jalisco|-101.67|20.75|native_american|mountains|C
+mex_oaxaca|Oaxaca|-95.34|17.78|native_american|mountains|C
+mex_sonora|Sonora|-111.39|28.48|native_american|hills|C
+mkd_north_macedonia|North Macedonia|21.68|41.6|slavic|plains|
+mli_kayes|Kayes|-8.01|13.29|african|plains|
+mli_timbuktu|Timbuktu|-1.88|18.85|african|desert|
+mmr_shan|Shan|96.32|22.73|southeast_asian|hills|C
+mmr_tanintharyi|Tanintharyi|97.0|16.44|southeast_asian|plains|C
+mne_montenegro|Montenegro|19.24|42.79|slavic|mountains|C
+mng_govi_altay|Govi-Altay|97.17|48.1|sinic|hills|
+mng_omnogovi|Ömnögovi|107.6|45.84|sinic|desert|
+moz_gaza|Gaza|33.7|-21.55|african|plains|C
+moz_niassa|Niassa|36.7|-14.55|african|plains|C
+mrt_tagant|Tagant|-12.52|17.97|arabic|desert|C
+mrt_tiris_zemmour|Tiris Zemmour|-9.16|21.5|arabic|desert|
+mwi_malawi|Malawi|34.29|-13.22|african|plains|
+mys_pahang|Pahang|102.18|4.04|southeast_asian|jungle|C
+mys_sabah|Sabah|117.13|5.35|southeast_asian|jungle|C
+mys_sarawak|Sarawak|113.28|2.59|southeast_asian|jungle|C
+nam_namibia|Namibia|17.21|-22.13|african|desert|C
+ncl_new_caledonia|New Caledonia|165.7|-21.3|oceanian|plains|C
+ner_agadez|Agadez|10.85|18.21|african|desert|
+ner_tahoua|Tahoua|4.29|14.68|african|desert|
+nga_borno|Borno|12.0|11.45|african|steppe|
+nga_niger|Niger|5.34|9.11|african|plains|C
+nga_taraba|Taraba|9.01|9.07|african|plains|C
+nic_nicaragua|Nicaragua|-85.03|12.84|native_american|plains|C
+nld_brabant|Brabant & Gelderland|5.62|51.71|germanic|plains|
+nld_frisia|Frisia & Groningen|6.33|52.89|germanic|plains|C
+nld_holland|Holland|4.8|52.19|germanic|plains|C
+nor_north_norway|Northern Norway|19.12|73.25|germanic|arctic|C
+nor_south_norway|Eastern Norway|9.42|60.08|germanic|mountains|C
+nor_west_norway|Western Norway|8.3|61.82|germanic|mountains|C
+npl_nepal|Nepal|83.91|28.25|indic|mountains|
+nzl_canterbury|Canterbury|170.46|-44.05|oceanian|hills|C
+nzl_waikato|Waikato|175.72|-38.59|oceanian|plains|C
+omn_oman|Oman|56.09|20.6|arabic|steppe|C
+pak_baluchistan|Baluchistan|66.69|27.67|indic|plains|C
+pak_k_p|K.P.|72.99|34.74|indic|mountains|
+pak_punjab|Punjab|72.13|30.82|indic|desert|
+pan_panama|Panama|-80.12|8.51|native_american|jungle|C
+per_loreto|Loreto|-75.61|-6.09|latin_american|mountains|C
+per_madre_de_dios|Madre de Dios|-72.54|-13.74|latin_american|mountains|C
+phl_isabela|Isabela|121.4|15.68|southeast_asian|plains|C
+phl_palawan|Palawan|123.97|9.06|southeast_asian|plains|C
+png_west_new_britain|West New Britain|151.33|-6.11|oceanian|jungle|C
+png_western|Western|144.14|-6.54|oceanian|hills|C
+pol_greater_poland|Greater Poland|16.27|52.73|slavic|plains|C
+pol_lesser_poland|Lesser Poland|20.72|50.16|slavic|mountains|
+pol_masovia|Masovia|20.51|52.06|slavic|forest|
+pol_podlasie|Podlasie & Lublin|22.89|52.2|slavic|forest|
+pol_pomerania|Pomerelia & Prussia|19.27|53.7|slavic|plains|C
+pol_silesia|Silesia|16.85|50.93|slavic|forest|
+pri_puerto_rico|Puerto Rico|-66.47|18.23|native_american|plains|C
+prk_north_korea|North Korea|127.19|40.15|sinic|hills|C
+prt_north_portugal|Northern Portugal|-7.73|40.91|latin|hills|C
+prt_south_portugal|Southern Portugal|-8.21|38.55|latin|hills|C
+pry_paraguay|Paraguay|-58.4|-23.23|latin_american|plains|
+qat_qatar|Qatar|51.18|25.31|arabic|plains|C
+rou_moldavia|Moldavia|26.88|46.56|latin|mountains|C
+rou_transylvania|Transylvania|23.15|46.32|latin|mountains|
+rou_wallachia|Wallachia|25.67|44.63|latin|hills|C
+rus_black_earth|Black Earth|38.81|51.8|slavic|hills|
+rus_don|Don & Kuban|41.34|47.6|slavic|plains|C
+rus_karelia|Karelia|33.85|65.65|slavic|forest|C
+rus_khabarovsk|Khabarovsk|143.34|55.81|slavic|hills|C
+rus_koenigsberg|East Prussia (Königsberg)|21.38|54.72|slavic|plains|C
+rus_krasnoyarsk|Krasnoyarsk|96.0|67.47|slavic|arctic|C
+rus_maga_buryatdan|Maga Buryatdan|127.13|56.71|slavic|hills|C
+rus_moscow|Muscovy|38.9|57.57|slavic|plains|
+rus_north_caucasus|North Caucasus|45.18|45.1|slavic|hills|C
+rus_north_russia|Northern Dvina|52.06|66.43|slavic|arctic|C
+rus_novgorod|Novgorod & Ingria|31.23|58.77|slavic|plains|C
+rus_primor_ye|Primor'ye|137.21|47.11|slavic|hills|C
+rus_sakha_yakutia|Sakha (Yakutia)|122.01|64.31|slavic|forest|C
+rus_smolensk|Smolensk|33.74|54.19|slavic|forest|
+rus_urals|Urals|70.35|60.89|slavic|plains|C
+rus_volga|Middle Volga|47.47|55.55|slavic|forest|
+rwa_rwanda|Rwanda|29.92|-1.99|african|jungle|
+sah_w_sahara|W. Sahara|-12.22|24.23|arabic|desert|C
+sau_al_hasa|Al-Hasa|50.15|22.92|arabic|desert|C
+sau_hejaz|Hejaz|40.19|23.3|arabic|hills|C
+sau_najd|Najd|43.44|25.3|arabic|plains|C
+sdn_north_kordufan|North Kordufan|29.74|13.12|arabic|desert|
+sdn_northern|Northern|30.11|18.48|arabic|desert|C
+sds_s_sudan|S. Sudan|30.3|7.28|african|jungle|
+sen_senegal|Senegal|-14.47|14.37|african|steppe|C
+slb_solomon_is|Solomon Is.|159.44|-8.85|oceanian|jungle|C
+sle_sierra_leone|Sierra Leone|-11.8|8.56|african|hills|C
+slv_el_salvador|El Salvador|-88.87|13.73|native_american|plains|C
+som_somalia|Somalia|45.85|6.06|african|jungle|C
+srb_serbia|Serbia|20.79|44.22|slavic|hills|
+sur_suriname|Suriname|-55.91|4.13|latin_american|hills|C
+svk_slovakia|Slovakia|19.48|48.7|slavic|mountains|
+svn_slovenia|Slovenia|14.81|46.12|slavic|hills|
+swe_gotaland|Götaland|14.08|57.4|germanic|forest|C
+swe_norrland|Norrland|18.11|65.35|germanic|forest|C
+swe_svealand|Svealand|15.27|60.17|germanic|forest|C
+swz_eswatini|eSwatini|31.48|-26.56|african|mountains|
+syr_aleppo|Aleppo|37.24|35.85|arabic|plains|C
+syr_damascus|Damascus|37.73|33.95|arabic|plains|C
+syr_jazira|Jazira|40.13|35.83|arabic|plains|
+tcd_batha|Batha|18.12|12.41|african|desert|
+tcd_borkou|Borkou|19.29|18.91|african|desert|
+tgo_togo|Togo|0.96|8.53|african|jungle|C
+tha_chiang_mai|Chiang Mai|101.2|16.37|southeast_asian|plains|C
+tha_surat_thani|Surat Thani|100.05|9.04|southeast_asian|plains|C
+tjk_tajikistan|Tajikistan|71.02|38.53|iranian|hills|
+tkm_turkmenistan|Turkmenistan|59.38|39.12|turkic|desert|C
+tls_timor_leste|Timor-Leste|125.86|-8.82|southeast_asian|jungle|C
+tto_trinidad_and_tobago|Trinidad and Tobago|-61.26|10.47|native_american|plains|C
+tun_tunisia|Tunisia|9.55|34.12|arabic|desert|C
+tur_aegean_anatolia|Aegean Anatolia|29.05|37.97|turkic|plains|C
+tur_armenia_highlands|Eastern Anatolia|42.01|39.35|turkic|plains|C
+tur_bithynia|Bithynia|30.83|39.9|turkic|plains|C
+tur_central_anatolia|Central Anatolia|33.48|39.43|turkic|plains|C
+tur_cilicia|Cilicia & Taurus|35.35|37.56|turkic|hills|C
+tur_constantinople|Constantinople|28.99|40.44|turkic|steppe|C
+tur_eastern_thrace|Eastern Thrace|27.03|40.91|turkic|plains|C
+tur_pontus|Pontus|37.22|40.4|turkic|hills|C
+tur_upper_mesopotamia|Southeast Anatolia|39.23|37.82|turkic|plains|
+twn_taiwan|Taiwan|120.95|23.75|sinic|plains|C
+tza_morogoro|Morogoro|37.2|-8.68|african|jungle|C
+tza_tabora|Tabora|33.45|-4.9|african|jungle|
+uga_uganda|Uganda|32.37|1.27|african|jungle|
+ukr_galicia_volhynia|Galicia-Volhynia|24.84|49.93|slavic|forest|
+ukr_kyiv|Kyiv|31.61|50.45|slavic|steppe|
+ukr_podolia|Podolia|27.64|49.04|slavic|forest|
+ukr_pontic_steppe|Pontic Steppe|31.7|47.28|slavic|plains|C
+ukr_sloboda|Sloboda & Donbas|36.66|48.48|slavic|plains|C
+ury_uruguay|Uruguay|-56.02|-32.8|latin_american|hills|C
+usa_alaska|Alaska|-152.28|64.27|native_american|hills|C
+usa_california|California|-116.44|37.02|native_american|plains|C
+usa_colorado|Colorado|-100.27|39.18|native_american|hills|
+usa_georgia|Georgia|-85.43|31.69|native_american|hills|C
+usa_idaho|Idaho|-117.31|45.77|native_american|mountains|C
+usa_michigan|Michigan|-87.03|43.99|native_american|plains|C
+usa_montana|Montana|-109.64|47.03|native_american|hills|
+usa_new_york|New York|-72.98|43.5|native_american|mountains|C
+usa_north_carolina|North Carolina|-82.59|36.94|native_american|mountains|C
+usa_oregon|Oregon|-116.57|41.87|native_american|hills|C
+usa_south_dakota|South Dakota|-96.59|43.91|native_american|plains|
+usa_texas|Texas|-100.53|32.3|native_american|plains|C
+uzb_bukhoro|Bukhoro|66.96|39.87|turkic|desert|
+uzb_karakalpakstan|Karakalpakstan|61.0|42.81|turkic|desert|
+ven_venezuela|Venezuela|-66.17|7.13|latin_american|mountains|C
+vnm_gia_lai|Gia Lai|107.41|12.52|southeast_asian|mountains|C
+vnm_nghe_an|Nghệ An|105.13|20.98|southeast_asian|hills|C
+vut_vanuatu|Vanuatu|167.69|-16.22|oceanian|plains|C
+yem_yemen|Yemen|47.59|15.91|arabic|hills|C
+zaf_eastern_cape|Eastern Cape|27.22|-29.4|african|hills|C
+zaf_limpopo|Limpopo|29.53|-24.71|african|hills|
+zaf_northern_cape|Northern Cape|21.2|-30.4|african|hills|C
+zmb_zambia|Zambia|27.77|-13.46|african|hills|
+zwe_zimbabwe|Zimbabwe|29.85|-19.0|african|plains|

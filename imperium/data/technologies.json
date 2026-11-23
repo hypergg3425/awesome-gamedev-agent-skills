@@ -1,0 +1,2365 @@
+{
+ "lines": {
+  "infantry_tactics": {
+   "branch": "military",
+   "name": {
+    "en": "Infantry Tactics",
+    "tr": "Piyade Taktikleri"
+   }
+  },
+  "cavalry_doctrine": {
+   "branch": "military",
+   "name": {
+    "en": "Cavalry Doctrine",
+    "tr": "Süvari Doktrini"
+   }
+  },
+  "artillery": {
+   "branch": "military",
+   "name": {
+    "en": "Artillery",
+    "tr": "Topçuluk"
+   }
+  },
+  "logistics": {
+   "branch": "military",
+   "name": {
+    "en": "Logistics",
+    "tr": "Lojistik"
+   }
+  },
+  "fortification": {
+   "branch": "military",
+   "name": {
+    "en": "Fortification",
+    "tr": "Tahkimat"
+   }
+  },
+  "naval_warfare": {
+   "branch": "military",
+   "name": {
+    "en": "Naval Warfare",
+    "tr": "Deniz Harbi"
+   }
+  },
+  "agriculture": {
+   "branch": "economic",
+   "name": {
+    "en": "Agriculture",
+    "tr": "Tarım"
+   }
+  },
+  "trade": {
+   "branch": "economic",
+   "name": {
+    "en": "Trade",
+    "tr": "Ticaret"
+   }
+  },
+  "banking": {
+   "branch": "economic",
+   "name": {
+    "en": "Banking",
+    "tr": "Bankacılık"
+   }
+  },
+  "industry": {
+   "branch": "economic",
+   "name": {
+    "en": "Industrial Production",
+    "tr": "Sanayi Üretimi"
+   }
+  },
+  "infrastructure": {
+   "branch": "economic",
+   "name": {
+    "en": "Infrastructure",
+    "tr": "Altyapı"
+   }
+  },
+  "resource_extraction": {
+   "branch": "economic",
+   "name": {
+    "en": "Resource Extraction",
+    "tr": "Kaynak Çıkarımı"
+   }
+  },
+  "bureaucracy": {
+   "branch": "administration",
+   "name": {
+    "en": "Bureaucracy",
+    "tr": "Bürokrasi"
+   }
+  },
+  "taxation": {
+   "branch": "administration",
+   "name": {
+    "en": "Taxation",
+    "tr": "Vergilendirme"
+   }
+  },
+  "public_admin": {
+   "branch": "administration",
+   "name": {
+    "en": "Public Administration",
+    "tr": "Kamu İdaresi"
+   }
+  },
+  "centralization": {
+   "branch": "administration",
+   "name": {
+    "en": "Centralization",
+    "tr": "Merkezileşme"
+   }
+  },
+  "legal_reform": {
+   "branch": "administration",
+   "name": {
+    "en": "Legal Reform",
+    "tr": "Hukuk Reformu"
+   }
+  },
+  "education": {
+   "branch": "society",
+   "name": {
+    "en": "Education",
+    "tr": "Eğitim"
+   }
+  },
+  "medicine": {
+   "branch": "society",
+   "name": {
+    "en": "Medicine",
+    "tr": "Tıp"
+   }
+  },
+  "printing": {
+   "branch": "society",
+   "name": {
+    "en": "Printing",
+    "tr": "Matbaa"
+   }
+  },
+  "engineering": {
+   "branch": "society",
+   "name": {
+    "en": "Engineering",
+    "tr": "Mühendislik"
+   }
+  },
+  "science": {
+   "branch": "society",
+   "name": {
+    "en": "Scientific Development",
+    "tr": "Bilimsel Gelişme"
+   }
+  },
+  "culture": {
+   "branch": "society",
+   "name": {
+    "en": "Cultural Advancement",
+    "tr": "Kültürel Gelişim"
+   }
+  }
+ },
+ "techs": {
+  "infantry_tactics_1": {
+   "id": "infantry_tactics_1",
+   "line": "infantry_tactics",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Pike Drill",
+    "tr": "Pike Talimi"
+   },
+   "line_name": {
+    "en": "Infantry Tactics",
+    "tr": "Piyade Taktikleri"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "inf_atk": 0.08,
+    "inf_def": 0.06
+   },
+   "era": 1
+  },
+  "infantry_tactics_2": {
+   "id": "infantry_tactics_2",
+   "line": "infantry_tactics",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Gunpowder Infantry",
+    "tr": "Barutlu Piyade"
+   },
+   "line_name": {
+    "en": "Infantry Tactics",
+    "tr": "Piyade Taktikleri"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "infantry_tactics_1"
+   ],
+   "effects": {
+    "inf_atk": 0.08,
+    "inf_def": 0.06
+   },
+   "era": 2
+  },
+  "infantry_tactics_3": {
+   "id": "infantry_tactics_3",
+   "line": "infantry_tactics",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Linear Tactics",
+    "tr": "Hat Taktikleri"
+   },
+   "line_name": {
+    "en": "Infantry Tactics",
+    "tr": "Piyade Taktikleri"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "infantry_tactics_2"
+   ],
+   "effects": {
+    "inf_atk": 0.08,
+    "inf_def": 0.06
+   },
+   "era": 3
+  },
+  "infantry_tactics_4": {
+   "id": "infantry_tactics_4",
+   "line": "infantry_tactics",
+   "branch": "military",
+   "level": 4,
+   "name": {
+    "en": "Rifle Doctrine",
+    "tr": "Tüfek Doktrini"
+   },
+   "line_name": {
+    "en": "Infantry Tactics",
+    "tr": "Piyade Taktikleri"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "infantry_tactics_3"
+   ],
+   "effects": {
+    "inf_atk": 0.092,
+    "inf_def": 0.069
+   },
+   "era": 4
+  },
+  "cavalry_doctrine_1": {
+   "id": "cavalry_doctrine_1",
+   "line": "cavalry_doctrine",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Stirrup Warfare",
+    "tr": "Üzengi Savaşı"
+   },
+   "line_name": {
+    "en": "Cavalry Doctrine",
+    "tr": "Süvari Doktrini"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "cav_atk": 0.1,
+    "move": 0.04
+   },
+   "era": 1
+  },
+  "cavalry_doctrine_2": {
+   "id": "cavalry_doctrine_2",
+   "line": "cavalry_doctrine",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Heavy Charge",
+    "tr": "Ağır Hücum"
+   },
+   "line_name": {
+    "en": "Cavalry Doctrine",
+    "tr": "Süvari Doktrini"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "cavalry_doctrine_1",
+    "infantry_tactics_1"
+   ],
+   "effects": {
+    "cav_atk": 0.1,
+    "move": 0.04
+   },
+   "era": 2
+  },
+  "cavalry_doctrine_3": {
+   "id": "cavalry_doctrine_3",
+   "line": "cavalry_doctrine",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Light Horse Reforms",
+    "tr": "Hafif Atlı Reformları"
+   },
+   "line_name": {
+    "en": "Cavalry Doctrine",
+    "tr": "Süvari Doktrini"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "cavalry_doctrine_2",
+    "infantry_tactics_2"
+   ],
+   "effects": {
+    "cav_atk": 0.1,
+    "move": 0.04
+   },
+   "era": 3
+  },
+  "cavalry_doctrine_4": {
+   "id": "cavalry_doctrine_4",
+   "line": "cavalry_doctrine",
+   "branch": "military",
+   "level": 4,
+   "name": {
+    "en": "Mounted Rifle Corps",
+    "tr": "Atlı Tüfek Birlikleri"
+   },
+   "line_name": {
+    "en": "Cavalry Doctrine",
+    "tr": "Süvari Doktrini"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "cavalry_doctrine_3",
+    "infantry_tactics_3"
+   ],
+   "effects": {
+    "cav_atk": 0.115,
+    "move": 0.046
+   },
+   "era": 4
+  },
+  "artillery_1": {
+   "id": "artillery_1",
+   "line": "artillery",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Early Bombards",
+    "tr": "İlk Balyemezler"
+   },
+   "line_name": {
+    "en": "Artillery",
+    "tr": "Topçuluk"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "art_atk": 0.1,
+    "siege": 0.1
+   },
+   "era": 1
+  },
+  "artillery_2": {
+   "id": "artillery_2",
+   "line": "artillery",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Cast Cannon",
+    "tr": "Dökme Toplar"
+   },
+   "line_name": {
+    "en": "Artillery",
+    "tr": "Topçuluk"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "artillery_1",
+    "fortification_1"
+   ],
+   "effects": {
+    "art_atk": 0.1,
+    "siege": 0.1
+   },
+   "era": 2
+  },
+  "artillery_3": {
+   "id": "artillery_3",
+   "line": "artillery",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Field Artillery",
+    "tr": "Sahra Topçuluğu"
+   },
+   "line_name": {
+    "en": "Artillery",
+    "tr": "Topçuluk"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "artillery_2",
+    "fortification_2"
+   ],
+   "effects": {
+    "art_atk": 0.1,
+    "siege": 0.1
+   },
+   "era": 3
+  },
+  "artillery_4": {
+   "id": "artillery_4",
+   "line": "artillery",
+   "branch": "military",
+   "level": 4,
+   "name": {
+    "en": "Rifled Guns",
+    "tr": "Yivli Toplar"
+   },
+   "line_name": {
+    "en": "Artillery",
+    "tr": "Topçuluk"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "artillery_3",
+    "fortification_3"
+   ],
+   "effects": {
+    "art_atk": 0.115,
+    "siege": 0.115
+   },
+   "era": 4
+  },
+  "logistics_1": {
+   "id": "logistics_1",
+   "line": "logistics",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Supply Wagons",
+    "tr": "İkmal Arabaları"
+   },
+   "line_name": {
+    "en": "Logistics",
+    "tr": "Lojistik"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "supply": 0.15,
+    "attrition": -0.1
+   },
+   "era": 1
+  },
+  "logistics_2": {
+   "id": "logistics_2",
+   "line": "logistics",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Magazines",
+    "tr": "Cephanelikler"
+   },
+   "line_name": {
+    "en": "Logistics",
+    "tr": "Lojistik"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "logistics_1",
+    "infrastructure_1"
+   ],
+   "effects": {
+    "supply": 0.15,
+    "attrition": -0.1
+   },
+   "era": 2
+  },
+  "logistics_3": {
+   "id": "logistics_3",
+   "line": "logistics",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Commissariat",
+    "tr": "İaşe Teşkilatı"
+   },
+   "line_name": {
+    "en": "Logistics",
+    "tr": "Lojistik"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "logistics_2",
+    "infrastructure_2"
+   ],
+   "effects": {
+    "supply": 0.15,
+    "attrition": -0.1
+   },
+   "era": 3
+  },
+  "logistics_4": {
+   "id": "logistics_4",
+   "line": "logistics",
+   "branch": "military",
+   "level": 4,
+   "name": {
+    "en": "Railway Supply",
+    "tr": "Demiryolu İkmali"
+   },
+   "line_name": {
+    "en": "Logistics",
+    "tr": "Lojistik"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "logistics_3",
+    "infrastructure_3"
+   ],
+   "effects": {
+    "supply": 0.172,
+    "attrition": -0.115
+   },
+   "era": 4
+  },
+  "fortification_1": {
+   "id": "fortification_1",
+   "line": "fortification",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Stone Keeps",
+    "tr": "Taş Kaleler"
+   },
+   "line_name": {
+    "en": "Fortification",
+    "tr": "Tahkimat"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "fort_def": 0.15,
+    "siege_def": 0.1
+   },
+   "era": 1
+  },
+  "fortification_2": {
+   "id": "fortification_2",
+   "line": "fortification",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Bastion Forts",
+    "tr": "Bastiyon Kaleleri"
+   },
+   "line_name": {
+    "en": "Fortification",
+    "tr": "Tahkimat"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "fortification_1"
+   ],
+   "effects": {
+    "fort_def": 0.15,
+    "siege_def": 0.1
+   },
+   "era": 2
+  },
+  "fortification_3": {
+   "id": "fortification_3",
+   "line": "fortification",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Star Fortresses",
+    "tr": "Yıldız Kaleler"
+   },
+   "line_name": {
+    "en": "Fortification",
+    "tr": "Tahkimat"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "fortification_2"
+   ],
+   "effects": {
+    "fort_def": 0.15,
+    "siege_def": 0.1
+   },
+   "era": 3
+  },
+  "fortification_4": {
+   "id": "fortification_4",
+   "line": "fortification",
+   "branch": "military",
+   "level": 4,
+   "name": {
+    "en": "Fortress Belts",
+    "tr": "Kale Kuşakları"
+   },
+   "line_name": {
+    "en": "Fortification",
+    "tr": "Tahkimat"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "fortification_3"
+   ],
+   "effects": {
+    "fort_def": 0.172,
+    "siege_def": 0.115
+   },
+   "era": 4
+  },
+  "naval_warfare_1": {
+   "id": "naval_warfare_1",
+   "line": "naval_warfare",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Carracks",
+    "tr": "Karakalar"
+   },
+   "line_name": {
+    "en": "Naval Warfare",
+    "tr": "Deniz Harbi"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "naval_atk": 0.12,
+    "naval_transport": 0.1
+   },
+   "era": 1
+  },
+  "naval_warfare_2": {
+   "id": "naval_warfare_2",
+   "line": "naval_warfare",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Broadside Galleons",
+    "tr": "Yan Ateşli Kalyonlar"
+   },
+   "line_name": {
+    "en": "Naval Warfare",
+    "tr": "Deniz Harbi"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "naval_warfare_1",
+    "logistics_1"
+   ],
+   "effects": {
+    "naval_atk": 0.12,
+    "naval_transport": 0.1
+   },
+   "era": 2
+  },
+  "naval_warfare_3": {
+   "id": "naval_warfare_3",
+   "line": "naval_warfare",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Ship Squadrons",
+    "tr": "Hat Filoları"
+   },
+   "line_name": {
+    "en": "Naval Warfare",
+    "tr": "Deniz Harbi"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "naval_warfare_2",
+    "logistics_2"
+   ],
+   "effects": {
+    "naval_atk": 0.12,
+    "naval_transport": 0.1
+   },
+   "era": 3
+  },
+  "naval_warfare_4": {
+   "id": "naval_warfare_4",
+   "line": "naval_warfare",
+   "branch": "military",
+   "level": 4,
+   "name": {
+    "en": "Steam and Iron",
+    "tr": "Buhar ve Demir"
+   },
+   "line_name": {
+    "en": "Naval Warfare",
+    "tr": "Deniz Harbi"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "naval_warfare_3",
+    "logistics_3"
+   ],
+   "effects": {
+    "naval_atk": 0.138,
+    "naval_transport": 0.115
+   },
+   "era": 4
+  },
+  "agriculture_1": {
+   "id": "agriculture_1",
+   "line": "agriculture",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Heavy Plough",
+    "tr": "Ağır Saban"
+   },
+   "line_name": {
+    "en": "Agriculture",
+    "tr": "Tarım"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "food": 0.12,
+    "pop_growth": 0.03
+   },
+   "era": 1
+  },
+  "agriculture_2": {
+   "id": "agriculture_2",
+   "line": "agriculture",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Three-Field Rotation",
+    "tr": "Üç Tarla Sistemi"
+   },
+   "line_name": {
+    "en": "Agriculture",
+    "tr": "Tarım"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "agriculture_1"
+   ],
+   "effects": {
+    "food": 0.12,
+    "pop_growth": 0.03
+   },
+   "era": 2
+  },
+  "agriculture_3": {
+   "id": "agriculture_3",
+   "line": "agriculture",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Crop Rotation",
+    "tr": "Münavebeli Ekim"
+   },
+   "line_name": {
+    "en": "Agriculture",
+    "tr": "Tarım"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "agriculture_2"
+   ],
+   "effects": {
+    "food": 0.12,
+    "pop_growth": 0.03
+   },
+   "era": 3
+  },
+  "agriculture_4": {
+   "id": "agriculture_4",
+   "line": "agriculture",
+   "branch": "economic",
+   "level": 4,
+   "name": {
+    "en": "Mechanised Farming",
+    "tr": "Makineli Tarım"
+   },
+   "line_name": {
+    "en": "Agriculture",
+    "tr": "Tarım"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "agriculture_3"
+   ],
+   "effects": {
+    "food": 0.138,
+    "pop_growth": 0.034
+   },
+   "era": 4
+  },
+  "trade_1": {
+   "id": "trade_1",
+   "line": "trade",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Merchant Law",
+    "tr": "Tüccar Hukuku"
+   },
+   "line_name": {
+    "en": "Trade",
+    "tr": "Ticaret"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "trade": 0.12,
+    "tariff": 0.02
+   },
+   "era": 1
+  },
+  "trade_2": {
+   "id": "trade_2",
+   "line": "trade",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Chartered Fairs",
+    "tr": "Ticaret Panayırları"
+   },
+   "line_name": {
+    "en": "Trade",
+    "tr": "Ticaret"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "trade_1",
+    "banking_1"
+   ],
+   "effects": {
+    "trade": 0.12,
+    "tariff": 0.02
+   },
+   "era": 2
+  },
+  "trade_3": {
+   "id": "trade_3",
+   "line": "trade",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Joint-Stock Companies",
+    "tr": "Anonim Şirketler"
+   },
+   "line_name": {
+    "en": "Trade",
+    "tr": "Ticaret"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "trade_2",
+    "banking_2"
+   ],
+   "effects": {
+    "trade": 0.12,
+    "tariff": 0.02
+   },
+   "era": 3
+  },
+  "trade_4": {
+   "id": "trade_4",
+   "line": "trade",
+   "branch": "economic",
+   "level": 4,
+   "name": {
+    "en": "Global Commerce",
+    "tr": "Küresel Ticaret"
+   },
+   "line_name": {
+    "en": "Trade",
+    "tr": "Ticaret"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "trade_3",
+    "banking_3"
+   ],
+   "effects": {
+    "trade": 0.138,
+    "tariff": 0.023
+   },
+   "era": 4
+  },
+  "banking_1": {
+   "id": "banking_1",
+   "line": "banking",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Moneylenders",
+    "tr": "Sarraflık"
+   },
+   "line_name": {
+    "en": "Banking",
+    "tr": "Bankacılık"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "interest": -0.12,
+    "credit": 0.15
+   },
+   "era": 1
+  },
+  "banking_2": {
+   "id": "banking_2",
+   "line": "banking",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Banking Houses",
+    "tr": "Banka Evleri"
+   },
+   "line_name": {
+    "en": "Banking",
+    "tr": "Bankacılık"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "banking_1",
+    "trade_1"
+   ],
+   "effects": {
+    "interest": -0.12,
+    "credit": 0.15
+   },
+   "era": 2
+  },
+  "banking_3": {
+   "id": "banking_3",
+   "line": "banking",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Central Credit",
+    "tr": "Merkezi Kredi"
+   },
+   "line_name": {
+    "en": "Banking",
+    "tr": "Bankacılık"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "banking_2",
+    "trade_2"
+   ],
+   "effects": {
+    "interest": -0.12,
+    "credit": 0.15
+   },
+   "era": 3
+  },
+  "banking_4": {
+   "id": "banking_4",
+   "line": "banking",
+   "branch": "economic",
+   "level": 4,
+   "name": {
+    "en": "Modern Finance",
+    "tr": "Modern Maliye"
+   },
+   "line_name": {
+    "en": "Banking",
+    "tr": "Bankacılık"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "banking_3",
+    "trade_3"
+   ],
+   "effects": {
+    "interest": -0.138,
+    "credit": 0.172
+   },
+   "era": 4
+  },
+  "industry_1": {
+   "id": "industry_1",
+   "line": "industry",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Guild Workshops",
+    "tr": "Lonca Atölyeleri"
+   },
+   "line_name": {
+    "en": "Industrial Production",
+    "tr": "Sanayi Üretimi"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "prod": 0.1,
+    "build_cost": -0.04
+   },
+   "era": 1
+  },
+  "industry_2": {
+   "id": "industry_2",
+   "line": "industry",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Manufactories",
+    "tr": "Manifaktürler"
+   },
+   "line_name": {
+    "en": "Industrial Production",
+    "tr": "Sanayi Üretimi"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "industry_1",
+    "resource_extraction_1"
+   ],
+   "effects": {
+    "prod": 0.1,
+    "build_cost": -0.04
+   },
+   "era": 2
+  },
+  "industry_3": {
+   "id": "industry_3",
+   "line": "industry",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Steam Power",
+    "tr": "Buhar Gücü"
+   },
+   "line_name": {
+    "en": "Industrial Production",
+    "tr": "Sanayi Üretimi"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "industry_2",
+    "resource_extraction_2"
+   ],
+   "effects": {
+    "prod": 0.1,
+    "build_cost": -0.04
+   },
+   "era": 3
+  },
+  "industry_4": {
+   "id": "industry_4",
+   "line": "industry",
+   "branch": "economic",
+   "level": 4,
+   "name": {
+    "en": "Factory System",
+    "tr": "Fabrika Sistemi"
+   },
+   "line_name": {
+    "en": "Industrial Production",
+    "tr": "Sanayi Üretimi"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "industry_3",
+    "resource_extraction_3"
+   ],
+   "effects": {
+    "prod": 0.115,
+    "build_cost": -0.046
+   },
+   "era": 4
+  },
+  "infrastructure_1": {
+   "id": "infrastructure_1",
+   "line": "infrastructure",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Paved Roads",
+    "tr": "Döşeli Yollar"
+   },
+   "line_name": {
+    "en": "Infrastructure",
+    "tr": "Altyapı"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "infra": 0.15,
+    "build_speed": 0.05
+   },
+   "era": 1
+  },
+  "infrastructure_2": {
+   "id": "infrastructure_2",
+   "line": "infrastructure",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Bridges and Canals",
+    "tr": "Köprüler ve Kanallar"
+   },
+   "line_name": {
+    "en": "Infrastructure",
+    "tr": "Altyapı"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "infrastructure_1"
+   ],
+   "effects": {
+    "infra": 0.15,
+    "build_speed": 0.05
+   },
+   "era": 2
+  },
+  "infrastructure_3": {
+   "id": "infrastructure_3",
+   "line": "infrastructure",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Turnpike Network",
+    "tr": "Paralı Yol Ağı"
+   },
+   "line_name": {
+    "en": "Infrastructure",
+    "tr": "Altyapı"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "infrastructure_2"
+   ],
+   "effects": {
+    "infra": 0.15,
+    "build_speed": 0.05
+   },
+   "era": 3
+  },
+  "infrastructure_4": {
+   "id": "infrastructure_4",
+   "line": "infrastructure",
+   "branch": "economic",
+   "level": 4,
+   "name": {
+    "en": "Railway Age",
+    "tr": "Demiryolu Çağı"
+   },
+   "line_name": {
+    "en": "Infrastructure",
+    "tr": "Altyapı"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "infrastructure_3"
+   ],
+   "effects": {
+    "infra": 0.172,
+    "build_speed": 0.057
+   },
+   "era": 4
+  },
+  "resource_extraction_1": {
+   "id": "resource_extraction_1",
+   "line": "resource_extraction",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Deep Mining",
+    "tr": "Derin Madencilik"
+   },
+   "line_name": {
+    "en": "Resource Extraction",
+    "tr": "Kaynak Çıkarımı"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "mine": 0.15
+   },
+   "era": 1
+  },
+  "resource_extraction_2": {
+   "id": "resource_extraction_2",
+   "line": "resource_extraction",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Blast Furnaces",
+    "tr": "Yüksek Fırınlar"
+   },
+   "line_name": {
+    "en": "Resource Extraction",
+    "tr": "Kaynak Çıkarımı"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "resource_extraction_1"
+   ],
+   "effects": {
+    "mine": 0.15
+   },
+   "era": 2
+  },
+  "resource_extraction_3": {
+   "id": "resource_extraction_3",
+   "line": "resource_extraction",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Coal Mining",
+    "tr": "Kömür Madenciliği"
+   },
+   "line_name": {
+    "en": "Resource Extraction",
+    "tr": "Kaynak Çıkarımı"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "resource_extraction_2"
+   ],
+   "effects": {
+    "mine": 0.15
+   },
+   "era": 3
+  },
+  "resource_extraction_4": {
+   "id": "resource_extraction_4",
+   "line": "resource_extraction",
+   "branch": "economic",
+   "level": 4,
+   "name": {
+    "en": "Steam Pumps",
+    "tr": "Buharlı Pompalar"
+   },
+   "line_name": {
+    "en": "Resource Extraction",
+    "tr": "Kaynak Çıkarımı"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "resource_extraction_3"
+   ],
+   "effects": {
+    "mine": 0.172
+   },
+   "era": 4
+  },
+  "bureaucracy_1": {
+   "id": "bureaucracy_1",
+   "line": "bureaucracy",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Royal Clerks",
+    "tr": "Saray Katipleri"
+   },
+   "line_name": {
+    "en": "Bureaucracy",
+    "tr": "Bürokrasi"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "admin_cap": 0.15,
+    "corruption": -0.08
+   },
+   "era": 1
+  },
+  "bureaucracy_2": {
+   "id": "bureaucracy_2",
+   "line": "bureaucracy",
+   "branch": "administration",
+   "level": 2,
+   "name": {
+    "en": "Chanceries",
+    "tr": "Kançılaryalar"
+   },
+   "line_name": {
+    "en": "Bureaucracy",
+    "tr": "Bürokrasi"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "bureaucracy_1"
+   ],
+   "effects": {
+    "admin_cap": 0.15,
+    "corruption": -0.08
+   },
+   "era": 2
+  },
+  "bureaucracy_3": {
+   "id": "bureaucracy_3",
+   "line": "bureaucracy",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Civil Service",
+    "tr": "Memuriyet Sistemi"
+   },
+   "line_name": {
+    "en": "Bureaucracy",
+    "tr": "Bürokrasi"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "bureaucracy_2"
+   ],
+   "effects": {
+    "admin_cap": 0.15,
+    "corruption": -0.08
+   },
+   "era": 3
+  },
+  "bureaucracy_4": {
+   "id": "bureaucracy_4",
+   "line": "bureaucracy",
+   "branch": "administration",
+   "level": 4,
+   "name": {
+    "en": "Ministries",
+    "tr": "Bakanlıklar"
+   },
+   "line_name": {
+    "en": "Bureaucracy",
+    "tr": "Bürokrasi"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "bureaucracy_3"
+   ],
+   "effects": {
+    "admin_cap": 0.172,
+    "corruption": -0.092
+   },
+   "era": 4
+  },
+  "taxation_1": {
+   "id": "taxation_1",
+   "line": "taxation",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Tax Rolls",
+    "tr": "Vergi Defterleri"
+   },
+   "line_name": {
+    "en": "Taxation",
+    "tr": "Vergilendirme"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "tax": 0.1
+   },
+   "era": 1
+  },
+  "taxation_2": {
+   "id": "taxation_2",
+   "line": "taxation",
+   "branch": "administration",
+   "level": 2,
+   "name": {
+    "en": "Tax Farming",
+    "tr": "İltizam"
+   },
+   "line_name": {
+    "en": "Taxation",
+    "tr": "Vergilendirme"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "taxation_1",
+    "bureaucracy_1"
+   ],
+   "effects": {
+    "tax": 0.1
+   },
+   "era": 2
+  },
+  "taxation_3": {
+   "id": "taxation_3",
+   "line": "taxation",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Fiscal Codes",
+    "tr": "Mali Kanunlar"
+   },
+   "line_name": {
+    "en": "Taxation",
+    "tr": "Vergilendirme"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "taxation_2",
+    "bureaucracy_2"
+   ],
+   "effects": {
+    "tax": 0.1
+   },
+   "era": 3
+  },
+  "taxation_4": {
+   "id": "taxation_4",
+   "line": "taxation",
+   "branch": "administration",
+   "level": 4,
+   "name": {
+    "en": "Income Tax",
+    "tr": "Gelir Vergisi"
+   },
+   "line_name": {
+    "en": "Taxation",
+    "tr": "Vergilendirme"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "taxation_3",
+    "bureaucracy_3"
+   ],
+   "effects": {
+    "tax": 0.115
+   },
+   "era": 4
+  },
+  "public_admin_1": {
+   "id": "public_admin_1",
+   "line": "public_admin",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Town Councils",
+    "tr": "Şehir Meclisleri"
+   },
+   "line_name": {
+    "en": "Public Administration",
+    "tr": "Kamu İdaresi"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "stability": 1,
+    "unrest": -0.08
+   },
+   "era": 1
+  },
+  "public_admin_2": {
+   "id": "public_admin_2",
+   "line": "public_admin",
+   "branch": "administration",
+   "level": 2,
+   "name": {
+    "en": "Provincial Governors",
+    "tr": "Eyalet Valileri"
+   },
+   "line_name": {
+    "en": "Public Administration",
+    "tr": "Kamu İdaresi"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "public_admin_1",
+    "bureaucracy_1"
+   ],
+   "effects": {
+    "stability": 1,
+    "unrest": -0.08
+   },
+   "era": 2
+  },
+  "public_admin_3": {
+   "id": "public_admin_3",
+   "line": "public_admin",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Prefectures",
+    "tr": "Valilikler"
+   },
+   "line_name": {
+    "en": "Public Administration",
+    "tr": "Kamu İdaresi"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "public_admin_2",
+    "bureaucracy_2"
+   ],
+   "effects": {
+    "stability": 1,
+    "unrest": -0.08
+   },
+   "era": 3
+  },
+  "public_admin_4": {
+   "id": "public_admin_4",
+   "line": "public_admin",
+   "branch": "administration",
+   "level": 4,
+   "name": {
+    "en": "Public Works Office",
+    "tr": "Bayındırlık İdaresi"
+   },
+   "line_name": {
+    "en": "Public Administration",
+    "tr": "Kamu İdaresi"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "public_admin_3",
+    "bureaucracy_3"
+   ],
+   "effects": {
+    "stability": 1.15,
+    "unrest": -0.092
+   },
+   "era": 4
+  },
+  "centralization_1": {
+   "id": "centralization_1",
+   "line": "centralization",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Royal Prerogative",
+    "tr": "Hükümdar Yetkileri"
+   },
+   "line_name": {
+    "en": "Centralization",
+    "tr": "Merkezileşme"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "legit": 0.4,
+    "reform_cost": -0.08
+   },
+   "era": 1
+  },
+  "centralization_2": {
+   "id": "centralization_2",
+   "line": "centralization",
+   "branch": "administration",
+   "level": 2,
+   "name": {
+    "en": "Standing Councils",
+    "tr": "Daimi Divanlar"
+   },
+   "line_name": {
+    "en": "Centralization",
+    "tr": "Merkezileşme"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "centralization_1",
+    "bureaucracy_1"
+   ],
+   "effects": {
+    "legit": 0.4,
+    "reform_cost": -0.08
+   },
+   "era": 2
+  },
+  "centralization_3": {
+   "id": "centralization_3",
+   "line": "centralization",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Absolutist Court",
+    "tr": "Mutlakiyetçi Saray"
+   },
+   "line_name": {
+    "en": "Centralization",
+    "tr": "Merkezileşme"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "centralization_2",
+    "bureaucracy_2"
+   ],
+   "effects": {
+    "legit": 0.4,
+    "reform_cost": -0.08
+   },
+   "era": 3
+  },
+  "centralization_4": {
+   "id": "centralization_4",
+   "line": "centralization",
+   "branch": "administration",
+   "level": 4,
+   "name": {
+    "en": "National State",
+    "tr": "Ulus Devlet"
+   },
+   "line_name": {
+    "en": "Centralization",
+    "tr": "Merkezileşme"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "centralization_3",
+    "bureaucracy_3"
+   ],
+   "effects": {
+    "legit": 0.46,
+    "reform_cost": -0.092
+   },
+   "era": 4
+  },
+  "legal_reform_1": {
+   "id": "legal_reform_1",
+   "line": "legal_reform",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Written Customs",
+    "tr": "Yazılı Örf"
+   },
+   "line_name": {
+    "en": "Legal Reform",
+    "tr": "Hukuk Reformu"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "stability": 1,
+    "diplo": 0.08
+   },
+   "era": 1
+  },
+  "legal_reform_2": {
+   "id": "legal_reform_2",
+   "line": "legal_reform",
+   "branch": "administration",
+   "level": 2,
+   "name": {
+    "en": "Roman Law Revival",
+    "tr": "Roma Hukukunun Dirilişi"
+   },
+   "line_name": {
+    "en": "Legal Reform",
+    "tr": "Hukuk Reformu"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "legal_reform_1",
+    "public_admin_1"
+   ],
+   "effects": {
+    "stability": 1,
+    "diplo": 0.08
+   },
+   "era": 2
+  },
+  "legal_reform_3": {
+   "id": "legal_reform_3",
+   "line": "legal_reform",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Civil Codes",
+    "tr": "Medeni Kanunlar"
+   },
+   "line_name": {
+    "en": "Legal Reform",
+    "tr": "Hukuk Reformu"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "legal_reform_2",
+    "public_admin_2"
+   ],
+   "effects": {
+    "stability": 1,
+    "diplo": 0.08
+   },
+   "era": 3
+  },
+  "legal_reform_4": {
+   "id": "legal_reform_4",
+   "line": "legal_reform",
+   "branch": "administration",
+   "level": 4,
+   "name": {
+    "en": "Constitutional Law",
+    "tr": "Anayasa Hukuku"
+   },
+   "line_name": {
+    "en": "Legal Reform",
+    "tr": "Hukuk Reformu"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "legal_reform_3",
+    "public_admin_3"
+   ],
+   "effects": {
+    "stability": 1.15,
+    "diplo": 0.092
+   },
+   "era": 4
+  },
+  "education_1": {
+   "id": "education_1",
+   "line": "education",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Monastic Schools",
+    "tr": "Manastır Okulları"
+   },
+   "line_name": {
+    "en": "Education",
+    "tr": "Eğitim"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "research": 0.12,
+    "literacy": 0.03
+   },
+   "era": 1
+  },
+  "education_2": {
+   "id": "education_2",
+   "line": "education",
+   "branch": "society",
+   "level": 2,
+   "name": {
+    "en": "Universities",
+    "tr": "Üniversiteler"
+   },
+   "line_name": {
+    "en": "Education",
+    "tr": "Eğitim"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "education_1"
+   ],
+   "effects": {
+    "research": 0.12,
+    "literacy": 0.03
+   },
+   "era": 2
+  },
+  "education_3": {
+   "id": "education_3",
+   "line": "education",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Public Schools",
+    "tr": "Halk Okulları"
+   },
+   "line_name": {
+    "en": "Education",
+    "tr": "Eğitim"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "education_2"
+   ],
+   "effects": {
+    "research": 0.12,
+    "literacy": 0.03
+   },
+   "era": 3
+  },
+  "education_4": {
+   "id": "education_4",
+   "line": "education",
+   "branch": "society",
+   "level": 4,
+   "name": {
+    "en": "Mass Education",
+    "tr": "Kitlesel Eğitim"
+   },
+   "line_name": {
+    "en": "Education",
+    "tr": "Eğitim"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "education_3"
+   ],
+   "effects": {
+    "research": 0.138,
+    "literacy": 0.034
+   },
+   "era": 4
+  },
+  "medicine_1": {
+   "id": "medicine_1",
+   "line": "medicine",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Hospitals",
+    "tr": "Hastaneler"
+   },
+   "line_name": {
+    "en": "Medicine",
+    "tr": "Tıp"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "disease": -0.15,
+    "pop_growth": 0.02
+   },
+   "era": 1
+  },
+  "medicine_2": {
+   "id": "medicine_2",
+   "line": "medicine",
+   "branch": "society",
+   "level": 2,
+   "name": {
+    "en": "Anatomy",
+    "tr": "Anatomi"
+   },
+   "line_name": {
+    "en": "Medicine",
+    "tr": "Tıp"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "medicine_1",
+    "education_1"
+   ],
+   "effects": {
+    "disease": -0.15,
+    "pop_growth": 0.02
+   },
+   "era": 2
+  },
+  "medicine_3": {
+   "id": "medicine_3",
+   "line": "medicine",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Quarantine and Vaccination",
+    "tr": "Karantina ve Aşı"
+   },
+   "line_name": {
+    "en": "Medicine",
+    "tr": "Tıp"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "medicine_2",
+    "education_2"
+   ],
+   "effects": {
+    "disease": -0.15,
+    "pop_growth": 0.02
+   },
+   "era": 3
+  },
+  "medicine_4": {
+   "id": "medicine_4",
+   "line": "medicine",
+   "branch": "society",
+   "level": 4,
+   "name": {
+    "en": "Germ Theory",
+    "tr": "Mikrop Kuramı"
+   },
+   "line_name": {
+    "en": "Medicine",
+    "tr": "Tıp"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "medicine_3",
+    "education_3"
+   ],
+   "effects": {
+    "disease": -0.172,
+    "pop_growth": 0.023
+   },
+   "era": 4
+  },
+  "printing_1": {
+   "id": "printing_1",
+   "line": "printing",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Block Printing",
+    "tr": "Kalıp Baskı"
+   },
+   "line_name": {
+    "en": "Printing",
+    "tr": "Matbaa"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "literacy": 0.04,
+    "prestige": 0.05
+   },
+   "era": 1
+  },
+  "printing_2": {
+   "id": "printing_2",
+   "line": "printing",
+   "branch": "society",
+   "level": 2,
+   "name": {
+    "en": "Movable Type",
+    "tr": "Hareketli Harfler"
+   },
+   "line_name": {
+    "en": "Printing",
+    "tr": "Matbaa"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "printing_1",
+    "education_1"
+   ],
+   "effects": {
+    "literacy": 0.04,
+    "prestige": 0.05
+   },
+   "era": 2
+  },
+  "printing_3": {
+   "id": "printing_3",
+   "line": "printing",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Newspapers",
+    "tr": "Gazeteler"
+   },
+   "line_name": {
+    "en": "Printing",
+    "tr": "Matbaa"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "printing_2",
+    "education_2"
+   ],
+   "effects": {
+    "literacy": 0.04,
+    "prestige": 0.05
+   },
+   "era": 3
+  },
+  "printing_4": {
+   "id": "printing_4",
+   "line": "printing",
+   "branch": "society",
+   "level": 4,
+   "name": {
+    "en": "Rotary Press",
+    "tr": "Döner Baskı"
+   },
+   "line_name": {
+    "en": "Printing",
+    "tr": "Matbaa"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "printing_3",
+    "education_3"
+   ],
+   "effects": {
+    "literacy": 0.046,
+    "prestige": 0.057
+   },
+   "era": 4
+  },
+  "engineering_1": {
+   "id": "engineering_1",
+   "line": "engineering",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Masonry Arts",
+    "tr": "Duvarcılık Sanatı"
+   },
+   "line_name": {
+    "en": "Engineering",
+    "tr": "Mühendislik"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "build_cost": -0.06,
+    "build_speed": 0.06
+   },
+   "era": 1
+  },
+  "engineering_2": {
+   "id": "engineering_2",
+   "line": "engineering",
+   "branch": "society",
+   "level": 2,
+   "name": {
+    "en": "Surveying",
+    "tr": "Haritacılık"
+   },
+   "line_name": {
+    "en": "Engineering",
+    "tr": "Mühendislik"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "engineering_1",
+    "education_1"
+   ],
+   "effects": {
+    "build_cost": -0.06,
+    "build_speed": 0.06
+   },
+   "era": 2
+  },
+  "engineering_3": {
+   "id": "engineering_3",
+   "line": "engineering",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Mechanics",
+    "tr": "Mekanik"
+   },
+   "line_name": {
+    "en": "Engineering",
+    "tr": "Mühendislik"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "engineering_2",
+    "education_2"
+   ],
+   "effects": {
+    "build_cost": -0.06,
+    "build_speed": 0.06
+   },
+   "era": 3
+  },
+  "engineering_4": {
+   "id": "engineering_4",
+   "line": "engineering",
+   "branch": "society",
+   "level": 4,
+   "name": {
+    "en": "Civil Engineering",
+    "tr": "İnşaat Mühendisliği"
+   },
+   "line_name": {
+    "en": "Engineering",
+    "tr": "Mühendislik"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "engineering_3",
+    "education_3"
+   ],
+   "effects": {
+    "build_cost": -0.069,
+    "build_speed": 0.069
+   },
+   "era": 4
+  },
+  "science_1": {
+   "id": "science_1",
+   "line": "science",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Natural Philosophy",
+    "tr": "Doğa Felsefesi"
+   },
+   "line_name": {
+    "en": "Scientific Development",
+    "tr": "Bilimsel Gelişme"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "research": 0.15
+   },
+   "era": 1
+  },
+  "science_2": {
+   "id": "science_2",
+   "line": "science",
+   "branch": "society",
+   "level": 2,
+   "name": {
+    "en": "Experimental Method",
+    "tr": "Deneysel Yöntem"
+   },
+   "line_name": {
+    "en": "Scientific Development",
+    "tr": "Bilimsel Gelişme"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "science_1",
+    "printing_1"
+   ],
+   "effects": {
+    "research": 0.15
+   },
+   "era": 2
+  },
+  "science_3": {
+   "id": "science_3",
+   "line": "science",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Academies of Science",
+    "tr": "Bilim Akademileri"
+   },
+   "line_name": {
+    "en": "Scientific Development",
+    "tr": "Bilimsel Gelişme"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "science_2",
+    "printing_2"
+   ],
+   "effects": {
+    "research": 0.15
+   },
+   "era": 3
+  },
+  "science_4": {
+   "id": "science_4",
+   "line": "science",
+   "branch": "society",
+   "level": 4,
+   "name": {
+    "en": "Research Institutes",
+    "tr": "Araştırma Enstitüleri"
+   },
+   "line_name": {
+    "en": "Scientific Development",
+    "tr": "Bilimsel Gelişme"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "science_3",
+    "printing_3"
+   ],
+   "effects": {
+    "research": 0.172
+   },
+   "era": 4
+  },
+  "culture_1": {
+   "id": "culture_1",
+   "line": "culture",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Court Patronage",
+    "tr": "Saray Himayesi"
+   },
+   "line_name": {
+    "en": "Cultural Advancement",
+    "tr": "Kültürel Gelişim"
+   },
+   "cost_rp": 260,
+   "cost_gold": 65,
+   "prereq": [],
+   "effects": {
+    "prestige": 0.08,
+    "happiness": 2
+   },
+   "era": 1
+  },
+  "culture_2": {
+   "id": "culture_2",
+   "line": "culture",
+   "branch": "society",
+   "level": 2,
+   "name": {
+    "en": "Renaissance Arts",
+    "tr": "Rönesans Sanatları"
+   },
+   "line_name": {
+    "en": "Cultural Advancement",
+    "tr": "Kültürel Gelişim"
+   },
+   "cost_rp": 620,
+   "cost_gold": 155,
+   "prereq": [
+    "culture_1",
+    "education_1"
+   ],
+   "effects": {
+    "prestige": 0.08,
+    "happiness": 2
+   },
+   "era": 2
+  },
+  "culture_3": {
+   "id": "culture_3",
+   "line": "culture",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "National Letters",
+    "tr": "Ulusal Edebiyat"
+   },
+   "line_name": {
+    "en": "Cultural Advancement",
+    "tr": "Kültürel Gelişim"
+   },
+   "cost_rp": 1150,
+   "cost_gold": 287,
+   "prereq": [
+    "culture_2",
+    "education_2"
+   ],
+   "effects": {
+    "prestige": 0.08,
+    "happiness": 2
+   },
+   "era": 3
+  },
+  "culture_4": {
+   "id": "culture_4",
+   "line": "culture",
+   "branch": "society",
+   "level": 4,
+   "name": {
+    "en": "Mass Culture",
+    "tr": "Kitle Kültürü"
+   },
+   "line_name": {
+    "en": "Cultural Advancement",
+    "tr": "Kültürel Gelişim"
+   },
+   "cost_rp": 1850,
+   "cost_gold": 462,
+   "prereq": [
+    "culture_3",
+    "education_3"
+   ],
+   "effects": {
+    "prestige": 0.092,
+    "happiness": 2.3
+   },
+   "era": 4
+  }
+ }
+}

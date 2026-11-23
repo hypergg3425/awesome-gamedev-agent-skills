@@ -1,0 +1,1312 @@
+[
+ {
+  "id": "rnd_diplomatic_incident",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Diplomatic Incident",
+   "tr": "Diplomatik Olay"
+  },
+  "text": {
+   "en": "An envoy from {other} was insulted, or claims to have been, at the court of {country}. His master demands satisfaction and the chancelleries buzz.",
+   "tr": "{other} elçisi, {country} sarayında aşağılandı ya da öyle olduğunu iddia ediyor. Efendisi tatmin talep ediyor, divanlar uğulduyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 50,
+  "cooldown": 30,
+  "options": [
+   {
+    "id": "apologise",
+    "name": {
+     "en": "Send a formal apology",
+     "tr": "Resmî özür gönder"
+    },
+    "tip": {
+     "en": "Prestige -8, relations with the neighbour +10.",
+     "tr": "Prestij -8, komşuyla ilişkiler +10."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -8
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 10
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "gift",
+    "name": {
+     "en": "Send rich gifts",
+     "tr": "Zengin hediyeler gönder"
+    },
+    "tip": {
+     "en": "Gold -60, relations +15.",
+     "tr": "Altın -60, ilişkiler +15."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 15
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Refuse any apology",
+     "tr": "Hiçbir özür dileme"
+    },
+    "tip": {
+     "en": "Prestige +12, relations -15.",
+     "tr": "Prestij +12, ilişkiler -15."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 12
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -15
+     }
+    ],
+    "ai_weight": 0.8
+   }
+  ]
+ },
+ {
+  "id": "rnd_marriage_proposal",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Marriage Is Proposed",
+   "tr": "Evlilik Teklifi"
+  },
+  "text": {
+   "en": "The ruler of {other} proposes a marriage between their house and that of {ruler}, to bind the two realms together.",
+   "tr": "{other} hükümdarı, iki ülkeyi birbirine bağlamak için hanedanları arasında bir evlilik öneriyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 65,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "accept",
+    "name": {
+     "en": "Accept with a lavish dowry",
+     "tr": "Cömert bir çeyizle kabul et"
+    },
+    "tip": {
+     "en": "Gold -80, relations +25, Prestige +10.",
+     "tr": "Altın -80, ilişkiler +25, Prestij +10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 25
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "modest",
+    "name": {
+     "en": "Accept on modest terms",
+     "tr": "Mütevazı şartlarla kabul et"
+    },
+    "tip": {
+     "en": "Gold -30, relations +12.",
+     "tr": "Altın -30, ilişkiler +12."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 12
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "decline",
+    "name": {
+     "en": "Politely decline",
+     "tr": "Nezaketle reddet"
+    },
+    "tip": {
+     "en": "Relations -8, Legitimacy +2.",
+     "tr": "İlişkiler -8, Meşruiyet +2."
+    },
+    "effects": [
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -8
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ },
+ {
+  "id": "rnd_trade_embassy",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Trade Embassy Arrives",
+   "tr": "Ticaret Elçiliği Geldi"
+  },
+  "text": {
+   "en": "Envoys from {other}, laden with samples of silk, spice and fine metalwork, ask for trading rights in the ports and markets of {country}.",
+   "tr": "{other} elçileri, ipek, baharat ve işlenmiş maden örnekleriyle yüklü olarak {country}'nin liman ve pazarlarında ticaret hakkı istiyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "open",
+    "name": {
+     "en": "Grant full trading rights",
+     "tr": "Tam ticaret hakkı tanı"
+    },
+    "tip": {
+     "en": "+8% trade for 16 turns, relations +10, Merchants -2.",
+     "tr": "16 tur boyunca %8 ticaret, ilişkiler +10, Tüccar -2."
+    },
+    "effects": [
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.08
+      },
+      "turns": 16
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 10
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "limited",
+    "name": {
+     "en": "Allow one port only",
+     "tr": "Yalnızca tek limana izin ver"
+    },
+    "tip": {
+     "en": "Gold +50, relations +4.",
+     "tr": "Altın +50, ilişkiler +4."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 50
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1.5
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Refuse; protect local merchants",
+     "tr": "Reddet; yerli tüccarı koru"
+    },
+    "tip": {
+     "en": "Merchants +5, relations -5.",
+     "tr": "Tüccar +5, ilişkiler -5."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 5
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -5
+     }
+    ],
+    "ai_weight": 0.6
+   }
+  ]
+ },
+ {
+  "id": "rnd_border_dispute",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Border Dispute",
+   "tr": "Sınır Anlaşmazlığı"
+  },
+  "text": {
+   "en": "Shepherds and tax-men from {country} and {other} have clashed over who owns a stretch of hills and pasture. Both courts claim ancient rights.",
+   "tr": "{country} ve {other} çobanları ile vergi tahsildarları, bir tepe ve mera şeridinin kime ait olduğu konusunda çatıştı. Her iki saray da kadim haklara dayanıyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "arbitrate",
+    "name": {
+     "en": "Propose arbitration",
+     "tr": "Hakem önerisinde bulun"
+    },
+    "tip": {
+     "en": "Gold -30, relations +8, Prestige +5.",
+     "tr": "Altın -30, ilişkiler +8, Prestij +5."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 8
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "garrison",
+    "name": {
+     "en": "Reinforce the border posts",
+     "tr": "Sınır karakollarını takviye et"
+    },
+    "tip": {
+     "en": "Manpower -1, Prestige +10, relations -10.",
+     "tr": "İşgücü -1, Prestij +10, ilişkiler -10."
+    },
+    "effects": [
+     {
+      "type": "manpower",
+      "value": -1
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -10
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "yield",
+    "name": {
+     "en": "Yield the disputed land",
+     "tr": "Tartışmalı araziyi bırak"
+    },
+    "tip": {
+     "en": "Prestige -12, relations +12, Stability +1.",
+     "tr": "Prestij -12, ilişkiler +12, İstikrar +1."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -12
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 12
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 0.6
+   }
+  ]
+ },
+ {
+  "id": "rnd_spy_scandal",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Spy Is Unmasked",
+   "tr": "Bir Casus Yakalandı"
+  },
+  "text": {
+   "en": "A clerk in the chancellery of {country} is found passing papers to an agent of {other}. The affair is whispered through every court.",
+   "tr": "{country} divanında bir kâtibin, {other} ajanına evrak sızdırdığı ortaya çıktı. Olay her sarayda fısıltıyla dolaşıyor."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "expose",
+    "name": {
+     "en": "Expose it publicly",
+     "tr": "Olayı herkese ilan et"
+    },
+    "tip": {
+     "en": "Prestige +10, relations -15.",
+     "tr": "Prestij +10, ilişkiler -15."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -15
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "quiet",
+    "name": {
+     "en": "Settle it quietly",
+     "tr": "Sessizce hallet"
+    },
+    "tip": {
+     "en": "Gold -30, relations -3.",
+     "tr": "Altın -30, ilişkiler -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "turn",
+    "name": {
+     "en": "Turn the spy into a double agent",
+     "tr": "Casusu çifte ajana çevir"
+    },
+    "tip": {
+     "en": "Research +20, Legitimacy +2, risk of relations -8.",
+     "tr": "Araştırma +20, Meşruiyet +2, ilişkilerde -8 riski."
+    },
+    "effects": [
+     {
+      "type": "research_points",
+      "value": 20
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -8
+     }
+    ],
+    "ai_weight": 1.2
+   }
+  ]
+ },
+ {
+  "id": "rnd_royal_visit",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Foreign Ruler Visits",
+   "tr": "Yabancı Bir Hükümdar Ziyarette"
+  },
+  "text": {
+   "en": "The ruler of {other} announces a state visit to {country}, with a great retinue. Expectations of lavish hospitality are high.",
+   "tr": "{other} hükümdarı büyük bir maiyetle {country}'ye resmî ziyaret yapacağını bildirdi. Cömert bir ağırlama bekleniyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "lavish",
+    "name": {
+     "en": "Host a lavish reception",
+     "tr": "Gösterişli bir resepsiyon ver"
+    },
+    "tip": {
+     "en": "Gold -100, Prestige +25, relations +15.",
+     "tr": "Altın -100, Prestij +25, ilişkiler +15."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -100
+     },
+     {
+      "type": "prestige",
+      "value": 25
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 15
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 120
+     }
+    ]
+   },
+   {
+    "id": "simple",
+    "name": {
+     "en": "Offer simple hospitality",
+     "tr": "Sade bir ağırlama sun"
+    },
+    "tip": {
+     "en": "Gold -30, Prestige +8, relations +6.",
+     "tr": "Altın -30, Prestij +8, ilişkiler +6."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "prestige",
+      "value": 8
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 6
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "delay",
+    "name": {
+     "en": "Postpone the visit",
+     "tr": "Ziyareti ertele"
+    },
+    "tip": {
+     "en": "Prestige -8, relations -6.",
+     "tr": "Prestij -8, ilişkiler -6."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -8
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -6
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_mercenaries_medieval",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "A Free Company Offers Its Swords",
+   "tr": "Serbest Bir Bölük Kılıçlarını Sunuyor"
+  },
+  "text": {
+   "en": "A band of veteran mercenaries, idle since their last employer ran out of silver, camps near the borders of {country} and offers its services.",
+   "tr": "Eski işverenlerinin gümüşü bitince boşta kalan tecrübeli bir paralı asker çetesi {country} sınırları yakınında kamp kurup hizmetlerini sunuyor."
+  },
+  "image": "battle",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_before",
+     "value": 1500
+    },
+    {
+     "type": "treasury_above",
+     "value": 60
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "hire",
+    "name": {
+     "en": "Hire the whole company",
+     "tr": "Bölüğün tamamını tut"
+    },
+    "tip": {
+     "en": "Gold -100, adds 3 men-at-arms.",
+     "tr": "Altın -100, 3 ağır piyade ekler."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -100
+     },
+     {
+      "type": "add_regiments",
+      "unit": "men_at_arms",
+      "n": 3
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 120
+     }
+    ]
+   },
+   {
+    "id": "crossbows",
+    "name": {
+     "en": "Hire only the crossbowmen",
+     "tr": "Yalnızca tatar yaycılarını tut"
+    },
+    "tip": {
+     "en": "Gold -50, adds 2 crossbowmen.",
+     "tr": "Altın -50, 2 tatar yaycı ekler."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "add_regiments",
+      "unit": "crossbowmen",
+      "n": 2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Send them away",
+     "tr": "Savuştur"
+    },
+    "tip": {
+     "en": "Stability +1; they may plunder the border.",
+     "tr": "İstikrar +1; sınırı yağmalayabilirler."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "prestige",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.7
+   }
+  ]
+ },
+ {
+  "id": "rnd_mercenaries_modern",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "Mercenary Captains Seek Contracts",
+   "tr": "Paralı Asker Kaptanları Sözleşme Arıyor"
+  },
+  "text": {
+   "en": "Experienced captains with pike-and-shot companies come to the court of {country} bearing letters of recommendation and expecting contracts.",
+   "tr": "Tecrübeli kaptanlar, mızraklı ve ateşli silahlı bölüklerle, tavsiye mektuplarıyla {country} sarayına gelip sözleşme bekliyor."
+  },
+  "image": "battle",
+  "trigger": {
+   "conds": [
+    {
+     "type": "year_at_least",
+     "value": 1500
+    },
+    {
+     "type": "year_before",
+     "value": 1700
+    },
+    {
+     "type": "treasury_above",
+     "value": 80
+    }
+   ]
+  },
+  "mtth": 65,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "landsknechts",
+    "name": {
+     "en": "Hire a band of landsknechts",
+     "tr": "Bir landsknecht bölüğü tut"
+    },
+    "tip": {
+     "en": "Gold -120, adds 3 landsknechts.",
+     "tr": "Altın -120, 3 landsknecht ekler."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -120
+     },
+     {
+      "type": "add_regiments",
+      "unit": "landsknechts",
+      "n": 3
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 140
+     }
+    ]
+   },
+   {
+    "id": "shot",
+    "name": {
+     "en": "Hire musketeers only",
+     "tr": "Yalnızca tüfekçileri tut"
+    },
+    "tip": {
+     "en": "Gold -80, adds 2 musketeers.",
+     "tr": "Altın -80, 2 tüfekçi ekler."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "add_regiments",
+      "unit": "musketeers",
+      "n": 2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Refuse; rely on the levy",
+     "tr": "Reddet; seferberliğe güven"
+    },
+    "tip": {
+     "en": "Manpower +1, Military -3.",
+     "tr": "İşgücü +1, Asker -3."
+    },
+    "effects": [
+     {
+      "type": "manpower",
+      "value": 1
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": -3
+     }
+    ],
+    "ai_weight": 0.6
+   }
+  ]
+ },
+ {
+  "id": "rnd_pirates",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "Pirates Raid the Ports",
+   "tr": "Korsanlar Limanları Basıyor"
+  },
+  "text": {
+   "en": "Sleek raiders have burnt fishing villages and seized merchantmen along the coast of {country}. Shipowners demand protection.",
+   "tr": "Süratli korsanlar {country} kıyısındaki balıkçı köylerini yaktı ve ticaret gemilerine el koydu. Armatörler koruma talep ediyor."
+  },
+  "image": "harbor",
+  "trigger": {
+   "conds": [
+    {
+     "type": "capital_coastal"
+    }
+   ]
+  },
+  "mtth": 55,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "patrol",
+    "name": {
+     "en": "Fit out a patrol squadron",
+     "tr": "Devriye filosu donat"
+    },
+    "tip": {
+     "en": "Gold -80, +8% trade for 12 turns, Prestige +5.",
+     "tr": "Altın -80, 12 tur boyunca %8 ticaret, Prestij +5."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.08
+      },
+      "turns": 12
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "ransom",
+    "name": {
+     "en": "Pay ransoms and tribute",
+     "tr": "Fidye ve haraç öde"
+    },
+    "tip": {
+     "en": "Gold -50, Prestige -8.",
+     "tr": "Altın -50, Prestij -8."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "prestige",
+      "value": -8
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "endure",
+    "name": {
+     "en": "Endure the losses",
+     "tr": "Kayıplara katlan"
+    },
+    "tip": {
+     "en": "Merchants -6, trade -6% for 8 turns.",
+     "tr": "Tüccar -6, 8 tur boyunca ticaret -%6."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -6
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": -0.06
+      },
+      "turns": 8
+     }
+    ],
+    "ai_weight": 0.5
+   }
+  ]
+ },
+ {
+  "id": "rnd_tribute_demand",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Demand for Tribute",
+   "tr": "Haraç Talebi"
+  },
+  "text": {
+   "en": "A haughty letter from {other} demands gifts and tribute from {country} as proof of respect, and hints at armies at the border.",
+   "tr": "{other}'dan gelen kibirli bir mektup, saygı göstergesi olarak {country}'den hediye ve haraç istiyor, sınırdaki ordulardan söz ediyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    },
+    {
+     "type": "prestige_below",
+     "value": 80
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "pay",
+    "name": {
+     "en": "Pay the tribute",
+     "tr": "Haracı öde"
+    },
+    "tip": {
+     "en": "Gold -90, relations +10, Prestige -10.",
+     "tr": "Altın -90, ilişkiler +10, Prestij -10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -90
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 10
+     },
+     {
+      "type": "prestige",
+      "value": -10
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 110
+     }
+    ]
+   },
+   {
+    "id": "defy",
+    "name": {
+     "en": "Defy the demand",
+     "tr": "Talebi reddet"
+    },
+    "tip": {
+     "en": "Prestige +15, relations -20.",
+     "tr": "Prestij +15, ilişkiler -20."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 15
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -20
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "stall",
+    "name": {
+     "en": "Stall with embassies",
+     "tr": "Elçilerle oyalama"
+    },
+    "tip": {
+     "en": "Gold -30, relations -3.",
+     "tr": "Altın -30, ilişkiler -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -3
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rnd_exiled_prince",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "An Exiled Prince Seeks Refuge",
+   "tr": "Sürgündeki Bir Prens Sığınak Arıyor"
+  },
+  "text": {
+   "en": "A deposed prince of {other} arrives in {country} begging for protection. His presence would please some courtiers and enrage the ruler he fled.",
+   "tr": "{other}'nin tahttan indirilmiş bir prensi, koruma dilenerek {country}'ye geldi. Varlığı bazı saraylıları memnun, kaçtığı hükümdarı ise öfkelendirecek."
+  },
+  "image": "court",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 60,
+  "options": [
+   {
+    "id": "shelter",
+    "name": {
+     "en": "Grant him sanctuary",
+     "tr": "Ona sığınak ver"
+    },
+    "tip": {
+     "en": "Prestige +10, relations -15.",
+     "tr": "Prestij +10, ilişkiler -15."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -15
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "hand",
+    "name": {
+     "en": "Hand him over",
+     "tr": "Teslim et"
+    },
+    "tip": {
+     "en": "Relations +12, Legitimacy -3, Prestige -5.",
+     "tr": "İlişkiler +12, Meşruiyet -3, Prestij -5."
+    },
+    "effects": [
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 12
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     },
+     {
+      "type": "prestige",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "ransom",
+    "name": {
+     "en": "Hold him and bargain",
+     "tr": "Alıkoy ve pazarlık et"
+    },
+    "tip": {
+     "en": "Gold +80, relations -6.",
+     "tr": "Altın +80, ilişkiler -6."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 80
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -6
+     }
+    ],
+    "ai_weight": 1.2
+   }
+  ]
+ },
+ {
+  "id": "rnd_exotic_gifts",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "Exotic Gifts from Afar",
+   "tr": "Uzaklardan Egzotik Armağanlar"
+  },
+  "text": {
+   "en": "An embassy from a far country presents {ruler} with strange animals, jewelled caskets and rare books, seeking friendly relations.",
+   "tr": "Uzak bir ülkenin elçiliği, dostane ilişkiler arayarak {ruler}'e garip hayvanlar, mücevherli sandıklar ve nadir kitaplar sunuyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "conds": [
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 80,
+  "cooldown": 60,
+  "options": [
+   {
+    "id": "reciprocate",
+    "name": {
+     "en": "Send gifts in return",
+     "tr": "Karşılık olarak hediye gönder"
+    },
+    "tip": {
+     "en": "Gold -50, relations +12, Prestige +15.",
+     "tr": "Altın -50, ilişkiler +12, Prestij +15."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 12
+     },
+     {
+      "type": "prestige",
+      "value": 15
+     }
+    ],
+    "ai_weight": 1.5,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "sell",
+    "name": {
+     "en": "Sell the gifts",
+     "tr": "Armağanları sat"
+    },
+    "tip": {
+     "en": "Gold +70, Prestige -3.",
+     "tr": "Altın +70, Prestij -3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 70
+     },
+     {
+      "type": "prestige",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "menagerie",
+    "name": {
+     "en": "Build a royal menagerie",
+     "tr": "Kraliyet hayvanat bahçesi yap"
+    },
+    "tip": {
+     "en": "Gold -40, Prestige +20, Legitimacy +2.",
+     "tr": "Altın -40, Prestij +20, Meşruiyet +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "prestige",
+      "value": 20
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1.2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   }
+  ]
+ }
+]

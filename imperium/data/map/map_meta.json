@@ -1,0 +1,12 @@
+{
+ "bounds": [
+  -1800.0,
+  -1121.4556700810156,
+  1800.0,
+  656.2959919918642
+ ],
+ "scale": 10.0,
+ "provinces": 410,
+ "projection": "Miller",
+ "source": "Natural Earth (public domain) admin-0 50m, admin-1 10m, geography regions 10m, marine polys 10m, land 50m, lakes 50m"
+}
