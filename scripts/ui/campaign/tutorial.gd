@@ -102,6 +102,9 @@ func _show_step() -> void:
 	_next.text = Loc.t("TUT_DONE_BTN") if step == STEPS.size() - 1 else Loc.t("TUT_NEXT")
 	_base_queue = _queue_total()
 	_base_turn = int(Game.state["turn"])
+	# a sheet left open by the previous step would hide the map / buttons this step talks about
+	if screen.open_sheet_name != "" and not str(st["cond"]).begins_with("sheet:"):
+		screen.close_sheets()
 	call_deferred("_place")
 
 func advance() -> void:
@@ -149,38 +152,93 @@ func _condition_met(cond: String) -> bool:
 	return false
 
 ## --- placement / highlight -----------------------------------------------------------------------------------
+func _vis_rect(c: Control) -> Rect2:
+	return c.get_global_rect() if c != null and c.is_visible_in_tree() else Rect2()
+
 func _focus_rect(focus: String) -> Rect2:
 	match focus:
 		"hud":
-			return screen.hud.get_global_rect()
+			return _vis_rect(screen.hud)
 		"province":
-			return screen.province_panel.get_global_rect() if screen.province_panel.visible else Rect2()
+			return _vis_rect(screen.province_panel)
 		"end":
-			return screen.end_btn.get_global_rect()
+			return _vis_rect(screen.end_btn)
 		"menu":
-			return screen.hud_box.get_child(screen.hud_box.get_child_count() - 1).get_global_rect()
+			return _vis_rect(screen.hud.refs["menu_btn"])
 	if focus.begins_with("tool:"):
 		var i := int(focus.substr(5))
 		if i < screen.toolbar.get_child_count():
-			return (screen.toolbar.get_child(i) as Control).get_global_rect()
+			return _vis_rect(screen.toolbar.get_child(i) as Control)
 	return Rect2()
+
+## Rectangles the coach card should avoid covering (besides the highlighted target, which it must never cover).
+func _avoid_rects() -> Array:
+	var out: Array = []
+	for c in [screen.hud, screen.toolbar, screen.end_btn, screen.province_panel, screen.mode_strip, screen.move_bar]:
+		var r := _vis_rect(c)
+		if r.size.x > 0.0:
+			out.append(r)
+	if screen.open_sheet_name != "":
+		out.append(_vis_rect(screen.sheets[screen.open_sheet_name]))
+	return out
+
+static func _overlap(a: Rect2, b: Rect2) -> float:
+	var i := a.intersection(b)
+	return maxf(i.size.x, 0.0) * maxf(i.size.y, 0.0)
+
+## Picks the position of a card of `card` size inside `area` that never overlaps `focus` and covers the least of
+## `avoid` (scanned on a coarse grid, ties broken toward the bottom-left where the thumb rests).
+static func choose_rect(card: Vector2, area: Rect2, focus: Rect2, avoid: Array) -> Rect2:
+	var best := Rect2(area.position, card)
+	var best_cost := INF
+	var step := 16.0
+	var y := area.end.y - card.y
+	while y >= area.position.y - 0.01:
+		var x := area.position.x
+		while x + card.x <= area.end.x + 0.01:
+			var r := Rect2(Vector2(x, y), card)
+			var cost := 0.0
+			if focus.size.x > 0.0:
+				cost += _overlap(r, focus.grow(10.0)) * 1000.0
+			for a in avoid:
+				cost += _overlap(r, a)
+			cost += (area.end.y - r.end.y) * 0.5 + (r.position.x - area.position.x) * 0.1
+			if cost < best_cost:
+				best_cost = cost
+				best = r
+			x += step
+		y -= step
+	return best
+
+var _sig := ""
+var _target := Rect2()
 
 func _place() -> void:
 	if not is_inside_tree():
 		return
 	var vp := get_viewport().get_visible_rect().size
 	var ins := UI.safe_insets(get_viewport())
-	var w := minf(520.0, vp.x * 0.46)
+	var area := Rect2(float(ins["left"]) + 8.0, float(ins["top"]) + 8.0, vp.x - float(ins["left"]) - float(ins["right"]) - 16.0,
+			vp.y - float(ins["top"]) - float(ins["bottom"]) - Ads.reserved_height() - 16.0)
+	var w := minf(500.0, area.size.x * 0.5 if area.size.x > 700.0 else area.size.x - 8.0)
 	custom_minimum_size = Vector2(w, 0)
 	size = Vector2(w, 10)
-	var h := size.y
-	# bottom-centre-left: clear of the toolbar (left), province panel (right) and the End-turn button
-	var bottom := vp.y - float(ins["bottom"]) - Ads.reserved_height() - 12.0
-	position = Vector2(clampf(86.0 + float(ins["left"]), 0.0, maxf(0.0, vp.x - w)), maxf(8.0, bottom - h))
-	var r := _focus_rect(str(STEPS[step]["focus"]))
-	_ring.visible = r.size.x > 4.0
+	var h := minf(size.y, area.size.y)
+	var focus := _focus_rect(str(STEPS[step]["focus"]))
+	var avoid := _avoid_rects()
+	var sig := "%s|%s|%s|%s|%s" % [step, str(focus), str(area), str(Vector2(w, h)), str(avoid)]
+	if sig != _sig:
+		_sig = sig
+		var r := choose_rect(Vector2(w, h), area, focus, avoid)
+		position = r.position
+		size = r.size
+	_target = focus
+	_ring.visible = focus.size.x > 4.0
 	if _ring.visible:
-		_ring.position = r.position - Vector2(4, 4)
-		_ring.size = r.size + Vector2(8, 8)
+		_ring.position = focus.position - Vector2(4, 4)
+		_ring.size = focus.size + Vector2(8, 8)
+
+func _process(_delta: float) -> void:
+	if _ring != null and _ring.visible:
 		var pulse := 0.65 + 0.35 * sin(float(Time.get_ticks_msec()) / 260.0)
 		_ring.modulate = Color(1, 1, 1, pulse if bool(Settings.get_value("animations")) else 1.0)

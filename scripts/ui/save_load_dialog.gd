@@ -44,7 +44,7 @@ static func show_load(host: Control, on_loaded: Callable) -> void:
 	var box: VBoxContainer = dlg["box"]
 	var list := VBoxContainer.new()
 	list.add_theme_constant_override("separation", 6)
-	box.add_child(UI.scroll(list, 360))
+	box.add_child(list)
 	var saves: Array = Saves.list_saves()
 	if saves.is_empty():
 		list.add_child(UI.label(Loc.t("SAVE_NONE"), "Small"))

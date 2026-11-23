@@ -42,20 +42,8 @@ class BattleAnim:
 
 static func show_reports(host: Control, s: Dictionary, reports: Array, on_done: Callable) -> void:
 	var idx := [0]
-	var dim := ColorRect.new()
-	dim.color = Color(0, 0, 0, 0.72)
-	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
-	dim.mouse_filter = Control.MOUSE_FILTER_STOP
-	host.add_child(dim)
-	var center := CenterContainer.new()
-	center.set_anchors_preset(Control.PRESET_FULL_RECT)
-	dim.add_child(center)
-	var pc := PanelContainer.new()
-	pc.theme_type_variation = "Sheet"
-	pc.custom_minimum_size = Vector2(900, 0)
-	center.add_child(pc)
-	var v := VBoxContainer.new()
-	pc.add_child(v)
+	var dim := Dialogs.overlay(host, Callable(), 0.72)
+	var v: VBoxContainer = Dialogs.frame(dim, 900.0)["box"]
 	var render: Callable
 	render = func() -> void:
 		UI.clear(v)

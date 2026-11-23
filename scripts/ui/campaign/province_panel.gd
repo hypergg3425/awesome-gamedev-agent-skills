@@ -10,6 +10,8 @@ var tabs_row: HBoxContainer
 var body: VBoxContainer
 var title: Label
 var flag: FlagView
+var wanted := false         ## a province is selected (the panel may still be hidden while a sheet covers it)
+var suppressed := false
 
 func _init(p_screen: CampaignScreen) -> void:
 	screen = p_screen
@@ -26,10 +28,10 @@ func _init(p_screen: CampaignScreen) -> void:
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	title.clip_text = true
 	head.add_child(title)
-	head.add_child(UI.icon_button("zoom_in", func() -> void: screen.mapview.focus_province(pid, 4.5), Loc.t("UI_FOCUS"), 42.0))
+	head.add_child(UI.icon_button("zoom_in", func() -> void: screen.mapview.focus_province(pid, 4.5), Loc.t("UI_FOCUS"), 46.0))
 	head.add_child(UI.icon_button("close", func() -> void:
-		visible = false
-		screen.cmap.select(""), Loc.t("UI_CLOSE"), 42.0))
+		dismiss()
+		screen.cmap.select(""), Loc.t("UI_CLOSE"), 46.0))
 	tabs_row = HBoxContainer.new()
 	tabs_row.add_theme_constant_override("separation", 4)
 	root.add_child(tabs_row)
@@ -51,20 +53,33 @@ func _init(p_screen: CampaignScreen) -> void:
 			(b as Button).text = Loc.t(str(b.get_meta("key")))
 		refresh())
 
-func place(avail: Vector2) -> void:
-	var w := minf(390.0, avail.x * 0.34)
-	position = Vector2(avail.x - w - 8.0, 72.0)
-	size = Vector2(w, maxf(200.0, avail.y - 72.0 - 96.0))
-	custom_minimum_size = Vector2(w, 0)
+func place(r: Rect2) -> void:
+	set_anchors_preset(Control.PRESET_TOP_LEFT)
+	custom_minimum_size = Vector2(r.size.x, 0)
+	position = r.position
+	size = r.size
 	clip_contents = true
 
 func show_province(p_pid: String) -> void:
 	pid = p_pid
-	visible = true
+	wanted = true
+	apply_visibility()
 	refresh()
 
+func dismiss() -> void:
+	wanted = false
+	visible = false
+
+func apply_visibility() -> void:
+	var v := wanted and not suppressed
+	if v and not visible:
+		visible = true
+		Anim.pop_in(self)
+	else:
+		visible = v
+
 func refresh() -> void:
-	if not visible or pid == "" or not Game.has_state():
+	if not wanted or not visible or pid == "" or not Game.has_state():
 		return
 	var s: Dictionary = Game.state
 	var p: Dictionary = s["provinces"][pid]
