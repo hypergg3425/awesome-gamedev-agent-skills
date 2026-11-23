@@ -1,0 +1,1884 @@
+{
+"afg_badakhshan": [
+"afg_badakhshan",
+"afg_kabul",
+"afg_jalalabad",
+"afg_balkh",
+"afg_tokharistan",
+"afg_faryab",
+"afg_bamyan"
+],
+"afg_hilmand": [
+"afg_hilmand",
+"afg_herat",
+"afg_farah",
+"afg_ghazni",
+"afg_ghor"
+],
+"ago_malanje": [
+"ago_malanje"
+],
+"ago_moxico": [
+"ago_moxico"
+],
+"alb_albania": [
+"alb_albania",
+"alb_north_albania",
+"alb_south_albania"
+],
+"are_united_arab_emirates": [
+"are_united_arab_emirates",
+"are_trucial_coast"
+],
+"arg_buenos_aires": [
+"arg_buenos_aires"
+],
+"arg_cordoba": [
+"arg_cordoba"
+],
+"arg_salta": [
+"arg_salta"
+],
+"arg_santa_cruz": [
+"arg_santa_cruz"
+],
+"arm_armenia": [
+"arm_armenia",
+"arm_lori",
+"arm_sevan",
+"arm_syunik"
+],
+"aus_new_south_wales": [
+"aus_new_south_wales"
+],
+"aus_northern_territory": [
+"aus_northern_territory"
+],
+"aus_queensland": [
+"aus_queensland"
+],
+"aus_south_australia": [
+"aus_south_australia"
+],
+"aus_tasmania": [
+"aus_tasmania"
+],
+"aus_western_australia": [
+"aus_western_australia"
+],
+"aut_austria": [
+"aut_austria",
+"aut_upper_austria"
+],
+"aut_styria": [
+"aut_styria",
+"aut_salzburg",
+"aut_carinthia"
+],
+"aut_tyrol": [
+"aut_tyrol",
+"aut_vorarlberg"
+],
+"aze_azerbaijan": [
+"aze_azerbaijan",
+"aze_absheron",
+"aze_ganja_karabakh",
+"aze_sheki",
+"aze_mugan",
+"aze_nakhchivan"
+],
+"bdi_burundi": [
+"bdi_burundi"
+],
+"bel_flanders": [
+"bel_flanders",
+"bel_brabant",
+"bel_hainaut"
+],
+"bel_wallonia": [
+"bel_wallonia",
+"bel_ardennes",
+"bel_limburg"
+],
+"ben_benin": [
+"ben_benin"
+],
+"bfa_burkina_faso": [
+"bfa_burkina_faso"
+],
+"bgd_bangladesh": [
+"bgd_bangladesh",
+"bgd_chittagong",
+"bgd_sylhet",
+"bgd_varendra",
+"bgd_khulna_barisal"
+],
+"bgr_moesia": [
+"bgr_moesia",
+"bgr_sofia",
+"bgr_north_west_bulgaria",
+"bgr_dobruja_bg"
+],
+"bgr_thrace_bg": [
+"bgr_thrace_bg",
+"bgr_burgas",
+"bgr_rhodopes",
+"bgr_struma"
+],
+"bhs_bahamas": [
+"bhs_bahamas"
+],
+"bih_bosnia_and_herz": [
+"bih_bosnia_and_herz",
+"bih_herzegovina",
+"bih_krajina",
+"bih_posavina"
+],
+"blr_belarus": [
+"blr_belarus",
+"blr_brest",
+"blr_grodno",
+"blr_vitebsk",
+"blr_gomel_mogilev"
+],
+"blz_belize": [
+"blz_belize"
+],
+"bol_bolivia": [
+"bol_bolivia"
+],
+"bra_amazonas": [
+"bra_amazonas"
+],
+"bra_maranhao": [
+"bra_maranhao"
+],
+"bra_mato_grosso": [
+"bra_mato_grosso"
+],
+"bra_mato_grosso_do_sul": [
+"bra_mato_grosso_do_sul"
+],
+"bra_minas_gerais": [
+"bra_minas_gerais"
+],
+"bra_para": [
+"bra_para"
+],
+"bra_piaui": [
+"bra_piaui"
+],
+"bra_rio_grande_do_sul": [
+"bra_rio_grande_do_sul"
+],
+"brn_brunei": [
+"brn_brunei"
+],
+"btn_bhutan": [
+"btn_bhutan"
+],
+"bwa_botswana": [
+"bwa_botswana"
+],
+"caf_central_african_rep": [
+"caf_central_african_rep"
+],
+"can_alberta": [
+"can_alberta"
+],
+"can_british_columbia": [
+"can_british_columbia"
+],
+"can_newfoundland_and_labrador": [
+"can_newfoundland_and_labrador"
+],
+"can_northwest_territories": [
+"can_northwest_territories"
+],
+"can_nunavut": [
+"can_nunavut"
+],
+"can_ontario": [
+"can_ontario"
+],
+"can_quebec": [
+"can_quebec"
+],
+"can_yukon": [
+"can_yukon"
+],
+"che_switzerland": [
+"che_switzerland",
+"che_romandy",
+"che_alpine_switzerland"
+],
+"chl_antofagasta": [
+"chl_antofagasta"
+],
+"chl_magallanes_y_antartica_chilena": [
+"chl_magallanes_y_antartica_chilena"
+],
+"chn_guangxi": [
+"chn_guangxi",
+"chn_guangdong",
+"chn_fujian",
+"chn_zhejiang",
+"chn_jiangxi",
+"chn_hainan"
+],
+"chn_heilongjiang": [
+"chn_heilongjiang",
+"chn_qiqihar",
+"chn_amur_north",
+"chn_sanjiang"
+],
+"chn_hunan": [
+"chn_hunan",
+"chn_jiangsu",
+"chn_henan",
+"chn_hubei",
+"chn_anhui"
+],
+"chn_inner_mongol": [
+"chn_inner_mongol",
+"chn_chahar",
+"chn_hulunbuir",
+"chn_khingan",
+"chn_alxa"
+],
+"chn_jilin": [
+"chn_jilin",
+"chn_liaoning",
+"chn_shandong",
+"chn_hebei",
+"chn_beijing",
+"chn_shanxi"
+],
+"chn_qinghai": [
+"chn_qinghai",
+"chn_qaidam",
+"chn_yushu",
+"chn_hexi",
+"chn_longyou",
+"chn_ningxia"
+],
+"chn_sichuan": [
+"chn_sichuan",
+"chn_western_sichuan",
+"chn_guanzhong",
+"chn_hanzhong",
+"chn_north_shaanxi"
+],
+"chn_xinjiang": [
+"chn_xinjiang",
+"chn_tarim_north",
+"chn_tarim_south",
+"chn_turpan_hami",
+"chn_ili",
+"chn_lop_nur"
+],
+"chn_xizang": [
+"chn_xizang",
+"chn_tsang",
+"chn_ngari",
+"chn_changtang",
+"chn_kham_west"
+],
+"chn_yunnan": [
+"chn_yunnan",
+"chn_dali",
+"chn_xishuangbanna",
+"chn_chongqing",
+"chn_guizhou"
+],
+"civ_cote_d_ivoire": [
+"civ_cote_d_ivoire"
+],
+"cmr_cameroon": [
+"cmr_cameroon"
+],
+"cod_bandundu": [
+"cod_bandundu"
+],
+"cod_katanga": [
+"cod_katanga"
+],
+"cod_orientale": [
+"cod_orientale"
+],
+"cog_congo": [
+"cog_congo"
+],
+"col_amazonas": [
+"col_amazonas"
+],
+"col_antioquia": [
+"col_antioquia"
+],
+"cri_costa_rica": [
+"cri_costa_rica"
+],
+"cub_cuba": [
+"cub_cuba"
+],
+"cyp_cyprus": [
+"cyp_cyprus",
+"cyp_famagusta"
+],
+"cze_bohemia": [
+"cze_bohemia",
+"cze_west_bohemia",
+"cze_south_bohemia",
+"cze_ustecky"
+],
+"cze_moravia": [
+"cze_moravia",
+"cze_olomouc",
+"cze_ostrava"
+],
+"deu_bavaria": [
+"deu_bavaria",
+"deu_franconia",
+"deu_danube_bavaria"
+],
+"deu_brandenburg": [
+"deu_brandenburg",
+"deu_saxony_anhalt"
+],
+"deu_hesse_thuringia": [
+"deu_hesse_thuringia",
+"deu_thuringia"
+],
+"deu_holstein": [
+"deu_holstein",
+"deu_schleswig"
+],
+"deu_lower_saxony": [
+"deu_lower_saxony",
+"deu_weser_ems",
+"deu_brunswick"
+],
+"deu_mecklenburg": [
+"deu_mecklenburg",
+"deu_pomerania"
+],
+"deu_rhineland": [
+"deu_rhineland",
+"deu_lower_rhine",
+"deu_westphalia"
+],
+"deu_saxony": [
+"deu_saxony"
+],
+"deu_swabia": [
+"deu_swabia",
+"deu_baden"
+],
+"dji_djibouti": [
+"dji_djibouti"
+],
+"dnk_jutland": [
+"dnk_jutland",
+"dnk_north_jutland",
+"dnk_funen"
+],
+"dnk_zealand": [
+"dnk_zealand",
+"dnk_copenhagen"
+],
+"dom_dominican_rep": [
+"dom_dominican_rep"
+],
+"dza_algerian_sahara": [
+"dza_algerian_sahara",
+"dza_touat",
+"dza_ahaggar",
+"dza_tassili"
+],
+"dza_algiers": [
+"dza_algiers",
+"dza_kabylia",
+"dza_chelif",
+"dza_high_plateaus"
+],
+"dza_constantine": [
+"dza_constantine",
+"dza_annaba",
+"dza_aures",
+"dza_setif",
+"dza_zibans",
+"dza_souf"
+],
+"dza_oran": [
+"dza_oran",
+"dza_tlemcen",
+"dza_tiaret",
+"dza_saharan_atlas",
+"dza_saoura"
+],
+"ecu_ecuador": [
+"ecu_ecuador"
+],
+"egy_cairo": [
+"egy_cairo",
+"egy_isthmus",
+"egy_giza",
+"egy_fayyum",
+"egy_minya"
+],
+"egy_delta": [
+"egy_delta",
+"egy_eastern_delta",
+"egy_central_delta",
+"egy_marmarica"
+],
+"egy_sinai": [
+"egy_sinai",
+"egy_south_sinai"
+],
+"egy_upper_egypt": [
+"egy_upper_egypt",
+"egy_thebes",
+"egy_aswan",
+"egy_eastern_desert",
+"egy_new_valley"
+],
+"eri_eritrea": [
+"eri_eritrea"
+],
+"esp_andalusia": [
+"esp_andalusia",
+"esp_cordoba_jaen",
+"esp_granada",
+"esp_almeria"
+],
+"esp_aragon": [
+"esp_aragon",
+"esp_huesca"
+],
+"esp_asturias": [
+"esp_asturias",
+"esp_cantabria",
+"esp_leon"
+],
+"esp_catalonia": [
+"esp_catalonia",
+"esp_lleida",
+"esp_balearics"
+],
+"esp_extremadura": [
+"esp_extremadura",
+"esp_badajoz",
+"esp_huelva"
+],
+"esp_galicia": [
+"esp_galicia"
+],
+"esp_navarre": [
+"esp_navarre",
+"esp_basque"
+],
+"esp_new_castile": [
+"esp_new_castile",
+"esp_alcarria",
+"esp_la_mancha"
+],
+"esp_old_castile": [
+"esp_old_castile",
+"esp_salamanca"
+],
+"esp_valencia": [
+"esp_valencia",
+"esp_murcia"
+],
+"est_estonia": [
+"est_estonia",
+"est_tartu",
+"est_virumaa",
+"est_parnu",
+"est_osel"
+],
+"eth_oromiya": [
+"eth_oromiya"
+],
+"eth_somali": [
+"eth_somali"
+],
+"fin_north_finland": [
+"fin_north_finland",
+"fin_lapland"
+],
+"fin_south_finland": [
+"fin_south_finland",
+"fin_hame",
+"fin_savonia",
+"fin_ostrobothnia"
+],
+"fji_fiji": [
+"fji_fiji"
+],
+"flk_falkland_is": [
+"flk_falkland_is"
+],
+"fra_alsace": [
+"fra_alsace"
+],
+"fra_aquitaine": [
+"fra_aquitaine",
+"fra_gascony"
+],
+"fra_auvergne": [
+"fra_auvergne",
+"fra_limousin"
+],
+"fra_brittany": [
+"fra_brittany"
+],
+"fra_burgundy": [
+"fra_burgundy",
+"fra_franche_comte"
+],
+"fra_champagne": [
+"fra_champagne"
+],
+"fra_dauphine": [
+"fra_dauphine",
+"fra_savoy",
+"fra_lyonnais"
+],
+"fra_guyane_francaise": [
+"fra_guyane_francaise"
+],
+"fra_ile_de_france": [
+"fra_ile_de_france"
+],
+"fra_languedoc": [
+"fra_languedoc",
+"fra_toulouse"
+],
+"fra_loire": [
+"fra_loire",
+"fra_orleanais_berry"
+],
+"fra_lorraine": [
+"fra_lorraine"
+],
+"fra_normandy": [
+"fra_normandy",
+"fra_upper_normandy"
+],
+"fra_picardy": [
+"fra_picardy",
+"fra_flanders_artois"
+],
+"fra_poitou": [
+"fra_poitou"
+],
+"fra_provence": [
+"fra_provence",
+"fra_corsica"
+],
+"gab_gabon": [
+"gab_gabon"
+],
+"gbr_east_anglia": [
+"gbr_east_anglia",
+"gbr_lincolnshire"
+],
+"gbr_highland_scotland": [
+"gbr_highland_scotland",
+"gbr_grampian",
+"gbr_western_isles",
+"gbr_northern_isles"
+],
+"gbr_home_counties": [
+"gbr_home_counties",
+"gbr_kent_sussex",
+"gbr_hampshire",
+"gbr_essex"
+],
+"gbr_lowland_scotland": [
+"gbr_lowland_scotland",
+"gbr_strathclyde",
+"gbr_galloway",
+"gbr_argyll",
+"gbr_tayside"
+],
+"gbr_midlands": [
+"gbr_midlands",
+"gbr_east_midlands",
+"gbr_merseyside"
+],
+"gbr_northumbria": [
+"gbr_northumbria",
+"gbr_cumbria",
+"gbr_yorkshire",
+"gbr_lancashire"
+],
+"gbr_ulster": [
+"gbr_ulster"
+],
+"gbr_wales": [
+"gbr_wales",
+"gbr_gwynedd",
+"gbr_deheubarth"
+],
+"gbr_wessex": [
+"gbr_wessex",
+"gbr_cornwall_devon"
+],
+"geo_georgia": [
+"geo_georgia",
+"geo_kakheti",
+"geo_imereti",
+"geo_colchis",
+"geo_adjara",
+"geo_javakheti"
+],
+"gha_ghana": [
+"gha_ghana"
+],
+"gin_guinea": [
+"gin_guinea"
+],
+"gmb_gambia": [
+"gmb_gambia"
+],
+"gnb_guinea_bissau": [
+"gnb_guinea_bissau"
+],
+"gnq_eq_guinea": [
+"gnq_eq_guinea"
+],
+"grc_aegean_isles": [
+"grc_aegean_isles",
+"grc_north_aegean"
+],
+"grc_central_greece": [
+"grc_central_greece",
+"grc_epirus",
+"grc_west_macedonia",
+"grc_ionian"
+],
+"grc_crete": [
+"grc_crete"
+],
+"grc_macedonia": [
+"grc_macedonia"
+],
+"grc_morea": [
+"grc_morea",
+"grc_attica",
+"grc_sterea",
+"grc_achaea"
+],
+"grc_thrace_greece": [
+"grc_thrace_greece"
+],
+"grl_greenland": [
+"grl_greenland"
+],
+"gtm_guatemala": [
+"gtm_guatemala"
+],
+"guy_guyana": [
+"guy_guyana"
+],
+"hnd_honduras": [
+"hnd_honduras"
+],
+"hrv_croatia": [
+"hrv_croatia",
+"hrv_slavonia",
+"hrv_istria",
+"hrv_lika"
+],
+"hrv_dalmatia": [
+"hrv_dalmatia"
+],
+"hti_haiti": [
+"hti_haiti"
+],
+"hun_great_plain": [
+"hun_great_plain",
+"hun_pest",
+"hun_north_hungary",
+"hun_tiszantul",
+"hun_south_alfold"
+],
+"hun_transdanubia": [
+"hun_transdanubia",
+"hun_west_transdanubia",
+"hun_south_transdanubia"
+],
+"idn_jawa_timur": [
+"idn_jawa_timur",
+"idn_central_java",
+"idn_west_java",
+"idn_bali",
+"idn_lombok"
+],
+"idn_kalimantan_tengah": [
+"idn_kalimantan_tengah",
+"idn_west_kalimantan",
+"idn_south_kalimantan_banjar"
+],
+"idn_kalimantan_timur": [
+"idn_kalimantan_timur",
+"idn_south_sulawesi",
+"idn_central_sulawesi",
+"idn_southeast_sulawesi",
+"idn_minahasa"
+],
+"idn_maluku": [
+"idn_maluku"
+],
+"idn_maluku_utara": [
+"idn_maluku_utara"
+],
+"idn_nusa_tenggara_timur": [
+"idn_nusa_tenggara_timur"
+],
+"idn_papua": [
+"idn_papua",
+"idn_bird_head"
+],
+"idn_riau": [
+"idn_riau",
+"idn_minangkabau",
+"idn_jambi",
+"idn_palembang",
+"idn_lampung"
+],
+"idn_sumatera_utara": [
+"idn_sumatera_utara",
+"idn_aceh"
+],
+"ind_arunachal_pradesh": [
+"ind_arunachal_pradesh",
+"ind_assam_brahmaputra_valley",
+"ind_nagaland",
+"ind_manipur",
+"ind_mizoram",
+"ind_meghalaya"
+],
+"ind_bihar": [
+"ind_bihar",
+"ind_jharkhand",
+"ind_bengal",
+"ind_north_bengal"
+],
+"ind_karnataka": [
+"ind_karnataka",
+"ind_north_karnataka",
+"ind_goa_konkan",
+"ind_telangana",
+"ind_andhra_coast",
+"ind_rayalaseema",
+"ind_kalinga_north"
+],
+"ind_ladakh": [
+"ind_ladakh",
+"ind_uttarakhand",
+"ind_himachal",
+"ind_kashmir",
+"ind_punjab_in",
+"ind_haryana",
+"ind_delhi"
+],
+"ind_madhya_pradesh": [
+"ind_madhya_pradesh",
+"ind_doab",
+"ind_awadh",
+"ind_purvanchal",
+"ind_bundelkhand",
+"ind_mahakoshal",
+"ind_baghelkhand"
+],
+"ind_maharashtra": [
+"ind_maharashtra",
+"ind_konkan",
+"ind_khandesh",
+"ind_vidarbha",
+"ind_marathwada"
+],
+"ind_odisha": [
+"ind_odisha",
+"ind_sambalpur",
+"ind_chhattisgarh"
+],
+"ind_rajasthan": [
+"ind_rajasthan",
+"ind_marwar",
+"ind_mewar",
+"ind_thar",
+"ind_gujarat",
+"ind_saurashtra",
+"ind_kutch"
+],
+"ind_tamil_nadu": [
+"ind_tamil_nadu",
+"ind_tondaimandalam",
+"ind_kongu",
+"ind_pandya",
+"ind_kerala"
+],
+"irl_connacht": [
+"irl_connacht"
+],
+"irl_leinster": [
+"irl_leinster"
+],
+"irl_munster": [
+"irl_munster"
+],
+"irn_azerbaijan_persia": [
+"irn_azerbaijan_persia",
+"irn_urmia",
+"irn_ardabil",
+"irn_zanjan",
+"irn_kurdistan_ir",
+"irn_kermanshah"
+],
+"irn_fars": [
+"irn_fars",
+"irn_larestan",
+"irn_bushehr"
+],
+"irn_isfahan": [
+"irn_isfahan",
+"irn_kashan",
+"irn_bakhtiari",
+"irn_yazd"
+],
+"irn_jibal": [
+"irn_jibal",
+"irn_gilan",
+"irn_mazandaran",
+"irn_gorgan",
+"irn_semnan",
+"irn_qazvin",
+"irn_hamadan"
+],
+"irn_kerman": [
+"irn_kerman",
+"irn_jiroft",
+"irn_sistan",
+"irn_makran",
+"irn_hormozgan"
+],
+"irn_khorasan": [
+"irn_khorasan",
+"irn_nishapur",
+"irn_torbat",
+"irn_north_khorasan",
+"irn_quhistan"
+],
+"irn_khuzestan": [
+"irn_khuzestan",
+"irn_luristan",
+"irn_ilam",
+"irn_kohgiluyeh"
+],
+"irq_baghdad": [
+"irq_baghdad",
+"irq_diyala_wasit",
+"irq_salahaddin",
+"irq_anbar",
+"irq_najaf"
+],
+"irq_basra": [
+"irq_basra",
+"irq_marshes",
+"irq_muthanna"
+],
+"irq_mosul": [
+"irq_mosul",
+"irq_erbil",
+"irq_kirkuk",
+"irq_sulaymaniyah",
+"irq_duhok"
+],
+"isl_arctic": [
+"isl_arctic"
+],
+"isl_atlantic": [
+"isl_atlantic"
+],
+"isl_caribbean": [
+"isl_caribbean"
+],
+"isl_iceland": [
+"isl_iceland"
+],
+"isl_indian_ocean": [
+"isl_indian_ocean"
+],
+"isl_mediterranean": [
+"isl_mediterranean"
+],
+"isl_melanesia": [
+"isl_melanesia"
+],
+"isl_micronesia": [
+"isl_micronesia"
+],
+"isl_polynesia": [
+"isl_polynesia"
+],
+"isr_galilee": [
+"isr_galilee"
+],
+"isr_judea": [
+"isr_judea",
+"isr_coastal_plain"
+],
+"isr_negev": [
+"isr_negev"
+],
+"ita_apulia": [
+"ita_apulia",
+"ita_basilicata"
+],
+"ita_calabria": [
+"ita_calabria"
+],
+"ita_campania": [
+"ita_campania",
+"ita_molise",
+"ita_capitanata"
+],
+"ita_emilia": [
+"ita_emilia",
+"ita_romagna"
+],
+"ita_lazio": [
+"ita_lazio",
+"ita_umbria",
+"ita_abruzzo"
+],
+"ita_liguria": [
+"ita_liguria",
+"ita_montferrat"
+],
+"ita_lombardy": [
+"ita_lombardy",
+"ita_bergamo",
+"ita_valtellina"
+],
+"ita_piedmont": [
+"ita_piedmont",
+"ita_aosta"
+],
+"ita_sardinia": [
+"ita_sardinia",
+"ita_northern_sardinia"
+],
+"ita_sicily": [
+"ita_sicily",
+"ita_eastern_sicily"
+],
+"ita_tuscany": [
+"ita_tuscany",
+"ita_marche"
+],
+"ita_veneto": [
+"ita_veneto",
+"ita_trentino",
+"ita_friuli"
+],
+"jam_jamaica": [
+"jam_jamaica"
+],
+"jor_jordan": [
+"jor_jordan",
+"jor_gilead",
+"jor_moab_edom",
+"jor_maan"
+],
+"jpn_hokkaido": [
+"jpn_hokkaido",
+"jpn_oshima",
+"jpn_east_hokkaido",
+"jpn_aomori"
+],
+"jpn_iwate": [
+"jpn_iwate",
+"jpn_dewa",
+"jpn_echigo",
+"jpn_hokuriku",
+"jpn_iwaki"
+],
+"jpn_nagano": [
+"jpn_nagano",
+"jpn_north_kyushu",
+"jpn_south_kyushu",
+"jpn_shikoku",
+"jpn_sanyo",
+"jpn_sanin",
+"jpn_kinai",
+"jpn_tokai",
+"jpn_suruga",
+"jpn_kanto",
+"jpn_north_kanto"
+],
+"jpn_okinawa": [
+"jpn_okinawa"
+],
+"kaz_aqtobe": [
+"kaz_aqtobe",
+"kaz_mangystau",
+"kaz_atyrau",
+"kaz_west_kazakhstan",
+"kaz_kostanay"
+],
+"kaz_east_kazakhstan": [
+"kaz_east_kazakhstan",
+"kaz_semirechye",
+"kaz_zhambyl",
+"kaz_turkestan"
+],
+"kaz_qaraghandy": [
+"kaz_qaraghandy",
+"kaz_kyzylorda",
+"kaz_akmola",
+"kaz_pavlodar"
+],
+"ken_kenya": [
+"ken_kenya"
+],
+"kgz_kyrgyzstan": [
+"kgz_kyrgyzstan",
+"kgz_issyk_kul",
+"kgz_naryn",
+"kgz_fergana_kg"
+],
+"khm_cambodia": [
+"khm_cambodia",
+"khm_angkor",
+"khm_tonle_sap",
+"khm_northeast_cambodia",
+"khm_cambodia_coast"
+],
+"kor_gangwon": [
+"kor_gangwon",
+"kor_hanseong",
+"kor_chungcheong"
+],
+"kor_north_gyeongsang": [
+"kor_north_gyeongsang",
+"kor_south_gyeongsang",
+"kor_jeolla",
+"kor_jeju"
+],
+"kos_kosovo": [
+"kos_kosovo",
+"kos_dukagjin"
+],
+"kwt_kuwait": [
+"kwt_kuwait"
+],
+"lao_laos": [
+"lao_laos",
+"lao_vientiane",
+"lao_xiang_khouang",
+"lao_savannakhet",
+"lao_champasak"
+],
+"lbn_lebanon": [
+"lbn_lebanon",
+"lbn_bekaa"
+],
+"lbr_liberia": [
+"lbr_liberia"
+],
+"lby_cyrenaica": [
+"lby_cyrenaica",
+"lby_sirte",
+"lby_butnan",
+"lby_kufra"
+],
+"lby_fezzan": [
+"lby_fezzan",
+"lby_murzuq",
+"lby_ghat",
+"lby_jufra"
+],
+"lby_tripolitania": [
+"lby_tripolitania",
+"lby_nafusa",
+"lby_misrata",
+"lby_ghadames"
+],
+"lka_sri_lanka": [
+"lka_sri_lanka",
+"lka_kandy",
+"lka_jaffna",
+"lka_rajarata",
+"lka_ruhuna",
+"lka_east_ceylon"
+],
+"lso_lesotho": [
+"lso_lesotho"
+],
+"ltu_lithuania": [
+"ltu_lithuania",
+"ltu_suvalkija",
+"ltu_samogitia"
+],
+"lux_luxembourg": [
+"lux_luxembourg"
+],
+"lva_latvia": [
+"lva_latvia",
+"lva_courland",
+"lva_semigallia",
+"lva_latgale",
+"lva_vidzeme"
+],
+"mar_fez": [
+"mar_fez",
+"mar_tangier",
+"mar_rif",
+"mar_atlantic_plain",
+"mar_oriental",
+"mar_tafilalet"
+],
+"mar_marrakesh": [
+"mar_marrakesh",
+"mar_doukkala",
+"mar_tadla",
+"mar_souss",
+"mar_guelmim",
+"mar_sahara_atlantic"
+],
+"mda_moldova": [
+"mda_moldova",
+"mda_north_moldova",
+"mda_transnistria"
+],
+"mdg_madagascar": [
+"mdg_madagascar"
+],
+"mex_campeche": [
+"mex_campeche"
+],
+"mex_chihuahua": [
+"mex_chihuahua"
+],
+"mex_jalisco": [
+"mex_jalisco"
+],
+"mex_oaxaca": [
+"mex_oaxaca"
+],
+"mex_sonora": [
+"mex_sonora"
+],
+"mkd_north_macedonia": [
+"mkd_north_macedonia",
+"mkd_pelagonia",
+"mkd_lower_vardar"
+],
+"mli_kayes": [
+"mli_kayes"
+],
+"mli_timbuktu": [
+"mli_timbuktu"
+],
+"mmr_shan": [
+"mmr_shan",
+"mmr_kachin",
+"mmr_arakan",
+"mmr_chin",
+"mmr_sagaing",
+"mmr_upper_burma"
+],
+"mmr_tanintharyi": [
+"mmr_tanintharyi",
+"mmr_martaban",
+"mmr_pegu",
+"mmr_irrawaddy_delta"
+],
+"mne_montenegro": [
+"mne_montenegro",
+"mne_montenegro_highlands"
+],
+"mng_govi_altay": [
+"mng_govi_altay",
+"mng_khovd",
+"mng_uvs",
+"mng_orkhon"
+],
+"mng_omnogovi": [
+"mng_omnogovi",
+"mng_khentii",
+"mng_tuul",
+"mng_khangai_south"
+],
+"moz_gaza": [
+"moz_gaza"
+],
+"moz_niassa": [
+"moz_niassa"
+],
+"mrt_tagant": [
+"mrt_tagant"
+],
+"mrt_tiris_zemmour": [
+"mrt_tiris_zemmour"
+],
+"mwi_malawi": [
+"mwi_malawi"
+],
+"mys_pahang": [
+"mys_pahang",
+"mys_kedah",
+"mys_perak",
+"mys_selangor",
+"mys_malacca",
+"mys_johor",
+"mys_east_coast_my"
+],
+"mys_sabah": [
+"mys_sabah"
+],
+"mys_sarawak": [
+"mys_sarawak"
+],
+"nam_namibia": [
+"nam_namibia"
+],
+"ncl_new_caledonia": [
+"ncl_new_caledonia"
+],
+"ner_agadez": [
+"ner_agadez"
+],
+"ner_tahoua": [
+"ner_tahoua"
+],
+"nga_borno": [
+"nga_borno"
+],
+"nga_niger": [
+"nga_niger"
+],
+"nga_taraba": [
+"nga_taraba"
+],
+"nic_nicaragua": [
+"nic_nicaragua"
+],
+"nld_brabant": [
+"nld_brabant",
+"nld_north_brabant"
+],
+"nld_frisia": [
+"nld_frisia",
+"nld_overijssel"
+],
+"nld_holland": [
+"nld_holland",
+"nld_utrecht"
+],
+"nor_north_norway": [
+"nor_north_norway",
+"nor_troms",
+"nor_finnmark",
+"nor_svalbard"
+],
+"nor_south_norway": [
+"nor_south_norway",
+"nor_hedmark",
+"nor_sorlandet"
+],
+"nor_west_norway": [
+"nor_west_norway",
+"nor_trondelag",
+"nor_more",
+"nor_oppland"
+],
+"npl_nepal": [
+"npl_nepal",
+"npl_western_nepal",
+"npl_eastern_nepal"
+],
+"nzl_canterbury": [
+"nzl_canterbury"
+],
+"nzl_waikato": [
+"nzl_waikato"
+],
+"omn_oman": [
+"omn_oman",
+"omn_musandam",
+"omn_interior",
+"omn_sharqiyah",
+"omn_dhofar",
+"omn_wusta"
+],
+"pak_baluchistan": [
+"pak_baluchistan",
+"pak_quetta",
+"pak_makran_pk",
+"pak_lower_sindh",
+"pak_upper_sindh",
+"pak_tharparkar"
+],
+"pak_k_p": [
+"pak_k_p",
+"pak_gilgit",
+"pak_khyber",
+"pak_potohar"
+],
+"pak_punjab": [
+"pak_punjab",
+"pak_multan",
+"pak_salt_range",
+"pak_bahawalpur"
+],
+"pan_panama": [
+"pan_panama"
+],
+"per_loreto": [
+"per_loreto"
+],
+"per_madre_de_dios": [
+"per_madre_de_dios"
+],
+"phl_isabela": [
+"phl_isabela",
+"phl_ilocos",
+"phl_cagayan_valley",
+"phl_central_luzon",
+"phl_cordillera",
+"phl_bicol",
+"phl_mindoro"
+],
+"phl_palawan": [
+"phl_palawan",
+"phl_western_visayas",
+"phl_central_visayas",
+"phl_eastern_visayas",
+"phl_zamboanga",
+"phl_northern_mindanao",
+"phl_davao",
+"phl_moroland"
+],
+"png_west_new_britain": [
+"png_west_new_britain"
+],
+"png_western": [
+"png_western"
+],
+"pol_greater_poland": [
+"pol_greater_poland",
+"pol_west_pomerania",
+"pol_lubusz"
+],
+"pol_lesser_poland": [
+"pol_lesser_poland",
+"pol_upper_silesia",
+"pol_subcarpathia"
+],
+"pol_masovia": [
+"pol_masovia",
+"pol_lodz"
+],
+"pol_podlasie": [
+"pol_podlasie",
+"pol_podlachia"
+],
+"pol_pomerania": [
+"pol_pomerania",
+"pol_warmia_masuria",
+"pol_kuyavia"
+],
+"pol_silesia": [
+"pol_silesia",
+"pol_opole"
+],
+"pri_puerto_rico": [
+"pri_puerto_rico"
+],
+"prk_north_korea": [
+"prk_north_korea",
+"prk_hwanghae",
+"prk_kangwon_north",
+"prk_hamgyong",
+"prk_ryanggang"
+],
+"prt_north_portugal": [
+"prt_north_portugal",
+"prt_tras_os_montes",
+"prt_beira"
+],
+"prt_south_portugal": [
+"prt_south_portugal",
+"prt_alentejo",
+"prt_algarve"
+],
+"pry_paraguay": [
+"pry_paraguay"
+],
+"qat_qatar": [
+"qat_qatar"
+],
+"rou_moldavia": [
+"rou_moldavia",
+"rou_bukovina",
+"rou_lower_danube",
+"rou_szeklerland"
+],
+"rou_transylvania": [
+"rou_transylvania",
+"rou_banat",
+"rou_crisana",
+"rou_maramures",
+"rou_saxon_lands",
+"rou_hunedoara"
+],
+"rou_wallachia": [
+"rou_wallachia",
+"rou_oltenia",
+"rou_dobruja"
+],
+"rus_black_earth": [
+"rus_black_earth",
+"rus_voronezh",
+"rus_tambov"
+],
+"rus_don": [
+"rus_don",
+"rus_kuban",
+"rus_tsaritsyn",
+"rus_crimea_ru"
+],
+"rus_karelia": [
+"rus_karelia",
+"rus_kola"
+],
+"rus_khabarovsk": [
+"rus_amur",
+"rus_khabarovsk",
+"rus_kamchatka"
+],
+"rus_koenigsberg": [
+"rus_koenigsberg"
+],
+"rus_krasnoyarsk": [
+"rus_krasnoyarsk",
+"rus_taymyr",
+"rus_evenkia"
+],
+"rus_maga_buryatdan": [
+"rus_buryat",
+"rus_tuva",
+"rus_chita",
+"rus_maga_buryatdan"
+],
+"rus_moscow": [
+"rus_moscow",
+"rus_vladimir_suzdal",
+"rus_tver",
+"rus_vologda"
+],
+"rus_north_caucasus": [
+"rus_north_caucasus",
+"rus_dagestan",
+"rus_ossetia",
+"rus_kabardia",
+"rus_stavropol",
+"rus_kalmykia"
+],
+"rus_north_russia": [
+"rus_north_russia",
+"rus_komi",
+"rus_pechora"
+],
+"rus_novgorod": [
+"rus_novgorod",
+"rus_pskov",
+"rus_ingria"
+],
+"rus_primor_ye": [
+"rus_primor_ye",
+"rus_sakhalin"
+],
+"rus_sakha_yakutia": [
+"rus_sakha_yakutia",
+"rus_irkutsk",
+"rus_chukotka",
+"rus_altai_kuzbass"
+],
+"rus_smolensk": [
+"rus_smolensk",
+"rus_bryansk_kaluga"
+],
+"rus_urals": [
+"rus_urals",
+"rus_bashkiria",
+"rus_perm",
+"rus_tyumen",
+"rus_yamal",
+"rus_west_siberia"
+],
+"rus_volga": [
+"rus_volga",
+"rus_kazan",
+"rus_nizhny_novgorod",
+"rus_mordovia_penza",
+"rus_vyatka"
+],
+"rwa_rwanda": [
+"rwa_rwanda"
+],
+"sah_w_sahara": [
+"sah_w_sahara"
+],
+"sau_al_hasa": [
+"sau_al_hasa",
+"sau_hafar",
+"sau_rub_al_khali"
+],
+"sau_hejaz": [
+"sau_hejaz",
+"sau_medina",
+"sau_tabuk",
+"sau_asir"
+],
+"sau_najd": [
+"sau_najd",
+"sau_wadi_dawasir",
+"sau_qassim",
+"sau_hail",
+"sau_jawf",
+"sau_najran"
+],
+"sdn_north_kordufan": [
+"sdn_north_kordufan"
+],
+"sdn_northern": [
+"sdn_northern"
+],
+"sds_s_sudan": [
+"sds_s_sudan"
+],
+"sen_senegal": [
+"sen_senegal"
+],
+"slb_solomon_is": [
+"slb_solomon_is"
+],
+"sle_sierra_leone": [
+"sle_sierra_leone"
+],
+"slv_el_salvador": [
+"slv_el_salvador"
+],
+"som_somalia": [
+"som_somalia"
+],
+"srb_serbia": [
+"srb_serbia",
+"srb_vojvodina",
+"srb_raska",
+"srb_nis",
+"srb_timok"
+],
+"sur_suriname": [
+"sur_suriname"
+],
+"svk_slovakia": [
+"svk_slovakia",
+"svk_central_slovakia",
+"svk_eastern_slovakia"
+],
+"svn_slovenia": [
+"svn_slovenia",
+"svn_lower_styria",
+"svn_littoral"
+],
+"swe_gotaland": [
+"swe_gotaland",
+"swe_skane",
+"swe_smaland",
+"swe_gotland"
+],
+"swe_norrland": [
+"swe_norrland",
+"swe_norrbotten",
+"swe_jamtland"
+],
+"swe_svealand": [
+"swe_svealand",
+"swe_dalarna",
+"swe_varmland",
+"swe_ostergotland"
+],
+"swz_eswatini": [
+"swz_eswatini"
+],
+"syr_aleppo": [
+"syr_aleppo",
+"syr_hama_idlib",
+"syr_latakia"
+],
+"syr_damascus": [
+"syr_damascus",
+"syr_homs_palmyra",
+"syr_tartus",
+"syr_hauran"
+],
+"syr_jazira": [
+"syr_jazira",
+"syr_hasakah",
+"syr_deir_ez_zor"
+],
+"tcd_batha": [
+"tcd_batha"
+],
+"tcd_borkou": [
+"tcd_borkou"
+],
+"tgo_togo": [
+"tgo_togo"
+],
+"tha_chiang_mai": [
+"tha_chiang_mai",
+"tha_sukhothai",
+"tha_lower_isan",
+"tha_upper_isan",
+"tha_chao_phraya",
+"tha_kanchanaburi"
+],
+"tha_surat_thani": [
+"tha_surat_thani",
+"tha_ligor",
+"tha_pattani",
+"tha_andaman_coast",
+"tha_eastern_gulf"
+],
+"tjk_tajikistan": [
+"tjk_tajikistan",
+"tjk_sughd",
+"tjk_khatlon",
+"tjk_pamir"
+],
+"tkm_turkmenistan": [
+"tkm_turkmenistan",
+"tkm_merv",
+"tkm_chardzhou",
+"tkm_balkan",
+"tkm_dashoguz"
+],
+"tls_timor_leste": [
+"tls_timor_leste"
+],
+"tto_trinidad_and_tobago": [
+"tto_trinidad_and_tobago"
+],
+"tun_tunisia": [
+"tun_tunisia",
+"tun_medjerda",
+"tun_sahel",
+"tun_kairouan",
+"tun_jerid",
+"tun_djerba_gabes"
+],
+"tur_aegean_anatolia": [
+"tur_aegean_anatolia",
+"tur_mysia",
+"tur_caria",
+"tur_pamphylia",
+"tur_pisidia"
+],
+"tur_armenia_highlands": [
+"tur_armenia_highlands",
+"tur_tao",
+"tur_kars_ararat",
+"tur_van",
+"tur_sasun",
+"tur_upper_euphrates",
+"tur_botan"
+],
+"tur_bithynia": [
+"tur_bithynia",
+"tur_black_sea_coal",
+"tur_phrygia"
+],
+"tur_central_anatolia": [
+"tur_central_anatolia",
+"tur_konya",
+"tur_cappadocia",
+"tur_paphlagonia",
+"tur_corum_yozgat"
+],
+"tur_cilicia": [
+"tur_cilicia",
+"tur_hatay",
+"tur_kayseri",
+"tur_marash",
+"tur_isauria"
+],
+"tur_constantinople": [
+"tur_constantinople",
+"tur_scutari",
+"tur_bursa"
+],
+"tur_eastern_thrace": [
+"tur_eastern_thrace",
+"tur_tekirdag",
+"tur_gallipoli",
+"tur_troad"
+],
+"tur_pontus": [
+"tur_pontus",
+"tur_amasya_samsun",
+"tur_sivas"
+],
+"tur_upper_mesopotamia": [
+"tur_upper_mesopotamia",
+"tur_mardin",
+"tur_urfa",
+"tur_gaziantep",
+"tur_malatya"
+],
+"twn_taiwan": [
+"twn_taiwan",
+"twn_central_taiwan",
+"twn_south_taiwan",
+"twn_east_taiwan"
+],
+"tza_morogoro": [
+"tza_morogoro"
+],
+"tza_tabora": [
+"tza_tabora"
+],
+"uga_uganda": [
+"uga_uganda"
+],
+"ukr_galicia_volhynia": [
+"ukr_galicia_volhynia",
+"ukr_volhynia",
+"ukr_transcarpathia"
+],
+"ukr_kyiv": [
+"ukr_kyiv",
+"ukr_chernihiv_sumy",
+"ukr_poltava",
+"ukr_polesia"
+],
+"ukr_podolia": [
+"ukr_podolia",
+"ukr_north_bukovina"
+],
+"ukr_pontic_steppe": [
+"ukr_pontic_steppe",
+"ukr_tavria",
+"ukr_dnieper_bug"
+],
+"ukr_sloboda": [
+"ukr_sloboda",
+"ukr_donbas",
+"ukr_zaporizhia",
+"ukr_dnipro"
+],
+"ury_uruguay": [
+"ury_uruguay"
+],
+"usa_alaska": [
+"usa_alaska"
+],
+"usa_california": [
+"usa_california"
+],
+"usa_colorado": [
+"usa_colorado"
+],
+"usa_georgia": [
+"usa_georgia"
+],
+"usa_idaho": [
+"usa_idaho"
+],
+"usa_michigan": [
+"usa_michigan"
+],
+"usa_montana": [
+"usa_montana"
+],
+"usa_new_york": [
+"usa_new_york"
+],
+"usa_north_carolina": [
+"usa_north_carolina"
+],
+"usa_oregon": [
+"usa_oregon"
+],
+"usa_south_dakota": [
+"usa_south_dakota"
+],
+"usa_texas": [
+"usa_texas"
+],
+"uzb_bukhoro": [
+"uzb_bukhoro",
+"uzb_samarkand",
+"uzb_kashkadarya",
+"uzb_tashkent",
+"uzb_fergana"
+],
+"uzb_karakalpakstan": [
+"uzb_karakalpakstan",
+"uzb_khorezm",
+"uzb_navoi"
+],
+"ven_venezuela": [
+"ven_venezuela"
+],
+"vnm_gia_lai": [
+"vnm_gia_lai",
+"vnm_mekong_delta",
+"vnm_saigon",
+"vnm_hue_champa"
+],
+"vnm_nghe_an": [
+"vnm_nghe_an",
+"vnm_tonkin_delta",
+"vnm_viet_bac",
+"vnm_tay_bac",
+"vnm_quang_binh"
+],
+"vut_vanuatu": [
+"vut_vanuatu"
+],
+"yem_yemen": [
+"yem_yemen",
+"yem_tihama",
+"yem_taizz_ibb",
+"yem_aden",
+"yem_hadramawt",
+"yem_marib",
+"yem_mahra",
+"yem_sadah"
+],
+"zaf_eastern_cape": [
+"zaf_eastern_cape"
+],
+"zaf_limpopo": [
+"zaf_limpopo"
+],
+"zaf_northern_cape": [
+"zaf_northern_cape"
+],
+"zmb_zambia": [
+"zmb_zambia"
+],
+"zwe_zimbabwe": [
+"zwe_zimbabwe"
+]
+}
