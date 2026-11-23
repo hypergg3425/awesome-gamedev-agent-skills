@@ -208,7 +208,7 @@ func _building_row(box: VBoxContainer, s: Dictionary, p: Dictionary, bid: String
 			screen.toast(NoteFmt.error_text(chk["reason"], chk.get("params", {})), "warning"))
 		btn.disabled = lv >= int(b["max_level"]) or (chk["reason"] in ["BUILD_ERR_MAX"])
 		btn.modulate = Color(1, 1, 1, 0.6)
-	btn.custom_minimum_size = Vector2(112, 44)
+	btn.custom_minimum_size = Vector2(140, 44)
 	btn.clip_text = true
 	h.add_child(btn)
 	row.add_child(h)
