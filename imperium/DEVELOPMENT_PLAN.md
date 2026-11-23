@@ -10,3 +10,15 @@
 | F. Assets | 163 icons, 27 audio files, illustrations, fonts — all original or OFL, documented | done |
 | G. Release engineering | AdMob banner, export presets, CI, docs, privacy template | written; **Android build and on-device test not executed here** |
 | H. Future | naval combat depth, custom-map import, online multiplayer, more scenarios, balance with real players | not started |
+
+## Version 2.0 roadmap (state at 2026-11-23)
+| Brief section | Status |
+|---|---|
+| Audit (VERSION_2_AUDIT.md), backup tag `v1.0-backup`, branch `v2-dev` | done |
+| Doc/code inconsistencies (9 personalities, tutorial, plugin pin, leak) | done |
+| AdMob banner-only with developer ids; Android APK/AAB pipeline run | done (device test pending) |
+| Tutorial, hotseat tests, AI personality tests | done |
+| Historical map overhaul, scenario reconstruction, new scenarios, sources | **not started** (needs per-scenario research and geometry; see audit) |
+| Visual redesign, animations, art upgrade | not started |
+| Espionage, dynasties, factions/civil wars, doctrines, naval overhaul, tech/building expansion, extra map modes | not started |
+| Real-device testing and profiling | blocked: no device/emulator |

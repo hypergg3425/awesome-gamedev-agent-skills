@@ -22,8 +22,9 @@ unzip -q -o "$WORK/$ZIP" -d addons/admob/android/bin
 if ! grep -q "res://addons/admob/plugin.cfg" project.godot; then
   printf '\n[editor_plugins]\n\nenabled=PackedStringArray("res://addons/admob/plugin.cfg")\n' >> project.godot
 fi
-# AdMob *application* id (not the banner unit id). Falls back to the plugin default = Google's public TEST app id.
-if [ -n "${ADMOB_ANDROID_APP_ID:-}" ]; then
+# AdMob *application* id (not the banner unit id). project.godot already carries the developer's id; the env var is only
+# used when project.godot has none (the plugin default would then be Google's public TEST app id).
+if [ -n "${ADMOB_ANDROID_APP_ID:-}" ] && ! grep -q "general/android/app_id" project.godot; then
   printf '\n[admob]\n\ngeneral/android/app_id="%s"\n' "$ADMOB_ANDROID_APP_ID" >> project.godot
 fi
 echo "AdMob plugin $TAG installed."

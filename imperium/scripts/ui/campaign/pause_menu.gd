@@ -13,6 +13,9 @@ static func show_menu(host: Control, screen: CampaignScreen) -> void:
 	box.add_child(UI.button(Loc.t("UI_LOAD_GAME"), func() -> void:
 		close.call()
 		SaveLoadDialog.show_load(host, func() -> void: screen.get_tree().change_scene_to_file("res://scenes/campaign/campaign.tscn")), "", "load"))
+	box.add_child(UI.button(Loc.t("TUT_TITLE"), func() -> void:
+		close.call()
+		Tutorial.start(screen, true), "", "info"))
 	box.add_child(UI.button(Loc.t("MENU_SETTINGS"), func() -> void:
 		close.call()
 		SettingsPanel.show_dialog(host), "", "settings"))
