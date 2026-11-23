@@ -11,8 +11,8 @@ func test_territorial_victory() -> void:
 			s["provinces"][pid]["controller"] = pl
 			n += 1
 	GS.rebuild_caches(s)
-	s["turn"] = 30
-	for i in 10:
+	s["turn"] = 90
+	for i in VictorySystem.HOLD_TURNS + 3:
 		VictorySystem.process_turn(s)
 		if s["game_over"]:
 			break

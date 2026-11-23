@@ -9,7 +9,7 @@ static func new_state() -> Dictionary:
 		"turn_limit": 0, "player": "", "players": [], "difficulty": "normal", "seed": 1, "rng": {},
 		"countries": {}, "provinces": {}, "armies": {}, "next_army_id": 1, "wars": {}, "next_war_id": 1,
 		"relations": {}, "coalitions": {}, "next_coalition_id": 1, "market": {}, "events": {"pending": [], "fired": {}, "queue": []},
-		"history": [], "notes": [], "objectives": [], "winner": "", "game_over": false, "stats": {},
+		"history": [], "notes": [], "objectives": [], "winner": "", "victory_type": "", "game_over": false, "stats": {},
 		"flags": {}, "ai": {}, "custom": false, "approximate": true, "pending_requests": [], "battle_log": [], "_c": {},
 	}
 

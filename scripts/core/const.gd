@@ -50,3 +50,6 @@ const OPINION_MAX := 200
 
 const ARMY_SIZE_CAP := 30 ## regiments per army stack cap (soft: combat width)
 const BASE_COMBAT_WIDTH := 14.0 ## regiments that fight at full effect per side
+
+## Highest technology level any country may start a scenario with (max level is 4).
+const START_TECH_CAP := 3

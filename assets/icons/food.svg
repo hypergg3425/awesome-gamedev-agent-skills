@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<g fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+<polyline points="32,56 32,26"/>
+<path d="M32 48 Q30.23 39.16 21.39 37.39 Q23.16 46.23 32 48 Z" fill="#ffffff"/>
+<path d="M32 48 Q40.84 46.23 42.61 37.39 Q33.77 39.16 32 48 Z" fill="#ffffff"/>
+<path d="M32 36 Q30.23 27.16 21.39 25.39 Q23.16 34.23 32 36 Z" fill="#ffffff"/>
+<path d="M32 36 Q40.84 34.23 42.61 25.39 Q33.77 27.16 32 36 Z" fill="#ffffff"/>
+<path d="M32 28 Q37 19 32 10 Q27 19 32 28 Z" fill="#ffffff"/>
+</g>
+</svg>

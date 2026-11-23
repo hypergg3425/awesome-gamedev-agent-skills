@@ -3,6 +3,8 @@ extends RefCounted
 ## Victory conditions, objectives, scoring and campaign statistics snapshots.
 
 const HOLD_TURNS := 16
+## Standard victories cannot trigger before this turn (or a quarter of the campaign, if longer).
+const MIN_VICTORY_TURN := 60
 
 static func total_provinces(s: Dictionary) -> int:
 	return Defs.province_ids.size()
@@ -56,13 +58,18 @@ static func progress(s: Dictionary, cid: String) -> Dictionary:
 	var econ_ratio := inc / maxf(second, 1.0)
 	var econ_share := inc / maxf(world_inc, 1.0)
 	var tech := TechSystem.avg_level(c)
+	var tech_second := 0.0
+	for oid2 in GS.alive_countries(s):
+		if oid2 != cid and major(s, oid2):
+			tech_second = maxf(tech_second, TechSystem.avg_level(s["countries"][oid2]))
+	var tech_done := tech >= float(cfg(s, "tech_avg", 3.8)) and tech - tech_second >= 0.5
 	var bloc := bloc_share(s, cid)
 	var hold: Dictionary = c.get("victory_hold", {})
 	return {
 		"territory": {"value": pct, "target": tgt_pct, "done": pct >= tgt_pct, "hold": int(hold.get("territory", 0))},
-		"economic": {"value": econ_share, "target": float(cfg(s, "econ_share", 0.35)), "done": econ_share >= float(cfg(s, "econ_share", 0.35)) and econ_ratio >= 3.0 and inc > 80.0, "hold": int(hold.get("economic", 0))},
+		"economic": {"value": econ_share, "target": float(cfg(s, "econ_share", 0.4)), "done": econ_share >= float(cfg(s, "econ_share", 0.4)) and econ_ratio >= 3.0 and inc > 80.0, "hold": int(hold.get("economic", 0))},
 		"diplomatic": {"value": bloc, "target": float(cfg(s, "bloc_share", 0.55)), "done": bloc >= float(cfg(s, "bloc_share", 0.55)), "hold": int(hold.get("diplomatic", 0))},
-		"technological": {"value": tech, "target": float(cfg(s, "tech_avg", 3.8)), "done": tech >= float(cfg(s, "tech_avg", 3.8)), "hold": int(hold.get("technological", 0))},
+		"technological": {"value": tech, "target": float(cfg(s, "tech_avg", 3.8)), "done": tech_done, "hold": int(hold.get("technological", 0))},
 	}
 
 static func check_objective(s: Dictionary, cid: String, ob: Dictionary) -> bool:
@@ -115,6 +122,7 @@ static func process_turn(s: Dictionary) -> void:
 	# standard victory conditions for every major power (AI too)
 	var winner := ""
 	var vtype := ""
+	var min_turn := maxi(MIN_VICTORY_TURN, int(s.get("turn_limit", 0)) / 4)
 	for cid in GS.alive_countries(s):
 		if not major(s, cid) or (GS.owned(s, cid).size() < 8 and cid not in s["players"]):
 			continue
@@ -122,12 +130,12 @@ static func process_turn(s: Dictionary) -> void:
 		var pr := progress(s, cid)
 		var hold: Dictionary = c.get("victory_hold", {})
 		for t in pr:
-			if pr[t]["done"]:
+			if pr[t]["done"] and int(s["turn"]) >= min_turn:
 				hold[t] = int(hold.get(t, 0)) + 1
 			else:
 				hold[t] = 0
 		c["victory_hold"] = hold
-		var need := HOLD_TURNS if int(s["turn"]) >= 24 else 9999
+		var need := HOLD_TURNS if int(s["turn"]) >= min_turn else 9999
 		for t in pr:
 			if int(hold.get(t, 0)) >= need and winner == "":
 				# vassals cannot win

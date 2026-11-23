@@ -835,6 +835,20 @@ static func peace_eval(s: Dictionary, wid: String, proposer: String, receiver: S
 			accept = true
 	return {"accept": accept, "score": snappedf(total, 0.1), "cost": snappedf(cost, 0.1), "reasons": reasons, "lead": S}
 
+## The losing side offers concessions to the winner. The winner accepts once the offer is worth enough
+## relative to its lead (it will not accept a token gesture while crushing the conceder).
+static func concession_eval(s: Dictionary, wid: String, conceder: String, winner: String, terms: Dictionary) -> Dictionary:
+	var lead := score_for(s, wid, winner)
+	var worth := terms_cost(s, winner, conceder, terms)
+	var reasons: Array = []
+	_add(reasons, "DR_WARSCORE", lead)
+	_add(reasons, "DR_TERMS_COST", worth)
+	var exh := float(s["countries"][winner].get("war_exhaustion", 0.0))
+	_add(reasons, "DR_EXHAUSTION", exh * 0.3)
+	var need := maxf(0.0, lead * 0.55 - exh * 0.3)
+	var accept := worth >= need
+	return {"accept": accept, "score": snappedf(worth - need, 0.1), "cost": snappedf(worth, 0.1), "reasons": reasons, "lead": lead}
+
 static func make_peace(s: Dictionary, wid: String, proposer: String, receiver: String, terms: Dictionary) -> Dictionary:
 	var w: Dictionary = s["wars"].get(wid, {})
 	if w.is_empty() or w.get("ended", false):

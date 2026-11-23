@@ -357,12 +357,18 @@ static func _finish_country(s: Dictionary, cid: String, cd: Dictionary) -> void:
 	if c["religion"] == "":
 		c["religion"] = str(s["provinces"][c["capital"]]["religion"])
 	# technology by era and civilisation level
-	var era := int(s["era"]) + int(cd.get("tech_mod", 0))
-	era += {"advanced": 1, "average": 0, "backward": -1}.get(c["civ"], 0) if not bool(cd.get("native", false)) else -1
+	# Start levels are compressed (era 0..4 -> 0,1,2,2,3) so that level 4 of every line is
+	# always left to research, even in the late scenarios (no instant technological victory).
+	var era_base: int = [0, 1, 2, 2, 3][clampi(int(s["era"]), 0, 4)]
+	var era := era_base + int(cd.get("tech_mod", 0))
+	if bool(cd.get("native", false)):
+		era -= 1
+	else:
+		era += {"advanced": 1, "average": 0, "backward": -1}.get(c["civ"], 0)
 	for line in Defs.tech_lines:
-		var lv := clampi(era, 0, 4)
+		var lv := clampi(era, 0, Const.START_TECH_CAP)
 		if cd.has("tech"):
-			lv = clampi(int(cd["tech"].get(line, lv)), 0, 4)
+			lv = clampi(int(cd["tech"].get(line, lv)), 0, Const.START_TECH_CAP)
 		TechSystem.grant_line_to(s, cid, line, lv)
 	# buildings
 	var civlv := clampi(int(c["tech_level"].get("infrastructure", 0)), 0, 4)

@@ -8,6 +8,7 @@ signal turn_ended(summary: Dictionary)
 signal game_over(info: Dictionary)
 signal command_failed(reason: String, params: Dictionary)
 signal selection_changed(pid: String)
+signal achievement_unlocked(id: String)
 
 var state: Dictionary = {}
 var active_player := ""
@@ -110,6 +111,8 @@ func end_turn() -> Dictionary:
 	hotseat_index = 0
 	active_player = state["player"] if state["players"].size() <= 1 else state["players"][0]
 	last_summary = summary
+	for aid in Achievements.check(state):
+		achievement_unlocked.emit(aid)
 	if bool(Settings.get_value("autosave")) and not bool(state.get("game_over", false)):
 		Saves.autosave(state)
 	turn_ended.emit(summary)
@@ -227,6 +230,16 @@ func cmd_peace(wid: String, other: String, terms: Dictionary) -> Dictionary:
 	var ev := DiplomacySystem.peace_eval(state, wid, active_player, other, terms)
 	if ev["accept"]:
 		var r := DiplomacySystem.make_peace(state, wid, active_player, other, terms)
+		r["eval"] = ev
+		r["accepted"] = true
+		return _result(r)
+	state_changed.emit()
+	return {"ok": true, "accepted": false, "eval": ev}
+
+func cmd_concede(wid: String, winner: String, terms: Dictionary) -> Dictionary:
+	var ev := DiplomacySystem.concession_eval(state, wid, active_player, winner, terms)
+	if ev["accept"]:
+		var r := DiplomacySystem.make_peace(state, wid, winner, active_player, terms)
 		r["eval"] = ev
 		r["accepted"] = true
 		return _result(r)

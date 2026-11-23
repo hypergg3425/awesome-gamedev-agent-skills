@@ -27,7 +27,7 @@ func _draw() -> void:
 			var w := font.get_string_size(txt, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x
 			draw_string(font, sp - Vector2(w * 0.5, 0), txt.to_upper(), HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Color(0.7, 0.8, 0.9, 0.35))
 	# country labels
-	if show_country_labels and z < 4.0:
+	if show_country_labels and z < 2.3:
 		for c in data.get("country_labels", []):
 			var sp: Vector2 = view.world_to_screen(c["pos"])
 			var ext: float = c["extent"] * z
@@ -42,9 +42,11 @@ func _draw() -> void:
 			draw_string(font, Vector2(-tw * 0.5, fs * 0.35), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Color(0.97, 0.93, 0.82, 0.88))
 			draw_set_transform(Vector2.ZERO, 0.0, Vector2.ONE)
 	# province labels
-	if show_province_labels and z > 2.2:
+	if show_province_labels and z > 2.3:
 		for pi in view.n_prov:
 			var r: Rect2 = view.prov_bbox[pi]
+			if Defs.provinces[Defs.province_ids[pi]].get("archipelago", false) and z < 5.0:
+				continue
 			var wpx := r.size.x * z
 			if wpx < 70.0:
 				continue
