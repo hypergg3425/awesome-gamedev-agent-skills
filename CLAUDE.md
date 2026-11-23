@@ -19,7 +19,7 @@ Autoloads do not resolve inside `-s` scripts: tests run from a *scene* (`tests/t
 3. Determinism: all randomness through the seeded `GameRng` stored in the state; floats are `GS.quantize()`d after every turn and after load so save→load→continue is bit-identical (tested).
 4. AI never cheats economically. Difficulty only changes decision quality (see `AI DIFF` table). `expert` additionally reads enemy army sizes (documented).
 5. Every user-visible string goes through `Loc` (`data/localization/strings.json`, EN+TR); `t_loc` fails on a missing key or a placeholder mismatch.
-6. Ads: **banner only**, only through `scripts/ads/ad_manager.gd`; ids only in `scripts/ads/ad_config.gd`. Never add interstitial/rewarded/app-open code. Never commit production ids or keystores.
+6. Ads: **banner only** (owner decision for v2.0), only through `scripts/ads/ad_manager.gd`; unit ids only in `scripts/ads/ad_config.gd`. Debug/editor builds always use Google's test unit; only release exports use the production unit. Never add interstitial/rewarded/app-open code (`t_ads` fails if it appears). Never commit keystores or passwords.
 7. Content is data: `data/*.json`, `data/scenarios`, `data/events`. Historical events must carry `kind: historical` + `source`; random ones `kind: random`.
 
 ## Style

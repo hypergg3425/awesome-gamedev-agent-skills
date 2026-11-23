@@ -1,35 +1,14 @@
 {
-  "checks": 4441,
+  "checks": 17,
   "failures": 0,
   "godot": "4.7.2-stable (official)",
   "suites": [
     {
-      "checks": 4216,
+      "checks": 17,
       "failures": [],
-      "ms": 39,
+      "ms": 1,
       "status": "PASS",
-      "suite": "loc"
-    },
-    {
-      "checks": 54,
-      "failures": [],
-      "ms": 36112,
-      "status": "PASS",
-      "suite": "save"
-    },
-    {
-      "checks": 164,
-      "failures": [],
-      "ms": 712,
-      "status": "PASS",
-      "suite": "scripts"
-    },
-    {
-      "checks": 7,
-      "failures": [],
-      "ms": 3731,
-      "status": "PASS",
-      "suite": "smoke"
+      "suite": "ads"
     }
   ]
 }
