@@ -19,13 +19,20 @@ const PERS_W := {
 	"economic": {"war": 0.5, "army": 0.8, "econ": 1.5, "dipl": 1.1, "tax_cap": 0.35, "need_ratio": 1.6},
 	"opportunistic": {"war": 0.9, "army": 1.0, "econ": 1.0, "dipl": 1.0, "tax_cap": 0.38, "need_ratio": 1.4},
 	"isolationist": {"war": 0.25, "army": 0.9, "econ": 1.1, "dipl": 0.3, "tax_cap": 0.33, "need_ratio": 2.2},
+	# "trade": weight of ports/trade buildings and trade agreements; "navy": appetite for fleets; "coalition": appetite for
+	# alliances and for forming coalitions against dangerous neighbours. Missing keys mean 1.0 (see _w()).
+	"naval_trade": {"war": 0.5, "army": 0.85, "econ": 1.3, "dipl": 1.2, "tax_cap": 0.36, "need_ratio": 1.8, "trade": 2.2, "navy": 3.0},
+	"coalition_builder": {"war": 0.45, "army": 1.0, "econ": 1.0, "dipl": 1.7, "tax_cap": 0.34, "need_ratio": 1.7, "coalition": 2.2},
 }
+
+static func _w(W: Dictionary, key: String) -> float:
+	return float(W.get(key, 1.0))
 
 static func new_ai_state(s: Dictionary, cid: String, pers: String) -> Dictionary:
 	if pers == "" or pers not in Const.PERSONALITIES:
 		var c: Dictionary = s["countries"][cid]
 		var g: String = c.get("gov", "")
-		pers = {"tribal_confederation": "aggressive", "merchant_republic": "economic", "theocracy": "defensive", "military_government": "aggressive",
+		pers = {"tribal_confederation": "aggressive", "merchant_republic": "naval_trade", "theocracy": "defensive", "military_government": "aggressive",
 			"empire": "expansionist", "republic": "diplomatic", "constitutional_monarchy": "diplomatic", "feudal_kingdom": "opportunistic",
 			"absolute_monarchy": "expansionist"}.get(g, "opportunistic")
 		if bool(c.get("native", false)):
@@ -248,8 +255,8 @@ static func _building_score(s: Dictionary, cid: String, pid: String, bid: String
 		"workshop": sc = (5.0 + pop / 150.0) * econ
 		"mine": sc = (4.0 + float(pd["iron"] + pd["stone"]) * 5.0 + (6.0 if float(c["stock"]["iron"]) < 15.0 else 0.0)) * (1.0 if int(c["tech_level"].get("resource_extraction", 0)) >= 1 else 0.7)
 		"sawmill": sc = 3.0 + (10.0 if float(c["stock"]["wood"]) < 15.0 else 0.0) + float(pd["wood"]) * 4.0
-		"port": sc = (8.0 + (10.0 if pd["coastal"] else 0.0)) * econ
-		"trading_center": sc = (7.0 + pop / 100.0) * econ
+		"port": sc = (8.0 + (10.0 if pd["coastal"] else 0.0)) * econ * _w(W, "trade")
+		"trading_center": sc = (7.0 + pop / 100.0) * econ * _w(W, "trade")
 		"barracks": sc = (3.0 + (9.0 if float(c["manpower"]) < float(c["manpower_max"]) * 0.4 else 0.0)) * army
 		"fort": sc = (4.0 + (14.0 if (pid in frontier and at_war) else (5.0 if pid in frontier else 0.0))) * army
 		"arsenal": sc = 3.0 * army
@@ -273,7 +280,7 @@ static func _research(s: Dictionary, cid: String, ai: Dictionary, W: Dictionary,
 	var pers: String = ai["personality"]
 	var pref: Array = {"aggressive": ["military", "administration"], "defensive": ["military", "economic"], "expansionist": ["military", "administration"],
 		"diplomatic": ["society", "administration"], "economic": ["economic", "society"], "opportunistic": ["economic", "military"],
-		"isolationist": ["economic", "society"]}.get(pers, ["economic", "military"])
+		"isolationist": ["economic", "society"], "naval_trade": ["economic", "administration"], "coalition_builder": ["administration", "society"]}.get(pers, ["economic", "military"])
 	for b in Const.BRANCHES:
 		if str(c["research"]["current"].get(b, "")) != "":
 			continue
@@ -355,7 +362,8 @@ static func _military(s: Dictionary, cid: String, ai: Dictionary, P: Dictionary,
 		if worst != "":
 			MilitarySystem.disband_army(s, worst, true)
 	# fleet for coastal commercial powers
-	if P["plan"] and not at_war and float(c["gold"]) > income * 6.0 and UnitUtil.country_regiments(s, cid, true) < 2.0 and rng.chance(0.05):
+	var navy_w := _w(W, "navy")
+	if P["plan"] and not at_war and float(c["gold"]) > income * 6.0 and UnitUtil.country_regiments(s, cid, true) < 2.0 * navy_w and rng.chance(0.05 * navy_w):
 		var wu := UnitUtil.best_of(s, cid, "naval")
 		for pid in GS.owned(s, cid):
 			if Defs.provinces[pid]["coastal"] and int(s["provinces"][pid]["buildings"].get("port", 0)) > 0:
@@ -635,9 +643,12 @@ static func _diplomacy(s: Dictionary, cid: String, ai: Dictionary, P: Dictionary
 	var turn := int(s["turn"])
 	_peace_talks(s, cid, ai, P, rng)
 	# respond to coalitions
-	if bool(P["coalition"]) and turn % 5 == (hash(cid) % 5 + 5) % 5:
+	var builder: bool = ai["personality"] == "coalition_builder"
+	var co_period := 3 if builder else 5
+	var co_infamy := 15.0 if builder else 30.0
+	if bool(P["coalition"]) and turn % co_period == (hash(cid) % co_period + co_period) % co_period:
 		for oid in GS.alive_countries(s):
-			if oid != cid and float(s["countries"][oid].get("infamy", 0.0)) >= 30.0 and GS.opinion(s, cid, oid) < -30.0 and DiplomacySystem.borders(s, cid, oid):
+			if oid != cid and float(s["countries"][oid].get("infamy", 0.0)) >= co_infamy and GS.opinion(s, cid, oid) < -30.0 and DiplomacySystem.borders(s, cid, oid):
 				var coid := DiplomacySystem.form_coalition_against(s, oid)
 				if coid != "":
 					var co: Dictionary = s["coalitions"][coid]
@@ -671,10 +682,10 @@ static func _diplomacy(s: Dictionary, cid: String, ai: Dictionary, P: Dictionary
 		var r := GS.rel(s, cid, o)
 		if GS.at_war(s, cid, o):
 			continue
-		if rng.chance(0.07 * dw):
+		if rng.chance(0.07 * dw * (_w(W, "trade") if not r["trade"] else _w(W, "coalition"))):
 			if not r["trade"]:
 				_propose(s, cid, o, "trade", {})
-			elif not r["alliance"] and rng.chance(0.4):
+			elif not r["alliance"] and rng.chance(0.4 * minf(_w(W, "coalition"), 2.0)):
 				_propose(s, cid, o, "alliance", {})
 			elif int(r["nap_until"]) < turn and rng.chance(0.3) and ai["personality"] != "aggressive":
 				_propose(s, cid, o, "nap", {})
@@ -788,7 +799,7 @@ static func _consider_war(s: Dictionary, cid: String, ai: Dictionary, P: Diction
 		var ratio := my_power / maxf(tp + allies, 1.0)
 		var seen := visible_strength(s, cid, o)
 		var force_ratio := my_force / maxf(seen, 1.0)
-		var need: float = {"aggressive": 1.0, "expansionist": 1.25, "opportunistic": 1.45, "defensive": 2.2, "diplomatic": 2.0, "economic": 2.0, "isolationist": 3.0}.get(ai["personality"], 1.5) * (1.0 if P["plan"] else 0.85)
+		var need: float = {"aggressive": 1.0, "expansionist": 1.25, "opportunistic": 1.45, "defensive": 2.2, "diplomatic": 2.0, "economic": 2.0, "isolationist": 3.0, "naval_trade": 2.1, "coalition_builder": 2.3}.get(ai["personality"], 1.5) * (1.0 if P["plan"] else 0.85)
 		var claims := DiplomacySystem.claims_on(s, cid, o)
 		var cb := "conquest"
 		if not claims.is_empty():

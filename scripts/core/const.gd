@@ -37,7 +37,7 @@ const GOV_IDS: Array[String] = ["absolute_monarchy", "constitutional_monarchy", 
 	"empire", "tribal_confederation", "theocracy", "feudal_kingdom", "military_government"]
 
 const PERSONALITIES: Array[String] = ["aggressive", "defensive", "expansionist", "diplomatic", "economic",
-	"opportunistic", "isolationist"]
+	"opportunistic", "isolationist", "naval_trade", "coalition_builder"]
 
 const DIFFICULTIES: Array[String] = ["easy", "normal", "hard", "expert"]
 

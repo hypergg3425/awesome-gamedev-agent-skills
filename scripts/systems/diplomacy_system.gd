@@ -174,7 +174,7 @@ static func evaluate(s: Dictionary, action: String, from: String, to: String, pa
 			var bb := -bb_from * 0.5
 			_add(reasons, "DR_INFAMY", bb)
 			score += bb
-			var pp: float = {"diplomatic": 12.0, "isolationist": -18.0, "aggressive": -4.0, "defensive": 6.0}.get(pers, 0.0)
+			var pp: float = {"diplomatic": 12.0, "isolationist": -18.0, "aggressive": -4.0, "defensive": 6.0, "coalition_builder": 14.0, "naval_trade": 4.0}.get(pers, 0.0)
 			_add(reasons, "DR_PERSONALITY", pp)
 			score += pp
 			var sh := 6.0 if borders(s, from, to) else 0.0

@@ -85,6 +85,7 @@ func _build() -> void:
 	var game := _section("SET_GAMEPLAY")
 	_toggle(game, "confirm_actions", "SET_CONFIRM")
 	_toggle(game, "autosave", "SET_AUTOSAVE")
+	game.add_child(UI.button(Loc.t("TUT_REPLAY"), func() -> void: Settings.set_value("tutorial_done", false), "", "info"))
 	var perf := _section("SET_PERFORMANCE")
 	var gq := OptionButton.new()
 	for i in 3:

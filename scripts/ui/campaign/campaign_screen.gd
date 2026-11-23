@@ -51,6 +51,7 @@ func _ready() -> void:
 	_focus_player()
 	_refresh_all()
 	_show_pending_events()
+	Tutorial.start(self)
 
 func _exit_tree() -> void:
 	Ads.hide_banner()

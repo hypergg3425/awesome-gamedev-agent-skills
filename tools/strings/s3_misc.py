@@ -167,3 +167,39 @@ MODS = {
 "clergy_share": ("Clergy", "Din adamı payı"), "cost_inflation": ("Inflation", "Enflasyon"),
 }
 for k, (en, tr) in MODS.items(): E("MOD_" + k.upper(), en, tr)
+
+# --- interactive tutorial ---------------------------------------------------------------------------------------------
+TUT = [
+("TUT_TITLE", "Tutorial", "Öğretici"),
+("TUT_STEP", "Step {n} / {total}", "Adım {n} / {total}"),
+("TUT_NEXT", "Next", "İleri"),
+("TUT_SKIP", "Skip tutorial", "Öğreticiyi geç"),
+("TUT_DONE_BTN", "Finish", "Bitir"),
+("TUT_REPLAY", "Replay tutorial", "Öğreticiyi yeniden oyna"),
+("TUT_HINT_WAIT", "Do this on the map to continue — or press Next.", "Devam etmek için bunu yapın — ya da İleri'ye basın."),
+("TUT_S1_T", "Your country", "Ülkeniz"),
+("TUT_S1_B", "Welcome, ruler! This is the world map. Drag with one finger to pan and pinch with two fingers to zoom. Tap the glasses button in a province panel to centre the map on it.", "Hoş geldiniz hükümdar! Bu dünya haritasıdır. Kaydırmak için tek parmakla sürükleyin, yakınlaştırmak için iki parmakla sıkıştırın. Bir eyalet panelindeki mercek düğmesi haritayı o eyalete odaklar."),
+("TUT_S2_T", "Treasury and resources", "Hazine ve kaynaklar"),
+("TUT_S2_B", "The bar at the top shows your treasury (and its change each turn), manpower, food, research, administration, stability and prestige. Keep the treasury positive — debt leads to bankruptcy.", "Üstteki çubuk hazinenizi (ve tur başına değişimini), insan gücünü, gıdayı, araştırmayı, idareyi, istikrarı ve itibarı gösterir. Hazineyi eksiye düşürmeyin — borç iflasa götürür."),
+("TUT_S3_T", "Select a province", "Bir eyalet seçin"),
+("TUT_S3_B", "Tap any province. The panel on the right shows its owner, population, development, culture, religion, unrest and income.", "Herhangi bir eyalete dokunun. Sağdaki panel sahibini, nüfusunu, gelişmişliğini, kültürünü, dinini, huzursuzluğunu ve gelirini gösterir."),
+("TUT_S4_T", "Build infrastructure", "Altyapı kurun"),
+("TUT_S4_B", "Select one of your own provinces, open the Build tab and start a construction. Farms feed people, markets raise taxes, forts and barracks protect you. Buildings take several turns and cost gold and materials.", "Kendi eyaletlerinizden birini seçin, İnşaat sekmesini açın ve bir yapı başlatın. Çiftlikler halkı doyurur, pazarlar vergiyi artırır, kaleler ve kışlalar sizi korur. Yapılar birkaç tur sürer ve altın ile malzeme ister."),
+("TUT_S5_T", "Economy", "Ekonomi"),
+("TUT_S5_B", "Open the Economy sheet (coin button). Review income and expenses, resources and trade. Taxes can be raised, but high taxes cause unrest.", "Ekonomi sayfasını açın (para düğmesi). Gelir ve giderleri, kaynakları ve ticareti inceleyin. Vergi artırılabilir ama yüksek vergi huzursuzluk yaratır."),
+("TUT_S6_T", "Recruit armies", "Ordu toplayın"),
+("TUT_S6_B", "Open the Military sheet (banner button) and recruit regiments in one of your provinces. Soldiers cost gold, manpower and upkeep every turn.", "Ordu sayfasını açın (sancak düğmesi) ve bir eyaletinizde alay toplayın. Askerler altın, insan gücü ve her tur bakım gideri ister."),
+("TUT_S7_T", "Move armies", "Ordu hareketi"),
+("TUT_S7_B", "Tap one of your armies (numbered flag on the map), then tap a destination province. Terrain, rivers and supply slow armies down; far from home they suffer attrition.", "Haritadaki numaralı sancaklardan kendi ordunuza, sonra hedef eyalete dokunun. Arazi, nehirler ve ikmal orduları yavaşlatır; yurttan uzakta yıpranma yaşarlar."),
+("TUT_S8_T", "War", "Savaş"),
+("TUT_S8_B", "War needs a reason (casus belli) such as a claim. Armies fight when they meet; sieges take fortified provinces. Check the battle report to see why a battle was won or lost. Make peace before war exhaustion ruins you.", "Savaş için bir gerekçe (casus belli) gerekir; örneğin bir iddia. Ordular karşılaşınca çarpışır, kaleler kuşatmayla alınır. Bir savaşın neden kazanıldığını veya kaybedildiğini savaş raporundan görün. Savaş yorgunluğu sizi bitirmeden barış yapın."),
+("TUT_S9_T", "Diplomacy", "Diplomasi"),
+("TUT_S9_B", "Open the Diplomacy sheet (envelope button). Choose a country to see its opinion of you and propose alliances, trade deals or non-aggression pacts. The game tells you why a proposal would be refused.", "Diplomasi sayfasını açın (zarf düğmesi). Bir ülke seçin, size bakışını görün; ittifak, ticaret anlaşması veya saldırmazlık paktı önerin. Bir teklifin neden reddedileceğini oyun size söyler."),
+("TUT_S10_T", "Technology", "Teknoloji"),
+("TUT_S10_B", "Open the Technology sheet (bulb button). Research is split into four branches; shift the sliders to favour what you need. New technologies unlock units, buildings and bonuses.", "Teknoloji sayfasını açın (ampul düğmesi). Araştırma dört kola ayrılır; ihtiyacınıza göre sürgüleri kaydırın. Yeni teknolojiler birlikler, yapılar ve bonuslar açar."),
+("TUT_S11_T", "End the turn", "Turu bitirin"),
+("TUT_S11_B", "Press End turn. One turn is three months; the AI countries act, armies move, the economy updates and events may appear.", "Turu bitir'e basın. Bir tur üç aydır; yapay zekâ ülkeleri hamle yapar, ordular hareket eder, ekonomi güncellenir ve olaylar çıkabilir."),
+("TUT_S12_T", "Save your campaign", "Kampanyanızı kaydedin"),
+("TUT_S12_B", "Open the menu (top right) and choose Save game. The game also autosaves. You can replay this tutorial from Settings. Good luck!", "Menüyü açın (sağ üst) ve Oyunu kaydet'i seçin. Oyun ayrıca otomatik kaydeder. Bu öğreticiyi Ayarlar'dan yeniden oynayabilirsiniz. Bol şans!"),
+]
+for k, en, tr in TUT: E(k, en, tr)
