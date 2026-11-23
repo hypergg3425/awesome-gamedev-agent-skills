@@ -3,7 +3,9 @@
 Environment: Linux container, Godot 4.7.2-stable (official build), headless. Date of runs: 2026-11-23. Everything below was **actually executed**; numbers are copied from the run output.
 
 ## 1. Automated suites (`res://tests/test_runner.tscn`, all suites)
-`---- 20654 checks, 0 failures, 408126 ms ----`
+v2.0 run (2026-11-23, 17 suites): `---- 20836 checks, 0 failures, 421560 ms ----`; the `hotseat` suite (19 checks, PASS) was added afterwards and run separately. v1.0 run for comparison: 20,654 checks.
+
+New in v2.0: `ads` 17, `ai_personalities` 31, `tutorial` 37, `hotseat` 19 checks; `ai` 571, `loc` 4,309, `scripts` 166 grew with new code.
 
 | Suite | Checks | Result | What it covers |
 |---|---:|---|---|
@@ -47,7 +49,13 @@ Xvfb screenshots (`tests/ui_shots.tscn`) in EN and TR of menu, scenario/country 
 * AdMob binding exercised on desktop with the plugin's GDScript installed (consent → init → AdView creation → listener callbacks → hide); no errors from our code. Native calls are no-ops on desktop.
 
 ## 5. NOT tested / not possible here
-* **APK/AAB were not built** (no Android SDK, JDK-gradle toolchain or export templates in the container). `.github/workflows/build.yml` is untested until it runs.
-* **No test on a real Android device or emulator**: banner display, adaptive size, UMP form, safe areas, touch gestures, performance, battery.
+* v2.0: a debug APK and a release AAB (throw-away key) **were built** with the real toolchain and statically inspected (MOBILE_DEVICE_TEST_REPORT.md). `.github/workflows/build.yml` itself has still never run on GitHub Actions.
+* **Still no test on a real Android device or emulator**: banner display, adaptive size, UMP form, safe areas, touch gestures, performance, battery.
 * No human play-testing: balance, difficulty curves and fun factor are unvalidated beyond simulations.
-* Godot reports "ObjectDB instances leaked at exit / resources still in use" at shutdown of headless runs (also in the packed boot); gameplay is unaffected, cause not investigated.
+* The shutdown leak warnings are **fixed** in v2.0 (AudioManager releases its streams); verified by boot, test-runner and screenshot-tool runs showing no warning.
+
+## 6. v2.0 additions
+* Ads policy tests, AI personality tests (each of 9 personalities 24 turns; behavioural comparisons), tutorial condition tests, hotseat tests — see above counts.
+* AI-vs-AI soak, seed 8, 150 turns, all seven scenarios: no NaN/inf, no validation problems, no early victory (AI_BALANCE_REPORT.md).
+* Layout screenshots at 800×360, 1024×768, 1280×720, 2400×1080 reviewed manually (not automated).
+* Not done: UI interaction tests, automated screenshot regression, editor save/load test, naval/siege depth tests, long-session memory test.

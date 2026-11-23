@@ -7,8 +7,10 @@ Legend: [x] done in the authoring environment · [ ] you (or CI) still have to d
 - [x] `export_presets.cfg` (arm64-v8a, min SDK 24, target SDK 36, Gradle build, INTERNET + ACCESS_NETWORK_STATE only)
 - [x] PCK export + packed boot smoke run succeeds (data files included via `include_filter`)
 - [ ] CI run of `.github/workflows/build.yml` is green (first run = first real verification of the Android steps)
+- [x] Debug APK built (114.8 MB) and statically verified (package, targetSdk 36, arm64, manifest AdMob app id)
+- [x] Release AAB built (59.5 MB) with a THROW-AWAY key (proves the pipeline only)
 - [ ] Debug APK installs and starts on a real device / emulator
-- [ ] Release AAB builds with your upload keystore
+- [ ] Release AAB builds with YOUR upload keystore
 
 ## Identity (must be changed by you)
 - [ ] `package/unique_name` in both presets (currently the placeholder `com.imperium.agecrowns`) — permanent once published
@@ -21,11 +23,11 @@ Legend: [x] done in the authoring environment · [ ] you (or CI) still have to d
 3. CI secrets: `ANDROID_KEYSTORE_BASE64` (`base64 -w0 upload.keystore`), `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_ALIAS`. Locally use `GODOT_ANDROID_KEYSTORE_RELEASE_PATH/USER/PASSWORD`.
 
 ## AdMob (see docs/ADMOB_SETUP.md)
-- [ ] AdMob app + banner unit created; app id in Project Settings/`ADMOB_ANDROID_APP_ID`
-- [ ] `AdConfig.PRODUCTION_BANNER_UNIT` set and `USE_TEST_ADS=false` **only** for the release build
+- [x] AdMob app id (`…~1173982760`) in `project.godot`; production banner unit (`…/8669329404`) in `AdConfig` — used by release exports only, debug builds use Google's test unit
+- [ ] Link the AdMob app to the Play listing after the first upload
 - [ ] UMP consent message published (EEA/UK/CH); consent form appears with a test geography
 - [ ] Test banner visible, anchored at the bottom, not covering controls, correct with notch/gesture bar, orientation changes
-- [ ] No interstitial / rewarded / app-open anywhere (true in code: `grep -ri "interstitial\|rewarded\|app_open" scripts` finds only comments)
+- [x] Banner-only: `t_ads` fails if interstitial/rewarded/app-open classes are referenced in `scripts/ads` (the plugin library itself still ships unused scripts for them)
 
 ## Play Console
 - [ ] Target API level ≥ 36 (preset uses 36 — re-check Google's current deadline, it changes yearly)
