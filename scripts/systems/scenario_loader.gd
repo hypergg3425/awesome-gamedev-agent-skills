@@ -144,6 +144,8 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 	s["scenario_name"] = def.get("name", {})
 	s["custom"] = bool(def.get("custom", false))
 	s["approximate"] = bool(def.get("approximate", true))
+	s["names"] = _scenario_names(def.get("province_names", {}))
+	s["geo_layer"] = (def.get("geo_layer", []) as Array).duplicate(true)
 	var start: Dictionary = def.get("start", {"year": 1066, "month": 1})
 	s["start_year"] = int(start.get("year", 1066))
 	s["start_month"] = int(start.get("month", 1))
@@ -238,11 +240,7 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 			dev += 1.0
 			pop *= 1.25
 		dev = clampf(dev, 0.2, 10.0)
-		var religion := ""
-		for rname in rel_over:
-			for pat in rel_over[rname]:
-				if Util.glob_match(str(pat), pid):
-					religion = rname
+		var religion := _override_for(rel_over, pid)
 		if religion == "":
 			religion = default_religion(pd, year, str(cstate.get("religion", "")))
 			if religion == "animist" or religion == "":
@@ -250,11 +248,9 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 			# the owning country's faith applies to provinces of its own culture
 			if cstate.get("culture", "") == pd["culture"] and cstate.get("religion", "") != "":
 				religion = str(cstate["religion"])
-		var culture: String = pd["culture"]
-		for cname in cul_over:
-			for pat in cul_over[cname]:
-				if Util.glob_match(str(pat), pid):
-					culture = cname
+		var culture: String = _override_for(cul_over, pid)
+		if culture == "":
+			culture = pd["culture"]
 		var rs: Dictionary = {"owner": owner, "controller": owner, "pop": snappedf(pop, 0.1), "dev": snappedf(dev, 0.1),
 			"buildings": {}, "queue": [], "stab": 60.0, "unrest": 0.0, "culture": culture, "religion": religion,
 			"classes": _default_classes(pd, dev), "literacy": 0.02 + 0.01 * dev, "urban": clampf(0.04 + 0.025 * dev, 0.03, 0.5),
@@ -262,11 +258,23 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 			"last": {}, "recruit_pool": 0.0}
 		s["provinces"][pid] = rs
 	# claims declared in scenario ("claims": {"ENG": ["fra_*"]})
+	# a pattern starting with "-" removes earlier matches; provinces a country already owns are skipped
 	for cid in def.get("claims", {}):
+		if not s["countries"].has(cid):
+			continue
 		for pat in def["claims"][cid]:
+			var cpat := str(pat)
+			var cneg := cpat.begins_with("-")
+			if cneg:
+				cpat = cpat.substr(1)
 			for pid in Defs.province_ids:
-				if Util.glob_match(str(pat), pid) and cid not in s["provinces"][pid]["claims"]:
-					s["provinces"][pid]["claims"].append(cid)
+				if not Util.glob_match(cpat, pid):
+					continue
+				var pcl: Array = s["provinces"][pid]["claims"]
+				if cneg:
+					pcl.erase(cid)
+				elif cid not in pcl and s["provinces"][pid]["owner"] != cid:
+					pcl.append(cid)
 	GS.rebuild_caches(s)
 	# 4. country completion ----------------------------------------------------------------------
 	for cid in s["countries"]:
@@ -305,6 +313,29 @@ static func build(def: Dictionary, player: String, difficulty: String = "normal"
 
 const BASE_PRICE := {"food": 1.2, "iron": 4.0, "wood": 2.0, "stone": 3.0, "coal": 3.0, "lux": 8.0}
 
+## Value (religion / culture id) whose pattern list matches pid; exact province ids beat globs so a
+## precise entry always overrides a broad "tur_*" style one. "" when nothing matches.
+static func _override_for(overrides: Dictionary, pid: String) -> String:
+	var found := ""
+	for key in overrides:
+		for pat in overrides[key]:
+			var ps := str(pat)
+			if ps == pid:
+				return str(key)
+			if ps.contains("*") and Util.glob_match(ps, pid):
+				found = str(key)
+	return found
+
+## Scenario-specific province names ({"<pid>": {"en": ..., "tr": ...}}) restricted to known provinces.
+static func _scenario_names(raw: Variant) -> Dictionary:
+	var out := {}
+	if raw is Dictionary:
+		for pid in raw:
+			var nd: Variant = raw[pid]
+			if Defs.provinces.has(pid) and nd is Dictionary and str(nd.get("en", "")) != "":
+				out[pid] = {"en": str(nd["en"]), "tr": str(nd.get("tr", nd["en"]))}
+	return out
+
 static func _default_classes(pd: Dictionary, dev: float) -> Dictionary:
 	var urban := clampf(0.04 + 0.025 * dev, 0.03, 0.5)
 	return {"nobility": 0.02, "merchants": 0.01 + urban * 0.15, "peasants": 0.80 - urban * 0.5, "clergy": 0.015 + 0.004 * dev,
@@ -328,6 +359,9 @@ static func _make_country(s: Dictionary, cid: String, cd: Dictionary) -> Diction
 		"unrest_streak": 0, "election_turn": 0, "bankrupt_turns": 0, "war_exhaustion": 0.0, "regency": 0,
 	}
 	c["tag_alias"] = str(cd.get("alias", cid))
+	# per-country honesty flag: true = reconstruction is approximate (ruler, borders or polity form uncertain)
+	c["approximate"] = bool(cd.get("approximate", s.get("approximate", true)))
+	c["note"] = (cd.get("note", {}) as Dictionary).duplicate(true) if cd.get("note") is Dictionary else {}
 	return c
 
 static func _make_ruler(rd: Dictionary, gov: String) -> Dictionary:
@@ -641,6 +675,21 @@ static func validate(def: Dictionary) -> Array:
 		var cp: String = cd[cid].get("capital", "")
 		if cp != "" and seen.get(cp, "") != cid:
 			errs.append("ERR_SC_CAPITAL_NOT_OWNED:" + cid)
+	for pid in def.get("province_names", {}):
+		var nd: Variant = def["province_names"][pid]
+		if not Defs.provinces.has(pid) or not (nd is Dictionary) or str(nd.get("en", "")) == "" or str(nd.get("tr", "")) == "":
+			errs.append("ERR_SC_BAD_NAME:" + str(pid))
+	for ccid in def.get("claims", {}):
+		if not cd.has(ccid):
+			errs.append("ERR_SC_CLAIM_UNKNOWN_COUNTRY:" + str(ccid))
+		for pat in def["claims"][ccid]:
+			var hit_claim := false
+			for pid in Defs.province_ids:
+				if Util.glob_match(str(pat).lstrip("-"), pid):
+					hit_claim = true
+					break
+			if not hit_claim:
+				errs.append("ERR_SC_BAD_CLAIM:%s:%s" % [ccid, str(pat)])
 	var rd: Dictionary = def.get("relations", {})
 	for key in ["alliances", "defensive", "nap", "access", "trade", "vassals", "guarantees"]:
 		for pair in rd.get(key, []):

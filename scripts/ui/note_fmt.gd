@@ -8,7 +8,7 @@ static func resolve_params(s: Dictionary, params: Dictionary) -> Dictionary:
 		var v: Variant = params[k]
 		match str(k):
 			"province":
-				out[k] = Defs.province_name(str(v))
+				out[k] = Defs.province_name_in(s, str(v))
 			"country", "other", "by", "cid", "winner":
 				out[k] = GS.country_name(s, str(v)) if s["countries"].has(str(v)) else str(v)
 			"tech":

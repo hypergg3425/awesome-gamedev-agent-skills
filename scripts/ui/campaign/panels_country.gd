@@ -20,6 +20,8 @@ static func _overview(b: VBoxContainer, screen: CampaignScreen) -> void:
 	v.add_child(UI.stat("g_" + str(c["gov"]), Defs.gov_name(c["gov"]), Color("f4ecd6"), "", "Value"))
 	h.add_child(v)
 	top.add_child(h)
+	if bool(c.get("approximate", false)):
+		top.add_child(UI.label(Loc.t("C_APPROX") + (": " + Loc.tx(c.get("note", {})) if c.get("note", {}) is Dictionary and not (c["note"] as Dictionary).is_empty() else ""), "Small", -1, true))
 	var ru: Dictionary = c["ruler"]
 	var rc := Sheet.card(b)
 	Sheet.header(rc, Loc.t("C_RULER"))
