@@ -371,6 +371,7 @@ static func _military(s: Dictionary, cid: String, ai: Dictionary, P: Dictionary,
 					MilitarySystem.recruit(s, cid, pid, wu)
 				break
 	_suppress_rebels(s, cid)
+	AINaval.run(s, cid, ai, P, W, rng)
 	if at_war:
 		_war_orders(s, cid, ai, P, rng)
 	else:

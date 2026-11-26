@@ -138,7 +138,7 @@ unit('dromon', 'naval', 'Dromons', 'Dromonlar', 4, 5, 3, 6, 3, 15, 0.9, 0.5, mat
 unit('longship', 'naval', 'Longships', 'Uzun Gemiler', 2, 5, 2, 5, 4, 10, 0.7, 0.4, mats=dict(wood=0.8), naval=True, cap=2,
      role='raider', raid=1.7, escort=0.3, blockade=0.6, endurance=3, rough=1.2, countries=['NOR', 'DEN', 'SWE'], year_max=1200,
      approximate=True)
-unit('xebec', 'naval', 'Xebecs', 'Şebeklər', 5, 4, 3, 6, 4, 18, 1.0, 0.5, mats=dict(wood=1.0), naval=True, cap=1,
+unit('xebec', 'naval', 'Xebecs', 'Şebekler', 5, 4, 3, 6, 4, 18, 1.0, 0.5, mats=dict(wood=1.0), naval=True, cap=1,
      role='raider', raid=1.9, escort=0.5, blockade=0.8, endurance=3, rough=1.1, countries=['ALG', 'TUN', 'MOR', 'OTT', 'LIB'],
      tech=['naval_warfare', 1], year_min=1500, year_max=1830, approximate=True)
 unit('war_junk', 'naval', 'War Junks', 'Savaş Yelkenlileri', 5, 5, 5, 6, 3, 18, 1.0, 0.5, mats=dict(wood=1.2), naval=True, cap=3,

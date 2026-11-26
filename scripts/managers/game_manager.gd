@@ -182,6 +182,29 @@ func cmd_disband(aid: String) -> Dictionary:
 	MilitarySystem.disband_army(state, aid, true)
 	return _result({"ok": true})
 
+## --- doctrines, fleets, unit improvements (workstream E) ---
+func cmd_set_doctrine(did: String) -> Dictionary:
+	return _result(DoctrineSystem.adopt(state, active_player, did))
+
+func cmd_set_mission(aid: String, mission: String) -> Dictionary:
+	var a: Dictionary = state["armies"].get(aid, {})
+	if a.is_empty() or a["owner"] != active_player:
+		return _result({"ok": false, "reason": "ERR_NOT_YOURS"})
+	return _result(NavalSystem.set_mission(state, aid, mission))
+
+func cmd_split_fleet(aid: String) -> Dictionary:
+	var a: Dictionary = state["armies"].get(aid, {})
+	if a.is_empty() or a["owner"] != active_player:
+		return _result({"ok": false, "reason": "ERR_NOT_YOURS"})
+	var made := NavalSystem.split_by_role(state, aid)
+	return _result({"ok": not made.is_empty(), "reason": "ERR_INVALID", "fleets": made})
+
+func cmd_upgrade_units(aid: String, uid: String) -> Dictionary:
+	var a: Dictionary = state["armies"].get(aid, {})
+	if a.is_empty() or a["owner"] != active_player:
+		return _result({"ok": false, "reason": "ERR_NOT_YOURS"})
+	return _result(MilitarySystem.upgrade_units(state, aid, uid))
+
 func cmd_build(pid: String, bid: String, allow_buy: bool = false) -> Dictionary:
 	return _result(ConstructionSystem.start_build(state, active_player, pid, bid, allow_buy))
 
