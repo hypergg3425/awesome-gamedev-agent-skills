@@ -281,3 +281,45 @@ func test_naval_transport_requires_fleet() -> void:
 	GS.rebuild_caches(s)
 	var r2 := MilitarySystem.order_move(s, army, target)
 	ok(r2["ok"], "with an escort fleet, an embarked path exists: %s" % str(r2.get("reason", "")))
+
+func test_battle_aftermath_updates_army_state_and_report_fields() -> void:
+	var s := new_state()
+	var pair := neighbour_pair(s, 2)
+	var pb: String = pair[3]
+	for aid in GS.armies_at(s, pb).duplicate():
+		MilitarySystem.disband_army(s, aid)
+	DiplomacySystem.start_war(s, [pair[0]], [pair[1]], "conquest", [], true)
+	var aa := MilitarySystem.create_army(s, pair[0], pb, {"spearmen": 14.0}, {"name": "A", "tac": 7, "log": 5, "siege": 5, "xp": 0.0, "traits": []})
+	var dd := MilitarySystem.create_army(s, pair[1], pb, {"spearmen": 5.0}, {"name": "D", "tac": 3, "log": 5, "siege": 5, "xp": 0.0, "traits": []})
+	s["armies"][aa]["arrived"] = s["turn"]
+	GS.rebuild_caches(s)
+	var xp0 := float(s["armies"][aa]["xp"])
+	var reps := MilitarySystem.resolve_battles(s)
+	eq(reps.size(), 1, "one battle")
+	var r: Dictionary = reps[0]
+	ok(r.has("modifiers") and r.has("events") and r.has("commanders") and r.has("river") and r.has("pass"), "report carries the extended fields")
+	eq(r["winner"], "attacker", "the larger, better led army wins")
+	ok(float(s["armies"][aa]["xp"]) > xp0, "winners gain experience")
+	ok(float(s["armies"][aa]["discipline"]) >= 50.0, "winners keep their discipline")
+	ok(s["battle_log"].size() >= 1 and s["battle_log"][s["battle_log"].size() - 1].has("naval"), "battle log entry is compact")
+
+func test_retreat_across_a_river_costs_stragglers() -> void:
+	var s := new_state()
+	var pair := neighbour_pair(s, 2)
+	var a: String = pair[0]
+	var pa: String = pair[2]
+	var pb: String = pair[3]
+	GeoFeatures.set_data({"rivers": [[pa, pb, {"width": 3}]]})
+	var aid := MilitarySystem.create_army(s, a, pb, {"spearmen": 10.0}, null)
+	s["armies"][aid]["prev_loc"] = pa
+	GS.rebuild_caches(s)
+	var n0 := UnitUtil.army_size(s["armies"][aid])
+	MilitarySystem._retreat(s, aid, pb)
+	if s["armies"].has(aid):
+		var crossed := GeoFeatures.river_between(pb, s["armies"][aid]["loc"])
+		ok(s["armies"][aid]["loc"] != pb, "the beaten army left the field")
+		if crossed:
+			ok(UnitUtil.army_size(s["armies"][aid]) < n0, "stragglers are lost crossing the river")
+		else:
+			near(UnitUtil.army_size(s["armies"][aid]), n0, 0.001, "no river crossed, no stragglers")
+	GeoFeatures.load_dir(GeoFeatures.map_dir())
