@@ -40,7 +40,8 @@ func _init(p_screen: CampaignScreen) -> void:
 		var b := UI.button(Loc.t(t[1]), func() -> void:
 			tab = id
 			refresh(), "Tab")
-		b.custom_minimum_size = Vector2(0, 42)
+		b.custom_minimum_size = Vector2(0, 46)
+		b.clip_text = true
 		b.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		b.set_meta("tab", id)
 		b.set_meta("key", t[1])
@@ -97,6 +98,7 @@ func refresh() -> void:
 		"army":
 			_army(s, p)
 	_shrinkable(body)
+	_shrinkable(head)
 
 # Make every button/progress label shrinkable so long (e.g. Turkish) text can never
 # widen the panel beyond the viewport.
@@ -104,6 +106,9 @@ func _shrinkable(n: Node) -> void:
 	for ch in n.get_children():
 		if ch is Button:
 			(ch as Button).clip_text = true
+		elif ch is Label and (ch as Label).autowrap_mode == TextServer.AUTOWRAP_OFF and not (ch as Label).clip_text and ch.size_flags_horizontal & Control.SIZE_EXPAND:
+			(ch as Label).clip_text = true
+			(ch as Label).text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS
 		_shrinkable(ch)
 
 func _info(s: Dictionary, p: Dictionary) -> void:

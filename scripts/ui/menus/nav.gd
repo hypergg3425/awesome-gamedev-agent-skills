@@ -32,6 +32,7 @@ static func background(host: Control, path: String = "res://assets/backgrounds/m
 
 ## Root margin container honouring the safe area.
 static func safe_root(host: Control) -> MarginContainer:
+	Layout.install(host.get_window())
 	var m := MarginContainer.new()
 	m.set_anchors_preset(Control.PRESET_FULL_RECT)
 	var ins := UI.safe_insets(host.get_viewport())

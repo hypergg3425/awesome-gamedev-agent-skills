@@ -70,7 +70,11 @@ static func fs(n: int) -> int:
 
 ## --- safe area -------------------------------------------------------------------------------
 ## Returns insets in viewport (virtual) pixels: {left, top, right, bottom}
+static var insets_override := {}     ## test hook: simulate a notch / gesture bar ({left, top, right, bottom} in virtual px)
+
 static func safe_insets(vp: Viewport) -> Dictionary:
+	if not insets_override.is_empty():
+		return insets_override
 	var win := DisplayServer.window_get_size()
 	var vs := vp.get_visible_rect().size
 	var zero := {"left": 0.0, "top": 0.0, "right": 0.0, "bottom": 0.0}

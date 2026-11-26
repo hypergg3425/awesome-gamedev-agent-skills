@@ -14,6 +14,7 @@ var start_btn: Button
 var hot_label: Label
 
 func _ready() -> void:
+	Layout.install(get_window())
 	theme = UI.theme()
 	def = Defs.all_scenarios().get(Nav.scenario_id, {})
 	if def.is_empty():
@@ -30,7 +31,8 @@ func _ready() -> void:
 	mapview.setup(Defs.load_geometry(), Defs.map_meta)
 	cmap = CampaignMap.new()
 	cmap.attach(mapview, Defs.load_geometry())
-	mapview.province_tapped.connect(func(pid: String) -> void:
+	var gest := GestureLayer.attach(mapview, self)
+	gest.province_tapped.connect(func(pid: String) -> void:
 		var o: String = state["provinces"][pid]["owner"]
 		if state["countries"].has(o) and state["countries"][o]["playable"]:
 			choose(o))
@@ -63,7 +65,8 @@ func _build_ui() -> void:
 	v.add_child(h)
 	var left := PanelContainer.new()
 	left.theme_type_variation = "Sheet"
-	left.custom_minimum_size = Vector2(320, 0)
+	var vw := get_viewport_rect().size.x
+	left.custom_minimum_size = Vector2(clampf(vw * 0.25, 210.0, 340.0), 0)
 	list = VBoxContainer.new()
 	list.add_theme_constant_override("separation", 4)
 	left.add_child(UI.scroll(list))
@@ -74,13 +77,16 @@ func _build_ui() -> void:
 	h.add_child(sp)
 	var right := PanelContainer.new()
 	right.theme_type_variation = "Sheet"
-	right.custom_minimum_size = Vector2(400, 0)
+	right.custom_minimum_size = Vector2(clampf(vw * 0.33, 290.0, 440.0), 0)
 	var rv := VBoxContainer.new()
 	right.add_child(rv)
+	var rbody := VBoxContainer.new()
+	rbody.add_theme_constant_override("separation", 8)
+	rv.add_child(UI.scroll(rbody))
 	info = VBoxContainer.new()
-	rv.add_child(UI.scroll(info))
+	rbody.add_child(info)
 	# difficulty
-	rv.add_child(UI.label(Loc.t("CS_DIFFICULTY"), "Sub"))
+	rbody.add_child(UI.label(Loc.t("CS_DIFFICULTY"), "Sub"))
 	var dh := HBoxContainer.new()
 	dh.add_theme_constant_override("separation", 4)
 	var diff_desc := UI.label(Loc.t("DIFFD_NORMAL"), "Tiny", -1, true)
@@ -90,18 +96,19 @@ func _build_ui() -> void:
 			difficulty = dn
 			diff_desc.text = Loc.t("DIFFD_" + dn.to_upper())
 			_refresh_diff(dh), "Primary" if dn == difficulty else "Tab")
-		db.custom_minimum_size = Vector2(0, 44)
+		db.custom_minimum_size = Vector2(0, 46)
+		db.clip_text = true
 		db.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		db.set_meta("d", dn)
 		dh.add_child(db)
-	rv.add_child(dh)
-	rv.add_child(diff_desc)
+	rbody.add_child(dh)
+	rbody.add_child(diff_desc)
 	hot_label = UI.label("", "Tiny", -1, true)
-	rv.add_child(hot_label)
+	rbody.add_child(hot_label)
 	var hot := UI.button(Loc.t("CS_ADD_HOTSEAT"), func() -> void: _add_hotseat(), "", "country")
-	rv.add_child(hot)
+	rbody.add_child(hot)
 	start_btn = UI.button(Loc.t("CS_START"), func() -> void: _start(), "Primary", "next")
-	start_btn.custom_minimum_size = Vector2(0, 62)
+	start_btn.custom_minimum_size = Vector2(0, 56)
 	rv.add_child(start_btn)
 	h.add_child(right)
 	# list of playable countries sorted by size

@@ -151,6 +151,13 @@ func _condition_met(cond: String) -> bool:
 		return int(Game.state["turn"]) > _base_turn
 	return false
 
+## Compact (phone) variant: smaller type, Skip inline with the step counter, shorter buttons.
+func _apply_density(compact: bool) -> void:
+	_body.theme_type_variation = "Tiny" if compact else "Small"
+	_title.theme_type_variation = "Small" if compact else "Sub"
+	_next.custom_minimum_size = Vector2(0, 44 if compact else 48)
+	_hint.visible = not compact and _hint.text != ""
+
 ## --- placement / highlight -----------------------------------------------------------------------------------
 func _vis_rect(c: Control) -> Rect2:
 	return c.get_global_rect() if c != null and c.is_visible_in_tree() else Rect2()
@@ -220,6 +227,7 @@ func _place() -> void:
 	var ins := UI.safe_insets(get_viewport())
 	var area := Rect2(float(ins["left"]) + 8.0, float(ins["top"]) + 8.0, vp.x - float(ins["left"]) - float(ins["right"]) - 16.0,
 			vp.y - float(ins["top"]) - float(ins["bottom"]) - Ads.reserved_height() - 16.0)
+	_apply_density(Layout.compact(vp))
 	var w := minf(500.0, area.size.x * 0.5 if area.size.x > 700.0 else area.size.x - 8.0)
 	custom_minimum_size = Vector2(w, 0)
 	size = Vector2(w, 10)

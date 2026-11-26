@@ -6,6 +6,8 @@ extends PanelContainer
 
 var screen: CampaignScreen
 var pid := ""
+var _scroll: ScrollContainer
+var _body: VBoxContainer
 
 static func show_for(host: CampaignScreen, kind: String, p_pid: String, at: Vector2) -> ContextPopup:
 	close_all(host)
@@ -16,6 +18,7 @@ static func show_for(host: CampaignScreen, kind: String, p_pid: String, at: Vect
 	host.ui_root.add_child(p)
 	p.build(kind)
 	p.place(at)
+	p.place.call_deferred(at)
 	Anim.pop_in(p, 0.14)
 	Audio.sfx("ui_open", -8.0)
 	return p
@@ -39,7 +42,12 @@ func build(kind: String) -> void:
 	var owner: String = p["owner"]
 	var v := VBoxContainer.new()
 	v.add_theme_constant_override("separation", 5)
-	add_child(v)
+	v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_scroll = ScrollContainer.new()
+	_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	_scroll.add_child(v)
+	add_child(_scroll)
+	_body = v
 	var head := HBoxContainer.new()
 	head.add_theme_constant_override("separation", 8)
 	var c: Dictionary = s["countries"].get(owner, {})
@@ -98,7 +106,7 @@ func _army_row(v: VBoxContainer, s: Dictionary, aid: String, emphasise: bool) ->
 			dismiss()
 			screen.select_province(pid)
 			screen.select_army(aid), "Primary" if emphasise else "", "move")
-		b.custom_minimum_size = Vector2(0, 44)
+		b.custom_minimum_size = Vector2(110, 44)
 		b.clip_text = true
 		h.add_child(b)
 	v.add_child(h)
@@ -108,15 +116,23 @@ func dismiss() -> void:
 		get_parent().remove_child(self)
 	queue_free()
 
-## Place near the finger, preferring up-right of it, always fully inside the free area (below the HUD).
+## Place near the finger, preferring up-right of it, always fully inside the free area (below the HUD); the body
+## scrolls when it is taller than that area.
 func place(at: Vector2) -> void:
+	if not is_inside_tree():
+		return
 	var lay: Dictionary = screen.layout
 	var area: Rect2 = lay["avail"] if lay.has("avail") else Rect2(Vector2.ZERO, screen.size)
 	var top: float = (lay["hud"] as Rect2).end.y + 4.0 if lay.has("hud") else 60.0
 	var w := minf(330.0, area.size.x - 16.0)
+	var max_h := area.end.y - top - 8.0
 	custom_minimum_size = Vector2(w, 0)
-	reset_size()
-	var sz := Vector2(w, get_combined_minimum_size().y)
+	_scroll.custom_minimum_size = Vector2(0, 0)
+	var chrome_h := 2.0 * 14.0
+	var body_h := _body.get_combined_minimum_size().y
+	_scroll.custom_minimum_size.y = minf(body_h, maxf(80.0, max_h - chrome_h))
+	size = Vector2(w, 0)
+	var sz := Vector2(w, minf(get_combined_minimum_size().y, max_h))
 	size = sz
 	var pos := at + Vector2(24.0, -sz.y * 0.5)
 	if pos.x + sz.x > area.end.x - 8.0:
