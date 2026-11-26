@@ -63,16 +63,25 @@ const BASE_LEAD := 50.0
 const MAX_EXTRA_LEAD := 100.0
 
 static func research_lead(s: Dictionary, cid: String) -> float:
-	var c: Dictionary = s["countries"][cid]
-	var ahead := avg_level(c) - _avg_peer_level(s, cid)
-	return BASE_LEAD + clampf(ahead, 0.0, 2.0) * (MAX_EXTRA_LEAD / 2.0)
+	var cache: Dictionary = s["_c"].get("lead", {})
+	if int(s["_c"].get("lead_turn", -1)) != int(s["turn"]):
+		cache = {}
+		s["_c"]["lead"] = cache
+		s["_c"]["lead_turn"] = s["turn"]
+		s["_c"]["year"] = int(GS.date_of(s)["year"])
+	if cache.has(cid):
+		return cache[cid]
+	var ahead := avg_level(s["countries"][cid]) - _avg_peer_level(s, cid)
+	var v := BASE_LEAD + clampf(ahead, 0.0, 2.0) * (MAX_EXTRA_LEAD / 2.0)
+	cache[cid] = v
+	return v
 
 static func era_check(s: Dictionary, cid: String, tid: String) -> Dictionary:
 	var t: Dictionary = Defs.techs.get(tid, {})
-	var year := int(GS.date_of(s)["year"])
 	var lead := research_lead(s, cid)
-	var ok := float(int(t.get("era_year", 0)) - year) <= lead
-	return {"ok": ok, "lead": lead, "years_early": int(t.get("era_year", 0)) - year}
+	var year := int(s["_c"]["year"])
+	var early := int(t.get("era_year", 0)) - year
+	return {"ok": float(early) <= lead, "lead": lead, "years_early": early}
 
 static func cost_rp(s: Dictionary, cid: String, tid: String) -> float:
 	var t: Dictionary = Defs.techs[tid]

@@ -461,7 +461,7 @@ static func ai_turn(s: Dictionary, cid: String, personality: String, rng: GameRn
 	# candidates: neighbours, enemies and rivals
 	var cands: Array = []
 	for oid in GS.alive_countries(s):
-		if oid != cid and can_target(s, cid, oid)["ok"] and (DiplomacySystem.borders(s, cid, oid) or GS.at_war(s, cid, oid) or level(s, cid, oid) > 0):
+		if oid != cid and (DiplomacySystem.borders(s, cid, oid) or level(s, cid, oid) > 0) and can_target(s, cid, oid)["ok"]:
 			cands.append(oid)
 	if cands.is_empty():
 		return

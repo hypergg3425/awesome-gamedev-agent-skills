@@ -33,7 +33,7 @@ static func unrest_target(s: Dictionary, pid: String) -> Dictionary:
 	if p["culture"] != c["culture"]:
 		parts["UNREST_CULTURE"] = 8.0
 	if p["religion"] != c["religion"]:
-		parts["UNREST_RELIGION"] = 6.0 * (1.0 + float(m.get("unrest_minority", 0.0)) * 5.0)
+		parts["UNREST_RELIGION"] = 6.0 * (1.0 + float(m.get("unrest_minority", 0.0)) * 5.0) * clampf(1.0 - float(m.get("religion_unity", 0.0)), 0.3, 1.0)
 	var conq := int(s["turn"]) - int(p.get("conquered_turn", -999))
 	if conq < 24:
 		parts["UNREST_CONQUEST"] = 10.0 * (1.0 - float(conq) / 24.0)
@@ -48,7 +48,10 @@ static func unrest_target(s: Dictionary, pid: String) -> Dictionary:
 		cs += pw * (50.0 - float(c["classes"][cls]["sat"]))
 		wsum += pw
 	parts["UNREST_CLASSES"] = cs / maxf(wsum, 0.001) * 0.45
-	parts["UNREST_BUILDINGS"] = -float(pm.get("stability_local", 0.0)) * 2.0
+	parts["UNREST_BUILDINGS"] = -float(pm.get("stability_local", 0.0)) * 2.0 - float(pm.get("happiness_local", 0.0)) * 1.5
+	var emp := float(EconomySystem.province_calc(s, pid).get("emp", 1.0))
+	if emp < 0.85:
+		parts["UNREST_EMPLOYMENT"] = (0.85 - emp) * 25.0
 	var garrison := 0.0
 	for aid in GS.armies_at(s, pid):
 		var a: Dictionary = s["armies"][aid]
@@ -111,7 +114,7 @@ static func process_turn(s: Dictionary) -> void:
 		# urbanisation & literacy
 		var dev := float(p["dev"])
 		var urb_cap := 0.1 + 0.04 * dev
-		p["urban"] = minf(urb_cap, float(p["urban"]) + 0.0006 * (0.5 + float(pm.get("trade_power", 0.0))))
+		p["urban"] = minf(urb_cap, float(p["urban"]) + 0.0006 * (0.5 + float(pm.get("trade_power", 0.0))) + 0.0002 * float(EconomySystem.province_calc(s, pid).get("ind", 0.0)))
 		var lit_gain := 0.0004 * (1.0 + float(m.get("literacy", 0.0)) * 20.0 + float(pm.get("literacy", 0.0)) * 15.0)
 		p["literacy"] = minf(0.95, float(p["literacy"]) + lit_gain)
 		# natural development drift

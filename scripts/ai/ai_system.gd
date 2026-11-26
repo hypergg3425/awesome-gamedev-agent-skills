@@ -59,9 +59,9 @@ static func visible_strength(s: Dictionary, observer: String, target: String) ->
 		var a: Dictionary = s["armies"][aid]
 		if a["owner"] == target and not a.get("naval", false) and a["loc"] in near:
 			seen += UnitUtil.army_size(a)
-	# rumour: a rough estimate from the target's size (not its actual army)
+	# rumour: a rough estimate from the target's size (not its actual army); spy networks sharpen it
 	var rumour := DiplomacySystem.total_pop(s, target) * 0.0013
-	return maxf(seen, rumour * 0.7)
+	return EspionageSystem.refine_strength(s, observer, target, maxf(seen, rumour * 0.7))
 
 static func my_regiments(s: Dictionary, cid: String) -> float:
 	return UnitUtil.country_regiments(s, cid)
@@ -85,6 +85,7 @@ static func run(s: Dictionary, cid: String) -> void:
 	_research(s, cid, ai, W, rng)
 	_military(s, cid, ai, P, W, rng)
 	_diplomacy(s, cid, ai, P, W, rng)
+	SimExt.ai_turn(s, cid, pers, rng)
 
 static func _native_turn(s: Dictionary, cid: String, ai: Dictionary, rng: GameRng) -> void:
 	# tribes keep a modest defensive force and rebuild it slowly

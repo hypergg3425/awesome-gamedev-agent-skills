@@ -71,7 +71,7 @@ static func _raw_influence(s: Dictionary, cid: String, c: Dictionary) -> Diction
 		"nobility": pw.call("nobility"),
 		"merchants": pw.call("merchants") + 0.5 * pw.call("artisans"),
 		"clergy": pw.call("clergy"),
-		"military": pw.call("military") + 0.02 * minf(UnitUtil.country_regiments(s, cid) / 10.0, 5.0),
+		"military": pw.call("military") + 0.02 * minf(_regiments(s, cid) / 10.0, 5.0),
 		"popular": pw.call("peasants") + 0.5 * pw.call("artisans"),
 	}
 	var tot := 0.0
@@ -81,6 +81,18 @@ static func _raw_influence(s: Dictionary, cid: String, c: Dictionary) -> Diction
 	for fid in FACTIONS:
 		raw[fid] = float(raw[fid]) / tot
 	return raw
+
+## regiments per country, computed in one pass per turn
+static func _regiments(s: Dictionary, cid: String) -> float:
+	if int(s["_c"].get("regs_turn", -1)) != int(s["turn"]):
+		var d := {}
+		for aid in s["armies"]:
+			var a: Dictionary = s["armies"][aid]
+			if not a.get("naval", false):
+				d[a["owner"]] = float(d.get(a["owner"], 0.0)) + UnitUtil.army_size(a)
+		s["_c"]["regs"] = d
+		s["_c"]["regs_turn"] = s["turn"]
+	return float(s["_c"]["regs"].get(cid, 0.0))
 
 static func _loyalty_target(s: Dictionary, cid: String, c: Dictionary, fid: String, mods: Dictionary) -> float:
 	var f: Dictionary = st(c)["f"][fid]

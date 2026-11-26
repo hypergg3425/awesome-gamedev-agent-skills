@@ -140,6 +140,7 @@ static func compute(s: Dictionary) -> Dictionary:
 	var by_province := {}
 	var flows: Array = []
 	var foreign_goods := {}
+	var commerce_total := 0.0
 	for i in n:
 		var pid: String = ids[i]
 		var p: Dictionary = s["provinces"][pid]
@@ -147,6 +148,7 @@ static func compute(s: Dictionary) -> Dictionary:
 		if owner == "" or owner == "REB":
 			continue
 		var cv := float(EconomySystem.province_calc(s, pid)["commerce"])
+		commerce_total += cv
 		var payee: String = p["controller"]
 		if payee != owner:
 			# occupation: the occupier takes a share, the owner loses it
@@ -169,8 +171,8 @@ static func compute(s: Dictionary) -> Dictionary:
 			var cown: String = s["provinces"][cpid]["controller"]
 			if cur != i and cown != owner and cown != "" and cown != hub_owner:
 				var rr := GS.rel(s, owner, cown)
-				var tf := BASE_TARIFF * (0.5 if rr["trade"] else 1.0)
-				tf = maxf(0.0, tf - 0.02 * 0.0)
+				var tf := (BASE_TARIFF + Mods.get_mod(s, cown, "tariff")) * (0.5 if rr["trade"] else 1.0)
+				tf = clampf(tf, 0.0, 0.1)
 				tariffs += tf
 				tariff_payees.append([cown, tf])
 			hops += 1
@@ -181,8 +183,7 @@ static func compute(s: Dictionary) -> Dictionary:
 			fee = 0.06 + 0.02 * minf(float(power.get(h, 1.0)), 4.0)
 			var rr2 := GS.rel(s, owner, hub_owner)
 			if rr2["trade"]:
-				gross *= 1.10
-				fee *= 0.75
+				fee *= 0.75   # a trade agreement lowers the hub's fee; it never creates money
 			income[hub_owner] = float(income.get(hub_owner, 0.0)) + gross * fee
 			foreign_goods[hub_owner] = float(foreign_goods.get(hub_owner, 0.0)) + gross
 		for tp in tariff_payees:
@@ -191,7 +192,10 @@ static func compute(s: Dictionary) -> Dictionary:
 		by_province[pid] = {"hub": hpid, "value": gross, "hops": hops}
 		if hops >= 1 and hops <= 12:
 			flows.append([pid, hpid, gross])
-	var res := {"turn": s["turn"], "income": income, "by_province": by_province, "flows": flows, "power": power}
+	var paid := 0.0
+	for k in income:
+		paid += float(income[k])
+	var res := {"turn": s["turn"], "paid": paid, "commerce": commerce_total, "income": income, "by_province": by_province, "flows": flows, "power": power}
 	s["_c"]["trade"] = res
 	return res
 
@@ -234,12 +238,14 @@ static func record_use(s: Dictionary, res: String, amount: float) -> void:
 
 ## Update global market prices from this turn's production and demand.
 static func update_market(s: Dictionary, production: Dictionary, demand: Dictionary) -> void:
+	var extra := EconomyDepth.demand_extra(s)
 	for k in ["iron", "wood", "stone", "coal", "lux", "food"]:
 		var sup := float(production.get(k, 0.0)) + 60.0
-		var dem := float(demand.get(k, 0.0)) + 60.0
+		var dem := float(demand.get(k, 0.0)) + float(extra.get(k, 0.0)) + 60.0
 		var base := float(EconomySystem.BASE_PRICE[k])
 		var target := base * pow(clampf(dem / sup, 0.55, 1.9), 0.55)
 		var m: Dictionary = s["market"][k]
 		m["price"] = snappedf(lerpf(float(m["price"]), target, 0.3), 0.001)
 		m["supply"] = sup
 		m["demand"] = dem
+	EconomyDepth.record_history(s)
