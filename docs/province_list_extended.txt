@@ -16,8 +16,8 @@ ago_moxico|Moxico|Moxico Bölgesi|20.18|-12.87|african|plains|tropical_savanna||
 alb_albania|Central Albania (Durrës & Tirana)|Orta Arnavutluk (Dıraç ve Tiran)|19.94|40.99|hellenic|hills|mediterranean|CP|alb_albania|Via Egnatia coast; mountain; coast
 alb_north_albania|Northern Albania (Shkodër)|Kuzey Arnavutluk (İşkodra)|19.98|41.98|hellenic|hills|mediterranean|C|alb_albania|mountain; coast
 alb_south_albania|Southern Albania (Vlorë & Korçë)|Güney Arnavutluk (Avlonya ve Görice)|20.25|40.36|hellenic|mountains|mediterranean|CP|alb_albania|mountain; mountain; coast
-are_trucial_coast|Trucial Coast (Dubai & Sharjah)|Trucial Kıyısı (Dubai ve Şarika)|55.77|25.19|arabic|hills|semi_arid|CP|are_united_arab_emirates|strait pearl coast; city hinterland (Dubai); coast
-are_united_arab_emirates|Abu Dhabi & Liwa|Abu Dabi ve Liva|54.01|23.65|arabic|steppe|semi_arid|CP|are_united_arab_emirates|desert coast; steppe; coast
+are_trucial_coast|Trucial Coast (Dubai & Sharjah)|Trucial Kıyısı (Dubai ve Şarika)|55.77|25.19|arabic|desert|arid|CP|are_united_arab_emirates|strait pearl coast; desert; city hinterland (Dubai); coast
+are_united_arab_emirates|Abu Dhabi & Liwa|Abu Dabi ve Liva|54.01|23.65|arabic|desert|arid|CP|are_united_arab_emirates|desert coast; desert; coast
 arg_buenos_aires|Buenos Aires|Buenos Aires eyaleti|-64.58|-38.06|latin_american|plains|semi_arid|CP|arg_buenos_aires|river valley (Colorado); city hinterland (Buenos Aires); coast
 arg_cordoba|Córdoba|Córdoba eyaleti|-62.99|-31.96|latin_american|marsh|semi_arid|CP|arg_cordoba|river valley (Paraná River); city hinterland (Cordoba); coast
 arg_salta|Salta|Salta eyaleti|-64.7|-26.89|latin_american|mountains|highland||arg_salta|mountain; river valley (Bermejo)
@@ -27,11 +27,11 @@ arm_lori|Lori, Tavush & Shirak|Lori, Tavuş ve Şirak|44.46|40.9|caucasian|mount
 arm_sevan|Gegharkunik (Lake Sevan)|Gegarkunik (Sevan Gölü)|45.33|40.29|caucasian|mountains|continental||arm_armenia|lake; mountain
 arm_syunik|Syunik (Zangezur)|Sünik (Zengezur)|45.9|39.49|caucasian|mountains|highland||arm_armenia|mountain; mountain
 aus_new_south_wales|New South Wales|Yeni Güney Galler|147.02|-32.18|oceanian|hills|humid_subtropical|CP|aus_new_south_wales|river valley (Darling); city hinterland (Sydney); coast
-aus_northern_territory|Northern Territory|Kuzey Toprakları|133.37|-19.42|oceanian|hills|tropical_savanna|CP|aus_northern_territory|river valley (Victoria); coast
+aus_northern_territory|Northern Territory|Kuzey Toprakları|133.37|-19.42|oceanian|desert|arid|CP|aus_northern_territory|desert; river valley (Victoria); coast
 aus_queensland|Queensland|Queensland|144.55|-22.57|oceanian|hills|tropical_savanna|CP|aus_queensland|river valley (Burdekin); city hinterland (Brisbane); coast
-aus_south_australia|South Australia|Güney Avustralya|137.52|-31.46|oceanian|plains|humid_subtropical|CP|aus_south_australia|river valley (Murray); city hinterland (Melbourne); coast
+aus_south_australia|South Australia|Güney Avustralya|137.52|-31.46|oceanian|desert|arid|CP|aus_south_australia|desert; river valley (Murray); city hinterland (Melbourne); coast
 aus_tasmania|Tasmania|Tasmanya|146.6|-41.93|oceanian|plains|continental|CP|aus_tasmania|island; river valley (Derwent)
-aus_western_australia|Western Australia|Batı Avustralya|122.18|-25.47|oceanian|hills|humid_subtropical|CP|aus_western_australia|river valley (Fitzroy); city hinterland (Perth); coast
+aus_western_australia|Western Australia|Batı Avustralya|122.18|-25.47|oceanian|desert|arid|CP|aus_western_australia|desert; river valley (Fitzroy); city hinterland (Perth); coast
 aut_austria|Lower Austria (Vienna)|Aşağı Avusturya (Viyana)|15.89|48.15|germanic|forest|continental|HH|aut_austria|capital hinterland; river valley (Danube); city hinterland (Vienna)
 aut_carinthia|Carinthia|Kärnten|13.91|46.77|germanic|mountains|continental||aut_styria|mountain; mountain; river valley (Drava)
 aut_salzburg|Salzburg|Salzburg|13.09|47.39|germanic|mountains|continental||aut_styria|salt; mountain
@@ -135,7 +135,7 @@ chn_kham_west|Chamdo (Western Kham)|Çamdo (Batı Kham)|96.54|30.5|sinic|hills|h
 chn_khingan|Hinggan & Tongliao (Khorchin)|Hingan ve Tongliao (Korçin)|120.23|44.41|sinic|mountains|continental||chn_inner_mongol|steppe; mountain; river valley (Xar Moron); city hinterland (Chifeng)
 chn_liaoning|Liaoning (Liaodong)|Liaoning (Liaodong)|122.61|41.3|sinic|plains|continental|CP|chn_jilin|peninsula coast; river valley (Liao); city hinterland (Shenyeng); coast
 chn_longyou|Longyou (Lanzhou & Tianshui)|Longyou (Lançov ve Tiyançuy)|104.8|35.32|sinic|hills|humid_subtropical||chn_qinghai|river valley; river valley (Yellow); city hinterland (Lanzhou)
-chn_lop_nur|Lop Nur & Charklik|Lop Nur ve Çarklık|87.7|38.78|sinic|hills|humid_subtropical||chn_xinjiang|desert; river valley (Konqi He)
+chn_lop_nur|Lop Nur & Charklik|Lop Nur ve Çarklık|87.7|38.78|sinic|desert|arid||chn_xinjiang|desert; desert; river valley (Konqi He)
 chn_ngari|Western Tibet (Ngari)|Batı Tibet (Ngari)|82.11|32.41|sinic|hills|semi_arid||chn_xizang|plateau; river valley (Sutlej)
 chn_ningxia|Ningxia (Yinchuan)|Ningşya (Yinçuan)|106.16|37.27|sinic|desert|arid||chn_qinghai|river oasis; desert; river valley (Yellow)
 chn_north_shaanxi|Northern Shaanxi (Yan'an & Yulin)|Kuzey Şensi (Yanan ve Yulin)|109.48|37.34|sinic|desert|arid||chn_sichuan|loess plateau; desert; river valley (Yellow)
@@ -146,8 +146,8 @@ chn_sanjiang|Sanjiang Plain|Sanciang Ovası|131.73|46.66|sinic|plains|continenta
 chn_shandong|Shandong|Şandong|118.15|36.35|sinic|plains|humid_subtropical|CP|chn_jilin|peninsula; river valley (Yellow); city hinterland (Zibo); coast
 chn_shanxi|Shanxi|Şanşi|112.28|37.57|sinic|mountains|highland||chn_jilin|mountain plateau; mountain; river valley (Yellow); city hinterland (Taiyuan)
 chn_sichuan|Sichuan Basin (Chengdu)|Sıçuan Havzası (Çengdu)|104.23|30.08|sinic|hills|humid_subtropical||chn_sichuan|fertile basin; river valley (Jialing); city hinterland (Chengdu)
-chn_tarim_north|Northern Tarim (Aksu & Kashgar)|Kuzey Tarım (Aksu ve Kaşgar)|78.75|39.98|sinic|hills|semi_arid|HH|chn_xinjiang|oasis Silk Road; river valley (Yarkand)
-chn_tarim_south|Southern Tarim (Khotan)|Güney Tarım (Hotan)|80.22|37.07|sinic|hills|semi_arid||chn_xinjiang|oasis Silk Road; mountain; river valley (Yarkand)
+chn_tarim_north|Northern Tarim (Aksu & Kashgar)|Kuzey Tarım (Aksu ve Kaşgar)|78.75|39.98|sinic|desert|arid|HH|chn_xinjiang|oasis Silk Road; desert; river valley (Yarkand)
+chn_tarim_south|Southern Tarim (Khotan)|Güney Tarım (Hotan)|80.22|37.07|sinic|desert|arid||chn_xinjiang|oasis Silk Road; mountain; desert; river valley (Yarkand)
 chn_tsang|Tsang (Shigatse)|Tsang (Şigatse)|87.56|29.66|sinic|hills|humid_subtropical||chn_xizang|river valley plateau; river valley (Maquan)
 chn_turpan_hami|Turpan & Hami|Turfan ve Hami|92.21|42.65|sinic|hills|continental||chn_xinjiang|oasis gateway
 chn_western_sichuan|Western Sichuan (Garze & Aba)|Batı Sıçuan (Garze ve Aba)|100.76|30.74|sinic|hills|humid_subtropical||chn_sichuan|mountain; river valley (Yalong)
@@ -225,7 +225,7 @@ dza_zibans|Zibans (Biskra)|Zibanlar (Biskra)|5.34|34.5|arabic|hills|mediterranea
 ecu_ecuador|Ecuador|Ekvador|-78.39|-1.45|latin_american|mountains|highland|CP|ecu_ecuador|mountain; river valley (Napo); city hinterland (Guayaquil); coast
 egy_aswan|Aswan & Nubia|Asvan ve Nübye|32.55|23.24|arabic|desert|arid||egy_upper_egypt|cataract; desert; river valley (Nile)
 egy_cairo|Cairo (Fustat & Qalyubiyah)|Kahire (Fustat)|31.52|30.07|arabic|desert|arid|HHH|egy_cairo|river city; desert; delta; city hinterland (Cairo)
-egy_central_delta|Central Delta (Gharbiyah & Minufiyah)|Orta Delta (Garbiye ve Minufiye)|31.02|30.7|arabic|marsh|semi_arid||egy_delta|delta; delta
+egy_central_delta|Central Delta (Gharbiyah & Minufiyah)|Orta Delta (Garbiye ve Minufiye)|31.02|30.7|arabic|desert|arid||egy_delta|delta; desert; delta
 egy_delta|Alexandria & Beheira|İskenderiye ve Buhayra|30.21|30.66|arabic|desert|arid|CPHHH|egy_delta|trade port; desert; delta; city hinterland (Alexandria)
 egy_eastern_delta|Eastern Delta (Damietta & Dakahlia)|Doğu Delta (Dimyat ve Dakahliye)|31.26|31.2|arabic|marsh|mediterranean|CP|egy_delta|delta; river valley (Damietta Branch); delta; coast
 egy_eastern_desert|Eastern Desert & Red Sea Coast|Doğu Çölü ve Kızıldeniz Kıyısı|33.5|25.17|arabic|desert|arid|CP|egy_upper_egypt|mining coast; desert; coast
@@ -235,8 +235,8 @@ egy_isthmus|Suez Isthmus (Ismailia & Port Said)|Süveyş Kıstağı (İsmailiye 
 egy_marmarica|Marmarica (Matruh)|Marmarika (Matruh)|26.96|29.7|arabic|desert|arid|CP|egy_delta|desert coast; desert; coast
 egy_minya|Minya (Middle Egypt)|Minya (Orta Mısır)|30.06|28.14|arabic|desert|arid||egy_cairo|river valley; desert; river valley (Nile)
 egy_new_valley|Western Oases (New Valley)|Batı Vahaları (Yeni Vadi)|28.58|24.77|arabic|desert|arid||egy_upper_egypt|oasis; desert
-egy_sinai|North Sinai (Via Maris)|Kuzey Sina (Via Maris)|33.72|30.42|arabic|plains|mediterranean|CP|egy_sinai|land bridge; coast
-egy_south_sinai|South Sinai|Güney Sina|33.8|29.01|arabic|plains|semi_arid|CP|egy_sinai|mountain; coast
+egy_sinai|North Sinai (Via Maris)|Kuzey Sina (Via Maris)|33.72|30.42|arabic|desert|arid|CP|egy_sinai|land bridge; desert; coast
+egy_south_sinai|South Sinai|Güney Sina|33.8|29.01|arabic|desert|arid|CP|egy_sinai|mountain; desert; coast
 egy_thebes|Thebes (Qena & Luxor)|Teb (Kına ve Luksor)|32.56|25.87|arabic|desert|arid||egy_upper_egypt|river valley; desert; river valley (Nile)
 egy_upper_egypt|Asyut & Sohag|Asyut ve Sohag|31.45|26.87|arabic|desert|arid||egy_upper_egypt|river valley; desert; river valley (Nile)
 eri_eritrea|Eritrea|Eritre|38.85|15.36|african|desert|arid|CP|eri_eritrea|desert; river valley (Tekezé); coast
@@ -271,7 +271,7 @@ est_parnu|Pärnu & Viljandi|Pärnu ve Viljandi|24.98|58.37|slavic|plains|tempera
 est_tartu|Dorpat (Tartu & Võru)|Dorpat (Tartu ve Võru)|26.79|58.08|slavic|plains|subarctic||est_estonia|plains region
 est_virumaa|Virumaa (Narva)|Virumaa (Narva)|26.77|59.08|slavic|plains|subarctic|CP|est_estonia|frontier; coast
 eth_oromiya|Oromiya|Oromia Bölgesi|38.19|9.26|african|mountains|highland||eth_oromiya|mountain; river valley (Blue Nile); city hinterland (Addis Ababa)
-eth_somali|Somali|Somali Bölgesi|43.32|6.95|african|jungle|tropical_wet||eth_somali|river valley (Shebelle)
+eth_somali|Somali|Somali Bölgesi|43.32|6.95|african|desert|arid||eth_somali|desert; river valley (Shebelle)
 fin_hame|Häme (Tavastia)|Häme|24.39|61.85|magyar_finnic|forest|subarctic|CP|fin_south_finland|lake plateau; river valley (Kokemäenjoki); coast
 fin_lapland|Lapland|Laponya|26.34|67.72|magyar_finnic|arctic|arctic|CP|fin_north_finland|arctic; river valley (Kemijoki); coast
 fin_north_finland|Oulu & Kainuu|Oulu ve Kainuu|27.41|64.79|magyar_finnic|forest|subarctic|CP|fin_north_finland|river valley (Oulujoki); coast
@@ -405,14 +405,14 @@ idn_west_kalimantan|West Kalimantan|Batı Kalimantan|111.15|-0.1|southeast_asian
 ind_andhra_coast|Andhra Coast (Krishna-Godavari Delta)|Andra Kıyısı (Krişna-Godavari Deltası)|80.46|16.32|indic|hills|tropical_monsoon|CP|ind_karnataka|delta; river valley (Krishna); city hinterland (Amaravati); coast
 ind_arunachal_pradesh|Arunachal Pradesh|Arunaçhal Pradesh|94.66|28.04|indic|mountains|highland||ind_arunachal_pradesh|mountain; river valley (Brahmaputra)
 ind_assam_brahmaputra_valley|Assam (Brahmaputra Valley)|Assam (Brahmaputra Vadisi)|92.83|26.36|indic|hills|humid_subtropical||ind_arunachal_pradesh|river valley (Brahmaputra)
-ind_awadh|Awadh (Lucknow)|Avadh (Lakhnau)|80.92|27.07|indic|plains|semi_arid||ind_madhya_pradesh|river plain; river valley (Ganges); city hinterland (Kanpur)
+ind_awadh|Awadh (Lucknow)|Avadh (Lakhnau)|80.92|27.07|indic|plains|humid_subtropical||ind_madhya_pradesh|river plain; river valley (Ganges); city hinterland (Kanpur)
 ind_baghelkhand|Baghelkhand (Rewa)|Bagelhand (Reva)|81.51|24.33|indic|hills|tropical_monsoon||ind_madhya_pradesh|plateau; river valley (Yamuna); city hinterland (Allahabad)
 ind_bengal|Bengal (Gangetic Delta)|Bengal (Ganj Deltası)|87.73|22.99|indic|marsh|tropical_monsoon|CPH|ind_bihar|delta; river valley (Ganges); delta; city hinterland (Kolkata)
 ind_bihar|Bihar (Magadha)|Bihar (Magadha)|85.61|25.66|indic|plains|humid_subtropical||ind_bihar|river plain; river valley (Ganges); city hinterland (Patna)
-ind_bundelkhand|Bundelkhand|Bundelhand|78.77|25.26|indic|plains|semi_arid||ind_madhya_pradesh|plateau; river valley (Yamuna)
+ind_bundelkhand|Bundelkhand|Bundelhand|78.77|25.26|indic|plains|humid_subtropical||ind_madhya_pradesh|plateau; river valley (Yamuna)
 ind_chhattisgarh|Chhattisgarh (Dakshina Kosala)|Çhattisgarh (Dakşina Kosala)|82.03|21.26|indic|hills|tropical_monsoon||ind_odisha|plateau; river valley (Mahanadi); city hinterland (Bhilai)
-ind_delhi|Delhi|Delhi|77.11|28.66|indic|plains|semi_arid|HH|ind_ladakh|capital city; city hinterland (Delhi)
-ind_doab|Doab (Delhi–Agra Gangetic Plain)|Doab (Ganj-Yamuna Ovası)|78.34|28.12|indic|plains|semi_arid|HH|ind_madhya_pradesh|river plain; river valley (Yamuna); city hinterland (Agra)
+ind_delhi|Delhi|Delhi|77.11|28.66|indic|plains|humid_subtropical|HH|ind_ladakh|capital city; city hinterland (Delhi)
+ind_doab|Doab (Delhi–Agra Gangetic Plain)|Doab (Ganj-Yamuna Ovası)|78.34|28.12|indic|plains|humid_subtropical|HH|ind_madhya_pradesh|river plain; river valley (Yamuna); city hinterland (Agra)
 ind_goa_konkan|Goa & Karwar|Goa ve Karvar|74.61|14.94|indic|mountains|highland|CP|ind_karnataka|port coast; mountain; coast
 ind_gujarat|Gujarat (Ahmedabad)|Gucerat (Ahmedabad)|72.81|22.67|indic|plains|tropical_monsoon|CPHH|ind_rajasthan|trade plain; river valley (Tapti); city hinterland (Ahmedabad); coast
 ind_haryana|Haryana (Kurukshetra)|Haryana (Kurukşetra)|76.34|29.21|indic|plains|semi_arid||ind_ladakh|battleground plain; river valley (Yamuna); city hinterland (Faridabad)
@@ -434,7 +434,7 @@ ind_manipur|Manipur|Manipur|93.86|24.73|indic|mountains|highland||ind_arunachal_
 ind_marathwada|Marathwada (Aurangabad)|Marathvada (Aurangabad)|76.59|19.15|indic|hills|tropical_monsoon||ind_maharashtra|plateau; river valley (Godavari); city hinterland (Sholapur)
 ind_marwar|Marwar (Jodhpur)|Marvar (Codhpur)|72.65|26.4|indic|desert|arid||ind_rajasthan|desert edge; desert
 ind_meghalaya|Meghalaya|Meghalaya|91.29|25.54|indic|mountains|highland||ind_arunachal_pradesh|mountain
-ind_mewar|Mewar (Udaipur)|Mevar (Udaipur)|74.08|24.55|indic|plains|tropical_monsoon||ind_rajasthan|hills; river valley (Banas)
+ind_mewar|Mewar (Udaipur)|Mevar (Udaipur)|74.08|24.55|indic|desert|arid||ind_rajasthan|hills; desert; river valley (Banas)
 ind_mizoram|Mizoram|Mizoram|92.45|23.45|indic|hills|tropical_monsoon||ind_arunachal_pradesh|hills region
 ind_nagaland|Nagaland|Nagaland|94.45|26.06|indic|mountains|highland||ind_arunachal_pradesh|mountain
 ind_north_bengal|North Bengal & Sikkim|Kuzey Bengal ve Sikkim|88.61|26.5|indic|hills|humid_subtropical||ind_bihar|foothills; river valley (Teesta)
@@ -442,7 +442,7 @@ ind_north_karnataka|Northern Karnataka (Bijapur & Dharwad)|Kuzey Karnataka (Bica
 ind_odisha|Odisha (Kalinga Coast)|Odişa (Kalinga Kıyısı)|85.78|20.85|indic|hills|tropical_monsoon|CP|ind_odisha|coast; river valley (Brahmani); coast
 ind_pandya|Pandya Nadu (Madurai)|Pandya Ülkesi (Madurai)|77.99|9.47|indic|hills|tropical_monsoon|CP|ind_tamil_nadu|plain; mountain; city hinterland (Madurai); coast
 ind_punjab_in|Punjab (East)|Pencap (Doğu)|75.41|30.85|indic|desert|arid||ind_ladakh|river plain; desert; river valley (Sutlej); city hinterland (Ludhiana)
-ind_purvanchal|Purvanchal (Benares)|Purvançal (Benares)|83.07|26.08|indic|plains|semi_arid||ind_madhya_pradesh|holy river city; river valley (Ganges); city hinterland (Varanasi)
+ind_purvanchal|Purvanchal (Benares)|Purvançal (Benares)|83.07|26.08|indic|plains|humid_subtropical||ind_madhya_pradesh|holy river city; river valley (Ganges); city hinterland (Varanasi)
 ind_rajasthan|Rajputana (Jaipur & Ajmer)|Racputana (Jaipur ve Acmer)|75.56|27.13|indic|plains|semi_arid||ind_rajasthan|plateau; river valley (Chambal); city hinterland (Jaipur)
 ind_rayalaseema|Rayalaseema|Rayalaseema|78.59|14.51|indic|hills|tropical_monsoon|CP|ind_karnataka|dry plateau; river valley (Penner); coast
 ind_sambalpur|Western Odisha (Sambalpur)|Batı Odişa (Sambalpur)|83.51|20.3|indic|mountains|highland||ind_odisha|plateau; mountain; river valley (Tel)
@@ -459,36 +459,36 @@ irl_munster|Munster|Munster|-8.77|52.3|germanic|forest|temperate_oceanic|CP|irl_
 irn_ardabil|Ardabil (Mughan)|Erdebil (Muğan)|47.92|38.52|iranian|plains|semi_arid||irn_azerbaijan_persia|highland
 irn_azerbaijan_persia|Tabriz (East Azerbaijan)|Tebriz (Doğu Azerbaycan)|46.57|37.92|iranian|plains|semi_arid|HH|irn_azerbaijan_persia|trade city; river valley (Talkheh); city hinterland (Tabriz)
 irn_bakhtiari|Bakhtiari Mountains|Bahtiyari Dağları|50.65|31.94|iranian|mountains|highland||irn_isfahan|mountain; mountain
-irn_bushehr|Bushehr (Gulf Coast)|Buşehr (Körfez Kıyısı)|51.38|28.85|iranian|hills|semi_arid|CP|irn_fars|gulf port; coast
-irn_fars|Fars (Shiraz & Persepolis)|Fars (Şiraz ve Persepolis)|52.65|29.95|iranian|mountains|highland||irn_fars|heartland; mountain; city hinterland (Shiraz)
+irn_bushehr|Bushehr (Gulf Coast)|Buşehr (Körfez Kıyısı)|51.38|28.85|iranian|desert|arid|CP|irn_fars|gulf port; desert; coast
+irn_fars|Fars (Shiraz & Persepolis)|Fars (Şiraz ve Persepolis)|52.65|29.95|iranian|desert|arid||irn_fars|heartland; mountain; desert; city hinterland (Shiraz)
 irn_gilan|Gilan|Gilan|49.46|37.28|iranian|mountains|highland||irn_jibal|caspian coast; mountain
-irn_gorgan|Gorgan|Gürgan|55.06|37.3|iranian|plains|semi_arid||irn_jibal|steppe frontier; river valley (Atrek)
+irn_gorgan|Gorgan|Gürgan|55.06|37.3|iranian|desert|arid||irn_jibal|steppe frontier; desert; river valley (Atrek)
 irn_hamadan|Hamadan & Arak (Ecbatana)|Hemedan ve Arak|49.35|34.7|iranian|plains|semi_arid||irn_jibal|plateau; river valley (Karkheh)
-irn_hormozgan|Hormozgan (Strait of Hormuz)|Hürmüzgan (Hürmüz Boğazı)|56.22|27.11|iranian|hills|semi_arid|CPHH|irn_kerman|strait port; coast
+irn_hormozgan|Hormozgan (Strait of Hormuz)|Hürmüzgan (Hürmüz Boğazı)|56.22|27.11|iranian|desert|arid|CPHH|irn_kerman|strait port; desert; coast
 irn_ilam|Ilam (Pusht-i Kuh)|İlam (Puşt-ı Kuh)|46.83|33.17|iranian|plains|semi_arid||irn_khuzestan|border mountain
 irn_isfahan|Isfahan|İsfahan|52.46|32.69|iranian|hills|semi_arid|HH|irn_isfahan|oasis city; city hinterland (Isfahan)
 irn_jibal|Rayy (Tehran)|Rey (Tahran)|51.35|35.3|iranian|hills|semi_arid||irn_jibal|capital hinterland; city hinterland (Tehran)
-irn_jiroft|Jiroft & Bam|Ciruft ve Bem|58.32|28.13|iranian|plains|semi_arid||irn_kerman|oasis
+irn_jiroft|Jiroft & Bam|Ciruft ve Bem|58.32|28.13|iranian|desert|arid||irn_kerman|oasis; desert
 irn_kashan|Kashan & Natanz|Kâşân ve Natanz|52.47|33.85|iranian|plains|semi_arid||irn_isfahan|oasis
-irn_kerman|Kerman|Kirman|56.86|30.33|iranian|plains|semi_arid||irn_kerman|desert oasis
+irn_kerman|Kerman|Kirman|56.86|30.33|iranian|desert|arid||irn_kerman|desert oasis; desert
 irn_kermanshah|Kermanshah|Kirmanşah|46.61|34.45|iranian|mountains|highland||irn_azerbaijan_persia|Zagros pass; mountain
-irn_khorasan|Khorasan (Mashhad)|Horasan (Meşhed)|59.47|36.4|iranian|hills|semi_arid||irn_khorasan|holy city; city hinterland (Mashhad)
+irn_khorasan|Khorasan (Mashhad)|Horasan (Meşhed)|59.47|36.4|iranian|desert|arid||irn_khorasan|holy city; desert; city hinterland (Mashhad)
 irn_khuzestan|Khuzestan (Susa & Ahvaz)|Huzistan (Sus ve Ahvaz)|48.96|31.5|iranian|hills|semi_arid|CP|irn_khuzestan|river plain; river valley (Karkheh); coast
 irn_kohgiluyeh|Kohgiluyeh & Boyer-Ahmad|Kohgilüye ve Boyer-Ahmed|50.73|30.81|iranian|mountains|highland||irn_khuzestan|Zagros; mountain
 irn_kurdistan_ir|Kurdistan (Sanandaj)|Kürdistan (Senendec)|46.95|35.72|iranian|hills|semi_arid||irn_azerbaijan_persia|mountain
-irn_larestan|Larestan (South Fars)|Laristan (Güney Fars)|54.07|28.21|iranian|mountains|highland||irn_fars|desert; mountain
+irn_larestan|Larestan (South Fars)|Laristan (Güney Fars)|54.07|28.21|iranian|desert|arid||irn_fars|desert; mountain; desert
 irn_luristan|Luristan|Lorestan|48.41|33.48|iranian|mountains|highland||irn_khuzestan|Zagros; mountain; river valley (Karkheh)
 irn_makran|Makran (Baluchistan)|Mekran (Belucistan)|60.91|27.04|iranian|plains|semi_arid|CP|irn_kerman|arid coast; coast
 irn_mazandaran|Mazandaran (Tabaristan)|Mazenderan (Taberistan)|52.36|36.38|iranian|mountains|highland||irn_jibal|caspian coast; mountain
-irn_nishapur|Nishapur & Sabzevar|Nişabur ve Sebzevar|57.75|35.53|iranian|plains|semi_arid||irn_khorasan|Silk Road
-irn_north_khorasan|North Khorasan (Bojnord)|Kuzey Horasan (Bucnurd)|57.03|37.4|iranian|plains|semi_arid||irn_khorasan|mountain; river valley (Atrek)
+irn_nishapur|Nishapur & Sabzevar|Nişabur ve Sebzevar|57.75|35.53|iranian|desert|arid||irn_khorasan|Silk Road; desert
+irn_north_khorasan|North Khorasan (Bojnord)|Kuzey Horasan (Bucnurd)|57.03|37.4|iranian|desert|arid||irn_khorasan|mountain; desert; river valley (Atrek)
 irn_qazvin|Qazvin|Kazvin|49.72|36.09|iranian|plains|semi_arid||irn_jibal|pass
-irn_quhistan|Quhistan (Birjand)|Kuhistan (Birced)|59.61|32.36|iranian|plains|semi_arid||irn_khorasan|desert
-irn_semnan|Semnan (Qumis)|Semnan (Kumis)|54.65|35.47|iranian|plains|semi_arid||irn_jibal|desert edge
-irn_sistan|Sistan (Zabol)|Sistan (Zabol)|60.49|30.05|iranian|plains|semi_arid||irn_kerman|lake delta
-irn_torbat|Torbat & Tayyebat|Turbet ve Tayyebat|59.68|34.71|iranian|plains|semi_arid||irn_khorasan|frontier; river valley (Hari)
+irn_quhistan|Quhistan (Birjand)|Kuhistan (Birced)|59.61|32.36|iranian|desert|arid||irn_khorasan|desert; desert
+irn_semnan|Semnan (Qumis)|Semnan (Kumis)|54.65|35.47|iranian|desert|arid||irn_jibal|desert edge; desert
+irn_sistan|Sistan (Zabol)|Sistan (Zabol)|60.49|30.05|iranian|desert|arid||irn_kerman|lake delta; desert
+irn_torbat|Torbat & Tayyebat|Turbet ve Tayyebat|59.68|34.71|iranian|desert|arid||irn_khorasan|frontier; desert; river valley (Hari)
 irn_urmia|Urmia (West Azerbaijan)|Urmiye (Batı Azerbaycan)|45.26|37.73|iranian|plains|semi_arid||irn_azerbaijan_persia|lake
-irn_yazd|Yazd|Yezd|55.6|32.57|iranian|plains|semi_arid||irn_isfahan|desert oasis
+irn_yazd|Yazd|Yezd|55.6|32.57|iranian|desert|arid||irn_isfahan|desert oasis; desert
 irn_zanjan|Zanjan|Zencan|48.36|36.52|iranian|plains|semi_arid||irn_azerbaijan_persia|plains region
 irq_anbar|Anbar (Euphrates & Western Desert)|Enbar (Fırat ve Batı Çölü)|41.62|32.97|arabic|desert|arid||irq_baghdad|desert river; desert; river valley (Euphrates)
 irq_baghdad|Baghdad & Karbala|Bağdat ve Kerbela|44.58|32.32|arabic|plains|semi_arid|HHH|irq_baghdad|river junction; river valley (Euphrates); city hinterland (Baghdad)
@@ -499,7 +499,7 @@ irq_erbil|Erbil (Arbela)|Erbil (Arbela)|44.2|36.34|arabic|plains|semi_arid||irq_
 irq_kirkuk|Kirkuk (Tamim)|Kerkük|44.14|35.35|arabic|plains|semi_arid||irq_mosul|oil
 irq_marshes|Southern Marshes (Maysan & Dhi Qar)|Güney Bataklıkları (Maysan ve Zikar)|46.72|31.58|arabic|plains|semi_arid||irq_basra|marsh; river valley (Tigris)
 irq_mosul|Mosul (Nineveh)|Musul (Ninova)|42.47|36.02|arabic|plains|semi_arid||irq_mosul|river city; river valley (Tigris); city hinterland (Mosul)
-irq_muthanna|Muthanna (Southern Desert)|Müsenna (Güney Çölü)|45.37|30.18|arabic|plains|semi_arid||irq_basra|desert; river valley (Euphrates)
+irq_muthanna|Muthanna (Southern Desert)|Müsenna (Güney Çölü)|45.37|30.18|arabic|desert|arid||irq_basra|desert; desert; river valley (Euphrates)
 irq_najaf|Najaf (Kufa)|Necef (Kûfe)|43.81|31.11|arabic|plains|semi_arid||irq_baghdad|desert edge
 irq_salahaddin|Salah ad-Din (Tikrit & Samarra)|Selahaddin (Tikrit ve Samarra)|43.64|34.52|arabic|plains|semi_arid||irq_baghdad|river valley; river valley (Tigris)
 irq_sulaymaniyah|Sulaymaniyah (Shahrizor)|Süleymaniye (Şehrizor)|45.3|35.54|arabic|plains|semi_arid||irq_mosul|mountain
@@ -601,7 +601,7 @@ kor_north_gyeongsang|North Gyeongsang (Daegu)|Kuzey Gyeongsang (Taegu)|128.71|36
 kor_south_gyeongsang|South Gyeongsang (Busan)|Güney Gyeongsang (Busan)|128.4|35.33|sinic|plains|humid_subtropical|CP|kor_north_gyeongsang|port strait; river valley (Nakdong); city hinterland (Busan); coast
 kos_dukagjin|Dukagjin (Prizren & Peć)|Dukagjin (Prizren ve İpek)|20.56|42.46|slavic|hills|continental||kos_kosovo|basin
 kos_kosovo|Kosovo Field (Priština)|Kosova Ovası (Priştine)|21.13|42.66|slavic|hills|continental||kos_kosovo|plain
-kwt_kuwait|Kuwait|Kuveyt|47.6|29.34|arabic|plains|semi_arid|CP|kwt_kuwait|city hinterland (Kuwait City); coast
+kwt_kuwait|Kuwait|Kuveyt|47.6|29.34|arabic|desert|arid|CP|kwt_kuwait|desert; city hinterland (Kuwait City); coast
 lao_champasak|Champasak (Bolaven)|Champasak (Bolaven)|106.44|15.19|southeast_asian|mountains|highland||lao_laos|plateau; mountain; river valley (Kong)
 lao_laos|Luang Prabang|Luang Prabang|101.89|20.69|southeast_asian|plains|tropical_monsoon||lao_laos|river mountain; river valley (Nam Ou)
 lao_savannakhet|Savannakhet & Khammouan|Savannakhet ve Khammouan|105.51|16.99|southeast_asian|mountains|highland||lao_laos|river plain; mountain; river valley (Mekong)
@@ -646,7 +646,7 @@ mar_marrakesh|Marrakesh (Haouz)|Marakeş (Havz)|-8.37|31.63|arabic|mountains|hig
 mar_oriental|Oriental (Oujda)|Şarkî (Ucda)|-2.56|33.44|arabic|mountains|highland|CP|mar_fez|steppe frontier; mountain; coast
 mar_rif|Rif & Taza|Rif ve Taza|-4.1|34.42|arabic|mountains|highland|CP|mar_fez|mountain pass; mountain; coast
 mar_sahara_atlantic|Laâyoune & Dakhla (Saharan Coast)|Layun ve Dahla (Sahra Kıyısı)|-14.21|24.47|arabic|desert|arid|CP|mar_marrakesh|desert coast; desert; coast
-mar_souss|Souss, Massa & Draa|Sus, Massa ve Dra|-7.35|30.49|arabic|mountains|highland|CP|mar_marrakesh|river valley; mountain; coast
+mar_souss|Souss, Massa & Draa|Sus, Massa ve Dra|-7.35|30.49|arabic|desert|arid|CP|mar_marrakesh|river valley; mountain; desert; coast
 mar_tadla|Tadla & Azilal (Middle Atlas)|Tadla ve Azilal (Orta Atlas)|-6.44|32.14|arabic|mountains|highland||mar_marrakesh|mountain; mountain
 mar_tafilalet|Meknes & Tafilalet|Mekn ve Tafilalt|-4.8|32.08|arabic|mountains|highland||mar_fez|oasis mountain; mountain
 mar_tangier|Tangier & Tetouan (Strait)|Tanca ve Tetuan (Boğaz)|-5.43|35.25|arabic|mountains|highland|CP|mar_fez|strait; mountain; coast
@@ -677,7 +677,7 @@ mmr_upper_burma|Upper Burma (Mandalay & Magway)|Yukarı Burma (Mandalay ve Magwa
 mne_montenegro|Zeta & the Coast|Zeta ve Kıyı|18.99|42.55|slavic|mountains|mediterranean|CP|mne_montenegro|coast; mountain; coast
 mne_montenegro_highlands|Montenegrin Highlands|Karadağ Yaylaları|19.47|43.0|slavic|mountains|continental||mne_montenegro|mountain; mountain; river valley (Drina)
 mng_govi_altay|Govi-Altai & Zavkhan|Gobi-Altay ve Zavhan|96.12|46.46|sinic|mountains|continental||mng_govi_altay|mountain desert; mountain; river valley (Ider)
-mng_khangai_south|Khangai (Övörhangay & Bayankhongor)|Hangay (Övörhangay ve Bayanhongor)|100.64|45.46|sinic|mountains|continental||mng_omnogovi|mountain pasture; mountain; river valley (Orkhon)
+mng_khangai_south|Khangai (Övörhangay & Bayankhongor)|Hangay (Övörhangay ve Bayanhongor)|100.64|45.46|sinic|desert|arid||mng_omnogovi|mountain pasture; mountain; desert; river valley (Orkhon)
 mng_khentii|Khentii & Dornod (Eastern Steppe)|Hentiy ve Dornod (Doğu Bozkırı)|113.48|47.54|sinic|desert|arid||mng_omnogovi|steppe; desert; river valley (Onon)
 mng_khovd|Khovd & Bayan-Ölgii (Altai)|Hovd ve Bayan-Ölgii (Altay)|91.34|47.53|sinic|mountains|continental||mng_govi_altay|mountain; mountain
 mng_omnogovi|Gobi (Ömnögovi & Dornogovi)|Gobi (Ömnögovi ve Dornogovi)|106.4|44.17|sinic|desert|arid||mng_omnogovi|desert; desert
@@ -728,8 +728,8 @@ npl_nepal|Kathmandu Valley (Bagmati)|Katmandu Vadisi (Bagmati)|84.79|27.74|indic
 npl_western_nepal|Western Nepal (Karnali)|Batı Nepal (Karnali)|82.03|29.02|indic|mountains|highland||npl_nepal|mountain; mountain; river valley (Ghaghara)
 nzl_canterbury|Canterbury|Canterbury Bölgesi|170.46|-44.05|oceanian|hills|continental|CP|nzl_canterbury|island; river valley (Clutha / Mata-Au)
 nzl_waikato|Waikato|Waikato Bölgesi|175.72|-38.59|oceanian|plains|humid_subtropical|CP|nzl_waikato|island; river valley (Waikato); city hinterland (Auckland)
-omn_dhofar|Dhofar (Salalah)|Dofar (Salale)|54.49|18.57|arabic|steppe|semi_arid|CP|omn_oman|incense coast; steppe; coast
-omn_interior|Interior (Dakhiliyah & Buraimi)|İç Umman (Dahiliye ve Buraymi)|56.7|22.84|arabic|hills|semi_arid||omn_oman|oasis
+omn_dhofar|Dhofar (Salalah)|Dofar (Salale)|54.49|18.57|arabic|desert|arid|CP|omn_oman|incense coast; desert; coast
+omn_interior|Interior (Dakhiliyah & Buraimi)|İç Umman (Dahiliye ve Buraymi)|56.7|22.84|arabic|desert|arid||omn_oman|oasis; desert
 omn_musandam|Musandam (Strait of Hormuz)|Musandam (Hürmüz Boğazı)|56.28|25.96|arabic|mountains|highland|CP|omn_oman|strait; mountain; coast
 omn_oman|Muscat & Batinah|Maskat ve Batine|57.53|23.72|arabic|mountains|highland|CP|omn_oman|gulf port; mountain; coast
 omn_sharqiyah|Sharqiyah (Sur)|Şarkiye (Sur)|58.75|21.94|arabic|steppe|semi_arid|CP|omn_oman|coast; steppe; coast
@@ -796,7 +796,7 @@ prt_north_portugal|Minho & Douro Litoral (Porto)|Minho ve Douro (Porto)|-8.41|41
 prt_south_portugal|Lisbon & Estremadura|Lizbon ve Estremadura|-8.69|39.06|latin|hills|mediterranean|CPHH|prt_south_portugal|capital hinterland; river valley (Tagus); city hinterland (Lisbon); coast
 prt_tras_os_montes|Trás-os-Montes|Trás-os-Montes|-7.18|41.53|latin|hills|continental||prt_north_portugal|mountain; river valley (Douro)
 pry_paraguay|Paraguay|Paraguay|-58.4|-23.23|latin_american|plains|tropical_savanna||pry_paraguay|river valley (Paraná River); city hinterland (Asuncion)
-qat_qatar|Qatar|Katar|51.18|25.31|arabic|plains|semi_arid|CP|qat_qatar|city hinterland (Doha); coast
+qat_qatar|Qatar|Katar|51.18|25.31|arabic|desert|arid|CP|qat_qatar|desert; city hinterland (Doha); coast
 rou_banat|Banat (Timișoara)|Banat (Temeşvar)|21.69|45.45|latin|mountains|continental||rou_transylvania|plain; mountain
 rou_bukovina|Bukovina (Suceava)|Bukovina (Suçava)|25.73|47.53|latin|mountains|continental||rou_moldavia|mountain; mountain
 rou_crisana|Crișana (Oradea)|Krişana (Varat)|21.97|46.59|latin|mountains|continental||rou_transylvania|plain; mountain; river valley (Mureș)
@@ -867,19 +867,19 @@ rus_west_siberia|Western Siberian Plain (Omsk & Tomsk)|Batı Sibirya Ovası (Oms
 rus_yamal|Yamal|Yamal|74.51|67.15|slavic|arctic|arctic|CP|rus_urals|arctic; river valley (Taz); coast
 rwa_rwanda|Rwanda|Ruanda|29.92|-1.99|african|jungle|tropical_wet||rwa_rwanda|jungle region
 sah_w_sahara|W. Sahara|Batı Sahra|-12.22|24.23|arabic|desert|arid|C|sah_w_sahara|desert; coast
-sau_al_hasa|Al-Hasa & Qatif (Eastern Coast)|Ahsa ve Katif (Doğu Kıyısı)|49.24|25.0|arabic|plains|semi_arid|CP|sau_al_hasa|gulf oasis; city hinterland (Ad Damman); coast
-sau_asir|Asir & Tihama|Asir ve Tihame|42.93|18.97|arabic|hills|semi_arid|CP|sau_hejaz|mountain; coast
-sau_hafar|Hafar al-Batin (Wadi al-Batin)|Hafr el-Batın|46.89|27.76|arabic|plains|semi_arid|CP|sau_al_hasa|desert frontier; coast
-sau_hail|Ha'il (Jabal Shammar)|Hayil (Cebel Şammar)|41.61|27.35|arabic|plains|semi_arid||sau_najd|mountain oasis
-sau_hejaz|Hejaz (Mecca & Jeddah)|Hicaz (Mekke ve Cidde)|41.22|21.52|arabic|plains|semi_arid|CPHH|sau_hejaz|holy city port; city hinterland (Jeddah); coast
+sau_al_hasa|Al-Hasa & Qatif (Eastern Coast)|Ahsa ve Katif (Doğu Kıyısı)|49.24|25.0|arabic|desert|arid|CP|sau_al_hasa|gulf oasis; desert; city hinterland (Ad Damman); coast
+sau_asir|Asir & Tihama|Asir ve Tihame|42.93|18.97|arabic|desert|arid|CP|sau_hejaz|mountain; desert; coast
+sau_hafar|Hafar al-Batin (Wadi al-Batin)|Hafr el-Batın|46.89|27.76|arabic|desert|arid|CP|sau_al_hasa|desert frontier; desert; coast
+sau_hail|Ha'il (Jabal Shammar)|Hayil (Cebel Şammar)|41.61|27.35|arabic|desert|arid||sau_najd|mountain oasis; desert
+sau_hejaz|Hejaz (Mecca & Jeddah)|Hicaz (Mekke ve Cidde)|41.22|21.52|arabic|desert|arid|CPHH|sau_hejaz|holy city port; desert; city hinterland (Jeddah); coast
 sau_jawf|Northern Frontier (Al Jawf)|Kuzey Sınır Bölgesi (Cevf)|40.46|29.81|arabic|desert|arid|C|sau_najd|desert frontier; desert; coast
-sau_medina|Medina (Yathrib)|Medine|39.52|24.89|arabic|hills|semi_arid|CP|sau_hejaz|holy city oasis; city hinterland (Medina); coast
-sau_najd|Najd (Riyadh)|Necid (Riyad)|45.89|24.48|arabic|plains|semi_arid||sau_najd|oasis; city hinterland (Riyadh)
+sau_medina|Medina (Yathrib)|Medine|39.52|24.89|arabic|desert|arid|CP|sau_hejaz|holy city oasis; desert; city hinterland (Medina); coast
+sau_najd|Najd (Riyadh)|Necid (Riyad)|45.89|24.48|arabic|desert|arid||sau_najd|oasis; desert; city hinterland (Riyadh)
 sau_najran|Najran|Necran|45.83|18.29|arabic|desert|arid||sau_najd|oasis; desert
-sau_qassim|Qassim (Buraydah)|Kasım (Bureyde)|43.22|25.95|arabic|plains|semi_arid||sau_najd|oasis
+sau_qassim|Qassim (Buraydah)|Kasım (Bureyde)|43.22|25.95|arabic|desert|arid||sau_najd|oasis; desert
 sau_rub_al_khali|Rub al-Khali (Empty Quarter)|Rub el-Hali|51.27|20.97|arabic|desert|arid||sau_al_hasa|desert; desert
 sau_tabuk|Tabuk (Midian)|Tebük (Medyen)|37.29|27.39|arabic|hills|semi_arid|CP|sau_hejaz|desert frontier; coast
-sau_wadi_dawasir|Wadi ad-Dawasir (South Najd)|Vadi ed-Devasir (Güney Necid)|45.17|21.5|arabic|steppe|semi_arid||sau_najd|oasis; steppe
+sau_wadi_dawasir|Wadi ad-Dawasir (South Najd)|Vadi ed-Devasir (Güney Necid)|45.17|21.5|arabic|desert|arid||sau_najd|oasis; desert
 sdn_north_kordufan|North Kordufan|Kuzey Kordofan Eyaleti|29.74|13.12|arabic|desert|arid||sdn_north_kordufan|desert; river valley (Blue Nile); city hinterland (Khartoum)
 sdn_northern|Northern|Kuzey Eyaleti|30.11|18.48|arabic|desert|arid|CP|sdn_northern|desert; river valley (Nile); coast
 sds_s_sudan|S. Sudan|Güney Sudan|30.3|7.28|african|jungle|tropical_wet||sds_s_sudan|river valley (White Nile)
@@ -887,7 +887,7 @@ sen_senegal|Senegal|Senegal|-14.47|14.37|african|steppe|semi_arid|CP|sen_senegal
 slb_solomon_is|Solomon Is.|Solomon Adaları|159.44|-8.85|oceanian|jungle|tropical_wet|CP|slb_solomon_is|island
 sle_sierra_leone|Sierra Leone|Sierra Leone|-11.8|8.56|african|hills|tropical_wet|CP|sle_sierra_leone|coast
 slv_el_salvador|El Salvador|El Salvador|-88.87|13.73|native_american|plains|tropical_savanna|CP|slv_el_salvador|river valley (Lempa); city hinterland (San Salvador); coast
-som_somalia|Somalia|Somali|45.85|6.06|african|jungle|tropical_wet|CP|som_somalia|river valley (Jubba); city hinterland (Mogadishu); coast
+som_somalia|Somalia|Somali|45.85|6.06|african|desert|arid|CP|som_somalia|desert; river valley (Jubba); city hinterland (Mogadishu); coast
 srb_nis|Niš & South Morava|Niş ve Güney Morava|21.84|43.08|slavic|hills|continental||srb_serbia|river valley; river valley (Great Morava)
 srb_raska|Raška & Zlatibor|Raşka ve Zlatibor|20.11|43.57|slavic|mountains|continental||srb_serbia|mountain; mountain
 srb_serbia|Šumadija & Belgrade|Şumadiya ve Belgrad|20.4|44.57|slavic|hills|continental||srb_serbia|river junction; mountain; river valley (Danube); city hinterland (Belgrade)
@@ -914,11 +914,11 @@ swe_varmland|Värmland & Närke|Värmland ve Närke|13.71|59.66|germanic|forest|
 swz_eswatini|eSwatini|Esvatini|31.48|-26.56|african|mountains|highland||swz_eswatini|mountain
 syr_aleppo|Aleppo|Halep|37.6|36.23|arabic|plains|semi_arid|HH|syr_aleppo|trade city; river valley (Euphrates); city hinterland (Aleppo)
 syr_damascus|Damascus (Ghouta)|Şam (Guta)|36.98|33.45|arabic|desert|arid|HH|syr_damascus|oasis city; desert; city hinterland (Damascus)
-syr_deir_ez_zor|Deir ez-Zor (Middle Euphrates)|Deyrizor (Orta Fırat)|40.28|35.15|arabic|plains|semi_arid||syr_jazira|river; river valley (Euphrates)
+syr_deir_ez_zor|Deir ez-Zor (Middle Euphrates)|Deyrizor (Orta Fırat)|40.28|35.15|arabic|desert|arid||syr_jazira|river; desert; river valley (Euphrates)
 syr_hama_idlib|Hama & Idlib|Hama ve İdlib|36.99|35.42|arabic|plains|semi_arid||syr_aleppo|river valley
 syr_hasakah|Khabur (Hasakah)|Habur (Haseke)|40.91|36.51|arabic|plains|semi_arid||syr_jazira|steppe
 syr_hauran|Hauran (Daraa & Suwayda)|Havran (Dera ve Süveyda)|36.6|32.8|arabic|plains|semi_arid||syr_damascus|basalt plain
-syr_homs_palmyra|Homs & Palmyra (Syrian Steppe)|Humus ve Palmira (Suriye Bozkırı)|38.3|34.34|arabic|plains|semi_arid||syr_damascus|desert steppe; city hinterland (Hims)
+syr_homs_palmyra|Homs & Palmyra (Syrian Steppe)|Humus ve Palmira (Suriye Bozkırı)|38.3|34.34|arabic|desert|arid||syr_damascus|desert steppe; desert; city hinterland (Hims)
 syr_jazira|Raqqa (Euphrates Jazira)|Rakka (Fırat Cezire)|38.94|35.99|arabic|plains|semi_arid||syr_jazira|river; river valley (Euphrates)
 syr_latakia|Latakia Coast|Lazkiye Kıyısı|36.02|35.57|arabic|plains|mediterranean|CP|syr_aleppo|coast; coast
 syr_tartus|Tartus Coast|Tartus Kıyısı|36.07|34.96|arabic|plains|mediterranean|CP|syr_damascus|coast; coast
@@ -940,7 +940,7 @@ tjk_khatlon|Khatlon (Kulob)|Hatlon (Külab)|69.13|37.83|iranian|plains|semi_arid
 tjk_pamir|Pamir (Gorno-Badakhshan)|Pamir (Dağlık Bedehşan)|72.88|38.11|iranian|mountains|highland||tjk_tajikistan|mountain; mountain; river valley (Panj)
 tjk_sughd|Sughd (Khujand)|Sogd (Hucand)|69.22|39.79|iranian|plains|semi_arid||tjk_tajikistan|Silk Road; river valley (Zeravshan)
 tjk_tajikistan|Dushanbe & Karategin|Duşanbe ve Karategin|70.12|38.89|iranian|plains|semi_arid||tjk_tajikistan|mountain valley; city hinterland (Dushanbe)
-tkm_balkan|Balkan (Caspian Coast)|Balkan (Hazar Kıyısı)|55.02|39.8|turkic|plains|semi_arid|C|tkm_turkmenistan|desert coast; river valley (Atrek); coast
+tkm_balkan|Balkan (Caspian Coast)|Balkan (Hazar Kıyısı)|55.02|39.8|turkic|desert|arid|C|tkm_turkmenistan|desert coast; desert; river valley (Atrek); coast
 tkm_chardzhou|Chardzhou (Amu Darya)|Çarcev (Ceyhun)|63.18|38.9|turkic|desert|arid||tkm_turkmenistan|river crossing; desert; river valley (Amu Darya)
 tkm_dashoguz|Dashoguz (Khorezm Oasis)|Daşoğuz (Harezm Vahası)|58.71|41.16|turkic|desert|arid||tkm_turkmenistan|oasis; desert
 tkm_merv|Merv (Mary)|Merv (Mary)|62.32|37.21|turkic|desert|arid||tkm_turkmenistan|oasis city; desert
@@ -1049,10 +1049,10 @@ vnm_tonkin_delta|Tonkin Delta (Hanoi)|Tonkin Deltası (Hanoi)|106.13|20.9|southe
 vnm_viet_bac|Northeast Tonkin (Lang Son & Ha Long)|Kuzeydoğu Tonkin (Lang Son ve Ha Long)|106.06|22.16|southeast_asian|plains|tropical_monsoon|CP|vnm_nghe_an|frontier coast; river valley (Zuo); coast
 vut_vanuatu|Vanuatu|Vanuatu|167.69|-16.22|oceanian|plains|tropical_savanna|CP|vut_vanuatu|island
 yem_aden|Aden (Lahij & Abyan)|Aden (Lahic ve Ebyen)|45.42|13.69|arabic|plains|tropical_savanna|CPHH|yem_yemen|port; city hinterland (Aden); coast
-yem_hadramawt|Hadramawt|Hadramut|49.19|16.7|arabic|hills|semi_arid|CP|yem_yemen|wadi; coast
-yem_mahra|Al Mahrah|Mehre|51.72|16.48|arabic|hills|semi_arid|CP|yem_yemen|desert coast; coast
-yem_marib|Ma'rib & Shabwah|Marib ve Şabva|46.16|15.65|arabic|steppe|semi_arid|CP|yem_yemen|incense road; steppe; coast
-yem_sadah|Sa'dah & Hajjah|Saada ve Hacce|43.76|16.55|arabic|plains|semi_arid|C|yem_yemen|mountain; coast
+yem_hadramawt|Hadramawt|Hadramut|49.19|16.7|arabic|desert|arid|CP|yem_yemen|wadi; desert; coast
+yem_mahra|Al Mahrah|Mehre|51.72|16.48|arabic|desert|arid|CP|yem_yemen|desert coast; desert; coast
+yem_marib|Ma'rib & Shabwah|Marib ve Şabva|46.16|15.65|arabic|desert|arid|CP|yem_yemen|incense road; desert; coast
+yem_sadah|Sa'dah & Hajjah|Saada ve Hacce|43.76|16.55|arabic|desert|arid|C|yem_yemen|mountain; desert; coast
 yem_taizz_ibb|Taiz & Ibb (Southern Highlands)|Taiz ve İbb (Güney Yaylaları)|43.93|13.63|arabic|plains|tropical_savanna|CP|yem_yemen|fertile highland; coast
 yem_tihama|Tihama (Hodeidah)|Tihame (Hudeyde)|43.31|14.89|arabic|plains|tropical_savanna|CP|yem_yemen|red sea coast; coast
 yem_yemen|Sana'a (Yemeni Highlands)|Sana (Yemen Yaylaları)|44.35|15.05|arabic|plains|semi_arid||yem_yemen|highland; city hinterland (Sanaa)
