@@ -1,0 +1,642 @@
+[
+{
+"name": "Arctic Ocean",
+"name_tr": "Kuzey Buz Denizi",
+"pos": [
+-1626.9,
+-1065.8
+],
+"rank": 0,
+"size": 62.76
+},
+{
+"name": "Atlantic Ocean",
+"name_tr": "Atlas Okyanusu",
+"pos": [
+-312.0,
+-580.2
+],
+"rank": 0,
+"size": 55.87
+},
+{
+"name": "Pacific Ocean",
+"name_tr": "Büyük Okyanus",
+"pos": [
+-1348.7,
+-206.8
+],
+"rank": 0,
+"size": 62.56
+},
+{
+"name": "Pacific Ocean",
+"name_tr": "Büyük Okyanus",
+"pos": [
+-1186.8,
+310.1
+],
+"rank": 0,
+"size": 80.34
+},
+{
+"name": "Indian Ocean",
+"name_tr": "Hint Okyanusu",
+"pos": [
+846.9,
+266.5
+],
+"rank": 0,
+"size": 78.86
+},
+{
+"name": "Atlantic Ocean",
+"name_tr": "Atlas Okyanusu",
+"pos": [
+-135.5,
+328.1
+],
+"rank": 0,
+"size": 64.3
+},
+{
+"name": "Black Sea",
+"name_tr": "Karadeniz",
+"pos": [
+311.7,
+-464.6
+],
+"rank": 1,
+"size": 6.84
+},
+{
+"name": "Philippine Sea",
+"name_tr": "Filipin Denizi",
+"pos": [
+1333.1,
+-177.8
+],
+"rank": 1,
+"size": 21.9
+},
+{
+"name": "Tasman Sea",
+"name_tr": "Tasman Denizi",
+"pos": [
+1605.8,
+423.9
+],
+"rank": 1,
+"size": 18.78
+},
+{
+"name": "Bay of Bengal",
+"name_tr": "Bengal Körfezi",
+"pos": [
+864.8,
+-125.0
+],
+"rank": 1,
+"size": 13.06
+},
+{
+"name": "South China Sea",
+"name_tr": "Güney Çin Denizi",
+"pos": [
+1147.3,
+-140.5
+],
+"rank": 1,
+"size": 16.25
+},
+{
+"name": "Arabian Sea",
+"name_tr": "Umman Denizi",
+"pos": [
+635.1,
+-133.6
+],
+"rank": 1,
+"size": 18.6
+},
+{
+"name": "Caribbean Sea",
+"name_tr": "Karayip Denizi",
+"pos": [
+-784.5,
+-137.4
+],
+"rank": 1,
+"size": 15.44
+},
+{
+"name": "Gulf of Mexico",
+"name_tr": "Meksika Körfezi",
+"pos": [
+-928.1,
+-257.2
+],
+"rank": 1,
+"size": 11.23
+},
+{
+"name": "Labrador Sea",
+"name_tr": "Labrador Denizi",
+"pos": [
+-523.2,
+-624.3
+],
+"rank": 1,
+"size": 11.3
+},
+{
+"name": "Caspian Sea",
+"name_tr": "Hazar Denizi",
+"pos": [
+514.3,
+-406.9
+],
+"rank": 1,
+"size": 6.41
+},
+{
+"name": "Red Sea",
+"name_tr": "Kızıldeniz",
+"pos": [
+402.5,
+-179.1
+],
+"rank": 1,
+"size": 6.22
+},
+{
+"name": "Persian Gulf",
+"name_tr": "Basra Körfezi",
+"pos": [
+529.8,
+-261.0
+],
+"rank": 1,
+"size": 4.7
+},
+{
+"name": "Norwegian Sea",
+"name_tr": "Norveç Denizi",
+"pos": [
+9.6,
+-793.7
+],
+"rank": 2,
+"size": 18.47
+},
+{
+"name": "Bay of Biscay",
+"name_tr": "Biskay Körfezi",
+"pos": [
+-45.1,
+-491.1
+],
+"rank": 2,
+"size": 4.99
+},
+{
+"name": "Mozambique Channel",
+"name_tr": "Mozambik Kanalı",
+"pos": [
+394.9,
+214.0
+],
+"rank": 2,
+"size": 10.87
+},
+{
+"name": "Gulf of Guinea",
+"name_tr": "Gine Körfezi",
+"pos": [
+41.1,
+-29.6
+],
+"rank": 2,
+"size": 7.21
+},
+{
+"name": "Baltic Sea",
+"name_tr": "Baltık Denizi",
+"pos": [
+196.4,
+-631.2
+],
+"rank": 2,
+"size": 5.52
+},
+{
+"name": "Barents Sea",
+"name_tr": "Barents Denizi",
+"pos": [
+396.4,
+-931.9
+],
+"rank": 2,
+"size": 20.9
+},
+{
+"name": "North Sea",
+"name_tr": "Kuzey Denizi",
+"pos": [
+22.8,
+-641.9
+],
+"rank": 2,
+"size": 8.57
+},
+{
+"name": "Yellow Sea",
+"name_tr": "Sarı Deniz",
+"pos": [
+1239.5,
+-366.0
+],
+"rank": 2,
+"size": 6.13
+},
+{
+"name": "East China Sea",
+"name_tr": "Doğu Çin Denizi",
+"pos": [
+1258.2,
+-303.4
+],
+"rank": 2,
+"size": 8.21
+},
+{
+"name": "English Channel",
+"name_tr": "Manş Denizi",
+"pos": [
+-28.2,
+-542.0
+],
+"rank": 3,
+"size": 3.47
+},
+{
+"name": "Adriatic Sea",
+"name_tr": "Adriyatik Denizi",
+"pos": [
+179.3,
+-442.3
+],
+"rank": 3,
+"size": 3.94
+},
+{
+"name": "Aegean Sea",
+"name_tr": "Ege Denizi",
+"pos": [
+249.6,
+-411.1
+],
+"rank": 4,
+"size": 3.51
+},
+{
+"name": "Sargasso Sea",
+"name_tr": "Sargasso Denizi",
+"pos": [
+-574.6,
+-283.2
+],
+"rank": 2,
+"size": 16.63
+},
+{
+"name": "Mediterranean Sea",
+"name_tr": "Akdeniz",
+"pos": [
+288.6,
+-348.9
+],
+"rank": 1,
+"size": 12.5
+},
+{
+"name": "Coral Sea",
+"name_tr": "Mercan Denizi",
+"pos": [
+1570.5,
+188.8
+],
+"rank": 1,
+"size": 18.45
+},
+{
+"name": "Sea of Japan",
+"name_tr": "Japon Denizi",
+"pos": [
+1334.7,
+-412.0
+],
+"rank": 1,
+"size": 10.16
+},
+{
+"name": "Sea of Okhotsk",
+"name_tr": "Okhotsk Denizi",
+"pos": [
+1495.1,
+-585.3
+],
+"rank": 4,
+"size": 13.96
+},
+{
+"name": "Celebes Sea",
+"name_tr": "Selebes Denizi",
+"pos": [
+1228.2,
+-36.7
+],
+"rank": 4,
+"size": 6.11
+},
+{
+"name": "Sulu Sea",
+"name_tr": "Sulu Denizi",
+"pos": [
+1199.6,
+-78.7
+],
+"rank": 4,
+"size": 5.18
+},
+{
+"name": "Banda Sea",
+"name_tr": "Banda Denizi",
+"pos": [
+1283.9,
+59.2
+],
+"rank": 4,
+"size": 7.73
+},
+{
+"name": "Irish Sea",
+"name_tr": "İrlanda Denizi",
+"pos": [
+-53.5,
+-590.7
+],
+"rank": 4,
+"size": 2.62
+},
+{
+"name": "Java Sea",
+"name_tr": "Cava Denizi",
+"pos": [
+1096.0,
+48.0
+],
+"rank": 4,
+"size": 6.69
+},
+{
+"name": "Andaman Sea",
+"name_tr": "Andaman Denizi",
+"pos": [
+954.5,
+-99.6
+],
+"rank": 4,
+"size": 7.16
+},
+{
+"name": "Arafura Sea",
+"name_tr": "Arafura Denizi",
+"pos": [
+1352.3,
+93.7
+],
+"rank": 4,
+"size": 7.73
+},
+{
+"name": "Timor Sea",
+"name_tr": "Timor Denizi",
+"pos": [
+1276.5,
+111.9
+],
+"rank": 4,
+"size": 5.77
+},
+{
+"name": "Gulf of Thailand",
+"name_tr": "Tayland Körfezi",
+"pos": [
+1022.4,
+-90.8
+],
+"rank": 4,
+"size": 4.96
+},
+{
+"name": "Gulf of Aden",
+"name_tr": "Aden Körfezi",
+"pos": [
+489.4,
+-127.5
+],
+"rank": 4,
+"size": 4.64
+},
+{
+"name": "Gulf of Oman",
+"name_tr": "Umman Körfezi",
+"pos": [
+595.7,
+-247.7
+],
+"rank": 4,
+"size": 3.11
+},
+{
+"name": "Tyrrhenian Sea",
+"name_tr": "Tiren Denizi",
+"pos": [
+117.6,
+-421.2
+],
+"rank": 4,
+"size": 4.79
+},
+{
+"name": "Sea of Azov",
+"name_tr": "Azak Denizi",
+"pos": [
+372.1,
+-497.0
+],
+"rank": 5,
+"size": 2.09
+},
+{
+"name": "Gulf of Finland",
+"name_tr": "Finlandiya Körfezi",
+"pos": [
+271.2,
+-685.5
+],
+"rank": 4,
+"size": 2.21
+},
+{
+"name": "Gulf of Bothnia",
+"name_tr": "Botna Körfezi",
+"pos": [
+195.8,
+-714.0
+],
+"rank": 4,
+"size": 4.58
+},
+{
+"name": "Ionian Sea",
+"name_tr": "İyon Denizi",
+"pos": [
+187.6,
+-400.5
+],
+"rank": 4,
+"size": 4.2
+},
+{
+"name": "Gulf of Tonkin",
+"name_tr": "Tonkin Körfezi",
+"pos": [
+1074.4,
+-197.3
+],
+"rank": 4,
+"size": 3.16
+},
+{
+"name": "Seto Inland Sea",
+"name_tr": "Seto İç Denizi",
+"pos": [
+1325.0,
+-354.1
+],
+"rank": 4,
+"size": 1.53
+},
+{
+"name": "Taiwan Strait",
+"name_tr": "Tayvan Boğazı",
+"pos": [
+1193.7,
+-247.6
+],
+"rank": 4,
+"size": 2.08
+},
+{
+"name": "Bohai Sea",
+"name_tr": "Bohai Denizi",
+"pos": [
+1200.6,
+-409.7
+],
+"rank": 4,
+"size": 2.85
+},
+{
+"name": "Skagerrak",
+"name_tr": "Skagerrak",
+"pos": [
+91.2,
+-654.9
+],
+"rank": 5,
+"size": 2.23
+},
+{
+"name": "Kattegat",
+"name_tr": "Kattegat",
+"pos": [
+113.2,
+-643.3
+],
+"rank": 5,
+"size": 1.88
+},
+{
+"name": "Gulf of Riga",
+"name_tr": "Riga Körfezi",
+"pos": [
+235.8,
+-652.5
+],
+"rank": 5,
+"size": 1.66
+},
+{
+"name": "Sea of Crete",
+"name_tr": "Girit Denizi",
+"pos": [
+239.9,
+-381.8
+],
+"rank": 5,
+"size": 2.75
+},
+{
+"name": "Ligurian Sea",
+"name_tr": "Ligurya Denizi",
+"pos": [
+89.1,
+-468.7
+],
+"rank": 5,
+"size": 1.21
+},
+{
+"name": "Alboran Sea",
+"name_tr": "Alboran Denizi",
+"pos": [
+-34.3,
+-375.7
+],
+"rank": 7,
+"size": 2.34
+},
+{
+"name": "Gulf of Suez",
+"name_tr": "Süveyş Körfezi",
+"pos": [
+338.0,
+-284.6
+],
+"rank": 6,
+"size": 0.99
+},
+{
+"name": "Sea of Marmara",
+"name_tr": "Marmara Denizi",
+"pos": [
+283.5,
+-430.8
+],
+"rank": 6,
+"size": 1.11
+},
+{
+"name": "Gulf of Aqaba",
+"name_tr": "Akabe Körfezi",
+"pos": [
+347.7,
+-298.4
+],
+"rank": 7,
+"size": 0.55
+}
+]

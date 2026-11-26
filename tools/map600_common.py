@@ -84,3 +84,31 @@ def kmeans(items, k, iters=40):
         C = newC
     lab = ((P[:, None, :] - C[None, :, :]) ** 2).sum(-1).argmin(1)
     return [[i for i in range(n) if lab[i] == j] for j in range(k) if (lab == j).any()]
+
+
+def snap_simplify(geoms, tol=0.035):
+    """Same recipe as gen_map_step2: drop holes/slivers, snap to 0.0005 deg, coverage-simplify (shared borders stay
+    identical), drop holes/slivers again. Input/Output: lists of shapely geometries."""
+    import shapely
+    from shapely.geometry import Polygon, MultiPolygon
+    from shapely.ops import unary_union
+    snapped = []
+    for g in geoms:
+        if not g.is_valid:
+            g = g.buffer(0)
+        parts = [Polygon(pg.exterior) for pg in polys(g) if pg.area > 1e-5]
+        g = unary_union(parts) if parts else g
+        snapped.append(shapely.set_precision(g, 0.0005))
+    simp = shapely.coverage_simplify(np.array(snapped, dtype=object), tol)
+    out = []
+    for g in simp:
+        parts = [Polygon(pg.exterior) for pg in polys(g) if pg.area > 2e-4]
+        if not parts:
+            parts = [Polygon(pg.exterior) for pg in polys(g)]
+        out.append(MultiPolygon(parts) if len(parts) > 1 else parts[0])
+    return out
+
+
+def shared_border(ga, gb):
+    """Border lines of ga that lie against gb (same recipe as step 2)."""
+    return lines(ga.boundary.intersection(gb.buffer(0.02)))
