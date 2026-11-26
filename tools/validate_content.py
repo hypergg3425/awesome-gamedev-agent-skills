@@ -58,6 +58,32 @@ def scen(f):
         cap = c.get('capital')
         if cap and owner.get(cap) != cid: E(f, f'{cid}: capital {cap} not owned (owner={owner.get(cap)})')
         if not cap: E(f, f'{cid}: no capital')
+    st = d.get('start', {})
+    if not (isinstance(st.get('year'), int) and isinstance(st.get('month'), int) and 1 <= st['month'] <= 12): E(f, 'start needs integer year and month 1-12')
+    for cid, c in cs.items():
+        ru = c.get('ruler', {})
+        if not ru.get('name') or not all(isinstance(ru.get(k), int) and 0 <= ru[k] <= 10 for k in ('adm', 'dip', 'mil')): E(f, f'{cid}: ruler needs name and adm/dip/mil 0-10')
+        if not isinstance(ru.get('age', 35), int) or not 0 <= ru.get('age', 35) <= 110: E(f, f'{cid}: ruler age')
+        h = c.get('heir')
+        if h is not None and (not h.get('name') or not isinstance(h.get('age'), int)): E(f, f'{cid}: heir needs name and integer age')
+        if 'approximate' in c and not isinstance(c['approximate'], bool): E(f, f'{cid}: approximate must be a boolean')
+        if 'note' in c: loc(f, c['note'], cid + '.note')
+    for pid, nd in d.get('province_names', {}).items():
+        if pid not in PIDS: E(f, f'province_names: unknown province {pid}')
+        loc(f, nd, 'province_names.' + pid)
+    for cid, lst in d.get('claims', {}).items():
+        if cid not in cs: E(f, f'claims: unknown country {cid}')
+        for pat in lst:
+            if not any(fnmatch.fnmatchcase(p, pat.lstrip('-')) for p in PIDS): E(f, f'claims.{cid}: pattern matches nothing: {pat}')
+    for gl in d.get('geo_layer', []):
+        if not gl.get('id') or gl.get('kind') not in ('strait', 'river', 'pass', 'fortification', 'region', 'route'): E(f, f'geo_layer {gl.get("id")}: id/kind')
+        loc(f, gl.get('name'), 'geo_layer.' + str(gl.get('id'))); loc(f, gl.get('note'), 'geo_layer.note.' + str(gl.get('id')))
+        for pid in gl.get('provinces', []):
+            if pid not in PIDS: E(f, f'geo_layer {gl.get("id")}: unknown province {pid}')
+    for k in ('religion_overrides', 'culture_overrides'):
+        for val, pats in d.get(k, {}).items():
+            for pat in pats:
+                if not any(fnmatch.fnmatchcase(p, pat) for p in PIDS): E(f, f'{k}.{val}: pattern matches nothing: {pat}')
     r = d.get('relations', {})
     for k in ('alliances','defensive','nap','access','trade','guarantees','vassals','opinions','truces'):
         for pair in r.get(k, []):
