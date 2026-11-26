@@ -139,3 +139,14 @@ SEA_TR_EXTRA = {
     'Sea of Japan': 'Japon Denizi', 'Seto Inland Sea': 'Seto İç Denizi', 'Yellow Sea': 'Sarı Deniz', 'East China Sea': 'Doğu Çin Denizi',
     'Bay of Bengal': 'Bengal Körfezi', 'Adriatic Sea': 'Adriyatik Denizi',
 }
+
+# Great deserts as lon/lat boxes (lon0, lat0, lon1, lat1), approximate; they top up the Natural Earth "Desert"
+# region cover, which misses much of Arabia and the Sahara at province scale.
+DESERT_BOXES = [
+    ('Sahara', -16.0, 15.5, 34.0, 31.0), ('Libyan-Egyptian desert', 24.0, 22.0, 33.5, 31.0), ('Nubian/Eastern desert', 31.5, 18.0, 36.0, 28.0),
+    ('Arabian interior', 38.0, 16.0, 56.0, 30.0), ('Syrian desert', 37.0, 31.0, 43.0, 35.0), ('Iranian Dasht', 54.0, 29.0, 62.0, 36.0),
+    ('Karakum', 54.0, 36.5, 63.0, 42.5), ('Kyzylkum', 61.0, 40.0, 67.5, 44.5), ('Taklamakan', 76.0, 36.5, 90.0, 41.5),
+    ('Gobi', 95.0, 38.0, 112.0, 46.0), ('Thar', 69.0, 24.5, 74.5, 29.5), ('Kalahari-Namib', 12.0, -28.0, 24.0, -17.0),
+    ('Australian interior', 120.0, -30.0, 140.0, -20.0), ('Atacama', -71.0, -28.0, -68.5, -18.0), ('Somali-Ogaden', 41.0, 3.0, 51.0, 10.0),
+    ('Ustyurt-Aral', 55.0, 42.0, 61.0, 46.0), ('Lut-Kerman', 56.0, 28.0, 60.5, 33.0), ('Rub al Khali', 47.0, 17.0, 56.0, 23.0),
+]

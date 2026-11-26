@@ -16,7 +16,7 @@ from shapely.ops import unary_union, nearest_points, polylabel
 from shapely.strtree import STRtree
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from map600_common import *
-from map600_data import HUBS, COAL, IRON, LUX, SEA_TR_EXTRA
+from map600_data import HUBS, COAL, IRON, LUX, SEA_TR_EXTRA, DESERT_BOXES
 import map600_features as feat
 import gen_map_step2 as S2          # reuse proj, tri_poly, terrain_for, CULTURE, read helpers
 
@@ -44,6 +44,8 @@ def climate_of(lat, lon, desert, mtn, coastal):
             return 'mediterranean' if (coastal or lon < 20) else 'semi_arid'
         if lon > 100 and 25 <= a < 36:
             return 'humid_subtropical'
+        if 68 <= lon <= 100 and lat > 0 and a < 32:
+            return 'humid_subtropical' if lon > 77 else 'semi_arid'
         if 45 <= lon < 85:
             return 'semi_arid'
         return 'humid_subtropical' if lon > 85 else 'semi_arid'
@@ -174,6 +176,12 @@ def main():
                 cover[cla] += g.intersection(rg).area / a
             except Exception:
                 pass
+        dz = 0.0
+        for _, x0, y0, x1, y1 in DESERT_BOXES:
+            bx = shapely.geometry.box(x0, y0, x1, y1)
+            if g.intersects(bx):
+                dz += g.intersection(bx).area / a
+        cover['Desert'] = max(cover.get('Desert', 0.0), min(1.0, dz))
         covers.append(dict(cover))
 
     # ---- rivers inside each province (length in degrees) + names
