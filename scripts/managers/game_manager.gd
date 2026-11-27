@@ -313,6 +313,45 @@ func cmd_form_coalition(target: String) -> Dictionary:
 	var id := DiplomacySystem.form_coalition_against(state, target)
 	return _result({"ok": id != "", "reason": "DIPLO_ERR_NO_COALITION", "id": id})
 
+## --- v2.1 systems: espionage, dynasty, factions, credit ----------------------------------------------------------------------
+func cmd_spy_build(target: String) -> Dictionary:
+	return _result(EspionageSystem.build_network(state, active_player, target))
+
+func cmd_spy_dismantle(target: String) -> Dictionary:
+	EspionageSystem.dismantle(state, active_player, target)
+	state_changed.emit()
+	return {"ok": true}
+
+func cmd_spy_op(target: String, op: String) -> Dictionary:
+	return _result(EspionageSystem.run_op(state, active_player, target, op))
+
+func cmd_counter_intel() -> Dictionary:
+	return _result(EspionageSystem.raise_ci(state, active_player))
+
+func cmd_propose_marriage(to: String, royal_id: int) -> Dictionary:
+	return _result(DynastySystem.propose_marriage(state, active_player, to, royal_id))
+
+func cmd_designate_heir(royal_id: int) -> Dictionary:
+	return _result(DynastySystem.designate(state, active_player, royal_id))
+
+func cmd_buy_off_rival() -> Dictionary:
+	return _result(DynastySystem.buy_off_rival(state, active_player))
+
+func cmd_faction_concede(fid: String) -> Dictionary:
+	return _result(FactionsSystem.concede(state, active_player, fid))
+
+func cmd_faction_suppress(fid: String) -> Dictionary:
+	return _result(FactionsSystem.suppress(state, active_player, fid))
+
+func cmd_fight_corruption() -> Dictionary:
+	return _result(FactionsSystem.fight_corruption(state, active_player))
+
+func cmd_take_loan(amount: float) -> Dictionary:
+	return _result(EconomyDepth.take_loan(state, active_player, amount))
+
+func cmd_repay_debt(amount: float) -> Dictionary:
+	return _result(EconomyDepth.repay(state, active_player, amount))
+
 ## --- selection -----------------------------------------------------------------------------------------------------------------
 func select_province(pid: String) -> void:
 	selected_province = pid

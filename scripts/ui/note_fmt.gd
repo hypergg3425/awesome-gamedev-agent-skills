@@ -27,6 +27,12 @@ static func resolve_params(s: Dictionary, params: Dictionary) -> Dictionary:
 				out[k] = Loc.t("ACT_" + str(v).to_upper())
 			"cb":
 				out[k] = Loc.t("CB_" + str(v).to_upper())
+			"faction":
+				out[k] = Loc.t("FACTION_" + str(v).to_upper())
+			"op":
+				out[k] = Loc.t("ESP_OP_" + str(v).to_upper()) if Loc.has_key("ESP_OP_" + str(v).to_upper()) else str(v)
+			"reason":
+				out[k] = Loc.t("CWR_" + str(v).to_upper()) if Loc.has_key("CWR_" + str(v).to_upper()) else str(v)
 			"won":
 				out[k] = Loc.t("UI_VICTORY") if bool(v) else Loc.t("UI_DEFEAT")
 			_:

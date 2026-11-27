@@ -3,7 +3,7 @@ extends RefCounted
 ## Global constants and enumerations for IMPERIUM. No mutable state lives here.
 
 const VERSION := "0.9.0"
-const SAVE_VERSION := 3
+const SAVE_VERSION := 4
 const MONTHS_PER_TURN := 3
 const MAX_PROVINCE_ID_LEN := 48
 

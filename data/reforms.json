@@ -428,5 +428,214 @@
   },
   "governments": [],
   "excludes": []
+ },
+ "privy_council": {
+  "id": "privy_council",
+  "name": {
+   "en": "Privy Council",
+   "tr": "Has Divan"
+  },
+  "cost_admin": 40,
+  "cost_gold": 100,
+  "advantages": {
+   "admin_cap": 0.06,
+   "corruption": -0.05
+  },
+  "disadvantages": {
+   "army_upkeep": 0.02
+  },
+  "requires": {
+   "tech": [
+    "centralization",
+    1
+   ]
+  },
+  "governments": [
+   "absolute_monarchy",
+   "empire",
+   "feudal_kingdom"
+  ],
+  "excludes": [],
+  "fx": {
+   "court": 10,
+   "nobility": -6
+  }
+ },
+ "estates_general": {
+  "id": "estates_general",
+  "name": {
+   "en": "Estates General",
+   "tr": "Millet Meclisi"
+  },
+  "cost_admin": 35,
+  "cost_gold": 80,
+  "advantages": {
+   "faction_loyalty": 0.08,
+   "legit": 0.2
+  },
+  "disadvantages": {
+   "tax": -0.05
+  },
+  "requires": {
+   "tech": [
+    "legal_reform",
+    1
+   ]
+  },
+  "governments": [
+   "feudal_kingdom",
+   "absolute_monarchy",
+   "constitutional_monarchy"
+  ],
+  "excludes": [],
+  "fx": {
+   "nobility": 12,
+   "clergy": 6,
+   "court": -6
+  }
+ },
+ "senate_reform": {
+  "id": "senate_reform",
+  "name": {
+   "en": "Senate Reform",
+   "tr": "Senato Reformu"
+  },
+  "cost_admin": 35,
+  "cost_gold": 80,
+  "advantages": {
+   "faction_loyalty": 0.05,
+   "legit": 0.3
+  },
+  "disadvantages": {
+   "war_exhaustion": 0.05
+  },
+  "requires": {
+   "tech": [
+    "legal_reform",
+    1
+   ]
+  },
+  "governments": [
+   "republic",
+   "merchant_republic"
+  ],
+  "excludes": [],
+  "fx": {
+   "popular": 8,
+   "merchants": 6,
+   "military": -6
+  }
+ },
+ "merchant_navy_act": {
+  "id": "merchant_navy_act",
+  "name": {
+   "en": "Merchant Navy Act",
+   "tr": "Ticaret Donanması Yasası"
+  },
+  "cost_admin": 35,
+  "cost_gold": 90,
+  "advantages": {
+   "trade": 0.1,
+   "naval_transport": 0.1
+  },
+  "disadvantages": {
+   "manpower": -0.05
+  },
+  "requires": {
+   "tech": [
+    "naval_warfare",
+    1
+   ]
+  },
+  "governments": [
+   "merchant_republic",
+   "republic",
+   "constitutional_monarchy"
+  ],
+  "excludes": [],
+  "fx": {
+   "merchants": 12,
+   "nobility": -6
+  }
+ },
+ "war_council": {
+  "id": "war_council",
+  "name": {
+   "en": "War Council",
+   "tr": "Savaş Meclisi"
+  },
+  "cost_admin": 30,
+  "cost_gold": 70,
+  "advantages": {
+   "morale": 0.05,
+   "army_upkeep": -0.05
+  },
+  "disadvantages": {
+   "unrest": 0.02
+  },
+  "requires": {},
+  "governments": [
+   "tribal_confederation",
+   "military_government",
+   "empire"
+  ],
+  "excludes": [],
+  "fx": {
+   "military": 12,
+   "popular": -6
+  }
+ },
+ "clerical_courts": {
+  "id": "clerical_courts",
+  "name": {
+   "en": "Clerical Courts",
+   "tr": "Dini Mahkemeler"
+  },
+  "cost_admin": 30,
+  "cost_gold": 60,
+  "advantages": {
+   "stability": 1,
+   "corruption": -0.05
+  },
+  "disadvantages": {
+   "trade": -0.05
+  },
+  "requires": {},
+  "governments": [
+   "theocracy"
+  ],
+  "excludes": [],
+  "fx": {
+   "clergy": 12,
+   "merchants": -8
+  }
+ },
+ "anti_corruption_commission": {
+  "id": "anti_corruption_commission",
+  "name": {
+   "en": "Anti-Corruption Commission",
+   "tr": "Yolsuzlukla Mücadele Komisyonu"
+  },
+  "cost_admin": 45,
+  "cost_gold": 120,
+  "advantages": {
+   "corruption": -0.15,
+   "tax": 0.03
+  },
+  "disadvantages": {
+   "faction_loyalty": -0.03
+  },
+  "requires": {
+   "tech": [
+    "bureaucracy",
+    2
+   ]
+  },
+  "governments": [],
+  "excludes": [],
+  "fx": {
+   "court": -10,
+   "popular": 6
+  }
  }
 }

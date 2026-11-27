@@ -59,9 +59,9 @@ static func visible_strength(s: Dictionary, observer: String, target: String) ->
 		var a: Dictionary = s["armies"][aid]
 		if a["owner"] == target and not a.get("naval", false) and a["loc"] in near:
 			seen += UnitUtil.army_size(a)
-	# rumour: a rough estimate from the target's size (not its actual army)
+	# rumour: a rough estimate from the target's size (not its actual army); spy networks sharpen it
 	var rumour := DiplomacySystem.total_pop(s, target) * 0.0013
-	return maxf(seen, rumour * 0.7)
+	return EspionageSystem.refine_strength(s, observer, target, maxf(seen, rumour * 0.7))
 
 static func my_regiments(s: Dictionary, cid: String) -> float:
 	return UnitUtil.country_regiments(s, cid)
@@ -85,6 +85,7 @@ static func run(s: Dictionary, cid: String) -> void:
 	_research(s, cid, ai, W, rng)
 	_military(s, cid, ai, P, W, rng)
 	_diplomacy(s, cid, ai, P, W, rng)
+	SimExt.ai_turn(s, cid, pers, rng)
 
 static func _native_turn(s: Dictionary, cid: String, ai: Dictionary, rng: GameRng) -> void:
 	# tribes keep a modest defensive force and rebuild it slowly
@@ -273,6 +274,14 @@ static func _building_score(s: Dictionary, cid: String, pid: String, bid: String
 		"hospital": sc = 2.0 + float(p["disease"]) * 0.3
 		"cultural_institution": sc = 3.0
 		"religious_building": sc = 2.0 + (8.0 if p["religion"] != c["religion"] else 0.0) + (6.0 if float(p["unrest"]) > 30.0 else 0.0)
+		"granary": sc = 3.0 + (10.0 if food_bal < 0.0 else 0.0) + (4.0 if float(c.get("food_ratio", 1.0)) < 1.0 else 0.0)
+		"bank": sc = (4.0 + pop / 160.0 + (6.0 if float(c["debt"]) > 0.0 else 0.0)) * econ
+		"stock_exchange": sc = (5.0 + pop / 140.0) * econ * _w(W, "trade")
+		"factory": sc = (7.0 + pop / 120.0 + float(p["urban"]) * 10.0) * econ
+		"post_office": sc = 4.0 + (8.0 if float(EconomySystem.admin_capacity(s, cid)["overextension"]) > 0.0 else 0.0)
+		"intelligence_office": sc = 2.0 + 3.0 * float(EspionageSystem.recent_incidents(s, cid))
+		"shipyard": sc = (3.0 + (8.0 if pd["coastal"] else 0.0)) * _w(W, "navy") * 0.5
+		"gendarmerie": sc = 2.0 + (10.0 if float(p["unrest"]) > 30.0 else 0.0) + (6.0 if FactionsSystem.coup_chance(s, cid, c) > 0.0 else 0.0)
 	return sc
 
 static func _research(s: Dictionary, cid: String, ai: Dictionary, W: Dictionary, rng: GameRng) -> void:

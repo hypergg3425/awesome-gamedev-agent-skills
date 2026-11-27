@@ -30,7 +30,7 @@ static func new_ruler(s: Dictionary, cid: String, age_lo: int, age_hi: int, bias
 	var rng := GS.rng_of(s)
 	var c: Dictionary = s["countries"][cid]
 	var r := {"name": random_name(s, cid, rng), "adm": random_skill(rng), "dip": random_skill(rng), "mil": random_skill(rng),
-		"age": rng.randi_range(age_lo, age_hi), "dynasty": c["ruler"].get("dynasty", ""), "term_start": s["turn"]}
+		"age": rng.randi_range(age_lo, age_hi), "dynasty": c["ruler"].get("dynasty", ""), "term_start": s["turn"], "health": clampf(rng.gauss(85.0, 8.0), 50.0, 100.0), "sex": "m", "ill": false}
 	if bias != "":
 		r[bias] = clampi(int(r[bias]) + 2, 1, 9)
 	return r
@@ -116,6 +116,7 @@ static func process_turn(s: Dictionary, cid: String) -> void:
 	tgt -= float(c["bankrupt_turns"]) * 2.0 if float(c["gold"]) <= 0.0 else 0.0
 	tgt -= float(EconomySystem.admin_capacity(s, cid)["overextension"]) * 18.0
 	tgt += clampf(float(c["prestige"]) / 60.0, -5.0, 8.0)
+	tgt += float(m.get("happiness", 0.0))
 	tgt += (float(c["legitimacy"]) - 50.0) * 0.12
 	if not c.get("lux_ok", true):
 		tgt -= 2.0
@@ -149,8 +150,11 @@ static func process_turn(s: Dictionary, cid: String) -> void:
 		if int(tm["until"]) >= int(s["turn"]):
 			keep.append(tm)
 	c["temp_mods"] = keep
-	# ruler ageing and succession
-	_ageing(s, cid, rng)
+	# factions, corruption, independence movements
+	FactionsSystem.process_turn(s, cid, rng)
+	CivilWar.process_turn(s, cid, rng)
+	# ruler ageing, health, family and succession
+	DynastySystem.process_turn(s, cid, rng)
 	# elections
 	var term := int(gov.get("term_turns", 0))
 	if term > 0 and "elections" in gov.get("features", []):
@@ -159,10 +163,6 @@ static func process_turn(s: Dictionary, cid: String) -> void:
 	if "religious_unity_matters" in gov.get("features", []) and term > 0 and int(s["turn"]) - int(c.get("election_turn", 0)) >= term * 2:
 		_new_leader(s, cid, rng, 45, 70, "")
 		c["election_turn"] = s["turn"]
-	# coups
-	if float(c["stability"]) < 22.0 and float(c["legitimacy"]) < 28.0 and not bool(c.get("native", false)):
-		if rng.chance(0.03 + (0.03 if "coup_risk" in gov.get("features", []) else 0.0)):
-			_coup(s, cid, rng)
 	# revolts in provinces
 	for pid in GS.owned(s, cid):
 		var p: Dictionary = s["provinces"][pid]
@@ -181,30 +181,6 @@ static func _religious_unity(s: Dictionary, cid: String) -> float:
 			same += float(p["pop"])
 	return same / maxf(tot, 1.0)
 
-static func _ageing(s: Dictionary, cid: String, rng: GameRng) -> void:
-	var c: Dictionary = s["countries"][cid]
-	var ru: Dictionary = c["ruler"]
-	ru["age"] = float(ru["age"]) + 0.25
-	if c["heir"] != null:
-		c["heir"]["age"] = float(c["heir"]["age"]) + 0.25
-	var age := float(ru["age"])
-	var hz := 0.0005
-	if age > 75.0:
-		hz = 0.04
-	elif age > 60.0:
-		hz = 0.012
-	elif age > 40.0:
-		hz = 0.003
-	if bool(c.get("native", false)):
-		hz *= 1.2
-	if rng.chance(hz):
-		ruler_dies(s, cid, rng)
-	# an heir appears for hereditary states
-	var feats: Array = Defs.governments.get(c["gov"], {}).get("features", [])
-	if c["heir"] == null and "succession_crisis" in feats and age > 22.0 and rng.chance(0.04):
-		c["heir"] = {"name": random_name(s, cid, rng), "age": 0.0, "adm": random_skill(rng), "dip": random_skill(rng), "mil": random_skill(rng)}
-		GS.note(s, cid, "politics", "NOTE_HEIR_BORN", {})
-
 static func ruler_dies(s: Dictionary, cid: String, rng: GameRng) -> void:
 	var c: Dictionary = s["countries"][cid]
 	var gov: Dictionary = Defs.governments.get(c["gov"], {})
@@ -213,21 +189,7 @@ static func ruler_dies(s: Dictionary, cid: String, rng: GameRng) -> void:
 	GS.history(s, cid, "politics", "HIST_RULER_DIED", {"ruler": old})
 	match str(gov.get("succession", "hereditary")):
 		"hereditary":
-			var h: Variant = c["heir"]
-			if h != null:
-				var ruler := {"name": h["name"], "adm": h["adm"], "dip": h["dip"], "mil": h["mil"], "age": h["age"], "dynasty": c["ruler"].get("dynasty", ""), "term_start": s["turn"]}
-				c["heir"] = null
-				c["ruler"] = ruler
-				if float(ruler["age"]) < 16.0:
-					c["regency"] = int((16.0 - float(ruler["age"])) * 4.0)
-					c["stability"] = maxf(0.0, float(c["stability"]) - 5.0)
-					c["legitimacy"] = maxf(0.0, float(c["legitimacy"]) - 10.0)
-					GS.note(s, cid, "politics", "NOTE_REGENCY", {"ruler": ruler["name"]})
-				else:
-					c["stability"] = maxf(0.0, float(c["stability"]) - 2.0)
-				GS.note(s, cid, "politics", "NOTE_NEW_RULER", {"ruler": ruler["name"]})
-			else:
-				_succession_crisis(s, cid, rng)
+			DynastySystem.on_ruler_death(s, cid, rng)
 		"elective":
 			_new_leader(s, cid, rng, 35, 62, "")
 		"theocratic":
@@ -237,6 +199,7 @@ static func ruler_dies(s: Dictionary, cid: String, rng: GameRng) -> void:
 			_new_leader(s, cid, rng, 38, 58, "mil")
 			c["stability"] = maxf(0.0, float(c["stability"]) - 6.0)
 	GS.stat_add(s, cid, "rulers", 1.0)
+	GovMechanics.on_leader_change(s, cid, c, rng)
 	Mods.invalidate(s)
 
 static func _succession_crisis(s: Dictionary, cid: String, rng: GameRng) -> void:
@@ -274,7 +237,8 @@ static func _election(s: Dictionary, cid: String, rng: GameRng) -> void:
 	var c: Dictionary = s["countries"][cid]
 	c["election_turn"] = s["turn"]
 	_new_leader(s, cid, rng, 38, 62, "")
-	var turmoil := 0.0
+	var winner := FactionsSystem.on_election(s, cid)
+	GS.note(s, cid, "politics", "NOTE_ELECTION_WON", {"faction": winner})
 	var wsat := float(c.get("faction_sat", 50.0))
 	c["stability"] = clampf(float(c["stability"]) + (wsat - 50.0) * 0.12 - 1.0, 0.0, 100.0)
 	c["legitimacy"] = clampf(55.0 + (wsat - 50.0) * 0.6 + rng.randf() * 10.0, 0.0, 100.0)
@@ -290,7 +254,9 @@ static func _coup(s: Dictionary, cid: String, rng: GameRng) -> void:
 	GS.note(s, cid, "politics", "NOTE_COUP", {"ruler": c["ruler"]["name"]})
 	GS.history(s, cid, "politics", "HIST_COUP", {"ruler": c["ruler"]["name"]})
 	if c["gov"] != "military_government" and rng.chance(0.4) and not Defs.governments[c["gov"]].get("features", []).has("coup_risk"):
+		var old_gov: String = c["gov"]
 		c["gov"] = "military_government"
+		FactionsSystem.on_government_change(s, cid, old_gov, "military_government")
 		GS.note(s, cid, "politics", "NOTE_GOV_CHANGED", {"gov": "military_government"})
 	Mods.invalidate(s)
 
@@ -352,6 +318,7 @@ static func adopt_reform(s: Dictionary, cid: String, rid: String) -> Dictionary:
 					c["classes"][cls]["sat"] = clampf(float(c["classes"][cls]["sat"]) + float(src[k]), 0.0, 100.0)
 					off[cls] = float(off.get(cls, 0.0)) + float(src[k]) * 0.25
 	c["class_offsets"] = off
+	FactionsSystem.on_reform(c, rid)
 	Mods.invalidate(s)
 	GS.note(s, cid, "politics", "NOTE_REFORM", {"reform": rid})
 	GS.history(s, cid, "politics", "HIST_REFORM", {"reform": rid})
@@ -376,6 +343,9 @@ static func government_options(s: Dictionary, cid: String) -> Array:
 		if float(c["admin"]) < float(t["cost_admin"]):
 			ok = false
 			why = "ERR_NO_ADMIN"
+		if FactionsSystem.in_transition(c):
+			ok = false
+			why = "GOV_ERR_TRANSITION"
 		out.append({"to": to, "ok": ok, "reason": why, "cost_admin": t["cost_admin"], "stability_hit": t["stability_hit"]})
 	return out
 
@@ -385,6 +355,7 @@ static func change_government(s: Dictionary, cid: String, to: String) -> Diction
 			if not o["ok"]:
 				return {"ok": false, "reason": o["reason"]}
 			var c: Dictionary = s["countries"][cid]
+			var old_gov: String = c["gov"]
 			c["admin"] = float(c["admin"]) - float(o["cost_admin"])
 			c["gov"] = to
 			c["stability"] = maxf(0.0, float(c["stability"]) - float(o["stability_hit"]))
@@ -397,6 +368,9 @@ static func change_government(s: Dictionary, cid: String, to: String) -> Diction
 				if govs.is_empty() or to in govs:
 					keep.append(rid)
 			c["reforms"] = keep
+			FactionsSystem.on_government_change(s, cid, old_gov, to)
+			DynastySystem.st(c)["law"] = DynastySystem.law_of(to)
+			DynastySystem.init_country(s, cid)
 			Mods.invalidate(s)
 			GS.note(s, cid, "politics", "NOTE_GOV_CHANGED", {"gov": to})
 			GS.history(s, cid, "politics", "HIST_GOV_CHANGED", {"gov": to})

@@ -1,0 +1,1016 @@
+[
+ {
+  "id": "court_scandal",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Scandal at Court",
+   "tr": "Sarayda Skandal"
+  },
+  "text": {
+   "en": "The treasurer of {country} is found to have enriched himself while the army went unpaid. The whole court watches how {ruler} will react.",
+   "tr": "{country} hazinedarının ordu maaşsız beklerken servet yaptığı ortaya çıktı. Bütün saray {ruler} adlı hükümdarın tepkisini izliyor."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "corruption_above",
+     "value": 35
+    }
+   ]
+  },
+  "mtth": 40,
+  "cooldown": 20,
+  "options": [
+   {
+    "id": "purge",
+    "name": {
+     "en": "Purge the offenders",
+     "tr": "Suçluları tasfiye et"
+    },
+    "tip": {
+     "en": "Gold -40, corruption -8, the court is shaken.",
+     "tr": "Altın -40, yolsuzluk -8, saray sarsılır."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "corruption",
+      "value": -8
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": -10
+     },
+     {
+      "type": "stability",
+      "value": -1
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "hush",
+    "name": {
+     "en": "Hush it up",
+     "tr": "Örtbas et"
+    },
+    "tip": {
+     "en": "Legitimacy -4, corruption keeps growing.",
+     "tr": "Meşruiyet -4, yolsuzluk artmaya devam eder."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": -4
+     },
+     {
+      "type": "corruption",
+      "value": 3
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "commission",
+    "name": {
+     "en": "Appoint a commission of audit",
+     "tr": "Denetim komisyonu kur"
+    },
+    "tip": {
+     "en": "Gold -80, corruption -15, the court resents the audit.",
+     "tr": "Altın -80, yolsuzluk -15, saray denetimden hoşlanmaz."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "corruption",
+      "value": -15
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": -6
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "court_favourite",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Royal Favourite",
+   "tr": "Hükümdarın Gözdesi"
+  },
+  "text": {
+   "en": "A charming favourite has risen in {country}'s court and now controls who may speak to {ruler}.",
+   "tr": "Gözde bir saray mensubu {country} sarayında yükseldi ve {ruler} ile kimin görüşeceğine karar veriyor."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "faction_influence_above",
+     "faction": "court",
+     "value": 22
+    }
+   ]
+  },
+  "mtth": 45,
+  "cooldown": 24,
+  "options": [
+   {
+    "id": "indulge",
+    "name": {
+     "en": "Indulge the favourite",
+     "tr": "Gözdeyi kayır"
+    },
+    "tip": {
+     "en": "Court loyalty +10, corruption +4.",
+     "tr": "Saray sadakati +10, yolsuzluk +4."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": 10
+     },
+     {
+      "type": "corruption",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "banish",
+    "name": {
+     "en": "Banish the favourite",
+     "tr": "Gözdeyi sürgüne gönder"
+    },
+    "tip": {
+     "en": "Court loyalty -8, legitimacy +3.",
+     "tr": "Saray sadakati -8, meşruiyet +3."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": -8
+     },
+     {
+      "type": "legitimacy",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "balance",
+    "name": {
+     "en": "Balance rival favourites",
+     "tr": "Rakip gözdeleri dengele"
+    },
+    "tip": {
+     "en": "Gold -30, stability +1.",
+     "tr": "Altın -30, istikrar +1."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "noble_conspiracy",
+  "category": "uprising",
+  "historical": false,
+  "title": {
+   "en": "The Nobles Conspire",
+   "tr": "Soylular Komplo Kuruyor"
+  },
+  "text": {
+   "en": "Great lords of {country} meet in secret to curb {ruler}'s authority.",
+   "tr": "{country} büyük beyleri {ruler} adlı hükümdarın yetkisini kısıtlamak için gizlice toplanıyor."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "faction_loyalty_below",
+     "faction": "nobility",
+     "value": 32
+    },
+    {
+     "type": "faction_influence_above",
+     "faction": "nobility",
+     "value": 18
+    }
+   ]
+  },
+  "mtth": 35,
+  "cooldown": 20,
+  "options": [
+   {
+    "id": "concede",
+    "name": {
+     "en": "Grant new privileges",
+     "tr": "Yeni imtiyazlar ver"
+    },
+    "tip": {
+     "en": "Gold -80, nobility loyalty +12.",
+     "tr": "Altın -80, soyluların sadakati +12."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": 12
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "arrest",
+    "name": {
+     "en": "Arrest the ringleaders",
+     "tr": "Elebaşılarını tutukla"
+    },
+    "tip": {
+     "en": "Stability -3, legitimacy -3, a few provinces stir.",
+     "tr": "İstikrar -3, meşruiyet -3, bazı eyaletler kıpırdanır."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -3
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": -4
+     },
+     {
+      "type": "province_unrest",
+      "value": 6
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "ignore",
+    "name": {
+     "en": "Ignore the whispers",
+     "tr": "Fısıltıları görmezden gel"
+    },
+    "tip": {
+     "en": "Nobility loyalty -6; rebels may appear.",
+     "tr": "Soyluların sadakati -6; isyancılar çıkabilir."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": -6
+     },
+     {
+      "type": "spawn_rebels",
+      "size": 1
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "merchant_petition",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "The Merchants Petition",
+   "tr": "Tüccarlar Dilekçe Veriyor"
+  },
+  "text": {
+   "en": "The merchant guilds of {country} demand a charter protecting their trade from the crown's officials.",
+   "tr": "{country} tüccar loncaları, ticaretlerini hükümet memurlarından koruyan bir ferman talep ediyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "faction_loyalty_below",
+     "faction": "merchants",
+     "value": 40
+    },
+    {
+     "type": "faction_influence_above",
+     "faction": "merchants",
+     "value": 14
+    }
+   ]
+  },
+  "mtth": 35,
+  "cooldown": 20,
+  "options": [
+   {
+    "id": "charter",
+    "name": {
+     "en": "Grant the charter",
+     "tr": "Fermanı ver"
+    },
+    "tip": {
+     "en": "Gold -60, merchant loyalty +10, trade +5% for 12 turns.",
+     "tr": "Altın -60, tüccar sadakati +10, 12 tur boyunca ticaret +%5."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": 10
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.05
+      },
+      "turns": 12
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "loan",
+    "name": {
+     "en": "Demand a forced loan",
+     "tr": "Zorunlu borç iste"
+    },
+    "tip": {
+     "en": "Gold +50, merchant loyalty -10.",
+     "tr": "Altın +50, tüccar sadakati -10."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 50
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": -10
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "polite",
+    "name": {
+     "en": "Receive them politely",
+     "tr": "Nezaketle karşıla"
+    },
+    "tip": {
+     "en": "Merchant loyalty +2, nothing changes.",
+     "tr": "Tüccar sadakati +2, hiçbir şey değişmez."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": 2
+     },
+     {
+      "type": "prestige",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "clergy_sermons",
+  "category": "religious",
+  "historical": false,
+  "title": {
+   "en": "Sermons Against the Crown",
+   "tr": "Taca Karşı Vaazlar"
+  },
+  "text": {
+   "en": "Preachers in {country} thunder that {ruler} has neglected the faith.",
+   "tr": "{country} vaizleri, {ruler} adlı hükümdarın inancı ihmal ettiğini haykırıyor."
+  },
+  "image": "church",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "faction_loyalty_below",
+     "faction": "clergy",
+     "value": 35
+    },
+    {
+     "type": "faction_influence_above",
+     "faction": "clergy",
+     "value": 12
+    }
+   ]
+  },
+  "mtth": 35,
+  "cooldown": 20,
+  "options": [
+   {
+    "id": "endow",
+    "name": {
+     "en": "Endow the church",
+     "tr": "Kiliseye bağış yap"
+    },
+    "tip": {
+     "en": "Gold -70, clergy loyalty +12.",
+     "tr": "Altın -70, din adamlarının sadakati +12."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "clergy",
+      "value": 12
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "censor",
+    "name": {
+     "en": "Silence the preachers",
+     "tr": "Vaizleri susturt"
+    },
+    "tip": {
+     "en": "Clergy loyalty -8, legitimacy -2, unrest spreads.",
+     "tr": "Din adamlarının sadakati -8, meşruiyet -2, huzursuzluk yayılır."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "clergy",
+      "value": -8
+     },
+     {
+      "type": "legitimacy",
+      "value": -2
+     },
+     {
+      "type": "province_unrest",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "pilgrimage",
+    "name": {
+     "en": "Go on pilgrimage",
+     "tr": "Hacca çık"
+    },
+    "tip": {
+     "en": "Prestige +6, clergy loyalty +5, treasury -25.",
+     "tr": "Prestij +6, din adamlarının sadakati +5, hazine -25."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 6
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "clergy",
+      "value": 5
+     },
+     {
+      "type": "gold",
+      "value": -25
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 25
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "army_grumbles",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "The Army Grumbles",
+   "tr": "Ordu Homurdanıyor"
+  },
+  "text": {
+   "en": "Officers in {country} complain of unpaid wages and a ruler who never appears in the field.",
+   "tr": "{country} subayları ödenmemiş maaşlardan ve cepheye hiç gelmeyen bir hükümdardan şikâyetçi."
+  },
+  "image": "battle",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "faction_loyalty_below",
+     "faction": "military",
+     "value": 35
+    },
+    {
+     "type": "faction_influence_above",
+     "faction": "military",
+     "value": 14
+    }
+   ]
+  },
+  "mtth": 35,
+  "cooldown": 20,
+  "options": [
+   {
+    "id": "backpay",
+    "name": {
+     "en": "Pay the arrears",
+     "tr": "Maaş borcunu öde"
+    },
+    "tip": {
+     "en": "Gold -100, military loyalty +12.",
+     "tr": "Altın -100, ordunun sadakati +12."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -100
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "military",
+      "value": 12
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 100
+     }
+    ]
+   },
+   {
+    "id": "review",
+    "name": {
+     "en": "Hold a grand review",
+     "tr": "Büyük geçit töreni yap"
+    },
+    "tip": {
+     "en": "Gold -30, military loyalty +5, prestige +3.",
+     "tr": "Altın -30, ordunun sadakati +5, prestij +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "military",
+      "value": 5
+     },
+     {
+      "type": "prestige",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "id": "purge",
+    "name": {
+     "en": "Purge the officers",
+     "tr": "Subayları tasfiye et"
+    },
+    "tip": {
+     "en": "Military loyalty -10, stability +1; some regiments desert.",
+     "tr": "Ordunun sadakati -10, istikrar +1; bazı alaylar firar eder."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "military",
+      "value": -10
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "disband_pct",
+      "value": 8
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "bread_riots",
+  "category": "uprising",
+  "historical": false,
+  "title": {
+   "en": "Bread Riots",
+   "tr": "Ekmek İsyanları"
+  },
+  "text": {
+   "en": "Crowds in the cities of {country} cry for bread and lower taxes.",
+   "tr": "{country} şehirlerinde kalabalıklar ekmek ve düşük vergi istiyor."
+  },
+  "image": "famine",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "faction_loyalty_below",
+     "faction": "popular",
+     "value": 35
+    },
+    {
+     "type": "faction_influence_above",
+     "faction": "popular",
+     "value": 18
+    }
+   ]
+  },
+  "mtth": 30,
+  "cooldown": 16,
+  "options": [
+   {
+    "id": "granaries",
+    "name": {
+     "en": "Open the granaries",
+     "tr": "Ambarları aç"
+    },
+    "tip": {
+     "en": "Food -40, popular loyalty +10.",
+     "tr": "Yiyecek -40, halkın sadakati +10."
+    },
+    "effects": [
+     {
+      "type": "stock",
+      "res": "food",
+      "value": -40
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "popular",
+      "value": 10
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "tax",
+    "name": {
+     "en": "Cut taxes for a while",
+     "tr": "Bir süre vergileri düşür"
+    },
+    "tip": {
+     "en": "Tax -5% for 8 turns, popular loyalty +8.",
+     "tr": "8 tur boyunca vergi -%5, halkın sadakati +8."
+    },
+    "effects": [
+     {
+      "type": "temp_mod",
+      "mods": {
+       "tax": -0.05
+      },
+      "turns": 8
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "popular",
+      "value": 8
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "repress",
+    "name": {
+     "en": "Send in the guard",
+     "tr": "Muhafızları gönder"
+    },
+    "tip": {
+     "en": "Popular loyalty -6, stability +2, rebels may appear.",
+     "tr": "Halkın sadakati -6, istikrar +2, isyancılar çıkabilir."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "popular",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "spawn_rebels",
+      "size": 1
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "regency_intrigue",
+  "category": "succession",
+  "historical": false,
+  "title": {
+   "en": "Intrigue in the Regency Council",
+   "tr": "Naiplik Meclisinde Entrika"
+  },
+  "text": {
+   "en": "With {ruler} too young or too ill to rule, the councillors of {country} quarrel over who holds power.",
+   "tr": "{ruler} hükümdarlık için çok genç ya da hasta olduğundan {country} meclisi, iktidarın kimde olacağı konusunda çekişiyor."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "in_regency"
+    }
+   ]
+  },
+  "mtth": 30,
+  "cooldown": 16,
+  "options": [
+   {
+    "id": "queen",
+    "name": {
+     "en": "Favour the court party",
+     "tr": "Saray hizbini kayır"
+    },
+    "tip": {
+     "en": "Court loyalty +8, nobility loyalty -6.",
+     "tr": "Saray sadakati +8, soyluların sadakati -6."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": 8
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": -6
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "balance",
+    "name": {
+     "en": "Balance the council",
+     "tr": "Meclisi dengele"
+    },
+    "tip": {
+     "en": "Gold -50, stability +2.",
+     "tr": "Altın -50, istikrar +2."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "strongman",
+    "name": {
+     "en": "Appoint a strongman",
+     "tr": "Güçlü bir naip ata"
+    },
+    "tip": {
+     "en": "Military loyalty +6, legitimacy -3.",
+     "tr": "Ordunun sadakati +6, meşruiyet -3."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "military",
+      "value": 6
+     },
+     {
+      "type": "legitimacy",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "transition_unrest",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "Turmoil of the New Order",
+   "tr": "Yeni Düzenin Çalkantısı"
+  },
+  "text": {
+   "en": "The change of government in {country} has left old officials unsure of their duties and new ones unsure of their power.",
+   "tr": "{country} hükûmet değişikliği eski memurları görevlerinden, yenileri yetkilerinden emin olamaz hale getirdi."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 6,
+   "conds": [
+    {
+     "type": "in_transition"
+    }
+   ]
+  },
+  "mtth": 18,
+  "cooldown": 12,
+  "options": [
+   {
+    "id": "patience",
+    "name": {
+     "en": "Ask for patience",
+     "tr": "Sabır iste"
+    },
+    "tip": {
+     "en": "Stability -1, legitimacy +2.",
+     "tr": "İstikrar -1, meşruiyet +2."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -1
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "spend",
+    "name": {
+     "en": "Win support with gifts",
+     "tr": "Hediyelerle destek kazan"
+    },
+    "tip": {
+     "en": "Gold -60, stability +3.",
+     "tr": "Altın -60, istikrar +3."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "stability",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "rush",
+    "name": {
+     "en": "Rush the reforms through",
+     "tr": "Reformları aceleyle çıkar"
+    },
+    "tip": {
+     "en": "Admin +20, corruption +4, stability -2.",
+     "tr": "İdare +20, yolsuzluk +4, istikrar -2."
+    },
+    "effects": [
+     {
+      "type": "admin",
+      "value": 20
+     },
+     {
+      "type": "corruption",
+      "value": 4
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ }
+]

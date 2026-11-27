@@ -309,6 +309,7 @@ static func build(def_in: Dictionary, player: String, difficulty: String = "norm
 			continue
 		s["countries"][cid]["is_player"] = cid == player
 		s["ai"][cid] = AISystem.new_ai_state(s, cid, str(cdefs.get(cid, {}).get("ai", "")))
+	SimExt.ensure(s)
 	# statistics bookkeeping + first economy snapshot
 	GS.save_rng(s)
 	NavalSystem.ensure_fields(s)

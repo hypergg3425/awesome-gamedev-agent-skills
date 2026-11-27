@@ -7,6 +7,7 @@ static func build(sheet: Sheet, screen: CampaignScreen) -> void:
 	sheet.add_tab("resources", "TAB_RESOURCES", func(b: VBoxContainer) -> void: _resources(b, screen))
 	sheet.add_tab("trade", "TAB_TRADE", func(b: VBoxContainer) -> void: _trade(b, screen))
 	sheet.add_tab("history", "TAB_HISTORY", func(b: VBoxContainer) -> void: _history(b, screen))
+	PanelsEconomy2.add_tabs(sheet, screen)
 
 static func _budget(b: VBoxContainer, screen: CampaignScreen) -> void:
 	var s: Dictionary = Game.state

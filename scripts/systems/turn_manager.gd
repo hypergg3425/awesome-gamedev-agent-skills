@@ -6,6 +6,7 @@ extends RefCounted
 static func end_turn(s: Dictionary) -> Dictionary:
 	if bool(s["game_over"]):
 		return {"ok": false, "reason": "GAME_OVER"}
+	SimExt.ensure(s)
 	var summary := {"battles": [], "turn": s["turn"], "timing": {}}
 	var _t := Time.get_ticks_msec()
 	s["_c"]["battles_turn"] = []
@@ -46,6 +47,7 @@ static func end_turn(s: Dictionary) -> Dictionary:
 		production["food"] = float(production.get("food", 0.0)) + float(b["food_prod"])
 		ConstructionSystem.process_turn(s, cid)
 		TechSystem.process_turn(s, cid)
+		SimExt.economy_phase(s, cid)
 	summary["timing"]["economy"] = Time.get_ticks_msec() - _t
 	_t = Time.get_ticks_msec()
 	# 4. population and politics
@@ -53,6 +55,7 @@ static func end_turn(s: Dictionary) -> Dictionary:
 	EconomySystem.invalidate_calc(s)
 	for cid in GS.alive_countries(s):
 		PoliticsSystem.process_turn(s, cid)
+	SimExt.world_phase(s)
 	var demand: Dictionary = s["_c"].get("demand", {})
 	demand["food"] = float(demand.get("food", 0.0)) + DiplomacySystem.total_pop(s, "") * 0.0
 	var tot_pop := 0.0

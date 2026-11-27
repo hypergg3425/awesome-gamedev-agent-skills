@@ -63,7 +63,7 @@ static func _cond(s: Dictionary, cid: String, c: Dictionary, cond: Dictionary, p
 		"bankrupt_recently": return int(cc["bankrupt_turns"]) > 0
 		"heir_missing": return cc["heir"] == null
 		"capital_coastal": return Defs.provinces.get(cc["capital"], {}).get("coastal", false)
-	return false
+	return FactionsSystem.event_cond(s, cid, t, cond)
 
 static func flag_active(s: Dictionary, cc: Dictionary, flag: String) -> bool:
 	if not cc["flags"].has(flag):
@@ -258,6 +258,8 @@ static func apply_effect(s: Dictionary, entry: Dictionary, fx: Dictionary) -> vo
 	var c: Dictionary = s["countries"][cid]
 	var v: Variant = fx.get("value", 0)
 	var rng := GS.rng_of(s)
+	if FactionsSystem.event_effect(s, cid, str(fx.get("type", "")), fx):
+		return
 	match fx.get("type", ""):
 		"gold": c["gold"] = float(c["gold"]) + float(v)
 		"manpower": c["manpower"] = clampf(float(c["manpower"]) + float(v), 0.0, maxf(float(c["manpower_max"]), 1.0) * 1.2)

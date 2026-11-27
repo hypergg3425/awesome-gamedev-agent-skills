@@ -162,6 +162,9 @@ static func migrate(state: Dictionary) -> Dictionary:
 						c2["research"]["bank"] = c2["research"].get("bank", 0.0)
 					c2["class_offsets"] = c2.get("class_offsets", {})
 					c2["victory_hold"] = c2.get("victory_hold", {})
+			3:
+				# v3 -> v4: espionage, dynasties, factions, economy depth
+				SimExt.migrate_v4(state)
 		v += 1
 		state["version"] = v
 	return state
@@ -200,6 +203,7 @@ static func validate_state(s: Dictionary) -> Array:
 				errs.append("army %s unknown unit %s" % [aid, uid])
 	if not s["countries"].has(s["player"]):
 		errs.append("player missing")
+	errs.append_array(SimExt.validate(s))
 	for cid in s["countries"]:
 		var cc: Dictionary = s["countries"][cid]
 		if cc.get("alive", false) and cid != "REB":

@@ -122,3 +122,6 @@ Total historical events with source: 68
 * Per-scenario bibliography of rulers, dynasties, capitals, political structure and starting dates.
 * Scenario-specific historical province names and geometry.
 * Documentation of access dates and licences for historical (non-geometry) sources.
+
+## Technology eras (v2.1, approximate)
+`era_year` values in `tools/gen_data.py` (ERA_YEARS, SPECS) are approximate years of first widespread use, set from general knowledge of European/world history (gunpowder infantry c.1450, rifled artillery c.1850, railways c.1830, etc.). They are gameplay gates, not scholarly dates; no external source was consulted (network access not used). Succession laws, faction and government mechanics are game abstractions.

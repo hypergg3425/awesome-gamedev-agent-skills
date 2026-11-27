@@ -29,7 +29,27 @@
    "peasants": 0,
    "artisans": 0
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 1.5,
+    "nobility": 1.1,
+    "merchants": 0.8,
+    "clergy": 1.0,
+    "military": 1.0,
+    "popular": 0.6
+   },
+   "tax_cap": 0.6,
+   "corr": [
+    0.1,
+    0.012
+   ],
+   "coup": 0.6,
+   "civil": 1.0,
+   "transition": 6,
+   "mech": "court_favour",
+   "land_cap": 18
+  }
  },
  "constitutional_monarchy": {
   "id": "constitutional_monarchy",
@@ -60,7 +80,27 @@
    "clergy": 0,
    "military": 0
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 0.8,
+    "nobility": 1.0,
+    "merchants": 1.3,
+    "clergy": 0.8,
+    "military": 0.8,
+    "popular": 1.2
+   },
+   "tax_cap": 0.4,
+   "corr": [
+    0.05,
+    0.008
+   ],
+   "coup": 0.3,
+   "civil": 0.6,
+   "transition": 8,
+   "mech": "parliament",
+   "land_cap": 20
+  }
  },
  "republic": {
   "id": "republic",
@@ -91,7 +131,27 @@
    "clergy": -1,
    "military": 0
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 0.5,
+    "nobility": 0.7,
+    "merchants": 1.3,
+    "clergy": 0.8,
+    "military": 0.9,
+    "popular": 1.5
+   },
+   "tax_cap": 0.45,
+   "corr": [
+    0.06,
+    0.01
+   ],
+   "coup": 0.8,
+   "civil": 0.9,
+   "transition": 8,
+   "mech": "elections",
+   "land_cap": 16
+  }
  },
  "merchant_republic": {
   "id": "merchant_republic",
@@ -124,7 +184,27 @@
    "clergy": 0,
    "military": -1
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 0.4,
+    "nobility": 0.6,
+    "merchants": 1.8,
+    "clergy": 0.7,
+    "military": 0.5,
+    "popular": 1.0
+   },
+   "tax_cap": 0.4,
+   "corr": [
+    0.08,
+    0.02
+   ],
+   "coup": 0.4,
+   "civil": 0.7,
+   "transition": 6,
+   "mech": "oligarchy",
+   "land_cap": 8
+  }
  },
  "empire": {
   "id": "empire",
@@ -157,7 +237,27 @@
    "peasants": -1,
    "artisans": 0
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 1.2,
+    "nobility": 1.0,
+    "merchants": 0.8,
+    "clergy": 0.9,
+    "military": 1.3,
+    "popular": 0.6
+   },
+   "tax_cap": 0.6,
+   "corr": [
+    0.12,
+    0.018
+   ],
+   "coup": 1.2,
+   "civil": 1.3,
+   "transition": 8,
+   "mech": "governors",
+   "land_cap": 40
+  }
  },
  "tribal_confederation": {
   "id": "tribal_confederation",
@@ -191,7 +291,27 @@
    "clergy": 0,
    "artisans": -1
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 0.3,
+    "nobility": 1.2,
+    "merchants": 0.4,
+    "clergy": 0.7,
+    "military": 1.6,
+    "popular": 1.0
+   },
+   "tax_cap": 0.3,
+   "corr": [
+    0.0,
+    0.0
+   ],
+   "coup": 1.0,
+   "civil": 1.4,
+   "transition": 4,
+   "mech": "clan_unity",
+   "land_cap": 10
+  }
  },
  "theocracy": {
   "id": "theocracy",
@@ -223,7 +343,27 @@
    "artisans": -1,
    "military": 0
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 0.8,
+    "nobility": 0.7,
+    "merchants": 0.6,
+    "clergy": 1.8,
+    "military": 0.8,
+    "popular": 1.0
+   },
+   "tax_cap": 0.5,
+   "corr": [
+    0.03,
+    0.006
+   ],
+   "coup": 0.5,
+   "civil": 1.0,
+   "transition": 8,
+   "mech": "clerical_authority",
+   "land_cap": 14
+  }
  },
  "feudal_kingdom": {
   "id": "feudal_kingdom",
@@ -256,7 +396,27 @@
    "military": 0,
    "artisans": 0
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 0.8,
+    "nobility": 1.7,
+    "merchants": 0.6,
+    "clergy": 1.1,
+    "military": 1.0,
+    "popular": 0.7
+   },
+   "tax_cap": 0.35,
+   "corr": [
+    0.07,
+    0.008
+   ],
+   "coup": 0.7,
+   "civil": 1.5,
+   "transition": 8,
+   "mech": "vassal_lords",
+   "land_cap": 16
+  }
  },
  "military_government": {
   "id": "military_government",
@@ -287,6 +447,26 @@
    "merchants": -1,
    "artisans": 0
   },
-  "legit_start": 60
+  "legit_start": 60,
+  "politics": {
+   "bias": {
+    "court": 0.5,
+    "nobility": 0.7,
+    "merchants": 0.6,
+    "clergy": 0.6,
+    "military": 2.0,
+    "popular": 0.5
+   },
+   "tax_cap": 0.6,
+   "corr": [
+    0.09,
+    0.012
+   ],
+   "coup": 1.8,
+   "civil": 1.0,
+   "transition": 4,
+   "mech": "junta",
+   "land_cap": 20
+  }
  }
 }
