@@ -13,6 +13,9 @@ static func create_army(s: Dictionary, cid: String, loc: String, units: Dictiona
 	for uid in units:
 		if not bool(Defs.units[uid]["naval"]):
 			naval = false
+	if general is Dictionary and not (general as Dictionary).has("xp"):
+		general = (general as Dictionary).duplicate()
+		general["xp"] = 0.0  # scenario-authored generals carry no xp field
 	var a := {"id": aid, "owner": cid, "loc": loc, "units": units.duplicate(), "target": units.duplicate(), "general": general,
 		"morale": 80.0, "xp": 0.0, "path": [], "transit": null, "naval": naval, "prev_loc": loc, "arrived": -1, "supply": 1.0,
 		"name": "", "last_battle": -99}

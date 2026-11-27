@@ -90,6 +90,14 @@ func test_geometry_loads_and_mesh_size() -> void:
 	eq(bad_idx, 0, "triangle indices in range and every province has a polygon")
 	ok(verts <= MAX_MESH_VERTS, "mesh vertices %d <= %d (mobile budget)" % [verts, MAX_MESH_VERTS])
 	print("map600: %d provinces, %d mesh vertices, geometry load %d ms" % [Defs.province_ids.size(), verts, ms])
+	var gc := MapGeometry.new()
+	var t1 := Time.get_ticks_msec()
+	gc.load_file("res://data/map/geometry.bin", 410)
+	var cv := 0
+	for pl in gc.polys:
+		for poly in pl:
+			cv += (poly["v"] as PackedVector2Array).size()
+	print("classic: 410 provinces, %d mesh vertices, geometry load %d ms" % [cv, Time.get_ticks_msec() - t1])
 	# hit test: the label point of every province lies inside one of its polygons
 	var miss := 0
 	for pi in g.polys.size():
