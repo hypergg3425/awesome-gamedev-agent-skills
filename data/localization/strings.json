@@ -843,6 +843,10 @@
 "en": "Age",
 "tr": "Yaş"
 },
+"C_APPROX": {
+"en": "Approximate reconstruction",
+"tr": "Yaklaşık tarihsel yeniden kurgu"
+},
 "C_HEIR": {
 "en": "Heir",
 "tr": "Varis"

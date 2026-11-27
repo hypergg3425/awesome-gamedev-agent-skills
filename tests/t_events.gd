@@ -143,3 +143,10 @@ func test_player_events_wait_for_choice_ai_events_resolve() -> void:
 	eq(pend.size(), 1, "only the player's event waits")
 	ok(absf(float(s["countries"][other]["gold"]) - g0) > 1.0, "AI event resolved immediately")
 	Defs.events.erase("rnd_test")
+
+func test_scenario_event_text_uses_scenario_province_names() -> void:
+	var s := new_state("fall_of_constantinople")
+	var cid := "BYZ"
+	var entry := {"cid": cid, "pid": "tur_constantinople", "other": ""}
+	var txt := EventSystem.render(s, entry, {"en": "Fire in {province}", "tr": "{province} yangını"})
+	ok(txt.contains("Constantinople (besieged)") or txt.contains("kuşatma"), "event text shows the scenario's province name: %s" % txt)

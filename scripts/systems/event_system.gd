@@ -231,7 +231,7 @@ static func render(s: Dictionary, entry: Dictionary, field: Variant) -> String:
 	var c: Dictionary = s["countries"][entry["cid"]]
 	txt = txt.replace("{country}", GS.country_name(s, entry["cid"]))
 	txt = txt.replace("{ruler}", str(c["ruler"]["name"]))
-	txt = txt.replace("{province}", Defs.province_name(entry["pid"]) if entry["pid"] != "" else Defs.province_name(c["capital"]))
+	txt = txt.replace("{province}", Defs.province_name_in(s, entry["pid"]) if entry["pid"] != "" else Defs.province_name_in(s, c["capital"]))
 	txt = txt.replace("{other}", GS.country_name(s, entry["other"]) if entry["other"] != "" else "?")
 	return txt
 

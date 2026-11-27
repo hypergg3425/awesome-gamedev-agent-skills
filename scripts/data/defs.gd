@@ -20,6 +20,7 @@ var map_meta: Dictionary = {}
 var geometry: MapGeometry = null
 var load_errors: Array[String] = []
 var loaded := false
+var _game: Node = null                   # cached autoload ref for province_name()
 
 func _ready() -> void:
 	load_all()
@@ -103,7 +104,28 @@ func province(pid: String) -> Dictionary:
 func country_def(cid: String) -> Dictionary:
 	return countries.get(cid, {})
 
+## Display name of a province. Consults the active campaign's scenario names layer (state["names"],
+## historical names for the scenario date) before the modern-geometry name from provinces.json.
 func province_name(pid: String) -> String:
+	if _game == null:
+		_game = get_node_or_null("/root/Game")
+	if _game != null and not (_game.state as Dictionary).is_empty():
+		return province_name_in(_game.state, pid)
+	return _static_province_name(pid)
+
+## Same as province_name but for an explicit state (simulation code, tests, battle reports).
+func province_name_in(state: Dictionary, pid: String) -> String:
+	var names: Dictionary = state.get("names", {})
+	var nd: Variant = names.get(pid)
+	if nd is Dictionary:
+		var txt := str(nd.get(Loc.lang, ""))
+		if txt == "":
+			txt = str(nd.get("en", ""))
+		if txt != "":
+			return txt
+	return _static_province_name(pid)
+
+func _static_province_name(pid: String) -> String:
 	var p: Dictionary = provinces.get(pid, {})
 	if p.is_empty():
 		return pid
