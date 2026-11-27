@@ -1,14 +1,14 @@
 {
-  "checks": 2924,
+  "checks": 38,
   "failures": 0,
   "godot": "4.7.2-stable (official)",
   "suites": [
     {
-      "checks": 2924,
+      "checks": 38,
       "failures": [],
-      "ms": 10451,
+      "ms": 8871,
       "status": "PASS",
-      "suite": "map600"
+      "suite": "diplomacy"
     }
   ]
 }

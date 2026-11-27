@@ -20,6 +20,7 @@ var map_meta: Dictionary = {}
 var geometry: MapGeometry = null
 var features: Dictionary = {}            # rivers / passes / straits / lakes of the active map set (features.json)
 var parents: Dictionary = {}             # extended map only: classic id -> [child ids]; first child = core
+var province_scale := 1.0                # provinces per classic province (1.0 classic, ~2.6 extended): normalises per-province counts
 var map_set := "classic"                 # active map set: "classic" (data/map) or "extended" (data/map600)
 ## Default set for scenarios that do not name one. "classic" until every suite passes on "extended";
 ## override per run with the environment variable IMPERIUM_MAP_SET=extended.
@@ -72,6 +73,7 @@ func _load_map() -> void:
 	seas = sl if sl is Array else []
 	features = _read_dict(dir + "/features.json") if FileAccess.file_exists(dir + "/features.json") else {}
 	parents = _read_dict(dir + "/parents.json") if FileAccess.file_exists(dir + "/parents.json") else {}
+	province_scale = float(province_ids.size()) / float(parents.size()) if not parents.is_empty() else 1.0
 
 func load_all() -> void:
 	if loaded:

@@ -61,5 +61,8 @@ static func neighbour_pair(s: Dictionary, min_provs: int = 1) -> Array:
 						continue
 					if not GS.vassals_of(s, a).is_empty() or not GS.vassals_of(s, o).is_empty():
 						continue
+					# the extended map finds different first neighbours; skip historic claim feuds so fixtures stay neutral
+					if Defs.map_set == "extended" and (DiplomacySystem.claim_count(s, a, o) > 0 or DiplomacySystem.claim_count(s, o, a) > 0):
+						continue
 					return [a, o, pid, nb]
 	return []
