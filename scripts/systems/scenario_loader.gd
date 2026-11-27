@@ -486,7 +486,13 @@ static func _make_armies(s: Dictionary, cid: String, cd: Dictionary) -> void:
 					units[uid] = float(ad["units"][uid])
 			if units.is_empty():
 				continue
-			MilitarySystem.create_army(s, cid, loc, units, ad.get("general", null))
+			var gen: Variant = ad.get("general", null)
+			if gen is Dictionary:
+				gen = (gen as Dictionary).duplicate()
+				for k in ["tac", "log", "siege"]:
+					gen[k] = int(gen.get(k, 5))
+				gen["xp"] = float(gen.get("xp", 0.0))
+			MilitarySystem.create_army(s, cid, loc, units, gen)
 		return
 	var level: String = str(cd.get("military", "medium"))
 	var factor: float = {"low": 0.6, "medium": 1.0, "high": 1.6}.get(level, 1.0)

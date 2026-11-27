@@ -57,9 +57,21 @@ fact must be marked approximate (`"approximate": true`, which is the default) �
                     "by_turn": 120, "score": 300, "name": {"en": "...", "tr": "..."}, "desc": {"en": "...", "tr": "..."} } ],
   "victory": {"territory_pct": 0.25},                     // optional overrides
   "events": ["hyw_crecy"],                                // ids of historical events active in this scenario (events live in data/events)
-  "native_fallback": true                                 // unclaimed provinces become native/tribal countries
+  "native_fallback": true,                                // unclaimed provinces become generic native/tribal countries (v2.0 scenarios leave none)
+  "province_names": {"tur_constantinople": {"en": "Constantinople (besieged)", "tr": "Konstantiniyye (kuşatma altında)"}},   // v2.0: names for the scenario date
+  "geo_layer": [{"id": "bosporus", "kind": "strait", "name": {"en": "...", "tr": "..."}, "provinces": ["tur_constantinople"], "note": {"en": "...", "tr": "..."}}]
 }
 ```
+
+### v2.0 additions
+* **`province_names`** (optional): `{"<province_id>": {"en": "...", "tr": "..."}}`. Historical or regional names valid at the scenario date. `ScenarioLoader.build` stores the known ids in `state["names"]` (saved with the game; old saves without it simply fall back). All UI goes through `Defs.province_name(pid)`, which consults the active `Game.state`; simulation code and tests use `Defs.province_name_in(state, pid)`. Both fall back to the modern name from `provinces.json`.
+* **`geo_layer`** (optional): notes about straits, rivers, passes, fortifications, regions or routes for the date (`kind`: strait | river | pass | fortification | region | route). Stored in `state["geo_layer"]`; documentation-grade data for map layers, no gameplay effect yet.
+* **Per-country `approximate`** (bool, default = the scenario flag) and **`note`** (`{en, tr}`): `true` marks a reconstruction whose ruler, borders or polity form is uncertain; the country panel shows "Approximate reconstruction" plus the note. Stored as `country["approximate"]` / `country["note"]`.
+* **`native: true` named groups**: a country with `native: true` is a cultural group or tribal polity (not playable, one tech level lower, low military). Use it, with `approximate: true`, for regions where no state can be drawn instead of relying on the generic filler.
+* **`claims`** patterns may start with `-` to remove earlier matches; a country never claims a province it already owns.
+* **`religion_overrides` / `culture_overrides`**: an exact province id now beats a glob such as `tur_*`, regardless of key order.
+* Authored armies: a `general` needs only `name`, `tac`, `log`, `siege`; `xp` and missing skills are filled in by the loader.
+* `tools/validate_content.py` checks ruler fields, heirs, `approximate`, `province_names`, `claims` (country and patterns), `geo_layer` and override patterns.
 
 Provinces not listed for any country become small native/tribal states automatically, so a scenario only
 needs to describe the powers that matter. Late entries in the `countries` object override earlier ones
