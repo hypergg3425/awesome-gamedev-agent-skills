@@ -27,6 +27,11 @@ static func meta_of(state: Dictionary) -> Dictionary:
 		"difficulty": state.get("difficulty", "normal"), "ts": Time.get_unix_time_from_system(), "version": Const.VERSION,
 		"player_name": state.get("countries", {}).get(state.get("player", ""), {}).get("name", {}), "players": state.get("players", [])}
 
+## Test hook: "write" fails opening the temp file, "rename" fails the final move, "truncate" writes half a file.
+var test_fail := ""
+
+## Atomic save: write <slot>.json.tmp, read it back and verify, move the previous file to .bak and only then
+## move the verified temp file into place. A failure at any stage leaves the previous save untouched.
 func save_slot(slot: String, state: Dictionary) -> Dictionary:
 	DirAccess.make_dir_recursive_absolute(DIR)
 	# full precision + insertion order: a loaded campaign must continue exactly like the original
@@ -34,16 +39,24 @@ func save_slot(slot: String, state: Dictionary) -> Dictionary:
 	var doc := JSON.stringify({"format": "imperium-save", "version": Const.SAVE_VERSION, "meta": meta_of(state), "crc": body.hash(), "len": body.length(), "state_json": body})
 	var path := slot_path(slot)
 	var tmp := path + ".tmp"
-	var f := FileAccess.open(tmp, FileAccess.WRITE)
+	var f := FileAccess.open(tmp, FileAccess.WRITE) if test_fail != "write" else null
 	if f == null:
 		return {"ok": false, "reason": "SAVE_ERR_WRITE"}
-	f.store_string(doc)
+	f.store_string(doc.substr(0, doc.length() / 2) if test_fail == "truncate" else doc)
 	f.close()
-	# keep a backup of the previous save, then move the new file in place
-	if FileAccess.file_exists(path):
-		DirAccess.copy_absolute(path, path + ".bak")
+	if FileAccess.get_file_as_string(tmp) != doc:
+		DirAccess.remove_absolute(tmp)
+		return {"ok": false, "reason": "SAVE_ERR_WRITE"}
 	var da := DirAccess.open(DIR)
-	if da == null or da.rename(slot + ".json.tmp", slot + ".json") != OK:
+	if da == null or test_fail == "rename":
+		DirAccess.remove_absolute(tmp)
+		return {"ok": false, "reason": "SAVE_ERR_WRITE"}
+	var had_old := FileAccess.file_exists(path)
+	if had_old:
+		# the old file is only a verified save (it was verified when written), so it becomes the backup
+		DirAccess.copy_absolute(path, path + ".bak")
+	if da.rename(slot + ".json.tmp", slot + ".json") != OK:
+		DirAccess.remove_absolute(tmp)
 		return {"ok": false, "reason": "SAVE_ERR_WRITE"}
 	saved.emit(slot)
 	return {"ok": true}
@@ -52,6 +65,10 @@ func autosave(state: Dictionary) -> void:
 	var idx := int(state.get("turn", 0)) % AUTOSLOTS + 1
 	save_slot("auto_%d" % idx, state)
 	save_slot("last", state)
+
+## Cheap safety save used when the app is backgrounded or closed.
+func autosave_quick(state: Dictionary) -> Dictionary:
+	return save_slot("last", state)
 
 func list_saves() -> Array:
 	var out: Array = []
@@ -98,10 +115,14 @@ func load_slot(slot: String) -> Dictionary:
 		res["recovered"] = false
 		return res
 	var first_reason: String = res.get("reason", "SAVE_ERR_CORRUPT")
+	var main := slot_path(slot)
+	var bak := _load_file(main + ".bak")
 	# keep the broken file for inspection instead of deleting it
-	if FileAccess.file_exists(slot_path(slot)):
-		DirAccess.copy_absolute(slot_path(slot), slot_path(slot) + ".corrupt")
-	var bak := _load_file(slot_path(slot) + ".bak")
+	if FileAccess.file_exists(main) and first_reason != "SAVE_ERR_NEWER":
+		DirAccess.copy_absolute(main, main + ".corrupt")
+		if bak["ok"]:
+			# heal the slot so the next load does not need the fallback
+			DirAccess.copy_absolute(main + ".bak", main)
 	if bak["ok"]:
 		bak["recovered"] = true
 		return bak
