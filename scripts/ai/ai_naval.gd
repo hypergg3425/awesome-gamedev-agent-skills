@@ -16,6 +16,9 @@ static func run(s: Dictionary, cid: String, ai: Dictionary, P: Dictionary, W: Di
 		return
 	var at_war := not GS.wars_of(s, cid).is_empty()
 	_recruit_fleet(s, cid, W, P, ports, at_war, rng)
+	# fleet handling is the expensive part (sea path searches): every second turn, staggered per country
+	if (int(s["turn"]) + int(cid.hash() % 2)) % 2 != 0 or _my_fleets(s, cid).is_empty():
+		return
 	_organise(s, cid, at_war, rng)
 	_fleet_orders(s, cid, at_war, P)
 	_landing_escorts(s, cid, at_war)
