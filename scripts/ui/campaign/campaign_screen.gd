@@ -175,7 +175,8 @@ func _build_toolbar() -> void:
 
 func _fill_toolbar() -> void:
 	for t in [["economy", "economy", "PANEL_ECONOMY"], ["military", "military", "PANEL_MILITARY"], ["diplomacy", "diplomacy", "PANEL_DIPLOMACY"],
-			["technology", "technology", "PANEL_TECH"], ["politics", "politics", "PANEL_POLITICS"], ["objectives", "objectives", "PANEL_OBJECTIVES"]]:
+			["technology", "technology", "PANEL_TECH"], ["politics", "politics", "PANEL_POLITICS"], ["espionage", "spy", "PANEL_ESPIONAGE"],
+			["dynasty", "dynasty", "PANEL_DYNASTY"], ["objectives", "objectives", "PANEL_OBJECTIVES"]]:
 		var key: String = t[0]
 		var b := UI.icon_button(t[1], func() -> void: open_sheet(key), Loc.t(t[2]), 58.0)
 		toolbar.add_child(b)
@@ -263,6 +264,8 @@ func _create_sheets() -> void:
 		"politics": ["PANEL_POLITICS", "politics", PanelsPolitics],
 		"objectives": ["PANEL_OBJECTIVES", "objectives", PanelsObjectives],
 		"events": ["PANEL_EVENTS", "events", PanelsEvents],
+		"espionage": ["PANEL_ESPIONAGE", "spy", PanelsEspionage],
+		"dynasty": ["PANEL_DYNASTY", "dynasty", PanelsDynasty],
 	}
 	for id in defs:
 		var d: Array = defs[id]

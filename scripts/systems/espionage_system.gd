@@ -452,7 +452,7 @@ static func ai_turn(s: Dictionary, cid: String, personality: String, rng: GameRn
 	var spend_cap := income * 0.6 * float(style["spy"]) + 25.0
 	var e := st(s, cid)
 	# counter-intelligence first: foreign agents are a real danger
-	var want_ci := clampi(int(round(1.0 + float(style["ci"]) * (1.0 + float(foreign_networks_against(s, cid)) * 0.5))), 0, 4)
+	var want_ci := clampi(int(round(1.0 + float(style["ci"]) * (1.0 + float(recent_incidents(s, cid)) * 0.5))), 0, 4)
 	if int(e["ci"]) < want_ci and gold > reserve + ci_cost(s, cid) and ci_cost(s, cid) <= spend_cap * 2.0:
 		raise_ci(s, cid)
 		gold = float(c["gold"])
@@ -508,13 +508,12 @@ static func ai_turn(s: Dictionary, cid: String, personality: String, rng: GameRn
 		run_op(s, cid, best, str(op))
 		break
 
-static func foreign_networks_against(s: Dictionary, cid: String) -> int:
+## plots the country actually noticed in the last 30 turns (uncovered rings, foiled operations): all a human could know
+static func recent_incidents(s: Dictionary, cid: String) -> int:
 	var n := 0
-	for oid in GS.alive_countries(s):
-		if oid != cid:
-			var oe := st(s, oid)
-			if not oe.is_empty() and oe["net"].has(cid):
-				n += 1
+	for it in st(s, cid)["log"]:
+		if (str(it["kind"]) == "uncovered" or bool((it["d"] as Dictionary).get("foiled", false))) and int(s["turn"]) - int(it["turn"]) <= 30:
+			n += 1
 	return n
 
 ## validation of the stored structure (used by Saves.validate_state)

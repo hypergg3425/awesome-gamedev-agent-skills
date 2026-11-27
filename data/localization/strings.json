@@ -519,6 +519,10 @@
 "en": "Needs development {dev}.",
 "tr": "{dev} gelişmişlik gerekir."
 },
+"BUILD_ERR_ERA": {
+"en": "Not available before the year {year}.",
+"tr": "{year} yılından önce kurulamaz."
+},
 "BUILD_ERR_GOV": {
 "en": "Your form of government cannot build this.",
 "tr": "Hükûmet biçiminiz bunu inşa edemez."
@@ -571,6 +575,10 @@
 "en": "Against another faith, as a theocracy.",
 "tr": "Teokrasi olarak başka inanca karşı."
 },
+"CB_CIVIL_WAR": {
+"en": "Civil war",
+"tr": "İç savaş"
+},
 "CB_CLAIM": {
 "en": "Territorial claim",
 "tr": "Toprak iddiası"
@@ -590,6 +598,14 @@
 "CB_HOLY_WAR": {
 "en": "Holy war",
 "tr": "Kutsal savaş"
+},
+"CB_INCIDENT": {
+"en": "Espionage incident",
+"tr": "Casusluk olayı"
+},
+"CB_INDEPENDENCE": {
+"en": "War of independence",
+"tr": "Bağımsızlık savaşı"
 },
 "CB_LIBERATION": {
 "en": "Liberation",
@@ -830,6 +846,18 @@
 "CULT_TURKIC": {
 "en": "Turkic",
 "tr": "Türk"
+},
+"CWR_CLAN_SPLIT": {
+"en": "a clan split",
+"tr": "bir kabile bölünmesi"
+},
+"CWR_FACTION": {
+"en": "a faction revolt",
+"tr": "bir hizip isyanı"
+},
+"CWR_SUCCESSION": {
+"en": "a disputed succession",
+"tr": "tartışmalı bir veraset"
 },
 "C_ADMIN": {
 "en": "Administrative points",
@@ -1075,6 +1103,10 @@
 "en": "Dislike of the target",
 "tr": "Hedeften hoşlanmama"
 },
+"DR_DYNASTIC_TIES": {
+"en": "Dynastic ties",
+"tr": "Hanedan bağları"
+},
 "DR_EXHAUSTION": {
 "en": "War exhaustion",
 "tr": "Savaş yorgunluğu"
@@ -1155,9 +1187,137 @@
 "en": "Length of the war",
 "tr": "Savaşın uzunluğu"
 },
+"DYN_ERR_LAW": {
+"en": "Your succession law does not allow designating an heir.",
+"tr": "Veraset kanununuz varis belirlemeye izin vermiyor."
+},
+"DYN_ERR_MARRIED": {
+"en": "The two houses are already joined by marriage.",
+"tr": "İki hanedan zaten evlilikle bağlı."
+},
+"DYN_ERR_NO_CRISIS": {
+"en": "There is no succession dispute.",
+"tr": "Ortada bir veraset anlaşmazlığı yok."
+},
+"DYN_ERR_NO_DYNASTY": {
+"en": "Both realms must be hereditary monarchies.",
+"tr": "İki devlet de kalıtsal monarşi olmalı."
+},
+"DYN_ERR_NO_MATCH": {
+"en": "The other court has no suitable unmarried royal.",
+"tr": "Karşı sarayda uygun, evlenmemiş bir hanedan üyesi yok."
+},
+"DYN_ERR_NO_ROYAL": {
+"en": "That royal cannot marry (too young or already married).",
+"tr": "Bu hanedan üyesi evlenemez (çok genç veya zaten evli)."
+},
+"DYN_LAW_AGNATIC": {
+"en": "Agnatic succession (sons only)",
+"tr": "Agnatik veraset (yalnızca oğullar)"
+},
+"DYN_LAW_COGNATIC": {
+"en": "Cognatic succession (eldest child)",
+"tr": "Kognatik veraset (en büyük çocuk)"
+},
+"DYN_LAW_DESIGNATED": {
+"en": "Designated successor (ability and adoption)",
+"tr": "Belirlenmiş halef (yetenek ve evlat edinme)"
+},
+"DYN_LAW_ELECTIVE": {
+"en": "Elective: no hereditary right",
+"tr": "Seçimle: kalıtsal hak yok"
+},
+"DYN_REL_CHILD": {
+"en": "child",
+"tr": "çocuk"
+},
+"DYN_REL_COUSIN": {
+"en": "cousin",
+"tr": "kuzen"
+},
+"DYN_REL_KIN": {
+"en": "kinsman",
+"tr": "akraba"
+},
+"DYN_REL_NEPHEW": {
+"en": "nephew / niece",
+"tr": "yeğen"
+},
+"DYN_REL_RULER": {
+"en": "ruler",
+"tr": "hükümdar"
+},
+"DYN_REL_SIBLING": {
+"en": "sibling",
+"tr": "kardeş"
+},
 "ECON_ERR_ADMIN_CAP": {
 "en": "Administrative points are capped at 500.",
 "tr": "İdari puan üst sınırı 500."
+},
+"ECO_CAUSE_BANK_RUN": {
+"en": "a run on the banks",
+"tr": "bankalara hücum"
+},
+"ECO_CAUSE_BUST": {
+"en": "a bust after the boom",
+"tr": "canlanmanın ardından çöküş"
+},
+"ECO_CAUSE_DEFAULT": {
+"en": "a state default",
+"tr": "devletin iflası"
+},
+"ECO_CAUSE_GOOD_HARVESTS": {
+"en": "good harvests",
+"tr": "bereketli hasat"
+},
+"ECO_CAUSE_HARVEST_FAILURE": {
+"en": "harvest failure",
+"tr": "hasat felaketi"
+},
+"ECO_CAUSE_INVESTMENT": {
+"en": "investment",
+"tr": "yatırım"
+},
+"ECO_CAUSE_TRADE_COLLAPSE": {
+"en": "collapse of trade",
+"tr": "ticaretin çöküşü"
+},
+"ECO_CAUSE_TRADE_EXPANSION": {
+"en": "expanding trade",
+"tr": "genişleyen ticaret"
+},
+"ECO_CAUSE_WAR_STRAIN": {
+"en": "war strain",
+"tr": "savaş yükü"
+},
+"ECO_ERR_CREDIT_FROZEN": {
+"en": "Lenders refuse to extend credit during the banking crisis.",
+"tr": "Bankacılık krizi sürerken kredi verilmiyor."
+},
+"ECO_ERR_CREDIT_LIMIT": {
+"en": "Beyond your credit line (room: {room} gold).",
+"tr": "Kredi limitinizi aşıyor (kalan: {room} altın)."
+},
+"ECO_ERR_NOTHING_TO_REPAY": {
+"en": "Nothing to repay.",
+"tr": "Ödenecek borç yok."
+},
+"ECO_PHASE_BOOM": {
+"en": "Boom",
+"tr": "Canlanma"
+},
+"ECO_PHASE_CRISIS": {
+"en": "Crisis",
+"tr": "Kriz"
+},
+"ECO_PHASE_NORMAL": {
+"en": "Stable",
+"tr": "İstikrarlı"
+},
+"ECO_PHASE_SLUMP": {
+"en": "Slump",
+"tr": "Durgunluk"
 },
 "ED_AI": {
 "en": "AI personality",
@@ -1495,6 +1655,102 @@
 "en": "Relation refers to unknown country {b}",
 "tr": "İlişki bilinmeyen {b} devletine başvuruyor"
 },
+"ESP_ERR_CAPACITY": {
+"en": "Your service cannot run more than {n} networks.",
+"tr": "Teşkilatınız {n} ağdan fazlasını yürütemez."
+},
+"ESP_ERR_COOLDOWN": {
+"en": "The agents must lie low for {n} more turns.",
+"tr": "Ajanlar {n} tur daha saklanmalı."
+},
+"ESP_ERR_LEVEL": {
+"en": "Needs a network of level {lvl}.",
+"tr": "{lvl}. seviye bir ağ gerekir."
+},
+"ESP_ERR_MAX": {
+"en": "Already at the highest level.",
+"tr": "Zaten en yüksek seviyede."
+},
+"ESP_ERR_NATIVE": {
+"en": "No spy service can operate among these tribes.",
+"tr": "Bu kabilelerin arasında casusluk ağı kurulamaz."
+},
+"ESP_ERR_NO_BUILDINGS": {
+"en": "There is nothing worth sabotaging.",
+"tr": "Sabote edilecek bir şey yok."
+},
+"ESP_ERR_NO_TECH": {
+"en": "They know nothing you could steal.",
+"tr": "Çalabileceğiniz bir bilgileri yok."
+},
+"ESP_ERR_REACH": {
+"en": "No way to reach this country.",
+"tr": "Bu ülkeye ulaşmanın yolu yok."
+},
+"ESP_ERR_VASSAL": {
+"en": "A vassal needs no spies.",
+"tr": "Bir vassala ajan gerekmez."
+},
+"ESP_OPD_INCITE_UNREST": {
+"en": "Unrest in the target's largest provinces; rebels from level 4.",
+"tr": "Hedefin büyük eyaletlerinde huzursuzluk; 4. seviyeden itibaren isyancılar."
+},
+"ESP_OPD_INFLUENCE": {
+"en": "Raises the target's opinion of us.",
+"tr": "Hedefin bize olan görüşünü yükseltir."
+},
+"ESP_OPD_SABOTAGE_BUILDINGS": {
+"en": "Destroys one level of their most valuable building.",
+"tr": "En değerli binalarının bir seviyesini yok eder."
+},
+"ESP_OPD_SABOTAGE_SUPPLY": {
+"en": "Their armies starve for three turns; granaries burn.",
+"tr": "Ordular üç tur aç kalır; ambarlar yanar."
+},
+"ESP_OPD_STEAL_TECH": {
+"en": "Gives large research progress on a technology they own.",
+"tr": "Sahip oldukları bir teknolojide büyük araştırma ilerlemesi sağlar."
+},
+"ESP_OPD_SURVEY": {
+"en": "Full intelligence on the target for six turns.",
+"tr": "Hedef hakkında altı tur boyunca tam istihbarat."
+},
+"ESP_OP_CI": {
+"en": "Counter-intelligence",
+"tr": "Karşı istihbarat"
+},
+"ESP_OP_INCITE_UNREST": {
+"en": "Incite unrest",
+"tr": "Huzursuzluk çıkar"
+},
+"ESP_OP_INFLUENCE": {
+"en": "Influence the court",
+"tr": "Saray üzerinde nüfuz"
+},
+"ESP_OP_NETWORK": {
+"en": "Spy network",
+"tr": "Casus ağı"
+},
+"ESP_OP_SABOTAGE_BUILDINGS": {
+"en": "Sabotage buildings",
+"tr": "Binaları sabote et"
+},
+"ESP_OP_SABOTAGE_SUPPLY": {
+"en": "Sabotage supplies",
+"tr": "İkmali sabote et"
+},
+"ESP_OP_STEAL_TECH": {
+"en": "Steal technology",
+"tr": "Teknoloji çal"
+},
+"ESP_OP_SURVEY": {
+"en": "Survey",
+"tr": "Keşif"
+},
+"ESP_OP_UNCOVERED": {
+"en": "Network uncovered",
+"tr": "Ağ ortaya çıktı"
+},
 "EVT_HISTORICAL": {
 "en": "HISTORICAL EVENT",
 "tr": "TARİHÎ OLAY"
@@ -1514,6 +1770,54 @@
 "EVT_SOURCE": {
 "en": "Source: {src}",
 "tr": "Kaynak: {src}"
+},
+"FACTION_CLERGY": {
+"en": "Clergy",
+"tr": "Din adamları"
+},
+"FACTION_COURT": {
+"en": "Court",
+"tr": "Saray"
+},
+"FACTION_MERCHANTS": {
+"en": "Merchants",
+"tr": "Tüccarlar"
+},
+"FACTION_MILITARY": {
+"en": "Military",
+"tr": "Ordu"
+},
+"FACTION_NOBILITY": {
+"en": "Nobility",
+"tr": "Soylular"
+},
+"FACTION_POPULAR": {
+"en": "Common people",
+"tr": "Halk"
+},
+"FACTION_WANTS_CLERGY": {
+"en": "Donations and a respected church.",
+"tr": "Bağışlar ve saygın bir kilise."
+},
+"FACTION_WANTS_COURT": {
+"en": "Patronage, offices and a loyal household.",
+"tr": "Himaye, makamlar ve sadık bir saray."
+},
+"FACTION_WANTS_MERCHANTS": {
+"en": "Trade, low taxes and security.",
+"tr": "Ticaret, düşük vergi ve güvenlik."
+},
+"FACTION_WANTS_MILITARY": {
+"en": "Funded armies and glory.",
+"tr": "Finanse edilen ordular ve zafer."
+},
+"FACTION_WANTS_NOBILITY": {
+"en": "Privileges, low taxes and land.",
+"tr": "İmtiyazlar, düşük vergi ve toprak."
+},
+"FACTION_WANTS_POPULAR": {
+"en": "Bread, low taxes and justice.",
+"tr": "Ekmek, düşük vergi ve adalet."
 },
 "FACTOR_COMPOSITION": {
 "en": "Army composition",
@@ -1554,6 +1858,38 @@
 "FACTOR_WEATHER": {
 "en": "Weather",
 "tr": "Hava"
+},
+"FAC_ERR_COOLDOWN": {
+"en": "Not yet: wait a few turns.",
+"tr": "Henüz değil: birkaç tur bekleyin."
+},
+"FAC_ERR_NO_DEMAND": {
+"en": "That faction has no demand.",
+"tr": "Bu hizbin bir talebi yok."
+},
+"FAC_ERR_POLICY": {
+"en": "Fix the problem itself: this demand cannot be bought.",
+"tr": "Sorunun kendisini çözün: bu talep parayla karşılanamaz."
+},
+"FAC_ERR_SUPPRESS_COURT": {
+"en": "You cannot suppress your own court.",
+"tr": "Kendi sarayınızı bastıramazsınız."
+},
+"FD_FOOD_OK": {
+"en": "Feed the people: end the famine.",
+"tr": "Halkı doyurun: kıtlığa son verin."
+},
+"FD_FUNDING_MIN": {
+"en": "Fund the army at {value}% or more.",
+"tr": "Orduyu %{value} veya üzeri finanse edin."
+},
+"FD_GOLD": {
+"en": "A gift of {value} gold.",
+"tr": "{value} altın bağış."
+},
+"FD_TAX_CAP": {
+"en": "Lower the tax rate to {value}%.",
+"tr": "Vergi oranını %{value}'e indirin."
 },
 "FEAT_COUP_RISK": {
 "en": "Generals may seize power.",
@@ -1627,6 +1963,46 @@
 "en": "Your realm is too small.",
 "tr": "Devletiniz çok küçük."
 },
+"GOV_ERR_TRANSITION": {
+"en": "The state is still in transition after its last change of government.",
+"tr": "Devlet, son hükûmet değişikliğinin ardından hâlâ geçiş döneminde."
+},
+"GOV_MECH_CLAN_UNITY": {
+"en": "Clan unity: war unites the clans, peace and high taxes divide them; low unity can split the confederation.",
+"tr": "Kabile birliği: savaş kabileleri birleştirir, barış ve yüksek vergi böler; düşük birlik konfederasyonu parçalayabilir."
+},
+"GOV_MECH_CLERICAL_AUTHORITY": {
+"en": "Clerical authority: a content clergy calms the realm; an angry one may cause a schism.",
+"tr": "Din otoritesi: memnun din adamları ülkeyi yatıştırır; öfkeli olanlar bölünmeye yol açabilir."
+},
+"GOV_MECH_COURT_FAVOUR": {
+"en": "Court favour: a loyal court brings tax and administrative strength; a resentful one steals.",
+"tr": "Saray lütfu: sadık bir saray vergi ve idari güç getirir; küskün bir saray çalar."
+},
+"GOV_MECH_ELECTIONS": {
+"en": "Elections: the strongest faction wins each term and bends policy; a leader without a mandate bleeds legitimacy.",
+"tr": "Seçimler: her dönem en güçlü hizip kazanır ve politikayı eğer; dayanaksız lider meşruiyet kaybeder."
+},
+"GOV_MECH_GOVERNORS": {
+"en": "Provincial governors: great reach, but corruption grows and provinces drift towards autonomy.",
+"tr": "Eyalet valileri: geniş erişim, ama yolsuzluk artar ve eyaletler özerkliğe kayar."
+},
+"GOV_MECH_JUNTA": {
+"en": "Junta: the army rules; generals depose each other and the common people are ignored.",
+"tr": "Cunta: ordu yönetir; generaller birbirini devirir, halk görmezden gelinir."
+},
+"GOV_MECH_OLIGARCHY": {
+"en": "Merchant oligarchy: rich in cities, poor at governing land beyond a few provinces.",
+"tr": "Tüccar oligarşisi: şehirlerde zengin, birkaç eyaletin ötesinde toprağı yönetmekte zayıf."
+},
+"GOV_MECH_PARLIAMENT": {
+"en": "Parliament: factions drift towards consensus and calm politics steadies the state; taxes are capped.",
+"tr": "Meclis: hizipler uzlaşmaya yaklaşır, sakin siyaset devleti sağlamlaştırır; vergiler sınırlıdır."
+},
+"GOV_MECH_VASSAL_LORDS": {
+"en": "Great lords: loyal nobles bring levies; a strong crown makes them restless; civil war risk is high.",
+"tr": "Büyük beyler: sadık soylular asker getirir; güçlü bir taç onları huzursuz eder; iç savaş riski yüksektir."
+},
 "GOV_NEXT_CHANGE": {
 "en": "Next leadership change",
 "tr": "Sonraki liderlik değişimi"
@@ -1655,9 +2031,17 @@
 "en": "The state went bankrupt.",
 "tr": "Devlet iflas etti."
 },
+"HIST_CIVIL_WAR": {
+"en": "Civil war broke out: {other} rose against the crown.",
+"tr": "İç savaş çıktı: {other} tahta karşı ayaklandı."
+},
 "HIST_COALITION_WAR": {
 "en": "A coalition went to war against {other}.",
 "tr": "Bir koalisyon {other} devletine savaş açtı."
+},
+"HIST_COUNTER_COUP": {
+"en": "The generals replaced their leader: {ruler}.",
+"tr": "Generaller liderlerini değiştirdi: {ruler}."
 },
 "HIST_COUP": {
 "en": "A coup brought {ruler} to power.",
@@ -1667,13 +2051,37 @@
 "en": "The realm fell.",
 "tr": "Devlet yıkıldı."
 },
+"HIST_DYNASTY_EXTINCT": {
+"en": "The dynasty died out; {ruler} founded a new one.",
+"tr": "Hanedan söndü; {ruler} yenisini kurdu."
+},
+"HIST_ECO_BOOM": {
+"en": "Economic boom ({cause}).",
+"tr": "Ekonomik canlanma ({cause})."
+},
+"HIST_ECO_CRISIS": {
+"en": "Economic crisis ({cause}).",
+"tr": "Ekonomik kriz ({cause})."
+},
+"HIST_ECO_SLUMP": {
+"en": "Economic slump ({cause}).",
+"tr": "Ekonomik durgunluk ({cause})."
+},
 "HIST_ELECTION": {
 "en": "{ruler} was elected leader.",
 "tr": "{ruler} lider seçildi."
 },
+"HIST_ESP_EXPOSED": {
+"en": "A plot against {other} was exposed.",
+"tr": "{other} aleyhindeki bir komplo ifşa oldu."
+},
 "HIST_EVENT": {
 "en": "{event}: {option}",
 "tr": "{event}: {option}"
+},
+"HIST_FACTION_UPRISING": {
+"en": "The {faction} faction rose in arms.",
+"tr": "{faction} hizbi silaha sarıldı."
 },
 "HIST_GOV_CHANGED": {
 "en": "Government changed to {gov}.",
@@ -1682,6 +2090,14 @@
 "HIST_INCOME_TITLE": {
 "en": "Income per turn",
 "tr": "Tur başına gelir"
+},
+"HIST_INDEPENDENCE": {
+"en": "{other} broke away.",
+"tr": "{other} ayrıldı."
+},
+"HIST_MARRIAGE": {
+"en": "Royal marriage with {other}.",
+"tr": "{other} ile saray evliliği."
 },
 "HIST_OBJECTIVE": {
 "en": "Objective achieved: {obj}.",
@@ -1711,13 +2127,25 @@
 "en": "{ruler} died.",
 "tr": "{ruler} öldü."
 },
+"HIST_SCHISM": {
+"en": "A schism divided the clergy.",
+"tr": "Bir bölünme din adamlarını ikiye ayırdı."
+},
 "HIST_SUCCESSION_CRISIS": {
 "en": "Succession crisis: {ruler} seized the throne.",
 "tr": "Veraset krizi: {ruler} tahtı ele geçirdi."
 },
+"HIST_SUCCESSION_DISPUTE": {
+"en": "{rival} disputed the succession.",
+"tr": "{rival} veraseti çekişmeli hale getirdi."
+},
 "HIST_TECH": {
 "en": "Mastered {tech}.",
 "tr": "{tech} öğrenildi."
+},
+"HIST_UNION": {
+"en": "A personal union with {other} was formed.",
+"tr": "{other} ile kişisel birlik kuruldu."
 },
 "HIST_VASSAL": {
 "en": "{other} became a vassal.",
@@ -1726,6 +2154,10 @@
 "HIST_VASSAL_RELEASED": {
 "en": "{other} was released.",
 "tr": "{other} serbest bırakıldı."
+},
+"HIST_VASSAL_REVOLT": {
+"en": "Revolt against the overlord {other}.",
+"tr": "Hükümdar {other} devletine karşı isyan."
 },
 "HIST_WAR_DECLARED": {
 "en": "War declared on {other} ({cb}).",
@@ -1971,6 +2403,14 @@
 "en": "Inflation",
 "tr": "Enflasyon"
 },
+"MOD_COUNTER_INTEL": {
+"en": "Counter-intelligence",
+"tr": "Karşı istihbarat"
+},
+"MOD_COUP_GUARD": {
+"en": "Coup protection",
+"tr": "Darbe koruması"
+},
 "MOD_CREDIT": {
 "en": "Credit limit",
 "tr": "Kredi sınırı"
@@ -1986,6 +2426,14 @@
 "MOD_DISEASE_RESIST": {
 "en": "Disease resistance",
 "tr": "Hastalığa direnç"
+},
+"MOD_EMPLOYMENT": {
+"en": "Employment",
+"tr": "İstihdam"
+},
+"MOD_FACTION_LOYALTY": {
+"en": "Faction loyalty",
+"tr": "Hizip sadakati"
 },
 "MOD_FOOD": {
 "en": "Food production",
@@ -2007,6 +2455,10 @@
 "en": "General skill",
 "tr": "Komutan yeteneği"
 },
+"MOD_GRANARY": {
+"en": "Granary capacity",
+"tr": "Ambar kapasitesi"
+},
 "MOD_HAPPINESS": {
 "en": "Happiness",
 "tr": "Mutluluk"
@@ -2014,6 +2466,10 @@
 "MOD_HAPPINESS_LOCAL": {
 "en": "Local happiness",
 "tr": "Yerel mutluluk"
+},
+"MOD_HEIR_QUALITY": {
+"en": "Heir quality",
+"tr": "Varis kalitesi"
 },
 "MOD_INFRA": {
 "en": "Infrastructure",
@@ -2159,6 +2615,10 @@
 "en": "Research points",
 "tr": "Araştırma puanı"
 },
+"MOD_ROYAL_HEALTH": {
+"en": "Royal health",
+"tr": "Hanedan sağlığı"
+},
 "MOD_SIEGE": {
 "en": "Siege strength",
 "tr": "Kuşatma gücü"
@@ -2166,6 +2626,10 @@
 "MOD_SIEGE_DEF": {
 "en": "Siege resistance",
 "tr": "Kuşatmaya direnç"
+},
+"MOD_SPY_NET": {
+"en": "Spy networks",
+"tr": "Casus ağları"
 },
 "MOD_STABILITY": {
 "en": "Stability",
@@ -2223,6 +2687,14 @@
 "en": "January,February,March,April,May,June,July,August,September,October,November,December",
 "tr": "Ocak,Şubat,Mart,Nisan,Mayıs,Haziran,Temmuz,Ağustos,Eylül,Ekim,Kasım,Aralık"
 },
+"MOVE_CONQUERED": {
+"en": "Recently conquered",
+"tr": "Yakın zamanda fethedildi"
+},
+"MOVE_CULTURE": {
+"en": "Foreign culture",
+"tr": "Yabancı kültür"
+},
 "MOVE_ERR_NO_ACCESS": {
 "en": "You may not enter that territory (declare war or get military access).",
 "tr": "Bu topraklara giremezsiniz (savaş ilan edin veya askerî geçiş izni alın)."
@@ -2235,13 +2707,33 @@
 "en": "The army is at sea.",
 "tr": "Ordu denizde."
 },
+"MOVE_GARRISON": {
+"en": "Garrison",
+"tr": "Garnizon"
+},
+"MOVE_NOT_CORE": {
+"en": "Not a core province",
+"tr": "Öz eyalet değil"
+},
 "MOVE_PREVIEW": {
 "en": "March to {to}: about {n} turns",
 "tr": "{to} eyaletine yürüyüş: yaklaşık {n} tur"
 },
+"MOVE_RELIGION": {
+"en": "Foreign religion",
+"tr": "Yabancı din"
+},
+"MOVE_STABILITY": {
+"en": "Stability",
+"tr": "İstikrar"
+},
 "MOVE_TAP_TARGET": {
 "en": "Tap a destination province.",
 "tr": "Bir hedef eyalete dokunun."
+},
+"MOVE_UNREST": {
+"en": "Unrest",
+"tr": "Huzursuzluk"
 },
 "NOTE_ALLY_JOINED": {
 "en": "{other}'s ally has joined the war.",
@@ -2267,6 +2759,14 @@
 "en": "Construction finished: {b} (level {lv}).",
 "tr": "İnşaat tamamlandı: {b} (seviye {lv})."
 },
+"NOTE_CIVIL_WAR": {
+"en": "Civil war! Part of the realm rises under {other}.",
+"tr": "İç savaş! Ülkenin bir kısmı {other} adıyla ayaklandı."
+},
+"NOTE_CIVIL_WAR_ABROAD": {
+"en": "Civil war has broken out in {country}.",
+"tr": "{country} ülkesinde iç savaş çıktı."
+},
 "NOTE_COALITION": {
 "en": "A coalition forms against {other}.",
 "tr": "{other} aleyhine bir koalisyon kuruluyor."
@@ -2274,6 +2774,10 @@
 "NOTE_COALITION_AGAINST_YOU": {
 "en": "{count} nations form a coalition against you!",
 "tr": "{count} devlet aleyhinize koalisyon kuruyor!"
+},
+"NOTE_COUNTER_COUP": {
+"en": "The generals replace their leader: {ruler} takes command.",
+"tr": "Generaller liderlerini değiştirdi: {ruler} komutayı aldı."
 },
 "NOTE_COUNTRY_FELL": {
 "en": "{country} has ceased to exist.",
@@ -2287,17 +2791,89 @@
 "en": "Your realm has fallen.",
 "tr": "Devletiniz yıkıldı."
 },
+"NOTE_DISPUTE_LOST": {
+"en": "The dispute is lost: {rival} takes the throne.",
+"tr": "Anlaşmazlık kaybedildi: {rival} tahta çıktı."
+},
+"NOTE_DISPUTE_WON": {
+"en": "The throne is secure: the claim of {rival} has failed.",
+"tr": "Taht güvende: {rival} iddiası boşa çıktı."
+},
+"NOTE_DYNASTY_EXTINCT": {
+"en": "The dynasty is extinct; {ruler} founds a new house.",
+"tr": "Hanedan söndü; {ruler} yeni bir hanedan kuruyor."
+},
+"NOTE_ECO_BOOM": {
+"en": "An economic boom begins ({cause}).",
+"tr": "Ekonomik canlanma başladı ({cause})."
+},
+"NOTE_ECO_CRISIS": {
+"en": "Economic crisis! ({cause})",
+"tr": "Ekonomik kriz! ({cause})"
+},
+"NOTE_ECO_SLUMP": {
+"en": "An economic slump begins ({cause}).",
+"tr": "Ekonomik durgunluk başladı ({cause})."
+},
 "NOTE_ELECTION": {
 "en": "Elections held: {ruler} is the new leader.",
 "tr": "Seçim yapıldı: yeni lider {ruler}."
+},
+"NOTE_ELECTION_WON": {
+"en": "The {faction} faction won the election.",
+"tr": "Seçimi {faction} hizbi kazandı."
+},
+"NOTE_ESP_CAUGHT": {
+"en": "Our agents were caught in {other} during {op}!",
+"tr": "Ajanlarımız {other} ülkesinde ({op}) yakalandı!"
+},
+"NOTE_ESP_CAUGHT_THEM": {
+"en": "We caught agents of {other} ({op}).",
+"tr": "{other} ajanları yakalandı ({op})."
+},
+"NOTE_ESP_CB": {
+"en": "We can prove that {other} plotted against us: a justification for war.",
+"tr": "{other} ülkesinin bize karşı komplo kurduğunu kanıtlayabiliriz: savaş gerekçesi."
+},
+"NOTE_ESP_FAIL_QUIET": {
+"en": "The operation in {other} failed, but nothing points to us.",
+"tr": "{other} ülkesindeki operasyon başarısız oldu ama iz bırakmadı."
+},
+"NOTE_ESP_OK": {
+"en": "Operation successful in {other}: {op}.",
+"tr": "{other} ülkesinde operasyon başarılı: {op}."
+},
+"NOTE_ESP_UNCOVERED": {
+"en": "Our counter-intelligence uncovered a spy ring of {other}.",
+"tr": "Karşı istihbaratımız {other} casus ağını ortaya çıkardı."
+},
+"NOTE_ESP_UNCOVERED_THEM": {
+"en": "Our network in {other} was uncovered.",
+"tr": "{other} ülkesindeki ağımız ortaya çıkarıldı."
 },
 "NOTE_EVENT": {
 "en": "An event requires your decision: {event}",
 "tr": "Kararınızı bekleyen bir olay: {event}"
 },
+"NOTE_FACTION_ANGRY": {
+"en": "The {faction} faction is furious: its demand was ignored.",
+"tr": "{faction} hizbi öfkeli: talebi görmezden gelindi."
+},
+"NOTE_FACTION_DEMAND": {
+"en": "The {faction} faction presents a demand.",
+"tr": "{faction} hizbi bir talep sundu."
+},
+"NOTE_FACTION_UPRISING": {
+"en": "The {faction} faction has taken up arms!",
+"tr": "{faction} hizbi silahlandı!"
+},
 "NOTE_FAMINE": {
 "en": "Famine! {pct}% of the people's food needs cannot be met.",
 "tr": "Kıtlık! Halkın gıda ihtiyacının %{pct}'i karşılanamıyor."
+},
+"NOTE_FEMALE_CLAIM": {
+"en": "No male heir remains; {ruler} inherits by the female line and many nobles object.",
+"tr": "Erkek varis kalmadı; {ruler} kadın soyundan tahta çıkıyor, birçok soylu itiraz ediyor."
 },
 "NOTE_GAME_OVER": {
 "en": "The campaign has ended.",
@@ -2311,9 +2887,21 @@
 "en": "An heir has been born.",
 "tr": "Bir varis doğdu."
 },
+"NOTE_INDEPENDENCE": {
+"en": "{other} has declared independence!",
+"tr": "{other} bağımsızlığını ilan etti!"
+},
+"NOTE_INDEPENDENCE_RISING": {
+"en": "An independence movement rises in {province}.",
+"tr": "{province} eyaletinde bağımsızlık hareketi yükseliyor."
+},
 "NOTE_LOAN": {
 "en": "The treasury was empty: a loan of {amount} gold was taken.",
 "tr": "Hazine boştu: {amount} altın borç alındı."
+},
+"NOTE_MARRIAGE": {
+"en": "A royal marriage binds our house to {other}.",
+"tr": "Hanedanımız bir saray evliliğiyle {other} ile bağlandı."
 },
 "NOTE_MOVE_BLOCKED": {
 "en": "Your army cannot enter {province}.",
@@ -2367,17 +2955,53 @@
 "en": "Revolt in {province}!",
 "tr": "{province} eyaletinde isyan!"
 },
+"NOTE_ROYAL_DIED": {
+"en": "{name} of the royal family has died.",
+"tr": "Hanedandan {name} hayatını kaybetti."
+},
 "NOTE_RULER_DIED": {
 "en": "{ruler} has died.",
 "tr": "{ruler} öldü."
+},
+"NOTE_SCHISM": {
+"en": "A schism splits the clergy: unrest spreads.",
+"tr": "Bir bölünme din adamlarını ikiye ayırdı: huzursuzluk yayılıyor."
 },
 "NOTE_SUCCESSION_CRISIS": {
 "en": "Succession crisis! {ruler} claims the throne without a clear right.",
 "tr": "Veraset krizi! {ruler} açık bir hakkı olmadan tahta çıkıyor."
 },
+"NOTE_SUCCESSION_DISPUTE": {
+"en": "{rival} contests the succession!",
+"tr": "{rival} veraseti çekişmeli hale getirdi!"
+},
 "NOTE_TECH_DONE": {
 "en": "Research complete: {tech}.",
 "tr": "Araştırma tamamlandı: {tech}."
+},
+"NOTE_THRONE_CLAIM": {
+"en": "Our house has a claim to the throne of {other}.",
+"tr": "Hanedanımızın {other} tahtı üzerinde hakkı var."
+},
+"NOTE_TRANSITION_DONE": {
+"en": "The transition to {gov} is complete.",
+"tr": "{gov} yönetimine geçiş tamamlandı."
+},
+"NOTE_UNION_ENDED": {
+"en": "The personal union with {other} has ended.",
+"tr": "{other} ile kişisel birlik sona erdi."
+},
+"NOTE_UNION_GAINED": {
+"en": "We inherited the crown of {other}: a personal union.",
+"tr": "{other} tacı bize miras kaldı: kişisel birlik."
+},
+"NOTE_UNION_INHERITED": {
+"en": "Our crown passes to the house of {other}: a personal union.",
+"tr": "Tacımız {other} hanedanına geçti: kişisel birlik."
+},
+"NOTE_VASSAL_REVOLT": {
+"en": "Our vassal {other} has risen against us!",
+"tr": "Vassalımız {other} bize karşı ayaklandı!"
 },
 "NOTE_WAR_ON_YOU": {
 "en": "{other} declared war on you ({cb})!",
@@ -3355,6 +3979,10 @@
 "en": "Already researched.",
 "tr": "Zaten araştırıldı."
 },
+"TECH_ERR_ERA": {
+"en": "Too early: this knowledge belongs to around the year {year} (you can look ahead {lead} years).",
+"tr": "Çok erken: bu bilgi yaklaşık {year} yılına aittir (en fazla {lead} yıl ileriyi görebilirsiniz)."
+},
 "TECH_ERR_PREREQ": {
 "en": "Requires {tech} first.",
 "tr": "Önce {tech} gerekir."
@@ -3850,6 +4478,10 @@
 "UNREST_CULTURE": {
 "en": "Foreign culture",
 "tr": "Yabancı kültür"
+},
+"UNREST_EMPLOYMENT": {
+"en": "Unemployment",
+"tr": "İşsizlik"
 },
 "UNREST_GARRISON": {
 "en": "Garrison",
