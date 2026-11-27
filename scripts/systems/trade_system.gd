@@ -187,11 +187,12 @@ static func compute(s: Dictionary) -> Dictionary:
 		by_province[pid] = {"hub": hpid, "value": gross, "hops": hops}
 		if hops >= 1 and hops <= 12:
 			flows.append([pid, hpid, gross])
+	var res := {"turn": s["turn"], "paid": 0.0, "commerce": commerce_total, "income": income, "by_province": by_province, "flows": flows, "power": power}
+	NavalSystem.adjust_trade(s, res)   # blockades / raiding change the incomes
 	var paid := 0.0
-	for k in income:
-		paid += float(income[k])
-	var res := {"turn": s["turn"], "paid": paid, "commerce": commerce_total, "income": income, "by_province": by_province, "flows": flows, "power": power}
-	NavalSystem.adjust_trade(s, res)
+	for k in res["income"]:
+		paid += float(res["income"][k])
+	res["paid"] = paid
 	s["_c"]["trade"] = res
 	return res
 
