@@ -109,6 +109,13 @@ static func _economy(s: Dictionary, cid: String, ai: Dictionary, P: Dictionary, 
 	var income := float(b.get("income", 20.0))
 	var net := float(b.get("net", 0.0))
 	var at_war := not GS.wars_of(s, cid).is_empty()
+	# food imports must not bankrupt the country: when the import bill is far larger than the whole income and the
+	# treasury is empty, stop importing (the population then suffers, which is a better failure than endless debt)
+	var imp := float(b.get("food_import", 0.0))
+	if imp > maxf(income, 5.0) * 2.0 and float(c["gold"]) < imp:
+		c["import_food"] = false
+	elif imp <= 0.0 and float(c["gold"]) > income * 4.0 and not bool(c.get("import_food", true)):
+		c["import_food"] = true
 	# taxes
 	var tr := float(c["tax_rate"])
 	var cap := float(W["tax_cap"])

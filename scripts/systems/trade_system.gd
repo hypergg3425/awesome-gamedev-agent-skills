@@ -192,6 +192,12 @@ static func compute(s: Dictionary) -> Dictionary:
 	var paid := 0.0
 	for k in res["income"]:
 		paid += float(res["income"][k])
+	# invariant: trade only redistributes money. Merchant-fleet bonuses must not make payouts exceed the commerce generated.
+	if paid > commerce_total and paid > 0.0:
+		var k := commerce_total / paid
+		for cid2 in res["income"]:
+			res["income"][cid2] = float(res["income"][cid2]) * k
+		paid = commerce_total
 	res["paid"] = paid
 	s["_c"]["trade"] = res
 	return res

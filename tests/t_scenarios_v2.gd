@@ -72,7 +72,10 @@ func test_names_layer() -> void:
 		ok(nm.contains(chk[2]), "%s %s is named '%s' (got '%s')" % [chk[0], chk[1], chk[2], nm])
 		ok(nm != str(Defs.provinces[chk[1]]["name"]), "%s %s differs from the modern name" % [chk[0], chk[1]])
 	# an unknown id or a state without a names layer falls back to the modern name
+	var keep: Dictionary = Game.state
+	Game.state = {}   # Defs.province_name consults the active campaign; compare against the no-campaign name
 	eq(Defs.province_name_in({}, "tur_constantinople"), Defs.province_name("tur_constantinople"), "empty state falls back")
+	Game.state = keep
 	# Turkish names and the default fallback
 	var old_lang := Loc.lang
 	Loc.lang = "tr"

@@ -20,6 +20,15 @@ func _stage() -> Dictionary:
 			var y: String = owners[1]
 			var px: String = by_owner[x]
 			var py: String = by_owner[y]
+			# the blockaded province must actually carry trade, otherwise a blockade has nothing to cut
+			var tr: Dictionary = TradeSystem.compute(s)["by_province"]
+			var best := 0.0
+			for pid in SeaZones.members(zid):
+				if s["provinces"][pid]["owner"] == y and tr.has(pid) and float(tr[pid]["value"]) > best:
+					best = float(tr[pid]["value"])
+					py = pid
+			if best <= 0.0:
+				continue
 			if GS.allied(s, x, y) or GS.overlord_of(s, x) != "" or GS.overlord_of(s, y) != "":
 				continue
 			for p in [px, py]:
@@ -211,10 +220,12 @@ func test_blockade_registry_and_siege_support() -> void:
 	# a land siege completes faster with the blockade
 	s["provinces"][py]["owner"] = st["y"]
 	s["provinces"][py]["controller"] = st["y"]
+	s["provinces"][py]["buildings"]["fort"] = 5   # strong walls so the siege does not finish in a single turn either way
+	Mods.invalidate(s)
 	for aid in GS.armies_at(s, py).duplicate():
 		if not s["armies"][aid].get("naval", false):
 			MilitarySystem.disband_army(s, aid)
-	var land := MilitarySystem.create_army(s, x, py, {"spearmen": 6.0, "cannons": 2.0}, null)
+	var land := MilitarySystem.create_army(s, x, py, {"spearmen": 1.0}, null)   # small army: progress stays below 1 so the comparison is meaningful
 	GS.rebuild_caches(s)
 	MilitarySystem.process_sieges(s)
 	var with_fleet := float(s["provinces"][py]["siege"]["progress"]) if s["provinces"][py].get("siege") != null else 1.0
