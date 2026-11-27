@@ -20,7 +20,17 @@ func _frames(n: int = 3) -> void:
 		await get_tree().process_frame
 
 ## --- input helpers -----------------------------------------------------------------------------------------------
+## Events from the OS arrive in window pixels; test coordinates are virtual (post-stretch) pixels.
 func _send(e: InputEvent) -> void:
+	var k := Vector2(get_window().size) / get_viewport().get_visible_rect().size
+	if e is InputEventScreenTouch:
+		(e as InputEventScreenTouch).position *= k
+	elif e is InputEventScreenDrag:
+		(e as InputEventScreenDrag).position *= k
+		(e as InputEventScreenDrag).relative *= k
+	elif e is InputEventMouseButton:
+		(e as InputEventMouseButton).position *= k
+		(e as InputEventMouseButton).global_position *= k
 	Input.parse_input_event(e)
 	await _frames(2)
 
@@ -85,7 +95,8 @@ func _ready() -> void:
 	var r: Dictionary = Game.new_game("early_modern", "FRA", "normal", 5)
 	_ok(r.get("ok", false), "new_game")
 	cs = load("res://scenes/campaign/campaign.tscn").instantiate()
-	get_tree().root.add_child(cs)
+	get_tree().root.add_child.call_deferred(cs)
+	await _frames(2)
 	get_tree().current_scene = cs
 	await get_tree().create_timer(0.6).timeout
 	await _frames(3)
