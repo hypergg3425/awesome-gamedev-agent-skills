@@ -466,6 +466,41 @@ def _():
     return [circle(14, 48, 5, True), circle(50, 16, 5, True), path("M14 44 C14 22 50 42 50 21")]
 
 
+@icon("mode_religion")
+def _():
+    return [line((32, 8), (32, 56)), line((16, 24), (48, 24)), circle(32, 24, 6)]
+
+
+@icon("mode_culture")
+def _():
+    return [path("M12 52 L12 24 L32 10 L52 24 L52 52 Z"), line((24, 52), (24, 34)), line((40, 52), (40, 34)), line((8, 52), (56, 52))]
+
+
+@icon("mode_infrastructure")
+def _():
+    return [line((14, 56), (26, 8)), line((50, 56), (38, 8)), line((20, 34), (44, 34)), line((17, 46), (47, 46)), line((23, 20), (41, 20))]
+
+
+@icon("mode_unrest")
+def _():
+    return [line((30, 6), (22, 28), (34, 28), (26, 58)), line((44, 14), (50, 22)), line((16, 38), (10, 46))]
+
+
+@icon("mode_admin")
+def _():
+    return [rect(14, 10, 36, 44, 3), line((22, 22), (42, 22)), line((22, 32), (42, 32)), line((22, 42), (34, 42))]
+
+
+@icon("mode_development")
+def _():
+    return [line((10, 54), (54, 54)), rect(14, 38, 10, 16), rect(27, 28, 10, 26), rect(40, 14, 10, 40)]
+
+
+@icon("mode_naval")
+def _():
+    return [circle(32, 14, 5), line((32, 19), (32, 54)), line((20, 30), (44, 30)), path("M12 40 Q14 54 32 56 Q50 54 52 40")]
+
+
 # ============================================================= panels
 
 
@@ -1196,6 +1231,7 @@ REQUIRED = """
 gold food manpower iron wood stone coal luxury prestige admin stability legitimacy inflation debt trade research population income expense
 end_turn menu settings save load close back next plus minus check cross info warning lock search filter map zoom_in zoom_out
 mode_political mode_terrain mode_economic mode_diplomatic mode_military mode_population mode_supply mode_trade
+mode_religion mode_culture mode_infrastructure mode_unrest mode_admin mode_development mode_naval
 country economy military diplomacy technology construction population events objectives politics history statistics achievements editor credits language sound music video
 unit_infantry unit_heavy_infantry unit_archers unit_cavalry unit_heavy_cavalry unit_artillery unit_engineer unit_naval general siege battle move recruit disband merge split fort
 war peace alliance nap defensive access trade_agreement vassal guarantee gift relations sanction coalition embargo transfer assist

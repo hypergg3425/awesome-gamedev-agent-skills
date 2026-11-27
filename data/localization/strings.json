@@ -2847,6 +2847,126 @@
 "en": "The enemy controls these waters; the landing would be hopeless.",
 "tr": "Bu sulara düşman hâkim; çıkarma umutsuz olurdu."
 },
+"LEG_ADMIN_HI": {
+"en": "Firm control",
+"tr": "Sıkı denetim"
+},
+"LEG_ADMIN_LO": {
+"en": "Loose grip",
+"tr": "Zayıf hâkimiyet"
+},
+"LEG_ADMIN_NOTE": {
+"en": "Core provinces with offices are held firmly; conquests, unrest and occupation loosen the grip.",
+"tr": "Merkezî ofisli çekirdek eyaletler sıkı yönetilir; fetihler, huzursuzluk ve işgal hâkimiyeti zayıflatır."
+},
+"LEG_DEV_NOTE": {
+"en": "Development level of the province (0 to 10).",
+"tr": "Eyaletin gelişmişlik düzeyi (0-10)."
+},
+"LEG_DIP_ALLY": {
+"en": "Allies",
+"tr": "Müttefikler"
+},
+"LEG_DIP_NEUTRAL": {
+"en": "Neutral",
+"tr": "Tarafsız"
+},
+"LEG_DIP_SELF": {
+"en": "Your realm",
+"tr": "Devletiniz"
+},
+"LEG_DIP_TRADE": {
+"en": "Trade partners",
+"tr": "Ticaret ortakları"
+},
+"LEG_DIP_TRUCE": {
+"en": "Truce",
+"tr": "Ateşkes"
+},
+"LEG_DIP_VASSAL": {
+"en": "Overlord / vassal",
+"tr": "Hükümdar / vasal"
+},
+"LEG_DIP_WAR": {
+"en": "At war",
+"tr": "Savaşta"
+},
+"LEG_ECONOMIC_NOTE": {
+"en": "Tax, production and trade income per province.",
+"tr": "Eyalet başına vergi, üretim ve ticaret geliri."
+},
+"LEG_HIGH": {
+"en": "High",
+"tr": "Yüksek"
+},
+"LEG_INFRA_NOTE": {
+"en": "Roads, bridges, canals, ports and railways.",
+"tr": "Yollar, köprüler, kanallar, limanlar ve demiryolları."
+},
+"LEG_LOW": {
+"en": "Low",
+"tr": "Düşük"
+},
+"LEG_MIL_FOE": {
+"en": "Enemy army",
+"tr": "Düşman ordu"
+},
+"LEG_MIL_FORT": {
+"en": "Lighter shade: fortified",
+"tr": "Açık ton: tahkimli"
+},
+"LEG_MIL_FRIEND": {
+"en": "Friendly army",
+"tr": "Dost ordu"
+},
+"LEG_MIL_NOTE": {
+"en": "Dark tones show the controlling realm.",
+"tr": "Koyu tonlar bölgeyi elinde tutan devleti gösterir."
+},
+"LEG_NAVAL_NONE": {
+"en": "Open sea, no fleet",
+"tr": "Açık deniz, donanma yok"
+},
+"LEG_NAVAL_NOTE": {
+"en": "Sea zones are tinted by the strongest navy and ports; coasts follow their sea.",
+"tr": "Deniz bölgeleri en güçlü donanma ve limanlara göre renklenir; kıyılar kendi denizini izler."
+},
+"LEG_POLITICAL_NOTE": {
+"en": "Blended colour: occupied by another realm.",
+"tr": "Karışık renk: başka bir devlet tarafından işgal edilmiş."
+},
+"LEG_POPULATION_NOTE": {
+"en": "Population (square-root scale).",
+"tr": "Nüfus (karekök ölçeği)."
+},
+"LEG_SUPPLY_HI": {
+"en": "Well supplied",
+"tr": "Bol ikmal"
+},
+"LEG_SUPPLY_LO": {
+"en": "Starving",
+"tr": "Kıtlık"
+},
+"LEG_SUPPLY_NOTE": {
+"en": "Supply capacity for your armies. Lines show the way home of armies abroad.",
+"tr": "Ordularınız için ikmal kapasitesi. Çizgiler yurt dışındaki orduların dönüş yolunu gösterir."
+},
+"LEG_TRADE_NOTE": {
+"en": "Trade value. Arcs link provinces to their hub; brighter = hub.",
+"tr": "Ticaret değeri. Yaylar eyaletleri merkezine bağlar; parlak = ticaret merkezi."
+},
+"LEG_UNREST_HI": {
+"en": "Revolt",
+"tr": "İsyan"
+},
+"LEG_UNREST_LO": {
+"en": "Calm",
+"tr": "Sakin"
+},
+"LEG_UNREST_NOTE": {
+"en": "Local unrest. Rebels rise when it stays high.",
+"tr": "Yerel huzursuzluk. Yüksek kalırsa isyancılar ortaya çıkar."
+},
 "LOG_EMPTY": {
 "en": "No notifications yet.",
 "tr": "Henüz bildirim yok."
@@ -3039,6 +3159,18 @@
 "en": "Hunts enemy merchants in the sea around its position.",
 "tr": "Bulunduğu denizde düşman tüccar gemilerini avlar."
 },
+"MODE_ADMIN": {
+"en": "Admin control",
+"tr": "İdari denetim"
+},
+"MODE_CULTURE": {
+"en": "Culture",
+"tr": "Kültür"
+},
+"MODE_DEVELOPMENT": {
+"en": "Development",
+"tr": "Gelişmişlik"
+},
 "MODE_DIPLOMATIC": {
 "en": "Diplomatic",
 "tr": "Diplomatik"
@@ -3047,9 +3179,17 @@
 "en": "Economic",
 "tr": "Ekonomik"
 },
+"MODE_INFRASTRUCTURE": {
+"en": "Infrastructure",
+"tr": "Altyapı"
+},
 "MODE_MILITARY": {
 "en": "Military",
 "tr": "Askerî"
+},
+"MODE_NAVAL": {
+"en": "Naval influence",
+"tr": "Deniz nüfuzu"
 },
 "MODE_POLITICAL": {
 "en": "Political",
@@ -3058,6 +3198,10 @@
 "MODE_POPULATION": {
 "en": "Population",
 "tr": "Nüfus"
+},
+"MODE_RELIGION": {
+"en": "Religion",
+"tr": "Din"
 },
 "MODE_SUPPLY": {
 "en": "Supply",
@@ -3070,6 +3214,10 @@
 "MODE_TRADE": {
 "en": "Trade",
 "tr": "Ticaret"
+},
+"MODE_UNREST": {
+"en": "Unrest",
+"tr": "Huzursuzluk"
 },
 "MOD_ADMIN_CAP": {
 "en": "Administrative capacity",

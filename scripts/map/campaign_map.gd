@@ -3,13 +3,11 @@ extends RefCounted
 ## Connects the simulation state to the MapView: colours per map mode, borders, fronts,
 ## labels, army markers, route previews and selection highlights.
 
-const TERRAIN_COL := {"plains": Color("c9c27a"), "steppe": Color("d4c48a"), "forest": Color("5e8a55"), "hills": Color("a89a6a"), "mountains": Color("8c8579"),
-	"desert": Color("e2c98a"), "jungle": Color("3f7d4c"), "marsh": Color("6f8f7a"), "arctic": Color("dfe6ea")}
-
 var view: MapView
 var mode := "political"
 var borders: MapBorders
 var owners: Array = []
+var ctx: Dictionary = {}
 var selected := ""
 var preview_route: Array = []
 var preview_army := ""
@@ -27,10 +25,7 @@ func attach(v: MapView, geom: MapGeometry) -> void:
 	v.set_label_points(pts)
 
 func color_of(cid: String, fallback: Color = Color(0.4, 0.4, 0.4)) -> Color:
-	var s: Dictionary = Game.state
-	if cid == "" or not s["countries"].has(cid):
-		return fallback
-	return Util.color_from(s["countries"][cid]["color"], fallback)
+	return MapModes.country_color(Game.state, cid, fallback)
 
 ## Recolour everything from the current state.
 func refresh() -> void:
@@ -39,95 +34,16 @@ func refresh() -> void:
 	var s: Dictionary = Game.state
 	var me: String = Game.active_player
 	owners.clear()
-	var cb := bool(Settings.get_value("colorblind"))
-	var maxes := _maxes(s)
+	ctx = MapModes.context(s, me, mode)
 	for i in Defs.province_ids.size():
 		var pid: String = Defs.province_ids[i]
-		var p: Dictionary = s["provinces"][pid]
-		owners.append(p["owner"])
-		var col := _mode_color(s, pid, p, me, maxes, cb)
+		owners.append(s["provinces"][pid]["owner"])
+		var col := MapModes.color(mode, s, pid, ctx)
 		var shade := 0.94 + 0.08 * float(hash(pid) % 100) / 100.0
 		view.set_base_color(i, Color(col.r * shade, col.g * shade, col.b * shade))
 	apply_highlights()
 	_rebuild_borders(s)
 	_update_overlay(s)
-
-func _maxes(s: Dictionary) -> Dictionary:
-	var m := {"inc": 1.0, "pop": 1.0, "sup": 1.0, "trade": 1.0}
-	var tr := TradeSystem.ensure(s)
-	for pid in Defs.province_ids:
-		var p: Dictionary = s["provinces"][pid]
-		var pc := EconomySystem.province_calc(s, pid)
-		m["inc"] = maxf(m["inc"], float(pc["tax"]) + float(pc["production"]) + float(pc["commerce"]))
-		m["pop"] = maxf(m["pop"], float(p["pop"]))
-		m["trade"] = maxf(m["trade"], float(tr["by_province"].get(pid, {}).get("value", 0.0)))
-	m["sup"] = 14.0
-	return m
-
-func _ramp(t: float, cb: bool) -> Color:
-	t = clampf(t, 0.0, 1.0)
-	if cb:
-		return Color("440154").lerp(Color("21908d"), clampf(t * 2.0, 0.0, 1.0)).lerp(Color("fde725"), clampf(t * 2.0 - 1.0, 0.0, 1.0))
-	return Color("2c4a6b").lerp(Color("c9a24a"), clampf(t * 2.0, 0.0, 1.0)).lerp(Color("b5322b"), clampf(t * 2.0 - 1.0, 0.0, 1.0))
-
-func _mode_color(s: Dictionary, pid: String, p: Dictionary, me: String, mx: Dictionary, cb: bool) -> Color:
-	var owner: String = p["owner"]
-	match mode:
-		"terrain":
-			return TERRAIN_COL.get(Defs.provinces[pid]["terrain"], Color.GRAY)
-		"economic":
-			var pc := EconomySystem.province_calc(s, pid)
-			return _ramp((float(pc["tax"]) + float(pc["production"]) + float(pc["commerce"])) / float(mx["inc"]), cb)
-		"population":
-			return _ramp(sqrt(float(p["pop"]) / float(mx["pop"])), cb)
-		"supply":
-			return _ramp(MilitarySystem.supply_cap(s, me, pid) / float(mx["sup"]), cb)
-		"trade":
-			var d: Dictionary = TradeSystem.ensure(s)["by_province"].get(pid, {})
-			var v := sqrt(float(d.get("value", 0.0)) / float(mx["trade"]))
-			var c := _ramp(v, cb)
-			if float(TradeSystem.ensure(s)["power"].get(Defs.province_index[pid], 0.0)) >= 1.0:
-				c = c.lightened(0.25)
-			return c
-		"diplomatic":
-			if owner == me:
-				return Color("e6c876")
-			if owner == "" or not s["countries"].has(owner):
-				return Color.GRAY
-			if GS.at_war(s, me, owner):
-				return Color("b5322b") if not cb else Color("d95f02")
-			var r := GS.rel(s, me, owner)
-			if GS.overlord_of(s, owner) == me or GS.overlord_of(s, me) == owner:
-				return Color("3f9a8e")
-			if r["alliance"]:
-				return Color("4f9e5c") if not cb else Color("1b9e77")
-			if int(r["truce_until"]) > int(s["turn"]):
-				return Color("c28a3a")
-			if r["trade"]:
-				return Color("4f78b5")
-			var op := GS.opinion(s, owner, me)
-			return Color("8a8f98").lerp(Color("4f9e5c") if op > 0 else Color("b5322b"), clampf(absf(op) / 120.0, 0.0, 0.55))
-		"military":
-			var c2 := color_of(owner).darkened(0.35)
-			var n := 0.0
-			var foe := false
-			for aid in GS.armies_at(s, pid):
-				var a: Dictionary = s["armies"][aid]
-				if not a.get("naval", false):
-					n += UnitUtil.army_size(a)
-					if GS.at_war(s, me, a["owner"]):
-						foe = true
-			if p["controller"] != owner:
-				c2 = c2.lerp(color_of(p["controller"], Color.GRAY), 0.6)
-			c2 = c2.lightened(clampf(Mods.fort_level(s, pid) * 0.04, 0.0, 0.3))
-			if n > 0.0:
-				c2 = c2.lerp(Color("d9534f") if foe else Color("f0d98a"), clampf(n / 20.0, 0.12, 0.75))
-			return c2
-		_:
-			var col := color_of(owner)
-			if p["controller"] != owner and s["countries"].has(p["controller"]):
-				col = col.lerp(color_of(p["controller"]), 0.55)
-			return col
 
 func apply_highlights() -> void:
 	if view == null:
@@ -208,7 +124,6 @@ func _update_overlay(s: Dictionary) -> void:
 	ov.data["country_labels"] = _country_labels(s) if bool(Settings.get_value("map_labels")) else []
 	# army markers: one per (province, owner)
 	var markers: Array = []
-	var cap: Array = []
 	var sieges: Array = []
 	if bool(Settings.get_value("army_markers")):
 		var groups := {}
@@ -231,16 +146,17 @@ func _update_overlay(s: Dictionary) -> void:
 			elif g["owner"] != s["provinces"][g["pid"]]["owner"]:
 				pos += Vector2(0, -5.0 / maxf(view.zoom, 0.3))
 			markers.append({"pos": pos, "text": str(int(round(g["n"]))), "color": color_of(g["owner"]), "selected": g["sel"], "naval": g["naval"]})
-	for cid in GS.alive_countries(s):
-		var cp: String = s["countries"][cid].get("capital", "")
-		if cp != "" and Defs.province_index.has(cp):
-			cap.append({"pos": view.prov_center[Defs.province_index[cp]] + Vector2(0, -3)})
 	for pid in Defs.province_ids:
 		var sg: Variant = s["provinces"][pid].get("siege")
 		if sg != null:
 			sieges.append({"pos": view.prov_center[Defs.province_index[pid]], "progress": clampf(float(sg["progress"]), 0.0, 1.0)})
 	ov.data["markers"] = markers
-	ov.data["capitals"] = cap
+	ov.data["cities"] = MapMarkers.cities(s, view.prov_center)
+	ov.data["battles"] = MapMarkers.battles(s, view.prov_center)
+	ov.data["supply"] = MapMarkers.supply_lines(s, me, view.prov_center) if mode in ["supply", "military"] else []
+	ov.data["trade"] = MapMarkers.trade_routes(s, view.prov_center) if mode == "trade" else []
+	ov.data["mode"] = mode
+	view.water_layer.set_tint(MapMarkers.sea_tint(s, ctx) if mode == "naval" else [])
 	ov.data["sieges"] = sieges
 	var routes: Array = []
 	# orders of the player's armies

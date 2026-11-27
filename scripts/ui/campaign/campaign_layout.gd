@@ -6,9 +6,12 @@ extends RefCounted
 
 const MARGIN := 8.0
 const GAP := 6.0
+const MODE_COLUMNS := 5
+const MODE_BTN_W := 146.0
+const LEGEND_W := 190.0
 
-## Returns {hud, toolbar, toolbar_vertical, end, province, sheet, sheet_hides_province, modes, toast, move, avail, tb}.
-static func compute(vs: Vector2, ins: Dictionary, banner: float, tool_count: int, tb: float = 52.0, province_open: bool = false) -> Dictionary:
+## Returns {hud, toolbar, toolbar_vertical, end, province, sheet, sheet_hides_province, modes, legend, toast, move, avail, tb}.
+static func compute(vs: Vector2, ins: Dictionary, banner: float, tool_count: int, tb: float = 52.0, province_open: bool = false, mode_count: int = 15) -> Dictionary:
 	var a := Rect2(float(ins["left"]), float(ins["top"]), vs.x - float(ins["left"]) - float(ins["right"]),
 			vs.y - float(ins["top"]) - float(ins["bottom"]) - banner)
 	var compact := Layout.compact(vs)
@@ -47,11 +50,16 @@ static func compute(vs: Vector2, ins: Dictionary, banner: float, tool_count: int
 			sheet_w = minf(800.0, a.end.x - MARGIN - sx)
 	var sheet := Rect2(sx, hud.end.y + MARGIN, maxf(300.0, sheet_w), maxf(160.0, sheet_bottom - hud.end.y - MARGIN))
 	# map-mode strip (horizontal pill next to / above the toolbar)
-	var mode_w := 8.0 * (btn + 4.0) + 20.0
-	var mode_h := btn + 16.0
+	var mode_cols := mini(mode_count, MODE_COLUMNS)
+	var mode_rows := int(ceil(float(mode_count) / float(MODE_COLUMNS)))
+	var mode_w := float(mode_cols) * (MODE_BTN_W + 4.0) + 20.0
+	var mode_h := float(mode_rows) * (btn + 4.0) + 12.0
 	var modes := Rect2(Vector2(toolbar.end.x + MARGIN, toolbar.end.y - mode_h), Vector2(mode_w, mode_h)) if vertical \
 			else Rect2(Vector2(toolbar.position.x, toolbar.position.y - mode_h - GAP), Vector2(mode_w, mode_h))
 	modes.position.x = minf(modes.position.x, a.end.x - mode_w - MARGIN)
+	# map legend: top-left under the HUD, right of the vertical toolbar
+	var legend_x := (toolbar.end.x + MARGIN) if vertical else a.position.x + MARGIN
+	var legend := Rect2(Vector2(legend_x, hud.end.y + MARGIN), Vector2(LEGEND_W, 40.0))
 	var toast_w := minf(600.0, a.size.x - 2.0 * MARGIN)
 	var toast := Rect2(Vector2(a.position.x + (a.size.x - toast_w) * 0.5, hud.end.y + 10.0), Vector2(toast_w, 10.0))
 	# move bar: between the toolbar and the End-turn button, above them when there is no room
@@ -65,4 +73,4 @@ static func compute(vs: Vector2, ins: Dictionary, banner: float, tool_count: int
 	if move.end.x > end.position.x - MARGIN and move.end.y > end.position.y:
 		move.size.x = maxf(240.0, end.position.x - MARGIN - move.position.x)
 	return {"avail": a, "hud": hud, "toolbar": toolbar, "toolbar_vertical": vertical, "end": end, "province": province, "sheet": sheet,
-		"sheet_hides_province": hides, "modes": modes, "toast": toast, "move": move, "tb": btn, "compact": compact, "province_open": province_open}
+		"sheet_hides_province": hides, "modes": modes, "legend": legend, "toast": toast, "move": move, "tb": btn, "compact": compact, "province_open": province_open}

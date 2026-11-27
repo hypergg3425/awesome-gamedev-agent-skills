@@ -2,7 +2,7 @@ class_name CampaignScreen
 extends Control
 ## The main campaign scene: world map + HUD + side panels. Pure UI: all rules live in the systems.
 
-const MODES := ["political", "terrain", "economic", "diplomatic", "military", "population", "supply", "trade"]
+const MODES := MapModes.MODES
 
 ## Toolbar entries: [sheet id, icon, title key]. Add new sheets here (and in _create_sheets).
 const TOOLBAR := [["economy", "economy", "PANEL_ECONOMY"], ["military", "military", "PANEL_MILITARY"], ["diplomacy", "diplomacy", "PANEL_DIPLOMACY"],
@@ -23,7 +23,8 @@ var overlay_layer: Control
 var toast_box: VBoxContainer
 var end_btn: Button
 var mode_strip: PanelContainer
-var mode_row: HBoxContainer
+var mode_row: GridContainer
+var legend: MapLegend
 var province_panel: ProvincePanel
 var move_bar: PanelContainer
 var move_label: Label
@@ -158,16 +159,27 @@ func _build_mode_strip() -> void:
 	mode_strip = PanelContainer.new()
 	mode_strip.theme_type_variation = "HudDrop"
 	mode_strip.visible = false
-	mode_row = HBoxContainer.new()
-	mode_row.add_theme_constant_override("separation", 4)
+	mode_row = GridContainer.new()
+	mode_row.columns = CampaignLayout.MODE_COLUMNS
+	mode_row.add_theme_constant_override("h_separation", 4)
+	mode_row.add_theme_constant_override("v_separation", 4)
 	mode_strip.add_child(mode_row)
 	ui_root.add_child(mode_strip)
 	_fill_mode_strip()
+	legend = MapLegend.new()
+	legend.collapsed = Layout.compact(get_viewport_rect().size)
+	ui_root.add_child(legend)
 
 func _fill_mode_strip() -> void:
 	for m in MODES:
 		var mm: String = m
-		var b := UI.icon_button("mode_" + mm, func() -> void: set_map_mode(mm), Loc.t("MODE_" + mm.to_upper()), _tb(), "Primary" if cmap and cmap.mode == mm else "")
+		var b := UI.button(Loc.t("MODE_" + mm.to_upper()), func() -> void: set_map_mode(mm), "Primary" if cmap and cmap.mode == mm else "", "mode_" + mm)
+		b.tooltip_text = Loc.t("MODE_" + mm.to_upper())
+		b.custom_minimum_size = Vector2(CampaignLayout.MODE_BTN_W, _tb())
+		b.add_theme_font_size_override("font_size", UI.fs(12))
+		b.add_theme_constant_override("icon_max_width", 20)
+		b.add_theme_constant_override("h_separation", 4)
+		b.clip_text = true
 		b.set_meta("mode", mm)
 		mode_row.add_child(b)
 
@@ -178,6 +190,7 @@ func set_map_mode(m: String) -> void:
 	UI.clear(mode_row)
 	_fill_mode_strip()
 	cmap.refresh()
+	legend.show_mode(m, Game.state, Game.active_player)
 	toast(Loc.t("MODE_" + m.to_upper()), "map")
 
 func _build_end_turn() -> void:
@@ -214,7 +227,7 @@ func _apply_layout() -> void:
 	ui_root.offset_right = 0.0
 	ui_root.offset_bottom = 0.0
 	mapview.offset_bottom = -(float(ins["bottom"]) + banner)
-	layout = CampaignLayout.compute(vs, ins, banner, TOOLBAR.size() + 1, _tb(), province_panel != null and province_panel.visible)
+	layout = CampaignLayout.compute(vs, ins, banner, TOOLBAR.size() + 1, _tb(), province_panel != null and province_panel.visible, MODES.size())
 	var tb: float = layout["tb"]
 	_place(hud, layout["hud"])
 	hud.custom_minimum_size = Vector2(0, tb + 10.0)
@@ -228,6 +241,7 @@ func _apply_layout() -> void:
 		(b as Control).custom_minimum_size = Vector2(tb, tb)
 	_place(end_btn, layout["end"])
 	_place(mode_strip, layout["modes"])
+	legend.position = (layout["legend"] as Rect2).position
 	var drop := (layout["toast"] as Rect2)
 	toast_box.position = drop.position
 	toast_box.custom_minimum_size = Vector2(drop.size.x, 0)
@@ -261,6 +275,7 @@ func _sync_chrome_visibility() -> void:
 	var compact: bool = layout["compact"]
 	toolbar.visible = not (compact and sheet_open)
 	end_btn.visible = not (compact and sheet_open)
+	legend.visible = not sheet_open
 	if sheet_open and compact:
 		mode_strip.visible = false
 	province_panel.suppressed = sheet_open and bool(layout["sheet_hides_province"])
@@ -336,6 +351,7 @@ func _refresh_all() -> void:
 	if not Game.has_state():
 		return
 	cmap.refresh()
+	legend.show_mode(cmap.mode, Game.state, Game.active_player)
 	fx.track_armies(Game.state)
 	fx.track_sieges(Game.state)
 	update_hud()
