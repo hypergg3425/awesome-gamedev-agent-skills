@@ -1187,6 +1187,58 @@
 "en": "Length of the war",
 "tr": "Savaşın uzunluğu"
 },
+"DYN_ACCEPTED": {
+"en": "The marriage is agreed!",
+"tr": "Evlilik kararlaştırıldı!"
+},
+"DYN_AGNATIC_NOTE": {
+"en": "Under agnatic law women inherit only when no man is left, at a cost in legitimacy.",
+"tr": "Agnatik kanunda kadınlar yalnızca hiç erkek kalmadığında, meşruiyet kaybıyla tahta çıkar."
+},
+"DYN_BUY_OFF": {
+"en": "Buy off the rival's backers ({cost} gold)",
+"tr": "Rakibin destekçilerini satın al ({cost} altın)"
+},
+"DYN_CLAIMS_AGAINST": {
+"en": "Claims against us",
+"tr": "Aleyhimizdeki iddialar"
+},
+"DYN_CLAIMS_INTRO": {
+"en": "Marriages and failed lines create claims to other thrones. A claim is a casus belli for a limited time.",
+"tr": "Evlilikler ve sönen soylar başka tahtlar üzerinde hak doğurur. İddia, sınırlı süreyle savaş gerekçesidir."
+},
+"DYN_CLAIMS_OURS": {
+"en": "Our claims",
+"tr": "Bizim iddialarımız"
+},
+"DYN_CLAIM_ROW": {
+"en": "Throne of {other} ({n} turns left)",
+"tr": "{other} tahtı ({n} tur kaldı)"
+},
+"DYN_CONSORT": {
+"en": "Consort",
+"tr": "Eş"
+},
+"DYN_COURTS": {
+"en": "Courts",
+"tr": "Saraylar"
+},
+"DYN_DESIGNATE": {
+"en": "Designate heir (25 administration)",
+"tr": "Varis ilan et (25 idare)"
+},
+"DYN_DESIGNATED": {
+"en": "Designated heir",
+"tr": "İlan edilen varis"
+},
+"DYN_DISPUTE": {
+"en": "Succession dispute",
+"tr": "Veraset anlaşmazlığı"
+},
+"DYN_DISPUTE_TEXT": {
+"en": "{rival} contests the throne ({n} turns until it is decided). Legitimacy and order suffer meanwhile; the nobles may take up arms.",
+"tr": "{rival} tahtı çekişmeli hale getirdi ({n} tur sonra karara bağlanacak). Bu arada meşruiyet ve düzen zarar görür; soylular silaha sarılabilir."
+},
 "DYN_ERR_LAW": {
 "en": "Your succession law does not allow designating an heir.",
 "tr": "Veraset kanununuz varis belirlemeye izin vermiyor."
@@ -1227,6 +1279,38 @@
 "en": "Elective: no hereditary right",
 "tr": "Seçimle: kalıtsal hak yok"
 },
+"DYN_LINE": {
+"en": "Line of succession",
+"tr": "Veraset sırası"
+},
+"DYN_MARRIAGE_INTRO": {
+"en": "A royal marriage binds two houses: opinion and trust rise, an alliance becomes easier, and each house may later claim the other's throne if its line dies out.",
+"tr": "Saray evliliği iki hanedanı birbirine bağlar: görüş ve güven artar, ittifak kolaylaşır ve bir hanedanın soyu tükenirse diğeri tahtı üzerinde hak iddia edebilir."
+},
+"DYN_NOT_HEREDITARY": {
+"en": "This government has no hereditary succession: leaders are chosen by other means.",
+"tr": "Bu hükûmet biçiminde kalıtsal veraset yoktur: liderler başka yollarla seçilir."
+},
+"DYN_NO_MARRIAGEABLE": {
+"en": "No unmarried adult royal is available. Children come of age at 16.",
+"tr": "Evlenebilecek yetişkin bir hanedan üyesi yok. Çocuklar 16 yaşında reşit olur."
+},
+"DYN_OFFER": {
+"en": "Royal to offer",
+"tr": "Teklif edilecek hanedan üyesi"
+},
+"DYN_PROPOSE": {
+"en": "Propose",
+"tr": "Teklif et"
+},
+"DYN_REFUSED": {
+"en": "The proposal was declined.",
+"tr": "Teklif reddedildi."
+},
+"DYN_REGENT": {
+"en": "{name} governs as regent for {n} more turns (weaker skills, higher reform costs).",
+"tr": "{name} {n} tur daha naip olarak yönetiyor (zayıf yetenekler, yüksek reform maliyeti)."
+},
 "DYN_REL_CHILD": {
 "en": "child",
 "tr": "çocuk"
@@ -1251,9 +1335,41 @@
 "en": "sibling",
 "tr": "kardeş"
 },
+"DYN_SCORE": {
+"en": "Acceptance",
+"tr": "Kabul"
+},
+"DYN_TAB_CLAIMS": {
+"en": "Claims",
+"tr": "İddialar"
+},
+"DYN_TAB_HOUSE": {
+"en": "House",
+"tr": "Hanedan"
+},
+"DYN_TAB_MARRIAGE": {
+"en": "Marriage",
+"tr": "Evlilik"
+},
+"DYN_TIES": {
+"en": "Dynastic ties",
+"tr": "Hanedan bağları"
+},
+"DYN_UNION": {
+"en": "A personal union binds this crown to {other}.",
+"tr": "Bu taç {other} ile kişisel birlikle bağlı."
+},
 "ECON_ERR_ADMIN_CAP": {
 "en": "Administrative points are capped at 500.",
 "tr": "İdari puan üst sınırı 500."
+},
+"ECO_BORROW": {
+"en": "Borrow {n}",
+"tr": "{n} borçlan"
+},
+"ECO_CAUSE": {
+"en": "Cause",
+"tr": "Neden"
 },
 "ECO_CAUSE_BANK_RUN": {
 "en": "a run on the banks",
@@ -1291,6 +1407,22 @@
 "en": "war strain",
 "tr": "savaş yükü"
 },
+"ECO_CREDIT_INTRO": {
+"en": "Lenders judge your creditworthiness: debt, stability, past defaults and your banks set the interest rate and the credit line.",
+"tr": "Borç verenler kredibilitenizi değerlendirir: borç, istikrar, geçmiş iflaslar ve bankalarınız faiz oranını ve kredi limitini belirler."
+},
+"ECO_CREDIT_ROOM": {
+"en": "Credit still available",
+"tr": "Kalan kredi"
+},
+"ECO_EMPLOYMENT": {
+"en": "Employment",
+"tr": "İstihdam"
+},
+"ECO_EMPLOYMENT_TIP": {
+"en": "Jobs from farms, workshops and buildings against the working population. Unemployment breeds unrest.",
+"tr": "Çiftlik, atölye ve binaların sunduğu işler ile çalışan nüfus oranı. İşsizlik huzursuzluk doğurur."
+},
 "ECO_ERR_CREDIT_FROZEN": {
 "en": "Lenders refuse to extend credit during the banking crisis.",
 "tr": "Bankacılık krizi sürerken kredi verilmiyor."
@@ -1302,6 +1434,42 @@
 "ECO_ERR_NOTHING_TO_REPAY": {
 "en": "Nothing to repay.",
 "tr": "Ödenecek borç yok."
+},
+"ECO_HISTORY": {
+"en": "Cycle history",
+"tr": "Döngü geçmişi"
+},
+"ECO_INDUSTRY": {
+"en": "Industrial development",
+"tr": "Sanayi gelişimi"
+},
+"ECO_INDUSTRY_TIP": {
+"en": "Workshops, factories, mines and railways weighted by literacy.",
+"tr": "Okuryazarlıkla ağırlıklandırılmış atölye, fabrika, maden ve demiryolları."
+},
+"ECO_INTEREST": {
+"en": "Interest rate per turn",
+"tr": "Tur başına faiz"
+},
+"ECO_INTEREST_TIP": {
+"en": "Paid on the whole debt every turn.",
+"tr": "Her tur borcun tamamı üzerinden ödenir."
+},
+"ECO_LOANS": {
+"en": "Loans",
+"tr": "Krediler"
+},
+"ECO_MARKET": {
+"en": "World market",
+"tr": "Dünya pazarı"
+},
+"ECO_NO_SHORTAGE": {
+"en": "No shortages.",
+"tr": "Kıtlık yok."
+},
+"ECO_PHASE": {
+"en": "Economic cycle",
+"tr": "Ekonomik döngü"
 },
 "ECO_PHASE_BOOM": {
 "en": "Boom",
@@ -1318,6 +1486,86 @@
 "ECO_PHASE_SLUMP": {
 "en": "Slump",
 "tr": "Durgunluk"
+},
+"ECO_PRICE_INDEX": {
+"en": "Price index",
+"tr": "Fiyat endeksi"
+},
+"ECO_RATING": {
+"en": "Credit rating",
+"tr": "Kredi notu"
+},
+"ECO_RATING_TIP": {
+"en": "A is best, D is worst.",
+"tr": "A en iyi, D en kötüdür."
+},
+"ECO_REPAY": {
+"en": "Repay {n}",
+"tr": "{n} öde"
+},
+"ECO_SHORTAGES": {
+"en": "Shortages",
+"tr": "Kıtlıklar"
+},
+"ECO_SHORT_COAL": {
+"en": "workshops and factories slow down",
+"tr": "atölyeler ve fabrikalar yavaşlıyor"
+},
+"ECO_SHORT_IRON": {
+"en": "recruitment costs more",
+"tr": "asker toplamak daha pahalı"
+},
+"ECO_SHORT_STONE": {
+"en": "construction costs more",
+"tr": "inşaat daha pahalı"
+},
+"ECO_SHORT_WOOD": {
+"en": "construction slows down",
+"tr": "inşaat yavaşlıyor"
+},
+"ECO_SPECIALISATION": {
+"en": "Regional specialisation (provinces)",
+"tr": "Bölgesel uzmanlaşma (eyalet)"
+},
+"ECO_SPEC_ENTREPOT": {
+"en": "Trading hubs",
+"tr": "Ticaret merkezleri"
+},
+"ECO_SPEC_GRANARY": {
+"en": "Granaries",
+"tr": "Tahıl ambarları"
+},
+"ECO_SPEC_LUXURY": {
+"en": "Luxuries",
+"tr": "Lüks mallar"
+},
+"ECO_SPEC_MANUFACTURING": {
+"en": "Manufacturing",
+"tr": "İmalat"
+},
+"ECO_SPEC_ORE": {
+"en": "Ore and stone",
+"tr": "Cevher ve taş"
+},
+"ECO_SPEC_TIMBER": {
+"en": "Timber",
+"tr": "Kereste"
+},
+"ECO_SPEC_TIP": {
+"en": "A province gains up to +20% on the output it is naturally best at, more with matching buildings.",
+"tr": "Bir eyalet doğal olarak en iyi olduğu üretimde %20'ye kadar, uygun binalarla daha fazla kazanır."
+},
+"ECO_TAB_CREDIT": {
+"en": "Credit",
+"tr": "Kredi"
+},
+"ECO_TAB_REGIONS": {
+"en": "Regions",
+"tr": "Bölgeler"
+},
+"ECO_URBANISATION": {
+"en": "Urbanisation",
+"tr": "Kentleşme"
 },
 "ED_AI": {
 "en": "AI personality",
@@ -1655,6 +1903,42 @@
 "en": "Relation refers to unknown country {b}",
 "tr": "İlişki bilinmeyen {b} devletine başvuruyor"
 },
+"ESP_ACCURACY": {
+"en": "Accuracy of reports",
+"tr": "Raporların doğruluğu"
+},
+"ESP_AGENTS_CAUGHT": {
+"en": "Agents caught",
+"tr": "Yakalanan ajan"
+},
+"ESP_BUILD": {
+"en": "Build",
+"tr": "Kur"
+},
+"ESP_CAPACITY": {
+"en": "Networks",
+"tr": "Ağlar"
+},
+"ESP_CI": {
+"en": "Counter-intelligence",
+"tr": "Karşı istihbarat"
+},
+"ESP_CI_LEVEL": {
+"en": "Strength",
+"tr": "Güç"
+},
+"ESP_ECO_DEBT": {
+"en": "Debt",
+"tr": "Borç"
+},
+"ESP_ECO_GOLD": {
+"en": "Treasury",
+"tr": "Hazine"
+},
+"ESP_ECO_INCOME": {
+"en": "Income",
+"tr": "Gelir"
+},
 "ESP_ERR_CAPACITY": {
 "en": "Your service cannot run more than {n} networks.",
 "tr": "Teşkilatınız {n} ağdan fazlasını yürütemez."
@@ -1691,6 +1975,38 @@
 "en": "A vassal needs no spies.",
 "tr": "Bir vassala ajan gerekmez."
 },
+"ESP_GROW": {
+"en": "Expand",
+"tr": "Genişlet"
+},
+"ESP_INTEL_INTRO": {
+"en": "What your agents report. The better the network, the narrower the range; with no network you only have rumours.",
+"tr": "Ajanlarınızın bildirdikleri. Ağ ne kadar iyiyse aralık o kadar dar olur; ağ yoksa yalnızca söylenti vardır."
+},
+"ESP_INTRO": {
+"en": "Spy networks give you a view into other countries and the means to act in secret. They cost gold to build and to keep, and an exposed plot has consequences.",
+"tr": "Casus ağları diğer ülkelere göz atmanızı ve gizlice hareket etmenizi sağlar. Kurmak ve sürdürmek altına mal olur; ifşa olan bir komplonun sonuçları vardır."
+},
+"ESP_MIL_INTEL": {
+"en": "Army (regiments)",
+"tr": "Ordu (alay)"
+},
+"ESP_NETWORKS": {
+"en": "Your networks",
+"tr": "Ağlarınız"
+},
+"ESP_NET_LEVEL": {
+"en": "Network level",
+"tr": "Ağ seviyesi"
+},
+"ESP_NEW_NETWORK": {
+"en": "Possible targets",
+"tr": "Olası hedefler"
+},
+"ESP_NO_NETWORKS": {
+"en": "You have no networks yet. Build one in the Networks tab.",
+"tr": "Henüz ağınız yok. Ağlar sekmesinde bir tane kurun."
+},
 "ESP_OPD_INCITE_UNREST": {
 "en": "Unrest in the target's largest provinces; rebels from level 4.",
 "tr": "Hedefin büyük eyaletlerinde huzursuzluk; 4. seviyeden itibaren isyancılar."
@@ -1714,6 +2030,10 @@
 "ESP_OPD_SURVEY": {
 "en": "Full intelligence on the target for six turns.",
 "tr": "Hedef hakkında altı tur boyunca tam istihbarat."
+},
+"ESP_OPS_DONE": {
+"en": "Operations carried out",
+"tr": "Yürütülen operasyon"
 },
 "ESP_OP_CI": {
 "en": "Counter-intelligence",
@@ -1750,6 +2070,62 @@
 "ESP_OP_UNCOVERED": {
 "en": "Network uncovered",
 "tr": "Ağ ortaya çıktı"
+},
+"ESP_RAISE_CI": {
+"en": "Strengthen counter-intelligence ({cost} gold)",
+"tr": "Karşı istihbaratı güçlendir ({cost} altın)"
+},
+"ESP_RESULT_CAUGHT": {
+"en": "Our agents were caught: the network is weakened and relations suffer.",
+"tr": "Ajanlarımız yakalandı: ağ zayıfladı ve ilişkiler zarar gördü."
+},
+"ESP_RESULT_OK": {
+"en": "The operation succeeded.",
+"tr": "Operasyon başarılı oldu."
+},
+"ESP_RESULT_QUIET": {
+"en": "The operation failed, but our agents escaped unnoticed.",
+"tr": "Operasyon başarısız oldu ama ajanlarımız fark edilmeden kaçtı."
+},
+"ESP_RUN": {
+"en": "Carry out",
+"tr": "Uygula"
+},
+"ESP_TAB_INTEL": {
+"en": "Intelligence",
+"tr": "İstihbarat"
+},
+"ESP_TAB_LOG": {
+"en": "Results",
+"tr": "Sonuçlar"
+},
+"ESP_TAB_NETWORKS": {
+"en": "Networks",
+"tr": "Ağlar"
+},
+"ESP_TAB_OPS": {
+"en": "Operations",
+"tr": "Operasyonlar"
+},
+"ESP_TARGET": {
+"en": "Target",
+"tr": "Hedef"
+},
+"ESP_TARGET_CI": {
+"en": "Their counter-intelligence",
+"tr": "Onların karşı istihbaratı"
+},
+"ESP_TARGET_CI_TIP": {
+"en": "Success chance falls with their counter-intelligence.",
+"tr": "Başarı şansı onların karşı istihbaratıyla düşer."
+},
+"ESP_UNKNOWN": {
+"en": "unknown",
+"tr": "bilinmiyor"
+},
+"ESP_UPKEEP": {
+"en": "Upkeep",
+"tr": "Bakım gideri"
 },
 "EVT_HISTORICAL": {
 "en": "HISTORICAL EVENT",
@@ -1859,6 +2235,30 @@
 "en": "Weather",
 "tr": "Hava"
 },
+"FAC_CIVIL_WAR": {
+"en": "Civil war with {other}!",
+"tr": "{other} ile iç savaş!"
+},
+"FAC_CORRUPTION": {
+"en": "Corruption",
+"tr": "Yolsuzluk"
+},
+"FAC_CORRUPTION_TIP": {
+"en": "Corruption cuts tax income and raises administrative costs. It grows with size, a powerful court and weak administration.",
+"tr": "Yolsuzluk vergi gelirini azaltır ve idari maliyeti artırır. Büyüklük, güçlü saray ve zayıf idareyle artar."
+},
+"FAC_COUP_RISK": {
+"en": "Coup risk: about {pct}% per turn.",
+"tr": "Darbe riski: tur başına yaklaşık %{pct}."
+},
+"FAC_DEMAND": {
+"en": "Demand:",
+"tr": "Talep:"
+},
+"FAC_DEMAND_LEFT": {
+"en": "{n} turns left",
+"tr": "{n} tur kaldı"
+},
 "FAC_ERR_COOLDOWN": {
 "en": "Not yet: wait a few turns.",
 "tr": "Henüz değil: birkaç tur bekleyin."
@@ -1874,6 +2274,106 @@
 "FAC_ERR_SUPPRESS_COURT": {
 "en": "You cannot suppress your own court.",
 "tr": "Kendi sarayınızı bastıramazsınız."
+},
+"FAC_FIGHT_CORRUPTION": {
+"en": "Fight corruption (20 admin, 60 gold)",
+"tr": "Yolsuzlukla savaş (20 idare, 60 altın)"
+},
+"FAC_FIGHT_CORRUPTION_TIP": {
+"en": "Lowers corruption by 10 points; the court resents it.",
+"tr": "Yolsuzluğu 10 puan düşürür; saray bundan hoşlanmaz."
+},
+"FAC_GRANT": {
+"en": "Grant",
+"tr": "Kabul et"
+},
+"FAC_INFLUENCE": {
+"en": "{pct}% influence",
+"tr": "%{pct} nüfuz"
+},
+"FAC_LOG": {
+"en": "Recent events",
+"tr": "Son olaylar"
+},
+"FAC_LOG_COUP": {
+"en": "A coup took place",
+"tr": "Darbe oldu"
+},
+"FAC_LOG_DEMAND": {
+"en": "A demand was presented",
+"tr": "Bir talep sunuldu"
+},
+"FAC_LOG_GOV_CHANGE": {
+"en": "The government changed",
+"tr": "Hükûmet değişti"
+},
+"FAC_LOG_GRANTED": {
+"en": "A demand was met",
+"tr": "Bir talep karşılandı"
+},
+"FAC_LOG_IGNORED": {
+"en": "A demand was ignored",
+"tr": "Bir talep görmezden gelindi"
+},
+"FAC_LOG_SUPPRESSED": {
+"en": "A faction was suppressed",
+"tr": "Bir hizip bastırıldı"
+},
+"FAC_LOG_UPRISING": {
+"en": "A faction rose in arms",
+"tr": "Bir hizip silahlandı"
+},
+"FAC_LOYALTY": {
+"en": "Loyalty",
+"tr": "Sadakat"
+},
+"FAC_MOVE_INTRO": {
+"en": "Culture and religion minorities, conquered lands and angry vassals strive for independence. At 100 a province breaks away.",
+"tr": "Kültür ve din azınlıkları, fethedilen topraklar ve öfkeli vassallar bağımsızlık peşinde. 100'e ulaşan eyalet ayrılır."
+},
+"FAC_MOVE_NONE": {
+"en": "No independence movements.",
+"tr": "Bağımsızlık hareketi yok."
+},
+"FAC_OPINION": {
+"en": "opinion of us",
+"tr": "bize olan görüşü"
+},
+"FAC_SUPPRESS": {
+"en": "Suppress",
+"tr": "Bastır"
+},
+"FAC_SUPPRESS_CONFIRM": {
+"en": "Suppression costs stability and legitimacy, and the faction will not forget.",
+"tr": "Bastırmak istikrara ve meşruiyete mal olur; hizip bunu unutmaz."
+},
+"FAC_TAB_FACTIONS": {
+"en": "Factions",
+"tr": "Hizipler"
+},
+"FAC_TAB_MOVEMENTS": {
+"en": "Separatism",
+"tr": "Ayrılıkçılık"
+},
+"FAC_TAX_CAP": {
+"en": "Highest tolerated tax rate",
+"tr": "Tolere edilen en yüksek vergi"
+},
+"FAC_TAX_CAP_TIP": {
+"en": "Above this rate the privileged orders lose loyalty every turn, and taxation is capped in the budget.",
+"tr": "Bu oranın üzerinde ayrıcalıklı zümreler her tur sadakat kaybeder ve bütçede vergi bu orana indirilir."
+},
+"FAC_TRANSITION": {
+"en": "Transition to {gov}: unrest and lower taxes for {n} more turns; coups are likelier.",
+"tr": "{gov} yönetimine geçiş: {n} tur daha huzursuzluk ve düşük vergi; darbe olasılığı yüksek."
+},
+"FAC_VASSALS": {
+"en": "Your vassals",
+"tr": "Vassallarınız"
+},
+"FAC_VASSAL_NOTE": {
+"en": "Your overlord {other} views you at {op}. A vassal that is despised may rise in revolt.",
+"tr": "Hükümdarınız {other} sizi {op} olarak görüyor. Küçümsenen bir vassal isyan edebilir."
 },
 "FD_FOOD_OK": {
 "en": "Feed the people: end the famine.",
@@ -3031,9 +3531,17 @@
 "en": "Diplomacy",
 "tr": "Diplomasi"
 },
+"PANEL_DYNASTY": {
+"en": "Dynasty",
+"tr": "Hanedan"
+},
 "PANEL_ECONOMY": {
 "en": "Economy",
 "tr": "Ekonomi"
+},
+"PANEL_ESPIONAGE": {
+"en": "Espionage",
+"tr": "Casusluk"
 },
 "PANEL_EVENTS": {
 "en": "Events & notifications",
@@ -4410,6 +4918,10 @@
 "UI_OK": {
 "en": "OK",
 "tr": "Tamam"
+},
+"UI_PER_TURN": {
+"en": "per turn",
+"tr": "tur başına"
 },
 "UI_QUIT_TO_MENU": {
 "en": "Quit to main menu",

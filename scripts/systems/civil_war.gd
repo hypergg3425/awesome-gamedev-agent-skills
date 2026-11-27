@@ -121,30 +121,31 @@ static func pick_split(s: Dictionary, parent: String, rng: GameRng) -> Array:
 	var cap: String = str(pc["capital"])
 	var owned := GS.owned(s, parent)
 	var dist := _bfs_dist(s, parent, cap)
-	var seed := ""
-	var best := -1e9
+	var seeds: Array = []
 	for pid in owned:
 		if pid == cap or s["provinces"][pid]["controller"] != parent:
 			continue
-		var sc := float(s["provinces"][pid]["unrest"]) + 8.0 * float(dist.get(pid, 12)) + rng.randf() * 3.0
-		if sc > best:
-			best = sc
-			seed = pid
-	if seed == "":
-		return []
+		seeds.append([float(s["provinces"][pid]["unrest"]) + 8.0 * float(dist.get(pid, 12)) + rng.randf() * 3.0, pid])
+	seeds.sort_custom(func(x, y): return x[0] > y[0])
 	var want := maxi(2, int(round(float(owned.size()) * rng.randf_range(0.35, 0.5))))
-	var cluster: Array = [seed]
-	var qi := 0
-	while qi < cluster.size() and cluster.size() < want:
-		var u: String = cluster[qi]
-		qi += 1
-		for nb in Defs.neighbors(u):
-			if cluster.size() >= want:
-				break
-			var p: Dictionary = s["provinces"][nb]
-			if nb != cap and p["owner"] == parent and p["controller"] == parent and nb not in cluster:
-				cluster.append(nb)
-	return cluster
+	var best_cluster: Array = []
+	for sd in seeds.slice(0, 8):
+		var cluster: Array = [sd[1]]
+		var qi := 0
+		while qi < cluster.size() and cluster.size() < want:
+			var u: String = cluster[qi]
+			qi += 1
+			for nb in Defs.neighbors(u):
+				if cluster.size() >= want:
+					break
+				var p: Dictionary = s["provinces"][nb]
+				if nb != cap and p["owner"] == parent and p["controller"] == parent and nb not in cluster:
+					cluster.append(nb)
+		if cluster.size() > best_cluster.size():
+			best_cluster = cluster
+		if cluster.size() >= want:
+			break
+	return best_cluster
 
 static func can_start(s: Dictionary, cid: String) -> bool:
 	var c: Dictionary = s["countries"][cid]

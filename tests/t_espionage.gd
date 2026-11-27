@@ -146,7 +146,7 @@ func test_failure_has_consequences() -> void:
 	for i in 5:
 		EspionageSystem.raise_ci(s, b)
 	var caught := false
-	var inf0 := float(s["countries"][a]["infamy"])
+	var inf0 := float(s["countries"][a].get("infamy", 0.0))
 	for i in 120:
 		s["countries"][a]["esp"]["cool"].erase(b)
 		_rich(s, a)
@@ -161,7 +161,7 @@ func test_failure_has_consequences() -> void:
 			ok(GS.opinion(s, b, a) < op0, "opinion falls")
 			break
 	ok(caught, "agents get caught against strong counter-intelligence")
-	ok(float(s["countries"][a]["infamy"]) >= inf0, "infamy never falls from a failed plot")
+	ok(float(s["countries"][a].get("infamy", 0.0)) >= inf0, "infamy never falls from a failed plot")
 
 func test_exposed_plot_gives_casus_belli() -> void:
 	var s := new_state()

@@ -169,7 +169,7 @@ func test_royal_marriage_ties_houses() -> void:
 	ok(r["ok"] and r["accepted"], "the match is accepted (%s)" % str(r.get("eval", {}).get("score", "")))
 	ok(DynastySystem.married(s, a, b) and DynastySystem.married(s, b, a), "both houses record it")
 	ok(GS.opinion(s, a, b) > op0, "opinion rises")
-	eq(DynastySystem.can_propose_marriage(s, a, b, 1)["reason"], "DYN_ERR_NO_ROYAL", "the royal is no longer free")
+	eq(DynastySystem.can_propose_marriage(s, a, b, 1)["reason"], "DYN_ERR_MARRIED", "the houses are now joined")
 	# dynastic ties help an alliance
 	var ev := DiplomacySystem.evaluate(s, "alliance", a, b, {})
 	var has := false
@@ -281,11 +281,14 @@ func test_throne_claims_expire() -> void:
 	var a: String = p[0]
 	var b: String = p[1]
 	DynastySystem._grant_claims(s, a, b, 4)
-	ok(DiplomacySystem.claims_on(s, a, b).size() > 0, "claims on the realm's provinces")
+	var granted: Array = DynastySystem.st(s["countries"][a])["claims"][0]["pids"]
+	ok(granted.size() > 0, "claims on the realm's provinces")
+	for pid in granted:
+		ok(a in s["provinces"][pid]["claims"], "claim recorded")
 	s["turn"] = int(s["turn"]) + 10
 	DynastySystem._expire_claims(s, a, DynastySystem.st(s["countries"][a]))
 	var left := 0
-	for pid in GS.owned(s, b):
+	for pid in granted:
 		if a in s["provinces"][pid]["claims"]:
 			left += 1
 	eq(left, 0, "claims lapse")

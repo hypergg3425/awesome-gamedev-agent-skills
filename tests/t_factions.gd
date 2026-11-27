@@ -231,6 +231,7 @@ func test_government_change_has_consequences() -> void:
 	for o in again:
 		ok(not o["ok"], "no second change during the transition")
 	for i in 14:
+		s["turn"] = int(s["turn"]) + 1
 		PoliticsSystem.process_turn(s, cid)
 	ok(not FactionsSystem.in_transition(c), "the transition ends (%s -> %s)" % [old_gov, to])
 
@@ -286,7 +287,7 @@ func test_civil_war_splits_the_country() -> void:
 	var n_before := GS.owned(s, cid).size()
 	var gold := float(c["gold"])
 	var debt := float(c["debt"])
-	var countries0 := s["countries"].size()
+	var countries0: int = s["countries"].size()
 	var tag := CivilWar.start(s, cid, "faction", "military", "", GS.rng_of(s))
 	ok(tag != "", "a civil war breaks out")
 	eq(s["countries"].size(), countries0 + 1, "a new country exists")
@@ -381,7 +382,7 @@ func test_rebel_held_province_becomes_a_state() -> void:
 	s["turn"] = 10
 	CivilWar.process_rebel_holds(s, GS.rng_of(s))
 	s["turn"] = 20
-	var before := s["countries"].size()
+	var before: int = s["countries"].size()
 	CivilWar.process_rebel_holds(s, GS.rng_of(s))
 	eq(s["countries"].size(), before + 1, "rebels that hold ground for long found a state")
 	ok(aid != "", "rebel army existed")

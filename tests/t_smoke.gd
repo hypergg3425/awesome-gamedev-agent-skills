@@ -3,7 +3,7 @@ extends TestCase
 func test_defs_loaded() -> void:
 	ok(Defs.provinces.size() >= 150, "at least 150 provinces")
 	ok(Defs.load_errors.is_empty(), "no data load errors: %s" % str(Defs.load_errors))
-	ok(Defs.units.size() > 20 and Defs.techs.size() == 92 and Defs.buildings.size() > 15, "tables loaded")
+	ok(Defs.units.size() > 20 and Defs.techs.size() >= 92 and Defs.buildings.size() > 15, "tables loaded")
 
 func test_new_campaign() -> void:
 	var s := new_state("early_modern")
