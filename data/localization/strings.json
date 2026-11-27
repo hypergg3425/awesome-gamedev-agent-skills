@@ -339,17 +339,65 @@
 "en": "Attacker",
 "tr": "Saldıran"
 },
+"BR_COMMANDER": {
+"en": "Commander",
+"tr": "Komutan"
+},
 "BR_DEFENDER": {
 "en": "Defender",
 "tr": "Savunan"
+},
+"BR_EVENT_CAPTURED": {
+"en": "{name} of {country} was captured and ransomed.",
+"tr": "{country} komutanı {name} esir alındı ve fidyeyle bırakıldı."
+},
+"BR_EVENT_DIED": {
+"en": "{name} of {country} was killed.",
+"tr": "{country} komutanı {name} öldü."
+},
+"BR_EVENT_PROMOTED": {
+"en": "{name} of {country} gained a level.",
+"tr": "{country} komutanı {name} seviye atladı."
+},
+"BR_FACTORS": {
+"en": "Factor",
+"tr": "Etken"
 },
 "BR_FORT": {
 "en": "fortification {n}",
 "tr": "tahkimat {n}"
 },
+"BR_INCLUDED_TIP": {
+"en": "Already counted inside the unit strength; shown to explain its weight.",
+"tr": "Birim gücünün içinde zaten sayılır; ağırlığını göstermek için listelenir."
+},
 "BR_MEN": {
 "en": "about {n} men lost",
 "tr": "yaklaşık {n} kişi kaybedildi"
+},
+"BR_NAVAL": {
+"en": "Sea battle",
+"tr": "Deniz savaşı"
+},
+"BR_PASS": {
+"en": "mountain pass: {name}",
+"tr": "dağ geçidi: {name}"
+},
+"BR_PASS_UNNAMED": {
+"en": "pass",
+"tr": "geçit"
+},
+"BR_RIVER": {
+"en": "river crossing: {name} (width {w})",
+"tr": "nehir geçişi: {name} (genişlik {w})"
+},
+"BR_RIVER_UNNAMED": {
+"en": "river",
+"tr": "nehir"
+},
+"BR_SEA_STATE": {
+"en": "sea state {n}%",
+"tr": "deniz durumu %{n}"
 },
 "BR_STRENGTH": {
 "en": "{start} regiments, losses {loss}, survivors {end}",
@@ -1055,6 +1103,38 @@
 "en": "Trust",
 "tr": "Güven"
 },
+"DOC_ADOPT": {
+"en": "Adopt ({cost} gold)",
+"tr": "Benimse ({cost} altın)"
+},
+"DOC_ERR_COOLDOWN": {
+"en": "Doctrine changed recently; wait {n} more turns.",
+"tr": "Doktrin yakın zamanda değişti; {n} tur daha bekleyin."
+},
+"DOC_ERR_LOCKED": {
+"en": "Research the required technologies first.",
+"tr": "Önce gerekli teknolojileri araştırın."
+},
+"DOC_ERR_SAME": {
+"en": "This doctrine is already in force.",
+"tr": "Bu doktrin zaten yürürlükte."
+},
+"DOC_REQUIRES": {
+"en": "Requires: {req}",
+"tr": "Gerekir: {req}"
+},
+"DOC_RETRAINING": {
+"en": "The troops are retraining: half effect for a few turns.",
+"tr": "Birlikler yeniden eğitiliyor: birkaç tur yarı etki."
+},
+"DOC_SLOT_LAND": {
+"en": "Land doctrine",
+"tr": "Kara doktrini"
+},
+"DOC_SLOT_NAVAL": {
+"en": "Naval doctrine",
+"tr": "Deniz doktrini"
+},
 "DR_ALLIES": {
 "en": "Allies",
 "tr": "Müttefikler"
@@ -1519,9 +1599,29 @@
 "en": "Source: {src}",
 "tr": "Kaynak: {src}"
 },
+"FACTOR_ADMIRAL": {
+"en": "Admiral's skill",
+"tr": "Amiralin yeteneği"
+},
+"FACTOR_AMPHIB": {
+"en": "Landing from the sea",
+"tr": "Denizden çıkarma"
+},
 "FACTOR_COMPOSITION": {
 "en": "Army composition",
 "tr": "Ordu bileşimi"
+},
+"FACTOR_DISCIPLINE": {
+"en": "Discipline",
+"tr": "Disiplin"
+},
+"FACTOR_DOCTRINE": {
+"en": "Doctrine",
+"tr": "Doktrin"
+},
+"FACTOR_EXPERIENCE": {
+"en": "Experience",
+"tr": "Tecrübe"
 },
 "FACTOR_FORT": {
 "en": "Fortifications",
@@ -1543,6 +1643,18 @@
 "en": "Numbers",
 "tr": "Sayısal üstünlük"
 },
+"FACTOR_PASS": {
+"en": "Mountain pass",
+"tr": "Dağ geçidi"
+},
+"FACTOR_RIVER": {
+"en": "River crossing",
+"tr": "Nehir geçişi"
+},
+"FACTOR_SHIPS": {
+"en": "Ship types",
+"tr": "Gemi türleri"
+},
 "FACTOR_SUPPLY": {
 "en": "Supply",
 "tr": "İkmal"
@@ -1558,6 +1670,10 @@
 "FACTOR_WEATHER": {
 "en": "Weather",
 "tr": "Hava"
+},
+"FACTOR_WIND": {
+"en": "Wind and sea",
+"tr": "Rüzgâr ve deniz"
 },
 "FEAT_COUP_RISK": {
 "en": "Generals may seize power.",
@@ -1671,6 +1787,10 @@
 "en": "The realm fell.",
 "tr": "Devlet yıkıldı."
 },
+"HIST_DOCTRINE": {
+"en": "Adopted a new military doctrine",
+"tr": "Yeni bir askerî doktrin benimsendi"
+},
 "HIST_ELECTION": {
 "en": "{ruler} was elected leader.",
 "tr": "{ruler} lider seçildi."
@@ -1747,6 +1867,14 @@
 "en": "Island peoples",
 "tr": "Ada halkları"
 },
+"LANDING_ERR_NO_ESCORT": {
+"en": "A landing needs an escort fleet in port.",
+"tr": "Çıkarma için limanda bir eskort filosu gerekir."
+},
+"LANDING_ERR_SEA_CONTROL": {
+"en": "The enemy controls these waters; the landing would be hopeless.",
+"tr": "Bu sulara düşman hâkim; çıkarma umutsuz olurdu."
+},
 "LOG_EMPTY": {
 "en": "No notifications yet.",
 "tr": "Henüz bildirim yok."
@@ -1802,6 +1930,10 @@
 "MIL_DISBAND_CONFIRM": {
 "en": "Disband this army? Part of the manpower returns to your pool.",
 "tr": "Bu ordu dağıtılsın mı? İnsan gücünün bir kısmı havuza döner."
+},
+"MIL_DISCIPLINE": {
+"en": "Discipline",
+"tr": "Disiplin"
 },
 "MIL_GENERAL": {
 "en": "General",
@@ -1887,9 +2019,53 @@
 "en": "Stop",
 "tr": "Durdur"
 },
+"MIL_SUPPLY": {
+"en": "Supply",
+"tr": "İkmal"
+},
+"MIL_UPGRADE_BTN": {
+"en": "Upgrade {from} to {to} ({cost} gold)",
+"tr": "{from} birimini {to} birimine yükselt ({cost} altın)"
+},
 "MIL_UPKEEP": {
 "en": "Upkeep per turn",
 "tr": "Tur başına masraf"
+},
+"MIL_XP": {
+"en": "Exp.",
+"tr": "Tecr."
+},
+"MISSION_BLOCKADE": {
+"en": "Blockade",
+"tr": "Abluka"
+},
+"MISSION_BLOCKADE_TIP": {
+"en": "Closes the port the fleet sits in if strong enough.",
+"tr": "Yeterince güçlüyse bulunduğu limanı kapatır."
+},
+"MISSION_CONVOY": {
+"en": "Convoy",
+"tr": "Konvoy"
+},
+"MISSION_CONVOY_TIP": {
+"en": "Escorts your merchants and transports against raiders.",
+"tr": "Tüccar ve nakliye gemilerinizi akıncılara karşı korur."
+},
+"MISSION_PATROL": {
+"en": "Patrol",
+"tr": "Devriye"
+},
+"MISSION_PATROL_TIP": {
+"en": "Balanced: some escort and raiding value, ready to fight.",
+"tr": "Dengeli: bir miktar eskort ve baskın değeri, savaşa hazır."
+},
+"MISSION_RAID": {
+"en": "Raid trade",
+"tr": "Ticaret baskını"
+},
+"MISSION_RAID_TIP": {
+"en": "Hunts enemy merchants in the sea around its position.",
+"tr": "Bulunduğu denizde düşman tüccar gemilerini avlar."
 },
 "MODE_DIPLOMATIC": {
 "en": "Diplomatic",
@@ -1927,6 +2103,10 @@
 "en": "Administrative capacity",
 "tr": "İdari kapasite"
 },
+"MOD_ANTI_CAV": {
+"en": "Anti-cavalry",
+"tr": "Süvariye karşı koyuş"
+},
 "MOD_ARMY_UPKEEP": {
 "en": "Army upkeep",
 "tr": "Ordu masrafı"
@@ -1946,6 +2126,10 @@
 "MOD_ATTRITION": {
 "en": "Attrition",
 "tr": "Yıpranma"
+},
+"MOD_BLOCKADE": {
+"en": "Blockade strength",
+"tr": "Abluka gücü"
 },
 "MOD_BUILD_COST": {
 "en": "Construction cost",
@@ -1967,6 +2151,10 @@
 "en": "Clergy",
 "tr": "Din adamı payı"
 },
+"MOD_CONVOY": {
+"en": "Convoy protection",
+"tr": "Konvoy koruması"
+},
 "MOD_CORRUPTION": {
 "en": "Corruption",
 "tr": "Yolsuzluk"
@@ -1982,6 +2170,10 @@
 "MOD_DIPLO": {
 "en": "Diplomatic reputation",
 "tr": "Diplomatik itibar"
+},
+"MOD_DISCIPLINE": {
+"en": "Discipline",
+"tr": "Disiplin"
 },
 "MOD_DISEASE": {
 "en": "Disease",
@@ -2095,6 +2287,10 @@
 "en": "Naval attack",
 "tr": "Deniz hücumu"
 },
+"MOD_NAVAL_MORALE": {
+"en": "Naval morale",
+"tr": "Deniz morali"
+},
 "MOD_NAVAL_SLOTS": {
 "en": "Naval slots",
 "tr": "Donanma yuvası"
@@ -2102,6 +2298,10 @@
 "MOD_NAVAL_TRANSPORT": {
 "en": "Naval transport",
 "tr": "Deniz nakliyesi"
+},
+"MOD_NAVY_UPKEEP": {
+"en": "Navy upkeep",
+"tr": "Donanma masrafı"
 },
 "MOD_NOBILITY_SAT": {
 "en": "Noble satisfaction",
@@ -2139,6 +2339,14 @@
 "en": "Local production",
 "tr": "Yerel üretim"
 },
+"MOD_PURSUIT": {
+"en": "Pursuit",
+"tr": "Takip"
+},
+"MOD_RAID": {
+"en": "Commerce raiding",
+"tr": "Ticaret baskını"
+},
 "MOD_RECRUIT_COST": {
 "en": "Recruitment cost",
 "tr": "Asker toplama maliyeti"
@@ -2162,6 +2370,10 @@
 "MOD_RESEARCH_PTS": {
 "en": "Research points",
 "tr": "Araştırma puanı"
+},
+"MOD_RIVER_PEN": {
+"en": "River-crossing penalty",
+"tr": "Nehir geçişi cezası"
 },
 "MOD_SIEGE": {
 "en": "Siege strength",
@@ -2247,6 +2459,90 @@
 "en": "Tap a destination province.",
 "tr": "Bir hedef eyalete dokunun."
 },
+"NAV_AT_SEA": {
+"en": "Away from port",
+"tr": "Limandan uzakta"
+},
+"NAV_AT_SEA_FMT": {
+"en": "{n} turns, supply {supply}%",
+"tr": "{n} tur, ikmal %{supply}"
+},
+"NAV_BLOCKADED": {
+"en": "Blockaded ports",
+"tr": "Abluka altındaki limanlar"
+},
+"NAV_CONVOY": {
+"en": "Convoy escorts",
+"tr": "Konvoy eskortları"
+},
+"NAV_CONVOY_TIP": {
+"en": "Escort strength in your ports' waters and the trade it saves.",
+"tr": "Limanlarınızın sularındaki eskort gücü ve kurtardığı ticaret."
+},
+"NAV_FLAGSHIP": {
+"en": "Flagship",
+"tr": "Amiral gemisi"
+},
+"NAV_LOOTED": {
+"en": "Captured from raiding",
+"tr": "Baskınlarla ele geçirilen"
+},
+"NAV_MERCHANT": {
+"en": "Merchant marine",
+"tr": "Ticaret filosu"
+},
+"NAV_NONE": {
+"en": "none",
+"tr": "yok"
+},
+"NAV_NO_ADMIRAL": {
+"en": "No admiral",
+"tr": "Amiral yok"
+},
+"NAV_NO_FLEETS": {
+"en": "You have no fleets. Build ships in a port.",
+"tr": "Hiç filonuz yok. Bir limanda gemi inşa edin."
+},
+"NAV_OVERVIEW": {
+"en": "Naval overview",
+"tr": "Deniz genel durumu"
+},
+"NAV_RAIDED": {
+"en": "Lost to raiding",
+"tr": "Baskınlarda kaybedilen"
+},
+"NAV_RAID_LOSS": {
+"en": "Trade lost to raiders",
+"tr": "Akıncılara kaybedilen ticaret"
+},
+"NAV_RAID_TIP": {
+"en": "Share of your sea-borne trade income destroyed by enemy commerce raiders this turn.",
+"tr": "Düşman ticaret akıncıları tarafından bu tur yok edilen deniz ticareti gelirinizin payı."
+},
+"NAV_SEA_CONTROL": {
+"en": "Sea control (yours / enemy)",
+"tr": "Deniz hâkimiyeti (sizin / düşman)"
+},
+"NAV_SEA_CONTROL_TIP": {
+"en": "Influence of fleets and ports in this sea.",
+"tr": "Bu denizdeki filo ve liman etkisi."
+},
+"NAV_SPLIT_ROLES": {
+"en": "Split by role",
+"tr": "Göreve göre ayır"
+},
+"NAV_SQUADRONS": {
+"en": "Squadrons",
+"tr": "Filotillalar"
+},
+"NAV_TRANSPORT": {
+"en": "Transport capacity",
+"tr": "Nakliye kapasitesi"
+},
+"NAV_TRANSPORT_TIP": {
+"en": "Regiments your ships can carry; also feeds your merchant marine.",
+"tr": "Gemilerinizin taşıyabileceği alay sayısı; ticaret filonuzu da besler."
+},
 "NOTE_ALLY_JOINED": {
 "en": "{other}'s ally has joined the war.",
 "tr": "{other} devletinin müttefiki savaşa katıldı."
@@ -2278,6 +2574,10 @@
 "NOTE_COALITION_AGAINST_YOU": {
 "en": "{count} nations form a coalition against you!",
 "tr": "{count} devlet aleyhinize koalisyon kuruyor!"
+},
+"NOTE_CONVOY_INTERCEPTED": {
+"en": "A convoy was intercepted at sea and lost {pct}% of its ships and troops.",
+"tr": "Bir konvoy denizde durduruldu; gemilerinin ve askerlerinin %{pct} kadarını kaybetti."
 },
 "NOTE_COUNTRY_FELL": {
 "en": "{country} has ceased to exist.",
@@ -2314,6 +2614,10 @@
 "NOTE_HEIR_BORN": {
 "en": "An heir has been born.",
 "tr": "Bir varis doğdu."
+},
+"NOTE_LANDING_REFUSED": {
+"en": "The landing at {province} was cancelled: the enemy controls the sea.",
+"tr": "{province} çıkarması iptal edildi: deniz düşmanın elinde."
 },
 "NOTE_LOAN": {
 "en": "The treasury was empty: a loan of {amount} gold was taken.",
@@ -2815,6 +3119,26 @@
 "en": "Wood",
 "tr": "Kereste"
 },
+"ROLE_CRUISER": {
+"en": "Cruisers",
+"tr": "Kruvazörler"
+},
+"ROLE_GALLEY": {
+"en": "Galleys",
+"tr": "Kadırgalar"
+},
+"ROLE_LINE": {
+"en": "Battle line",
+"tr": "Hat gemileri"
+},
+"ROLE_RAIDER": {
+"en": "Raiders",
+"tr": "Akıncılar"
+},
+"ROLE_TRANSPORT": {
+"en": "Transports",
+"tr": "Nakliye"
+},
 "SAVE_AUTO": {
 "en": "Autosave",
 "tr": "Otomatik kayıt"
@@ -3267,6 +3591,14 @@
 "en": "Budget",
 "tr": "Bütçe"
 },
+"TAB_DOCTRINE": {
+"en": "Doctrine",
+"tr": "Doktrin"
+},
+"TAB_FLEETS": {
+"en": "Fleets",
+"tr": "Filolar"
+},
 "TAB_GOVERNMENT": {
 "en": "Government",
 "tr": "Hükûmet"
@@ -3423,6 +3755,10 @@
 "en": "Plains",
 "tr": "Ova"
 },
+"TERRAIN_SEA": {
+"en": "Open sea",
+"tr": "Açık deniz"
+},
 "TERRAIN_STEPPE": {
 "en": "Steppe",
 "tr": "Bozkır"
@@ -3530,6 +3866,86 @@
 "TRADE_NO_HUB": {
 "en": "No hub reachable",
 "tr": "Ulaşılabilir merkez yok"
+},
+"TRAIT_AGGRESSIVE": {
+"en": "Aggressive",
+"tr": "Saldırgan"
+},
+"TRAIT_ARTILLERIST": {
+"en": "Artillerist",
+"tr": "Topçu"
+},
+"TRAIT_BLOCKADER": {
+"en": "Blockader",
+"tr": "Ablukacı"
+},
+"TRAIT_BOARDING_MASTER": {
+"en": "Boarding master",
+"tr": "Abordaj ustası"
+},
+"TRAIT_BRIDGE_BUILDER": {
+"en": "Bridge builder",
+"tr": "Köprü ustası"
+},
+"TRAIT_BRILLIANT": {
+"en": "Brilliant",
+"tr": "Parlak"
+},
+"TRAIT_CAUTIOUS": {
+"en": "Cautious",
+"tr": "Temkinli"
+},
+"TRAIT_CAVALRY_MASTER": {
+"en": "Cavalry master",
+"tr": "Süvari ustası"
+},
+"TRAIT_CONVOY_MASTER": {
+"en": "Convoy master",
+"tr": "Konvoy ustası"
+},
+"TRAIT_GUNNERY_EXPERT": {
+"en": "Gunnery expert",
+"tr": "Topçuluk uzmanı"
+},
+"TRAIT_INCOMPETENT": {
+"en": "Incompetent",
+"tr": "Beceriksiz"
+},
+"TRAIT_INSPIRING": {
+"en": "Inspiring",
+"tr": "İlham verici"
+},
+"TRAIT_LOGISTICIAN": {
+"en": "Logistician",
+"tr": "İkmal ustası"
+},
+"TRAIT_MOUNTAIN_FIGHTER": {
+"en": "Mountain fighter",
+"tr": "Dağ savaşçısı"
+},
+"TRAIT_RAIDER": {
+"en": "Raider",
+"tr": "Akıncı"
+},
+"TRAIT_RECKLESS": {
+"en": "Reckless",
+"tr": "Pervasız"
+},
+"TRAIT_SEA_DOG": {
+"en": "Sea dog",
+"tr": "Deniz kurdu"
+},
+"TRAIT_SIEGE_MASTER": {
+"en": "Siege master",
+"tr": "Kuşatma ustası"
+},
+"TRAIT_STEADFAST": {
+"en": "Steadfast",
+"tr": "Sebatkâr"
+},
+"TRAIT_VETERAN": {
+"en": "Veteran",
+"tr": "Gazi"
 },
 "TRANSFER_GIVE": {
 "en": "You give",
@@ -3890,6 +4306,14 @@
 "UNREST_WAR": {
 "en": "War exhaustion",
 "tr": "Savaş yorgunluğu"
+},
+"UPGRADE_ERR_NONE": {
+"en": "No better unit is available for this type.",
+"tr": "Bu tür için daha iyi bir birim yok."
+},
+"UPGRADE_ERR_PLACE": {
+"en": "Troops can only be improved on friendly ground (ships in a port).",
+"tr": "Birlikler yalnızca dost topraklarda (gemiler limanda) yükseltilebilir."
 },
 "VICD_DIPLOMATIC": {
 "en": "Lead a bloc of allies and vassals that dominates the world.",

@@ -91,7 +91,18 @@ static func _page(v: VBoxContainer, s: Dictionary, r: Dictionary) -> void:
 	var sub := "%s · %s · %s" % [Fmt.terrain_name(str(r["terrain"])), Loc.t("SEASON_" + str(["spring", "summer", "autumn", "winter"][int(r.get("weather", 0))]).to_upper()), Loc.tf("BR_WIDTH", {"n": int(r["width"])})]
 	if float(r["fort"]) > 0.0:
 		sub += " · " + Loc.tf("BR_FORT", {"n": "%.1f" % float(r["fort"])})
-	v.add_child(UI.label(sub, "Small"))
+	if bool(r.get("naval", false)):
+		sub = "%s · %s" % [Loc.t("BR_NAVAL"), Loc.t("SEASON_" + str(["spring", "summer", "autumn", "winter"][int(r.get("weather", 0))]).to_upper())]
+		var sea: Dictionary = r.get("sea", {})
+		if not sea.is_empty():
+			sub += " · " + SeaZones.zone_name(str(sea.get("zone", ""))) + " · " + Loc.tf("BR_SEA_STATE", {"n": int(float(sea.get("state", 0.0)) * 100.0)})
+	var rv: Dictionary = r.get("river", {})
+	if float(rv.get("share", 0.0)) > 0.0:
+		sub += " · " + Loc.tf("BR_RIVER", {"name": str(rv.get("name", "")) if str(rv.get("name", "")) != "" else Loc.t("BR_RIVER_UNNAMED"), "w": int(rv.get("width", 1))})
+	var ps: Dictionary = r.get("pass", {})
+	if float(ps.get("share", 0.0)) > 0.0:
+		sub += " · " + Loc.tf("BR_PASS", {"name": str(ps.get("name", "")) if str(ps.get("name", "")) != "" else Loc.t("BR_PASS_UNNAMED")})
+	v.add_child(UI.label(sub, "Small", -1, true))
 	var cols := HBoxContainer.new()
 	cols.add_theme_constant_override("separation", 16)
 	for side in ["a", "d"]:
@@ -107,6 +118,12 @@ static func _page(v: VBoxContainer, s: Dictionary, r: Dictionary) -> void:
 		var loss := float(r["loss_" + side])
 		col.add_child(UI.label(Loc.tf("BR_STRENGTH", {"start": int(round(start)), "loss": int(round(loss * 10.0)) / 10.0, "end": int(round(float(r["end_" + side])))}), "Small"))
 		col.add_child(UI.label(Loc.tf("BR_MEN", {"n": UI.fmt(loss * 1000.0)}), "Small"))
+		var ci: Dictionary = r.get("commanders", {}).get(side, {})
+		if not ci.is_empty():
+			var tn: Array = []
+			for tr_id in ci.get("traits", []):
+				tn.append(Loc.t("TRAIT_" + str(tr_id).to_upper()))
+			col.add_child(UI.label("%s: %s (%d)%s" % [Loc.t("BR_COMMANDER"), str(ci.get("name", "")), int(ci.get("tac", 0)), ("  " + ", ".join(tn)) if not tn.is_empty() else ""], "Tiny", -1, true))
 		cols.add_child(col)
 	v.add_child(cols)
 	var anim := BattleAnim.new()
@@ -126,22 +143,32 @@ static func _page(v: VBoxContainer, s: Dictionary, r: Dictionary) -> void:
 	v.add_child(UI.label(Loc.tf("BR_WHY", {"winner": GS.country_name(s, (owners_a if att_wins else owners_d)[0])}), "Sub"))
 	for rs in r["reasons"]:
 		v.add_child(UI.label("• " + Loc.t(str(rs)), "Small", -1, true))
-	# comparison table
+	# every factor with its numeric contribution (percent change of the side's effectiveness)
+	for ev in r.get("events", []):
+		v.add_child(UI.label("• " + Loc.tf("BR_EVENT_" + str(ev["kind"]).to_upper(), {"name": str(ev["name"]), "country": GS.country_name(s, str(ev["owner"]))}), "Small", -1, true))
 	var grid := GridContainer.new()
 	grid.columns = 3
 	grid.add_theme_constant_override("h_separation", 24)
-	grid.add_child(UI.label("", "Tiny"))
+	grid.add_child(UI.label(Loc.t("BR_FACTORS"), "Tiny"))
 	grid.add_child(UI.label(Loc.t("BR_ATTACKER"), "Tiny", HORIZONTAL_ALIGNMENT_RIGHT))
 	grid.add_child(UI.label(Loc.t("BR_DEFENDER"), "Tiny", HORIZONTAL_ALIGNMENT_RIGHT))
-	for k in r["factors"]:
-		var f: Array = r["factors"][k]
-		grid.add_child(UI.label(Loc.t(str(k)), "Small"))
-		var la := UI.label("%.0f" % float(f[0]), "Value", HORIZONTAL_ALIGNMENT_RIGHT)
-		var ld := UI.label("%.0f" % float(f[1]), "Value", HORIZONTAL_ALIGNMENT_RIGHT)
-		if float(f[0]) > float(f[1]) * 1.05:
-			la.add_theme_color_override("font_color", UI.GOOD)
-		elif float(f[1]) > float(f[0]) * 1.05:
-			ld.add_theme_color_override("font_color", UI.GOOD)
+	for f in r.get("modifiers", []):
+		var name_l := UI.label(Loc.t(str(f["key"])), "Small")
+		if str(f["kind"]) == "inc":
+			name_l.tooltip_text = Loc.t("BR_INCLUDED_TIP")
+		grid.add_child(name_l)
+		var la: Label
+		var ld: Label
+		if str(f["kind"]) == "info":
+			la = UI.label(UI.fmt(float(f["va"])), "Value", HORIZONTAL_ALIGNMENT_RIGHT)
+			ld = UI.label(UI.fmt(float(f["vd"])), "Value", HORIZONTAL_ALIGNMENT_RIGHT)
+		else:
+			var pa := BattleFactors.contribution_pct(f, "a")
+			var pd := BattleFactors.contribution_pct(f, "d")
+			la = UI.label("%+.0f%%" % pa, "Value", HORIZONTAL_ALIGNMENT_RIGHT)
+			ld = UI.label("%+.0f%%" % pd, "Value", HORIZONTAL_ALIGNMENT_RIGHT)
+			la.add_theme_color_override("font_color", UI.GOOD if pa > 0.5 else (UI.BAD if pa < -0.5 else Color("f4ecd6")))
+			ld.add_theme_color_override("font_color", UI.GOOD if pd > 0.5 else (UI.BAD if pd < -0.5 else Color("f4ecd6")))
 		grid.add_child(la)
 		grid.add_child(ld)
-	v.add_child(UI.scroll(grid, 130))
+	v.add_child(UI.scroll(grid, 190))

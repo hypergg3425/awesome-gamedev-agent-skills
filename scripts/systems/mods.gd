@@ -31,6 +31,7 @@ static func country(s: Dictionary, cid: String) -> Dictionary:
 		_add(m, r.get("advantages", {}))
 		_add(m, r.get("disadvantages", {}))
 	_add(m, c.get("mods", {}))
+	_add(m, DoctrineSystem.mods_of(s, c))
 	for tm in c.get("temp_mods", []):
 		if int(tm.get("until", 0)) >= int(s["turn"]):
 			_add(m, tm.get("mods", {}))

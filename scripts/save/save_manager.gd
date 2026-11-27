@@ -133,6 +133,7 @@ func _load_file(path: String) -> Dictionary:
 	var errs := validate_state(state)
 	if not errs.is_empty():
 		return {"ok": false, "reason": "SAVE_ERR_INVALID", "errors": errs}
+	NavalSystem.ensure_fields(state)
 	GS.quantize(state)
 	GS.rebuild_caches(state)
 	return {"ok": true, "state": state, "meta": parsed.get("meta", {})}

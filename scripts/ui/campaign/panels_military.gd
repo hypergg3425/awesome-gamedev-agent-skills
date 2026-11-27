@@ -5,6 +5,8 @@ extends RefCounted
 static func build(sheet: Sheet, screen: CampaignScreen) -> void:
 	sheet.add_tab("armies", "TAB_ARMIES", func(b: VBoxContainer) -> void: _armies(b, screen))
 	sheet.add_tab("recruit", "TAB_RECRUIT", func(b: VBoxContainer) -> void: _recruit(b, screen))
+	sheet.add_tab("fleets", "TAB_FLEETS", func(b: VBoxContainer) -> void: PanelsNaval.build(b, screen))
+	sheet.add_tab("doctrine", "TAB_DOCTRINE", func(b: VBoxContainer) -> void: PanelsDoctrine.build(b, screen))
 	sheet.add_tab("wars", "TAB_WARS", func(b: VBoxContainer) -> void: _wars(b, screen))
 
 static func _armies(b: VBoxContainer, screen: CampaignScreen) -> void:
@@ -17,7 +19,10 @@ static func _armies(b: VBoxContainer, screen: CampaignScreen) -> void:
 	Sheet.kv(top, Loc.t("MIL_SHIPS"), UI.fmt(UnitUtil.country_regiments(s, me, true)))
 	Sheet.kv(top, Loc.t("MIL_MANPOWER"), "%s / %s" % [UI.fmt(float(c["manpower"])), UI.fmt(float(c["manpower_max"]))])
 	Sheet.kv(top, Loc.t("MIL_UPKEEP"), UI.fmt(float(bud.get("army", 0.0)) + float(bud.get("navy", 0.0))))
-	var armies := GS.armies_of(s, me)
+	var armies: Array = []
+	for aid0 in GS.armies_of(s, me):
+		if not bool(s["armies"][aid0].get("naval", false)):
+			armies.append(aid0)
 	if armies.is_empty():
 		b.add_child(UI.label(Loc.t("MIL_NO_ARMIES"), "Small", -1, true))
 	for aid in armies:
@@ -33,6 +38,7 @@ static func _armies(b: VBoxContainer, screen: CampaignScreen) -> void:
 		box.add_child(UI.label(Fmt.unit_comp(a), "Tiny", -1, true))
 		box.add_child(UI.progress(float(a["morale"]), 100.0, UI.GOOD if float(a["morale"]) > 55.0 else UI.WARN, "%s %d%%" % [Loc.t("MIL_MORALE"), int(a["morale"])]))
 		Sheet.kv(box, Loc.t("MIL_GENERAL"), Fmt.general_text(a["general"]))
+		Sheet.kv(box, Loc.t("MIL_DISCIPLINE"), "%d   %s %d   %s %d%%" % [int(float(a.get("discipline", 50.0))), Loc.t("MIL_XP"), int(float(a["xp"])), Loc.t("MIL_SUPPLY"), int(float(a.get("supply", 1.0)) * 100.0)])
 		if not (a["path"] as Array).is_empty():
 			Sheet.kv(box, Loc.t("MIL_ORDERS"), Loc.tf("MIL_MOVING_TO", {"to": Defs.province_name(a["path"][a["path"].size() - 1])}))
 		if a["transit"] != null:
@@ -65,6 +71,7 @@ static func _armies(b: VBoxContainer, screen: CampaignScreen) -> void:
 			bh2.add_child(sb)
 		if bh2.get_child_count() > 0:
 			box.add_child(bh2)
+		PanelsNaval.upgrade_buttons(box, s, aid)
 
 static func _split_dialog(screen: CampaignScreen, aid: String) -> void:
 	var a: Dictionary = Game.state["armies"].get(aid, {})

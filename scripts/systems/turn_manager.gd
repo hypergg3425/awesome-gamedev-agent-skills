@@ -29,6 +29,7 @@ static func end_turn(s: Dictionary) -> Dictionary:
 	MilitarySystem.process_sieges(s)
 	GS.rebuild_caches(s)
 	MilitarySystem.process_supply(s)
+	NavalSystem.process_turn(s)
 	MilitarySystem.rebels_upkeep(s)
 	GS.rebuild_caches(s)
 	summary["timing"]["military"] = Time.get_ticks_msec() - _t

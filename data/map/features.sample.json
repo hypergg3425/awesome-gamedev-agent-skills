@@ -1,0 +1,246 @@
+{
+ "_sample": true,
+ "_comment": "SAMPLE ONLY (workstream E test data). The real data/map/features.json written by the map workstream overrides this file. Province pairs are adjacent in the 410-province map; river widths are approximate (1 stream, 2 large river, 3 great river).",
+ "approximate": true,
+ "rivers": [
+  [
+   "fra_alsace",
+   "deu_swabia",
+   {
+    "name": "Rhine",
+    "width": 2
+   }
+  ],
+  [
+   "deu_rhineland",
+   "fra_lorraine",
+   {
+    "name": "Rhine",
+    "width": 1
+   }
+  ],
+  [
+   "fra_alsace",
+   "deu_rhineland",
+   {
+    "name": "Rhine",
+    "width": 2
+   }
+  ],
+  [
+   "deu_bavaria",
+   "aut_austria",
+   {
+    "name": "Danube",
+    "width": 2
+   }
+  ],
+  [
+   "hun_transdanubia",
+   "hun_great_plain",
+   {
+    "name": "Danube",
+    "width": 2
+   }
+  ],
+  [
+   "srb_serbia",
+   "hun_great_plain",
+   {
+    "name": "Danube",
+    "width": 2
+   }
+  ],
+  [
+   "rou_wallachia",
+   "bgr_moesia",
+   {
+    "name": "Danube",
+    "width": 3
+   }
+  ],
+  [
+   "ita_lombardy",
+   "ita_emilia",
+   {
+    "name": "Po",
+    "width": 2
+   }
+  ],
+  [
+   "ita_veneto",
+   "ita_emilia",
+   {
+    "name": "Po",
+    "width": 2
+   }
+  ],
+  [
+   "fra_loire",
+   "fra_poitou",
+   {
+    "name": "Loire",
+    "width": 1
+   }
+  ],
+  [
+   "deu_brandenburg",
+   "deu_saxony",
+   {
+    "name": "Elbe",
+    "width": 2
+   }
+  ],
+  [
+   "deu_lower_saxony",
+   "deu_mecklenburg",
+   {
+    "name": "Elbe",
+    "width": 2
+   }
+  ],
+  [
+   "pol_greater_poland",
+   "pol_masovia",
+   {
+    "name": "Vistula",
+    "width": 2
+   }
+  ],
+  [
+   "gbr_home_counties",
+   "gbr_east_anglia",
+   {
+    "name": "Thames",
+    "width": 1
+   }
+  ],
+  [
+   "ukr_kyiv",
+   "ukr_sloboda",
+   {
+    "name": "Dnieper",
+    "width": 3
+   }
+  ],
+  [
+   "ukr_kyiv",
+   "ukr_pontic_steppe",
+   {
+    "name": "Dnieper",
+    "width": 3
+   }
+  ],
+  [
+   "irq_baghdad",
+   "irq_mosul",
+   {
+    "name": "Tigris",
+    "width": 2
+   }
+  ],
+  [
+   "irq_baghdad",
+   "irq_basra",
+   {
+    "name": "Euphrates",
+    "width": 2
+   }
+  ],
+  [
+   "egy_cairo",
+   "egy_delta",
+   {
+    "name": "Nile",
+    "width": 2
+   }
+  ],
+  [
+   "pak_punjab",
+   "pak_baluchistan",
+   {
+    "name": "Indus",
+    "width": 2
+   }
+  ]
+ ],
+ "passes": [
+  [
+   "aut_tyrol",
+   "ita_veneto",
+   {
+    "name": "Brenner Pass"
+   }
+  ],
+  [
+   "che_switzerland",
+   "ita_piedmont",
+   {
+    "name": "Great St Bernard / Simplon"
+   }
+  ],
+  [
+   "che_switzerland",
+   "ita_lombardy",
+   {
+    "name": "St Gotthard"
+   }
+  ],
+  [
+   "esp_navarre",
+   "fra_aquitaine",
+   {
+    "name": "Roncesvalles"
+   }
+  ],
+  [
+   "esp_catalonia",
+   "fra_languedoc",
+   {
+    "name": "Col du Perthus"
+   }
+  ],
+  [
+   "fra_dauphine",
+   "ita_piedmont",
+   {
+    "name": "Mont Cenis"
+   }
+  ],
+  [
+   "pak_k_p",
+   "afg_hilmand",
+   {
+    "name": "Khyber Pass"
+   }
+  ],
+  [
+   "grc_central_greece",
+   "grc_macedonia",
+   {
+    "name": "Thermopylae / Tempe"
+   }
+  ],
+  [
+   "rou_transylvania",
+   "rou_wallachia",
+   {
+    "name": "Carpathian passes"
+   }
+  ],
+  [
+   "geo_georgia",
+   "rus_north_caucasus",
+   {
+    "name": "Darial Gorge"
+   }
+  ],
+  [
+   "tur_central_anatolia",
+   "tur_cilicia",
+   {
+    "name": "Cilician Gates"
+   }
+  ]
+ ]
+}

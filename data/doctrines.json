@@ -1,0 +1,398 @@
+{
+ "feudal_levy": {
+  "id": "feudal_levy",
+  "slot": "land",
+  "name": {
+   "en": "Feudal Host",
+   "tr": "Feodal Ordu"
+  },
+  "desc": {
+   "en": "Mounted nobles and levied retinues: strong charges and cheap upkeep, poor drill and supply.",
+   "tr": "Atlı soylular ve derlenen birlikler: güçlü hücum ve ucuz bakım; talim ve ikmal zayıf."
+  },
+  "unlock": [],
+  "year_min": null,
+  "mods": {
+   "cav_atk": 0.12,
+   "morale": 0.04,
+   "manpower": 0.08,
+   "army_upkeep": -0.1,
+   "discipline": -0.05,
+   "supply": -0.05
+  },
+  "switch_cost": 0.6
+ },
+ "fortress_defence": {
+  "id": "fortress_defence",
+  "slot": "land",
+  "name": {
+   "en": "Defence in Depth",
+   "tr": "Derinlemesine Savunma"
+  },
+  "desc": {
+   "en": "Fortified lines and patient defence: better forts and defence, slower manoeuvre.",
+   "tr": "Tahkimli hatlar ve sabırlı savunma: daha iyi kaleler ve savunma, yavaş manevra."
+  },
+  "unlock": [
+   [
+    "fortification",
+    1
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "fort_def": 0.25,
+   "inf_def": 0.08,
+   "attrition": -0.05,
+   "move": -0.05,
+   "siege_def": 0.1
+  },
+  "switch_cost": 1.0
+ },
+ "mounted_manoeuvre": {
+  "id": "mounted_manoeuvre",
+  "slot": "land",
+  "name": {
+   "en": "Mounted Manoeuvre",
+   "tr": "Atlı Manevra"
+  },
+  "desc": {
+   "en": "Fast columns and relentless pursuit: strong cavalry, speed, river fording; weaker supply.",
+   "tr": "Hızlı kollar ve amansız takip: güçlü süvari, hız, nehir geçişi; zayıf ikmal."
+  },
+  "unlock": [
+   [
+    "cavalry_doctrine",
+    1
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "cav_atk": 0.15,
+   "move": 0.12,
+   "pursuit": 0.5,
+   "supply": -0.05,
+   "river_pen": -0.15
+  },
+  "switch_cost": 1.0
+ },
+ "pike_and_shot": {
+  "id": "pike_and_shot",
+  "slot": "land",
+  "name": {
+   "en": "Pike and Shot",
+   "tr": "Pike ve Ateşli Silah"
+  },
+  "desc": {
+   "en": "Pike blocks protecting musketeers: sturdy infantry that resists cavalry.",
+   "tr": "Tüfekçileri koruyan pike kareleri: süvariye direnen sağlam piyade."
+  },
+  "unlock": [
+   [
+    "infantry_tactics",
+    2
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "inf_atk": 0.1,
+   "inf_def": 0.1,
+   "morale": 0.03,
+   "discipline": 0.04,
+   "anti_cav": 0.15
+  },
+  "switch_cost": 1.0
+ },
+ "grand_battery": {
+  "id": "grand_battery",
+  "slot": "land",
+  "name": {
+   "en": "Grand Battery",
+   "tr": "Büyük Batarya"
+  },
+  "desc": {
+   "en": "Massed guns decide battles and sieges; the army moves slowly and costs more.",
+   "tr": "Yığılmış toplar muharebe ve kuşatmaları belirler; ordu yavaş ve pahalıdır."
+  },
+  "unlock": [
+   [
+    "artillery",
+    2
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "art_atk": 0.2,
+   "siege": 0.2,
+   "move": -0.06,
+   "army_upkeep": 0.05
+  },
+  "switch_cost": 1.0
+ },
+ "linear_firepower": {
+  "id": "linear_firepower",
+  "slot": "land",
+  "name": {
+   "en": "Linear Firepower",
+   "tr": "Hat Ateşi"
+  },
+  "desc": {
+   "en": "Drilled volley fire in lines: devastating firepower from disciplined troops.",
+   "tr": "Hatlar halinde talimli yaylım ateşi: disiplinli birliklerden yıkıcı ateş gücü."
+  },
+  "unlock": [
+   [
+    "infantry_tactics",
+    3
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "inf_atk": 0.18,
+   "discipline": 0.08,
+   "morale": 0.04,
+   "cav_atk": -0.04
+  },
+  "switch_cost": 1.0
+ },
+ "corps_system": {
+  "id": "corps_system",
+  "slot": "land",
+  "name": {
+   "en": "Corps System",
+   "tr": "Kolordu Sistemi"
+  },
+  "desc": {
+   "en": "Self-contained corps living off the land: mobile, balanced and hard to starve.",
+   "tr": "Araziden beslenen bağımsız kolordular: hareketli, dengeli, aç bırakılması zor."
+  },
+  "unlock": [
+   [
+    "infantry_tactics",
+    3
+   ],
+   [
+    "artillery",
+    3
+   ],
+   [
+    "cavalry_doctrine",
+    2
+   ]
+  ],
+  "year_min": 1790,
+  "mods": {
+   "move": 0.08,
+   "inf_atk": 0.08,
+   "art_atk": 0.1,
+   "cav_atk": 0.08,
+   "supply": 0.08,
+   "pursuit": 0.2
+  },
+  "switch_cost": 1.0
+ },
+ "nation_in_arms": {
+  "id": "nation_in_arms",
+  "slot": "land",
+  "name": {
+   "en": "Nation in Arms",
+   "tr": "Silahlı Millet"
+  },
+  "desc": {
+   "en": "Mass conscription and patriotic fervour: huge reserves, but less drilled troops.",
+   "tr": "Kitlesel askerlik ve vatansever coşku: devasa yedekler, ama daha az talimli birlikler."
+  },
+  "unlock": [
+   [
+    "infantry_tactics",
+    3
+   ],
+   [
+    "centralization",
+    2
+   ]
+  ],
+  "year_min": 1790,
+  "mods": {
+   "manpower": 0.25,
+   "manpower_recovery": 0.25,
+   "morale": 0.06,
+   "army_upkeep": -0.08,
+   "discipline": -0.04
+  },
+  "switch_cost": 1.0
+ },
+ "logistical_warfare": {
+  "id": "logistical_warfare",
+  "slot": "land",
+  "name": {
+   "en": "Logistical Warfare",
+   "tr": "İkmal Harbi"
+  },
+  "desc": {
+   "en": "Magazines, depots and marching schedules: armies stay fed and arrive in shape.",
+   "tr": "Ambarlar, depolar ve yürüyüş çizelgeleri: ordular beslenir ve formda varır."
+  },
+  "unlock": [
+   [
+    "logistics",
+    2
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "supply": 0.25,
+   "attrition": -0.2,
+   "move": 0.05,
+   "discipline": 0.02
+  },
+  "switch_cost": 1.0
+ },
+ "modern_firepower": {
+  "id": "modern_firepower",
+  "slot": "land",
+  "name": {
+   "en": "Rifle and Rail",
+   "tr": "Tüfek ve Ray"
+  },
+  "desc": {
+   "en": "Rifled weapons moved and fed by rail: the late-century standard of firepower.",
+   "tr": "Raylarla taşınan ve beslenen yivli silahlar: yüzyıl sonunun ateş gücü standardı."
+  },
+  "unlock": [
+   [
+    "infantry_tactics",
+    4
+   ],
+   [
+    "logistics",
+    3
+   ]
+  ],
+  "year_min": 1840,
+  "mods": {
+   "inf_atk": 0.22,
+   "inf_def": 0.1,
+   "discipline": 0.1,
+   "supply": 0.15,
+   "art_atk": 0.1
+  },
+  "switch_cost": 1.0
+ },
+ "sea_power": {
+  "id": "sea_power",
+  "slot": "naval",
+  "name": {
+   "en": "Blue-Water Battle Fleet",
+   "tr": "Açık Deniz Muharebe Filosu"
+  },
+  "desc": {
+   "en": "Fleets of heavy ships to win the sea: stronger battle line, blockade and transport.",
+   "tr": "Denizi kazanmak için ağır gemi filoları: güçlü muharebe hattı, abluka ve nakliye."
+  },
+  "unlock": [
+   [
+    "naval_warfare",
+    2
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "naval_atk": 0.15,
+   "naval_morale": 0.05,
+   "blockade": 0.2,
+   "naval_transport": 0.1
+  },
+  "switch_cost": 1.0
+ },
+ "commerce_raiding": {
+  "id": "commerce_raiding",
+  "slot": "naval",
+  "name": {
+   "en": "Guerre de Course",
+   "tr": "Ticaret Baskını (Guerre de Course)"
+  },
+  "desc": {
+   "en": "Fast raiders hunt enemy merchantmen instead of seeking battle: strong raiding, cheap navy.",
+   "tr": "Hızlı akıncılar savaşı değil düşman tüccar gemilerini arar: güçlü baskın, ucuz donanma."
+  },
+  "unlock": [
+   [
+    "naval_warfare",
+    1
+   ],
+   [
+    "trade",
+    1
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "raid": 0.35,
+   "naval_atk": -0.05,
+   "blockade": -0.1,
+   "navy_upkeep": -0.1
+  },
+  "switch_cost": 1.0
+ },
+ "convoy_system": {
+  "id": "convoy_system",
+  "slot": "naval",
+  "name": {
+   "en": "Convoy System",
+   "tr": "Konvoy Sistemi"
+  },
+  "desc": {
+   "en": "Escorted merchant convoys: trade and transports are protected, raiders are less effective.",
+   "tr": "Eskortlu ticaret konvoyları: ticaret ve nakliye korunur, akıncılar daha az etkilidir."
+  },
+  "unlock": [
+   [
+    "naval_warfare",
+    2
+   ],
+   [
+    "trade",
+    2
+   ]
+  ],
+  "year_min": null,
+  "mods": {
+   "convoy": 0.35,
+   "naval_transport": 0.2,
+   "raid": -0.2,
+   "blockade": 0.05
+  },
+  "switch_cost": 1.0
+ },
+ "steam_battle_line": {
+  "id": "steam_battle_line",
+  "slot": "naval",
+  "name": {
+   "en": "Steam and Armour",
+   "tr": "Buhar ve Zırh"
+  },
+  "desc": {
+   "en": "Steam propulsion, armour and rifled naval guns: the industrial battle fleet.",
+   "tr": "Buhar makinesi, zırh ve yivli deniz topları: sanayi çağı muharebe filosu."
+  },
+  "unlock": [
+   [
+    "naval_warfare",
+    4
+   ],
+   [
+    "industry",
+    3
+   ]
+  ],
+  "year_min": 1850,
+  "mods": {
+   "naval_atk": 0.25,
+   "naval_morale": 0.05,
+   "blockade": 0.25,
+   "raid": 0.15
+  },
+  "switch_cost": 1.0
+ }
+}

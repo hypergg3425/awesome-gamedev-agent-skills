@@ -72,7 +72,10 @@ static func war_name(s: Dictionary, w: Dictionary) -> String:
 static func general_text(g: Variant) -> String:
 	if g == null:
 		return Loc.t("MIL_NO_GENERAL")
-	return "%s  (%d/%d/%d)" % [str(g["name"]), int(g["tac"]), int(g["log"]), int(g["siege"])]
+	var txt := "%s  (%d/%d/%d)" % [str(g["name"]), int(g["tac"]), int(g["log"]), int(g["siege"])]
+	if not Commanders.traits_of(g).is_empty():
+		txt += "  " + Commanders.trait_names(g)
+	return txt
 
 static func unit_comp(a: Dictionary) -> String:
 	var parts: Array = []

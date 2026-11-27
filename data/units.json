@@ -22,7 +22,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "pike"
+  ],
+  "upgrades_to": "pikemen"
  },
  "pikemen": {
   "id": "pikemen",
@@ -50,7 +54,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "pike"
+  ],
+  "upgrades_to": "musketeers"
  },
  "musketeers": {
   "id": "musketeers",
@@ -79,7 +87,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm"
+  ],
+  "upgrades_to": "line_infantry"
  },
  "line_infantry": {
   "id": "line_infantry",
@@ -108,7 +120,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm"
+  ],
+  "upgrades_to": "riflemen"
  },
  "riflemen": {
   "id": "riflemen",
@@ -137,7 +153,10 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm"
+  ]
  },
  "men_at_arms": {
   "id": "men_at_arms",
@@ -163,7 +182,8 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "upgrades_to": "halberdiers"
  },
  "halberdiers": {
   "id": "halberdiers",
@@ -192,7 +212,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "pike"
+  ],
+  "upgrades_to": "grenadiers"
  },
  "grenadiers": {
   "id": "grenadiers",
@@ -221,7 +245,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm"
+  ],
+  "upgrades_to": "guard_infantry"
  },
  "guard_infantry": {
   "id": "guard_infantry",
@@ -250,7 +278,10 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm"
+  ]
  },
  "archers": {
   "id": "archers",
@@ -276,7 +307,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "bow"
+  ],
+  "upgrades_to": "crossbowmen"
  },
  "crossbowmen": {
   "id": "crossbowmen",
@@ -306,7 +341,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "bow"
+  ],
+  "upgrades_to": "skirmishers"
  },
  "skirmishers": {
   "id": "skirmishers",
@@ -335,7 +374,12 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm",
+   "light"
+  ],
+  "upgrades_to": "sharpshooters"
  },
  "sharpshooters": {
   "id": "sharpshooters",
@@ -364,7 +408,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm",
+   "light"
+  ]
  },
  "light_cavalry": {
   "id": "light_cavalry",
@@ -389,7 +437,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "light"
+  ],
+  "upgrades_to": "hussars"
  },
  "hussars": {
   "id": "hussars",
@@ -417,7 +469,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "light"
+  ],
+  "upgrades_to": "lancers"
  },
  "lancers": {
   "id": "lancers",
@@ -445,7 +501,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "light"
+  ],
+  "upgrades_to": "mounted_rifles"
  },
  "mounted_rifles": {
   "id": "mounted_rifles",
@@ -474,7 +534,11 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm",
+   "light"
+  ]
  },
  "knights": {
   "id": "knights",
@@ -500,7 +564,8 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "upgrades_to": "gendarmes"
  },
  "gendarmes": {
   "id": "gendarmes",
@@ -529,7 +594,8 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "upgrades_to": "cuirassiers"
  },
  "cuirassiers": {
   "id": "cuirassiers",
@@ -587,7 +653,8 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "upgrades_to": "cannons"
  },
  "cannons": {
   "id": "cannons",
@@ -616,7 +683,8 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "upgrades_to": "field_guns"
  },
  "field_guns": {
   "id": "field_guns",
@@ -645,7 +713,8 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "upgrades_to": "rifled_artillery"
  },
  "rifled_artillery": {
   "id": "rifled_artillery",
@@ -704,7 +773,8 @@
   "cultures": [],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "upgrades_to": "field_engineers"
  },
  "field_engineers": {
   "id": "field_engineers",
@@ -760,7 +830,14 @@
   "cultures": [],
   "countries": [],
   "naval": true,
-  "transport": 3
+  "transport": 3,
+  "role": "transport",
+  "raid": 0.3,
+  "escort": 0.4,
+  "blockade": 0.5,
+  "endurance": 3,
+  "rough": 1.0,
+  "upgrades_to": "fluyt"
  },
  "galley": {
   "id": "galley",
@@ -786,7 +863,14 @@
   "cultures": [],
   "countries": [],
   "naval": true,
-  "transport": 1
+  "transport": 1,
+  "role": "galley",
+  "raid": 0.8,
+  "escort": 0.6,
+  "blockade": 0.9,
+  "endurance": 2,
+  "rough": 1.6,
+  "upgrades_to": "carrack"
  },
  "carrack": {
   "id": "carrack",
@@ -815,7 +899,14 @@
   "cultures": [],
   "countries": [],
   "naval": true,
-  "transport": 4
+  "transport": 4,
+  "role": "line",
+  "raid": 1.0,
+  "escort": 1.0,
+  "blockade": 1.0,
+  "endurance": 4,
+  "rough": 1.0,
+  "upgrades_to": "galleon"
  },
  "galleon": {
   "id": "galleon",
@@ -845,7 +936,14 @@
   "cultures": [],
   "countries": [],
   "naval": true,
-  "transport": 4
+  "transport": 4,
+  "role": "line",
+  "raid": 1.2,
+  "escort": 1.2,
+  "blockade": 1.2,
+  "endurance": 5,
+  "rough": 0.9,
+  "upgrades_to": "ship_of_the_line"
  },
  "ship_of_the_line": {
   "id": "ship_of_the_line",
@@ -875,7 +973,14 @@
   "cultures": [],
   "countries": [],
   "naval": true,
-  "transport": 3
+  "transport": 3,
+  "role": "line",
+  "raid": 0.8,
+  "escort": 1.3,
+  "blockade": 1.6,
+  "endurance": 5,
+  "rough": 0.8,
+  "upgrades_to": "ironclad"
  },
  "ironclad": {
   "id": "ironclad",
@@ -905,7 +1010,13 @@
   "cultures": [],
   "countries": [],
   "naval": true,
-  "transport": 6
+  "transport": 6,
+  "role": "line",
+  "raid": 0.7,
+  "escort": 1.2,
+  "blockade": 1.5,
+  "endurance": 4,
+  "rough": 0.7
  },
  "janissaries": {
   "id": "janissaries",
@@ -937,7 +1048,12 @@
    "OTT"
   ],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "firearm"
+  ],
+  "year_min": 1350,
+  "year_max": 1826
  },
  "mamluks": {
   "id": "mamluks",
@@ -1000,7 +1116,8 @@
   ],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "year_max": 1870
  },
  "longbowmen": {
   "id": "longbowmen",
@@ -1032,7 +1149,11 @@
    "GBR"
   ],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "bow"
+  ],
+  "year_max": 1560
  },
  "landsknechts": {
   "id": "landsknechts",
@@ -1064,7 +1185,11 @@
    "GER"
   ],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "pike",
+   "firearm"
+  ]
  },
  "tercios": {
   "id": "tercios",
@@ -1095,7 +1220,11 @@
    "HAB"
   ],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "pike",
+   "firearm"
+  ]
  },
  "swiss_pikemen": {
   "id": "swiss_pikemen",
@@ -1125,7 +1254,10 @@
    "SWI"
   ],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "pike"
+  ]
  },
  "cossacks": {
   "id": "cossacks",
@@ -1156,7 +1288,10 @@
    "MOS"
   ],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "light"
+  ]
  },
  "horse_archers": {
   "id": "horse_archers",
@@ -1184,7 +1319,11 @@
   ],
   "countries": [],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "bow",
+   "light"
+  ]
  },
  "war_elephants": {
   "id": "war_elephants",
@@ -1241,6 +1380,672 @@
    "BYZ"
   ],
   "naval": false,
-  "transport": 0
+  "transport": 0,
+  "tags": [
+   "pike"
+  ]
+ },
+ "housecarls": {
+  "id": "housecarls",
+  "cls": "heavy_infantry",
+  "name": {
+   "en": "Housecarls",
+   "tr": "Huscarllar"
+  },
+  "fire": 0,
+  "shock": 10,
+  "defense": 9,
+  "morale": 9,
+  "move": 2,
+  "cost": {
+   "gold": 17,
+   "manpower": 1.0,
+   "iron": 0.4
+  },
+  "upkeep": 3.25,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [
+   "ENG"
+  ],
+  "naval": false,
+  "transport": 0,
+  "year_max": 1100,
+  "approximate": true,
+  "tags": [
+   "axe"
+  ]
+ },
+ "sipahis": {
+  "id": "sipahis",
+  "cls": "heavy_cavalry",
+  "name": {
+   "en": "Sipahis",
+   "tr": "Sipahiler"
+  },
+  "fire": 2,
+  "shock": 12,
+  "defense": 7,
+  "morale": 8,
+  "move": 3,
+  "cost": {
+   "gold": 17,
+   "manpower": 1.0
+  },
+  "upkeep": 3.0,
+  "supply": 1.4,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [
+   "OTT"
+  ],
+  "naval": false,
+  "transport": 0,
+  "year_max": 1830,
+  "approximate": true,
+  "tags": [
+   "bow"
+  ]
+ },
+ "streltsy": {
+  "id": "streltsy",
+  "cls": "infantry",
+  "name": {
+   "en": "Streltsy",
+   "tr": "Streltsy Tüfekçileri"
+  },
+  "fire": 7,
+  "shock": 6,
+  "defense": 6,
+  "morale": 7,
+  "move": 2,
+  "cost": {
+   "gold": 13,
+   "manpower": 1.0
+  },
+  "upkeep": 2.25,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   2
+  ],
+  "cultures": [],
+  "countries": [
+   "RUS",
+   "MOS",
+   "NOV"
+  ],
+  "naval": false,
+  "transport": 0,
+  "year_min": 1540,
+  "year_max": 1720,
+  "approximate": true,
+  "tags": [
+   "firearm"
+  ]
+ },
+ "ashigaru": {
+  "id": "ashigaru",
+  "cls": "infantry",
+  "name": {
+   "en": "Ashigaru Arquebusiers",
+   "tr": "Ashigaru Arkebüzcüleri"
+  },
+  "fire": 6,
+  "shock": 4,
+  "defense": 5,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 10,
+   "manpower": 1.0
+  },
+  "upkeep": 1.75,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   2
+  ],
+  "cultures": [
+   "japonic"
+  ],
+  "countries": [],
+  "naval": false,
+  "transport": 0,
+  "year_min": 1543,
+  "year_max": 1868,
+  "approximate": true,
+  "tags": [
+   "firearm"
+  ]
+ },
+ "rocket_corps": {
+  "id": "rocket_corps",
+  "cls": "artillery",
+  "name": {
+   "en": "Rocket Corps",
+   "tr": "Roket Birliği"
+  },
+  "fire": 13,
+  "shock": 1,
+  "defense": 2,
+  "morale": 5,
+  "move": 2,
+  "cost": {
+   "gold": 24,
+   "manpower": 1.0,
+   "iron": 0.8
+  },
+  "upkeep": 3.75,
+  "supply": 0.9,
+  "siege": 2,
+  "tech": [
+   "artillery",
+   3
+  ],
+  "cultures": [],
+  "countries": [
+   "MYS",
+   "EIC",
+   "GBR",
+   "FRA"
+  ],
+  "naval": false,
+  "transport": 0,
+  "year_min": 1780,
+  "year_max": 1870,
+  "approximate": true
+ },
+ "dragoons": {
+  "id": "dragoons",
+  "cls": "cavalry",
+  "name": {
+   "en": "Dragoons",
+   "tr": "Dragonlar"
+  },
+  "fire": 6,
+  "shock": 7,
+  "defense": 5,
+  "morale": 7,
+  "move": 4,
+  "cost": {
+   "gold": 14,
+   "manpower": 1.0,
+   "iron": 0.2
+  },
+  "upkeep": 2.5,
+  "supply": 1.3,
+  "siege": 0,
+  "tech": [
+   "cavalry_doctrine",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0,
+  "year_min": 1600,
+  "tags": [
+   "firearm"
+  ]
+ },
+ "jaegers": {
+  "id": "jaegers",
+  "cls": "archers",
+  "name": {
+   "en": "Jaegers",
+   "tr": "Av Birlikleri"
+  },
+  "fire": 12,
+  "shock": 3,
+  "defense": 4,
+  "morale": 7,
+  "move": 3,
+  "cost": {
+   "gold": 13,
+   "manpower": 1.0,
+   "iron": 0.3
+  },
+  "upkeep": 2.0,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0,
+  "year_min": 1740,
+  "tags": [
+   "firearm",
+   "light",
+   "mountain"
+  ]
+ },
+ "mountain_troops": {
+  "id": "mountain_troops",
+  "cls": "infantry",
+  "name": {
+   "en": "Mountain Troops",
+   "tr": "Dağ Birlikleri"
+  },
+  "fire": 11,
+  "shock": 6,
+  "defense": 8,
+  "morale": 8,
+  "move": 3,
+  "cost": {
+   "gold": 15,
+   "manpower": 1.0,
+   "iron": 0.4
+  },
+  "upkeep": 2.5,
+  "supply": 0.9,
+  "siege": 0,
+  "tech": [
+   "infantry_tactics",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0,
+  "year_min": 1850,
+  "tags": [
+   "firearm",
+   "mountain"
+  ]
+ },
+ "horse_artillery": {
+  "id": "horse_artillery",
+  "cls": "artillery",
+  "name": {
+   "en": "Horse Artillery",
+   "tr": "Atlı Topçu"
+  },
+  "fire": 15,
+  "shock": 1,
+  "defense": 3,
+  "morale": 6,
+  "move": 3,
+  "cost": {
+   "gold": 32,
+   "manpower": 1.0,
+   "iron": 1.2
+  },
+  "upkeep": 5.0,
+  "supply": 1.1,
+  "siege": 4,
+  "tech": [
+   "artillery",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0,
+  "tech_also": [
+   "cavalry_doctrine",
+   2
+  ],
+  "year_min": 1790
+ },
+ "pontonniers": {
+  "id": "pontonniers",
+  "cls": "engineer",
+  "name": {
+   "en": "Pontonniers",
+   "tr": "Köprücüler"
+  },
+  "fire": 0,
+  "shock": 2,
+  "defense": 5,
+  "morale": 6,
+  "move": 2,
+  "cost": {
+   "gold": 16,
+   "manpower": 1.0,
+   "wood": 0.4
+  },
+  "upkeep": 2.25,
+  "supply": 0.8,
+  "siege": 3,
+  "tech": [
+   "engineering",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": false,
+  "transport": 0,
+  "tags": [
+   "bridging"
+  ],
+  "year_min": 1500
+ },
+ "dromon": {
+  "id": "dromon",
+  "cls": "naval",
+  "name": {
+   "en": "Dromons",
+   "tr": "Dromonlar"
+  },
+  "fire": 4,
+  "shock": 5,
+  "defense": 3,
+  "morale": 6,
+  "move": 3,
+  "cost": {
+   "gold": 15,
+   "manpower": 0,
+   "wood": 1.0
+  },
+  "upkeep": 2.25,
+  "supply": 0.5,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [
+   "BYZ"
+  ],
+  "naval": true,
+  "transport": 1,
+  "role": "galley",
+  "raid": 0.8,
+  "escort": 0.6,
+  "blockade": 0.9,
+  "endurance": 2,
+  "rough": 1.6,
+  "year_max": 1204,
+  "approximate": true
+ },
+ "longship": {
+  "id": "longship",
+  "cls": "naval",
+  "name": {
+   "en": "Longships",
+   "tr": "Uzun Gemiler"
+  },
+  "fire": 2,
+  "shock": 5,
+  "defense": 2,
+  "morale": 5,
+  "move": 4,
+  "cost": {
+   "gold": 10,
+   "manpower": 0,
+   "wood": 0.8
+  },
+  "upkeep": 1.75,
+  "supply": 0.4,
+  "siege": 0,
+  "tech": null,
+  "cultures": [],
+  "countries": [
+   "NOR",
+   "DEN",
+   "SWE"
+  ],
+  "naval": true,
+  "transport": 2,
+  "role": "raider",
+  "raid": 1.7,
+  "escort": 0.3,
+  "blockade": 0.6,
+  "endurance": 3,
+  "rough": 1.2,
+  "year_max": 1200,
+  "approximate": true
+ },
+ "xebec": {
+  "id": "xebec",
+  "cls": "naval",
+  "name": {
+   "en": "Xebecs",
+   "tr": "Şebekler"
+  },
+  "fire": 5,
+  "shock": 4,
+  "defense": 3,
+  "morale": 6,
+  "move": 4,
+  "cost": {
+   "gold": 18,
+   "manpower": 0,
+   "wood": 1.0
+  },
+  "upkeep": 2.5,
+  "supply": 0.5,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   1
+  ],
+  "cultures": [],
+  "countries": [
+   "ALG",
+   "TUN",
+   "MOR",
+   "OTT",
+   "LIB"
+  ],
+  "naval": true,
+  "transport": 1,
+  "role": "raider",
+  "raid": 1.9,
+  "escort": 0.5,
+  "blockade": 0.8,
+  "endurance": 3,
+  "rough": 1.1,
+  "year_min": 1500,
+  "year_max": 1830,
+  "approximate": true
+ },
+ "war_junk": {
+  "id": "war_junk",
+  "cls": "naval",
+  "name": {
+   "en": "War Junks",
+   "tr": "Savaş Yelkenlileri"
+  },
+  "fire": 5,
+  "shock": 5,
+  "defense": 5,
+  "morale": 6,
+  "move": 3,
+  "cost": {
+   "gold": 18,
+   "manpower": 0,
+   "wood": 1.2
+  },
+  "upkeep": 2.5,
+  "supply": 0.5,
+  "siege": 0,
+  "tech": null,
+  "cultures": [
+   "sinic"
+  ],
+  "countries": [],
+  "naval": true,
+  "transport": 3,
+  "role": "line",
+  "raid": 0.8,
+  "escort": 0.9,
+  "blockade": 1.0,
+  "endurance": 5,
+  "rough": 0.9,
+  "approximate": true
+ },
+ "fluyt": {
+  "id": "fluyt",
+  "cls": "naval",
+  "name": {
+   "en": "Fluyts",
+   "tr": "Fluytlar"
+  },
+  "fire": 2,
+  "shock": 1,
+  "defense": 3,
+  "morale": 4,
+  "move": 3,
+  "cost": {
+   "gold": 17,
+   "manpower": 0,
+   "wood": 1.2
+  },
+  "upkeep": 2.5,
+  "supply": 0.4,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   2
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 7,
+  "role": "transport",
+  "raid": 0.3,
+  "escort": 0.3,
+  "blockade": 0.5,
+  "endurance": 6,
+  "rough": 0.9,
+  "tech_also": [
+   "trade",
+   2
+  ],
+  "year_min": 1590,
+  "approximate": true,
+  "upgrades_to": "steam_transport"
+ },
+ "frigate": {
+  "id": "frigate",
+  "cls": "naval",
+  "name": {
+   "en": "Frigates",
+   "tr": "Fırkateynler"
+  },
+  "fire": 11,
+  "shock": 4,
+  "defense": 5,
+  "morale": 7,
+  "move": 4,
+  "cost": {
+   "gold": 28,
+   "manpower": 0,
+   "wood": 1.4,
+   "iron": 0.3
+  },
+  "upkeep": 3.25,
+  "supply": 0.6,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   3
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 2,
+  "role": "cruiser",
+  "raid": 2.0,
+  "escort": 1.5,
+  "blockade": 1.2,
+  "endurance": 6,
+  "rough": 0.8,
+  "year_min": 1700,
+  "approximate": true,
+  "upgrades_to": "steam_cruiser"
+ },
+ "steam_cruiser": {
+  "id": "steam_cruiser",
+  "cls": "naval",
+  "name": {
+   "en": "Steam Cruisers",
+   "tr": "Buharlı Kruvazörler"
+  },
+  "fire": 20,
+  "shock": 5,
+  "defense": 7,
+  "morale": 8,
+  "move": 5,
+  "cost": {
+   "gold": 44,
+   "manpower": 0,
+   "iron": 1.6,
+   "coal": 0.8
+  },
+  "upkeep": 5.5,
+  "supply": 0.8,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 2,
+  "role": "cruiser",
+  "raid": 2.4,
+  "escort": 1.8,
+  "blockade": 1.5,
+  "endurance": 7,
+  "rough": 0.6,
+  "tech_also": [
+   "industry",
+   3
+  ],
+  "year_min": 1860,
+  "approximate": true
+ },
+ "steam_transport": {
+  "id": "steam_transport",
+  "cls": "naval",
+  "name": {
+   "en": "Steam Transports",
+   "tr": "Buharlı Nakliye Gemileri"
+  },
+  "fire": 2,
+  "shock": 1,
+  "defense": 5,
+  "morale": 5,
+  "move": 4,
+  "cost": {
+   "gold": 30,
+   "manpower": 0,
+   "iron": 1.2,
+   "coal": 0.6
+  },
+  "upkeep": 3.0,
+  "supply": 0.6,
+  "siege": 0,
+  "tech": [
+   "naval_warfare",
+   4
+  ],
+  "cultures": [],
+  "countries": [],
+  "naval": true,
+  "transport": 10,
+  "role": "transport",
+  "raid": 0.2,
+  "escort": 0.2,
+  "blockade": 0.5,
+  "endurance": 8,
+  "rough": 0.6,
+  "tech_also": [
+   "industry",
+   3
+  ],
+  "year_min": 1850,
+  "approximate": true
  }
 }

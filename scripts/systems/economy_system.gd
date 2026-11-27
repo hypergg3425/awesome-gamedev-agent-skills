@@ -160,7 +160,7 @@ static func budget(s: Dictionary, cid: String) -> Dictionary:
 			continue
 		var u := UnitUtil.army_upkeep(s, a) * upm * fund
 		if a.get("naval", false):
-			b["navy"] += u
+			b["navy"] += u * (1.0 + float(m.get("navy_upkeep", 0.0)))
 		else:
 			b["army"] += u
 		b["food_army"] += UnitUtil.army_size(a) * 0.8 if a["loc"] != "" and s["provinces"][a["loc"]]["controller"] == cid else 0.0
