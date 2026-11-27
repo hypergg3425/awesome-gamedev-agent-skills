@@ -13,6 +13,8 @@ var _army_locs := {}                    # army id -> last known province id
 var _flash := 0.0
 var _flash_color := Color(1, 1, 1, 0.0)
 var _clock := 0.0
+var _sieges: Array = []                  # world positions of sieges in progress
+var _siege_t := 0.0
 
 static func attach(view: MapView, parent: Control) -> MapFx:
 	var f := MapFx.new()
@@ -76,6 +78,15 @@ func track_armies(s: Dictionary) -> void:
 		if not seen.has(aid):
 			_army_locs.erase(aid)
 
+## Remember where sieges are running; sparks are emitted from those provinces while animations are on.
+func track_sieges(s: Dictionary) -> void:
+	_sieges.clear()
+	for pid in Defs.province_ids:
+		if s["provinces"][pid].get("siege") != null:
+			_sieges.append(_prov_pos(pid))
+	if not _sieges.is_empty() and Anim.enabled():
+		set_process(true)
+
 func has_active() -> bool:
 	return not _fx.is_empty() or _flash > 0.0
 
@@ -86,7 +97,12 @@ func _process(delta: float) -> void:
 		e["t"] += delta
 	_fx = _fx.filter(func(e: Dictionary) -> bool: return e["t"] < e["dur"])
 	_flash = maxf(0.0, _flash - delta * 3.5)
-	if _fx.is_empty() and _flash <= 0.0 and not (_has_selection and Anim.enabled()):
+	_siege_t += delta
+	if _siege_t > 0.45 and not _sieges.is_empty() and _fx.size() < 24 and Anim.enabled():
+		_siege_t = 0.0
+		for sp in _sieges.slice(0, 6):
+			_add("spark", 0.5, sp + Vector2(randf_range(-4, 4), randf_range(-4, 4)) / maxf(mapview.zoom, 0.3), Vector2.ZERO, Color(1.0, 0.6, 0.2))
+	if _fx.is_empty() and _flash <= 0.0 and _sieges.is_empty() and not (_has_selection and Anim.enabled()):
 		set_process(false)
 	queue_redraw()
 
@@ -111,6 +127,11 @@ func _draw() -> void:
 				draw_rect(Rect2(p - Vector2(9, 5), Vector2(18, 10)), e["color"], true)
 				var tail: Vector2 = mapview.world_to_screen(e["a"])
 				draw_line(tail, p, Color(e["color"], 0.45 * (1.0 - k)), 2.0, true)
+			"spark":
+				var sc := mapview.world_to_screen(e["a"])
+				for i in 5:
+					var ang := float(i) * 1.26 + float(e["a"].x)
+					draw_line(sc + Vector2(cos(ang), sin(ang)) * (4.0 + 14.0 * k), sc + Vector2(cos(ang), sin(ang)) * (7.0 + 18.0 * k), Color(e["color"], 1.0 - k), 2.0, true)
 			"clash":
 				_draw_clash(mapview.world_to_screen(e["a"]), k, e["color"])
 			"banner":

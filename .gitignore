@@ -9,3 +9,4 @@
 keystore.properties
 .import/
 export_credentials.cfg
+__pycache__/

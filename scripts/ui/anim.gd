@@ -85,3 +85,18 @@ static func punch(c: Control, amount: float = 1.12, dur: float = 0.18) -> void:
 	var tw := c.create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	tw.tween_property(c, "scale", Vector2(amount, amount), dur * 0.4)
 	tw.tween_property(c, "scale", Vector2.ONE, dur * 0.6)
+
+## Staggered fade-in for a list of controls (menu entries). Safe inside containers: only modulate is animated.
+static func stagger_in(items: Array, step: float = 0.05, dur: float = 0.28) -> void:
+	if not enabled():
+		return
+	var i := 0
+	for c in items:
+		var ctl := c as Control
+		if ctl == null or not ctl.is_inside_tree():
+			continue
+		ctl.modulate.a = 0.0
+		var tw := ctl.create_tween().set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+		tw.tween_interval(float(i) * step)
+		tw.tween_property(ctl, "modulate:a", 1.0, dur)
+		i += 1

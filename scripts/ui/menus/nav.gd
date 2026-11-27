@@ -13,22 +13,30 @@ const SCENES := {
 	"achievements": "res://scenes/menus/achievements.tscn", "statistics": "res://scenes/menus/statistics.tscn", "editor": "res://scenes/editor/editor.tscn",
 }
 
+## Scene change with a short fade through navy (skipped when animations are off).
 static func go(tree: SceneTree, key: String) -> void:
-	tree.change_scene_to_file(SCENES[key])
+	if not Anim.enabled() or tree.root.has_node("NavFade"):
+		tree.change_scene_to_file(SCENES[key])
+		return
+	var layer := CanvasLayer.new()
+	layer.name = "NavFade"
+	layer.layer = 100
+	var rect := ColorRect.new()
+	rect.color = UI.NAVY_DEEP
+	rect.modulate.a = 0.0
+	rect.set_anchors_preset(Control.PRESET_FULL_RECT)
+	rect.mouse_filter = Control.MOUSE_FILTER_STOP
+	layer.add_child(rect)
+	tree.root.add_child(layer)
+	var tw := layer.create_tween()
+	tw.tween_property(rect, "modulate:a", 1.0, 0.16)
+	tw.tween_callback(func() -> void: tree.change_scene_to_file(SCENES[key]))
+	tw.tween_interval(0.08)
+	tw.tween_property(rect, "modulate:a", 0.0, 0.22)
+	tw.tween_callback(layer.queue_free)
 
-static func background(host: Control, path: String = "res://assets/backgrounds/menu_bg.png", dim: float = 0.35) -> void:
-	var tr := TextureRect.new()
-	if ResourceLoader.exists(path):
-		tr.texture = load(path)
-	tr.set_anchors_preset(Control.PRESET_FULL_RECT)
-	tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
-	tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
-	host.add_child(tr)
-	var shade := ColorRect.new()
-	shade.color = Color(0.03, 0.05, 0.1, dim)
-	shade.set_anchors_preset(Control.PRESET_FULL_RECT)
-	shade.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	host.add_child(shade)
+static func background(host: Control, _path: String = "", dim: float = 0.35) -> void:
+	MenuBackground.attach(host, MenuBackground.ART, dim, false)
 
 ## Root margin container honouring the safe area.
 static func safe_root(host: Control) -> MarginContainer:

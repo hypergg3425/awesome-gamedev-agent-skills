@@ -156,8 +156,9 @@ func choose(cid: String) -> void:
 	h.add_theme_constant_override("separation", 12)
 	h.add_child(FlagView.make(c["flag"], Util.color_from(c["color"]), Vector2(90, 60)))
 	var vb := VBoxContainer.new()
-	vb.add_child(UI.label(GS.country_name(state, cid), "Heading"))
-	vb.add_child(UI.label(Defs.gov_name(c["gov"]), "Small"))
+	vb.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	vb.add_child(UI.label(GS.country_name(state, cid), "Heading", -1, true))
+	vb.add_child(UI.label(Defs.gov_name(c["gov"]), "Small", -1, true))
 	h.add_child(vb)
 	info.add_child(h)
 	info.add_child(UI.hsep())

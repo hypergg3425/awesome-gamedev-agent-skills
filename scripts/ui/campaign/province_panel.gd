@@ -106,6 +106,8 @@ func _shrinkable(n: Node) -> void:
 	for ch in n.get_children():
 		if ch is Button:
 			(ch as Button).clip_text = true
+		elif ch is Label and (ch as Label).autowrap_mode == TextServer.AUTOWRAP_OFF and n is VBoxContainer and (ch as Label).horizontal_alignment != HORIZONTAL_ALIGNMENT_CENTER:
+			(ch as Label).autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		elif ch is Label and (ch as Label).autowrap_mode == TextServer.AUTOWRAP_OFF and not (ch as Label).clip_text and ch.size_flags_horizontal & Control.SIZE_EXPAND:
 			(ch as Label).clip_text = true
 			(ch as Label).text_overrun_behavior = TextServer.OVERRUN_TRIM_ELLIPSIS

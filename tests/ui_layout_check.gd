@@ -322,12 +322,13 @@ func _check_text_rect(ctx: String, c: Control, rect: Rect2, full: Rect2, free: R
 			var ac := a as Control
 			var arect := ac.get_global_rect()
 			var clips := ac is ScrollContainer or ac.clip_contents or ac is PanelContainer
+			if ac is ScrollContainer and (ac as ScrollContainer).horizontal_scroll_mode != ScrollContainer.SCROLL_MODE_DISABLED:
+				return   # horizontally scrollable on purpose (tab strips); the viewport check above already applied to the visible part
 			if clips and arect.size.x > 0.0 and ac.is_visible_in_tree():
-				if not (ac is ScrollContainer and (ac as ScrollContainer).horizontal_scroll_mode != ScrollContainer.SCROLL_MODE_DISABLED):
-					var inside := rect.position.x >= arect.position.x - TOL and rect.end.x <= arect.end.x + TOL
-					_assert(inside, "%s: '%s' x-range %.0f..%.0f exceeds %s '%s' %.0f..%.0f" % [ctx, nm, rect.position.x, rect.end.x, ac.get_class(), ac.name, arect.position.x, arect.end.x])
-					if not inside:
-						return
+				var inside := rect.position.x >= arect.position.x - TOL and rect.end.x <= arect.end.x + TOL
+				_assert(inside, "%s: '%s' x-range %.0f..%.0f exceeds %s '%s' %.0f..%.0f" % [ctx, nm, rect.position.x, rect.end.x, ac.get_class(), ac.name, arect.position.x, arect.end.x])
+				if not inside:
+					return
 		a = a.get_parent()
 
 func _vis(c: Control) -> bool:

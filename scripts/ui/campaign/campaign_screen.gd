@@ -334,6 +334,7 @@ func _refresh_all() -> void:
 		return
 	cmap.refresh()
 	fx.track_armies(Game.state)
+	fx.track_sieges(Game.state)
 	update_hud()
 	refresh_open_sheet()
 	province_panel.refresh()
@@ -455,16 +456,17 @@ func toast(text: String, icon: String = "info", seconds: float = 3.2) -> void:
 	h.add_child(UI.icon_rect(icon, 28, UI.GOLD_LIGHT))
 	var l := UI.label(text, "Value")
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	l.custom_minimum_size = Vector2(520, 0)
+	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	h.add_child(l)
 	pc.add_child(h)
 	toast_box.add_child(pc)
 	while toast_box.get_child_count() > 4:
 		toast_box.get_child(0).queue_free()
 		toast_box.remove_child(toast_box.get_child(0))
-	if bool(Settings.get_value("animations")):
-		pc.modulate.a = 0.0
-		create_tween().tween_property(pc, "modulate:a", 1.0, 0.25)
+	Anim.pop_in(pc, 0.22)
+	if icon == "diplomacy":
+		Anim.shake(hud.refs["events_btn"])
+		Audio.sfx("diplomacy_notify", -6.0)
 	get_tree().create_timer(seconds).timeout.connect(func() -> void:
 		if is_instance_valid(pc):
 			var tw := create_tween()
