@@ -35,9 +35,11 @@ static func cost_text(cost: Dictionary) -> String:
 			parts.append("%s %s" % [UI.fmt(float(cost[k])), Loc.t("RES_" + str(k).to_upper())])
 	return ", ".join(parts)
 
-static func cost_row(cost: Dictionary, have: Dictionary = {}) -> HBoxContainer:
-	var h := HBoxContainer.new()
-	h.add_theme_constant_override("separation", 10)
+## Resource costs; wraps onto several lines on narrow panels instead of widening them.
+static func cost_row(cost: Dictionary, have: Dictionary = {}) -> HFlowContainer:
+	var h := HFlowContainer.new()
+	h.add_theme_constant_override("h_separation", 10)
+	h.add_theme_constant_override("v_separation", 2)
 	for k in cost:
 		var ic: String = RES_ICON.get(k, "gold")
 		var enough := true

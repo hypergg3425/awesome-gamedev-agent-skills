@@ -823,6 +823,18 @@
 "en": "Choose your nation",
 "tr": "Devletinizi seçin"
 },
+"CTX_ARMIES": {
+"en": "Armies here",
+"tr": "Buradaki ordular"
+},
+"CTX_MORALE": {
+"en": "morale {n}%",
+"tr": "moral %{n}"
+},
+"CTX_OPEN": {
+"en": "Open province",
+"tr": "Eyaleti aç"
+},
 "CULT_AFRICAN": {
 "en": "African",
 "tr": "Afrika"
@@ -2794,6 +2806,34 @@
 "HOTSEAT_READY": {
 "en": "I am ready",
 "tr": "Hazırım"
+},
+"HUD_ADMIN": {
+"en": "Administration",
+"tr": "İdare"
+},
+"HUD_FOOD": {
+"en": "Food",
+"tr": "Gıda"
+},
+"HUD_LEGITIMACY": {
+"en": "Legitimacy",
+"tr": "Meşruiyet"
+},
+"HUD_MANPOWER": {
+"en": "Manpower",
+"tr": "İnsan gücü"
+},
+"HUD_MORE": {
+"en": "More statistics",
+"tr": "Diğer göstergeler"
+},
+"HUD_PRESTIGE": {
+"en": "Prestige",
+"tr": "İtibar"
+},
+"HUD_STABILITY": {
+"en": "Stability",
+"tr": "İstikrar"
 },
 "ISL_POOL": {
 "en": "Island peoples",

@@ -70,7 +70,11 @@ static func fs(n: int) -> int:
 
 ## --- safe area -------------------------------------------------------------------------------
 ## Returns insets in viewport (virtual) pixels: {left, top, right, bottom}
+static var insets_override := {}     ## test hook: simulate a notch / gesture bar ({left, top, right, bottom} in virtual px)
+
 static func safe_insets(vp: Viewport) -> Dictionary:
+	if not insets_override.is_empty():
+		return insets_override
 	var win := DisplayServer.window_get_size()
 	var vs := vp.get_visible_rect().size
 	var zero := {"left": 0.0, "top": 0.0, "right": 0.0, "bottom": 0.0}
@@ -110,6 +114,30 @@ static func rebuild_theme() -> Theme:
 	_build_theme(_theme)
 	return _theme
 
+static func _fb(top: Color, bottom: Color, border: Color, bw: float = 2.0, radius: float = 8.0, margin: float = 10.0) -> FrameStyle:
+	return FrameStyle.make(top, bottom, border, bw, radius, margin)
+
+static func _button_styles(t: Theme, type: String, base: Color, border: Color, margin: float = 14.0, radius: float = 8.0) -> void:
+	var n := _fb(base.lightened(0.10), base.darkened(0.12), border.darkened(0.25), 2.0, radius, margin)
+	n.gloss = 0.10
+	var h := _fb(base.lightened(0.22), base.lightened(0.02), border, 2.0, radius, margin)
+	h.gloss = 0.14
+	var p := _fb(base.darkened(0.35), base.darkened(0.15), GOLD_LIGHT, 2.0, radius, margin)
+	var d := _fb(Color(0.15, 0.17, 0.23, 0.85), Color(0.11, 0.13, 0.19, 0.85), Color(0.3, 0.3, 0.32, 0.6), 1.0, radius, margin)
+	var f := _fb(Color(0, 0, 0, 0), Color(0, 0, 0, 0), GOLD_LIGHT, 2.0, radius, margin)
+	t.set_stylebox("normal", type, n)
+	t.set_stylebox("hover", type, h)
+	t.set_stylebox("pressed", type, p)
+	t.set_stylebox("disabled", type, d)
+	t.set_stylebox("focus", type, f)
+
+static func _panel_style(top: Color, bottom: Color, border: Color, bw: float, radius: float, margin: float, inner: Color = Color(0, 0, 0, 0), corner: int = 0, shadow: float = 0.0) -> FrameStyle:
+	var s := _fb(top, bottom, border, bw, radius, margin)
+	s.inner = inner
+	s.corner = corner as FrameStyle.Corner
+	s.shadow = shadow
+	return s
+
 static func _build_theme(t: Theme) -> void:
 	t.default_font = font("body")
 	t.default_font_size = fs(22)
@@ -118,22 +146,20 @@ static func _build_theme(t: Theme) -> void:
 	t.set_color("font_shadow_color", "Label", Color(0, 0, 0, 0))
 	for v in [["Title", "title", 44, GOLD_LIGHT], ["Heading", "heading", 28, GOLD_LIGHT], ["Sub", "heading", 21, GOLD], ["Small", "ui", 17, Color("cfc7b0")],
 			["Tiny", "ui", 14, Color("a9a28d")], ["Value", "ui_bold", 20, Color("f4ecd6")], ["Num", "ui_bold", 22, Color("f4ecd6")], ["Ink", "body", 22, INK],
-			["InkHeading", "heading", 26, BURGUNDY], ["Good", "ui_bold", 19, GOOD], ["Bad", "ui_bold", 19, BAD], ["Warn", "ui_bold", 19, WARN]]:
+			["InkHeading", "heading", 26, BURGUNDY], ["Good", "ui_bold", 19, GOOD], ["Bad", "ui_bold", 19, BAD], ["Warn", "ui_bold", 19, WARN],
+			["Eyebrow", "ui_bold", 13, GOLD], ["Hero", "title", 64, GOLD_LIGHT]]:
 		t.add_type(v[0])
 		t.set_type_variation(v[0], "Label")
 		t.set_font(&"font", v[0], font(v[1]))
 		t.set_font_size(&"font_size", v[0], fs(v[2]))
 		t.set_color(&"font_color", v[0], v[3])
+	t.set_color("font_shadow_color", "Hero", Color(0, 0, 0, 0.6))
+	t.set_constant("shadow_offset_y", "Hero", 3)
+	t.set_constant("shadow_offset_x", "Hero", 0)
+	t.set_color("font_shadow_color", "Title", Color(0, 0, 0, 0.5))
+	t.set_constant("shadow_offset_y", "Title", 2)
 	# buttons
-	var normal := box(NAVY_LIGHT, GOLD.darkened(0.35), 2, 8, 14)
-	var hover := box(NAVY_LIGHT.lightened(0.12), GOLD, 2, 8, 14)
-	var pressed := box(NAVY.darkened(0.3), GOLD_LIGHT, 2, 8, 14)
-	var disabled := box(Color(0.12, 0.14, 0.2, 0.8), Color(0.3, 0.3, 0.3, 0.6), 1, 8, 14)
-	t.set_stylebox("normal", "Button", normal)
-	t.set_stylebox("hover", "Button", hover)
-	t.set_stylebox("pressed", "Button", pressed)
-	t.set_stylebox("disabled", "Button", disabled)
-	t.set_stylebox("focus", "Button", box(Color(0, 0, 0, 0), GOLD_LIGHT, 2, 8, 14))
+	_button_styles(t, "Button", NAVY_LIGHT, GOLD)
 	t.set_font("font", "Button", font("ui_bold"))
 	t.set_font_size("font_size", "Button", fs(20))
 	t.set_color("font_color", "Button", Color("f4ecd6"))
@@ -146,39 +172,49 @@ static func _build_theme(t: Theme) -> void:
 	t.set_color("icon_disabled_color", "Button", Color(0.5, 0.5, 0.5))
 	t.set_constant("h_separation", "Button", 10)
 	t.set_constant("icon_max_width", "Button", 30)
-	_variation_button(t, "Primary", BURGUNDY, BURGUNDY_LIGHT, GOLD)
-	_variation_button(t, "Good", VERDIGRIS.darkened(0.2), VERDIGRIS, GOLD)
-	var flat_n := box(Color(0, 0, 0, 0), Color(0, 0, 0, 0), 0, 6, 10)
+	_variation_button(t, "Primary", BURGUNDY, GOLD)
+	_variation_button(t, "Good", VERDIGRIS.darkened(0.2), GOLD)
+	_variation_button(t, "Tab", Color(0.1, 0.15, 0.27), GOLD.darkened(0.35), 12.0, 6.0)
+	t.set_color("font_color", "Tab", Color("cfc7b0"))
+	# flat (transparent) button
 	t.add_type("Flat")
 	t.set_type_variation("Flat", "Button")
-	t.set_stylebox("normal", "Flat", flat_n)
-	t.set_stylebox("hover", "Flat", box(Color(1, 1, 1, 0.08), Color(0, 0, 0, 0), 0, 6, 10))
-	t.set_stylebox("pressed", "Flat", box(Color(1, 1, 1, 0.14), Color(0, 0, 0, 0), 0, 6, 10))
-	t.add_type("Tab")
-	t.set_type_variation("Tab", "Button")
-	t.set_stylebox("normal", "Tab", box(Color(0.08, 0.12, 0.22, 0.9), Color(0.3, 0.27, 0.15), 1, 6, 12))
-	t.set_stylebox("hover", "Tab", box(NAVY_LIGHT, GOLD.darkened(0.2), 1, 6, 12))
-	t.set_stylebox("pressed", "Tab", box(BURGUNDY, GOLD, 2, 6, 12))
+	for st in ["normal", "disabled", "focus"]:
+		t.set_stylebox(st, "Flat", _fb(Color(0, 0, 0, 0), Color(0, 0, 0, 0), Color(0, 0, 0, 0), 0.0, 6.0, 10.0))
+	t.set_stylebox("hover", "Flat", _fb(Color(1, 1, 1, 0.08), Color(1, 1, 1, 0.05), Color(0, 0, 0, 0), 0.0, 6.0, 10.0))
+	t.set_stylebox("pressed", "Flat", _fb(Color(1, 1, 1, 0.16), Color(1, 1, 1, 0.1), Color(0, 0, 0, 0), 0.0, 6.0, 10.0))
+	# chip: small pill used by HUD stats
+	t.add_type("Chip")
+	t.set_type_variation("Chip", "Button")
+	t.set_stylebox("normal", "Chip", _fb(Color(0.12, 0.18, 0.32, 0.55), Color(0.07, 0.11, 0.21, 0.55), Color(0.55, 0.46, 0.22, 0.45), 1.0, 14.0, 10.0))
+	t.set_stylebox("hover", "Chip", _fb(Color(0.2, 0.28, 0.46, 0.8), Color(0.12, 0.18, 0.32, 0.8), GOLD, 1.0, 14.0, 10.0))
+	t.set_stylebox("pressed", "Chip", _fb(Color(0.05, 0.08, 0.16, 0.9), Color(0.05, 0.08, 0.16, 0.9), GOLD_LIGHT, 1.0, 14.0, 10.0))
+	t.set_stylebox("focus", "Chip", _fb(Color(0, 0, 0, 0), Color(0, 0, 0, 0), GOLD_LIGHT, 2.0, 14.0, 10.0))
 	# panels
 	t.add_type("Sheet")
 	t.set_type_variation("Sheet", "PanelContainer")
-	var sheet := box(NAVY.darkened(0.05), GOLD.darkened(0.2), 2, 12, 16)
-	sheet.shadow_color = Color(0, 0, 0, 0.55)
-	sheet.shadow_size = 14
-	t.set_stylebox("panel", "Sheet", sheet)
+	t.set_stylebox("panel", "Sheet", _panel_style(Color("172644"), Color("0e182f"), GOLD.darkened(0.1), 2.0, 12.0, 16.0, Color(0.79, 0.64, 0.29, 0.35), FrameStyle.Corner.FLOURISH, 0.55))
 	t.add_type("Card")
 	t.set_type_variation("Card", "PanelContainer")
-	t.set_stylebox("panel", "Card", box(Color(0.1, 0.16, 0.29, 0.92), Color(0.5, 0.42, 0.2, 0.7), 1, 8, 12))
+	var card := _panel_style(Color(0.13, 0.2, 0.35, 0.94), Color(0.09, 0.14, 0.27, 0.94), Color(0.5, 0.42, 0.2, 0.7), 1.0, 8.0, 12.0)
+	card.gloss = 0.05
+	t.set_stylebox("panel", "Card", card)
+	t.add_type("CardAccent")
+	t.set_type_variation("CardAccent", "PanelContainer")
+	t.set_stylebox("panel", "CardAccent", _panel_style(Color(0.25, 0.1, 0.14, 0.95), Color(0.16, 0.07, 0.12, 0.95), GOLD.darkened(0.2), 1.0, 8.0, 12.0))
 	t.add_type("Paper")
 	t.set_type_variation("Paper", "PanelContainer")
-	t.set_stylebox("panel", "Paper", box(PARCHMENT, PARCHMENT_DARK.darkened(0.2), 2, 8, 16))
+	t.set_stylebox("panel", "Paper", _panel_style(PARCHMENT.lightened(0.05), PARCHMENT_DARK, PARCHMENT_DARK.darkened(0.3), 2.0, 8.0, 16.0, Color(0.5, 0.35, 0.15, 0.3), FrameStyle.Corner.DIAMOND))
 	t.add_type("Hud")
 	t.set_type_variation("Hud", "PanelContainer")
-	t.set_stylebox("panel", "Hud", box(Color(0.05, 0.08, 0.16, 0.9), Color(0.6, 0.5, 0.22, 0.8), 1, 0, 8))
+	t.set_stylebox("panel", "Hud", _panel_style(Color(0.08, 0.12, 0.23, 0.96), Color(0.04, 0.07, 0.15, 0.94), Color(0.6, 0.5, 0.22, 0.85), 1.0, 0.0, 8.0, Color(0, 0, 0, 0), 0, 0.5))
+	t.add_type("HudDrop")
+	t.set_type_variation("HudDrop", "PanelContainer")
+	t.set_stylebox("panel", "HudDrop", _panel_style(Color(0.08, 0.12, 0.23, 0.97), Color(0.05, 0.08, 0.17, 0.97), Color(0.6, 0.5, 0.22, 0.85), 1.0, 10.0, 10.0, Color(0, 0, 0, 0), 0, 0.5))
 	t.add_type("Toast")
 	t.set_type_variation("Toast", "PanelContainer")
-	t.set_stylebox("panel", "Toast", box(Color(0.08, 0.12, 0.22, 0.96), GOLD, 2, 10, 14))
-	t.set_stylebox("panel", "PanelContainer", box(Color(0.09, 0.13, 0.24, 0.9), Color(0.4, 0.34, 0.16, 0.6), 1, 8, 10))
+	t.set_stylebox("panel", "Toast", _panel_style(Color(0.13, 0.19, 0.33, 0.97), Color(0.07, 0.11, 0.22, 0.97), GOLD, 2.0, 10.0, 14.0, Color(0, 0, 0, 0), 0, 0.5))
+	t.set_stylebox("panel", "PanelContainer", _panel_style(Color(0.11, 0.17, 0.3, 0.9), Color(0.07, 0.11, 0.21, 0.9), Color(0.4, 0.34, 0.16, 0.6), 1.0, 8.0, 10.0))
 	# inputs / bars
 	t.set_stylebox("background", "ProgressBar", box(Color(0.04, 0.06, 0.12, 0.9), Color(0.3, 0.26, 0.12), 1, 6, 2))
 	t.set_stylebox("fill", "ProgressBar", box(GOLD, Color(0, 0, 0, 0), 0, 5, 2))
@@ -190,7 +226,7 @@ static func _build_theme(t: Theme) -> void:
 	t.set_stylebox("slider", "HSlider", slider_bg)
 	t.set_stylebox("grabber_area", "HSlider", box(GOLD.darkened(0.2), Color(0, 0, 0, 0), 0, 4, 2))
 	t.set_stylebox("grabber_area_highlight", "HSlider", box(GOLD, Color(0, 0, 0, 0), 0, 4, 2))
-	var grab := _circle_tex(18, GOLD_LIGHT)
+	var grab := _circle_tex(26, GOLD_LIGHT)
 	t.set_icon("grabber", "HSlider", grab)
 	t.set_icon("grabber_highlight", "HSlider", grab)
 	t.set_icon("grabber_disabled", "HSlider", grab)
@@ -205,18 +241,18 @@ static func _build_theme(t: Theme) -> void:
 	t.set_font_size("font_size", "LineEdit", fs(20))
 	t.set_color("font_color", "LineEdit", Color("f4ecd6"))
 	# option button / checkbox
-	t.set_stylebox("normal", "OptionButton", normal)
-	t.set_stylebox("hover", "OptionButton", hover)
-	t.set_stylebox("pressed", "OptionButton", pressed)
+	_button_styles(t, "OptionButton", NAVY_LIGHT, GOLD)
 	t.set_font("font", "OptionButton", font("ui_bold"))
 	t.set_font_size("font_size", "OptionButton", fs(20))
 	t.set_font("font", "CheckButton", font("ui"))
 	t.set_font_size("font_size", "CheckButton", fs(20))
 	t.set_font("font", "CheckBox", font("ui"))
 	t.set_font_size("font_size", "CheckBox", fs(20))
+	t.set_constant("v_separation", "CheckButton", 10)
 	t.set_stylebox("panel", "PopupMenu", box(Color(0.06, 0.1, 0.2, 0.98), GOLD, 1, 6, 8))
 	t.set_font("font", "PopupMenu", font("ui"))
 	t.set_font_size("font_size", "PopupMenu", fs(20))
+	t.set_constant("v_separation", "PopupMenu", 12)
 	t.set_stylebox("hover", "PopupMenu", box(BURGUNDY, Color(0, 0, 0, 0), 0, 4, 8))
 	# scroll
 	var sb := box(Color(0.03, 0.05, 0.1, 0.6), Color(0, 0, 0, 0), 0, 6, 0)
@@ -228,13 +264,10 @@ static func _build_theme(t: Theme) -> void:
 	t.set_stylebox("grabber", "HScrollBar", box(GOLD.darkened(0.3), Color(0, 0, 0, 0), 0, 6, 0))
 	t.set_stylebox("panel", "ItemList", box(Color(0.04, 0.06, 0.12, 0.8), Color(0.3, 0.26, 0.12), 1, 6, 6))
 
-static func _variation_button(t: Theme, name: String, base: Color, hover: Color, border: Color) -> void:
+static func _variation_button(t: Theme, name: String, base: Color, border: Color, margin: float = 16.0, radius: float = 8.0) -> void:
 	t.add_type(name)
 	t.set_type_variation(name, "Button")
-	t.set_stylebox("normal", name, box(base, border.darkened(0.1), 2, 8, 16))
-	t.set_stylebox("hover", name, box(hover, border, 2, 8, 16))
-	t.set_stylebox("pressed", name, box(base.darkened(0.3), GOLD_LIGHT, 2, 8, 16))
-	t.set_stylebox("disabled", name, box(Color(0.14, 0.14, 0.18, 0.8), Color(0.3, 0.3, 0.3, 0.6), 1, 8, 16))
+	_button_styles(t, name, base, border, margin, radius)
 
 static func _circle_tex(d: int, c: Color) -> Texture2D:
 	var img := Image.create(d, d, false, Image.FORMAT_RGBA8)

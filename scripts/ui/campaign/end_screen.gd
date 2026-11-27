@@ -11,11 +11,16 @@ static func show_end(screen: CampaignScreen) -> void:
 	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
 	dim.mouse_filter = Control.MOUSE_FILTER_STOP
 	screen.overlay_layer.add_child(dim)
+	var sc_root := ScrollContainer.new()
+	sc_root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	sc_root.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	dim.add_child(sc_root)
 	var center := CenterContainer.new()
-	center.set_anchors_preset(Control.PRESET_FULL_RECT)
-	dim.add_child(center)
+	center.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	center.size_flags_vertical = Control.SIZE_EXPAND_FILL
+	sc_root.add_child(center)
 	var v := VBoxContainer.new()
-	v.custom_minimum_size = Vector2(760, 0)
+	v.custom_minimum_size = Vector2(minf(760.0, Dialogs.free_area(screen.overlay_layer).size.x - 24.0), 0)
 	v.add_theme_constant_override("separation", 10)
 	center.add_child(v)
 	v.add_child(UI.label(Loc.t("END_VICTORY") if win else Loc.t("END_DEFEAT"), "Title", HORIZONTAL_ALIGNMENT_CENTER))
@@ -36,7 +41,7 @@ static func show_end(screen: CampaignScreen) -> void:
 	Sheet.kv(cv, Loc.t("STAT_CONQUERED"), UI.fmt(float(st.get("provinces_conquered", 0.0))))
 	Sheet.kv(cv, Loc.t("STAT_BATTLES"), "%d / %d" % [int(st.get("battles_won", 0.0)), int(st.get("battles", 0.0))])
 	Sheet.kv(cv, Loc.t("STAT_DURATION"), Loc.tf("STAT_YEARS", {"n": "%.1f" % (float(s["turn"]) * 3.0 / 12.0)}))
-	v.add_child(UI.scroll(card, 260))
+	v.add_child(card)
 	var h := HBoxContainer.new()
 	h.add_theme_constant_override("separation", 12)
 	h.add_child(UI.button(Loc.t("END_STATS"), func() -> void:

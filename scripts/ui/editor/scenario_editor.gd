@@ -104,9 +104,13 @@ func _build_ui() -> void:
 	status.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	status.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
 	bh.add_child(status)
-	bh.add_child(UI.button(Loc.t("ED_VALIDATE"), func() -> void: _validate_dialog(), "", "check"))
-	bh.add_child(UI.button(Loc.t("UI_SAVE_GAME"), func() -> void: _save(), "Primary", "save"))
-	bh.add_child(UI.button(Loc.t("ED_TEST"), func() -> void: _test_play(), "", "next"))
+	var small := Layout.compact(get_viewport_rect().size)
+	for act in [["ED_VALIDATE", "check", "", _validate_dialog], ["UI_SAVE_GAME", "save", "Primary", _save], ["ED_TEST", "next", "", _test_play]]:
+		var cb: Callable = act[3]
+		if small:
+			bh.add_child(UI.icon_button(act[1], cb, Loc.t(act[0]), 52.0, act[2]))
+		else:
+			bh.add_child(UI.button(Loc.t(act[0]), cb, act[2], act[1]))
 	v.add_child(bar)
 	var h := HBoxContainer.new()
 	h.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -117,8 +121,8 @@ func _build_ui() -> void:
 	sp.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	h.add_child(sp)
 	sheet = Sheet.new("MENU_EDITOR", "editor")
-	sheet.custom_minimum_size = Vector2(520, 0)
-	sheet.get_child(0).get_child(0).get_child(sheet.get_child(0).get_child(0).get_child_count() - 1).visible = false
+	sheet.custom_minimum_size = Vector2(clampf(get_viewport_rect().size.x * 0.42, 340.0, 560.0), 0)
+	sheet.find_child("CloseButton", true, false).visible = false
 	for t in [["info", "ED_TAB_INFO", _tab_info], ["countries", "ED_TAB_COUNTRIES", _tab_countries], ["map", "ED_TAB_MAP", _tab_map], ["relations", "ED_TAB_RELATIONS", _tab_relations]]:
 		sheet.add_tab(t[0], t[1], t[2])
 	h.add_child(sheet)
@@ -148,7 +152,7 @@ func _spin(parent: Control, label_key: String, v: float, mn: float, mx: float, s
 	s.max_value = mx
 	s.step = step
 	s.value = v
-	s.custom_minimum_size = Vector2(140, 46)
+	s.custom_minimum_size = Vector2(120, 46)
 	s.value_changed.connect(on_change)
 	h.add_child(s)
 	parent.add_child(h)
@@ -159,7 +163,9 @@ func _option(parent: Control, label_key: String, items: Array, current: String, 
 	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	h.add_child(l)
 	var o := OptionButton.new()
-	o.custom_minimum_size = Vector2(220, 46)
+	o.custom_minimum_size = Vector2(150, 46)
+	o.clip_text = true
+	o.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	for i in items.size():
 		o.add_item(str(display.call(items[i])) if display.is_valid() else str(items[i]), i)
 		if str(items[i]) == current:
@@ -235,7 +241,7 @@ func _tab_countries(b: VBoxContainer) -> void:
 		ch.add_child(UI.label(Loc.t("ED_COLOR"), "Small"))
 		var cp := ColorPickerButton.new()
 		cp.color = Util.color_from(c["color"])
-		cp.custom_minimum_size = Vector2(140, 46)
+		cp.custom_minimum_size = Vector2(110, 46)
 		cp.edit_alpha = false
 		cp.color_changed.connect(func(col: Color) -> void:
 			c["color"] = "#" + col.to_html(false)

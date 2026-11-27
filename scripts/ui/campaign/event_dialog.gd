@@ -9,21 +9,9 @@ static func show_event(host: Control, s: Dictionary, entry: Dictionary, on_done:
 		Game.state["events"]["pending"].erase(entry)
 		on_done.call()
 		return
-	var dim := ColorRect.new()
-	dim.color = Color(0, 0, 0, 0.7)
-	dim.set_anchors_preset(Control.PRESET_FULL_RECT)
-	dim.mouse_filter = Control.MOUSE_FILTER_STOP
-	host.add_child(dim)
-	var center := CenterContainer.new()
-	center.set_anchors_preset(Control.PRESET_FULL_RECT)
-	dim.add_child(center)
-	var pc := PanelContainer.new()
-	pc.theme_type_variation = "Sheet"
-	pc.custom_minimum_size = Vector2(860, 0)
-	center.add_child(pc)
-	var v := VBoxContainer.new()
+	var dim := Dialogs.overlay(host, Callable(), 0.7)
+	var v: VBoxContainer = Dialogs.frame(dim, 860.0)["box"]
 	v.add_theme_constant_override("separation", 8)
-	pc.add_child(v)
 	var hist: bool = e.get("historical", false)
 	var tag := UI.label(Loc.t("EVT_HISTORICAL") if hist else Loc.t("EVT_RANDOM"), "Small")
 	tag.add_theme_color_override("font_color", UI.GOLD_LIGHT if hist else UI.STEEL)
@@ -35,12 +23,12 @@ static func show_event(host: Control, s: Dictionary, entry: Dictionary, on_done:
 	if ResourceLoader.exists(img_path):
 		var tr := TextureRect.new()
 		tr.texture = load(img_path)
-		tr.custom_minimum_size = Vector2(0, 170)
+		tr.custom_minimum_size = Vector2(0, clampf(Dialogs.free_area(host).size.y * 0.24, 80.0, 190.0))
 		tr.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 		tr.stretch_mode = TextureRect.STRETCH_KEEP_ASPECT_COVERED
 		v.add_child(tr)
 	var tl := UI.label(EventSystem.render(s, entry, e["text"]), "", -1, true)
-	v.add_child(UI.scroll(tl, 100))
+	v.add_child(tl)
 	if hist:
 		var src := UI.label(Loc.tf("EVT_SOURCE", {"src": str(e.get("source", ""))}), "Tiny", -1, true)
 		v.add_child(src)
@@ -51,7 +39,9 @@ static func show_event(host: Control, s: Dictionary, entry: Dictionary, on_done:
 		var available: bool = o in opts
 		var ob := Button.new()
 		ob.focus_mode = Control.FOCUS_NONE
-		ob.custom_minimum_size = Vector2(0, 58)
+		ob.custom_minimum_size = Vector2(0, 56)
+		ob.clip_text = false
+		ob.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 		ob.text = Loc.tx(o["name"])
 		ob.theme_type_variation = "Primary" if available else ""
 		ob.disabled = not available
