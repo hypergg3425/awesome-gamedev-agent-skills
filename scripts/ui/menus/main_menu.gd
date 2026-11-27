@@ -16,9 +16,11 @@ func _ready() -> void:
 	root.add_child(h)
 	var col_w := clampf(vs.x * 0.34, 330.0, 470.0) if not compact else clampf(vs.x * 0.36, 300.0, 380.0)
 	var left := VBoxContainer.new()
-	left.custom_minimum_size = Vector2(col_w, 0)
 	left.add_theme_constant_override("separation", 8)
-	h.add_child(left)
+	var lscroll := UI.scroll(left)
+	lscroll.custom_minimum_size = Vector2(col_w, 0)
+	lscroll.size_flags_horizontal = Control.SIZE_SHRINK_BEGIN
+	h.add_child(lscroll)
 	var animated: Array = []
 	_title(left, compact)
 	var primary := _primary_buttons(compact)

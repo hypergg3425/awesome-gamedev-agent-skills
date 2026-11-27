@@ -229,6 +229,11 @@ func _place() -> void:
 			vp.y - float(ins["top"]) - float(ins["bottom"]) - Ads.reserved_height() - 16.0)
 	_apply_density(Layout.compact(vp))
 	var w := minf(500.0, area.size.x * 0.5 if area.size.x > 700.0 else area.size.x - 8.0)
+	if Layout.compact(vp):
+		w = minf(720.0, area.size.x - 8.0)
+		var fr := _focus_rect(str(STEPS[step]["focus"]))
+		if fr.size.x > 0.0 and fr.get_center().x > area.get_center().x:
+			w = clampf(fr.position.x - area.position.x - 16.0, 300.0, w)
 	custom_minimum_size = Vector2(w, 0)
 	size = Vector2(w, 10)
 	var h := minf(size.y, area.size.y)
