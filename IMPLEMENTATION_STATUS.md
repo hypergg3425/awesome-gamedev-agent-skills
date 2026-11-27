@@ -30,4 +30,10 @@ Legend: ✅ implemented and covered by automated tests · 🟢 implemented, veri
 | Online multiplayer | ⛔ | Future work |
 | Interactive tutorial (12 steps) | 🟢✅ | v2.0, `t_tutorial` + screenshot; touch behaviour unverified |
 | Real-device performance | ❓ | Desktop: 0.14–0.55 s/turn on the largest scenarios; mid-range phone not measured |
-| v2.0 brief items not yet implemented | ⛔ | Historical map rebuild, scenario-specific names/geometry, new scenarios, visual redesign, espionage, dynasties, factions, naval overhaul, extra map modes — see VERSION_2_AUDIT.md §4 |
+| Espionage (networks, intel fog, 6 covert operations, counter-intelligence, incidents/casus belli, AI use) | ✅ | `t_espionage`; `scripts/systems/espionage_system.gd` |
+| Dynasties (succession laws, heirs, regency, health/death, marriages, claims, unions, disputes) | ✅ | `t_dynasty`; `dynasty_system.gd` |
+| Internal politics (6 factions, demands, corruption, 9 distinct government mechanics, transitions, coups, civil wars, independence movements) | ✅ | `t_factions`; `factions_system.gd`, `gov_mechanics.gd`, `civil_war.gd` |
+| Economy depth (employment, specialisation, credit rating, loans, cycles, shortages, bounded trade) | ✅ | `t_economy2`; `economy_depth.gd` |
+| Technology: 138 techs (92 + 46 specialisations), era gating with historical-lag rule | ✅ | `t_tech2` |
+| Buildings: 31 (8 new), national effects audited, era restrictions | ✅ | `t_buildings2` |
+| v2.0 brief items not yet implemented | ⛔ | Historical map rebuild, scenario-specific names/geometry, new scenarios, visual redesign, naval overhaul, extra map modes — see VERSION_2_AUDIT.md §4 |
