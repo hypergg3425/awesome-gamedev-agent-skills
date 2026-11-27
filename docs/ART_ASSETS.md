@@ -39,3 +39,12 @@ ach_peaceful_expansion, ach_technological_pioneer, ach_survived_against_all_odds
 icon.svg (512, navy + gold crown), icon_foreground.png (432, adaptive foreground, safe-zone padded),
 icon_background.png (432, textured navy), icon_512.png (512 store icon), splash.png (1080, logo on navy),
 store_feature_graphic.png (1024x500).
+
+## v2.0 additions (workstream F)
+| asset | generator | notes |
+|---|---|---|
+| backgrounds/menu_twilight.png (1920x1080), menu_clouds.png (1024x256 RGBA, tileable) | `tools/assets/art_menu2.py` | main-menu key art (castle city, galleons, dusk sky); clouds drift in `MenuBackground` |
+| icons: chevron_up/down/right, bell, more, pin, hourglass, sparkle, shield, eye, home, refresh, flag | `tools/assets/gen_icons_ext.py` | same 64px white-stroke style |
+| Flags | `scripts/ui/flag_view.gd`, `flag_charges.gd` | procedural: 20 charges, 20 patterns, cloth-fold finish; contact sheet via `tests/ui_art_gallery.tscn` |
+| Panel/button chrome | `scripts/ui/frame_style.gd` | procedural gradient + gold hairline + corner ornaments (no bitmap) |
+Not done: new unit illustrations, historical portraits, new store graphics (existing ones unchanged).

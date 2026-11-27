@@ -1,126 +1,35 @@
 {
-  "checks": 20836,
+  "checks": 4569,
   "failures": 0,
   "godot": "4.7.2-stable (official)",
   "suites": [
     {
-      "checks": 17,
+      "checks": 4339,
       "failures": [],
-      "ms": 1,
-      "status": "PASS",
-      "suite": "ads"
-    },
-    {
-      "checks": 571,
-      "failures": [],
-      "ms": 104410,
-      "status": "PASS",
-      "suite": "ai"
-    },
-    {
-      "checks": 31,
-      "failures": [],
-      "ms": 153660,
-      "status": "PASS",
-      "suite": "ai_personalities"
-    },
-    {
-      "checks": 19,
-      "failures": [],
-      "ms": 713,
-      "status": "PASS",
-      "suite": "construction"
-    },
-    {
-      "checks": 13010,
-      "failures": [],
-      "ms": 1691,
-      "status": "PASS",
-      "suite": "core"
-    },
-    {
-      "checks": 38,
-      "failures": [],
-      "ms": 1853,
-      "status": "PASS",
-      "suite": "diplomacy"
-    },
-    {
-      "checks": 249,
-      "failures": [],
-      "ms": 30754,
-      "status": "PASS",
-      "suite": "economy"
-    },
-    {
-      "checks": 1686,
-      "failures": [],
-      "ms": 94044,
-      "status": "PASS",
-      "suite": "events"
-    },
-    {
-      "checks": 4309,
-      "failures": [],
-      "ms": 29,
+      "ms": 80,
       "status": "PASS",
       "suite": "loc"
     },
     {
-      "checks": 38,
+      "checks": 186,
       "failures": [],
-      "ms": 1910,
-      "status": "PASS",
-      "suite": "military"
-    },
-    {
-      "checks": 567,
-      "failures": [],
-      "ms": 760,
-      "status": "PASS",
-      "suite": "population"
-    },
-    {
-      "checks": 54,
-      "failures": [],
-      "ms": 23761,
-      "status": "PASS",
-      "suite": "save"
-    },
-    {
-      "checks": 166,
-      "failures": [],
-      "ms": 620,
+      "ms": 755,
       "status": "PASS",
       "suite": "scripts"
     },
     {
       "checks": 7,
       "failures": [],
-      "ms": 2822,
+      "ms": 2471,
       "status": "PASS",
       "suite": "smoke"
     },
     {
-      "checks": 18,
-      "failures": [],
-      "ms": 578,
-      "status": "PASS",
-      "suite": "tech"
-    },
-    {
       "checks": 37,
       "failures": [],
-      "ms": 583,
+      "ms": 713,
       "status": "PASS",
       "suite": "tutorial"
-    },
-    {
-      "checks": 19,
-      "failures": [],
-      "ms": 2917,
-      "status": "PASS",
-      "suite": "victory"
     }
   ]
 }

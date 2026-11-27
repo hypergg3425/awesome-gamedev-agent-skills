@@ -8,6 +8,10 @@ godot --headless --path . --import                                  # required a
 godot --headless --path . res://tests/test_runner.tscn              # all suites (~7 min); append `-- save loc` to filter
 godot --headless --path . res://tests/sim.tscn -- <scenario> <turns> <seed> [difficulty]   # AI-vs-AI soak run
 xvfb-run -a -s "-screen 0 1280x720x24" godot --path . --rendering-driver opengl3 res://tests/ui_shots.tscn -- /tmp/ui <en|tr>
+# UI tests (need a display): layout assertions, real-input interaction tests, screenshot regression
+xvfb-run -a -s "-screen 0 2560x1440x24" godot --path . --rendering-driver opengl3 res://tests/ui_layout_check.tscn -- sizes=800x360,1280x720 [touch=1 notch=1 lang=tr scale=1.3]
+xvfb-run -a -s "-screen 0 2560x1440x24" godot --path . --rendering-driver opengl3 --resolution 854x393 res://tests/ui_interaction.tscn
+xvfb-run -a -s "-screen 0 2560x1440x24" godot --path . --rendering-driver opengl3 res://tests/ui_regress.tscn [-- update=1]   # refs: tests/ui_refs/
 python3 tools/validate_content.py                                   # scenario/event schema validation
 python3 tools/scan_keys.py && python3 tools/strings/build_strings.py # localisation key scan / regenerate strings.json
 ```
