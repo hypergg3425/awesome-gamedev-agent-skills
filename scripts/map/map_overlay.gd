@@ -54,7 +54,7 @@ func _draw() -> void:
 			if not vr.has_point(sp):
 				continue
 			var fs := int(clampf(wpx * 0.075, 10, 17))
-			var txt: String = Defs.province_name(Defs.province_ids[pi])
+			var txt: String = Defs.province_name(Defs.province_ids[pi]).split(" (")[0]   # long scenario names: short form on the map, full name in panels
 			var tw := font.get_string_size(txt, HORIZONTAL_ALIGNMENT_LEFT, -1, fs).x
 			draw_string_outline(font, sp + Vector2(-tw * 0.5, 0), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, 3, Color(0, 0, 0, 0.55))
 			draw_string(font, sp + Vector2(-tw * 0.5, 0), txt, HORIZONTAL_ALIGNMENT_LEFT, -1, fs, Color(1, 0.97, 0.88, 0.92))
