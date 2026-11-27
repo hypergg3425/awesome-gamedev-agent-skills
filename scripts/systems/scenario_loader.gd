@@ -138,8 +138,10 @@ static func default_religion(p: Dictionary, year: int, country_religion: String)
 			return "animist"
 
 ## --- main entry ----------------------------------------------------------------------------
-static func build(def: Dictionary, player: String, difficulty: String = "normal", seed_value: int = 12345) -> Dictionary:
+static func build(def_in: Dictionary, player: String, difficulty: String = "normal", seed_value: int = 12345) -> Dictionary:
+	var def := MapUpgrade.prepare(def_in)  # selects the map set; upgrades classic-authored scenarios (scripts/data/map_upgrade.gd)
 	var s := GS.new_state()
+	s["map_set"] = Defs.map_set
 	s["scenario"] = def.get("id", "custom")
 	s["scenario_name"] = def.get("name", {})
 	s["custom"] = bool(def.get("custom", false))
@@ -632,7 +634,8 @@ static func _has2(s: Dictionary, pair: Array) -> bool:
 	return pair.size() >= 2 and s["countries"].has(pair[0]) and s["countries"].has(pair[1]) and pair[0] != pair[1]
 
 ## Returns a list of error strings (empty when the scenario is valid). Used by tests and the editor.
-static func validate(def: Dictionary) -> Array:
+static func validate(def_in: Dictionary) -> Array:
+	var def := MapUpgrade.prepare(def_in)
 	var errs: Array = []
 	if not def.has("id"):
 		errs.append("ERR_SC_NO_ID")

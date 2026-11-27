@@ -1,5 +1,10 @@
 # Scenario schema (data/scenarios/<id>.json)
 
+> **Map sets.** Province ids below are the *classic* (410) ids unless the scenario sets `"map_set": "extended"` (ids of
+> `data/map600/provinces.json`, see docs/MAP_DATA_SOURCES.md). A scenario without the field is authored on classic ids; when the game runs
+> on the extended map it is upgraded automatically (`MapUpgrade`, `data/map600/parents.json`): owner, claims, overrides of a parent apply to
+> all its children, capitals/army locations go to the parent's core child.
+
 One JSON file per scenario. Loaded by `ScenarioLoader.build()`. Province ids are the stable ids in
 `data/map/provinces.json` (e.g. `fra_normandy`). Everything in a scenario that is not a documented
 fact must be marked approximate (`"approximate": true`, which is the default) — the UI shows a notice.

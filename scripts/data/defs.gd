@@ -18,18 +18,49 @@ var scenarios: Dictionary = {}           # id -> scenario def (built-in)
 var seas: Array = []
 var map_meta: Dictionary = {}
 var geometry: MapGeometry = null
+var features: Dictionary = {}            # rivers / passes / straits / lakes of the active map set (features.json)
+var parents: Dictionary = {}             # extended map only: classic id -> [child ids]; first child = core
+var province_scale := 1.0                # provinces per classic province (1.0 classic, ~2.6 extended): normalises per-province counts
+var map_set := "classic"                 # active map set: "classic" (data/map) or "extended" (data/map600)
+## Default set for scenarios that do not name one. "classic" until every suite passes on "extended";
+## override per run with the environment variable IMPERIUM_MAP_SET=extended.
+const DEFAULT_MAP_SET := "classic"
+const MAP_DIRS := {"classic": "res://data/map", "extended": "res://data/map600"}
+var default_map_set := DEFAULT_MAP_SET
+signal map_set_changed(set_id: String)
 var load_errors: Array[String] = []
 var loaded := false
 var _game: Node = null                   # cached autoload ref for province_name()
 
 func _ready() -> void:
+	var env := OS.get_environment("IMPERIUM_MAP_SET")
+	if MAP_DIRS.has(env):
+		default_map_set = env
+	map_set = default_map_set
 	load_all()
 
-func load_all() -> void:
-	if loaded:
+func map_dir() -> String:
+	return MAP_DIRS[map_set]
+
+## Switches the active map set (provinces, geometry, seas, features). Scenario state built on another set
+## must not be used afterwards: ScenarioLoader/SaveManager call this before touching province ids.
+func use_map_set(set_id: String) -> void:
+	if not MAP_DIRS.has(set_id):
+		load_errors.append("unknown map set: " + set_id)
 		return
-	load_errors.clear()
-	var plist: Variant = _read_json("res://data/map/provinces.json")
+	if set_id == map_set and not provinces.is_empty():
+		return
+	map_set = set_id
+	_load_map()
+	map_set_changed.emit(set_id)
+
+func _load_map() -> void:
+	provinces = {}
+	province_ids.clear()
+	province_index = {}
+	geometry = null
+	var dir := map_dir()
+	var plist: Variant = _read_json(dir + "/provinces.json")
 	if plist is Array:
 		var i := 0
 		for p in plist:
@@ -38,6 +69,18 @@ func load_all() -> void:
 			province_ids.append(d["id"])
 			province_index[d["id"]] = i
 			i += 1
+	map_meta = _read_dict(dir + "/map_meta.json")
+	var sl: Variant = _read_json(dir + "/seas.json")
+	seas = sl if sl is Array else []
+	features = _read_dict(dir + "/features.json") if FileAccess.file_exists(dir + "/features.json") else {}
+	parents = _read_dict(dir + "/parents.json") if FileAccess.file_exists(dir + "/parents.json") else {}
+	province_scale = float(province_ids.size()) / float(parents.size()) if not parents.is_empty() else 1.0
+
+func load_all() -> void:
+	if loaded:
+		return
+	load_errors.clear()
+	_load_map()
 	units = _read_dict("res://data/units.json")
 	buildings = _read_dict("res://data/buildings.json")
 	var t := _read_dict("res://data/technologies.json")
@@ -46,10 +89,6 @@ func load_all() -> void:
 	governments = _read_dict("res://data/governments.json")
 	reforms = _read_dict("res://data/reforms.json")
 	gov_transitions = _read_dict("res://data/government_transitions.json")
-	map_meta = _read_dict("res://data/map/map_meta.json")
-	var sl: Variant = _read_json("res://data/map/seas.json")
-	if sl is Array:
-		seas = sl
 	_load_dir_json("res://data/events", events, true)
 	_load_dir_json("res://data/scenarios", scenarios, false)
 	loaded = true
@@ -94,7 +133,7 @@ func _load_dir_json(dir_path: String, into: Dictionary, as_array: bool) -> void:
 func load_geometry() -> MapGeometry:
 	if geometry == null:
 		geometry = MapGeometry.new()
-		geometry.load_file("res://data/map/geometry.bin", province_ids.size())
+		geometry.load_file(map_dir() + "/geometry.bin", province_ids.size())
 	return geometry
 
 ## --- accessors -----------------------------------------------------------------------------

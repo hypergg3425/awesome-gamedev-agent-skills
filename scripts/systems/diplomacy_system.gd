@@ -76,7 +76,7 @@ static func borders(s: Dictionary, a: String, b: String) -> bool:
 	return _idx(s)["touch"].has(a + ">" + b)
 
 static func claim_count(s: Dictionary, claimer: String, target: String) -> int:
-	return int(_idx(s)["claims"].get(claimer + ">" + target, 0))
+	return int(ceil(float(_idx(s)["claims"].get(claimer + ">" + target, 0)) / Defs.province_scale))  # per classic-province equivalent
 
 static func can_reach(s: Dictionary, a: String, b: String) -> bool:
 	if borders(s, a, b):

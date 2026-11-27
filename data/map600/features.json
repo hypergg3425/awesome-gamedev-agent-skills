@@ -1,0 +1,5566 @@
+{
+"rivers": [
+[
+"afg_badakhshan",
+"tjk_khatlon",
+{
+"name": "Panj",
+"width": 2,
+"name_tr": "Panj"
+}
+],
+[
+"afg_badakhshan",
+"tjk_pamir",
+{
+"name": "Panj",
+"width": 2,
+"name_tr": "Panj"
+}
+],
+[
+"afg_balkh",
+"tjk_khatlon",
+{
+"name": "Amu Darya",
+"width": 2,
+"name_tr": "Ceyhun"
+}
+],
+[
+"afg_balkh",
+"tkm_chardzhou",
+{
+"name": "Amu Darya",
+"width": 2,
+"name_tr": "Ceyhun"
+}
+],
+[
+"afg_balkh",
+"uzb_kashkadarya",
+{
+"name": "Amu Darya",
+"width": 2,
+"name_tr": "Ceyhun"
+}
+],
+[
+"afg_faryab",
+"tkm_chardzhou",
+{
+"name": "Amu Darya",
+"width": 2,
+"name_tr": "Ceyhun"
+}
+],
+[
+"afg_herat",
+"irn_torbat",
+{
+"name": "Hari",
+"width": 1,
+"name_tr": "Hari"
+}
+],
+[
+"afg_tokharistan",
+"tjk_khatlon",
+{
+"name": "Panj",
+"width": 2,
+"name_tr": "Panj"
+}
+],
+[
+"ago_malanje",
+"cod_bandundu",
+{
+"name": "Kwango",
+"width": 2,
+"name_tr": "Kwango"
+}
+],
+[
+"ago_malanje",
+"nam_namibia",
+{
+"name": "Cunene",
+"width": 1,
+"name_tr": "Cunene"
+}
+],
+[
+"ago_moxico",
+"cod_katanga",
+{
+"name": "Kasai",
+"width": 3,
+"name_tr": "Kasai"
+}
+],
+[
+"ago_moxico",
+"nam_namibia",
+{
+"name": "Okavango",
+"width": 2,
+"name_tr": "Okavango"
+}
+],
+[
+"alb_south_albania",
+"grc_west_macedonia",
+{
+"name": "Haliacmon",
+"width": 1,
+"name_tr": "Aliakmon"
+}
+],
+[
+"arg_cordoba",
+"bra_rio_grande_do_sul",
+{
+"name": "Uruguay",
+"width": 2,
+"name_tr": "Uruguay"
+}
+],
+[
+"arg_cordoba",
+"pry_paraguay",
+{
+"name": "Paraná",
+"width": 3,
+"name_tr": "Paraná"
+}
+],
+[
+"arg_cordoba",
+"ury_uruguay",
+{
+"name": "Uruguay",
+"width": 2,
+"name_tr": "Uruguay"
+}
+],
+[
+"arg_salta",
+"pry_paraguay",
+{
+"name": "Pilcomayo River",
+"width": 2,
+"name_tr": "Pilcomayo"
+}
+],
+[
+"arm_armenia",
+"tur_kars_ararat",
+{
+"name": "Aras",
+"width": 1,
+"name_tr": "Aras"
+}
+],
+[
+"arm_lori",
+"tur_kars_ararat",
+{
+"name": "Aras",
+"width": 1,
+"name_tr": "Aras"
+}
+],
+[
+"arm_syunik",
+"irn_azerbaijan_persia",
+{
+"name": "Aras",
+"width": 1,
+"name_tr": "Aras"
+}
+],
+[
+"aus_new_south_wales",
+"aus_south_australia",
+{
+"name": "Murray",
+"width": 3,
+"name_tr": "Murray"
+}
+],
+[
+"aut_austria",
+"aut_upper_austria",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"aut_austria",
+"svk_slovakia",
+{
+"name": "Morava",
+"width": 1,
+"name_tr": "Morava"
+}
+],
+[
+"aut_carinthia",
+"aut_tyrol",
+{
+"name": "Drava",
+"width": 1,
+"name_tr": "Drava"
+}
+],
+[
+"aut_carinthia",
+"svn_lower_styria",
+{
+"name": "Drava",
+"width": 1,
+"name_tr": "Drava"
+}
+],
+[
+"aut_styria",
+"svn_lower_styria",
+{
+"name": "Mur",
+"width": 2,
+"name_tr": "Mora"
+}
+],
+[
+"aut_upper_austria",
+"deu_danube_bavaria",
+{
+"name": "Inn",
+"width": 1,
+"name_tr": "İnn"
+}
+],
+[
+"aut_vorarlberg",
+"che_alpine_switzerland",
+{
+"name": "Rhine",
+"width": 3,
+"name_tr": "Ren"
+}
+],
+[
+"aze_absheron",
+"aze_mugan",
+{
+"name": "Kura",
+"width": 1,
+"name_tr": "Kura"
+}
+],
+[
+"aze_azerbaijan",
+"aze_ganja_karabakh",
+{
+"name": "Kura",
+"width": 1,
+"name_tr": "Kura"
+}
+],
+[
+"aze_azerbaijan",
+"aze_mugan",
+{
+"name": "Kura",
+"width": 1,
+"name_tr": "Kura"
+}
+],
+[
+"aze_ganja_karabakh",
+"aze_sheki",
+{
+"name": "Kura",
+"width": 1,
+"name_tr": "Kura"
+}
+],
+[
+"aze_ganja_karabakh",
+"irn_ardabil",
+{
+"name": "Aras",
+"width": 1,
+"name_tr": "Aras"
+}
+],
+[
+"aze_mugan",
+"irn_ardabil",
+{
+"name": "Aras",
+"width": 1,
+"name_tr": "Aras"
+}
+],
+[
+"aze_nakhchivan",
+"irn_azerbaijan_persia",
+{
+"name": "Aras",
+"width": 1,
+"name_tr": "Aras"
+}
+],
+[
+"aze_nakhchivan",
+"irn_urmia",
+{
+"name": "Aras",
+"width": 1,
+"name_tr": "Aras"
+}
+],
+[
+"bdi_burundi",
+"cod_katanga",
+{
+"name": "Ruzizi",
+"width": 1,
+"name_tr": "Rusizi"
+}
+],
+[
+"bel_brabant",
+"bel_flanders",
+{
+"name": "Scheldt",
+"width": 1,
+"name_tr": "Schelde"
+}
+],
+[
+"bel_limburg",
+"nld_north_brabant",
+{
+"name": "Meuse",
+"width": 1,
+"name_tr": "Maas"
+}
+],
+[
+"bel_wallonia",
+"fra_champagne",
+{
+"name": "Meuse",
+"width": 1,
+"name_tr": "Maas"
+}
+],
+[
+"ben_benin",
+"bfa_burkina_faso",
+{
+"name": "Oti",
+"width": 1,
+"name_tr": "Oti"
+}
+],
+[
+"ben_benin",
+"ner_tahoua",
+{
+"name": "Niger",
+"width": 3,
+"name_tr": "Nijer"
+}
+],
+[
+"bfa_burkina_faso",
+"civ_cote_d_ivoire",
+{
+"name": "Komoé",
+"width": 1,
+"name_tr": "Komoé"
+}
+],
+[
+"bfa_burkina_faso",
+"gha_ghana",
+{
+"name": "Black Volta",
+"width": 2,
+"name_tr": "Siyah Volta"
+}
+],
+[
+"bgd_bangladesh",
+"bgd_khulna_barisal",
+{
+"name": "Ganges",
+"width": 3,
+"name_tr": "Ganj"
+}
+],
+[
+"bgd_bangladesh",
+"bgd_varendra",
+{
+"name": "Brahmaputra",
+"width": 3,
+"name_tr": "Brahmaputra"
+}
+],
+[
+"bgd_khulna_barisal",
+"bgd_varendra",
+{
+"name": "Ganges",
+"width": 3,
+"name_tr": "Ganj"
+}
+],
+[
+"bgd_khulna_barisal",
+"ind_bengal",
+{
+"name": "Ganges",
+"width": 3,
+"name_tr": "Ganj"
+}
+],
+[
+"bgd_varendra",
+"ind_assam_brahmaputra_valley",
+{
+"name": "Brahmaputra",
+"width": 3,
+"name_tr": "Brahmaputra"
+}
+],
+[
+"bgd_varendra",
+"ind_bengal",
+{
+"name": "Ganges",
+"width": 3,
+"name_tr": "Ganj"
+}
+],
+[
+"bgr_dobruja_bg",
+"rou_wallachia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"bgr_moesia",
+"rou_oltenia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"bgr_moesia",
+"rou_wallachia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"bgr_north_west_bulgaria",
+"rou_oltenia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"bgr_thrace_bg",
+"grc_thrace_greece",
+{
+"name": "Maritsa",
+"width": 1,
+"name_tr": "Meriç"
+}
+],
+[
+"bih_bosnia_and_herz",
+"mne_montenegro_highlands",
+{
+"name": "Drina",
+"width": 1,
+"name_tr": "Drina Irmağı"
+}
+],
+[
+"bih_krajina",
+"hrv_slavonia",
+{
+"name": "Sava",
+"width": 1,
+"name_tr": "Sava"
+}
+],
+[
+"bih_posavina",
+"hrv_slavonia",
+{
+"name": "Sava",
+"width": 1,
+"name_tr": "Sava"
+}
+],
+[
+"bih_posavina",
+"srb_raska",
+{
+"name": "Drina",
+"width": 1,
+"name_tr": "Drina Irmağı"
+}
+],
+[
+"bih_posavina",
+"srb_serbia",
+{
+"name": "Drina",
+"width": 1,
+"name_tr": "Drina Irmağı"
+}
+],
+[
+"bih_posavina",
+"srb_vojvodina",
+{
+"name": "Sava",
+"width": 1,
+"name_tr": "Sava"
+}
+],
+[
+"blr_brest",
+"pol_podlasie",
+{
+"name": "Western Bug",
+"width": 1,
+"name_tr": "Bug"
+}
+],
+[
+"blr_gomel_mogilev",
+"ukr_chernihiv_sumy",
+{
+"name": "Dnieper",
+"width": 3,
+"name_tr": "Dinyeper"
+}
+],
+[
+"blr_vitebsk",
+"lva_latgale",
+{
+"name": "Daugava",
+"width": 2,
+"name_tr": "Daugava"
+}
+],
+[
+"bol_bolivia",
+"bra_amazonas",
+{
+"name": "Guaporé",
+"width": 3,
+"name_tr": "Guaporé"
+}
+],
+[
+"bra_amazonas",
+"per_loreto",
+{
+"name": "Javary",
+"width": 1,
+"name_tr": "Javari"
+}
+],
+[
+"bra_maranhao",
+"bra_mato_grosso",
+{
+"name": "Araguaia",
+"width": 3,
+"name_tr": "Araguaia"
+}
+],
+[
+"bra_maranhao",
+"bra_para",
+{
+"name": "Araguaia",
+"width": 3,
+"name_tr": "Araguaia"
+}
+],
+[
+"bra_maranhao",
+"bra_piaui",
+{
+"name": "Parnaíba",
+"width": 1,
+"name_tr": "Parnaíba"
+}
+],
+[
+"bra_mato_grosso",
+"bra_mato_grosso_do_sul",
+{
+"name": "Araguaia",
+"width": 3,
+"name_tr": "Araguaia"
+}
+],
+[
+"bra_mato_grosso",
+"bra_para",
+{
+"name": "Jamanxim",
+"width": 1,
+"name_tr": "Jamanxim"
+}
+],
+[
+"bra_mato_grosso_do_sul",
+"bra_minas_gerais",
+{
+"name": "Paranaíba",
+"width": 3,
+"name_tr": "Paranaíba"
+}
+],
+[
+"bra_mato_grosso_do_sul",
+"bra_rio_grande_do_sul",
+{
+"name": "Paraná",
+"width": 3,
+"name_tr": "Paraná"
+}
+],
+[
+"bra_mato_grosso_do_sul",
+"pry_paraguay",
+{
+"name": "Paraná River",
+"width": 3,
+"name_tr": "Paraná"
+}
+],
+[
+"bra_minas_gerais",
+"bra_piaui",
+{
+"name": "São Francisco",
+"width": 3,
+"name_tr": "São Francisco"
+}
+],
+[
+"bra_minas_gerais",
+"bra_rio_grande_do_sul",
+{
+"name": "Grande",
+"width": 3,
+"name_tr": "Grande"
+}
+],
+[
+"bra_rio_grande_do_sul",
+"pry_paraguay",
+{
+"name": "Paraná",
+"width": 3,
+"name_tr": "Paraná"
+}
+],
+[
+"bwa_botswana",
+"zaf_eastern_cape",
+{
+"name": "Molopo",
+"width": 1,
+"name_tr": "Molopo"
+}
+],
+[
+"bwa_botswana",
+"zaf_limpopo",
+{
+"name": "Limpopo",
+"width": 2,
+"name_tr": "Limpopo"
+}
+],
+[
+"bwa_botswana",
+"zaf_northern_cape",
+{
+"name": "Molopo",
+"width": 1,
+"name_tr": "Molopo"
+}
+],
+[
+"caf_central_african_rep",
+"cod_orientale",
+{
+"name": "Mbomou",
+"width": 1,
+"name_tr": "Bomu"
+}
+],
+[
+"caf_central_african_rep",
+"tcd_batha",
+{
+"name": "Aoukalé",
+"width": 1,
+"name_tr": "Aoukalé"
+}
+],
+[
+"can_ontario",
+"can_quebec",
+{
+"name": "Ottawa",
+"width": 2,
+"name_tr": "Ottawa"
+}
+],
+[
+"che_alpine_switzerland",
+"che_romandy",
+{
+"name": "Rhône",
+"width": 2,
+"name_tr": "Rhône"
+}
+],
+[
+"che_romandy",
+"fra_franche_comte",
+{
+"name": "Doubs",
+"width": 1,
+"name_tr": "Doubs"
+}
+],
+[
+"che_romandy",
+"fra_lyonnais",
+{
+"name": "Rhône",
+"width": 2,
+"name_tr": "Rhône"
+}
+],
+[
+"che_romandy",
+"fra_savoy",
+{
+"name": "Rhône",
+"width": 2,
+"name_tr": "Rhône"
+}
+],
+[
+"che_switzerland",
+"deu_baden",
+{
+"name": "Rhine",
+"width": 3,
+"name_tr": "Ren"
+}
+],
+[
+"che_switzerland",
+"deu_swabia",
+{
+"name": "Rhine",
+"width": 3,
+"name_tr": "Ren"
+}
+],
+[
+"chn_amur_north",
+"chn_hulunbuir",
+{
+"name": "Nen",
+"width": 1,
+"name_tr": "Nen"
+}
+],
+[
+"chn_amur_north",
+"rus_amur",
+{
+"name": "Amur",
+"width": 3,
+"name_tr": "Amur"
+}
+],
+[
+"chn_amur_north",
+"rus_chita",
+{
+"name": "Amur",
+"width": 3,
+"name_tr": "Amur"
+}
+],
+[
+"chn_dali",
+"chn_western_sichuan",
+{
+"name": "Jinsha",
+"width": 3,
+"name_tr": "Jinsha"
+}
+],
+[
+"chn_guangxi",
+"chn_guizhou",
+{
+"name": "Nanpan",
+"width": 3,
+"name_tr": "Nanpan"
+}
+],
+[
+"chn_guanzhong",
+"chn_shanxi",
+{
+"name": "Yellow",
+"width": 3,
+"name_tr": "Sarı Irmak"
+}
+],
+[
+"chn_hebei",
+"chn_henan",
+{
+"name": "Zhang",
+"width": 1,
+"name_tr": "Zhang"
+}
+],
+[
+"chn_henan",
+"chn_shandong",
+{
+"name": "Yellow",
+"width": 3,
+"name_tr": "Sarı Irmak"
+}
+],
+[
+"chn_henan",
+"chn_shanxi",
+{
+"name": "Yellow",
+"width": 3,
+"name_tr": "Sarı Irmak"
+}
+],
+[
+"chn_hubei",
+"chn_jiangxi",
+{
+"name": "Yangtze",
+"width": 3,
+"name_tr": "Yangtze"
+}
+],
+[
+"chn_hulunbuir",
+"chn_qiqihar",
+{
+"name": "Nen",
+"width": 1,
+"name_tr": "Nen"
+}
+],
+[
+"chn_hulunbuir",
+"rus_chita",
+{
+"name": "Argun",
+"width": 3,
+"name_tr": "Argun"
+}
+],
+[
+"chn_inner_mongol",
+"chn_shanxi",
+{
+"name": "Yellow",
+"width": 3,
+"name_tr": "Sarı Irmak"
+}
+],
+[
+"chn_jilin",
+"chn_qiqihar",
+{
+"name": "Songhua",
+"width": 2,
+"name_tr": "Songhua"
+}
+],
+[
+"chn_jilin",
+"prk_ryanggang",
+{
+"name": "Yalu",
+"width": 1,
+"name_tr": "Yalu"
+}
+],
+[
+"chn_kham_west",
+"chn_western_sichuan",
+{
+"name": "Jinsha",
+"width": 3,
+"name_tr": "Jinsha"
+}
+],
+[
+"chn_liaoning",
+"prk_north_korea",
+{
+"name": "Yalu",
+"width": 1,
+"name_tr": "Yalu"
+}
+],
+[
+"chn_liaoning",
+"prk_ryanggang",
+{
+"name": "Yalu",
+"width": 1,
+"name_tr": "Yalu"
+}
+],
+[
+"chn_longyou",
+"chn_western_sichuan",
+{
+"name": "Yellow",
+"width": 3,
+"name_tr": "Sarı Irmak"
+}
+],
+[
+"chn_north_shaanxi",
+"chn_shanxi",
+{
+"name": "Yellow",
+"width": 3,
+"name_tr": "Sarı Irmak"
+}
+],
+[
+"chn_sanjiang",
+"rus_amur",
+{
+"name": "Amur",
+"width": 3,
+"name_tr": "Amur"
+}
+],
+[
+"chn_sanjiang",
+"rus_khabarovsk",
+{
+"name": "Ussuri",
+"width": 1,
+"name_tr": "Ussuri"
+}
+],
+[
+"chn_sanjiang",
+"rus_primor_ye",
+{
+"name": "Amur",
+"width": 3,
+"name_tr": "Amur"
+}
+],
+[
+"chn_sichuan",
+"chn_yunnan",
+{
+"name": "Jinsha",
+"width": 3,
+"name_tr": "Jinsha"
+}
+],
+[
+"chn_western_sichuan",
+"chn_yunnan",
+{
+"name": "Jinsha",
+"width": 3,
+"name_tr": "Jinsha"
+}
+],
+[
+"chn_yunnan",
+"vnm_tay_bac",
+{
+"name": "Red",
+"width": 2,
+"name_tr": "Kızıl Nehir"
+}
+],
+[
+"cmr_cameroon",
+"cog_congo",
+{
+"name": "Dja",
+"width": 1,
+"name_tr": "Dja"
+}
+],
+[
+"cmr_cameroon",
+"gab_gabon",
+{
+"name": "Aïna",
+"width": 1,
+"name_tr": "Aïna"
+}
+],
+[
+"cmr_cameroon",
+"tcd_batha",
+{
+"name": "Logone",
+"width": 1,
+"name_tr": "Logon"
+}
+],
+[
+"cod_bandundu",
+"cog_congo",
+{
+"name": "Congo",
+"width": 3,
+"name_tr": "Kongo"
+}
+],
+[
+"cod_katanga",
+"rwa_rwanda",
+{
+"name": "Ruzizi",
+"width": 1,
+"name_tr": "Rusizi"
+}
+],
+[
+"cod_katanga",
+"zmb_zambia",
+{
+"name": "Luapula",
+"width": 1,
+"name_tr": "Luapula"
+}
+],
+[
+"cod_orientale",
+"cog_congo",
+{
+"name": "Ubangi",
+"width": 3,
+"name_tr": "Ubangi"
+}
+],
+[
+"cod_orientale",
+"uga_uganda",
+{
+"name": "Semliki",
+"width": 2,
+"name_tr": "Semliki"
+}
+],
+[
+"col_amazonas",
+"col_antioquia",
+{
+"name": "Meta",
+"width": 2,
+"name_tr": "Meta Irmağı"
+}
+],
+[
+"col_amazonas",
+"ecu_ecuador",
+{
+"name": "Putumayo",
+"width": 1,
+"name_tr": "Putumayo"
+}
+],
+[
+"col_amazonas",
+"per_loreto",
+{
+"name": "Putumayo",
+"width": 1,
+"name_tr": "Putumayo"
+}
+],
+[
+"col_amazonas",
+"ven_venezuela",
+{
+"name": "Orinoco",
+"width": 3,
+"name_tr": "Orinoco"
+}
+],
+[
+"cri_costa_rica",
+"nic_nicaragua",
+{
+"name": "San Juan",
+"width": 2,
+"name_tr": "San Juan"
+}
+],
+[
+"cze_bohemia",
+"cze_olomouc",
+{
+"name": "Elbe",
+"width": 2,
+"name_tr": "Elbe"
+}
+],
+[
+"cze_moravia",
+"svk_slovakia",
+{
+"name": "Morava",
+"width": 1,
+"name_tr": "Morava"
+}
+],
+[
+"deu_baden",
+"deu_rhineland",
+{
+"name": "Rhine",
+"width": 3,
+"name_tr": "Ren"
+}
+],
+[
+"deu_baden",
+"fra_alsace",
+{
+"name": "Rhine",
+"width": 3,
+"name_tr": "Ren"
+}
+],
+[
+"deu_brandenburg",
+"deu_brunswick",
+{
+"name": "Elbe",
+"width": 2,
+"name_tr": "Elbe"
+}
+],
+[
+"deu_brandenburg",
+"deu_lower_saxony",
+{
+"name": "Elbe",
+"width": 2,
+"name_tr": "Elbe"
+}
+],
+[
+"deu_brandenburg",
+"pol_lubusz",
+{
+"name": "Oder",
+"width": 3,
+"name_tr": "Oder"
+}
+],
+[
+"deu_brandenburg",
+"pol_west_pomerania",
+{
+"name": "Oder",
+"width": 3,
+"name_tr": "Oder"
+}
+],
+[
+"deu_brunswick",
+"deu_hesse_thuringia",
+{
+"name": "Weser",
+"width": 1,
+"name_tr": "Weser"
+}
+],
+[
+"deu_hesse_thuringia",
+"deu_lower_saxony",
+{
+"name": "Weser",
+"width": 1,
+"name_tr": "Weser"
+}
+],
+[
+"deu_hesse_thuringia",
+"deu_rhineland",
+{
+"name": "Rhine",
+"width": 3,
+"name_tr": "Ren"
+}
+],
+[
+"deu_hesse_thuringia",
+"deu_thuringia",
+{
+"name": "Weser",
+"width": 1,
+"name_tr": "Weser"
+}
+],
+[
+"deu_holstein",
+"deu_lower_saxony",
+{
+"name": "Elbe",
+"width": 2,
+"name_tr": "Elbe"
+}
+],
+[
+"deu_lower_rhine",
+"nld_brabant",
+{
+"name": "Rhine",
+"width": 3,
+"name_tr": "Ren"
+}
+],
+[
+"deu_lower_rhine",
+"nld_north_brabant",
+{
+"name": "Meuse",
+"width": 1,
+"name_tr": "Maas"
+}
+],
+[
+"deu_lower_saxony",
+"deu_mecklenburg",
+{
+"name": "Elbe",
+"width": 2,
+"name_tr": "Elbe"
+}
+],
+[
+"deu_lower_saxony",
+"deu_westphalia",
+{
+"name": "Weser",
+"width": 1,
+"name_tr": "Weser"
+}
+],
+[
+"deu_rhineland",
+"lux_luxembourg",
+{
+"name": "Moselle",
+"width": 1,
+"name_tr": "Moselle"
+}
+],
+[
+"egy_aswan",
+"egy_new_valley",
+{
+"name": "Nile",
+"width": 3,
+"name_tr": "Nil"
+}
+],
+[
+"egy_aswan",
+"sdn_northern",
+{
+"name": "Nile",
+"width": 3,
+"name_tr": "Nil"
+}
+],
+[
+"egy_cairo",
+"egy_central_delta",
+{
+"name": "Damietta Branch",
+"width": 3,
+"name_tr": "Dimyat Kolu"
+}
+],
+[
+"egy_cairo",
+"egy_giza",
+{
+"name": "Nile",
+"width": 3,
+"name_tr": "Nil"
+}
+],
+[
+"egy_central_delta",
+"egy_delta",
+{
+"name": "Rosetta Branch",
+"width": 3,
+"name_tr": "Rosetta Kolu"
+}
+],
+[
+"egy_central_delta",
+"egy_eastern_delta",
+{
+"name": "Damietta Branch",
+"width": 3,
+"name_tr": "Dimyat Kolu"
+}
+],
+[
+"egy_central_delta",
+"egy_giza",
+{
+"name": "Rosetta Branch",
+"width": 3,
+"name_tr": "Rosetta Kolu"
+}
+],
+[
+"egy_delta",
+"egy_eastern_delta",
+{
+"name": "Rosetta Branch",
+"width": 3,
+"name_tr": "Rosetta Kolu"
+}
+],
+[
+"egy_eastern_desert",
+"egy_fayyum",
+{
+"name": "Nile",
+"width": 3,
+"name_tr": "Nil"
+}
+],
+[
+"egy_eastern_desert",
+"egy_minya",
+{
+"name": "Nile",
+"width": 3,
+"name_tr": "Nil"
+}
+],
+[
+"egy_new_valley",
+"egy_thebes",
+{
+"name": "Nile",
+"width": 3,
+"name_tr": "Nil"
+}
+],
+[
+"egy_thebes",
+"egy_upper_egypt",
+{
+"name": "Nile",
+"width": 3,
+"name_tr": "Nil"
+}
+],
+[
+"esp_alcarria",
+"esp_la_mancha",
+{
+"name": "Záncara",
+"width": 1,
+"name_tr": "Zncara"
+}
+],
+[
+"esp_aragon",
+"esp_lleida",
+{
+"name": "Ebro",
+"width": 2,
+"name_tr": "Ebro"
+}
+],
+[
+"esp_aragon",
+"esp_old_castile",
+{
+"name": "Douro",
+"width": 2,
+"name_tr": "Douro"
+}
+],
+[
+"esp_badajoz",
+"esp_la_mancha",
+{
+"name": "Guadiana",
+"width": 1,
+"name_tr": "Guadiana"
+}
+],
+[
+"esp_badajoz",
+"prt_alentejo",
+{
+"name": "Guadiana",
+"width": 1,
+"name_tr": "Guadiana"
+}
+],
+[
+"esp_basque",
+"esp_navarre",
+{
+"name": "Ebro",
+"width": 2,
+"name_tr": "Ebro"
+}
+],
+[
+"esp_basque",
+"esp_old_castile",
+{
+"name": "Ebro",
+"width": 2,
+"name_tr": "Ebro"
+}
+],
+[
+"esp_cantabria",
+"esp_old_castile",
+{
+"name": "Ebro",
+"width": 2,
+"name_tr": "Ebro"
+}
+],
+[
+"esp_extremadura",
+"esp_new_castile",
+{
+"name": "Tagus",
+"width": 2,
+"name_tr": "Tejo"
+}
+],
+[
+"esp_extremadura",
+"prt_beira",
+{
+"name": "Tagus",
+"width": 2,
+"name_tr": "Tejo"
+}
+],
+[
+"esp_huelva",
+"prt_algarve",
+{
+"name": "Guadiana",
+"width": 1,
+"name_tr": "Guadiana"
+}
+],
+[
+"esp_lleida",
+"fra_toulouse",
+{
+"name": "Garonne",
+"width": 2,
+"name_tr": "Garonne"
+}
+],
+[
+"esp_salamanca",
+"prt_tras_os_montes",
+{
+"name": "Douro",
+"width": 2,
+"name_tr": "Douro"
+}
+],
+[
+"est_tartu",
+"rus_pskov",
+{
+"name": "Narva",
+"width": 1,
+"name_tr": "Narova"
+}
+],
+[
+"est_virumaa",
+"rus_ingria",
+{
+"name": "Narva",
+"width": 1,
+"name_tr": "Narova"
+}
+],
+[
+"est_virumaa",
+"rus_pskov",
+{
+"name": "Narva",
+"width": 1,
+"name_tr": "Narova"
+}
+],
+[
+"eth_oromiya",
+"sds_s_sudan",
+{
+"name": "Akobo",
+"width": 1,
+"name_tr": "Akobo"
+}
+],
+[
+"fin_lapland",
+"swe_norrbotten",
+{
+"name": "Muonio",
+"width": 1,
+"name_tr": "Muonio"
+}
+],
+[
+"fra_auvergne",
+"fra_burgundy",
+{
+"name": "Loire",
+"width": 2,
+"name_tr": "Loire"
+}
+],
+[
+"fra_brittany",
+"fra_loire",
+{
+"name": "Loire",
+"width": 2,
+"name_tr": "Loire"
+}
+],
+[
+"fra_burgundy",
+"fra_lyonnais",
+{
+"name": "Sane",
+"width": 1,
+"name_tr": "Sane"
+}
+],
+[
+"fra_burgundy",
+"fra_orleanais_berry",
+{
+"name": "Loire",
+"width": 2,
+"name_tr": "Loire"
+}
+],
+[
+"fra_champagne",
+"fra_ile_de_france",
+{
+"name": "Seine",
+"width": 3,
+"name_tr": "Sen"
+}
+],
+[
+"fra_dauphine",
+"fra_lyonnais",
+{
+"name": "Rhône",
+"width": 2,
+"name_tr": "Rhône"
+}
+],
+[
+"fra_guyane_francaise",
+"sur_suriname",
+{
+"name": "Maroni",
+"width": 1,
+"name_tr": "Maroni"
+}
+],
+[
+"fra_languedoc",
+"fra_provence",
+{
+"name": "Rhône",
+"width": 2,
+"name_tr": "Rhône"
+}
+],
+[
+"fra_limousin",
+"fra_toulouse",
+{
+"name": "Dordogne",
+"width": 1,
+"name_tr": "Dordogne"
+}
+],
+[
+"fra_lyonnais",
+"fra_savoy",
+{
+"name": "Rhône",
+"width": 2,
+"name_tr": "Rhône"
+}
+],
+[
+"gbr_essex",
+"gbr_kent_sussex",
+{
+"name": "Thames",
+"width": 2,
+"name_tr": "Thames"
+}
+],
+[
+"gbr_hampshire",
+"gbr_midlands",
+{
+"name": "Thames",
+"width": 2,
+"name_tr": "Thames"
+}
+],
+[
+"gbr_merseyside",
+"gbr_midlands",
+{
+"name": "Trent",
+"width": 1,
+"name_tr": "Trent"
+}
+],
+[
+"gbr_midlands",
+"gbr_wessex",
+{
+"name": "Thames",
+"width": 2,
+"name_tr": "Thames"
+}
+],
+[
+"grc_thrace_greece",
+"tur_eastern_thrace",
+{
+"name": "Maritsa",
+"width": 1,
+"name_tr": "Meriç"
+}
+],
+[
+"gtm_guatemala",
+"mex_oaxaca",
+{
+"name": "Usumacinta",
+"width": 2,
+"name_tr": "Usumacinta"
+}
+],
+[
+"guy_guyana",
+"sur_suriname",
+{
+"name": "Courantyne",
+"width": 1,
+"name_tr": "Courantyne"
+}
+],
+[
+"hnd_honduras",
+"nic_nicaragua",
+{
+"name": "Coco",
+"width": 2,
+"name_tr": "Coco"
+}
+],
+[
+"hrv_croatia",
+"hun_south_transdanubia",
+{
+"name": "Mur",
+"width": 2,
+"name_tr": "Mora"
+}
+],
+[
+"hrv_croatia",
+"hun_west_transdanubia",
+{
+"name": "Mur",
+"width": 2,
+"name_tr": "Mora"
+}
+],
+[
+"hrv_slavonia",
+"hun_south_transdanubia",
+{
+"name": "Mur",
+"width": 2,
+"name_tr": "Mora"
+}
+],
+[
+"hrv_slavonia",
+"srb_vojvodina",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"hun_great_plain",
+"hun_north_hungary",
+{
+"name": "Tisza",
+"width": 2,
+"name_tr": "Tisza"
+}
+],
+[
+"hun_north_hungary",
+"hun_tiszantul",
+{
+"name": "Tisza",
+"width": 2,
+"name_tr": "Tisza"
+}
+],
+[
+"hun_pest",
+"hun_transdanubia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"hun_south_alfold",
+"hun_south_transdanubia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"hun_south_alfold",
+"hun_transdanubia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"hun_south_alfold",
+"rou_banat",
+{
+"name": "Mureș",
+"width": 1,
+"name_tr": "Maroș"
+}
+],
+[
+"hun_south_transdanubia",
+"hun_transdanubia",
+{
+"name": "Sió",
+"width": 1,
+"name_tr": "Sió"
+}
+],
+[
+"hun_tiszantul",
+"ukr_transcarpathia",
+{
+"name": "Tisza",
+"width": 2,
+"name_tr": "Tisza"
+}
+],
+[
+"hun_transdanubia",
+"svk_slovakia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"hun_west_transdanubia",
+"svk_slovakia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"ind_andhra_coast",
+"ind_kalinga_north",
+{
+"name": "Godavari",
+"width": 2,
+"name_tr": "Godavari"
+}
+],
+[
+"ind_andhra_coast",
+"ind_telangana",
+{
+"name": "Krishna",
+"width": 2,
+"name_tr": "Krişna"
+}
+],
+[
+"ind_awadh",
+"ind_baghelkhand",
+{
+"name": "Yamuna",
+"width": 2,
+"name_tr": "Yamuna"
+}
+],
+[
+"ind_awadh",
+"ind_bundelkhand",
+{
+"name": "Yamuna",
+"width": 2,
+"name_tr": "Yamuna"
+}
+],
+[
+"ind_baghelkhand",
+"ind_purvanchal",
+{
+"name": "Ganges",
+"width": 3,
+"name_tr": "Ganj"
+}
+],
+[
+"ind_delhi",
+"ind_doab",
+{
+"name": "Yamuna",
+"width": 2,
+"name_tr": "Yamuna"
+}
+],
+[
+"ind_doab",
+"ind_haryana",
+{
+"name": "Yamuna",
+"width": 2,
+"name_tr": "Yamuna"
+}
+],
+[
+"ind_doab",
+"ind_rajasthan",
+{
+"name": "Chambal",
+"width": 1,
+"name_tr": "Chambal"
+}
+],
+[
+"ind_gujarat",
+"ind_khandesh",
+{
+"name": "Tapti",
+"width": 1,
+"name_tr": "Tapi"
+}
+],
+[
+"ind_jharkhand",
+"ind_north_bengal",
+{
+"name": "Ganges",
+"width": 3,
+"name_tr": "Ganj"
+}
+],
+[
+"ind_punjab_in",
+"pak_punjab",
+{
+"name": "Sutlej",
+"width": 2,
+"name_tr": "Satlec"
+}
+],
+[
+"ind_rayalaseema",
+"ind_telangana",
+{
+"name": "Tungabhadra",
+"width": 1,
+"name_tr": "Tungabhadra"
+}
+],
+[
+"ind_telangana",
+"ind_vidarbha",
+{
+"name": "Wainganga",
+"width": 1,
+"name_tr": "Wainganga"
+}
+],
+[
+"irl_connacht",
+"irl_leinster",
+{
+"name": "Shannon",
+"width": 1,
+"name_tr": "Shannon"
+}
+],
+[
+"irl_connacht",
+"irl_munster",
+{
+"name": "Shannon",
+"width": 1,
+"name_tr": "Shannon"
+}
+],
+[
+"irn_gorgan",
+"tkm_balkan",
+{
+"name": "Atrek",
+"width": 1,
+"name_tr": "Etrak"
+}
+],
+[
+"irn_ilam",
+"irn_luristan",
+{
+"name": "Karkheh",
+"width": 1,
+"name_tr": "Karkheh"
+}
+],
+[
+"irn_kermanshah",
+"irn_luristan",
+{
+"name": "Karkheh",
+"width": 1,
+"name_tr": "Karkheh"
+}
+],
+[
+"irn_khuzestan",
+"irq_basra",
+{
+"name": "Shatt al-Arab",
+"width": 3,
+"name_tr": "Şattülarap"
+}
+],
+[
+"irn_khuzestan",
+"irq_marshes",
+{
+"name": "Karkheh",
+"width": 1,
+"name_tr": "Karkheh"
+}
+],
+[
+"irn_torbat",
+"tkm_turkmenistan",
+{
+"name": "Hari",
+"width": 1,
+"name_tr": "Hari"
+}
+],
+[
+"irq_baghdad",
+"irq_najaf",
+{
+"name": "Euphrates",
+"width": 3,
+"name_tr": "Fırat"
+}
+],
+[
+"irq_diyala_wasit",
+"irq_salahaddin",
+{
+"name": "Tigris",
+"width": 3,
+"name_tr": "Dicle"
+}
+],
+[
+"irq_duhok",
+"irq_mosul",
+{
+"name": "Tigris",
+"width": 3,
+"name_tr": "Dicle"
+}
+],
+[
+"irq_kirkuk",
+"irq_salahaddin",
+{
+"name": "Tigris",
+"width": 3,
+"name_tr": "Dicle"
+}
+],
+[
+"isr_galilee",
+"jor_gilead",
+{
+"name": "Jordan",
+"width": 2,
+"name_tr": "Şeria"
+}
+],
+[
+"isr_judea",
+"jor_gilead",
+{
+"name": "Jordan",
+"width": 2,
+"name_tr": "Şeria"
+}
+],
+[
+"isr_judea",
+"jor_jordan",
+{
+"name": "Jordan",
+"width": 2,
+"name_tr": "Şeria"
+}
+],
+[
+"isr_negev",
+"jor_moab_edom",
+{
+"name": "Jordan",
+"width": 2,
+"name_tr": "Şeria"
+}
+],
+[
+"ita_emilia",
+"ita_lombardy",
+{
+"name": "Po",
+"width": 2,
+"name_tr": "Po"
+}
+],
+[
+"ita_emilia",
+"ita_veneto",
+{
+"name": "Po",
+"width": 2,
+"name_tr": "Po"
+}
+],
+[
+"ita_lazio",
+"ita_umbria",
+{
+"name": "Tiber",
+"width": 1,
+"name_tr": "Tiber"
+}
+],
+[
+"ita_lombardy",
+"ita_montferrat",
+{
+"name": "Po",
+"width": 2,
+"name_tr": "Po"
+}
+],
+[
+"ita_lombardy",
+"ita_valtellina",
+{
+"name": "Ticino",
+"width": 1,
+"name_tr": "Ticino"
+}
+],
+[
+"ita_montferrat",
+"ita_piedmont",
+{
+"name": "Po",
+"width": 2,
+"name_tr": "Po"
+}
+],
+[
+"ita_romagna",
+"ita_veneto",
+{
+"name": "Po",
+"width": 2,
+"name_tr": "Po"
+}
+],
+[
+"jpn_kanto",
+"jpn_north_kanto",
+{
+"name": "Tone",
+"width": 1,
+"name_tr": "Tone"
+}
+],
+[
+"kaz_kostanay",
+"rus_bashkiria",
+{
+"name": "Tobol",
+"width": 2,
+"name_tr": "Tobol"
+}
+],
+[
+"kor_chungcheong",
+"kor_gangwon",
+{
+"name": "Namhan",
+"width": 1,
+"name_tr": "Namhan"
+}
+],
+[
+"lao_champasak",
+"tha_lower_isan",
+{
+"name": "Mekong",
+"width": 3,
+"name_tr": "Mekong"
+}
+],
+[
+"lao_laos",
+"lao_vientiane",
+{
+"name": "Mekong",
+"width": 3,
+"name_tr": "Mekong"
+}
+],
+[
+"lao_laos",
+"mmr_shan",
+{
+"name": "Mekong",
+"width": 3,
+"name_tr": "Mekong"
+}
+],
+[
+"lao_laos",
+"tha_chiang_mai",
+{
+"name": "Mekong",
+"width": 3,
+"name_tr": "Mekong"
+}
+],
+[
+"lao_savannakhet",
+"tha_lower_isan",
+{
+"name": "Mekong",
+"width": 3,
+"name_tr": "Mekong"
+}
+],
+[
+"lao_savannakhet",
+"tha_upper_isan",
+{
+"name": "Mekong",
+"width": 3,
+"name_tr": "Mekong"
+}
+],
+[
+"lao_vientiane",
+"tha_upper_isan",
+{
+"name": "Mekong",
+"width": 3,
+"name_tr": "Mekong"
+}
+],
+[
+"lka_east_ceylon",
+"lka_rajarata",
+{
+"name": "Mahaweli",
+"width": 1,
+"name_tr": "Mahaweli"
+}
+],
+[
+"ltu_samogitia",
+"ltu_suvalkija",
+{
+"name": "Neman",
+"width": 1,
+"name_tr": "Neman"
+}
+],
+[
+"ltu_samogitia",
+"rus_koenigsberg",
+{
+"name": "Neman",
+"width": 1,
+"name_tr": "Neman"
+}
+],
+[
+"mda_moldova",
+"rou_lower_danube",
+{
+"name": "Prut",
+"width": 1,
+"name_tr": "Prut"
+}
+],
+[
+"mda_moldova",
+"rou_moldavia",
+{
+"name": "Prut",
+"width": 1,
+"name_tr": "Prut"
+}
+],
+[
+"mda_north_moldova",
+"mda_transnistria",
+{
+"name": "Dniester",
+"width": 2,
+"name_tr": "Dinyester"
+}
+],
+[
+"mda_north_moldova",
+"rou_moldavia",
+{
+"name": "Prut",
+"width": 1,
+"name_tr": "Prut"
+}
+],
+[
+"mda_north_moldova",
+"ukr_podolia",
+{
+"name": "Dniester",
+"width": 2,
+"name_tr": "Dinyester"
+}
+],
+[
+"mex_campeche",
+"mex_oaxaca",
+{
+"name": "Usumacinta",
+"width": 2,
+"name_tr": "Usumacinta"
+}
+],
+[
+"mex_chihuahua",
+"usa_texas",
+{
+"name": "Grande",
+"width": 3,
+"name_tr": "Grande"
+}
+],
+[
+"mmr_irrawaddy_delta",
+"mmr_pegu",
+{
+"name": "Irrawaddy",
+"width": 3,
+"name_tr": "İravadi"
+}
+],
+[
+"mmr_martaban",
+"tha_chiang_mai",
+{
+"name": "Salween",
+"width": 3,
+"name_tr": "Saluen"
+}
+],
+[
+"mmr_pegu",
+"mmr_upper_burma",
+{
+"name": "Irrawaddy",
+"width": 3,
+"name_tr": "İravadi"
+}
+],
+[
+"mmr_sagaing",
+"mmr_upper_burma",
+{
+"name": "Irrawaddy",
+"width": 3,
+"name_tr": "İravadi"
+}
+],
+[
+"moz_gaza",
+"moz_niassa",
+{
+"name": "Zambezi",
+"width": 3,
+"name_tr": "Zambezi"
+}
+],
+[
+"moz_gaza",
+"zaf_eastern_cape",
+{
+"name": "Maputo",
+"width": 1,
+"name_tr": "Maputo Irmağı"
+}
+],
+[
+"moz_niassa",
+"tza_morogoro",
+{
+"name": "Ruvuma",
+"width": 2,
+"name_tr": "Ruvuma"
+}
+],
+[
+"mrt_tagant",
+"sen_senegal",
+{
+"name": "Senegal",
+"width": 3,
+"name_tr": "Sénégal"
+}
+],
+[
+"nam_namibia",
+"zaf_northern_cape",
+{
+"name": "Orange",
+"width": 3,
+"name_tr": "Turuncu Nehir"
+}
+],
+[
+"nam_namibia",
+"zmb_zambia",
+{
+"name": "Zambezi",
+"width": 3,
+"name_tr": "Zambezi"
+}
+],
+[
+"ner_agadez",
+"nga_borno",
+{
+"name": "Yobe",
+"width": 1,
+"name_tr": "Komadugu Yobe"
+}
+],
+[
+"nga_borno",
+"tcd_batha",
+{
+"name": "Yobe",
+"width": 1,
+"name_tr": "Komadugu Yobe"
+}
+],
+[
+"nld_brabant",
+"nld_north_brabant",
+{
+"name": "Meuse",
+"width": 1,
+"name_tr": "Maas"
+}
+],
+[
+"nld_brabant",
+"nld_overijssel",
+{
+"name": "IJssel",
+"width": 3,
+"name_tr": "IJssel"
+}
+],
+[
+"nld_brabant",
+"nld_utrecht",
+{
+"name": "Nederrijn",
+"width": 3,
+"name_tr": "Nederrijn"
+}
+],
+[
+"nld_holland",
+"nld_north_brabant",
+{
+"name": "Meuse",
+"width": 1,
+"name_tr": "Maas"
+}
+],
+[
+"nld_overijssel",
+"nld_utrecht",
+{
+"name": "IJssel",
+"width": 3,
+"name_tr": "IJssel"
+}
+],
+[
+"nor_finnmark",
+"rus_kola",
+{
+"name": "Paatsjoki",
+"width": 1,
+"name_tr": "Patsoyoki"
+}
+],
+[
+"pak_k_p",
+"pak_multan",
+{
+"name": "Indus",
+"width": 3,
+"name_tr": "İndus"
+}
+],
+[
+"pak_k_p",
+"pak_salt_range",
+{
+"name": "Indus",
+"width": 3,
+"name_tr": "İndus"
+}
+],
+[
+"pak_potohar",
+"pak_salt_range",
+{
+"name": "Jhelum",
+"width": 1,
+"name_tr": "Jhelum"
+}
+],
+[
+"pak_punjab",
+"pak_salt_range",
+{
+"name": "Chenab",
+"width": 2,
+"name_tr": "Çenab"
+}
+],
+[
+"pol_lesser_poland",
+"pol_podlasie",
+{
+"name": "Vistula",
+"width": 2,
+"name_tr": "Vistül"
+}
+],
+[
+"pol_lesser_poland",
+"pol_subcarpathia",
+{
+"name": "Vistula",
+"width": 2,
+"name_tr": "Vistül"
+}
+],
+[
+"pol_lodz",
+"pol_upper_silesia",
+{
+"name": "Warta",
+"width": 1,
+"name_tr": "Warta"
+}
+],
+[
+"pol_lubusz",
+"pol_silesia",
+{
+"name": "Oder",
+"width": 3,
+"name_tr": "Oder"
+}
+],
+[
+"pol_masovia",
+"pol_podlachia",
+{
+"name": "Western Bug",
+"width": 1,
+"name_tr": "Bug"
+}
+],
+[
+"pol_masovia",
+"pol_podlasie",
+{
+"name": "Vistula",
+"width": 2,
+"name_tr": "Vistül"
+}
+],
+[
+"pol_podlasie",
+"ukr_volhynia",
+{
+"name": "Western Bug",
+"width": 1,
+"name_tr": "Bug"
+}
+],
+[
+"prt_alentejo",
+"prt_beira",
+{
+"name": "Tagus",
+"width": 2,
+"name_tr": "Tejo"
+}
+],
+[
+"prt_beira",
+"prt_tras_os_montes",
+{
+"name": "Douro",
+"width": 2,
+"name_tr": "Douro"
+}
+],
+[
+"rou_banat",
+"srb_timok",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"rou_dobruja",
+"rou_wallachia",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"rou_lower_danube",
+"ukr_pontic_steppe",
+{
+"name": "Chilia branch",
+"width": 3,
+"name_tr": "Kili kolu"
+}
+],
+[
+"rou_maramures",
+"ukr_galicia_volhynia",
+{
+"name": "Tisza",
+"width": 2,
+"name_tr": "Tisza"
+}
+],
+[
+"rou_maramures",
+"ukr_transcarpathia",
+{
+"name": "Tisza",
+"width": 2,
+"name_tr": "Tisza"
+}
+],
+[
+"rou_moldavia",
+"ukr_north_bukovina",
+{
+"name": "Prut",
+"width": 1,
+"name_tr": "Prut"
+}
+],
+[
+"rou_oltenia",
+"srb_timok",
+{
+"name": "Danube",
+"width": 3,
+"name_tr": "Tuna"
+}
+],
+[
+"rou_saxon_lands",
+"rou_szeklerland",
+{
+"name": "Olt",
+"width": 1,
+"name_tr": "Oltu"
+}
+],
+[
+"rus_buryat",
+"rus_chita",
+{
+"name": "Vitim",
+"width": 1,
+"name_tr": "Vitim"
+}
+],
+[
+"rus_chukotka",
+"rus_maga_buryatdan",
+{
+"name": "Omolon",
+"width": 1,
+"name_tr": "Omolon"
+}
+],
+[
+"rus_kazan",
+"rus_nizhny_novgorod",
+{
+"name": "Sura",
+"width": 1,
+"name_tr": "Sura"
+}
+],
+[
+"rus_pskov",
+"rus_tver",
+{
+"name": "Daugava",
+"width": 2,
+"name_tr": "Daugava"
+}
+],
+[
+"rwa_rwanda",
+"tza_tabora",
+{
+"name": "Kagera",
+"width": 3,
+"name_tr": "Kagera"
+}
+],
+[
+"srb_serbia",
+"srb_timok",
+{
+"name": "Great Morava",
+"width": 1,
+"name_tr": "Büyük Morava"
+}
+],
+[
+"srb_serbia",
+"srb_vojvodina",
+{
+"name": "Sava",
+"width": 1,
+"name_tr": "Sava"
+}
+],
+[
+"swe_dalarna",
+"swe_svealand",
+{
+"name": "Dalälven",
+"width": 2,
+"name_tr": "Dalälven"
+}
+],
+[
+"syr_aleppo",
+"syr_jazira",
+{
+"name": "Euphrates",
+"width": 3,
+"name_tr": "Fırat"
+}
+],
+[
+"syr_hasakah",
+"tur_botan",
+{
+"name": "Tigris",
+"width": 3,
+"name_tr": "Dicle"
+}
+],
+[
+"tjk_sughd",
+"uzb_fergana",
+{
+"name": "Naryn",
+"width": 2,
+"name_tr": "Narın"
+}
+],
+[
+"tkm_chardzhou",
+"uzb_bukhoro",
+{
+"name": "Amu Darya",
+"width": 2,
+"name_tr": "Ceyhun"
+}
+],
+[
+"tkm_chardzhou",
+"uzb_khorezm",
+{
+"name": "Amu Darya",
+"width": 2,
+"name_tr": "Ceyhun"
+}
+],
+[
+"tur_armenia_highlands",
+"tur_upper_euphrates",
+{
+"name": "Euphrates",
+"width": 3,
+"name_tr": "Fırat"
+}
+],
+[
+"tur_botan",
+"tur_mardin",
+{
+"name": "Tigris",
+"width": 3,
+"name_tr": "Dicle"
+}
+],
+[
+"tur_gaziantep",
+"tur_urfa",
+{
+"name": "Euphrates",
+"width": 3,
+"name_tr": "Fırat"
+}
+],
+[
+"tur_upper_mesopotamia",
+"tur_urfa",
+{
+"name": "Euphrates",
+"width": 3,
+"name_tr": "Fırat"
+}
+],
+[
+"ukr_dnieper_bug",
+"ukr_poltava",
+{
+"name": "Dnieper",
+"width": 3,
+"name_tr": "Dinyeper"
+}
+],
+[
+"ukr_dnipro",
+"ukr_poltava",
+{
+"name": "Dnieper",
+"width": 3,
+"name_tr": "Dinyeper"
+}
+],
+[
+"ukr_dnipro",
+"ukr_zaporizhia",
+{
+"name": "Dnieper",
+"width": 3,
+"name_tr": "Dinyeper"
+}
+],
+[
+"ukr_galicia_volhynia",
+"ukr_north_bukovina",
+{
+"name": "Dniester",
+"width": 2,
+"name_tr": "Dinyester"
+}
+],
+[
+"ukr_north_bukovina",
+"ukr_podolia",
+{
+"name": "Dniester",
+"width": 2,
+"name_tr": "Dinyester"
+}
+],
+[
+"usa_colorado",
+"usa_georgia",
+{
+"name": "Mississippi",
+"width": 3,
+"name_tr": "Mississippi"
+}
+],
+[
+"usa_colorado",
+"usa_north_carolina",
+{
+"name": "Mississippi",
+"width": 3,
+"name_tr": "Mississippi"
+}
+],
+[
+"usa_colorado",
+"usa_texas",
+{
+"name": "Red of the South",
+"width": 2,
+"name_tr": "Red"
+}
+],
+[
+"usa_georgia",
+"usa_north_carolina",
+{
+"name": "Savannah",
+"width": 2,
+"name_tr": "Savannah"
+}
+],
+[
+"usa_georgia",
+"usa_texas",
+{
+"name": "Mississippi",
+"width": 3,
+"name_tr": "Mississippi"
+}
+],
+[
+"usa_idaho",
+"usa_oregon",
+{
+"name": "Columbia",
+"width": 3,
+"name_tr": "Kolumbiya"
+}
+],
+[
+"usa_michigan",
+"usa_new_york",
+{
+"name": "Delaware",
+"width": 1,
+"name_tr": "Delaware"
+}
+],
+[
+"usa_michigan",
+"usa_north_carolina",
+{
+"name": "Ohio",
+"width": 3,
+"name_tr": "Ohio"
+}
+],
+[
+"usa_north_carolina",
+"usa_south_dakota",
+{
+"name": "Wabash",
+"width": 2,
+"name_tr": "Wabash"
+}
+],
+[
+"uzb_karakalpakstan",
+"uzb_khorezm",
+{
+"name": "Amu Darya",
+"width": 2,
+"name_tr": "Ceyhun"
+}
+],
+[
+"zaf_limpopo",
+"zwe_zimbabwe",
+{
+"name": "Limpopo",
+"width": 2,
+"name_tr": "Limpopo"
+}
+],
+[
+"zmb_zambia",
+"zwe_zimbabwe",
+{
+"name": "Zambezi",
+"width": 3,
+"name_tr": "Zambezi"
+}
+]
+],
+"passes": [
+[
+"aut_tyrol",
+"ita_trentino",
+{
+"name": "Brenner",
+"name_tr": "Brenner Geçidi",
+"approximate": true
+}
+],
+[
+"che_alpine_switzerland",
+"ita_valtellina",
+{
+"name": "Simplon",
+"name_tr": "Simplon Geçidi",
+"approximate": true
+}
+],
+[
+"che_alpine_switzerland",
+"ita_aosta",
+{
+"name": "Great St Bernard",
+"name_tr": "Büyük Saint Bernard Geçidi",
+"approximate": true
+}
+],
+[
+"fra_savoy",
+"ita_piedmont",
+{
+"name": "Mont Cenis",
+"name_tr": "Mont Cenis Geçidi",
+"approximate": true
+}
+],
+[
+"fra_savoy",
+"ita_aosta",
+{
+"name": "Little St Bernard",
+"name_tr": "Küçük Saint Bernard Geçidi",
+"approximate": true
+}
+],
+[
+"fra_provence",
+"ita_piedmont",
+{
+"name": "Col de Tende",
+"name_tr": "Tende Geçidi",
+"approximate": true
+}
+],
+[
+"esp_navarre",
+"fra_gascony",
+{
+"name": "Roncevaux",
+"name_tr": "Roncevaux Geçidi",
+"approximate": true
+}
+],
+[
+"esp_huesca",
+"fra_gascony",
+{
+"name": "Somport",
+"name_tr": "Somport Geçidi",
+"approximate": true
+}
+],
+[
+"esp_catalonia",
+"fra_languedoc",
+{
+"name": "Le Perthus",
+"name_tr": "Perthus Geçidi",
+"approximate": true
+}
+],
+[
+"esp_cordoba_jaen",
+"esp_la_mancha",
+{
+"name": "Despenaperros",
+"name_tr": "Despeñaperros Geçidi",
+"approximate": true
+}
+],
+[
+"esp_new_castile",
+"esp_old_castile",
+{
+"name": "Guadarrama",
+"name_tr": "Guadarrama Geçidi",
+"approximate": true
+}
+],
+[
+"grc_central_greece",
+"grc_sterea",
+{
+"name": "Thermopylae",
+"name_tr": "Thermopylae Geçidi",
+"approximate": true
+}
+],
+[
+"kos_kosovo",
+"mkd_north_macedonia",
+{
+"name": "Kaçanik Gorge",
+"name_tr": "Kaçanik Boğazı",
+"approximate": true
+}
+],
+[
+"bgr_moesia",
+"bgr_thrace_bg",
+{
+"name": "Shipka",
+"name_tr": "Şipka Geçidi",
+"approximate": true
+}
+],
+[
+"rou_oltenia",
+"srb_timok",
+{
+"name": "Iron Gates",
+"name_tr": "Demirkapı",
+"approximate": true
+}
+],
+[
+"bgr_sofia",
+"bgr_thrace_bg",
+{
+"name": "Trajan Gate",
+"name_tr": "Trayan Kapısı",
+"approximate": true
+}
+],
+[
+"bgr_struma",
+"mkd_lower_vardar",
+{
+"name": "Vitosha Struma Gap",
+"name_tr": "Struma Geçidi",
+"approximate": true
+}
+],
+[
+"cze_ostrava",
+"pol_upper_silesia",
+{
+"name": "Jablunkov",
+"name_tr": "Jablunkov Geçidi",
+"approximate": true
+}
+],
+[
+"pol_subcarpathia",
+"svk_eastern_slovakia",
+{
+"name": "Dukla",
+"name_tr": "Dukla Geçidi",
+"approximate": true
+}
+],
+[
+"rou_bukovina",
+"rou_transylvania",
+{
+"name": "Tihuta (Borgo)",
+"name_tr": "Tihuța Geçidi",
+"approximate": true
+}
+],
+[
+"rou_saxon_lands",
+"rou_wallachia",
+{
+"name": "Predeal",
+"name_tr": "Predeal Geçidi",
+"approximate": true
+}
+],
+[
+"rou_moldavia",
+"rou_szeklerland",
+{
+"name": "Oituz",
+"name_tr": "Oituz Geçidi",
+"approximate": true
+}
+],
+[
+"ukr_galicia_volhynia",
+"ukr_transcarpathia",
+{
+"name": "Verecke",
+"name_tr": "Verecke Geçidi",
+"approximate": true
+}
+],
+[
+"rou_oltenia",
+"rou_saxon_lands",
+{
+"name": "Red Tower",
+"name_tr": "Kızıl Kule Geçidi",
+"approximate": true
+}
+],
+[
+"aut_austria",
+"aut_styria",
+{
+"name": "Semmering",
+"name_tr": "Semmering Geçidi",
+"approximate": true
+}
+],
+[
+"aut_styria",
+"aut_upper_austria",
+{
+"name": "Pyhrn",
+"name_tr": "Pyhrn Geçidi",
+"approximate": true
+}
+],
+[
+"ita_emilia",
+"ita_tuscany",
+{
+"name": "Futa Pass",
+"name_tr": "Futa Geçidi",
+"approximate": true
+}
+],
+[
+"ita_emilia",
+"ita_liguria",
+{
+"name": "Cisa Pass",
+"name_tr": "Cisa Geçidi",
+"approximate": true
+}
+],
+[
+"aut_carinthia",
+"ita_friuli",
+{
+"name": "Tarvisio",
+"name_tr": "Tarvisio Geçidi",
+"approximate": true
+}
+],
+[
+"svn_littoral",
+"svn_slovenia",
+{
+"name": "Karst Gate (Ocra)",
+"name_tr": "Karst Kapısı",
+"approximate": true
+}
+],
+[
+"hrv_istria",
+"hrv_lika",
+{
+"name": "Vrata",
+"name_tr": "Vratnik Geçidi",
+"approximate": true
+}
+],
+[
+"tur_cilicia",
+"tur_kayseri",
+{
+"name": "Cilician Gates",
+"name_tr": "Gülek Boğazı (Kilikya Kapıları)",
+"approximate": true
+}
+],
+[
+"syr_aleppo",
+"tur_hatay",
+{
+"name": "Syrian Gates (Belen)",
+"name_tr": "Belen Geçidi (Suriye Kapıları)",
+"approximate": true
+}
+],
+[
+"tur_cilicia",
+"tur_gaziantep",
+{
+"name": "Amanus Gates",
+"name_tr": "Bahçe Geçidi (Amanos)",
+"approximate": true
+}
+],
+[
+"tur_armenia_highlands",
+"tur_pontus",
+{
+"name": "Zigana",
+"name_tr": "Zigana Geçidi",
+"approximate": true
+}
+],
+[
+"tur_armenia_highlands",
+"tur_upper_euphrates",
+{
+"name": "Kop",
+"name_tr": "Kop Geçidi",
+"approximate": true
+}
+],
+[
+"geo_georgia",
+"rus_ossetia",
+{
+"name": "Dariel",
+"name_tr": "Daryal Geçidi",
+"approximate": true
+}
+],
+[
+"aze_azerbaijan",
+"rus_dagestan",
+{
+"name": "Caspian Gates of Derbent",
+"name_tr": "Derbent Geçidi",
+"approximate": true
+}
+],
+[
+"irn_jibal",
+"irn_semnan",
+{
+"name": "Caspian Gates (Sirdara)",
+"name_tr": "Hazar Kapıları",
+"approximate": true
+}
+],
+[
+"irn_kermanshah",
+"irq_diyala_wasit",
+{
+"name": "Paitak (Zagros Gate)",
+"name_tr": "Paytak Geçidi",
+"approximate": true
+}
+],
+[
+"irn_fars",
+"irn_kohgiluyeh",
+{
+"name": "Persian Gates",
+"name_tr": "Pers Kapıları",
+"approximate": true
+}
+],
+[
+"afg_jalalabad",
+"pak_khyber",
+{
+"name": "Khyber",
+"name_tr": "Hayber Geçidi",
+"approximate": true
+}
+],
+[
+"pak_khyber",
+"pak_quetta",
+{
+"name": "Gomal",
+"name_tr": "Gomal Geçidi",
+"approximate": true
+}
+],
+[
+"afg_kabul",
+"afg_tokharistan",
+{
+"name": "Salang",
+"name_tr": "Salang Geçidi",
+"approximate": true
+}
+],
+[
+"afg_bamyan",
+"afg_tokharistan",
+{
+"name": "Shibar",
+"name_tr": "Şibar Geçidi",
+"approximate": true
+}
+],
+[
+"afg_badakhshan",
+"pak_k_p",
+{
+"name": "Baroghil",
+"name_tr": "Baroğil Geçidi",
+"approximate": true
+}
+],
+[
+"chn_tarim_south",
+"ind_ladakh",
+{
+"name": "Karakoram",
+"name_tr": "Karakurum Geçidi",
+"approximate": true
+}
+],
+[
+"chn_tarim_north",
+"kgz_fergana_kg",
+{
+"name": "Terek (Fergana-Kashgar)",
+"name_tr": "Terek Geçidi",
+"approximate": true
+}
+],
+[
+"chn_tarim_north",
+"kgz_naryn",
+{
+"name": "Torugart",
+"name_tr": "Torugart Geçidi",
+"approximate": true
+}
+],
+[
+"chn_ili",
+"kaz_semirechye",
+{
+"name": "Dzungarian Gate",
+"name_tr": "Cungar Kapısı",
+"approximate": true
+}
+],
+[
+"chn_hebei",
+"chn_liaoning",
+{
+"name": "Shanhai Pass",
+"name_tr": "Şanhay Geçidi",
+"approximate": true
+}
+],
+[
+"chn_guanzhong",
+"chn_henan",
+{
+"name": "Tong Pass",
+"name_tr": "Tong Geçidi",
+"approximate": true
+}
+],
+[
+"chn_henan",
+"chn_shanxi",
+{
+"name": "Hangu Pass",
+"name_tr": "Hangu Geçidi",
+"approximate": true
+}
+],
+[
+"chn_guangdong",
+"chn_jiangxi",
+{
+"name": "Meiling Pass",
+"name_tr": "Meiling Geçidi",
+"approximate": true
+}
+],
+[
+"chn_guanzhong",
+"chn_hanzhong",
+{
+"name": "Zhuge Qinling (Baoxie)",
+"name_tr": "Baoxie Yolu (Çinling)",
+"approximate": true
+}
+],
+[
+"chn_beijing",
+"chn_hebei",
+{
+"name": "Juyong Pass",
+"name_tr": "Cuyong Geçidi",
+"approximate": true
+}
+],
+[
+"jpn_kanto",
+"jpn_suruga",
+{
+"name": "Hakone",
+"name_tr": "Hakone Geçidi",
+"approximate": true
+}
+],
+[
+"jpn_nagano",
+"jpn_north_kanto",
+{
+"name": "Usui",
+"name_tr": "Usui Geçidi",
+"approximate": true
+}
+],
+[
+"jpn_kinai",
+"jpn_tokai",
+{
+"name": "Sekigahara",
+"name_tr": "Sekigahara Geçidi",
+"approximate": true
+}
+],
+[
+"mmr_martaban",
+"tha_kanchanaburi",
+{
+"name": "Three Pagodas",
+"name_tr": "Üç Pagoda Geçidi",
+"approximate": true
+}
+],
+[
+"lao_savannakhet",
+"vnm_quang_binh",
+{
+"name": "Mu Gia",
+"name_tr": "Mu Gia Geçidi",
+"approximate": true
+}
+],
+[
+"mar_marrakesh",
+"mar_souss",
+{
+"name": "Tizi n'Tichka",
+"name_tr": "Tichka Geçidi",
+"approximate": true
+}
+],
+[
+"mar_fez",
+"mar_rif",
+{
+"name": "Tazzeka",
+"name_tr": "Tazzeka Geçidi",
+"approximate": true
+}
+],
+[
+"dza_aures",
+"tun_kairouan",
+{
+"name": "Kasserine",
+"name_tr": "Kasserine Geçidi",
+"approximate": true
+}
+],
+[
+"egy_marmarica",
+"lby_butnan",
+{
+"name": "Halfaya",
+"name_tr": "Halfaya Geçidi",
+"approximate": true
+}
+],
+[
+"egy_isthmus",
+"egy_sinai",
+{
+"name": "Mitla",
+"name_tr": "Mitla Geçidi",
+"approximate": true
+}
+],
+[
+"isr_galilee",
+"isr_judea",
+{
+"name": "Megiddo (Jezreel)",
+"name_tr": "Megiddo Geçidi",
+"approximate": true
+}
+],
+[
+"lbn_bekaa",
+"syr_homs_palmyra",
+{
+"name": "Bekaa-Homs Gap",
+"name_tr": "Humus Geçidi",
+"approximate": true
+}
+],
+[
+"fra_dauphine",
+"ita_piedmont",
+{
+"name": "Mt Cenis east",
+"name_tr": "Montgenèvre Geçidi",
+"approximate": true
+}
+],
+[
+"ita_piedmont",
+"ita_valtellina",
+{
+"name": "Sempione-Ossola",
+"name_tr": "Ossola Geçidi",
+"approximate": true
+}
+],
+[
+"pol_lesser_poland",
+"pol_subcarpathia",
+{
+"name": "Sandomierz Gap",
+"name_tr": "Sandomierz Geçidi",
+"approximate": true
+}
+],
+[
+"cze_olomouc",
+"cze_ostrava",
+{
+"name": "Moravian Gate",
+"name_tr": "Moravya Kapısı",
+"approximate": true
+}
+],
+[
+"cze_ustecky",
+"deu_saxony",
+{
+"name": "Ore Mountains Nollendorf",
+"name_tr": "Nollendorf Geçidi",
+"approximate": true
+}
+],
+[
+"cze_west_bohemia",
+"deu_danube_bavaria",
+{
+"name": "Bohemian Forest Gate",
+"name_tr": "Bohemya Orman Geçidi",
+"approximate": true
+}
+]
+],
+"straits": [
+[
+"tur_constantinople",
+"tur_scutari",
+{
+"name": "Bosporus",
+"name_tr": "İstanbul Boğazı",
+"adjacent": true,
+"km": 8
+}
+],
+[
+"tur_gallipoli",
+"tur_troad",
+{
+"name": "Dardanelles",
+"name_tr": "Çanakkale Boğazı",
+"adjacent": false,
+"km": 42
+}
+],
+[
+"esp_andalusia",
+"mar_tangier",
+{
+"name": "Gibraltar",
+"name_tr": "Cebelitarık Boğazı",
+"adjacent": true,
+"km": 41
+}
+],
+[
+"dnk_copenhagen",
+"swe_skane",
+{
+"name": "Oresund",
+"name_tr": "Öresund",
+"adjacent": false,
+"km": 25
+}
+],
+[
+"gbr_kent_sussex",
+"fra_flanders_artois",
+{
+"name": "Dover",
+"name_tr": "Calais Boğazı",
+"adjacent": false,
+"km": 44
+}
+],
+[
+"omn_musandam",
+"irn_hormozgan",
+{
+"name": "Hormuz",
+"name_tr": "Hürmüz Boğazı",
+"adjacent": false,
+"km": 100
+}
+],
+[
+"idn_riau",
+"mys_malacca",
+{
+"name": "Malacca",
+"name_tr": "Malaka Boğazı",
+"adjacent": false,
+"km": 84
+}
+],
+[
+"yem_taizz_ibb",
+"dji_djibouti",
+{
+"name": "Bab-el-Mandeb",
+"name_tr": "Bab-ül Mendeb",
+"adjacent": false,
+"km": 21
+}
+],
+[
+"ita_calabria",
+"ita_eastern_sicily",
+{
+"name": "Messina",
+"name_tr": "Messina Boğazı",
+"adjacent": false,
+"km": 14
+}
+],
+[
+"fra_corsica",
+"ita_northern_sardinia",
+{
+"name": "Bonifacio",
+"name_tr": "Bonifacio Boğazı",
+"adjacent": false,
+"km": 27
+}
+],
+[
+"rus_crimea_ru",
+"rus_kuban",
+{
+"name": "Kerch",
+"name_tr": "Kerç Boğazı",
+"adjacent": false,
+"km": 35
+}
+],
+[
+"ita_apulia",
+"alb_south_albania",
+{
+"name": "Otranto",
+"name_tr": "Otranto Boğazı",
+"adjacent": false,
+"km": 87
+}
+],
+[
+"dnk_funen",
+"dnk_zealand",
+{
+"name": "Great Belt",
+"name_tr": "Büyük Belt",
+"adjacent": false,
+"km": 19
+}
+],
+[
+"jpn_oshima",
+"jpn_aomori",
+{
+"name": "Tsugaru",
+"name_tr": "Tsugaru Boğazı",
+"adjacent": false,
+"km": 47
+}
+],
+[
+"jpn_north_kyushu",
+"jpn_sanyo",
+{
+"name": "Kanmon",
+"name_tr": "Kanmon Boğazı",
+"adjacent": false,
+"km": 12
+}
+],
+[
+"kor_south_gyeongsang",
+"jpn_north_kyushu",
+{
+"name": "Korea Strait",
+"name_tr": "Kore Boğazı",
+"adjacent": false,
+"km": 48
+}
+],
+[
+"chn_fujian",
+"twn_taiwan",
+{
+"name": "Taiwan Strait",
+"name_tr": "Tayvan Boğazı",
+"adjacent": false,
+"km": 119
+}
+],
+[
+"ind_pandya",
+"lka_jaffna",
+{
+"name": "Palk Strait",
+"name_tr": "Palk Boğazı",
+"adjacent": false,
+"km": 78
+}
+],
+[
+"tun_tunisia",
+"ita_sicily",
+{
+"name": "Sicily Channel",
+"name_tr": "Sicilya Kanalı",
+"adjacent": false,
+"km": 148
+}
+],
+[
+"gbr_ulster",
+"gbr_galloway",
+{
+"name": "North Channel",
+"name_tr": "Kuzey Kanalı",
+"adjacent": false,
+"km": 48
+}
+],
+[
+"usa_alaska",
+"rus_chukotka",
+{
+"name": "Bering Strait",
+"name_tr": "Bering Boğazı",
+"adjacent": false,
+"km": 182
+}
+],
+[
+"dnk_north_jutland",
+"nor_sorlandet",
+{
+"name": "Skagerrak",
+"name_tr": "Skagerrak",
+"adjacent": false,
+"km": 93
+}
+]
+],
+"lakes": [
+{
+"name": "Georgian Bay",
+"name_tr": "Georgian Koyu",
+"lon": -80.81,
+"lat": 45.28,
+"area_km2": 13812,
+"provinces": [
+"can_ontario"
+],
+"pos": [
+-808.1,
+-486.4
+]
+},
+{
+"name": "Onega",
+"name_tr": "Onega",
+"lon": 35.38,
+"lat": 61.79,
+"area_km2": 9912,
+"provinces": [
+"rus_ingria",
+"rus_karelia",
+"rus_vologda"
+],
+"pos": [
+353.8,
+-712.9
+]
+},
+{
+"name": "Saimaa",
+"name_tr": "Saimaa",
+"lon": 28.44,
+"lat": 62.02,
+"area_km2": 9330,
+"provinces": [
+"fin_savonia",
+"rus_ingria"
+],
+"pos": [
+284.4,
+-716.4
+]
+},
+{
+"name": "Sobradinho",
+"name_tr": "Represa de Sobradinho",
+"lon": -42.11,
+"lat": -10.09,
+"area_km2": 8768,
+"provinces": [
+"bra_minas_gerais",
+"bra_piaui"
+],
+"pos": [
+-421.1,
+101.2
+]
+},
+{
+"name": "Eyre North",
+"name_tr": "Kuzey Eyre Gölü",
+"lon": 137.3,
+"lat": -28.49,
+"area_km2": 8162,
+"provinces": [
+"aus_south_australia"
+],
+"pos": [
+1373.0,
+292.7
+]
+},
+{
+"name": "Titicaca",
+"name_tr": "Titikaka",
+"lon": -69.36,
+"lat": -15.88,
+"area_km2": 8153,
+"provinces": [
+"bol_bolivia",
+"per_madre_de_dios"
+],
+"pos": [
+-693.6,
+160.1
+]
+},
+{
+"name": "Athabasca",
+"name_tr": "Athabasca",
+"lon": -109.37,
+"lat": 59.18,
+"area_km2": 8065,
+"provinces": [
+"can_alberta"
+],
+"pos": [
+-1093.7,
+-673.6
+]
+},
+{
+"name": "Volta",
+"name_tr": "Volta",
+"lon": -0.15,
+"lat": 7.54,
+"area_km2": 8012,
+"provinces": [
+"gha_ghana"
+],
+"pos": [
+-1.5,
+-75.5
+]
+},
+{
+"name": "Nicaragua",
+"name_tr": "Nikaragua",
+"lon": -85.39,
+"lat": 11.53,
+"area_km2": 7870,
+"provinces": [
+"nic_nicaragua",
+"cri_costa_rica"
+],
+"pos": [
+-853.9,
+-115.8
+]
+},
+{
+"name": "Turkana",
+"name_tr": "Turkana",
+"lon": 36.18,
+"lat": 3.58,
+"area_km2": 7764,
+"provinces": [
+"eth_oromiya",
+"ken_kenya",
+"sds_s_sudan"
+],
+"pos": [
+361.8,
+-35.8
+]
+},
+{
+"name": "Smallwood",
+"name_tr": "Smallwood Rezervuarı",
+"lon": -64.81,
+"lat": 54.18,
+"area_km2": 7010,
+"provinces": [
+"can_newfoundland_and_labrador",
+"can_quebec"
+],
+"pos": [
+-648.1,
+-602.4
+]
+},
+{
+"name": "Reindeer",
+"name_tr": "Reindeer Gölü",
+"lon": -102.37,
+"lat": 57.3,
+"area_km2": 6701,
+"provinces": [
+"can_alberta",
+"can_ontario"
+],
+"pos": [
+-1023.7,
+-646.2
+]
+},
+{
+"name": "Issyk-Kul",
+"name_tr": "Issık Göl",
+"lon": 77.27,
+"lat": 42.44,
+"area_km2": 6266,
+"provinces": [
+"kgz_issyk_kul",
+"kaz_semirechye"
+],
+"pos": [
+772.7,
+-451.7
+]
+},
+{
+"name": "Kuybyshev",
+"name_tr": "Kuybışev Baraj",
+"lon": 49.39,
+"lat": 54.63,
+"area_km2": 5770,
+"provinces": [
+"rus_kazan",
+"rus_volga",
+"rus_perm"
+],
+"pos": [
+493.9,
+-608.6
+]
+},
+{
+"name": "Vänern",
+"name_tr": "Vänern",
+"lon": 13.27,
+"lat": 58.91,
+"area_km2": 5734,
+"provinces": [
+"swe_gotaland",
+"swe_varmland"
+],
+"pos": [
+132.7,
+-669.6
+]
+},
+{
+"name": "Nettilling",
+"name_tr": "Nettilling Gölü",
+"lon": -70.51,
+"lat": 66.51,
+"area_km2": 5428,
+"provinces": [
+"can_nunavut"
+],
+"pos": [
+-705.1,
+-788.4
+]
+},
+{
+"name": "Winnipegosis",
+"name_tr": "Winnipegosis Gölü",
+"lon": -100.15,
+"lat": 52.56,
+"area_km2": 5352,
+"provinces": [
+"can_ontario"
+],
+"pos": [
+-1001.5,
+-580.3
+]
+},
+{
+"name": "Torrens",
+"name_tr": "Torrens Gölü",
+"lon": 137.77,
+"lat": -31.02,
+"area_km2": 5169,
+"provinces": [
+"aus_south_australia"
+],
+"pos": [
+1377.7,
+320.4
+]
+},
+{
+"name": "Mweru",
+"name_tr": "Mweru",
+"lon": 28.71,
+"lat": -9.0,
+"area_km2": 5067,
+"provinces": [
+"cod_katanga",
+"zmb_zambia"
+],
+"pos": [
+287.1,
+90.2
+]
+},
+{
+"name": "Manitoba",
+"name_tr": "Manitoba Gölü",
+"lon": -98.64,
+"lat": 50.92,
+"area_km2": 4831,
+"provinces": [
+"can_ontario"
+],
+"pos": [
+-986.4,
+-558.5
+]
+},
+{
+"name": "Kariba",
+"name_tr": "Kariba",
+"lon": 28.03,
+"lat": -16.98,
+"area_km2": 4734,
+"provinces": [
+"zmb_zambia",
+"zwe_zimbabwe"
+],
+"pos": [
+280.3,
+171.4
+]
+},
+{
+"name": "Rybinsk",
+"name_tr": "Rıbinsk Baraj",
+"lon": 38.2,
+"lat": 58.56,
+"area_km2": 4722,
+"provinces": [
+"rus_tver",
+"rus_vladimir_suzdal",
+"rus_vologda"
+],
+"pos": [
+382.0,
+-664.5
+]
+},
+{
+"name": "Taymyr",
+"name_tr": "Taymyr Gölü",
+"lon": 102.09,
+"lat": 74.58,
+"area_km2": 4632,
+"provinces": [
+"rus_taymyr"
+],
+"pos": [
+1020.9,
+-934.8
+]
+},
+{
+"name": "Nipigon",
+"name_tr": "Nipigon",
+"lon": -88.53,
+"lat": 49.83,
+"area_km2": 4537,
+"provinces": [
+"can_ontario"
+],
+"pos": [
+-885.3,
+-544.2
+]
+},
+{
+"name": "Qinghai",
+"name_tr": "Koko Nor",
+"lon": 100.2,
+"lat": 36.88,
+"area_km2": 4467,
+"provinces": [
+"chn_qinghai"
+],
+"pos": [
+1002.0,
+-386.3
+]
+},
+{
+"name": "Woods",
+"name_tr": "Lake of the Woods",
+"lon": -94.7,
+"lat": 49.29,
+"area_km2": 4380,
+"provinces": [
+"can_ontario",
+"usa_michigan"
+],
+"pos": [
+-947.0,
+-537.2
+]
+},
+{
+"name": "Vilyuy",
+"name_tr": "Vilyuy Rezervuarı",
+"lon": 111.12,
+"lat": 62.83,
+"area_km2": 4362,
+"provinces": [
+"rus_irkutsk",
+"rus_sakha_yakutia"
+],
+"pos": [
+1111.2,
+-729.0
+]
+},
+{
+"name": "Urmia",
+"name_tr": "Urmiye",
+"lon": 45.43,
+"lat": 37.69,
+"area_km2": 4331,
+"provinces": [
+"irn_azerbaijan_persia",
+"irn_urmia"
+],
+"pos": [
+454.3,
+-395.6
+]
+},
+{
+"name": "Gairdner",
+"name_tr": "Gairdner Gölü",
+"lon": 135.95,
+"lat": -31.64,
+"area_km2": 4250,
+"provinces": [
+"aus_south_australia"
+],
+"pos": [
+1359.5,
+327.2
+]
+},
+{
+"name": "Zaysan",
+"name_tr": "Zaysan",
+"lon": 83.8,
+"lat": 48.4,
+"area_km2": 4204,
+"provinces": [
+"kaz_east_kazakhstan"
+],
+"pos": [
+838.0,
+-525.7
+]
+},
+{
+"name": "Päijänne",
+"name_tr": "Päijänne",
+"lon": 25.95,
+"lat": 62.19,
+"area_km2": 4198,
+"provinces": [
+"fin_hame",
+"fin_savonia",
+"fin_south_finland"
+],
+"pos": [
+259.5,
+-719.0
+]
+},
+{
+"name": "Great Salt",
+"name_tr": "Büyük Tuz",
+"lon": -112.51,
+"lat": 41.18,
+"area_km2": 4119,
+"provinces": [
+"usa_oregon"
+],
+"pos": [
+-1125.1,
+-436.6
+]
+},
+{
+"name": "Bratsk",
+"name_tr": "Bratsk Rezervuarı",
+"lon": 102.5,
+"lat": 55.39,
+"area_km2": 4088,
+"provinces": [
+"rus_irkutsk"
+],
+"pos": [
+1025.0,
+-619.1
+]
+},
+{
+"name": "Khanka",
+"name_tr": "Khanka",
+"lon": 132.39,
+"lat": 44.99,
+"area_km2": 4045,
+"provinces": [
+"chn_sanjiang",
+"rus_primor_ye"
+],
+"pos": [
+1323.9,
+-482.8
+]
+},
+{
+"name": "Lagoa Mirim",
+"name_tr": "Lagoa Mirim",
+"lon": -53.08,
+"lat": -32.83,
+"area_km2": 3853,
+"provinces": [
+"bra_rio_grande_do_sul",
+"ury_uruguay"
+],
+"pos": [
+-530.8,
+340.4
+]
+},
+{
+"name": "Dubawnt",
+"name_tr": "Dubawnt Gölü",
+"lon": -101.39,
+"lat": 63.12,
+"area_km2": 3839,
+"provinces": [
+"can_northwest_territories",
+"can_nunavut"
+],
+"pos": [
+-1013.9,
+-733.5
+]
+},
+{
+"name": "Sarygamysh",
+"name_tr": "Sarıkamış",
+"lon": 57.43,
+"lat": 41.92,
+"area_km2": 3818,
+"provinces": [
+"tkm_dashoguz",
+"uzb_karakalpakstan"
+],
+"pos": [
+574.3,
+-445.4
+]
+},
+{
+"name": "North Channel",
+"name_tr": "Kuzey Kanalı",
+"lon": -82.88,
+"lat": 46.08,
+"area_km2": 3684,
+"provinces": [
+"can_ontario",
+"usa_michigan"
+],
+"pos": [
+-828.8,
+-496.3
+]
+},
+{
+"name": "Tucuruí Dam",
+"name_tr": "Represa de Tucuruí",
+"lon": -49.53,
+"lat": -4.53,
+"area_km2": 3614,
+"provinces": [
+"bra_para"
+],
+"pos": [
+-495.3,
+45.3
+]
+},
+{
+"name": "Mackay",
+"name_tr": "Mackay Gölü",
+"lon": 128.8,
+"lat": -22.4,
+"area_km2": 3602,
+"provinces": [
+"aus_northern_territory",
+"aus_western_australia"
+],
+"pos": [
+1288.0,
+227.7
+]
+},
+{
+"name": "Nasser",
+"name_tr": "Nasır",
+"lon": 32.34,
+"lat": 22.89,
+"area_km2": 3582,
+"provinces": [
+"egy_aswan",
+"sdn_northern",
+"egy_eastern_desert",
+"egy_new_valley"
+],
+"pos": [
+323.4,
+-232.9
+]
+},
+{
+"name": "Van",
+"name_tr": "Van",
+"lon": 42.96,
+"lat": 38.65,
+"area_km2": 3511,
+"provinces": [
+"tur_sasun",
+"tur_van"
+],
+"pos": [
+429.6,
+-406.8
+]
+},
+{
+"name": "Uvs",
+"name_tr": "Ubsa",
+"lon": 92.74,
+"lat": 50.31,
+"area_km2": 3309,
+"provinces": [
+"mng_uvs",
+"rus_tuva"
+],
+"pos": [
+927.4,
+-550.4
+]
+},
+{
+"name": "Zeya",
+"name_tr": "Zeya Barajı",
+"lon": 127.94,
+"lat": 54.42,
+"area_km2": 3276,
+"provinces": [
+"rus_amur"
+],
+"pos": [
+1279.4,
+-605.7
+]
+},
+{
+"name": "Tana",
+"name_tr": "Tana Gölü",
+"lon": 37.3,
+"lat": 12.02,
+"area_km2": 3160,
+"provinces": [
+"eth_oromiya"
+],
+"pos": [
+373.0,
+-120.8
+]
+},
+{
+"name": "Amadjuak",
+"name_tr": "Amadjuak Gölü",
+"lon": -71.23,
+"lat": 64.91,
+"area_km2": 3119,
+"provinces": [
+"can_nunavut"
+],
+"pos": [
+-712.3,
+-762.1
+]
+},
+{
+"name": "Tsimlyansk",
+"name_tr": "Tsimlyansk Baraj",
+"lon": 42.92,
+"lat": 48.11,
+"area_km2": 3063,
+"provinces": [
+"rus_don",
+"rus_tsaritsyn"
+],
+"pos": [
+429.2,
+-522.0
+]
+},
+{
+"name": "Cedar",
+"name_tr": "Cedar Gölü",
+"lon": -100.13,
+"lat": 53.34,
+"area_km2": 2938,
+"provinces": [
+"can_ontario"
+],
+"pos": [
+-1001.3,
+-590.9
+]
+},
+{
+"name": "Robert-Bourassa Reservoir",
+"name_tr": "Réservoir de La Grande 2",
+"lon": -76.84,
+"lat": 53.77,
+"area_km2": 2900,
+"provinces": [
+"can_quebec"
+],
+"pos": [
+-768.4,
+-596.8
+]
+},
+{
+"name": "Saginaw Bay",
+"name_tr": "Saginaw Koyu",
+"lon": -83.52,
+"lat": 43.97,
+"area_km2": 2865,
+"provinces": [
+"usa_michigan"
+],
+"pos": [
+-835.2,
+-470.2
+]
+},
+{
+"name": "Alakol",
+"name_tr": "Alagöl",
+"lon": 81.74,
+"lat": 46.14,
+"area_km2": 2840,
+"provinces": [
+"kaz_east_kazakhstan",
+"kaz_semirechye"
+],
+"pos": [
+817.4,
+-497.1
+]
+},
+{
+"name": "Mistassini",
+"name_tr": "Mistassini Gölü",
+"lon": -73.51,
+"lat": 50.93,
+"area_km2": 2824,
+"provinces": [
+"can_quebec"
+],
+"pos": [
+-735.1,
+-558.6
+]
+},
+{
+"name": "Khövsgöl Nuur",
+"name_tr": "Hövsgöl",
+"lon": 100.48,
+"lat": 51.08,
+"area_km2": 2770,
+"provinces": [
+"mng_uvs",
+"rus_buryat"
+],
+"pos": [
+1004.8,
+-560.6
+]
+},
+{
+"name": "Peipus",
+"name_tr": "Peipus",
+"lon": 27.45,
+"lat": 58.69,
+"area_km2": 2759,
+"provinces": [
+"est_tartu",
+"est_virumaa",
+"rus_ingria",
+"rus_pskov"
+],
+"pos": [
+274.5,
+-666.4
+]
+},
+{
+"name": "Iliamna",
+"name_tr": "Iliamna Gölü",
+"lon": -155.08,
+"lat": 59.56,
+"area_km2": 2683,
+"provinces": [
+"usa_alaska"
+],
+"pos": [
+-1550.8,
+-679.2
+]
+},
+{
+"name": "Frome",
+"name_tr": "Frome Gölü",
+"lon": 139.81,
+"lat": -30.73,
+"area_km2": 2587,
+"provinces": [
+"aus_south_australia"
+],
+"pos": [
+1398.1,
+317.2
+]
+},
+{
+"name": "Tonlé Sap",
+"name_tr": "Tonlé Sap",
+"lon": 104.07,
+"lat": 12.89,
+"area_km2": 2553,
+"provinces": [
+"khm_angkor",
+"khm_tonle_sap"
+],
+"pos": [
+1040.7,
+-129.6
+]
+},
+{
+"name": "Churchill",
+"name_tr": "Churchill Gölü",
+"lon": -108.55,
+"lat": 56.18,
+"area_km2": 2530,
+"provinces": [
+"can_alberta"
+],
+"pos": [
+-1085.5,
+-630.2
+]
+},
+{
+"name": "Tai",
+"name_tr": "Tai",
+"lon": 120.19,
+"lat": 31.2,
+"area_km2": 2515,
+"provinces": [
+"chn_jiangsu",
+"chn_zhejiang"
+],
+"pos": [
+1201.9,
+-322.4
+]
+},
+{
+"name": "Itaipu",
+"name_tr": "Represa Itaipu",
+"lon": -54.42,
+"lat": -24.88,
+"area_km2": 2423,
+"provinces": [
+"bra_rio_grande_do_sul",
+"pry_paraguay",
+"bra_mato_grosso_do_sul"
+],
+"pos": [
+-544.2,
+254.0
+]
+},
+{
+"name": "Kivu",
+"name_tr": "Kivu",
+"lon": 29.1,
+"lat": -2.01,
+"area_km2": 2420,
+"provinces": [
+"cod_katanga",
+"cod_orientale",
+"rwa_rwanda"
+],
+"pos": [
+291.0,
+20.1
+]
+},
+{
+"name": "Wollaston",
+"name_tr": "Wollaston Gölü",
+"lon": -103.32,
+"lat": 58.2,
+"area_km2": 2408,
+"provinces": [
+"can_alberta"
+],
+"pos": [
+-1033.2,
+-659.2
+]
+},
+{
+"name": "Kossou",
+"name_tr": "Kossou",
+"lon": -5.59,
+"lat": 7.42,
+"area_km2": 2380,
+"provinces": [
+"civ_cote_d_ivoire"
+],
+"pos": [
+-55.9,
+-74.3
+]
+},
+{
+"name": "Southern Indian",
+"name_tr": "Güney Hint Gölü",
+"lon": -98.72,
+"lat": 57.14,
+"area_km2": 2375,
+"provinces": [
+"can_ontario"
+],
+"pos": [
+-987.2,
+-643.9
+]
+},
+{
+"name": "Hongze Lake",
+"name_tr": "Hongze Hu",
+"lon": 118.47,
+"lat": 33.25,
+"area_km2": 2356,
+"provinces": [
+"chn_anhui",
+"chn_jiangsu"
+],
+"pos": [
+1184.7,
+-345.1
+]
+},
+{
+"name": "Hulun",
+"name_tr": "Hulun",
+"lon": 117.44,
+"lat": 48.96,
+"area_km2": 2352,
+"provinces": [
+"chn_hulunbuir"
+],
+"pos": [
+1174.4,
+-532.9
+]
+},
+{
+"name": "Syvash",
+"name_tr": "Syvash",
+"lon": 34.55,
+"lat": 45.91,
+"area_km2": 2344,
+"provinces": [
+"rus_crimea_ru",
+"ukr_tavria"
+],
+"pos": [
+345.5,
+-494.2
+]
+},
+{
+"name": "La Grande 3",
+"name_tr": "Réservoir de La Grande 3",
+"lon": -75.49,
+"lat": 53.71,
+"area_km2": 2239,
+"provinces": [
+"can_quebec"
+],
+"pos": [
+-754.9,
+-595.9
+]
+},
+{
+"name": "Edward",
+"name_tr": "Edward",
+"lon": 29.6,
+"lat": -0.35,
+"area_km2": 2224,
+"provinces": [
+"cod_orientale",
+"uga_uganda"
+],
+"pos": [
+296.0,
+3.5
+]
+},
+{
+"name": "Aydar",
+"name_tr": "Aydar Gölü",
+"lon": 67.23,
+"lat": 40.85,
+"area_km2": 2176,
+"provinces": [
+"kaz_turkestan",
+"uzb_navoi",
+"uzb_samarkand"
+],
+"pos": [
+672.3,
+-432.6
+]
+},
+{
+"name": "Bangweulu",
+"name_tr": "Bangweulu Gölü",
+"lon": 29.78,
+"lat": -11.16,
+"area_km2": 2129,
+"provinces": [
+"zmb_zambia"
+],
+"pos": [
+297.8,
+112.1
+]
+},
+{
+"name": "Manicouagan",
+"name_tr": "Réservoir Manicouagan",
+"lon": -68.67,
+"lat": 51.41,
+"area_km2": 2118,
+"provinces": [
+"can_quebec"
+],
+"pos": [
+-686.7,
+-565.0
+]
+},
+{
+"name": "Barlee",
+"name_tr": "Barlee Gölü",
+"lon": 119.54,
+"lat": -29.21,
+"area_km2": 2106,
+"provinces": [
+"aus_western_australia"
+],
+"pos": [
+1195.4,
+300.6
+]
+},
+{
+"name": "Mar Chiquita",
+"name_tr": "Mar Chiquita",
+"lon": -62.57,
+"lat": -30.71,
+"area_km2": 2106,
+"provinces": [
+"arg_cordoba"
+],
+"pos": [
+-625.7,
+317.0
+]
+},
+{
+"name": "Poyang",
+"name_tr": "Poyang",
+"lon": 116.29,
+"lat": 29.2,
+"area_km2": 2082,
+"provinces": [
+"chn_jiangxi",
+"chn_anhui",
+"chn_hubei"
+],
+"pos": [
+1162.9,
+-300.4
+]
+},
+{
+"name": "Kakhovka",
+"name_tr": "Kakhovka Rezervuarı",
+"lon": 34.49,
+"lat": 47.43,
+"area_km2": 2050,
+"provinces": [
+"ukr_dnipro",
+"ukr_tavria",
+"ukr_zaporizhia"
+],
+"pos": [
+344.9,
+-513.3
+]
+},
+{
+"name": "Kama",
+"name_tr": "Kama Baraj",
+"lon": 56.36,
+"lat": 58.76,
+"area_km2": 2037,
+"provinces": [
+"rus_perm"
+],
+"pos": [
+563.6,
+-667.4
+]
+},
+{
+"name": "Chany",
+"name_tr": "Chany Gölü",
+"lon": 77.41,
+"lat": 54.85,
+"area_km2": 2036,
+"provinces": [
+"rus_west_siberia"
+],
+"pos": [
+774.1,
+-611.6
+]
+},
+{
+"name": "IJsselmeer",
+"name_tr": "IJsselmeer",
+"lon": 5.34,
+"lat": 52.68,
+"area_km2": 1966,
+"provinces": [
+"nld_brabant",
+"nld_frisia",
+"nld_holland",
+"nld_overijssel",
+"nld_utrecht"
+],
+"pos": [
+53.4,
+-581.9
+]
+},
+{
+"name": "Vättern",
+"name_tr": "Vättern",
+"lon": 14.52,
+"lat": 58.33,
+"area_km2": 1951,
+"provinces": [
+"swe_gotaland",
+"swe_ostergotland",
+"swe_smaland",
+"swe_varmland"
+],
+"pos": [
+145.2,
+-661.1
+]
+},
+{
+"name": "Rukwa",
+"name_tr": "Rukwa Gölü",
+"lon": 32.08,
+"lat": -7.83,
+"area_km2": 1950,
+"provinces": [
+"tza_tabora"
+],
+"pos": [
+320.8,
+78.5
+]
+},
+{
+"name": "Whitefish Bay",
+"name_tr": "Whitefish Körfezi",
+"lon": -84.74,
+"lat": 46.71,
+"area_km2": 1944,
+"provinces": [
+"can_ontario",
+"usa_michigan"
+],
+"pos": [
+-847.4,
+-504.2
+]
+},
+{
+"name": "Oahe",
+"name_tr": "OaheGölü",
+"lon": -100.55,
+"lat": 45.33,
+"area_km2": 1926,
+"provinces": [
+"usa_south_dakota"
+],
+"pos": [
+-1005.5,
+-487.0
+]
+},
+{
+"name": "Kremenchuk",
+"name_tr": "Kremenchuk Rezervuarı",
+"lon": 32.65,
+"lat": 49.31,
+"area_km2": 1901,
+"provinces": [
+"ukr_dnieper_bug",
+"ukr_kyiv",
+"ukr_poltava"
+],
+"pos": [
+326.5,
+-537.4
+]
+},
+{
+"name": "General Carrera/Buenos Aires",
+"name_tr": "Lago Buenos Aires",
+"lon": -71.98,
+"lat": -46.55,
+"area_km2": 1898,
+"provinces": [
+"arg_santa_cruz",
+"chl_magallanes_y_antartica_chilena"
+],
+"pos": [
+-719.8,
+502.2
+]
+},
+{
+"name": "Namtso",
+"name_tr": "Namtso",
+"lon": 90.6,
+"lat": 30.74,
+"area_km2": 1884,
+"provinces": [
+"chn_xizang"
+],
+"pos": [
+906.0,
+-317.3
+]
+},
+{
+"name": "Brokopondo",
+"name_tr": "Professor Doctor Ingenieur W. J. Van Blommestein Meer",
+"lon": -55.07,
+"lat": 4.73,
+"area_km2": 1859,
+"provinces": [
+"sur_suriname"
+],
+"pos": [
+-550.7,
+-47.3
+]
+},
+{
+"name": "Aberdeen",
+"name_tr": "Aberdeen Gölü",
+"lon": -98.79,
+"lat": 64.59,
+"area_km2": 1837,
+"provinces": [
+"can_nunavut"
+],
+"pos": [
+-987.9,
+-756.9
+]
+},
+{
+"name": "Argyle",
+"name_tr": "Argyle Gölü",
+"lon": 128.76,
+"lat": -16.38,
+"area_km2": 1822,
+"provinces": [
+"aus_northern_territory",
+"aus_western_australia"
+],
+"pos": [
+1287.6,
+165.2
+]
+},
+{
+"name": "Baker",
+"name_tr": "Baker Gölü",
+"lon": -95.31,
+"lat": 64.16,
+"area_km2": 1815,
+"provinces": [
+"can_nunavut"
+],
+"pos": [
+-953.1,
+-750.0
+]
+},
+{
+"name": "Mälaren",
+"name_tr": "Mälaren",
+"lon": 17.26,
+"lat": 59.46,
+"area_km2": 1810,
+"provinces": [
+"swe_svealand"
+],
+"pos": [
+172.6,
+-677.7
+]
+},
+{
+"name": "Laguna Madre",
+"name_tr": "Laguna Madre",
+"lon": -97.63,
+"lat": 24.92,
+"area_km2": 1754,
+"provinces": [
+"mex_chihuahua"
+],
+"pos": [
+-976.3,
+-254.4
+]
+},
+{
+"name": "Kyoga",
+"name_tr": "Kyoga",
+"lon": 33.01,
+"lat": 1.47,
+"area_km2": 1741,
+"provinces": [
+"uga_uganda"
+],
+"pos": [
+330.1,
+-14.7
+]
+},
+{
+"name": "Martre",
+"name_tr": "Lac la Martre",
+"lon": -117.95,
+"lat": 63.32,
+"area_km2": 1729,
+"provinces": [
+"can_northwest_territories"
+],
+"pos": [
+-1179.5,
+-736.7
+]
+},
+{
+"name": "Volgograd",
+"name_tr": "Volgograd Baraj",
+"lon": 46.02,
+"lat": 50.91,
+"area_km2": 1655,
+"provinces": [
+"rus_tsaritsyn",
+"rus_volga"
+],
+"pos": [
+460.2,
+-558.3
+]
+},
+{
+"name": "Gouin",
+"name_tr": "Réservoir Gouin",
+"lon": -74.81,
+"lat": 48.55,
+"area_km2": 1654,
+"provinces": [
+"can_quebec"
+],
+"pos": [
+-748.1,
+-527.6
+]
+},
+{
+"name": "Williston",
+"name_tr": "Williston Gölü",
+"lon": -123.78,
+"lat": 56.03,
+"area_km2": 1653,
+"provinces": [
+"can_british_columbia"
+],
+"pos": [
+-1237.8,
+-628.1
+]
+},
+{
+"name": "Krasnoyarsk",
+"name_tr": "Krasnoyarsk Rezervuarı",
+"lon": 91.57,
+"lat": 54.69,
+"area_km2": 1647,
+"provinces": [
+"rus_altai_kuzbass",
+"rus_krasnoyarsk"
+],
+"pos": [
+915.7,
+-609.4
+]
+},
+{
+"name": "Sakakawea",
+"name_tr": "Sakakawea Gölü",
+"lon": -102.34,
+"lat": 47.8,
+"area_km2": 1630,
+"provinces": [
+"usa_south_dakota"
+],
+"pos": [
+-1023.4,
+-518.0
+]
+},
+{
+"name": "Inari",
+"name_tr": "İnari",
+"lon": 27.92,
+"lat": 69.02,
+"area_km2": 1611,
+"provinces": [
+"fin_lapland",
+"rus_kola"
+],
+"pos": [
+279.2,
+-831.4
+]
+},
+{
+"name": "Okeechobee",
+"name_tr": "Okeechobee",
+"lon": -80.82,
+"lat": 26.94,
+"area_km2": 1590,
+"provinces": [
+"usa_georgia"
+],
+"pos": [
+-808.2,
+-276.0
+]
+},
+{
+"name": "Siling",
+"name_tr": "Siling Co",
+"lon": 88.99,
+"lat": 31.78,
+"area_km2": 1581,
+"provinces": [
+"chn_changtang",
+"chn_tsang",
+"chn_xizang"
+],
+"pos": [
+889.9,
+-328.8
+]
+},
+{
+"name": "Tuz",
+"name_tr": "Tuz",
+"lon": 33.41,
+"lat": 38.77,
+"area_km2": 1567,
+"provinces": [
+"tur_cappadocia",
+"tur_central_anatolia",
+"tur_konya"
+],
+"pos": [
+334.1,
+-408.2
+]
+},
+{
+"name": "Rincón del Bonete",
+"name_tr": "Lago Rincón del Bonete",
+"lon": -56.11,
+"lat": -32.72,
+"area_km2": 1566,
+"provinces": [
+"ury_uruguay"
+],
+"pos": [
+-561.1,
+339.2
+]
+},
+{
+"name": "Poopó",
+"name_tr": "Poopó",
+"lon": -67.06,
+"lat": -18.71,
+"area_km2": 1561,
+"provinces": [
+"bol_bolivia"
+],
+"pos": [
+-670.6,
+189.3
+]
+},
+{
+"name": "Cahora Bassa",
+"name_tr": "Lago de Cahora Bassa",
+"lon": 31.86,
+"lat": -15.65,
+"area_km2": 1560,
+"provinces": [
+"moz_niassa"
+],
+"pos": [
+318.6,
+157.8
+]
+},
+{
+"name": "Khar-Us",
+"name_tr": "Khar-Us",
+"lon": 92.35,
+"lat": 48.08,
+"area_km2": 1552,
+"provinces": [
+"mng_khovd"
+],
+"pos": [
+923.5,
+-521.6
+]
+},
+{
+"name": "Tharthar",
+"name_tr": "Buhayrat ath Tharthar",
+"lon": 43.26,
+"lat": 33.96,
+"area_km2": 1551,
+"provinces": [
+"irq_anbar",
+"irq_salahaddin"
+],
+"pos": [
+432.6,
+-353.1
+]
+},
+{
+"name": "Carnegie",
+"name_tr": "Carnegie Gölü",
+"lon": 122.6,
+"lat": -26.2,
+"area_km2": 1527,
+"provinces": [
+"aus_western_australia"
+],
+"pos": [
+1226.0,
+268.0
+]
+},
+{
+"name": "Engineer Souza Dias Dam",
+"name_tr": "Repressa de Jupia",
+"lon": -51.07,
+"lat": -20.16,
+"area_km2": 1503,
+"provinces": [
+"bra_mato_grosso_do_sul",
+"bra_minas_gerais",
+"bra_rio_grande_do_sul"
+],
+"pos": [
+-510.7,
+204.3
+]
+}
+],
+"meta": {
+"passes_unmatched": [
+"St Gotthard",
+"Splugen",
+"Rokisy Roki",
+"Bolan",
+"Khawak",
+"Iron Gate (Derbent Uzbek)",
+"Hexi (Jade Gate)",
+"Jiayu Pass",
+"Shu Plank Roads",
+"Gubeikou",
+"Yanmen",
+"Hai Van",
+"Gorges of Zahrez",
+"Larche",
+"Bavarian Forest Cham"
+],
+"note": "rivers: Natural Earth river centre lines that follow a shared border; passes and strait points are hand-entered and approximate"
+}
+}

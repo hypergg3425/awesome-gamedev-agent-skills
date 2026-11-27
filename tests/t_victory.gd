@@ -6,7 +6,7 @@ func test_territorial_victory() -> void:
 	# hand most of the map to the player
 	var n := 0
 	for pid in Defs.province_ids:
-		if n < 110:
+		if n < int(Defs.province_ids.size() * 0.27):  # 110 on the classic map
 			s["provinces"][pid]["owner"] = pl
 			s["provinces"][pid]["controller"] = pl
 			n += 1

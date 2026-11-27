@@ -129,6 +129,7 @@ func _load_file(path: String) -> Dictionary:
 	var state: Dictionary = st
 	state["version"] = ver
 	state = migrate(state)
+	Defs.use_map_set(str(state.get("map_set", "classic")))
 	var errs := validate_state(state)
 	if not errs.is_empty():
 		return {"ok": false, "reason": "SAVE_ERR_INVALID", "errors": errs}
