@@ -322,8 +322,18 @@ const BASE_PRICE := {"food": 1.2, "iron": 4.0, "wood": 2.0, "stone": 3.0, "coal"
 static func _override_for(overrides: Dictionary, pid: String) -> String:
 	var found := ""
 	for key in overrides:
+		# a "-pattern" entry excludes matching provinces from this key (an exact id or a glob)
+		var excluded := false
 		for pat in overrides[key]:
 			var ps := str(pat)
+			if ps.begins_with("-") and (ps.substr(1) == pid or (ps.contains("*") and Util.glob_match(ps.substr(1), pid))):
+				excluded = true
+		if excluded:
+			continue
+		for pat in overrides[key]:
+			var ps := str(pat)
+			if ps.begins_with("-"):
+				continue
 			if ps == pid:
 				return str(key)
 			if ps.contains("*") and Util.glob_match(ps, pid):

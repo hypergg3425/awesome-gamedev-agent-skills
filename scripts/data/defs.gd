@@ -24,7 +24,7 @@ var province_scale := 1.0                # provinces per classic province (1.0 c
 var map_set := "classic"                 # active map set: "classic" (data/map) or "extended" (data/map600)
 ## Default set for scenarios that do not name one. "classic" until every suite passes on "extended";
 ## override per run with the environment variable IMPERIUM_MAP_SET=extended.
-const DEFAULT_MAP_SET := "classic"
+const DEFAULT_MAP_SET := "extended"   # 1062 provinces; "classic" (410) remains the validated fallback
 const MAP_DIRS := {"classic": "res://data/map", "extended": "res://data/map600"}
 var default_map_set := DEFAULT_MAP_SET
 signal map_set_changed(set_id: String)

@@ -13,9 +13,7 @@ static var _sample := false
 static var _river_adj: Dictionary = {}   # pid -> Array of pids across a river
 
 static func map_dir() -> String:
-	var d := ""
-	if "map_dir" in Defs:
-		d = str(Defs.get("map_dir"))
+	var d: String = str(Defs.map_dir())
 	return d if d != "" else "res://data/map"
 
 ## Load (or reload) the data of the active map set. Cheap when already loaded.

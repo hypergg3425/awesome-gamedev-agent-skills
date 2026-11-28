@@ -83,7 +83,10 @@ def scen(f):
     for k in ('religion_overrides', 'culture_overrides'):
         for val, pats in d.get(k, {}).items():
             for pat in pats:
-                if not any(fnmatch.fnmatchcase(p, pat) for p in PIDS): E(f, f'{k}.{val}: pattern matches nothing: {pat}')
+                base = pat[1:] if pat.startswith('-') else pat   # "-id" excludes a province from this value (supported by the loader)
+                if not any(fnmatch.fnmatchcase(p, base) for p in PIDS):
+                    if pat.startswith('-'): print(f'WARN {f}: {k}.{val}: exclusion matches no province: {pat}')
+                    else: E(f, f'{k}.{val}: pattern matches nothing: {pat}')
     r = d.get('relations', {})
     for k in ('alliances','defensive','nap','access','trade','guarantees','vassals','opinions','truces'):
         for pair in r.get(k, []):

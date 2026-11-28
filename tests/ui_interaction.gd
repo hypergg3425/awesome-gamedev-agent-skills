@@ -118,7 +118,9 @@ func _ready() -> void:
 func _test_toolbar_and_sheets() -> void:
 	cs.close_sheets()
 	await _frames(2)
-	var names := ["economy", "military", "diplomacy", "technology", "politics", "objectives"]
+	var names: Array = []
+	for t in CampaignScreen.TOOLBAR:
+		names.append(t[0])
 	for i in names.size():
 		var b: Button = cs.toolbar.get_child(i)
 		await _tap_control(b)
