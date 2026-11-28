@@ -2,8 +2,8 @@ extends TestCase
 
 func test_growth_is_bounded_by_capacity() -> void:
 	var s := new_state()
-	var cid: String = GS.alive_countries(s)[0]
-	var pid: String = GS.owned(s, cid)[0]
+	var cid: String = s["player"]   # a major realm's capital: stable, well-developed province
+	var pid: String = str(s["countries"][cid]["capital"])
 	var p: Dictionary = s["provinces"][pid]
 	var cap := PopulationSystem.pop_cap(s, pid)
 	p["pop"] = cap * 1.4

@@ -249,7 +249,7 @@ static func fight_corruption(s: Dictionary, cid: String) -> Dictionary:
 static func corruption_target(s: Dictionary, cid: String, c: Dictionary) -> float:
 	var pol := politics_of(c)
 	var corr_p: Array = pol.get("corr", [0.08, 0.01])
-	var prov := float(GS.owned(s, cid).size())
+	var prov := float(GS.owned(s, cid).size()) / maxf(1.0, float(Defs.province_scale))   # normalised to the 410-province scale
 	var t := 10.0 + 90.0 * (float(corr_p[0]) + float(corr_p[1]) * prov) * 0.9
 	t += float(EconomySystem.admin_capacity(s, cid)["overextension"]) * 25.0
 	t += (influence(c, "court") - 0.17) * 40.0
