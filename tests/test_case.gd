@@ -31,6 +31,7 @@ static func scenario(id: String) -> Dictionary:
 	return defs.get(id, {})
 
 static func new_state(id: String = "early_modern", player: String = "", difficulty: String = "normal", seed_value: int = 777) -> Dictionary:
+	Defs.use_map_set(Defs.default_map_set)   # isolate from tests that switched the active map set
 	var def := scenario(id)
 	if player == "":
 		player = str(def.get("default_player", ""))

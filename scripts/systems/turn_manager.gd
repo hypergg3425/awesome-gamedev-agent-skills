@@ -81,6 +81,7 @@ static func end_turn(s: Dictionary) -> Dictionary:
 	summary["timing"]["end"] = Time.get_ticks_msec() - _t
 	s["turn"] = int(s["turn"]) + 1
 	GS.rebuild_caches(s)
+	NavalSystem.ensure_fields(s)   # countries created during the turn (civil wars, independence) get the same defaults a loaded save would add
 	GS.quantize(s)
 	GS.save_rng(s)
 	summary["ok"] = true
