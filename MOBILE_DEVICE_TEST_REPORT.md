@@ -30,3 +30,7 @@ Reviewed by eye: campaign HUD, province panel, economy sheet at **800×360, 1024
 
 ## NOT tested
 Install/launch, touch pan/pinch/tap/long-press, back-button/gesture, banner display and adaptive size, UMP consent form and privacy options, banner retry/resume/orientation behaviour, safe areas (notch, gesture bar), frame rate, memory, battery, thermal, low-RAM devices, TalkBack, interruptions (calls, backgrounding) during a save.
+
+
+## v2 integration rebuild (2026-11-28)
+Rebuilt from the merged `v2-dev` (extended map default, AdMob plugin v5.1.0): debug APK **119.6 MB** (export exit 0; `apksigner verify` silent = OK; package `com.imperium.agecrowns`, targetSdk 36, arm64-v8a, manifest AdMob app id `ca-app-pub-1178249482215901~1173982760`) and release AAB **64.1 MB** (throw-away key, `jarsigner` ok). Still **no device/emulator**: nothing was installed or run. Layout was additionally checked by the automated `ui_layout_check` (800×360, 854×393, 1280×720, 1920×1080) and `ui_interaction` (real input events) under Xvfb — these are desktop renderings, not phones.

@@ -22,3 +22,9 @@ Possible reductions (not done): exclude the AdMob plugin's sample/unused ad-form
 
 ## Not measured
 Frame rate, touch latency, map redraw cost on a phone, label overlay cost, save duration on phone storage, battery/thermal.
+
+
+## v2 integration numbers (desktop, shared 4-core machine, from agent measurements and the final run)
+* Mean turn time, `docs/PERFORMANCE_NOTES.md`: world_conquest classic 0.49 s, extended 0.77 s; medieval_europe (136 countries) classic 0.55 s, extended 0.78 s. **Target <0.6 s is met only on the classic map.** The default is now the extended map (feature requirement); phone speed is unknown.
+* Map: mesh vertices 173,844 (extended) vs 142,738 (classic); colour refresh ≈26 ms and overlay draw 4.5–13 ms on extended (software GL, desktop); relief build ≈170 ms.
+* APK 119.6 MB (debug) / AAB 64.1 MB (release).
