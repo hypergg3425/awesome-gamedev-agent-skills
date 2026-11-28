@@ -56,6 +56,8 @@ static func edge_ok(s: Dictionary, pa: String, pb: String, link: String) -> bool
 	var cb: String = b["controller"]
 	if ca == "" or cb == "":
 		return ca == cb or ca == "" or cb == ""
+	if ca == cb and link == "land" and a["owner"] == b["owner"]:
+		return true   # inside one country: no war, embargo or blockade can apply
 	if GS.at_war(s, ca, cb) or GS.at_war(s, a["owner"], b["owner"]):
 		return false
 	if ca != cb:
@@ -72,6 +74,26 @@ static func edge_ok(s: Dictionary, pa: String, pb: String, link: String) -> bool
 
 static func _blockaded_province(s: Dictionary, pid: String) -> bool:
 	return NavalSystem.is_blockaded(s, pid)
+
+## Static graph edges of a province ([neighbour, kind, cost]); the graph only depends on the active map set.
+static var _edge_cache: Dictionary = {}
+static var _edge_cache_set := ""
+
+static func _edges_of(pid: String) -> Array:
+	if _edge_cache_set != Defs.map_set:
+		_edge_cache.clear()
+		_edge_cache_set = Defs.map_set
+	var cached: Variant = _edge_cache.get(pid)
+	if cached != null:
+		return cached
+	var edges: Array = []
+	for nb in Defs.neighbors(pid):
+		edges.append([nb, "land", 1.0])
+	for sl in Defs.sea_links(pid):
+		var cost := 1.0 + float(sl[2]) / 900.0 if sl[1] == "lane" else 1.6
+		edges.append([sl[0], str(sl[1]), cost])
+	_edge_cache[pid] = edges
+	return edges
 
 static func compute(s: Dictionary) -> Dictionary:
 	var ids: Array = Defs.province_ids
@@ -111,12 +133,7 @@ static func compute(s: Dictionary) -> Dictionary:
 		if du > dist[u]:
 			continue
 		var upid: String = ids[u]
-		var edges: Array = []
-		for nb in Defs.neighbors(upid):
-			edges.append([nb, "land", 1.0])
-		for sl in Defs.sea_links(upid):
-			var cost := 1.0 + float(sl[2]) / 900.0 if sl[1] == "lane" else 1.6
-			edges.append([sl[0], str(sl[1]), cost])
+		var edges: Array = _edges_of(upid)
 		var infra := float(Mods.province(s, upid).get("infra", 0.0))
 		for e in edges:
 			var v: int = idx[e[0]]

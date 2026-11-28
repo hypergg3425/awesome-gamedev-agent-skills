@@ -1663,6 +1663,10 @@
 "en": "Urbanisation",
 "tr": "Kentleşme"
 },
+"ED_ADD_OBJECTIVE": {
+"en": "Add a province-count objective for the brush country",
+"tr": "Seçili ülke için eyalet sayısı hedefi ekle"
+},
 "ED_AI": {
 "en": "AI personality",
 "tr": "Yapay zekâ kişiliği"
@@ -1727,6 +1731,10 @@
 "en": "Technology era (0-4)",
 "tr": "Teknoloji çağı (0-4)"
 },
+"ED_ERR_BAD_PROVINCE_NAME": {
+"en": "Unknown province in the name layer: {a}",
+"tr": "Ad katmanında bilinmeyen eyalet: {a}"
+},
 "ED_ERR_DUP_NAME": {
 "en": "Two countries share the name {a}",
 "tr": "İki devlet {a} adını paylaşıyor"
@@ -1743,6 +1751,14 @@
 "en": "At least two countries are required.",
 "tr": "En az iki devlet gerekli."
 },
+"ED_EVENTS": {
+"en": "Historical events",
+"tr": "Tarihî olaylar"
+},
+"ED_EVENTS_NONE": {
+"en": "Events can be toggled when editing a built-in scenario.",
+"tr": "Olaylar yerleşik bir senaryo düzenlenirken açılıp kapatılabilir."
+},
 "ED_EXISTING": {
 "en": "Existing relations",
 "tr": "Mevcut ilişkiler"
@@ -1750,6 +1766,10 @@
 "ED_GOV": {
 "en": "Government",
 "tr": "Hükûmet"
+},
+"ED_HIST_NAMES": {
+"en": "Historical name at the start date",
+"tr": "Başlangıç tarihindeki tarihî ad"
 },
 "ED_LEAVE": {
 "en": "Leave the editor",
@@ -1795,9 +1815,17 @@
 "en": "New country",
 "tr": "Yeni devlet"
 },
+"ED_OBJECTIVES": {
+"en": "Objectives",
+"tr": "Hedefler"
+},
 "ED_OWNED_COUNT": {
 "en": "{n} of {total} provinces assigned",
 "tr": "{total} eyaletin {n} tanesi atandı"
+},
+"ED_PICK_PROVINCE": {
+"en": "Tap a province on the map first.",
+"tr": "Önce haritada bir eyalete dokunun."
 },
 "ED_SAME_COUNTRY": {
 "en": "Choose two different countries.",
@@ -1826,6 +1854,10 @@
 "ED_TAB_COUNTRIES": {
 "en": "Countries",
 "tr": "Devletler"
+},
+"ED_TAB_EXTRAS": {
+"en": "Extras",
+"tr": "Ekstralar"
 },
 "ED_TAB_INFO": {
 "en": "Scenario",
@@ -2223,6 +2255,242 @@
 "en": "Upkeep",
 "tr": "Bakım gideri"
 },
+"EVFX_add_building": {
+"en": "A building is raised",
+"tr": "Bir yapı inşa edilir"
+},
+"EVFX_add_claim": {
+"en": "A territorial claim is gained",
+"tr": "Bir toprak iddiası kazanılır"
+},
+"EVFX_add_core": {
+"en": "The province becomes a core",
+"tr": "Eyalet çekirdek toprak olur"
+},
+"EVFX_add_regiments": {
+"en": "{n} x {x} raised",
+"tr": "{n} x {x} kurulur"
+},
+"EVFX_add_royal": {
+"en": "A child is born to the dynasty",
+"tr": "Hanedana bir çocuk doğar"
+},
+"EVFX_admin": {
+"en": "Administrative points {v}",
+"tr": "İdari puan {v}"
+},
+"EVFX_alliance": {
+"en": "An alliance with the other party",
+"tr": "Karşı tarafla ittifak"
+},
+"EVFX_change_religion_province": {
+"en": "The province changes faith",
+"tr": "Eyalet inancı değişir"
+},
+"EVFX_ci_level": {
+"en": "Counter-intelligence level {v}",
+"tr": "Karşı istihbarat seviyesi {v}"
+},
+"EVFX_civil_war": {
+"en": "Civil war breaks out",
+"tr": "İç savaş çıkar"
+},
+"EVFX_class_sat": {
+"en": "{x} satisfaction {v}",
+"tr": "{x} memnuniyeti {v}"
+},
+"EVFX_corruption": {
+"en": "Corruption {v}",
+"tr": "Yolsuzluk {v}"
+},
+"EVFX_create_vassal": {
+"en": "A province becomes a vassal state",
+"tr": "Bir eyalet tabi devlet olur"
+},
+"EVFX_debt": {
+"en": "Debt {v}",
+"tr": "Borç {v}"
+},
+"EVFX_destroy_building": {
+"en": "A building is lost",
+"tr": "Bir yapı yok olur"
+},
+"EVFX_disband_pct": {
+"en": "Armies shrink {v}%",
+"tr": "Ordular %{v} küçülür"
+},
+"EVFX_eco_phase": {
+"en": "The economy enters a new phase for {turns} turns",
+"tr": "Ekonomi {turns} tur boyunca yeni bir evreye girer"
+},
+"EVFX_faction_loyalty": {
+"en": "{x} loyalty {v}",
+"tr": "{x} sadakati {v}"
+},
+"EVFX_force_government": {
+"en": "The government becomes: {x}",
+"tr": "Hükümet değişir: {x}"
+},
+"EVFX_gold": {
+"en": "Gold {v}",
+"tr": "Altın {v}"
+},
+"EVFX_heir_skill": {
+"en": "Heir skill {v}",
+"tr": "Veliaht yeteneği {v}"
+},
+"EVFX_inflation": {
+"en": "Inflation {v}",
+"tr": "Enflasyon {v}"
+},
+"EVFX_kill_ruler": {
+"en": "The ruler dies",
+"tr": "Hükümdar ölür"
+},
+"EVFX_legitimacy": {
+"en": "Legitimacy {v}",
+"tr": "Meşruiyet {v}"
+},
+"EVFX_manpower": {
+"en": "Manpower {v}",
+"tr": "İnsan gücü {v}"
+},
+"EVFX_pop_pct": {
+"en": "Population {v}%",
+"tr": "Nüfus {v}%"
+},
+"EVFX_prestige": {
+"en": "Prestige {v}",
+"tr": "Prestij {v}"
+},
+"EVFX_province_dev": {
+"en": "Province development {v}",
+"tr": "Eyalet gelişmişliği {v}"
+},
+"EVFX_province_devastation": {
+"en": "Devastation {v}",
+"tr": "Tahribat {v}"
+},
+"EVFX_province_pop_pct": {
+"en": "Province population {v}%",
+"tr": "Eyalet nüfusu {v}%"
+},
+"EVFX_province_unrest": {
+"en": "Unrest {v}",
+"tr": "Huzursuzluk {v}"
+},
+"EVFX_reform_cost_free": {
+"en": "Administrative points +60",
+"tr": "İdari puan +60"
+},
+"EVFX_relation": {
+"en": "Relations with the other party {v}",
+"tr": "Karşı tarafla ilişkiler {v}"
+},
+"EVFX_research_points": {
+"en": "Research points {v}",
+"tr": "Araştırma puanı {v}"
+},
+"EVFX_ruler_health": {
+"en": "Ruler health {v}",
+"tr": "Hükümdarın sağlığı {v}"
+},
+"EVFX_ruler_skill": {
+"en": "Ruler skill {v}",
+"tr": "Hükümdar yeteneği {v}"
+},
+"EVFX_set_opinion_all": {
+"en": "Opinion of you abroad {v}",
+"tr": "Yurtdışında size bakış {v}"
+},
+"EVFX_spawn_army": {
+"en": "A new army is raised with a commander",
+"tr": "Komutanıyla yeni bir ordu kurulur"
+},
+"EVFX_spawn_fleet": {
+"en": "A new fleet is raised",
+"tr": "Yeni bir donanma kurulur"
+},
+"EVFX_spawn_general": {
+"en": "A talented commander joins your army",
+"tr": "Yetenekli bir komutan ordunuza katılır"
+},
+"EVFX_spawn_rebels": {
+"en": "Rebels rise",
+"tr": "İsyancılar ayaklanır"
+},
+"EVFX_spy_network": {
+"en": "Spy network in the other country {v}",
+"tr": "Karşı ülkedeki casus ağı {v}"
+},
+"EVFX_stability": {
+"en": "Stability {v}",
+"tr": "İstikrar {v}"
+},
+"EVFX_stock": {
+"en": "{x} stock {v}",
+"tr": "{x} stoku {v}"
+},
+"EVFX_temp_mod": {
+"en": "For {turns} turns: {x}",
+"tr": "{turns} tur boyunca: {x}"
+},
+"EVFX_transfer_province": {
+"en": "A province changes hands",
+"tr": "Bir eyalet el değiştirir"
+},
+"EVFX_vassalize": {
+"en": "The other party becomes your vassal",
+"tr": "Karşı taraf tabiniz olur"
+},
+"EVFX_war_exhaustion": {
+"en": "War exhaustion {v}",
+"tr": "Savaş yorgunluğu {v}"
+},
+"EVT_CAT_DIPLOMATIC": {
+"en": "Diplomacy",
+"tr": "Diplomasi"
+},
+"EVT_CAT_DISASTER": {
+"en": "Disaster",
+"tr": "Felaket"
+},
+"EVT_CAT_ECONOMIC": {
+"en": "Economy",
+"tr": "Ekonomi"
+},
+"EVT_CAT_FOOD": {
+"en": "Food",
+"tr": "Gıda"
+},
+"EVT_CAT_HISTORICAL": {
+"en": "History",
+"tr": "Tarih"
+},
+"EVT_CAT_MILITARY": {
+"en": "War",
+"tr": "Savaş"
+},
+"EVT_CAT_POLITICAL": {
+"en": "Politics",
+"tr": "Siyaset"
+},
+"EVT_CAT_RELIGIOUS": {
+"en": "Religion",
+"tr": "Din"
+},
+"EVT_CAT_SUCCESSION": {
+"en": "Succession",
+"tr": "Veraset"
+},
+"EVT_CAT_TECH": {
+"en": "Learning",
+"tr": "Bilim"
+},
+"EVT_CAT_UPRISING": {
+"en": "Unrest",
+"tr": "İsyan"
+},
 "EVT_HISTORICAL": {
 "en": "HISTORICAL EVENT",
 "tr": "TARİHÎ OLAY"
@@ -2231,6 +2499,10 @@
 "en": "Decide now",
 "tr": "Şimdi karar ver"
 },
+"EVT_OPTION_LOCKED": {
+"en": "Not available: requirements not met",
+"tr": "Kullanılamaz: koşullar sağlanmıyor"
+},
 "EVT_PENDING": {
 "en": "{n} event(s) await your decision.",
 "tr": "{n} olay kararınızı bekliyor."
@@ -2238,6 +2510,10 @@
 "EVT_RANDOM": {
 "en": "RANDOM EVENT",
 "tr": "RASTGELE OLAY"
+},
+"EVT_RANDOM_NOTE": {
+"en": "A chance event of the game world, not a recorded historical fact.",
+"tr": "Oyun dünyasının rastlantısal bir olayıdır; kayıtlı bir tarihî gerçek değildir."
 },
 "EVT_SOURCE": {
 "en": "Source: {src}",

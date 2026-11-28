@@ -6,6 +6,7 @@ extends Control
 
 const CUSTOM_DIR := "user://custom_scenarios"
 
+var model: ScenarioModel
 var def: Dictionary = {}
 var owners: Dictionary = {}          # province id -> country tag (explicit, editor model)
 var brush := ""
@@ -35,53 +36,16 @@ func _ready() -> void:
 	mapview.fit_world()
 
 func _load_model() -> void:
-	if not EditorState.new_scenario and EditorState.edit_id != "":
-		def = (Defs.all_scenarios().get(EditorState.edit_id, {}) as Dictionary).duplicate(true)
-	if def.is_empty():
-		def = {"id": "custom_%d" % (int(Time.get_unix_time_from_system()) % 100000), "name": {"en": "My Scenario", "tr": "Senaryom"}, "desc": {"en": "A custom scenario.", "tr": "Özel bir senaryo."},
-			"note": {"en": "Custom scenario created in the editor.", "tr": "Düzenleyicide oluşturulmuş özel senaryo."}, "start": {"year": 1500, "month": 1}, "turn_limit": 200,
-			"era": 2, "approximate": true, "native_fallback": true, "countries": {}, "relations": {}, "objectives": [], "default_player": "", "custom": true}
-		var tpl: Dictionary = Defs.all_scenarios().get("early_modern", {})
-		# start from two example countries so that a fresh scenario is immediately valid
-		_add_country("Kingdom A", "A Krallığı", Color("b8242b"), ["fra_ile_de_france", "fra_normandy", "fra_picardy", "fra_champagne"], "fra_ile_de_france")
-		_add_country("Kingdom B", "B Krallığı", Color("2b5fb8"), ["deu_rhineland", "deu_lower_saxony", "deu_hesse_thuringia"], "deu_hesse_thuringia")
-		def["default_player"] = def["countries"].keys()[0]
+	if not EditorState.new_scenario and EditorState.edit_id != "" and Defs.all_scenarios().has(EditorState.edit_id):
+		model = ScenarioModel.from_def(Defs.all_scenarios()[EditorState.edit_id])
 	else:
-		def["custom"] = true
-		# expand glob patterns into the explicit ownership model
-		for cid in def["countries"]:
-			for pat in def["countries"][cid].get("provinces", []):
-				var ps := str(pat)
-				var neg := ps.begins_with("-")
-				if neg:
-					ps = ps.substr(1)
-				for pid in Defs.province_ids:
-					if Util.glob_match(ps, pid):
-						if neg:
-							if owners.get(pid, "") == cid:
-								owners.erase(pid)
-						else:
-							owners[pid] = cid
-	for cid in def["countries"]:
-		for pid in def["countries"][cid].get("provinces", []):
-			if Defs.provinces.has(pid) and not owners.has(pid):
-				owners[pid] = cid
-	brush = str(def.get("default_player", ""))
-	if brush == "" and not def["countries"].is_empty():
-		brush = def["countries"].keys()[0]
+		model = ScenarioModel.blank()
+	def = model.def
+	owners = model.owners
+	brush = model.default_brush()
 
 func _add_country(en: String, tr: String, col: Color, provs: Array, capital: String) -> String:
-	var n := (def["countries"] as Dictionary).size() + 1
-	var tag := "C%02d" % n
-	while def["countries"].has(tag):
-		n += 1
-		tag = "C%02d" % n
-	def["countries"][tag] = {"name": {"en": en, "tr": tr}, "short": {"en": en, "tr": tr}, "color": "#" + col.to_html(false), "flag": {"p": "hstripes", "c": ["#" + col.to_html(false), "#f2f2f2"], "charge": "star"},
-		"culture": "latin", "religion": "catholic", "gov": "feudal_kingdom", "ruler": {"name": "Ruler", "adm": 5, "dip": 5, "mil": 5, "age": 35, "dynasty": ""},
-		"capital": capital, "provinces": provs, "civ": "average", "military": "medium", "ai": "opportunistic", "playable": true}
-	for p in provs:
-		owners[p] = tag
-	return tag
+	return model.add_country(en, tr, col, provs, capital)
 
 ## --- UI ----------------------------------------------------------------------------------------------------
 func _build_ui() -> void:
@@ -123,7 +87,7 @@ func _build_ui() -> void:
 	sheet = Sheet.new("MENU_EDITOR", "editor")
 	sheet.custom_minimum_size = Vector2(clampf(get_viewport_rect().size.x * 0.42, 340.0, 560.0), 0)
 	sheet.find_child("CloseButton", true, false).visible = false
-	for t in [["info", "ED_TAB_INFO", _tab_info], ["countries", "ED_TAB_COUNTRIES", _tab_countries], ["map", "ED_TAB_MAP", _tab_map], ["relations", "ED_TAB_RELATIONS", _tab_relations]]:
+	for t in [["info", "ED_TAB_INFO", _tab_info], ["countries", "ED_TAB_COUNTRIES", _tab_countries], ["map", "ED_TAB_MAP", _tab_map], ["relations", "ED_TAB_RELATIONS", _tab_relations], ["extras", "ED_TAB_EXTRAS", _tab_extras]]:
 		sheet.add_tab(t[0], t[1], t[2])
 	h.add_child(sheet)
 	sheet.refresh()
@@ -291,13 +255,75 @@ func _sum_regiments(c: Dictionary) -> int:
 	return n if c.has("armies") else {"low": 6, "medium": 10, "high": 18}.get(str(c.get("military", "medium")), 10)
 
 func _set_regiments(c: Dictionary, n: int) -> void:
-	if n <= 0:
-		c["armies"] = []
-		return
-	var loc: String = str(c.get("capital", ""))
-	if loc == "":
-		return
-	c["armies"] = [{"loc": loc, "units": {"spearmen": float(n)}}]
+	model.set_regiments(_tag_of(c), n)
+
+func _tag_of(c: Dictionary) -> String:
+	for t in def["countries"]:
+		if def["countries"][t] == c:
+			return str(t)
+	return ""
+
+func _tab_extras(b: VBoxContainer) -> void:
+	# historical names of the selected province (province_names layer)
+	var nb := Sheet.card(b)
+	Sheet.header(nb, Loc.t("ED_HIST_NAMES"))
+	if selected_province == "":
+		nb.add_child(UI.label(Loc.t("ED_PICK_PROVINCE"), "Small", -1, true))
+	else:
+		var pn: Dictionary = def.get("province_names", {}).get(selected_province, {})
+		nb.add_child(UI.label(Defs.province_name(selected_province), "Sub"))
+		var names := [str(pn.get("en", "")), str(pn.get("tr", ""))]
+		_line(nb, "ED_NAME_EN", names[0], func(x: String) -> void:
+			names[0] = x
+			model.set_province_name(selected_province, names[0], names[1]))
+		_line(nb, "ED_NAME_TR", names[1], func(x: String) -> void:
+			names[1] = x
+			model.set_province_name(selected_province, names[0], names[1]))
+	# objectives
+	var ob := Sheet.card(b)
+	Sheet.header(ob, Loc.t("ED_OBJECTIVES"))
+	var objs: Array = def["objectives"]
+	for i in objs.size():
+		var idx := i
+		var h := HBoxContainer.new()
+		var l := UI.label(Loc.tx(objs[i].get("name", {})), "Small")
+		l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		h.add_child(l)
+		h.add_child(UI.icon_button("cross", func() -> void:
+			objs.remove_at(idx)
+			sheet.refresh(), "", 40.0))
+		ob.add_child(h)
+	ob.add_child(UI.button(Loc.t("ED_ADD_OBJECTIVE"), func() -> void:
+		if brush == "":
+			return
+		var n := maxi(2, model.provinces_of(brush).size() + 3)
+		model.add_objective({"id": "obj_%d" % (objs.size() + 1), "type": "provinces_count", "count": n, "by_turn": int(def["turn_limit"]) / 2, "score": 200,
+			"name": {"en": "Reach %d provinces" % n, "tr": "%d eyalete ulaş" % n}, "desc": {"en": "Hold %d provinces." % n, "tr": "%d eyalete sahip ol." % n}})
+		sheet.refresh(), "", "plus"))
+	# events of the scenario it was derived from
+	var eb := Sheet.card(b)
+	Sheet.header(eb, Loc.t("ED_EVENTS"))
+	var active: Array = def.get("events", [])
+	var shown := 0
+	for eid in Util.sorted_keys(Defs.events):
+		var e: Dictionary = Defs.events[eid]
+		if not e.get("historical", false) or EditorState.edit_id == "" or EditorState.edit_id not in e.get("trigger", {}).get("scenarios", []):
+			continue
+		var cb := CheckBox.new()
+		cb.text = Loc.tx(e["title"])
+		cb.button_pressed = eid in active
+		var ev_id: String = eid
+		cb.toggled.connect(func(on: bool) -> void:
+			var cur: Array = def.get("events", [])
+			if on and ev_id not in cur:
+				cur.append(ev_id)
+			elif not on:
+				cur.erase(ev_id)
+			model.set_events(cur))
+		eb.add_child(cb)
+		shown += 1
+	if shown == 0:
+		eb.add_child(UI.label(Loc.t("ED_EVENTS_NONE"), "Small", -1, true))
 
 func _tab_relations(b: VBoxContainer) -> void:
 	var tags: Array = def["countries"].keys()
@@ -384,36 +410,12 @@ func _on_province(pid: String) -> void:
 	sheet.refresh()
 
 func _assign(pid: String, tag: String, refresh: bool = true) -> void:
-	var prev: String = owners.get(pid, "")
-	if prev != "" and prev == tag:
-		return
-	# the previous owner loses the province; invalid capitals are repaired
-	if tag == "":
-		owners.erase(pid)
-	else:
-		owners[pid] = tag
-	if prev != "" and def["countries"].has(prev) and def["countries"][prev].get("capital", "") == pid:
-		def["countries"][prev]["capital"] = ""
-		for p2 in owners:
-			if owners[p2] == prev:
-				def["countries"][prev]["capital"] = p2
-				break
-	if tag != "" and def["countries"][tag].get("capital", "") == "":
-		def["countries"][tag]["capital"] = pid
+	model.assign(pid, tag)
 	if refresh:
 		_refresh_map()
 
 func _sync_def() -> void:
-	for tag in def["countries"]:
-		var lst: Array = []
-		for pid in owners:
-			if owners[pid] == tag:
-				lst.append(pid)
-		lst.sort()
-		def["countries"][tag]["provinces"] = lst
-		if (def["countries"][tag].get("armies", []) as Array).size() > 0:
-			for a in def["countries"][tag]["armies"]:
-				a["loc"] = def["countries"][tag].get("capital", a["loc"])
+	model.sync()
 
 func _refresh_map() -> void:
 	_sync_def()
@@ -456,37 +458,18 @@ func _validate_dialog() -> void:
 		box.add_child(l)
 
 func _full_validate() -> Array:
-	var errs: Array = ScenarioLoader.validate(def)
-	if def["countries"].size() < 2:
-		errs.append("ED_ERR_TWO_COUNTRIES")
-	if str(def.get("default_player", "")) not in def["countries"]:
-		errs.append("ED_ERR_NO_PLAYER")
-	var seen_names := {}
-	for t in def["countries"]:
-		var nm := str(def["countries"][t]["name"]["en"])
-		if nm.strip_edges() == "":
-			errs.append("ED_ERR_EMPTY_NAME:" + t)
-		if seen_names.has(nm):
-			errs.append("ED_ERR_DUP_NAME:" + nm)
-		seen_names[nm] = true
-	return errs
+	return model.validate()
 
 func _save() -> void:
 	_sync_def()
-	var errs := _full_validate()
-	if not errs.is_empty():
-		_validate_dialog()
+	var r := model.save()
+	if not r["ok"]:
+		if (r["errors"] as Array).has("SAVE_ERR_WRITE"):
+			Dialogs.info(self, Loc.t("ERR_GENERIC"), Loc.t("SAVE_ERR_WRITE"))
+		else:
+			_validate_dialog()
 		return
-	DirAccess.make_dir_recursive_absolute(CUSTOM_DIR)
-	def["id"] = str(def["id"]).replace(" ", "_")
-	var out := def.duplicate(true)
-	out.erase("custom")
-	var f := FileAccess.open("%s/%s.json" % [CUSTOM_DIR, def["id"]], FileAccess.WRITE)
-	if f == null:
-		Dialogs.info(self, Loc.t("ERR_GENERIC"), Loc.t("SAVE_ERR_WRITE"))
-		return
-	f.store_string(JSON.stringify(out, "  "))
-	f.close()
+	def["id"] = str(r["id"])
 	_set_status(Loc.t("ED_SAVED"))
 	Audio.sfx("ui_confirm")
 
@@ -496,7 +479,7 @@ func _test_play() -> void:
 		_validate_dialog()
 		return
 	_save()
-	var out := def.duplicate(true)
+	var out := model.export()
 	out["custom"] = true
 	Defs.scenarios[str(def["id"])] = out
 	var r: Dictionary = Game.new_game(str(def["id"]), str(def["default_player"]), "normal", 0)

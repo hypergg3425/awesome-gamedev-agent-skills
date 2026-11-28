@@ -4,6 +4,12 @@ extends RefCounted
 ## event is hard-coded in gameplay scripts. Historical events are flagged and shown differently
 ## from randomly generated ones.
 
+## Effect types interpreted by apply_effect (extended ones live in EventExt.NEW_EFFECT_TYPES).
+const KNOWN_EFFECTS := ["gold", "manpower", "stability", "legitimacy", "prestige", "admin", "inflation", "debt", "stock", "set_flag", "clear_flag", "temp_mod",
+	"class_sat", "pop_pct", "province_unrest", "province_pop_pct", "province_devastation", "province_dev", "add_building", "destroy_building", "ruler_skill",
+	"kill_ruler", "spawn_rebels", "relation", "research_points", "add_claim", "trigger_event", "disband_pct", "add_regiments", "war_exhaustion",
+	"reform_cost_free", "change_religion_province", "faction_loyalty", "corruption"]
+
 static func _cond(s: Dictionary, cid: String, c: Dictionary, cond: Dictionary, pid: String = "") -> bool:
 	var v: Variant = cond.get("value", 0)
 	var t: String = cond.get("type", "")
@@ -63,6 +69,8 @@ static func _cond(s: Dictionary, cid: String, c: Dictionary, cond: Dictionary, p
 		"bankrupt_recently": return int(cc["bankrupt_turns"]) > 0
 		"heir_missing": return cc["heir"] == null
 		"capital_coastal": return Defs.provinces.get(cc["capital"], {}).get("coastal", false)
+	if t in EventExt.NEW_COND_TYPES:
+		return EventExt.cond(s, cid, t, cond)
 	return FactionsSystem.event_cond(s, cid, t, cond)
 
 static func flag_active(s: Dictionary, cc: Dictionary, flag: String) -> bool:
@@ -258,7 +266,7 @@ static func apply_effect(s: Dictionary, entry: Dictionary, fx: Dictionary) -> vo
 	var c: Dictionary = s["countries"][cid]
 	var v: Variant = fx.get("value", 0)
 	var rng := GS.rng_of(s)
-	if FactionsSystem.event_effect(s, cid, str(fx.get("type", "")), fx):
+	if FactionsSystem.event_effect(s, cid, str(fx.get("type", "")), fx) or EventExt.effect(s, entry, str(fx.get("type", "")), fx):
 		return
 	match fx.get("type", ""):
 		"gold": c["gold"] = float(c["gold"]) + float(v)

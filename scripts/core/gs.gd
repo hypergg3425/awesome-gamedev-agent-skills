@@ -252,21 +252,24 @@ static func quantize(v: Variant) -> Variant:
 		return snappedf(v, 0.000001)
 	if v is Dictionary:
 		var d: Dictionary = v
-		for k in d.keys():
-			if k == "_c":
-				continue
+		for k in d:
 			var x: Variant = d[k]
 			if x is float:
-				d[k] = snappedf(x, 0.000001)
+				var q := snappedf(x, 0.000001)
+				if q != x:
+					d[k] = q
 			elif x is Dictionary or x is Array:
-				quantize(x)
+				if k != "_c":
+					quantize(x)
 		return d
 	if v is Array:
 		var a: Array = v
 		for i in a.size():
 			var x: Variant = a[i]
 			if x is float:
-				a[i] = snappedf(x, 0.000001)
+				var q := snappedf(x, 0.000001)
+				if q != x:
+					a[i] = q
 			elif x is Dictionary or x is Array:
 				quantize(x)
 		return a

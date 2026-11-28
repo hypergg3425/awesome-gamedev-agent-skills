@@ -354,25 +354,29 @@ static func change_government(s: Dictionary, cid: String, to: String) -> Diction
 		if o["to"] == to:
 			if not o["ok"]:
 				return {"ok": false, "reason": o["reason"]}
-			var c: Dictionary = s["countries"][cid]
-			var old_gov: String = c["gov"]
-			c["admin"] = float(c["admin"]) - float(o["cost_admin"])
-			c["gov"] = to
-			c["stability"] = maxf(0.0, float(c["stability"]) - float(o["stability_hit"]))
-			c["legitimacy"] = float(Defs.governments[to].get("legit_start", 60)) if float(Defs.governments[to].get("legit_start", 60)) > 0.0 else 65.0
-			c["election_turn"] = s["turn"]
-			# reforms limited to the old government are lost
-			var keep: Array = []
-			for rid in c["reforms"]:
-				var govs: Array = Defs.reforms[rid]["governments"]
-				if govs.is_empty() or to in govs:
-					keep.append(rid)
-			c["reforms"] = keep
-			FactionsSystem.on_government_change(s, cid, old_gov, to)
-			DynastySystem.st(c)["law"] = DynastySystem.law_of(to)
-			DynastySystem.init_country(s, cid)
-			Mods.invalidate(s)
-			GS.note(s, cid, "politics", "NOTE_GOV_CHANGED", {"gov": to})
-			GS.history(s, cid, "politics", "HIST_GOV_CHANGED", {"gov": to})
-			return {"ok": true}
+			return apply_government_change(s, cid, to, float(o["cost_admin"]), float(o["stability_hit"]))
 	return {"ok": false, "reason": "ERR_INVALID"}
+
+## The change itself, without the eligibility checks (events and revolutions impose it).
+static func apply_government_change(s: Dictionary, cid: String, to: String, cost_admin: float, stability_hit: float) -> Dictionary:
+	var c: Dictionary = s["countries"][cid]
+	var old_gov: String = c["gov"]
+	c["admin"] = float(c["admin"]) - cost_admin
+	c["gov"] = to
+	c["stability"] = maxf(0.0, float(c["stability"]) - stability_hit)
+	c["legitimacy"] = float(Defs.governments[to].get("legit_start", 60)) if float(Defs.governments[to].get("legit_start", 60)) > 0.0 else 65.0
+	c["election_turn"] = s["turn"]
+	# reforms limited to the old government are lost
+	var keep: Array = []
+	for rid in c["reforms"]:
+		var govs: Array = Defs.reforms[rid]["governments"]
+		if govs.is_empty() or to in govs:
+			keep.append(rid)
+	c["reforms"] = keep
+	FactionsSystem.on_government_change(s, cid, old_gov, to)
+	DynastySystem.st(c)["law"] = DynastySystem.law_of(to)
+	DynastySystem.init_country(s, cid)
+	Mods.invalidate(s)
+	GS.note(s, cid, "politics", "NOTE_GOV_CHANGED", {"gov": to})
+	GS.history(s, cid, "politics", "HIST_GOV_CHANGED", {"gov": to})
+	return {"ok": true}

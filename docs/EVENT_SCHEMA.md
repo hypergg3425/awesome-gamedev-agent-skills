@@ -6,6 +6,7 @@
   "category": "food",          // political | succession | economic | food | diplomatic | religious | military | uprising | disaster | tech | historical
   "historical": false,         // true => tied to a real dated event; false => randomly generated (the UI labels these differently)
   "source": "",                // REQUIRED for historical events: short citation (e.g. "Battle of Hastings, 14 Oct 1066")
+  "reference": "",             // optional (used by all newer historical events): book / chronicle behind the source; shown in the dialog
   "title": {"en": "...", "tr": "..."},
   "text":  {"en": "...", "tr": "..."},     // placeholders: {country} {ruler} {province} {other}
   "image": "famine",           // illustration key (see list)
@@ -55,3 +56,25 @@ Country: `gold` `manpower` `stability` `legitimacy` `prestige` `admin` `inflatio
 `ruler_skill` {skill, value} · `kill_ruler` · `spawn_rebels` {size} · `relation` {target: random_neighbor|enemy|tag id, value} ·
 `research_points` {value} · `add_claim` {target: tag, province?} · `trigger_event` {id} · `disband_pct` {value} · `add_regiments` {unit, n} ·
 `change_religion_province` {value} · `war_exhaustion` {value} · `reform_cost_free` (grants +60 admin)
+
+## Extended conditions (EventExt, v2.0 workstream G)
+`spy_levels_at_least` {value} (sum of the country's spy-network levels) · `ci_level_at_least` {value} · `eco_phase_is` {phase: normal|boom|slump|crisis} ·
+`heir_exists` · `royals_below` {value} · `is_hereditary` · `has_general` · `vassals_at_least` {value} · `naval_regiments_at_least` {value} ·
+`faction_loyalty_between` {faction, min, max}
+
+## Extended effects (EventExt)
+`transfer_province` {direction: give|take, target: other|tag, province?, core?} (never a capital; the giver keeps at least one province) ·
+`create_vassal` {name?: {en,tr}, province?} (the event province or the most restless non-capital province becomes a vassal state; needs 4+ provinces) ·
+`vassalize` {target: other|tag} · `spawn_general` {mil?, trait?, naval?} (replaces the weakest commander of the matching army type) ·
+`spawn_army` {class: infantry|cavalry|artillery..., n} · `spawn_fleet` {n} (coastal province) · `ruler_health` {value} · `add_royal` {rel?, sex?} ·
+`heir_skill` {skill, value} · `ci_level` {value} · `spy_network` {target, value} · `eco_phase` {phase, turns} ·
+`force_government` {to} (needs a government transition from the current form; no tech or admin requirement, 60% of the stability cost) ·
+`civil_war` {faction, reason?} · `alliance` {target} · `add_core` {province?} · `set_opinion_all` {value}.
+`target: "other"` is the neighbouring country chosen when the event fires (`{other}` in the text). Effects that cannot apply (no neighbour, too
+small a realm) are skipped silently, so every option should also carry at least one effect that always applies.
+
+## Presentation
+The event dialog shows the category and a RANDOM / HISTORICAL label, the illustration, the text, the source (+reference) for historical events
+(a "chance event" note for random ones), and for every option the `tip` plus an automatically generated, colour-coded consequence list
+(`EventExt.describe`, keys `EVFX_<type>`, EN+TR). Illustrations: `image` is looked up as `assets/illustrations/ev_<image>.png`; keys without art
+fall back via `EventDialog.IMAGE_FALLBACK` (siege -> battle, treaty -> diplomacy, ship -> harbor, ...), and events without `image` use their category.

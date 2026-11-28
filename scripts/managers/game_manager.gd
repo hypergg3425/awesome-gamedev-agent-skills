@@ -17,10 +17,14 @@ var last_summary: Dictionary = {}
 var selected_province := ""
 var selected_army := ""
 var in_campaign := false
+var turn_busy := false
 
 ## Android back button / gesture. Screens may define on_back_requested(); otherwise sub-screens return
 ## to the main menu and the main menu quits.
 func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_PAUSED or what == NOTIFICATION_WM_CLOSE_REQUEST:
+		lifecycle_autosave()
+		return
 	if what != NOTIFICATION_WM_GO_BACK_REQUEST:
 		return
 	var scene := get_tree().current_scene
@@ -32,6 +36,23 @@ func _notification(what: int) -> void:
 		get_tree().quit()
 	else:
 		Nav.go(get_tree(), "menu")
+
+## Autosave when the app is backgrounded or closed. Never while a turn is being resolved (the state would be
+## half-updated) and never for a finished game. Returns true when a file was written.
+func lifecycle_autosave() -> bool:
+	if not in_campaign or state.is_empty() or turn_busy or bool(state.get("game_over", false)):
+		return false
+	if not bool(Settings.get_value("autosave")):
+		return false
+	return bool(Saves.autosave_quick(_state_for_save()).get("ok", false))
+
+## The hot-seat seat is persisted in the save so a mid-turn load resumes with the right player.
+func _state_for_save() -> Dictionary:
+	if hotseat_index > 0:
+		state["hotseat_index"] = hotseat_index
+	else:
+		state.erase("hotseat_index")
+	return state
 
 func has_state() -> bool:
 	return not state.is_empty()
@@ -72,8 +93,9 @@ func load_game(slot: String) -> Dictionary:
 	if not r["ok"]:
 		return r
 	state = r["state"]
-	hotseat_index = 0
-	active_player = state["player"]
+	hotseat_index = clampi(int(state.get("hotseat_index", 0)), 0, maxi(0, state["players"].size() - 1))
+	state.erase("hotseat_index")
+	active_player = state["players"][hotseat_index] if state["players"].size() > 1 else state["player"]
 	in_campaign = true
 	selected_province = ""
 	selected_army = ""
@@ -83,7 +105,7 @@ func load_game(slot: String) -> Dictionary:
 func save_game(slot: String) -> Dictionary:
 	if state.is_empty():
 		return {"ok": false, "reason": "ERR_INVALID"}
-	return Saves.save_slot(slot, state)
+	return Saves.save_slot(slot, _state_for_save())
 
 func quit_to_menu() -> void:
 	in_campaign = false
@@ -122,14 +144,17 @@ func end_turn() -> Dictionary:
 		selected_army = ""
 		state_changed.emit()
 		return {"ok": true, "passed": true}
+	turn_busy = true
 	var summary := TurnManager.end_turn(state)
+	turn_busy = false
 	hotseat_index = 0
+	state.erase("hotseat_index")
 	active_player = state["player"] if state["players"].size() <= 1 else state["players"][0]
 	last_summary = summary
 	for aid in Achievements.check(state):
 		achievement_unlocked.emit(aid)
 	if bool(Settings.get_value("autosave")) and not bool(state.get("game_over", false)):
-		Saves.autosave(state)
+		Saves.autosave(_state_for_save())
 	turn_ended.emit(summary)
 	state_changed.emit()
 	if bool(state.get("game_over", false)):

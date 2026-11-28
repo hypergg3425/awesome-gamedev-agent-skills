@@ -13,7 +13,7 @@ Method: every claim in the older documents was compared with the source, data an
 | 6 | Loader invents generic native states for unclaimed regions | **CONFIRMED** (table below). `ScenarioLoader` builds `NAT_*` "<Region> Peoples" tribal confederations. |
 | 7 | Naval combat simplified | **CONFIRMED.** Not changed. |
 | 8 | Editor cannot import map geometry | **CONFIRMED** (`scenario_editor.gd` header says imports are future work). |
-| 9 | Hotseat has limited automated coverage | **WRONG — it had none.** No test referenced hotseat. Now `t_hotseat` (19 checks: device-pass order, one turn resolution, per-player commands, save/load of the player list). Known limitation: loading a save always restarts with the first player. |
+| 9 | Hotseat has limited automated coverage | **WRONG — it had none.** No test referenced hotseat. Now `t_hotseat` (19 checks: device-pass order, one turn resolution, per-player commands, save/load of the player list). The old limitation (a load restarted at the first player) is fixed: the seat is saved as `hotseat_index` (`t_save2`). |
 | 10 | No online multiplayer | **CONFIRMED.** Future work; not claimed. |
 | 11 | Real-device UX unverified | **CONFIRMED, still unverified.** |
 | 12 | APK/AAB unverified | **PARTLY FIXED.** Android SDK/NDK/templates installed in the authoring environment; a debug APK (114.8 MB) and a release AAB (59.5 MB, signed with a throw-away key) were really exported and statically inspected (see MOBILE_DEVICE_TEST_REPORT.md). Never installed or run. |
@@ -52,7 +52,6 @@ Economy, trade graph, population/classes, construction, 92 technologies, 43 unit
 * `diplomacy_system.gd` (1,064 lines), `ai_system.gd` (944), `military_system.gd` (853) are large; no splitting done.
 * 24 hard-coded `Vector2(≥100, …)` sizes remain in UI scripts. Layout survives all tested aspect ratios because the project uses `canvas_items` stretch with `expand` (virtual 1280×720 scaled uniformly), not because panels are fully fluid; very small physical screens get small text.
 * `AudioManager._stream` mutates the `loop` flag on a shared cached resource (name|loop keys share one Resource) — harmless today (music loops, SFX do not) but fragile.
-* Hotseat load restarts at player 1.
 * AI "force" difficulty knob scales how large an army the AI *wants* (still limited by its real manpower/gold); not an economic bonus, but it is a behavioural multiplier worth knowing about.
 
 ## 6. Performance risks
