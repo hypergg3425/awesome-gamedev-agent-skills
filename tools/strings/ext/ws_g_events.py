@@ -62,4 +62,12 @@ ENTRIES = [
 ("EVFX_alliance", "An alliance with the other party", "Karşı tarafla ittifak"),
 ("EVFX_add_core", "The province becomes a core", "Eyalet çekirdek toprak olur"),
 ("EVFX_set_opinion_all", "Opinion of you abroad {v}", "Yurtdışında size bakış {v}"),
+("ED_TAB_EXTRAS", "Extras", "Ekstralar"),
+("ED_HIST_NAMES", "Historical name at the start date", "Başlangıç tarihindeki tarihî ad"),
+("ED_PICK_PROVINCE", "Tap a province on the map first.", "Önce haritada bir eyalete dokunun."),
+("ED_OBJECTIVES", "Objectives", "Hedefler"),
+("ED_ADD_OBJECTIVE", "Add a province-count objective for the brush country", "Seçili ülke için eyalet sayısı hedefi ekle"),
+("ED_EVENTS", "Historical events", "Tarihî olaylar"),
+("ED_EVENTS_NONE", "Events can be toggled when editing a built-in scenario.", "Olaylar yerleşik bir senaryo düzenlenirken açılıp kapatılabilir."),
+("ED_ERR_BAD_PROVINCE_NAME", "Unknown province in the name layer: {a}", "Ad katmanında bilinmeyen eyalet: {a}"),
 ]

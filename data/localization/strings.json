@@ -1663,6 +1663,10 @@
 "en": "Urbanisation",
 "tr": "Kentleşme"
 },
+"ED_ADD_OBJECTIVE": {
+"en": "Add a province-count objective for the brush country",
+"tr": "Seçili ülke için eyalet sayısı hedefi ekle"
+},
 "ED_AI": {
 "en": "AI personality",
 "tr": "Yapay zekâ kişiliği"
@@ -1727,6 +1731,10 @@
 "en": "Technology era (0-4)",
 "tr": "Teknoloji çağı (0-4)"
 },
+"ED_ERR_BAD_PROVINCE_NAME": {
+"en": "Unknown province in the name layer: {a}",
+"tr": "Ad katmanında bilinmeyen eyalet: {a}"
+},
 "ED_ERR_DUP_NAME": {
 "en": "Two countries share the name {a}",
 "tr": "İki devlet {a} adını paylaşıyor"
@@ -1743,6 +1751,14 @@
 "en": "At least two countries are required.",
 "tr": "En az iki devlet gerekli."
 },
+"ED_EVENTS": {
+"en": "Historical events",
+"tr": "Tarihî olaylar"
+},
+"ED_EVENTS_NONE": {
+"en": "Events can be toggled when editing a built-in scenario.",
+"tr": "Olaylar yerleşik bir senaryo düzenlenirken açılıp kapatılabilir."
+},
 "ED_EXISTING": {
 "en": "Existing relations",
 "tr": "Mevcut ilişkiler"
@@ -1750,6 +1766,10 @@
 "ED_GOV": {
 "en": "Government",
 "tr": "Hükûmet"
+},
+"ED_HIST_NAMES": {
+"en": "Historical name at the start date",
+"tr": "Başlangıç tarihindeki tarihî ad"
 },
 "ED_LEAVE": {
 "en": "Leave the editor",
@@ -1795,9 +1815,17 @@
 "en": "New country",
 "tr": "Yeni devlet"
 },
+"ED_OBJECTIVES": {
+"en": "Objectives",
+"tr": "Hedefler"
+},
 "ED_OWNED_COUNT": {
 "en": "{n} of {total} provinces assigned",
 "tr": "{total} eyaletin {n} tanesi atandı"
+},
+"ED_PICK_PROVINCE": {
+"en": "Tap a province on the map first.",
+"tr": "Önce haritada bir eyalete dokunun."
 },
 "ED_SAME_COUNTRY": {
 "en": "Choose two different countries.",
@@ -1826,6 +1854,10 @@
 "ED_TAB_COUNTRIES": {
 "en": "Countries",
 "tr": "Devletler"
+},
+"ED_TAB_EXTRAS": {
+"en": "Extras",
+"tr": "Ekstralar"
 },
 "ED_TAB_INFO": {
 "en": "Scenario",
