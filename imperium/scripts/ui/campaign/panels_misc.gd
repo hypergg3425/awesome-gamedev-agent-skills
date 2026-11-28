@@ -5,6 +5,7 @@ extends RefCounted
 static func build(sheet: Sheet, screen: CampaignScreen) -> void:
 	sheet.add_tab("population", "TAB_POPULATION", func(b: VBoxContainer) -> void: _population(b, screen))
 	sheet.add_tab("stability", "TAB_STABILITY", func(b: VBoxContainer) -> void: _stability(b, screen))
+	PanelsFactions.add_tabs(sheet, screen)
 
 static func _population(b: VBoxContainer, screen: CampaignScreen) -> void:
 	var s: Dictionary = Game.state

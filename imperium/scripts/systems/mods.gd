@@ -3,6 +3,10 @@ extends RefCounted
 ## Aggregated modifiers. National modifiers come from government, technology, reforms, ruler,
 ## traditions, stability and temporary event effects. Province modifiers come from buildings.
 
+## Building effects that also act nationally, with a soft cap on the summed value (diminishing returns).
+const NATIONAL := {"general_skill": 2.0, "morale": 0.10, "legit": 0.5, "overextension": -0.20, "prestige": 0.8, "recruit_cost": -0.20,
+	"religion_unity": 0.30, "naval_transport": 0.20, "credit": 0.5, "interest": -0.25, "spy_net": 0.5, "counter_intel": 0.5, "coup_guard": 0.5}
+
 static func _add(into: Dictionary, src: Dictionary, mult: float = 1.0) -> void:
 	for k in src:
 		var v: Variant = src[k]
@@ -31,11 +35,13 @@ static func country(s: Dictionary, cid: String) -> Dictionary:
 		_add(m, r.get("advantages", {}))
 		_add(m, r.get("disadvantages", {}))
 	_add(m, c.get("mods", {}))
+	_add(m, DoctrineSystem.mods_of(s, c))
 	for tm in c.get("temp_mods", []):
 		if int(tm.get("until", 0)) >= int(s["turn"]):
 			_add(m, tm.get("mods", {}))
-	# ruler
-	var ru: Dictionary = c.get("ruler", {})
+	_add_national_buildings(s, cid, m)
+	# ruler (a regent governs for minors and incapacitated rulers)
+	var ru: Dictionary = DynastySystem.effective_ruler(c)
 	var adm := float(ru.get("adm", 5)) - 5.0
 	var dip := float(ru.get("dip", 5)) - 5.0
 	var mil := float(ru.get("mil", 5)) - 5.0
@@ -61,6 +67,31 @@ static func country(s: Dictionary, cid: String) -> Dictionary:
 	# overlord relation: vassals pay tribute handled in economy
 	cache[cid] = m
 	return m
+
+static func _add_national_buildings(s: Dictionary, cid: String, m: Dictionary) -> void:
+	var sums := {}
+	for pid in GS.owned(s, cid):
+		var p: Dictionary = s["provinces"][pid]
+		if p["controller"] != cid:
+			continue
+		for bid in p["buildings"]:
+			var eff: Dictionary = Defs.buildings.get(bid, {}).get("effects", {})
+			for k in NATIONAL:
+				if eff.has(k):
+					sums[k] = float(sums.get(k, 0.0)) + float(eff[k]) * float(p["buildings"][bid])
+	for k in sums:
+		var cap: float = NATIONAL[k]
+		var v: float = float(sums[k])
+		m[k] = float(m.get(k, 0.0)) + cap * (1.0 - exp(-v / cap))
+
+## Total national granary capacity from buildings (food storage).
+static func granary_total(s: Dictionary, cid: String) -> float:
+	var t := 0.0
+	for pid in GS.owned(s, cid):
+		var lv := int(s["provinces"][pid]["buildings"].get("granary", 0))
+		if lv > 0:
+			t += float(Defs.buildings["granary"]["effects"]["granary"]) * float(lv)
+	return t
 
 static func get_mod(s: Dictionary, cid: String, key: String) -> float:
 	return float(country(s, cid).get(key, 0.0))

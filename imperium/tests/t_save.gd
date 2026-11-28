@@ -62,9 +62,11 @@ func test_corruption_is_detected_and_backup_recovers() -> void:
 	ok(l["ok"] and l.get("recovered", false), "falls back to the backup")
 	ok(FileAccess.file_exists(Saves.slot_path("t_corrupt") + ".corrupt"), "corrupt file is kept, not silently discarded")
 	# both broken -> explicit failure
-	var f2 := FileAccess.open(Saves.slot_path("t_corrupt") + ".bak", FileAccess.WRITE)
-	f2.store_string("garbage")
-	f2.close()
+	ok(Saves.load_slot("t_corrupt")["ok"], "recovery healed the main file")
+	for suffix in ["", ".bak"]:
+		var f2 := FileAccess.open(Saves.slot_path("t_corrupt") + suffix, FileAccess.WRITE)
+		f2.store_string("garbage")
+		f2.close()
 	var l2: Dictionary = Saves.load_slot("t_corrupt")
 	ok(not l2["ok"], "unrecoverable save reports failure")
 	ok(str(l2["reason"]).begins_with("SAVE_ERR"), "with an error key")

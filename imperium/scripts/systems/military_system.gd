@@ -13,22 +13,20 @@ static func create_army(s: Dictionary, cid: String, loc: String, units: Dictiona
 	for uid in units:
 		if not bool(Defs.units[uid]["naval"]):
 			naval = false
+	if general is Dictionary and not (general as Dictionary).has("xp"):
+		general = (general as Dictionary).duplicate()
+		general["xp"] = 0.0  # scenario-authored generals carry no xp field
 	var a := {"id": aid, "owner": cid, "loc": loc, "units": units.duplicate(), "target": units.duplicate(), "general": general,
 		"morale": 80.0, "xp": 0.0, "path": [], "transit": null, "naval": naval, "prev_loc": loc, "arrived": -1, "supply": 1.0,
-		"name": "", "last_battle": -99}
-	if general == null and not naval and UnitUtil.army_size(a) >= 6.0 and cid != "REB":
-		a["general"] = make_general(s, cid, int(s["countries"][cid]["ruler"]["mil"]))
+		"name": "", "last_battle": -99, "discipline": 30.0 if cid == "REB" else 50.0, "mission": "patrol", "at_sea": 0}
+	if general == null and cid != "REB" and UnitUtil.army_size(a) >= (3.0 if naval else 6.0):
+		a["general"] = Commanders.make(s, cid, int(s["countries"][cid]["ruler"]["mil"]), naval)
 	s["armies"][aid] = a
 	GS.move_army_cache(s, aid, "", loc)
 	return aid
 
 static func make_general(s: Dictionary, cid: String, mil: int) -> Dictionary:
-	var rng := GS.rng_of(s)
-	var m := Mods.country(s, cid)
-	var bonus := clampi(int(round(float(m.get("general_skill", 0.0)))), -2, 3)
-	return {"name": PoliticsSystem.random_name(s, cid, rng) + " " + str(rng.pick(PoliticsSystem.SURN)),
-		"tac": clampi(int(rng.gauss(float(mil), 1.5)) + bonus, 1, 9), "log": clampi(int(rng.gauss(float(mil), 1.5)), 1, 9),
-		"siege": clampi(int(rng.gauss(float(mil) - 0.5, 1.6)), 1, 9), "xp": 0.0}
+	return Commanders.make(s, cid, mil, false)
 
 static func disband_army(s: Dictionary, aid: String, refund_manpower: bool = false) -> void:
 	var a: Dictionary = s["armies"].get(aid, {})
@@ -142,7 +140,9 @@ static func process_recruit_queue(s: Dictionary, cid: String) -> void:
 			var a: Dictionary = s["armies"][target]
 			a["units"][q["uid"]] = float(a["units"].get(q["uid"], 0.0)) + 1.0
 			a["target"][q["uid"]] = float(a["target"].get(q["uid"], 0.0)) + 1.0
-			a["morale"] = (float(a["morale"]) * (UnitUtil.army_size(a) - 1.0) + 80.0) / maxf(UnitUtil.army_size(a), 1.0)
+			var tot := maxf(UnitUtil.army_size(a), 1.0)
+			a["morale"] = (float(a["morale"]) * (tot - 1.0) + 80.0) / tot
+			_dilute(a, 1.0, tot)
 		else:
 			create_army(s, cid, pid, {q["uid"]: 1.0}, null)
 		GS.stat_add(s, cid, "regiments_raised", 1.0)
@@ -164,6 +164,7 @@ static func merge_armies(s: Dictionary, a_id: String, b_id: String) -> bool:
 		a["target"][uid] = float(a["target"].get(uid, 0.0)) + float(b["target"][uid])
 	a["morale"] = (float(a["morale"]) * na + float(b["morale"]) * nb) / maxf(na + nb, 1.0)
 	a["xp"] = (float(a["xp"]) * na + float(b["xp"]) * nb) / maxf(na + nb, 1.0)
+	a["discipline"] = (float(a.get("discipline", 50.0)) * na + float(b.get("discipline", 50.0)) * nb) / maxf(na + nb, 1.0)
 	if a["general"] == null or (b["general"] != null and float(b["general"]["tac"]) > float(a["general"]["tac"])):
 		a["general"] = b["general"]
 	disband_army(s, b_id)
@@ -196,6 +197,8 @@ static func split_army(s: Dictionary, aid: String, units: Dictionary) -> String:
 			a["units"].erase(uid)
 	var nid := create_army(s, a["owner"], a["loc"], take, null)
 	s["armies"][nid]["morale"] = a["morale"]
+	s["armies"][nid]["xp"] = a["xp"]
+	s["armies"][nid]["discipline"] = a.get("discipline", 50.0)
 	return nid
 
 ## --- passability & pathfinding --------------------------------------------------------------------
@@ -233,14 +236,41 @@ static func can_enter(s: Dictionary, owner: String, pid: String) -> bool:
 			return true
 	return false
 
-static func move_cost(s: Dictionary, a: Dictionary, pid: String, link: String) -> float:
+const PASS_LIMIT := 8.0   ## regiments that can file through a mountain pass without delay or losses
+
+static func move_cost(s: Dictionary, a: Dictionary, pid: String, link: String, from: String = "") -> float:
 	var t: String = Defs.provinces[pid]["terrain"]
 	var cost := float(Const.TERRAIN_MOVE.get(t, 1.0))
 	var infra := float(Mods.province(s, pid).get("infra", 0.0)) + float(Mods.province(s, pid).get("move_bonus", 0.0)) * 4.0
 	cost /= (1.0 + clampf(infra * 0.1, 0.0, 0.6))
 	if link == "strait":
 		cost += 1.0
+	if from != "" and link == "land":
+		cost += river_cost(s, a, from, pid) + pass_cost(a, from, pid, cost)
 	return cost
+
+## Extra movement points to ford or bridge a river (bridges, pontoon engineers and river doctrines reduce it).
+static func river_cost(s: Dictionary, a: Dictionary, from: String, to: String) -> float:
+	if not GeoFeatures.river_between(from, to):
+		return 0.0
+	var c := 0.5 * float(GeoFeatures.river_width(from, to))
+	if int(s["provinces"][to]["buildings"].get("bridge", 0)) > 0 or int(s["provinces"][from]["buildings"].get("bridge", 0)) > 0:
+		c *= 0.3
+	var bridging := 0.0
+	var n := maxf(UnitUtil.army_size(a), 0.001)
+	for uid in a["units"]:
+		if UnitUtil.has_tag(uid, "bridging"):
+			bridging += float(a["units"][uid])
+	c *= 1.0 - clampf(bridging / n * 2.0, 0.0, 0.6)
+	c *= maxf(0.2, 1.0 + Mods.get_mod(s, a["owner"], "river_pen"))
+	return c
+
+## Passes are bottlenecks: big armies take longer to file through.
+static func pass_cost(a: Dictionary, from: String, to: String, base: float) -> float:
+	if not GeoFeatures.pass_between(from, to):
+		return 0.0
+	var over := maxf(0.0, UnitUtil.army_size(a) - PASS_LIMIT) / PASS_LIMIT
+	return 0.5 + base * minf(over, 1.5)
 
 static func move_points(s: Dictionary, a: Dictionary) -> float:
 	var mp := 99.0
@@ -316,7 +346,7 @@ static func find_path(s: Dictionary, aid: String, target: String) -> Dictionary:
 			elif naval:
 				c = maxf(1.0, ceil(float(e[2]) / SEA_KM_PER_TURN))
 			else:
-				c = move_cost(s, a, v, e[1])
+				c = move_cost(s, a, v, e[1], u)
 			var nd := du + c
 			if nd < float(dist.get(v, 1e18)):
 				dist[v] = nd
@@ -407,6 +437,12 @@ static func move_all(s: Dictionary) -> void:
 					if esc == "":
 						a["path"] = []
 						break
+					var landing := NavalSystem.landing_check(s, a, esc, nxt)
+					if not bool(landing["ok"]):
+						a["path"] = []
+						if a["owner"] == s["player"]:
+							GS.note(s, a["owner"], "military", "NOTE_LANDING_REFUSED", {"province": nxt}, nxt)
+						break
 					_begin_transit(s, esc, nxt, turns)
 					_begin_transit(s, aid, nxt, turns)
 					s["armies"][aid]["escort"] = esc
@@ -418,16 +454,27 @@ static func move_all(s: Dictionary) -> void:
 					_begin_transit(s, aid, nxt, turns)
 					a["path"].pop_front()
 					break
-			var cost := move_cost(s, a, nxt, link)
+			var cost := move_cost(s, a, nxt, link, a["loc"])
 			if not first and mp < cost * 0.75:
 				break
 			mp = maxf(0.0, mp - cost)
 			first = false
+			var came_from: String = a["loc"]
 			_set_loc(s, aid, nxt)
+			_cross_effects(s, a, came_from, nxt)
 			a["path"].pop_front()
 			a["arrived"] = s["turn"]
 			if hostile_present(s, a["owner"], nxt) or (s["provinces"][nxt]["controller"] != a["owner"] and GS.at_war(s, a["owner"], s["provinces"][nxt]["controller"])):
 				break
+
+## Losses and fatigue of crossing a mountain pass with an oversized army, and of fording a river without a bridge.
+static func _cross_effects(s: Dictionary, a: Dictionary, from: String, to: String) -> void:
+	if GeoFeatures.pass_between(from, to):
+		var over := maxf(0.0, UnitUtil.army_size(a) - PASS_LIMIT) / PASS_LIMIT
+		if over > 0.0:
+			_attrit(a, clampf(0.02 * over, 0.0, 0.08))
+	if GeoFeatures.river_between(from, to) and river_cost(s, a, from, to) > 0.0 and not bool(a.get("naval", false)):
+		a["morale"] = maxf(10.0, float(a["morale"]) - 1.5 * float(GeoFeatures.river_width(from, to)))
 
 static func _set_loc(s: Dictionary, aid: String, to: String) -> void:
 	var a: Dictionary = s["armies"][aid]
@@ -452,6 +499,7 @@ static func _arrive(s: Dictionary, aid: String) -> void:
 	a["arrived"] = s["turn"]
 	if not a.get("naval", false):
 		a["morale"] = maxf(10.0, float(a["morale"]) - 8.0)
+		a["discipline"] = maxf(10.0, float(a.get("discipline", 50.0)) - 4.0)
 		a["amphibious"] = s["turn"]
 
 ## Resolve all battles in provinces where hostile armies meet.
@@ -546,7 +594,7 @@ static func _apply_battle(s: Dictionary, rep: Dictionary) -> void:
 	var winners: Array = side_a if att_wins else side_d
 	var losers: Array = side_d if att_wins else side_a
 	var pid: String = rep["pid"]
-	rep["pid"] = pid
+	rep["events"] = Commanders.after_battle(s, winners, losers, bool(rep.get("rout", false)), rep)
 	# stats and experience
 	var owners_a: Array = rep["attackers"]["owners"]
 	var owners_d: Array = rep["defenders"]["owners"]
@@ -565,18 +613,17 @@ static func _apply_battle(s: Dictionary, rep: Dictionary) -> void:
 	for aid in winners:
 		if s["armies"].has(aid):
 			var a: Dictionary = s["armies"][aid]
-			a["xp"] = minf(100.0, float(a["xp"]) + 3.0)
+			var xp_gain := 3.0 * (1.0 + Mods.get_mod(s, a["owner"], "xp_gain"))
+			a["xp"] = minf(100.0, float(a["xp"]) + xp_gain)
 			a["morale"] = clampf(float(a["morale"]) - 6.0, 25.0, 95.0)
+			a["discipline"] = minf(100.0, float(a.get("discipline", 50.0)) + 2.0)
 			a["last_battle"] = s["turn"]
-			if a["general"] != null:
-				a["general"]["xp"] = float(a["general"]["xp"]) + 5.0
-				if float(a["general"]["xp"]) >= 40.0 and int(a["general"]["tac"]) < 9:
-					a["general"]["xp"] = 0.0
-					a["general"]["tac"] = int(a["general"]["tac"]) + 1
 	for aid in losers:
 		if s["armies"].has(aid):
 			var a: Dictionary = s["armies"][aid]
 			a["morale"] = maxf(5.0, float(a["morale"]) - 25.0)
+			a["discipline"] = maxf(10.0, float(a.get("discipline", 50.0)) - 8.0)
+			a["xp"] = minf(100.0, float(a["xp"]) + 1.0)   # the beaten learn a little too
 			a["last_battle"] = s["turn"]
 			a["path"] = []
 	# winner prestige, war score
@@ -598,7 +645,7 @@ static func _apply_battle(s: Dictionary, rep: Dictionary) -> void:
 	# devastation
 	s["provinces"][pid]["devastation"] = minf(0.6, float(s["provinces"][pid]["devastation"]) + 0.04 + (la + ld) * 0.004)
 	# logs
-	var compact := {"turn": s["turn"], "pid": pid, "winner": rep["winner"], "att": owners_a, "def": owners_d, "la": snappedf(la, 0.1), "ld": snappedf(ld, 0.1), "reasons": rep["reasons"]}
+	var compact := {"turn": s["turn"], "pid": pid, "winner": rep["winner"], "att": owners_a, "def": owners_d, "la": snappedf(la, 0.1), "ld": snappedf(ld, 0.1), "reasons": rep["reasons"], "naval": bool(rep.get("naval", false))}
 	(s["battle_log"] as Array).append(compact)
 	if (s["battle_log"] as Array).size() > 80:
 		(s["battle_log"] as Array).pop_front()
@@ -624,6 +671,7 @@ static func _retreat(s: Dictionary, aid: String, pid: String) -> void:
 			cands.append(sl[0])
 	else:
 		cands = Defs.neighbors(pid).duplicate()
+	var size := UnitUtil.army_size(a)
 	for nb in cands:
 		var q: Dictionary = s["provinces"][nb]
 		if naval and not Defs.provinces[nb]["coastal"]:
@@ -643,6 +691,14 @@ static func _retreat(s: Dictionary, aid: String, pid: String) -> void:
 			sc += 4.0
 		if GS.at_war(s, owner, q["controller"]):
 			sc -= 12.0
+		if naval and q["controller"] == owner and int(q["buildings"].get("port", 0)) > 0:
+			sc += 8.0   # fleets limp to their own ports
+		if not naval:
+			# a river or a pass behind the retreating army slows the withdrawal
+			if GeoFeatures.river_between(pid, nb) and river_cost(s, a, pid, nb) > 0.0:
+				sc -= 3.0
+			if GeoFeatures.pass_between(pid, nb) and size > PASS_LIMIT:
+				sc -= 2.0
 		sc += float(q["pop"]) * 0.0005
 		if sc > bs:
 			bs = sc
@@ -652,6 +708,12 @@ static func _retreat(s: Dictionary, aid: String, pid: String) -> void:
 		if owner == s["player"]:
 			GS.note(s, owner, "military", "NOTE_ARMY_DESTROYED", {"province": pid}, pid)
 		return
+	if not naval:
+		# stragglers lost while crossing a river with the enemy behind
+		if GeoFeatures.river_between(pid, best):
+			_attrit(a, clampf(0.03 * river_cost(s, a, pid, best) * 2.0, 0.0, 0.1))
+		if GeoFeatures.pass_between(pid, best) and size > PASS_LIMIT:
+			_attrit(a, 0.03)
 	_set_loc(s, aid, best)
 	a["path"] = []
 	a["retreated"] = s["turn"]
@@ -662,9 +724,7 @@ static func siege_points(s: Dictionary, armies: Array) -> float:
 	for aid in armies:
 		var a: Dictionary = s["armies"][aid]
 		var m := Mods.country(s, a["owner"])
-		var gsk := 0.0
-		if a["general"] != null:
-			gsk = float(a["general"]["siege"])
+		var gsk := Commanders.eff_siege(a["general"])
 		var p := 0.0
 		for uid in a["units"]:
 			var u: Dictionary = Defs.units[uid]
@@ -707,9 +767,14 @@ static func process_sieges(s: Dictionary) -> void:
 		var pts := siege_points(s, besiegers)
 		var fl := Mods.fort_level(s, pid)
 		var needed := 1.2 + fl * 2.2 + float(p["pop"]) / 500.0
+		needed *= 1.0 + Mods.get_mod(s, ctrl, "siege_def")
+		var nav := NavalSystem.siege_support(s, pid, bowner)
+		pts += float(nav["bombard"])
+		needed *= 1.0 - 0.35 * float(nav["blockade"])
 		if bowner == "REB":
 			needed = 2.0
 		var sg: Dictionary = p["siege"]
+		sg["blockade"] = nav["blockade"]
 		sg["turns"] = int(sg["turns"]) + 1
 		sg["progress"] = float(sg["progress"]) + pts / needed
 		sg["pts"] = pts
@@ -750,11 +815,18 @@ static func supply_cap(s: Dictionary, owner: String, pid: String) -> float:
 	cap *= float(Const.TERRAIN_FORAGE.get(pd["terrain"], 0.8))
 	cap *= 1.0 + float(m.get("supply", 0.0))
 	cap *= 1.0 - float(p["devastation"]) * 0.6
-	# supply line: within one hop of friendly ground
+	# supply line: within one hop of friendly ground; a river or a pass between thins the line, bridges restore it
+	var line := 0.0
 	for nb in pd["adj"]:
 		if s["provinces"][nb]["controller"] == owner:
-			cap += 2.5 * (1.0 + float(m.get("supply", 0.0)))
-			break
+			var f := 1.0
+			if GeoFeatures.river_between(pid, nb):
+				var bridged := int(p["buildings"].get("bridge", 0)) > 0 or int(s["provinces"][nb]["buildings"].get("bridge", 0)) > 0
+				f *= 0.85 if bridged else 0.5
+			if GeoFeatures.pass_between(pid, nb):
+				f *= 0.6
+			line = maxf(line, f)
+	cap += 2.5 * line * (1.0 + float(m.get("supply", 0.0)))
 	return cap
 
 static func is_friendly_ground(s: Dictionary, owner: String, pid: String) -> bool:
@@ -765,52 +837,85 @@ static func is_friendly_ground(s: Dictionary, owner: String, pid: String) -> boo
 		return true
 	return false
 
+## Discipline ceiling of an army: drill, doctrine, barracks and the commander.
+static func discipline_cap(s: Dictionary, a: Dictionary, loc: String) -> float:
+	var cap := 55.0 + Mods.get_mod(s, a["owner"], "discipline") * 100.0 + float(int(s["provinces"][loc]["buildings"].get("barracks", 0))) * 4.0
+	var g: Variant = a.get("general")
+	if g != null:
+		cap += float(int((g as Dictionary).get("tac", 0))) * 1.0
+	return clampf(cap, 35.0, 95.0)
+
 static func process_supply(s: Dictionary) -> void:
-	var rng := GS.rng_of(s)
+	for cid in GS.alive_countries(s):
+		if not bool(s["countries"][cid].get("native", false)):
+			Commanders.assign_missing(s, cid)
 	var ids: Array = s["armies"].keys()
 	ids.sort()
 	for aid in ids:
+		if not s["armies"].has(aid):
+			continue
 		var a: Dictionary = s["armies"][aid]
 		var owner: String = a["owner"]
 		var loc: String = a["loc"]
-		if loc == "" or owner == "REB":
+		if owner == "REB" or (loc == "" and not bool(a.get("naval", false))):
 			continue
 		var c: Dictionary = s["countries"][owner]
-		var naval := bool(a.get("naval", false))
 		var m := Mods.country(s, owner)
-		var size := UnitUtil.army_size(a)
-		if naval:
-			# fleets in own ports repair
-			if s["provinces"][loc]["controller"] == owner and int(s["provinces"][loc]["buildings"].get("port", 0)) > 0:
-				a["morale"] = minf(90.0, float(a["morale"]) + 6.0)
-				_reinforce(s, a, c, 0.15)
+		var funding := float(c["army_funding"])
+		if funding < 0.8:
+			a["discipline"] = maxf(10.0, float(a.get("discipline", 50.0)) - (0.8 - funding) * 8.0)
+		if funding < 0.6 and float(c["gold"]) < 0.0:
+			_attrit(a, 0.01)   # unpaid troops desert
+			a["morale"] = maxf(10.0, float(a["morale"]) - 2.0)
+		if bool(a.get("naval", false)):
+			NavalSystem.fleet_supply(s, aid)
+			if s["armies"].has(aid) and UnitUtil.army_size(s["armies"][aid]) < 0.3:
+				disband_army(s, aid)
 			continue
+		var size := UnitUtil.army_size(a)
 		var w := Combat.weather_for(s, loc)
 		var friendly := is_friendly_ground(s, owner, loc)
 		a["supply"] = 1.0
 		if friendly:
-			a["morale"] = minf(70.0 + 25.0 * float(c["army_funding"]), float(a["morale"]) + 5.0)
+			a["morale"] = minf(70.0 + 25.0 * funding, float(a["morale"]) + 5.0)
 			if s["provinces"][loc]["controller"] == owner:
-				_reinforce(s, a, c, 0.12)
+				reinforce(s, a, c, 0.12)
+				_drill(s, a, loc, funding)
 			if float(w["attrition"]) > 0.0 and s["provinces"][loc]["owner"] != owner:
 				_attrit(a, float(w["attrition"]) * 0.5 * (1.0 - float(m.get("attrition", 0.0))))
 			continue
 		# foreign soil: foraging limited
 		var cap := supply_cap(s, owner, loc)
+		cap += NavalSystem.fleet_supply_aid(s, owner, loc)
 		var over := maxf(0.0, size - cap)
 		var supply_ratio := clampf(cap / maxf(size, 0.001), 0.3, 1.0)
+		if int(a.get("amphibious", -9)) == int(s["turn"]):
+			supply_ratio = minf(supply_ratio, 0.7)   # a fresh landing has only what the ships carried
 		a["supply"] = supply_ratio
 		var loss_pct := over / maxf(size, 0.001) * 0.10 + float(w["attrition"])
 		loss_pct *= 1.0 + float(m.get("attrition", 0.0))
 		if a["general"] != null:
-			loss_pct *= 1.0 - float(a["general"]["log"]) * 0.03
+			loss_pct *= 1.0 - Commanders.eff_log(a["general"]) * 0.03
 		if loss_pct > 0.0:
 			_attrit(a, loss_pct)
 		a["morale"] = maxf(10.0, float(a["morale"]) - (3.0 if supply_ratio < 1.0 else 1.0))
+		if supply_ratio < 0.8:
+			a["discipline"] = maxf(10.0, float(a.get("discipline", 50.0)) - 2.0)
 		if loss_pct > 0.02 and owner == s["player"]:
 			GS.note(s, owner, "military", "NOTE_ATTRITION", {"province": loc, "pct": int(loss_pct * 100.0)}, loc)
 		if UnitUtil.army_size(a) < 0.3:
 			disband_army(s, aid)
+
+## Peacetime drill on friendly ground raises discipline towards its ceiling and trickles experience.
+static func _drill(s: Dictionary, a: Dictionary, loc: String, funding: float) -> void:
+	var cap := discipline_cap(s, a, loc)
+	var d := float(a.get("discipline", 50.0))
+	if d < cap:
+		a["discipline"] = minf(cap, d + 2.0 * funding)
+	elif d > cap + 5.0:
+		a["discipline"] = d - 1.0
+	if float(a["xp"]) < 30.0 and int(s["turn"]) - int(a.get("last_battle", -99)) > 1:
+		a["xp"] = float(a["xp"]) + 0.3 * (1.0 + float(int(s["provinces"][loc]["buildings"].get("barracks", 0))) * 0.5)
 
 static func _attrit(a: Dictionary, pct: float) -> void:
 	pct = clampf(pct, 0.0, 0.5)
@@ -819,7 +924,13 @@ static func _attrit(a: Dictionary, pct: float) -> void:
 		if float(a["units"][uid]) < 0.05:
 			a["units"].erase(uid)
 
-static func _reinforce(s: Dictionary, a: Dictionary, c: Dictionary, rate: float) -> void:
+## New men join with no experience and little drill: dilute the army's averages.
+static func _dilute(a: Dictionary, added: float, total: float) -> void:
+	var old := maxf(total - added, 0.0)
+	a["xp"] = float(a["xp"]) * old / maxf(total, 0.001)
+	a["discipline"] = (float(a.get("discipline", 50.0)) * old + 30.0 * added) / maxf(total, 0.001)
+
+static func reinforce(s: Dictionary, a: Dictionary, c: Dictionary, rate: float) -> void:
 	for uid in a["target"]:
 		var want := float(a["target"][uid])
 		var have := float(a["units"].get(uid, 0.0))
@@ -838,6 +949,46 @@ static func _reinforce(s: Dictionary, a: Dictionary, c: Dictionary, rate: float)
 			continue
 		c["gold"] = float(c["gold"]) - gold
 		a["units"][uid] = have + add
+		_dilute(a, add, UnitUtil.army_size(a))
+
+## Improve every regiment of a unit type in an army to the next unit of its chain (e.g. spearmen -> pikemen).
+## Costs 60% of the price difference per regiment; experience is kept, discipline drops while the men retrain.
+static func upgrade_cost(s: Dictionary, cid: String, uid: String) -> float:
+	var nxt := UnitUtil.upgrade_of(s, cid, uid)
+	if nxt == "":
+		return -1.0
+	var diff := float(recruit_cost(s, cid, nxt).get("gold", 0.0)) - float(recruit_cost(s, cid, uid).get("gold", 0.0))
+	return maxf(3.0, diff * 0.6)
+
+static func upgrade_units(s: Dictionary, aid: String, uid: String) -> Dictionary:
+	var a: Dictionary = s["armies"].get(aid, {})
+	if a.is_empty() or not a["units"].has(uid):
+		return {"ok": false, "reason": "ERR_INVALID"}
+	var cid: String = a["owner"]
+	var nxt := UnitUtil.upgrade_of(s, cid, uid)
+	if nxt == "":
+		return {"ok": false, "reason": "UPGRADE_ERR_NONE"}
+	if a["loc"] == "" or not is_friendly_ground(s, cid, a["loc"]) or (a.get("naval", false) and int(s["provinces"][a["loc"]]["buildings"].get("port", 0)) < 1):
+		return {"ok": false, "reason": "UPGRADE_ERR_PLACE"}
+	var n := float(a["units"][uid])
+	var cost := upgrade_cost(s, cid, uid) * n
+	var c: Dictionary = s["countries"][cid]
+	if float(c["gold"]) < cost:
+		return {"ok": false, "reason": "ERR_NO_GOLD", "params": {"need": int(cost)}}
+	for k in Defs.units[nxt]["cost"]:
+		if k in ["gold", "manpower"]:
+			continue
+		if float(c["stock"].get(k, 0.0)) < float(Defs.units[nxt]["cost"][k]) * 0.3 * n:
+			return {"ok": false, "reason": "RECRUIT_ERR_MATERIAL", "params": {"what": Loc.t("RES_" + str(k).to_upper())}}
+	c["gold"] = float(c["gold"]) - cost
+	a["units"].erase(uid)
+	a["units"][nxt] = float(a["units"].get(nxt, 0.0)) + n
+	var tgt := float(a["target"].get(uid, 0.0))
+	a["target"].erase(uid)
+	a["target"][nxt] = float(a["target"].get(nxt, 0.0)) + maxf(tgt, n)
+	a["discipline"] = maxf(10.0, float(a.get("discipline", 50.0)) - 6.0)
+	GS.stat_add(s, cid, "regiments_upgraded", n)
+	return {"ok": true, "to": nxt, "cost": cost}
 
 static func process_turn_pre(s: Dictionary) -> void:
 	move_all(s)

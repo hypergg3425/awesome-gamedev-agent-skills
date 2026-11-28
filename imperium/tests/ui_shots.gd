@@ -23,6 +23,7 @@ func _ready() -> void:
 	if args.size() > 1:
 		Settings.set_value("language", args[1], false)
 		Loc.set_language(args[1])
+	Layout.install(get_window())
 	get_tree().root.theme = UI.theme()
 	Defs.load_geometry()
 	Settings.set_value("animations", false, false)

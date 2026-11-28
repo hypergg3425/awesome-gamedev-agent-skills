@@ -1,5 +1,7 @@
 # Version 2.0 audit
 
+> **Status update (2026-11-28):** the initial audit below describes the starting point. Sections 4 ("Missing / incomplete") and the scenario-coverage table are largely resolved by the v2 workstreams — see IMPLEMENTATION_STATUS.md and VERSION_2_CHANGELOG.md for the current state, and the 'Still not done' list at the end of this file.
+
 Method: every claim in the older documents was compared with the source, data and a real build. Findings are tagged **CONFIRMED**, **WRONG** (documentation said otherwise) or **FIXED** with evidence. Backup: git tag `v1.0-backup`; v2 work is on branch `v2-dev`. Date: 2026-11-23.
 
 ## 1. The 17 findings from the brief
@@ -13,7 +15,7 @@ Method: every claim in the older documents was compared with the source, data an
 | 6 | Loader invents generic native states for unclaimed regions | **CONFIRMED** (table below). `ScenarioLoader` builds `NAT_*` "<Region> Peoples" tribal confederations. |
 | 7 | Naval combat simplified | **CONFIRMED.** Not changed. |
 | 8 | Editor cannot import map geometry | **CONFIRMED** (`scenario_editor.gd` header says imports are future work). |
-| 9 | Hotseat has limited automated coverage | **WRONG — it had none.** No test referenced hotseat. Now `t_hotseat` (19 checks: device-pass order, one turn resolution, per-player commands, save/load of the player list). Known limitation: loading a save always restarts with the first player. |
+| 9 | Hotseat has limited automated coverage | **WRONG — it had none.** No test referenced hotseat. Now `t_hotseat` (19 checks: device-pass order, one turn resolution, per-player commands, save/load of the player list). The old limitation (a load restarted at the first player) is fixed: the seat is saved as `hotseat_index` (`t_save2`). |
 | 10 | No online multiplayer | **CONFIRMED.** Future work; not claimed. |
 | 11 | Real-device UX unverified | **CONFIRMED, still unverified.** |
 | 12 | APK/AAB unverified | **PARTLY FIXED.** Android SDK/NDK/templates installed in the authoring environment; a debug APK (114.8 MB) and a release AAB (59.5 MB, signed with a throw-away key) were really exported and statically inspected (see MOBILE_DEVICE_TEST_REPORT.md). Never installed or run. |
@@ -52,7 +54,6 @@ Economy, trade graph, population/classes, construction, 92 technologies, 43 unit
 * `diplomacy_system.gd` (1,064 lines), `ai_system.gd` (944), `military_system.gd` (853) are large; no splitting done.
 * 24 hard-coded `Vector2(≥100, …)` sizes remain in UI scripts. Layout survives all tested aspect ratios because the project uses `canvas_items` stretch with `expand` (virtual 1280×720 scaled uniformly), not because panels are fully fluid; very small physical screens get small text.
 * `AudioManager._stream` mutates the `loop` flag on a shared cached resource (name|loop keys share one Resource) — harmless today (music loops, SFX do not) but fragile.
-* Hotseat load restarts at player 1.
 * AI "force" difficulty knob scales how large an army the AI *wants* (still limited by its real manpower/gold); not an economic bonus, but it is a behavioural multiplier worth knowing about.
 
 ## 6. Performance risks
@@ -66,3 +67,14 @@ Banner-only is enforced by `t_ads` (no forbidden class references in `scripts/ad
 
 ## 9. Test coverage gaps
 No UI interaction tests; no automated layout assertions; naval, siege and battle-report content have only light unit tests; scenario editor save/load has no automated test; tutorial UI placement only reviewed visually.
+
+## 10. Still not done after the v2 integration (honest list)
+* **Real device/emulator testing** of anything (touch, banner, UMP, performance, battery). No device was available.
+* **Google Play readiness:** placeholder package id, no real upload key, no store listing/privacy URL, policies not re-verified online.
+* **Historical verification:** web sources were unreachable for the research agents; scenario rulers/borders/events are from general knowledge and flagged approximate. No independent re-verification, no per-line bibliography with URLs.
+* **Map:** Americas, sub-Saharan Africa, Oceania, most of Siberia not refined on the 1062-province set; some passes unmatched (15 extended, 35 classic); capitals like Delhi/Beijing sit in approximate regions; scenarios remain authored on 410 regions and are upgraded through parents (children inherit ownership).
+* **Performance target:** extended map ~0.5–0.8 s/turn on a shared desktop (goal <0.6 s); mobile unmeasured.
+* **Art:** unit illustrations, historical portraits, loading screens, new store graphics, terrain/building/resource icon redesign.
+* **UI:** editor still uses MapView's own input (not the gesture layer); `ui_layout_check touch=1` fails mode-strip checks at small sizes (122 failures on the base commit, not fixed); Turkish layout checked only for a subset of sizes.
+* **Gameplay depth gaps:** multi-hop amphibious transport, 4th new scenario (1914), unused military modifier keys (xp_gain, naval_slots, siege_def, mercenary_cost, prod_military, legit_conquest).
+* **Fourth-order checks not run:** CI YAML never executed on GitHub Actions; ads/UMP flows.

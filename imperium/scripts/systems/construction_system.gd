@@ -53,6 +53,8 @@ static func can_build(s: Dictionary, cid: String, pid: String, bid: String) -> D
 	var req: Dictionary = b["requires"]
 	if req.has("tech") and TechSystem.level(c, req["tech"][0]) < int(req["tech"][1]):
 		return {"ok": false, "reason": "BUILD_ERR_TECH", "params": {"tech": "%s %d" % [Loc.tx(Defs.tech_lines[req["tech"][0]]["name"]), int(req["tech"][1])]}}
+	if req.has("year") and int(GS.date_of(s)["year"]) < int(req["year"]):
+		return {"ok": false, "reason": "BUILD_ERR_ERA", "params": {"year": int(req["year"])}}
 	if req.has("terrain") and Defs.provinces[pid]["terrain"] not in req["terrain"]:
 		return {"ok": false, "reason": "BUILD_ERR_TERRAIN"}
 	if req.get("coastal", false) and not Defs.provinces[pid]["coastal"]:

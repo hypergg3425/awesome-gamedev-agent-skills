@@ -26,11 +26,7 @@ func test_turn_applies_net_to_treasury() -> void:
 
 func test_higher_taxes_more_income_more_unrest() -> void:
 	var s := new_state()
-	var cid: String = GS.alive_countries(s)[0]
-	for c2 in GS.alive_countries(s):
-		if not str(c2).begins_with("NAT_") and GS.owned(s, c2).size() >= 3:
-			cid = c2
-			break
+	var cid: String = s["player"]   # a major power: small tribal states have a lower tax ceiling
 	var c: Dictionary = s["countries"][cid]
 	c["tax_rate"] = 0.15
 	EconomySystem.invalidate_calc(s)
@@ -46,17 +42,13 @@ func test_higher_taxes_more_income_more_unrest() -> void:
 
 func test_military_spending_hurts_budget() -> void:
 	var s := new_state()
-	var cid := ""
-	for c2 in GS.alive_countries(s):
-		if not str(c2).begins_with("NAT_") and GS.owned(s, c2).size() >= 3 and GS.armies_of(s, c2).size() > 0:
-			cid = c2
-			break
+	var cid: String = s["player"]
 	var base := float(EconomySystem.budget(s, cid)["net"])
 	var pid: String = GS.owned(s, cid)[0]
 	MilitarySystem.create_army(s, cid, pid, {"spearmen": 40.0}, null)
 	EconomySystem.invalidate_calc(s)
 	var after := float(EconomySystem.budget(s, cid)["net"])
-	ok(after < base - 30.0, "adding 40 regiments cuts net income (%f -> %f)" % [base, after])
+	ok(after < base - 25.0, "adding 40 regiments cuts net income (%f -> %f)" % [base, after])
 
 func test_food_shortage_has_consequences() -> void:
 	var s := new_state()

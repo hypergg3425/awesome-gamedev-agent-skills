@@ -6,6 +6,7 @@ signal closed()
 
 var title_label: Label
 var tab_bar: HBoxContainer
+var tab_scroll: ScrollContainer
 var body: VBoxContainer
 var scroller: ScrollContainer
 var tabs: Array = []     # {id, button, builder}
@@ -28,10 +29,17 @@ func _init(p_title_key: String = "", p_icon: String = "") -> void:
 	title_label = UI.label(Loc.t(p_title_key) if p_title_key != "" else "", "Heading")
 	title_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	head.add_child(title_label)
-	head.add_child(UI.icon_button("close", func() -> void: close(), Loc.t("UI_CLOSE"), 48.0))
+	var close_btn := UI.icon_button("close", func() -> void: close(), Loc.t("UI_CLOSE"), 48.0)
+	close_btn.name = "CloseButton"
+	head.add_child(close_btn)
 	tab_bar = HBoxContainer.new()
 	tab_bar.add_theme_constant_override("separation", 6)
-	root.add_child(tab_bar)
+	tab_scroll = ScrollContainer.new()
+	tab_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
+	tab_scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_AUTO
+	tab_scroll.visible = false
+	tab_scroll.add_child(tab_bar)
+	root.add_child(tab_scroll)
 	body = VBoxContainer.new()
 	body.add_theme_constant_override("separation", 10)
 	scroller = UI.scroll(body)
@@ -47,11 +55,11 @@ func relocalize() -> void:
 
 func add_tab(id: String, key: String, builder: Callable, icon: String = "") -> void:
 	var b := UI.button(Loc.t(key), func() -> void: select_tab(id), "Tab", icon)
-	b.custom_minimum_size = Vector2(0, 46)
+	b.custom_minimum_size = Vector2(0, 48)
 	b.toggle_mode = false
 	tab_bar.add_child(b)
 	tabs.append({"id": id, "button": b, "builder": builder, "key": key})
-	tab_bar.visible = tabs.size() > 1
+	tab_scroll.visible = tabs.size() > 1
 	if current == "":
 		current = id
 
@@ -73,6 +81,7 @@ func open() -> void:
 	visible = true
 	refresh()
 	Audio.sfx("ui_open")
+	Anim.pop_in(self, 0.16)
 
 func close() -> void:
 	visible = false

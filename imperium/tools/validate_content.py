@@ -11,9 +11,9 @@ BLD = json.load(open(ROOT + '/data/buildings.json'))
 CULT = {'latin','germanic','slavic','hellenic','magyar_finnic','turkic','arabic','iranian','caucasian','indic','sinic','japonic','southeast_asian','african','native_american','latin_american','oceanian'}
 REL = {'catholic','orthodox','protestant','sunni','shia','jewish','buddhist','hindu','eastern_faiths','pagan','animist','tengri','shinto','secular'}
 PERS = {'aggressive','defensive','expansionist','diplomatic','economic','opportunistic','isolationist'}
-CONDS = set('stability_below stability_above legitimacy_below legitimacy_above treasury_below treasury_above debt_above income_below income_above at_war not_at_war at_war_with gov_is gov_in has_tech tech_avg_above provinces_above provinces_below food_ratio_below food_stock_below religion_is culture_is flag_set flag_not_set year_at_least year_before is_player is_ai ruler_age_above ruler_skill_below ruler_skill_above prestige_above prestige_below manpower_below has_reform war_exhaustion_above season_is class_sat_below is_vassal has_vassals alliances_at_least owns_province neighbors_tag armies_at_least inflation_above bankrupt_recently heir_missing capital_coastal'.split())
+CONDS = set('stability_below stability_above legitimacy_below legitimacy_above treasury_below treasury_above debt_above income_below income_above at_war not_at_war at_war_with gov_is gov_in has_tech tech_avg_above provinces_above provinces_below food_ratio_below food_stock_below religion_is culture_is flag_set flag_not_set year_at_least year_before is_player is_ai ruler_age_above ruler_skill_below ruler_skill_above prestige_above prestige_below manpower_below has_reform war_exhaustion_above season_is class_sat_below is_vassal has_vassals alliances_at_least owns_province neighbors_tag armies_at_least inflation_above bankrupt_recently heir_missing capital_coastal corruption_above faction_loyalty_below faction_loyalty_above faction_influence_above in_regency in_succession_dispute in_transition spy_levels_at_least ci_level_at_least eco_phase_is heir_exists royals_below has_general vassals_at_least is_hereditary naval_regiments_at_least faction_loyalty_between'.split())
 PCONDS = set('unrest_above unrest_below pop_above pop_below terrain_is coastal culture_is religion_is religion_differs has_building dev_below dev_above devastation_above occupied'.split())
-EFFECTS = set('gold manpower stability legitimacy prestige admin inflation debt stock set_flag clear_flag temp_mod class_sat pop_pct province_unrest province_pop_pct province_devastation province_dev add_building destroy_building ruler_skill kill_ruler spawn_rebels relation research_points add_claim trigger_event disband_pct add_regiments change_religion_province war_exhaustion reform_cost_free'.split())
+EFFECTS = set('gold manpower stability legitimacy prestige admin inflation debt stock set_flag clear_flag temp_mod class_sat pop_pct province_unrest province_pop_pct province_devastation province_dev add_building destroy_building ruler_skill kill_ruler spawn_rebels relation research_points add_claim trigger_event disband_pct add_regiments change_religion_province war_exhaustion reform_cost_free faction_loyalty corruption transfer_province create_vassal vassalize spawn_general spawn_army spawn_fleet ruler_health add_royal heir_skill ci_level spy_network eco_phase force_government civil_war alliance add_core set_opinion_all'.split())
 CATS = {'political','succession','economic','food','diplomatic','religious','military','uprising','disaster','tech','historical'}
 OBJ = {'own_provinces','own_all','provinces_count','tech_avg','treasury','survive_until','alliance_with','vassalize','destroy','capital_of','wars_won','income'}
 errs = []
@@ -58,6 +58,35 @@ def scen(f):
         cap = c.get('capital')
         if cap and owner.get(cap) != cid: E(f, f'{cid}: capital {cap} not owned (owner={owner.get(cap)})')
         if not cap: E(f, f'{cid}: no capital')
+    st = d.get('start', {})
+    if not (isinstance(st.get('year'), int) and isinstance(st.get('month'), int) and 1 <= st['month'] <= 12): E(f, 'start needs integer year and month 1-12')
+    for cid, c in cs.items():
+        ru = c.get('ruler', {})
+        if not ru.get('name') or not all(isinstance(ru.get(k), int) and 0 <= ru[k] <= 10 for k in ('adm', 'dip', 'mil')): E(f, f'{cid}: ruler needs name and adm/dip/mil 0-10')
+        if not isinstance(ru.get('age', 35), int) or not 0 <= ru.get('age', 35) <= 110: E(f, f'{cid}: ruler age')
+        h = c.get('heir')
+        if h is not None and (not h.get('name') or not isinstance(h.get('age'), int)): E(f, f'{cid}: heir needs name and integer age')
+        if 'approximate' in c and not isinstance(c['approximate'], bool): E(f, f'{cid}: approximate must be a boolean')
+        if 'note' in c: loc(f, c['note'], cid + '.note')
+    for pid, nd in d.get('province_names', {}).items():
+        if pid not in PIDS: E(f, f'province_names: unknown province {pid}')
+        loc(f, nd, 'province_names.' + pid)
+    for cid, lst in d.get('claims', {}).items():
+        if cid not in cs: E(f, f'claims: unknown country {cid}')
+        for pat in lst:
+            if not any(fnmatch.fnmatchcase(p, pat.lstrip('-')) for p in PIDS): E(f, f'claims.{cid}: pattern matches nothing: {pat}')
+    for gl in d.get('geo_layer', []):
+        if not gl.get('id') or gl.get('kind') not in ('strait', 'river', 'pass', 'fortification', 'region', 'route'): E(f, f'geo_layer {gl.get("id")}: id/kind')
+        loc(f, gl.get('name'), 'geo_layer.' + str(gl.get('id'))); loc(f, gl.get('note'), 'geo_layer.note.' + str(gl.get('id')))
+        for pid in gl.get('provinces', []):
+            if pid not in PIDS: E(f, f'geo_layer {gl.get("id")}: unknown province {pid}')
+    for k in ('religion_overrides', 'culture_overrides'):
+        for val, pats in d.get(k, {}).items():
+            for pat in pats:
+                base = pat[1:] if pat.startswith('-') else pat   # "-id" excludes a province from this value (supported by the loader)
+                if not any(fnmatch.fnmatchcase(p, base) for p in PIDS):
+                    if pat.startswith('-'): print(f'WARN {f}: {k}.{val}: exclusion matches no province: {pat}')
+                    else: E(f, f'{k}.{val}: pattern matches nothing: {pat}')
     r = d.get('relations', {})
     for k in ('alliances','defensive','nap','access','trade','guarantees','vassals','opinions','truces'):
         for pair in r.get(k, []):

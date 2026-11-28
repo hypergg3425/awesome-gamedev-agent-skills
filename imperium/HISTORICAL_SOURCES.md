@@ -9,33 +9,21 @@ Status: **v2.0 audit snapshot.** This file lists only sources that are actually 
 
 ## Scenarios (data/scenarios/*.json)
 
-### Age of Revolutions (age_of_revolutions.json) — start 1789-07, `approximate: True`
+v2.0 (workstream B1) replaced the generic "<Region> Peoples" filler with named historical polities. Each scenario has a dedicated source document with the main, geographic, ruler and political-structure references, the start-date rationale, a verification status and a country table:
 
-Author's own note in the data: Borders are approximated on modern-geometry regions: each region stands in for the realm that held most of it in 1789 (e.g. 'Madhya Pradesh' for the Delhi-Agra heartland, 'Nagano' for the Kansai core of Tokugawa Japan). Rulers, ages and abilities are best-effort. Small states (Hesse, Württemberg, the Rhenish electors, Hyderabad, Nepal, the Gulf sheikhdoms and most of Africa) are merged into neighbours or shown as native states. Spanish and Portuguese American colonies are ordinary provinces of their mother countries; Saint-Domingue is a French vassal.
+* [Medieval Europe, 1066-09](docs/scenarios/medieval_europe.md): 38 -> 136 countries, 410/410 provinces owned.
+* [Hundred Years' War, 1337-05](docs/scenarios/hundred_years_war.md): 37 -> 127 countries.
+* [Fall of Constantinople, 1453-04](docs/scenarios/fall_of_constantinople.md): 37 -> 136 countries.
+* [Early Modern Europe, 1519-06](docs/scenarios/early_modern.md): 54 -> 125 countries.
+* [Age of Revolutions, 1789-07](docs/scenarios/age_of_revolutions.md): 44 -> 91 countries.
+* [Industrial Era, 1871-01](docs/scenarios/industrial_era.md): 60 -> 88 countries; France is led by the Government of National Defence (Trochu) in January 1871.
+* [World Conquest, 1900-01](docs/scenarios/world_conquest.md): explicitly **fictional** alternate history.
 
-### Early Modern Europe (early_modern.json) — start 1519-06, `approximate: True`
-
-Author's own note in the data: Borders are approximated on modern-geometry regions: one region stands for a historical realm that never matched it exactly (e.g. 'Hesse & Thuringia' for Electoral Saxony, or four regions for the whole of Sengoku Japan). Rulers, ages and abilities are best-effort estimates. Naples is shown as a Habsburg vassal, Milan as French, and minor realms such as Gujarat, Bengal, Songhai, Burma or the Maya cities are not modelled: their lands appear as native states. The Americas are shown at the moment of first contact.
-
-### Fall of Constantinople (fall_of_constantinople.json) — start 1453-04, `approximate: True`
-
-Author's own note in the data: Borders are approximated on modern-geometry regions: Byzantium is reduced to the Constantinople region and the Morea, Granada is represented by the Andalusia region, Navarre is folded into Aragon, and the Timurids, Hafsids, Marinids, Novgorod, Bosnia, Cyprus and Savoy are not modelled and appear as native states. Poland and Lithuania are in personal union under Casimir IV, and Aragon and Naples under Alfonso V. Rulers, ages and abilities are best-effort estimates.
-
-### Hundred Years' War (hundred_years_war.json) — start 1337-05, `approximate: True`
-
-Author's own note in the data: Borders are approximated on modern-geometry regions: Gascony is shown as 'Aquitaine & Gascony', Avignon stands for the papal court (Provence is shown as papal), Granada is represented by the Andalusia region, and the Ottoman beylik by a single region. Rulers, ages and abilities are best-effort estimates. Galicia-Volhynia, Ireland outside Leinster, Wales' princes, the Anatolian beyliks, Persia, Ifriqiya, Savoy and Sicily's neighbours beyond those listed appear as native states.
-
-### Industrial Era (industrial_era.json) — start 1871-01, `approximate: True`
-
-Author's own note in the data: Borders are approximated on modern-geometry regions, so a region may only roughly match the realm that held it in 1871 (e.g. 'Madhya Pradesh' stands for British-ruled northern India, 'Nagano' for the Japanese core). The 1871 colonial picture is approximate: the scramble for Africa has not begun, so most of the continent is shown as native states, and princely India is folded into the British Raj. Rulers, ages and abilities are best-effort estimates, and a few minor states (Hawaii, the Zulu, Ashanti, Sokoto, the Boer Orange Free State) are not modelled. Alsace and Lorraine begin French while the war is still being fought.
-
-### Medieval Europe (medieval_europe.json) — start 1066-09, `approximate: True`
-
-Author's own note in the data: Borders are approximated on modern-geometry regions: Zaragoza and Valencia, the Italian marches, Hammadid Algeria and Armenian Cilicia cannot be drawn exactly, Castile-León-Galicia is shown united although Ferdinand I's sons had just partitioned it, and the Almoravids are shown holding Marrakesh before its 1070 founding. Rulers, ages and abilities are best-effort estimates. Wales, Brittany, Connacht, Ulster, Sardinia, the Baltic and Wendish tribes, Croatia, Duklja and the Cumans are not modelled and appear as native states.
-
-### World Conquest (world_conquest.json) — start 1900-01, `approximate: True`
-
-Author's own note in the data: This is an explicitly FICTIONAL, alternate-history world-conquest sandbox, not a historical scenario. It is built on approximate 1900 borders, cut into modern-geometry regions, so every region is assigned to the nearest plausible power (e.g. Luxembourg to Belgium, Arabia's interior to the Ottomans, Cuba to the United States as occupier, the Congo Free State shown separately). Rulers, ages and abilities are best-effort; colonial and protectorate arrangements are simplified, and princely states, small kingdoms and chiefdoms are merged into their overlords. Nothing here should be read as a claim about what was or should have been.
+### Verification status (important)
+* Reference pages (Wikipedia, Britannica, Wikidata) could **not** be fetched in the authoring environment (host blocked). Only web-search result snippets (Wikipedia, CC BY-SA 4.0, accessed 2026-11-23 to 2026-11-27) were used for a handful of dates: Dali kings of 1081-1108, Western Xia Yizong (b. 1047, r. 1048-1067/68), Khmer Harshavarman III (from 1066), Kara-Khanid Ibrahim Tamghach-Khan (1038-1068).
+* Everything else was written from established general knowledge of the standard references named in each scenario document and is **not** line-by-line verified. Every country carries an `approximate` flag (false only for a few well-documented realms such as England, France, Normandy, Norway, Brittany, the United States and Germany); uncertain rulers are named as an office or "name uncertain". Province geometry is modern (Natural Earth, public domain), so borders are approximations in every scenario.
+* Population, treasury, army and development numbers are **gameplay estimates** generated by the loader, never documented statistics.
+* Province names for each date live in the scenario `province_names` layer (hand-written; no external gazetteer).
 
 ## Historical events and their recorded sources
 
@@ -134,3 +122,6 @@ Total historical events with source: 68
 * Per-scenario bibliography of rulers, dynasties, capitals, political structure and starting dates.
 * Scenario-specific historical province names and geometry.
 * Documentation of access dates and licences for historical (non-geometry) sources.
+
+## Technology eras (v2.1, approximate)
+`era_year` values in `tools/gen_data.py` (ERA_YEARS, SPECS) are approximate years of first widespread use, set from general knowledge of European/world history (gunpowder infantry c.1450, rifled artillery c.1850, railways c.1830, etc.). They are gameplay gates, not scholarly dates; no external source was consulted (network access not used). Succession laws, faction and government mechanics are game abstractions.

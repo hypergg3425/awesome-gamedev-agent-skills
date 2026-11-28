@@ -9,3 +9,5 @@
 keystore.properties
 .import/
 export_credentials.cfg
+__pycache__/
+tests/last_report.json

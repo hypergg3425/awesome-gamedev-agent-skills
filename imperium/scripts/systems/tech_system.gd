@@ -47,11 +47,41 @@ static func can_research(s: Dictionary, cid: String, tid: String) -> Dictionary:
 	for pre in t["prereq"]:
 		if not c["researched"].has(pre):
 			return {"ok": false, "reason": "TECH_ERR_PREREQ", "params": {"tech": Defs.tech_name(pre)}}
+	var era := era_check(s, cid, tid)
+	if not era["ok"]:
+		return {"ok": false, "reason": "TECH_ERR_ERA", "params": {"year": int(t["era_year"]), "lead": int(era["lead"])}}
 	var branch: String = t["branch"]
 	var cur: String = str(c["research"]["current"].get(branch, ""))
 	if cur != "" and cur != tid:
 		return {"ok": false, "reason": "TECH_ERR_BUSY"}
 	return {"ok": true}
+
+## Era gating. A technology cannot be researched earlier than `era_year - lead` years before its introduction.
+## The permitted lead is 50 years, plus up to 100 more for a country that is far ahead of the world average
+## ("historical lag" rule), so an eleventh-century state can never research nineteenth-century technology.
+const BASE_LEAD := 50.0
+const MAX_EXTRA_LEAD := 100.0
+
+static func research_lead(s: Dictionary, cid: String) -> float:
+	var cache: Dictionary = s["_c"].get("lead", {})
+	if int(s["_c"].get("lead_turn", -1)) != int(s["turn"]):
+		cache = {}
+		s["_c"]["lead"] = cache
+		s["_c"]["lead_turn"] = s["turn"]
+		s["_c"]["year"] = int(GS.date_of(s)["year"])
+	if cache.has(cid):
+		return cache[cid]
+	var ahead := avg_level(s["countries"][cid]) - _avg_peer_level(s, cid)
+	var v := BASE_LEAD + clampf(ahead, 0.0, 2.0) * (MAX_EXTRA_LEAD / 2.0)
+	cache[cid] = v
+	return v
+
+static func era_check(s: Dictionary, cid: String, tid: String) -> Dictionary:
+	var t: Dictionary = Defs.techs.get(tid, {})
+	var lead := research_lead(s, cid)
+	var year := int(s["_c"]["year"])
+	var early := int(t.get("era_year", 0)) - year
+	return {"ok": float(early) <= lead, "lead": lead, "years_early": early}
 
 static func cost_rp(s: Dictionary, cid: String, tid: String) -> float:
 	var t: Dictionary = Defs.techs[tid]
@@ -159,7 +189,7 @@ static func available(s: Dictionary, cid: String) -> Array:
 			if not c["researched"].has(pre):
 				ok = false
 				break
-		if ok:
+		if ok and bool(era_check(s, cid, tid)["ok"]):
 			out.append(tid)
 	out.sort()
 	return out

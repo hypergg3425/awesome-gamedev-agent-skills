@@ -6,7 +6,7 @@ static func show_dialog(host: Control) -> void:
 	var dlg := Dialogs.custom(host, Loc.t("MENU_SETTINGS"), 760.0)
 	var box: VBoxContainer = dlg["box"]
 	var sp := SettingsPanel.new()
-	box.add_child(UI.scroll(sp, 460))
+	box.add_child(sp)
 	box.add_child(UI.button(Loc.t("UI_CLOSE"), func() -> void: dlg["close"].call(), "Primary"))
 
 func _init() -> void:

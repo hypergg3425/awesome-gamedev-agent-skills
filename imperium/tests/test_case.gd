@@ -31,6 +31,7 @@ static func scenario(id: String) -> Dictionary:
 	return defs.get(id, {})
 
 static func new_state(id: String = "early_modern", player: String = "", difficulty: String = "normal", seed_value: int = 777) -> Dictionary:
+	Defs.use_map_set(Defs.default_map_set)   # isolate from tests that switched the active map set
 	var def := scenario(id)
 	if player == "":
 		player = str(def.get("default_player", ""))
@@ -60,6 +61,9 @@ static func neighbour_pair(s: Dictionary, min_provs: int = 1) -> Array:
 					if GS.overlord_of(s, a) != "" or GS.overlord_of(s, o) != "" or GS.allied(s, a, o) or GS.at_war(s, a, o):
 						continue
 					if not GS.vassals_of(s, a).is_empty() or not GS.vassals_of(s, o).is_empty():
+						continue
+					# the extended map finds different first neighbours; skip historic claim feuds so fixtures stay neutral
+					if Defs.map_set == "extended" and (DiplomacySystem.claim_count(s, a, o) > 0 or DiplomacySystem.claim_count(s, o, a) > 0):
 						continue
 					return [a, o, pid, nb]
 	return []

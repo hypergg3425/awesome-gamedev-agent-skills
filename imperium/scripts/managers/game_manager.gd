@@ -17,10 +17,14 @@ var last_summary: Dictionary = {}
 var selected_province := ""
 var selected_army := ""
 var in_campaign := false
+var turn_busy := false
 
 ## Android back button / gesture. Screens may define on_back_requested(); otherwise sub-screens return
 ## to the main menu and the main menu quits.
 func _notification(what: int) -> void:
+	if what == NOTIFICATION_APPLICATION_PAUSED or what == NOTIFICATION_WM_CLOSE_REQUEST:
+		lifecycle_autosave()
+		return
 	if what != NOTIFICATION_WM_GO_BACK_REQUEST:
 		return
 	var scene := get_tree().current_scene
@@ -32,6 +36,23 @@ func _notification(what: int) -> void:
 		get_tree().quit()
 	else:
 		Nav.go(get_tree(), "menu")
+
+## Autosave when the app is backgrounded or closed. Never while a turn is being resolved (the state would be
+## half-updated) and never for a finished game. Returns true when a file was written.
+func lifecycle_autosave() -> bool:
+	if not in_campaign or state.is_empty() or turn_busy or bool(state.get("game_over", false)):
+		return false
+	if not bool(Settings.get_value("autosave")):
+		return false
+	return bool(Saves.autosave_quick(_state_for_save()).get("ok", false))
+
+## The hot-seat seat is persisted in the save so a mid-turn load resumes with the right player.
+func _state_for_save() -> Dictionary:
+	if hotseat_index > 0:
+		state["hotseat_index"] = hotseat_index
+	else:
+		state.erase("hotseat_index")
+	return state
 
 func has_state() -> bool:
 	return not state.is_empty()
@@ -72,8 +93,9 @@ func load_game(slot: String) -> Dictionary:
 	if not r["ok"]:
 		return r
 	state = r["state"]
-	hotseat_index = 0
-	active_player = state["player"]
+	hotseat_index = clampi(int(state.get("hotseat_index", 0)), 0, maxi(0, state["players"].size() - 1))
+	state.erase("hotseat_index")
+	active_player = state["players"][hotseat_index] if state["players"].size() > 1 else state["player"]
 	in_campaign = true
 	selected_province = ""
 	selected_army = ""
@@ -83,7 +105,7 @@ func load_game(slot: String) -> Dictionary:
 func save_game(slot: String) -> Dictionary:
 	if state.is_empty():
 		return {"ok": false, "reason": "ERR_INVALID"}
-	return Saves.save_slot(slot, state)
+	return Saves.save_slot(slot, _state_for_save())
 
 func quit_to_menu() -> void:
 	in_campaign = false
@@ -122,14 +144,17 @@ func end_turn() -> Dictionary:
 		selected_army = ""
 		state_changed.emit()
 		return {"ok": true, "passed": true}
+	turn_busy = true
 	var summary := TurnManager.end_turn(state)
+	turn_busy = false
 	hotseat_index = 0
+	state.erase("hotseat_index")
 	active_player = state["player"] if state["players"].size() <= 1 else state["players"][0]
 	last_summary = summary
 	for aid in Achievements.check(state):
 		achievement_unlocked.emit(aid)
 	if bool(Settings.get_value("autosave")) and not bool(state.get("game_over", false)):
-		Saves.autosave(state)
+		Saves.autosave(_state_for_save())
 	turn_ended.emit(summary)
 	state_changed.emit()
 	if bool(state.get("game_over", false)):
@@ -181,6 +206,29 @@ func cmd_disband(aid: String) -> Dictionary:
 		return _result({"ok": false, "reason": "ERR_NOT_YOURS"})
 	MilitarySystem.disband_army(state, aid, true)
 	return _result({"ok": true})
+
+## --- doctrines, fleets, unit improvements (workstream E) ---
+func cmd_set_doctrine(did: String) -> Dictionary:
+	return _result(DoctrineSystem.adopt(state, active_player, did))
+
+func cmd_set_mission(aid: String, mission: String) -> Dictionary:
+	var a: Dictionary = state["armies"].get(aid, {})
+	if a.is_empty() or a["owner"] != active_player:
+		return _result({"ok": false, "reason": "ERR_NOT_YOURS"})
+	return _result(NavalSystem.set_mission(state, aid, mission))
+
+func cmd_split_fleet(aid: String) -> Dictionary:
+	var a: Dictionary = state["armies"].get(aid, {})
+	if a.is_empty() or a["owner"] != active_player:
+		return _result({"ok": false, "reason": "ERR_NOT_YOURS"})
+	var made := NavalSystem.split_by_role(state, aid)
+	return _result({"ok": not made.is_empty(), "reason": "ERR_INVALID", "fleets": made})
+
+func cmd_upgrade_units(aid: String, uid: String) -> Dictionary:
+	var a: Dictionary = state["armies"].get(aid, {})
+	if a.is_empty() or a["owner"] != active_player:
+		return _result({"ok": false, "reason": "ERR_NOT_YOURS"})
+	return _result(MilitarySystem.upgrade_units(state, aid, uid))
 
 func cmd_build(pid: String, bid: String, allow_buy: bool = false) -> Dictionary:
 	return _result(ConstructionSystem.start_build(state, active_player, pid, bid, allow_buy))
@@ -289,6 +337,45 @@ func cmd_event_choice(uid: String, option_id: String) -> Dictionary:
 func cmd_form_coalition(target: String) -> Dictionary:
 	var id := DiplomacySystem.form_coalition_against(state, target)
 	return _result({"ok": id != "", "reason": "DIPLO_ERR_NO_COALITION", "id": id})
+
+## --- v2.1 systems: espionage, dynasty, factions, credit ----------------------------------------------------------------------
+func cmd_spy_build(target: String) -> Dictionary:
+	return _result(EspionageSystem.build_network(state, active_player, target))
+
+func cmd_spy_dismantle(target: String) -> Dictionary:
+	EspionageSystem.dismantle(state, active_player, target)
+	state_changed.emit()
+	return {"ok": true}
+
+func cmd_spy_op(target: String, op: String) -> Dictionary:
+	return _result(EspionageSystem.run_op(state, active_player, target, op))
+
+func cmd_counter_intel() -> Dictionary:
+	return _result(EspionageSystem.raise_ci(state, active_player))
+
+func cmd_propose_marriage(to: String, royal_id: int) -> Dictionary:
+	return _result(DynastySystem.propose_marriage(state, active_player, to, royal_id))
+
+func cmd_designate_heir(royal_id: int) -> Dictionary:
+	return _result(DynastySystem.designate(state, active_player, royal_id))
+
+func cmd_buy_off_rival() -> Dictionary:
+	return _result(DynastySystem.buy_off_rival(state, active_player))
+
+func cmd_faction_concede(fid: String) -> Dictionary:
+	return _result(FactionsSystem.concede(state, active_player, fid))
+
+func cmd_faction_suppress(fid: String) -> Dictionary:
+	return _result(FactionsSystem.suppress(state, active_player, fid))
+
+func cmd_fight_corruption() -> Dictionary:
+	return _result(FactionsSystem.fight_corruption(state, active_player))
+
+func cmd_take_loan(amount: float) -> Dictionary:
+	return _result(EconomyDepth.take_loan(state, active_player, amount))
+
+func cmd_repay_debt(amount: float) -> Dictionary:
+	return _result(EconomyDepth.repay(state, active_player, amount))
 
 ## --- selection -----------------------------------------------------------------------------------------------------------------
 func select_province(pid: String) -> void:

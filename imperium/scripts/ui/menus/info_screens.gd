@@ -40,7 +40,7 @@ static func build_achievements(host: Control) -> void:
 	var b := _frame(host, "MENU_ACHIEVEMENTS")
 	var prof := Achievements.load_profile()
 	var grid := GridContainer.new()
-	grid.columns = 2
+	grid.columns = 1 if host.get_viewport().get_visible_rect().size.x < 1000.0 else 2   # narrow screens: one column
 	grid.add_theme_constant_override("h_separation", 12)
 	grid.add_theme_constant_override("v_separation", 12)
 	b.add_child(grid)
@@ -65,7 +65,7 @@ static func build_achievements(host: Control) -> void:
 			h.add_child(UI.icon_rect(d["icon"], 64, UI.GOLD if done else Color(0.4, 0.4, 0.45)))
 		var v := VBoxContainer.new()
 		v.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-		v.add_child(UI.label(Loc.t("ACH_" + id.to_upper()), "Sub"))
+		v.add_child(UI.label(Loc.t("ACH_" + id.to_upper()), "Sub", -1, true))
 		v.add_child(UI.label(Loc.t("ACHD_" + id.to_upper()), "Tiny", -1, true))
 		v.add_child(UI.label(Loc.t("ACH_UNLOCKED") if done else Loc.t("ACH_LOCKED"), "Good" if done else "Tiny"))
 		h.add_child(v)

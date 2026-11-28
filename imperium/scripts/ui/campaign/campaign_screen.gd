@@ -2,19 +2,30 @@ class_name CampaignScreen
 extends Control
 ## The main campaign scene: world map + HUD + side panels. Pure UI: all rules live in the systems.
 
-const MODES := ["political", "terrain", "economic", "diplomatic", "military", "population", "supply", "trade"]
+const MODES := MapModes.MODES
+
+## Toolbar entries: [sheet id, icon, title key]. Add new sheets here (and in _create_sheets).
+const TOOLBAR := [["economy", "economy", "PANEL_ECONOMY"], ["military", "military", "PANEL_MILITARY"], ["diplomacy", "diplomacy", "PANEL_DIPLOMACY"],
+	["technology", "technology", "PANEL_TECH"], ["politics", "politics", "PANEL_POLITICS"], ["espionage", "spy", "PANEL_ESPIONAGE"],
+	["dynasty", "dynasty", "PANEL_DYNASTY"], ["objectives", "objectives", "PANEL_OBJECTIVES"]]
 
 var mapview: MapView
 var cmap: CampaignMap
 var ui_root: Control
-var hud: PanelContainer
+var hud: CampaignHud
 var hud_box: HBoxContainer
-var toolbar: VBoxContainer
+var toolbar: BoxContainer
+var layout := {}
+var gestures: GestureLayer
+var fx: MapFx
 var sheet_layer: Control
 var overlay_layer: Control
 var toast_box: VBoxContainer
 var end_btn: Button
-var mode_strip: VBoxContainer
+var mode_strip: PanelContainer
+var mode_row: GridContainer
+var legend: MapLegend
+var _mode_compact := false
 var province_panel: ProvincePanel
 var move_bar: PanelContainer
 var move_label: Label
@@ -28,6 +39,7 @@ var hud_refs := {}
 func _ready() -> void:
 	set_anchors_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_PASS
+	Layout.install(get_window())
 	theme = UI.theme()
 	_build()
 	Game.state_changed.connect(_queue_refresh)
@@ -64,9 +76,11 @@ func _build() -> void:
 	mapview.setup(Defs.load_geometry(), Defs.map_meta)
 	cmap = CampaignMap.new()
 	cmap.attach(mapview, Defs.load_geometry())
-	mapview.province_tapped.connect(_on_province_tapped)
-	mapview.province_long_pressed.connect(_on_province_long)
-	mapview.empty_tapped.connect(_on_empty_tapped)
+	fx = MapFx.attach(mapview, self)
+	gestures = GestureLayer.attach(mapview, self)
+	gestures.province_tapped.connect(_on_province_tapped)
+	gestures.long_pressed.connect(_on_long_pressed)
+	gestures.empty_tapped.connect(_on_empty_tapped)
 	ui_root = Control.new()
 	ui_root.set_anchors_preset(Control.PRESET_FULL_RECT)
 	ui_root.mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -79,14 +93,13 @@ func _build() -> void:
 	sheet_layer.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	ui_root.add_child(sheet_layer)
 	province_panel = ProvincePanel.new(self)
-	province_panel.visible = false
+	province_panel.dismiss()
 	ui_root.add_child(province_panel)
 	_build_end_turn()
 	_build_move_bar()
 	toast_box = VBoxContainer.new()
 	toast_box.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	toast_box.set_anchors_preset(Control.PRESET_CENTER_TOP)
-	toast_box.position = Vector2(-300, 86)
+	toast_box.set_anchors_preset(Control.PRESET_TOP_LEFT)
 	toast_box.custom_minimum_size = Vector2(600, 0)
 	ui_root.add_child(toast_box)
 	overlay_layer = Control.new()
@@ -97,118 +110,101 @@ func _build() -> void:
 
 func _rebuild_static() -> void:
 	# language / text scale changed: rebuild HUD & toolbar texts
-	UI.clear(hud_box)
 	UI.clear(toolbar)
-	UI.clear(mode_strip)
-	hud_refs.clear()
-	_fill_hud()
+	UI.clear(mode_row)
+	hud.build()
 	_fill_toolbar()
 	_fill_mode_strip()
 	end_btn.text = Loc.t("UI_END_TURN")
 	for s in sheets.values():
 		(s as Sheet).relocalize()
+	_apply_layout()
 	_queue_refresh()
 
 func _build_hud() -> void:
-	hud = PanelContainer.new()
-	hud.theme_type_variation = "Hud"
-	hud.set_anchors_preset(Control.PRESET_TOP_WIDE)
-	hud.custom_minimum_size = Vector2(0, 64)
+	hud = CampaignHud.new()
+	hud.sheet_requested.connect(func(id: String) -> void: open_sheet(id))
+	hud.menu_requested.connect(func() -> void: _open_menu())
+	hud_box = hud.box
+	hud_refs = hud.refs
+	hud.set_anchors_preset(Control.PRESET_TOP_LEFT)
 	ui_root.add_child(hud)
-	hud_box = HBoxContainer.new()
-	hud_box.add_theme_constant_override("separation", 14)
-	hud.add_child(hud_box)
-	_fill_hud()
-
-func _stat_node(id: String, icon: String, tip_key: String, tint: Color = Color("f4ecd6")) -> HBoxContainer:
-	var h := UI.stat(icon, "0", tint, Loc.t(tip_key))
-	hud_refs[id] = h.get_child(1)
-	return h
-
-func _fill_hud() -> void:
-	var b := Button.new()
-	b.theme_type_variation = "Flat"
-	b.focus_mode = Control.FOCUS_NONE
-	b.custom_minimum_size = Vector2(190, 52)
-	var hb := HBoxContainer.new()
-	hb.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	hb.set_anchors_preset(Control.PRESET_FULL_RECT)
-	var flag := FlagView.make({}, Color.GRAY, Vector2(50, 33))
-	flag.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	hud_refs["flag"] = flag
-	hb.add_child(flag)
-	var nm := UI.label("", "Sub")
-	nm.mouse_filter = Control.MOUSE_FILTER_IGNORE
-	nm.clip_text = true
-	nm.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	hud_refs["name"] = nm
-	hb.add_child(nm)
-	b.add_child(hb)
-	b.pressed.connect(func() -> void:
-		Audio.sfx("ui_click")
-		open_sheet("country"))
-	hud_box.add_child(b)
-	var date := UI.label("", "Value")
-	hud_refs["date"] = date
-	hud_box.add_child(date)
-	var sp := Control.new()
-	sp.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	hud_box.add_child(sp)
-	hud_box.add_child(_stat_node("gold", "gold", "TIP_GOLD", Color("f0cf6a")))
-	hud_box.add_child(_stat_node("manpower", "manpower", "TIP_MANPOWER"))
-	hud_box.add_child(_stat_node("food", "food", "TIP_FOOD", Color("b7d98a")))
-	hud_box.add_child(_stat_node("admin", "admin", "TIP_ADMIN", Color("9ec5ee")))
-	hud_box.add_child(_stat_node("stability", "stability", "TIP_STABILITY"))
-	hud_box.add_child(_stat_node("legitimacy", "legitimacy", "TIP_LEGITIMACY"))
-	hud_box.add_child(_stat_node("prestige", "prestige", "TIP_PRESTIGE", Color("e0b0e8")))
-	var ev := UI.icon_button("events", func() -> void: open_sheet("events"), Loc.t("PANEL_EVENTS"), 50.0)
-	hud_refs["events_btn"] = ev
-	hud_box.add_child(ev)
-	hud_box.add_child(UI.icon_button("menu", func() -> void: _open_menu(), Loc.t("UI_MENU"), 50.0))
+	ui_root.add_child(hud.detail)
 
 func _build_toolbar() -> void:
-	toolbar = VBoxContainer.new()
+	toolbar = BoxContainer.new()
 	toolbar.add_theme_constant_override("separation", 6)
-	toolbar.position = Vector2(8, 78)
 	ui_root.add_child(toolbar)
 	_fill_toolbar()
 
 func _fill_toolbar() -> void:
-	for t in [["economy", "economy", "PANEL_ECONOMY"], ["military", "military", "PANEL_MILITARY"], ["diplomacy", "diplomacy", "PANEL_DIPLOMACY"],
-			["technology", "technology", "PANEL_TECH"], ["politics", "politics", "PANEL_POLITICS"], ["objectives", "objectives", "PANEL_OBJECTIVES"]]:
+	var tb := _tb()
+	for t in TOOLBAR:
 		var key: String = t[0]
-		var b := UI.icon_button(t[1], func() -> void: open_sheet(key), Loc.t(t[2]), 58.0)
+		var b := UI.icon_button(t[1], func() -> void: open_sheet(key), Loc.t(t[2]), tb)
+		b.set_meta("sheet", key)
 		toolbar.add_child(b)
-	toolbar.add_child(UI.spacer(6))
-	toolbar.add_child(UI.icon_button("map", func() -> void:
-		mode_strip.visible = not mode_strip.visible, Loc.t("UI_MAP_MODES"), 58.0))
+	var mb := UI.icon_button("map", func() -> void: _toggle_modes(), Loc.t("UI_MAP_MODES"), tb)
+	mb.set_meta("sheet", "_modes")
+	toolbar.add_child(mb)
+
+func _tb() -> float:
+	return maxf(Layout.touch_min(get_window()), 48.0)
+
+func _toggle_modes() -> void:
+	mode_strip.visible = not mode_strip.visible
+	if mode_strip.visible:
+		Anim.pop_in(mode_strip)
 
 func _build_mode_strip() -> void:
-	mode_strip = VBoxContainer.new()
-	mode_strip.add_theme_constant_override("separation", 4)
-	mode_strip.position = Vector2(76, 392)
+	mode_strip = PanelContainer.new()
+	mode_strip.theme_type_variation = "HudDrop"
 	mode_strip.visible = false
+	mode_row = GridContainer.new()
+	mode_row.columns = CampaignLayout.MODE_COLUMNS
+	mode_row.add_theme_constant_override("h_separation", 4)
+	mode_row.add_theme_constant_override("v_separation", 4)
+	mode_strip.add_child(mode_row)
 	ui_root.add_child(mode_strip)
 	_fill_mode_strip()
+	legend = MapLegend.new()
+	legend.collapsed = Layout.compact(get_viewport_rect().size)
+	ui_root.add_child(legend)
 
 func _fill_mode_strip() -> void:
+	_mode_compact = Layout.compact(get_viewport_rect().size)
 	for m in MODES:
 		var mm: String = m
-		var b := UI.icon_button("mode_" + mm, func() -> void: set_map_mode(mm), Loc.t("MODE_" + mm.to_upper()), 50.0, "Primary" if cmap and cmap.mode == mm else "")
-		mode_strip.add_child(b)
+		var sel := "Primary" if cmap and cmap.mode == mm else ""
+		var name := Loc.t("MODE_" + mm.to_upper())
+		var b: Button
+		if _mode_compact:
+			b = UI.icon_button("mode_" + mm, func() -> void: set_map_mode(mm), name, _tb(), sel)
+		else:
+			b = UI.button(name, func() -> void: set_map_mode(mm), sel, "mode_" + mm)
+			b.tooltip_text = name
+			b.custom_minimum_size = Vector2(CampaignLayout.MODE_BTN_W, _tb())
+			b.add_theme_font_size_override("font_size", UI.fs(12))
+			b.add_theme_constant_override("icon_max_width", 20)
+			b.add_theme_constant_override("h_separation", 4)
+			b.clip_text = true
+		b.set_meta("mode", mm)
+		mode_row.add_child(b)
 
 func set_map_mode(m: String) -> void:
 	cmap.mode = m
+	fx.mode_flash()
 	mode_strip.visible = false
-	UI.clear(mode_strip)
+	UI.clear(mode_row)
 	_fill_mode_strip()
 	cmap.refresh()
+	legend.show_mode(m, Game.state, Game.active_player)
 	toast(Loc.t("MODE_" + m.to_upper()), "map")
 
 func _build_end_turn() -> void:
 	end_btn = UI.button(Loc.t("UI_END_TURN"), func() -> void: _on_end_turn(), "Primary", "end_turn")
-	end_btn.custom_minimum_size = Vector2(210, 64)
-	end_btn.add_theme_font_size_override("font_size", UI.fs(24))
+	end_btn.add_theme_font_size_override("font_size", UI.fs(22))
+	end_btn.add_theme_constant_override("icon_max_width", 34)
 	ui_root.add_child(end_btn)
 
 func _build_move_bar() -> void:
@@ -219,7 +215,7 @@ func _build_move_bar() -> void:
 	h.add_theme_constant_override("separation", 12)
 	move_bar.add_child(h)
 	move_label = UI.label("", "Value")
-	move_label.custom_minimum_size = Vector2(380, 0)
+	move_label.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	move_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	h.add_child(move_label)
 	h.add_child(UI.button(Loc.t("UI_CANCEL"), func() -> void: _cancel_move_preview()))
@@ -230,27 +226,72 @@ func _build_move_bar() -> void:
 func _apply_layout() -> void:
 	if ui_root == null:
 		return
+	var vs := get_viewport_rect().size
 	var ins := UI.safe_insets(get_viewport())
-	var bottom := float(ins["bottom"]) + Ads.reserved_height()
-	ui_root.offset_left = float(ins["left"])
-	ui_root.offset_top = float(ins["top"])
-	ui_root.offset_right = -float(ins["right"])
-	ui_root.offset_bottom = -bottom
-	mapview.offset_bottom = -bottom
-	var sz := get_viewport_rect().size
-	var avail := Vector2(sz.x - float(ins["left"]) - float(ins["right"]), sz.y - float(ins["top"]) - bottom)
-	end_btn.position = Vector2(avail.x - 226.0, avail.y - 80.0)
-	move_bar.position = Vector2(maxf(90.0, avail.x * 0.5 - 330.0), avail.y - 92.0)
+	var banner := Ads.reserved_height()
+	# the root fills the whole viewport; chrome is placed in absolute (virtual) coordinates so it can sit on top of the map
+	ui_root.offset_left = 0.0
+	ui_root.offset_top = 0.0
+	ui_root.offset_right = 0.0
+	ui_root.offset_bottom = 0.0
+	mapview.offset_bottom = -(float(ins["bottom"]) + banner)
+	layout = CampaignLayout.compute(vs, ins, banner, TOOLBAR.size() + 1, _tb(), province_panel != null and province_panel.visible, MODES.size())
+	var tb: float = layout["tb"]
+	_place(hud, layout["hud"])
+	hud.custom_minimum_size = Vector2(0, tb + 10.0)
+	hud.fit(hud.size.x, (layout["avail"] as Rect2).size.x >= 1180.0)
+	var drop_w := maxf(hud.detail.get_combined_minimum_size().x, 300.0)
+	hud.detail.position = Vector2((layout["hud"] as Rect2).end.x - drop_w - 8.0, (layout["hud"] as Rect2).end.y + 4.0)
+	hud.detail.size = Vector2(drop_w, hud.detail.get_combined_minimum_size().y)
+	toolbar.vertical = layout["toolbar_vertical"]
+	_place(toolbar, layout["toolbar"])
+	for b in toolbar.get_children():
+		(b as Control).custom_minimum_size = Vector2(tb, tb)
+	_place(end_btn, layout["end"])
+	if _mode_compact != bool(layout["compact"]):
+		UI.clear(mode_row)
+		_fill_mode_strip()
+	mode_row.columns = int(layout["mode_cols"])
+	_place(mode_strip, layout["modes"])
+	legend.position = (layout["legend"] as Rect2).position
+	var drop := (layout["toast"] as Rect2)
+	toast_box.position = drop.position
+	toast_box.custom_minimum_size = Vector2(drop.size.x, 0)
+	toast_box.size = Vector2(drop.size.x, toast_box.size.y)
+	_place(move_bar, layout["move"])
 	for s in sheets.values():
 		_place_sheet(s)
-	province_panel.place(avail)
+	province_panel.place(layout["province"])
+	_sync_chrome_visibility()
+
+static func _place(c: Control, r: Rect2) -> void:
+	c.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	c.position = r.position
+	c.custom_minimum_size = r.size if not (c is BoxContainer or c is PanelContainer) else c.custom_minimum_size
+	c.size = r.size
 
 func _place_sheet(s: Sheet) -> void:
-	var sz := ui_root.size
-	var w := minf(780.0, sz.x * 0.62)
-	s.position = Vector2(82, 72)
-	s.custom_minimum_size = Vector2(w, 0)
-	s.size = Vector2(w, maxf(200.0, sz.y - 150.0))
+	if layout.is_empty():
+		return
+	var r: Rect2 = layout["sheet"]
+	s.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	s.custom_minimum_size = Vector2(r.size.x, 0)
+	s.position = r.position
+	s.size = r.size
+
+## On phones the sheet covers the toolbar/End-turn; with a narrow width it also hides the province panel.
+func _sync_chrome_visibility() -> void:
+	if layout.is_empty():
+		return
+	var sheet_open: bool = open_sheet_name != "" and sheets.has(open_sheet_name) and sheets[open_sheet_name].visible
+	var compact: bool = layout["compact"]
+	toolbar.visible = not (compact and sheet_open)
+	end_btn.visible = not (compact and sheet_open)
+	legend.visible = not sheet_open
+	if sheet_open and compact:
+		mode_strip.visible = false
+	province_panel.suppressed = sheet_open and bool(layout["sheet_hides_province"])
+	province_panel.apply_visibility()
 
 ## --- sheets --------------------------------------------------------------------------------------------------------------
 func _create_sheets() -> void:
@@ -263,6 +304,8 @@ func _create_sheets() -> void:
 		"politics": ["PANEL_POLITICS", "politics", PanelsPolitics],
 		"objectives": ["PANEL_OBJECTIVES", "objectives", PanelsObjectives],
 		"events": ["PANEL_EVENTS", "events", PanelsEvents],
+		"espionage": ["PANEL_ESPIONAGE", "spy", PanelsEspionage],
+		"dynasty": ["PANEL_DYNASTY", "dynasty", PanelsDynasty],
 	}
 	for id in defs:
 		var d: Array = defs[id]
@@ -270,27 +313,39 @@ func _create_sheets() -> void:
 		sh.visible = false
 		sheet_layer.add_child(sh)
 		d[2].build(sh, self)
-		sh.closed.connect(func() -> void: open_sheet_name = "")
+		sh.closed.connect(func() -> void:
+			open_sheet_name = ""
+			_sync_chrome_visibility())
 		sheets[id] = sh
 		_place_sheet(sh)
 
 func open_sheet(id: String) -> void:
 	if not sheets.has(id):
 		return
+	hud.close_detail()
 	var was_open: bool = open_sheet_name == id and sheets[id].visible
 	for k in sheets:
 		sheets[k].visible = false
 	if was_open:
 		open_sheet_name = ""
+		_sync_chrome_visibility()
 		return
 	open_sheet_name = id
-	(sheets[id] as Sheet).open()
 	_place_sheet(sheets[id])
+	(sheets[id] as Sheet).open()
+	_sync_chrome_visibility()
+	_highlight_toolbar(id)
 
 func close_sheets() -> void:
 	for k in sheets:
 		sheets[k].visible = false
 	open_sheet_name = ""
+	_sync_chrome_visibility()
+	_highlight_toolbar("")
+
+func _highlight_toolbar(id: String) -> void:
+	for b in toolbar.get_children():
+		(b as Button).theme_type_variation = "Primary" if str(b.get_meta("sheet", "")) == id and id != "" else ""
 
 func refresh_open_sheet() -> void:
 	if open_sheet_name != "" and sheets[open_sheet_name].visible:
@@ -308,32 +363,19 @@ func _refresh_all() -> void:
 	if not Game.has_state():
 		return
 	cmap.refresh()
+	legend.show_mode(cmap.mode, Game.state, Game.active_player)
+	fx.track_armies(Game.state)
+	fx.track_sieges(Game.state)
 	update_hud()
 	refresh_open_sheet()
 	province_panel.refresh()
 
 func update_hud() -> void:
-	var s: Dictionary = Game.state
 	var c: Dictionary = Game.pc()
-	var b: Dictionary = c.get("budget", {})
-	(hud_refs["flag"] as FlagView).setup(c.get("flag", {}), Util.color_from(c.get("color", "#888888")))
-	hud_refs["name"].text = Loc.tx(c.get("short", c.get("name", "")))
-	hud_refs["date"].text = GS.date_string(s) + "   " + Loc.tf("UI_TURN_N", {"n": int(s["turn"]) + 1})
-	var net := float(b.get("net", 0.0))
-	hud_refs["gold"].text = "%s (%s)" % [UI.fmt(float(c["gold"])), UI.signed(net)]
-	UI.tint_label(hud_refs["gold"], 1.0 if float(c["gold"]) >= 0.0 else -1.0)
-	hud_refs["manpower"].text = "%s/%s" % [UI.fmt(float(c["manpower"])), UI.fmt(float(c["manpower_max"]))]
-	var fb := float(b.get("food_balance", 0.0))
-	hud_refs["food"].text = "%s (%s)" % [UI.fmt(float(c["stock"]["food"])), UI.signed(fb)]
-	hud_refs["admin"].text = UI.fmt(float(c["admin"]))
-	hud_refs["stability"].text = "%d" % int(round(float(c["stability"])))
-	UI.tint_label(hud_refs["stability"], float(c["stability"]) - 40.0)
-	hud_refs["legitimacy"].text = "%d" % int(round(float(c["legitimacy"])))
-	hud_refs["prestige"].text = UI.fmt(float(c["prestige"]))
-	var pend := Game.pending_events().size()
-	var evb: Button = hud_refs["events_btn"]
-	evb.modulate = Color(1, 0.8, 0.3) if pend > 0 else Color.WHITE
-	end_btn.disabled = bool(s.get("game_over", false)) or _busy
+	hud.update_from(Game.state, c, Game.pending_events().size())
+	end_btn.disabled = bool(Game.state.get("game_over", false)) or _busy
+	if not layout.is_empty():
+		hud.fit(hud.size.x, (layout["avail"] as Rect2).size.x >= 1180.0)
 
 func _focus_player() -> void:
 	var cap: String = Game.pc().get("capital", "")
@@ -346,9 +388,12 @@ func select_province(pid: String) -> void:
 	Game.select_province(pid)
 	cmap.select(pid)
 	province_panel.show_province(pid)
+	fx.select_burst(pid)
 
 func _on_province_tapped(pid: String) -> void:
 	Audio.sfx("ui_click", -6.0)
+	hud.close_detail()
+	ContextPopup.close_all(self)
 	var a: Dictionary = Game.state["armies"].get(Game.selected_army, {})
 	if not a.is_empty() and a["owner"] == Game.active_player and a["loc"] != pid and a["loc"] != "" and not move_bar.visible and Game.selected_army != "":
 		_preview_move(Game.selected_army, pid)
@@ -357,15 +402,21 @@ func _on_province_tapped(pid: String) -> void:
 		_cancel_move_preview()
 	select_province(pid)
 
-func _on_province_long(pid: String) -> void:
-	mapview.focus_province(pid, 4.0)
+func _on_long_pressed(kind: String, pid: String, at: Vector2) -> void:
+	hud.close_detail()
+	if move_bar.visible:
+		return
+	ContextPopup.show_for(self, kind, pid, at)
 
 func _on_empty_tapped() -> void:
+	hud.close_detail()
+	if ContextPopup.close_all(self):
+		return
 	if move_bar.visible:
 		_cancel_move_preview()
 		return
 	Game.selected_army = ""
-	province_panel.visible = false
+	province_panel.dismiss()
 	cmap.select("")
 	close_sheets()
 	_queue_refresh()
@@ -436,16 +487,17 @@ func toast(text: String, icon: String = "info", seconds: float = 3.2) -> void:
 	h.add_child(UI.icon_rect(icon, 28, UI.GOLD_LIGHT))
 	var l := UI.label(text, "Value")
 	l.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	l.custom_minimum_size = Vector2(520, 0)
+	l.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 	h.add_child(l)
 	pc.add_child(h)
 	toast_box.add_child(pc)
 	while toast_box.get_child_count() > 4:
 		toast_box.get_child(0).queue_free()
 		toast_box.remove_child(toast_box.get_child(0))
-	if bool(Settings.get_value("animations")):
-		pc.modulate.a = 0.0
-		create_tween().tween_property(pc, "modulate:a", 1.0, 0.25)
+	Anim.pop_in(pc, 0.22)
+	if icon == "diplomacy":
+		Anim.shake(hud.refs["events_btn"])
+		Audio.sfx("diplomacy_notify", -6.0)
 	get_tree().create_timer(seconds).timeout.connect(func() -> void:
 		if is_instance_valid(pc):
 			var tw := create_tween()
@@ -530,6 +582,10 @@ func _hotseat_handoff() -> void:
 func _after_turn(res: Dictionary) -> void:
 	_queue_refresh()
 	var me := Game.active_player
+	fx.turn_banner(GS.date_string(Game.state))
+	for r in res.get("battles", []):
+		var att_side: bool = me in r["attackers"]["owners"]
+		fx.battle(str(r["pid"]), (r["winner"] == "attacker") == att_side)
 	var notes := Game.notes_this_turn(me)
 	var shown := 0
 	for n in notes:
@@ -578,11 +634,20 @@ func _show_end_screen() -> void:
 ## Android back button: dismiss panels first, otherwise open the pause menu (never quits mid-campaign).
 func on_back_requested() -> void:
 	if overlay_layer.get_child_count() > 0:
-		return   # a modal dialog is up; it must be answered explicitly
-	if open_sheet_name != "":
+		Dialogs.dismiss_top(overlay_layer)   # explicit-answer modals (events, proposals, battle reports) ignore back
+		return
+	if ContextPopup.close_all(self):
+		return
+	if hud.detail.visible:
+		hud.close_detail()
+	elif mode_strip.visible:
+		mode_strip.visible = false
+	elif move_bar.visible:
+		_cancel_move_preview()
+	elif open_sheet_name != "":
 		close_sheets()
 	elif province_panel != null and province_panel.visible:
-		province_panel.visible = false
+		province_panel.dismiss()
 		cmap.select("")
 	else:
 		_open_menu()

@@ -11,6 +11,7 @@ signal view_changed()
 const TAP_MOVE_PX := 14.0
 const LONG_PRESS_MS := 550
 const GRID := 40.0
+const COAST_CHUNK := 600.0
 
 var geometry: MapGeometry
 var world: Node2D
@@ -19,6 +20,11 @@ var province_mesh: MeshInstance2D
 var land_mesh: MeshInstance2D
 var lake_mesh: MeshInstance2D
 var border_layer: Node2D
+var water_layer: Node2D
+var feature_layer: Node2D
+var relief_layer: Node2D
+var ocean_mat: ShaderMaterial
+var relief: PackedFloat32Array = PackedFloat32Array()
 var color_img: Image
 var color_tex: ImageTexture
 var n_prov := 0
@@ -55,6 +61,7 @@ var seg_front: PackedVector2Array = PackedVector2Array()
 var border_colors := {"province": Color(0.12, 0.1, 0.08, 0.35), "country": Color(0.08, 0.06, 0.05, 0.95),
 	"coast": Color(0.05, 0.1, 0.16, 0.9), "front": Color(0.85, 0.15, 0.1, 0.95)}
 var _last_border_zoom_tier := -99
+var _shader_zoom := -1.0
 
 func _ready() -> void:
 	clip_contents = true
@@ -70,15 +77,29 @@ func setup(geom: MapGeometry, meta: Dictionary) -> void:
 	world = Node2D.new()
 	add_child(world)
 	_build_ocean()
+	water_layer = Node2D.new()
+	water_layer.set_script(preload("res://scripts/map/water_layer.gd"))
+	water_layer.view = self
+	world.add_child(water_layer)
 	land_mesh = _mesh_from_polys(geom.land, Color(0.30, 0.28, 0.24), -1)
 	world.add_child(land_mesh)
 	_build_province_mesh()
 	lake_mesh = _mesh_from_polys(geom.lakes, Color(0.10, 0.22, 0.33), -1)
 	world.add_child(lake_mesh)
+	relief_layer = Node2D.new()
+	relief_layer.set_script(preload("res://scripts/map/relief_layer.gd"))
+	relief_layer.view = self
+	relief_layer.visible = false
+	world.add_child(relief_layer)
 	border_layer = Node2D.new()
 	border_layer.set_script(preload("res://scripts/map/border_layer.gd"))
 	border_layer.view = self
 	world.add_child(border_layer)
+	_build_coasts(geom)
+	feature_layer = Node2D.new()
+	feature_layer.set_script(preload("res://scripts/map/feature_layer.gd"))
+	feature_layer.view = self
+	world.add_child(feature_layer)
 	overlay = Control.new()
 	overlay.set_script(preload("res://scripts/map/map_overlay.gd"))
 	overlay.view = self
@@ -86,6 +107,10 @@ func setup(geom: MapGeometry, meta: Dictionary) -> void:
 	overlay.set_anchors_preset(Control.PRESET_FULL_RECT)
 	add_child(overlay)
 	_build_grid()
+	feature_layer.build(geom)
+	_compute_relief()
+	Settings.changed.connect(_on_setting_changed)
+	_apply_animation_setting()
 	base_colors.resize(n_prov)
 	hi_colors.resize(n_prov)
 	for i in n_prov:
@@ -115,7 +140,41 @@ func _build_ocean() -> void:
 	mat.shader = load("res://assets/shaders/ocean.gdshader")
 	mat.set_shader_parameter("grain", _grain_texture())
 	rect.material = mat
+	ocean_mat = mat
 	world.add_child(rect)
+
+func _on_setting_changed(key: String) -> void:
+	if key == "animations":
+		_apply_animation_setting()
+
+func _apply_animation_setting() -> void:
+	if ocean_mat:
+		ocean_mat.set_shader_parameter("animate", 1.0 if bool(Settings.get_value("animations")) else 0.0)
+
+## Coast polylines of every province grouped in chunks (culling): full detail for zoom >= 1, a decimated and smoothed
+## (Chaikin) copy for the world view. Water bands go under the land, the shoreline over the provinces.
+func _build_coasts(geom: MapGeometry) -> void:
+	var chunks := {}
+	for lines in geom.coasts:
+		for l in lines:
+			var v: PackedVector2Array = l
+			if v.size() < 2:
+				continue
+			var key := Vector2i(int(floor(v[0].x / COAST_CHUNK)), int(floor(v[0].y / COAST_CHUNK)))
+			if not chunks.has(key):
+				chunks[key] = {"hi": [], "lo": []}
+			(chunks[key]["hi"] as Array).append(v)
+			(chunks[key]["lo"] as Array).append(MapLines.chaikin(MapLines.decimate(v, 3)))
+	water_layer.add_chunks(chunks)
+	border_layer.add_coast_outline(chunks)
+
+## Relief amplitude per province for the hillshade (0 flat .. 1 alpine), from terrain and mountain cover.
+func _compute_relief() -> void:
+	relief.resize(n_prov)
+	var by_terrain := {"mountains": 0.9, "hills": 0.55, "arctic": 0.3, "forest": 0.2, "jungle": 0.2, "desert": 0.18, "marsh": 0.06}
+	for i in n_prov:
+		var pd: Dictionary = Defs.provinces[Defs.province_ids[i]]
+		relief[i] = clampf(float(by_terrain.get(pd["terrain"], 0.1)) + 0.5 * float(pd.get("mountain_cover", 0.0)), 0.05, 1.0)
 
 func _mesh_from_polys(polys: Array, col: Color, uv_index: int) -> MeshInstance2D:
 	var verts := PackedVector2Array()
@@ -163,7 +222,7 @@ func _build_province_mesh() -> void:
 	mesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arr)
 	province_mesh = MeshInstance2D.new()
 	province_mesh.mesh = mesh
-	color_img = Image.create(n_prov, 2, false, Image.FORMAT_RGBA8)
+	color_img = Image.create(n_prov, 3, false, Image.FORMAT_RGBA8)
 	color_tex = ImageTexture.create_from_image(color_img)
 	var mat := ShaderMaterial.new()
 	mat.shader = load("res://assets/shaders/province_fill.gdshader")
@@ -224,6 +283,7 @@ func _push_colors() -> void:
 		var b := base_colors[i]
 		color_img.set_pixel(i, 0, Color(b.r, b.g, b.b, 1.0))
 		color_img.set_pixel(i, 1, hi_colors[i])
+		color_img.set_pixel(i, 2, Color(relief[i], 0.0, 0.0, 1.0))
 	color_tex.update(color_img)
 
 func push_colors() -> void:
@@ -269,9 +329,24 @@ func _apply_camera() -> void:
 	var tier := int(floor(log(zoom) / log(1.35)))
 	if tier != _last_border_zoom_tier:
 		_last_border_zoom_tier = tier
-		if border_layer:
-			border_layer.queue_redraw()
+		_update_zoom_layers()
+	if province_mesh and not is_equal_approx(_shader_zoom, zoom):
+		_shader_zoom = zoom
+		(province_mesh.material as ShaderMaterial).set_shader_parameter("zoom", zoom)
+		ocean_mat.set_shader_parameter("zoom", zoom)
 	view_changed.emit()
+
+## Layers whose line widths / visibility depend on the zoom tier (redrawn rarely, never per frame).
+func _update_zoom_layers() -> void:
+	if border_layer == null:
+		return
+	border_layer.queue_redraw_all()
+	water_layer.redraw_chunks()
+	feature_layer.queue_redraw()
+	var show_relief := MapZoom.show_relief(zoom)
+	if show_relief:
+		relief_layer.ensure_built()
+	relief_layer.visible = show_relief
 
 func world_to_screen(p: Vector2) -> Vector2:
 	return (p - center) * zoom + size * 0.5

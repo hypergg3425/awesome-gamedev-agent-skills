@@ -26,3 +26,9 @@ Premium historical grand-strategy: serious, parchment-and-ink, never cartoonish.
 * Frames/ornaments: gold line work with small corner flourishes; parchment fills.
 * Audio: original synthesis only. Modal melodies (Dorian/Phrygian), lute/pluck, soft pads, frame drum, low brass
   for war. Loops must be seamless. Peak ≤ -3 dBFS, music normalised ≈ -16 LUFS, SFX ≈ -12 LUFS.
+
+## v2.0 UI visual system
+* Hierarchy: HUD shows treasury, manpower, food at full prominence; stability/legitimacy inline on wide screens only; everything else in the "more" drop-down.
+* Chrome is drawn by `FrameStyle` (theme variations Sheet, Card, Paper, Hud, HudDrop, Toast, Chip, Tab, Primary, Good): vertical gradient, 2px gold edge, inset hairline, corner diamonds/flourishes on sheets.
+* Motion (all gated by Settings "animations"; `Anim`): 0.15-0.25 s pop/fade for panels and dialogs, staggered menu entry, scene fade, selection ring, army march token, battle clash, siege sparks, turn-date banner, map-mode flash, drifting clouds/embers in the main menu.
+* Layout: `Layout` scales the stretch so 1 virtual px >= ~0.9 physical px (desktop) or ~1 dp (touch); size classes COMPACT/MEDIUM/REGULAR; `CampaignLayout.compute` places all chrome.

@@ -35,9 +35,11 @@ static func cost_text(cost: Dictionary) -> String:
 			parts.append("%s %s" % [UI.fmt(float(cost[k])), Loc.t("RES_" + str(k).to_upper())])
 	return ", ".join(parts)
 
-static func cost_row(cost: Dictionary, have: Dictionary = {}) -> HBoxContainer:
-	var h := HBoxContainer.new()
-	h.add_theme_constant_override("separation", 10)
+## Resource costs; wraps onto several lines on narrow panels instead of widening them.
+static func cost_row(cost: Dictionary, have: Dictionary = {}) -> HFlowContainer:
+	var h := HFlowContainer.new()
+	h.add_theme_constant_override("h_separation", 10)
+	h.add_theme_constant_override("v_separation", 2)
 	for k in cost:
 		var ic: String = RES_ICON.get(k, "gold")
 		var enough := true
@@ -72,7 +74,10 @@ static func war_name(s: Dictionary, w: Dictionary) -> String:
 static func general_text(g: Variant) -> String:
 	if g == null:
 		return Loc.t("MIL_NO_GENERAL")
-	return "%s  (%d/%d/%d)" % [str(g["name"]), int(g["tac"]), int(g["log"]), int(g["siege"])]
+	var txt := "%s  (%d/%d/%d)" % [str(g["name"]), int(g["tac"]), int(g["log"]), int(g["siege"])]
+	if not Commanders.traits_of(g).is_empty():
+		txt += "  " + Commanders.trait_names(g)
+	return txt
 
 static func unit_comp(a: Dictionary) -> String:
 	var parts: Array = []

@@ -23,6 +23,8 @@ Ads (autoload): banner only      Audio (autoload): buses, music/SFX
 * **Localisation**: `Loc.t/tf/tx`; `strings.json {KEY:{en,tr}}` (971 keys), content uses inline `{en,tr}`.
 * **Ads**: see docs/ADMOB_SETUP.md. Plugin bound dynamically through `ProjectSettings.get_global_class_list()`; project runs with or without it.
 
+* **v2.1 systems (save v4)**: `sim_ext.gd` (init, migration, phases), `espionage_system.gd` (`country.esp`), `dynasty_system.gd` (`country.dyn`, ruler/heir stay in `ruler`/`heir`), `factions_system.gd` + `gov_mechanics.gd` + `civil_war.gd` (`country.fac`, rules in `governments.json -> politics`), `economy_depth.gd` (`country.eco`, `state.econ`). Building effects listed in `Mods.NATIONAL` also act nationally with a soft cap. Techs carry `era_year`; `TechSystem.era_check` allows a 50-year lead (up to 150 for countries far ahead of the world). Approximate era years: HISTORICAL_SOURCES.md.
+
 ## Directory map
 `data/` content · `scripts/{core,data,systems,ai,map,ui,save,managers,ads,localization}` · `scenes/` thin wrappers · `tests/` · `tools/` generators/validators/CI helpers · `docs/` · `assets/`.
 

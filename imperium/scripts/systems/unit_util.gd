@@ -11,6 +11,14 @@ static func is_available(s: Dictionary, cid: String, uid: String) -> bool:
 	if t is Array and (t as Array).size() == 2:
 		if TechSystem.level(c, t[0]) < int(t[1]):
 			return false
+	var t2: Variant = u.get("tech_also")
+	if t2 is Array and (t2 as Array).size() == 2:
+		if TechSystem.level(c, t2[0]) < int(t2[1]):
+			return false
+	if u.has("year_min") or u.has("year_max"):
+		var year := int(GS.date_of(s)["year"])
+		if year < int(u.get("year_min", -9999)) or year > int(u.get("year_max", 9999)):
+			return false
 	var cults: Array = u.get("cultures", [])
 	var ctrs: Array = u.get("countries", [])
 	if not ctrs.is_empty():
@@ -69,6 +77,16 @@ static func has_naval(a: Dictionary) -> bool:
 		if Defs.units[uid]["naval"]:
 			return true
 	return false
+
+static func has_tag(uid: String, tag: String) -> bool:
+	return tag in Defs.units.get(uid, {}).get("tags", [])
+
+## Next unit of the improvement chain that the country can field now ("" if none).
+static func upgrade_of(s: Dictionary, cid: String, uid: String) -> String:
+	var nxt: String = str(Defs.units.get(uid, {}).get("upgrades_to", ""))
+	if nxt == "" or not is_available(s, cid, nxt):
+		return ""
+	return nxt
 
 static func is_naval_army(a: Dictionary) -> bool:
 	return bool(a.get("naval", false))

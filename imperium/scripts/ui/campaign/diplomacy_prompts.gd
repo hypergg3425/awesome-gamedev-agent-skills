@@ -12,6 +12,7 @@ static func request_text(s: Dictionary, r: Dictionary) -> String:
 static func show_request(host: Control, r: Dictionary) -> void:
 	var s: Dictionary = Game.state
 	var dlg := Dialogs.custom(host, Loc.t("PROPOSAL_TITLE"), 620.0)
+	(dlg["dim"] as Control).remove_meta("back")   # a proposal must be answered explicitly
 	var box: VBoxContainer = dlg["box"]
 	var h := HBoxContainer.new()
 	var oc: Dictionary = s["countries"][r["from"]]

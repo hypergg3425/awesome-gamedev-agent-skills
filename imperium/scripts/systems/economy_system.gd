@@ -40,7 +40,7 @@ static func _province_calc(s: Dictionary, pid: String) -> Dictionary:
 	var stab_f := 1.0 - unrest / 220.0
 	var r := {"tax": 0.0, "production": 0.0, "food_prod": 0.0, "food_cons": pop * FOOD_PER_KPOP * 0.97, "mats": {}, "manpower": 0.0,
 		"upkeep": 0.0, "commerce": 0.0, "pop": pop}
-	var tax_rate := float(c.get("tax_rate", 0.25))
+	var tax_rate := minf(float(c.get("tax_rate", 0.25)), FactionsSystem.tax_cap(c)) if not c.is_empty() else 0.25
 	var tax_mult := 1.0 + float(m.get("tax", 0.0)) + float(pm.get("tax_mult", 0.0)) + dev * 0.03 + 1.5 * (float(cls.get("merchants", 0.0)) + float(cls.get("artisans", 0.0)))
 	r["tax"] = pop * tax_rate * TAX_PER_KPOP * tax_mult * stab_f * (1.0 - devast)
 	var peas := float(cls.get("peasants", 0.7))
@@ -70,6 +70,7 @@ static func _province_calc(s: Dictionary, pid: String) -> Dictionary:
 	r["upkeep"] = up
 	r["admin_cap"] = float(pm.get("admin_cap", 0.0))
 	r["trade_power"] = float(pm.get("trade_power", 0.0))
+	EconomyDepth.adjust(s, p, pd, pm, m, r)
 	return r
 
 static func manpower_max(s: Dictionary, cid: String) -> float:
@@ -115,7 +116,7 @@ static func budget(s: Dictionary, cid: String) -> Dictionary:
 	var c: Dictionary = s["countries"][cid]
 	var m := Mods.country(s, cid)
 	var b := {"tax": 0.0, "production": 0.0, "trade": 0.0, "export": 0.0, "tribute": 0.0, "loot": 0.0, "income": 0.0,
-		"army": 0.0, "navy": 0.0, "buildings": 0.0, "admin": 0.0, "interest": 0.0, "subsidy": 0.0, "food_import": 0.0,
+		"army": 0.0, "navy": 0.0, "buildings": 0.0, "admin": 0.0, "interest": 0.0, "subsidy": 0.0, "food_import": 0.0, "spy": 0.0,
 		"expenses": 0.0, "net": 0.0, "food_prod": 0.0, "food_cons": 0.0, "food_army": 0.0, "mats": {"iron": 0.0, "wood": 0.0, "stone": 0.0, "coal": 0.0, "lux": 0.0},
 		"manpower": 0.0, "pop": 0.0, "provinces": 0, "coal_need": 0.0}
 	var ac := admin_capacity(s, cid)
@@ -147,10 +148,11 @@ static func budget(s: Dictionary, cid: String) -> Dictionary:
 	# tribute from vassals
 	for vid in GS.vassals_of(s, cid):
 		var vb: Dictionary = s["countries"][vid].get("budget", {})
-		b["tribute"] += maxf(0.0, float(vb.get("income", 0.0))) * 0.12
+		b["tribute"] += maxf(0.0, float(vb.get("subsidy", 0.0)))   # exactly what the vassal pays: tribute never creates money
 	if c["overlord"] != "":
 		var ob := float(b["tax"]) + float(b["production"]) + float(b["trade"])
 		b["subsidy"] = ob * 0.12
+	b["tax"] = float(b["tax"]) * FactionsSystem.tax_factor(c)
 	# army upkeep
 	var fund := float(c["army_funding"])
 	var upm := 1.0 + float(m.get("army_upkeep", 0.0))
@@ -160,12 +162,13 @@ static func budget(s: Dictionary, cid: String) -> Dictionary:
 			continue
 		var u := UnitUtil.army_upkeep(s, a) * upm * fund
 		if a.get("naval", false):
-			b["navy"] += u
+			b["navy"] += u * (1.0 + float(m.get("navy_upkeep", 0.0)))
 		else:
 			b["army"] += u
 		b["food_army"] += UnitUtil.army_size(a) * 0.8 if a["loc"] != "" and s["provinces"][a["loc"]]["controller"] == cid else 0.0
 	# recruitment queue is paid up-front; admin
-	b["admin"] = 0.8 * pow(maxf(float(b["provinces"]), 1.0), 1.15) * (1.0 + float(m.get("corruption", 0.0))) * (1.0 + over * 0.5)
+	b["admin"] = 0.8 * pow(maxf(float(b["provinces"]), 1.0), 1.15) * (1.0 + float(m.get("corruption", 0.0))) * (1.0 + over * 0.5) * clampf(1.0 + (FactionsSystem.corruption(c) - 20.0) / 100.0 * 0.4, 0.9, 1.4)
+	b["spy"] = EspionageSystem.upkeep(s, cid)
 	# interest
 	b["interest"] = float(c["debt"]) * interest_rate(s, cid)
 	# food import cost estimate (only when food shortage and import policy on)
@@ -177,7 +180,7 @@ static func budget(s: Dictionary, cid: String) -> Dictionary:
 	# surplus sales (materials above reserve)
 	b["export"] = export_value(s, cid, b)
 	b["income"] = float(b["tax"]) + float(b["production"]) + float(b["trade"]) + float(b["export"]) + float(b["tribute"]) + float(b["loot"])
-	b["expenses"] = float(b["army"]) + float(b["navy"]) + float(b["buildings"]) + float(b["admin"]) + float(b["interest"]) + float(b["subsidy"]) + float(b["food_import"])
+	b["expenses"] = float(b["army"]) + float(b["navy"]) + float(b["buildings"]) + float(b["admin"]) + float(b["interest"]) + float(b["subsidy"]) + float(b["food_import"]) + float(b["spy"])
 	b["net"] = float(b["income"]) - float(b["expenses"])
 	b["overextension"] = over
 	b["admin_cap"] = ac["cap"]
@@ -203,12 +206,12 @@ static func export_value(s: Dictionary, cid: String, b: Dictionary) -> float:
 
 static func interest_rate(s: Dictionary, cid: String) -> float:
 	var m := Mods.country(s, cid)
-	return clampf(0.025 * (1.0 + float(m.get("interest", 0.0))) * (1.0 + float(s["countries"][cid].get("inflation", 0.0)) * 0.5), 0.005, 0.1)
+	return clampf(0.025 * (1.0 + float(m.get("interest", 0.0))) * (1.0 + float(s["countries"][cid].get("inflation", 0.0)) * 0.5) * EconomyDepth.rate_premium(s["countries"][cid]), 0.005, 0.12)
 
 static func credit_limit(s: Dictionary, cid: String) -> float:
 	var b: Dictionary = s["countries"][cid].get("budget", {})
 	var m := Mods.country(s, cid)
-	return (120.0 + maxf(0.0, float(b.get("income", 20.0))) * 6.0) * (1.0 + float(m.get("credit", 0.0)))
+	return (120.0 + maxf(0.0, float(b.get("income", 20.0))) * 6.0) * (1.0 + float(m.get("credit", 0.0))) * EconomyDepth.limit_factor(s["countries"][cid])
 
 ## Apply a country's economic turn. Returns the budget used.
 static func process_turn(s: Dictionary, cid: String) -> Dictionary:
@@ -242,7 +245,7 @@ static func process_turn(s: Dictionary, cid: String) -> Dictionary:
 	# --- food (national granary: provinces' surpluses cover each other's deficits)
 	var balance := float(b["food_prod"]) - float(b["food_cons"]) - float(b["food_army"])
 	var stock := float(c["stock"]["food"]) + balance
-	var granary_cap := 60.0 + float(b["pop"]) * 0.4
+	var granary_cap := 60.0 + float(b["pop"]) * 0.4 + Mods.granary_total(s, cid)
 	c["food_ratio"] = 1.0
 	if stock < 0.0:
 		# try to import (costed inside budget())
@@ -324,7 +327,9 @@ static func buy_admin(s: Dictionary, cid: String, points: float) -> Dictionary:
 static func _bankruptcy(s: Dictionary, cid: String, overshoot: float) -> void:
 	var c: Dictionary = s["countries"][cid]
 	c["bankrupt_turns"] = int(c["bankrupt_turns"]) + 1
-	c["debt"] = float(c["debt"]) * 0.7
+	var forgiven := float(c["debt"]) * 0.3
+	c["debt"] = float(c["debt"]) - forgiven
+	EconomyDepth.on_default(s, cid, forgiven)
 	c["gold"] = 0.0
 	c["stability"] = maxf(0.0, float(c["stability"]) - 12.0)
 	c["inflation"] = minf(0.8, float(c["inflation"]) + 0.2)

@@ -7,8 +7,8 @@ Legend: [x] done in the authoring environment · [ ] you (or CI) still have to d
 - [x] `export_presets.cfg` (arm64-v8a, min SDK 24, target SDK 36, Gradle build, INTERNET + ACCESS_NETWORK_STATE only)
 - [x] PCK export + packed boot smoke run succeeds (data files included via `include_filter`)
 - [ ] CI run of `.github/workflows/build.yml` is green (first run = first real verification of the Android steps)
-- [x] Debug APK built (114.8 MB) and statically verified (package, targetSdk 36, arm64, manifest AdMob app id)
-- [x] Release AAB built (59.5 MB) with a THROW-AWAY key (proves the pipeline only)
+- [x] Debug APK built (v2 rebuild 119.6 MB; v1 114.8 MB) and statically verified (package, targetSdk 36, arm64, manifest AdMob app id)
+- [x] Release AAB built (v2 rebuild 64.1 MB) with a THROW-AWAY key (proves the pipeline only)
 - [ ] Debug APK installs and starts on a real device / emulator
 - [ ] Release AAB builds with YOUR upload keystore
 

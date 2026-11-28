@@ -20,3 +20,13 @@
 
 ## Reverted / not done
 * An interstitial-ad implementation was started and **reverted** because the v2.0 brief requires banner-only advertising; the interstitial unit id is intentionally not used.
+
+
+## v2 integration (2026-11-28) — merged workstreams
+* **Map:** extended 1062-province dataset (default), parents mapping, 337 rivers / 74 passes / 22 straits, 926 sea links; 15 map modes with legends; relief/coast/water shaders; markers; zoom tiers.
+* **Scenarios:** 7 rebuilt with named polities (136 countries in the medieval ones), historical names layer, 3 new scenarios (1187, 1648, 1805), per-scenario source docs (docs/scenarios/*.md).
+* **Simulation:** espionage, dynasties, factions/coups/civil wars, government mechanics, economy depth, 138 techs with era gating, 31 buildings.
+* **Military/naval:** factor-based battle reports, commanders, 14 doctrines, 61 units, rivers/passes/weather, full naval layer.
+* **UI:** responsive layout engine, HUD, menu, theme, gestures + long-press, animations, back-button chain, tutorial improvements, layout/interaction/regression tests.
+* **Systems:** event effects/conditions extension, editor model API, atomic saves with healing, lifecycle autosave, hotseat seat persistence.
+* **Integration fixes found by the merged test run:** trade payouts exceeded commerce (merchant-fleet bonus) → capped; AI bankrupted by food imports → guard; runtime-created countries lacked naval/doctrine fields → save/load divergence; corruption formula ignored province scale; override exclusions ("-id") now supported; GeoFeatures read the classic dir on the extended set; several test fixtures that depended on the old scenario layout were made robust.

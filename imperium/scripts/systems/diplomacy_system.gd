@@ -76,7 +76,7 @@ static func borders(s: Dictionary, a: String, b: String) -> bool:
 	return _idx(s)["touch"].has(a + ">" + b)
 
 static func claim_count(s: Dictionary, claimer: String, target: String) -> int:
-	return int(_idx(s)["claims"].get(claimer + ">" + target, 0))
+	return int(ceil(float(_idx(s)["claims"].get(claimer + ">" + target, 0)) / Defs.province_scale))  # per classic-province equivalent
 
 static func can_reach(s: Dictionary, a: String, b: String) -> bool:
 	if borders(s, a, b):
@@ -181,6 +181,9 @@ static func evaluate(s: Dictionary, action: String, from: String, to: String, pa
 			if r["trade"]:
 				_add(reasons, "DR_TRADE_PARTNER", 8.0)
 				score += 8.0
+			if DynastySystem.married(s, from, to):
+				_add(reasons, "DR_DYNASTIC_TIES", 18.0)
+				score += 18.0
 			if sh != 0.0 and ce <= 0.0:
 				_add(reasons, "DR_BORDER_FRICTION", -6.0)
 				score -= 6.0
@@ -622,6 +625,8 @@ static func available_cbs(s: Dictionary, a: String, b: String) -> Array:
 		pass
 	if float(cbd.get("infamy", 0.0)) >= 40.0 and not GS.allied(s, a, b):
 		out.append("containment")
+	if EspionageSystem.has_incident(s, a, b):
+		out.append("incident")
 	out.append("conquest")   # always possible, but infamous
 	return out
 
@@ -642,7 +647,7 @@ static func declare_war(s: Dictionary, a: String, b: String, cb: String, goals: 
 		r["alliance"] = false
 	var wid := start_war(s, [a], [b], cb, goals, false)
 	# infamy for unjustified aggression
-	var infamy: float = {"conquest": 14.0, "claim": 4.0, "holy_war": 3.0, "containment": 2.0, "liberation": 0.0, "reconquest": 1.0}.get(cb, 8.0)
+	var infamy: float = {"conquest": 14.0, "claim": 4.0, "holy_war": 3.0, "containment": 2.0, "liberation": 0.0, "reconquest": 1.0, "incident": 1.0}.get(cb, 8.0)
 	if cb == "conquest":
 		infamy += 0.0
 	var ac: Dictionary = s["countries"][a]
@@ -955,6 +960,9 @@ static func target_opinion(s: Dictionary, a: String, b: String) -> float:
 		t += 10.0
 	t -= float(claim_count(s, b, a)) * 6.0     # b has claims on a
 	t -= float(cb.get("infamy", 0.0)) * 0.5
+	t += Mods.get_mod(s, b, "diplo") * 15.0
+	if DynastySystem.married(s, a, b):
+		t += 20.0
 	t -= float(r["wars_fought"]) * 8.0
 	if borders(s, a, b):
 		t -= 6.0

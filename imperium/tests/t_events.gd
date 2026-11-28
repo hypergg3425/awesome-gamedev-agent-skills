@@ -1,6 +1,6 @@
 extends TestCase
 
-const COND_TYPES := ["stability_below", "stability_above", "legitimacy_below", "legitimacy_above", "treasury_below", "treasury_above", "debt_above", "income_below", "income_above", "at_war", "not_at_war", "at_war_with", "gov_is", "gov_in", "has_tech", "tech_avg_above", "provinces_above", "provinces_below", "food_ratio_below", "food_stock_below", "religion_is", "culture_is", "flag_set", "flag_not_set", "year_at_least", "year_before", "is_player", "is_ai", "ruler_age_above", "ruler_skill_below", "ruler_skill_above", "prestige_above", "prestige_below", "manpower_below", "has_reform", "war_exhaustion_above", "season_is", "class_sat_below", "is_vassal", "has_vassals", "alliances_at_least", "owns_province", "neighbors_tag", "armies_at_least", "inflation_above", "bankrupt_recently", "heir_missing", "capital_coastal"]
+const COND_TYPES := ["stability_below", "stability_above", "legitimacy_below", "legitimacy_above", "treasury_below", "treasury_above", "debt_above", "income_below", "income_above", "at_war", "not_at_war", "at_war_with", "gov_is", "gov_in", "has_tech", "tech_avg_above", "provinces_above", "provinces_below", "food_ratio_below", "food_stock_below", "religion_is", "culture_is", "flag_set", "flag_not_set", "year_at_least", "year_before", "is_player", "is_ai", "ruler_age_above", "ruler_skill_below", "ruler_skill_above", "prestige_above", "prestige_below", "manpower_below", "has_reform", "war_exhaustion_above", "season_is", "class_sat_below", "is_vassal", "has_vassals", "alliances_at_least", "owns_province", "neighbors_tag", "armies_at_least", "inflation_above", "bankrupt_recently", "heir_missing", "capital_coastal", "corruption_above", "faction_loyalty_below", "faction_loyalty_above", "faction_influence_above", "in_regency", "in_succession_dispute", "in_transition", "spy_levels_at_least", "ci_level_at_least", "eco_phase_is", "heir_exists", "royals_below", "has_general", "vassals_at_least", "is_hereditary", "naval_regiments_at_least", "faction_loyalty_between"]
 
 func test_event_library_is_well_formed() -> void:
 	ok(Defs.events.size() >= 60, "at least 60 events loaded (%d)" % Defs.events.size())
@@ -143,3 +143,10 @@ func test_player_events_wait_for_choice_ai_events_resolve() -> void:
 	eq(pend.size(), 1, "only the player's event waits")
 	ok(absf(float(s["countries"][other]["gold"]) - g0) > 1.0, "AI event resolved immediately")
 	Defs.events.erase("rnd_test")
+
+func test_scenario_event_text_uses_scenario_province_names() -> void:
+	var s := new_state("fall_of_constantinople")
+	var cid := "BYZ"
+	var entry := {"cid": cid, "pid": "tur_constantinople", "other": ""}
+	var txt := EventSystem.render(s, entry, {"en": "Fire in {province}", "tr": "{province} yangını"})
+	ok(txt.contains("Constantinople (besieged)") or txt.contains("kuşatma"), "event text shows the scenario's province name: %s" % txt)

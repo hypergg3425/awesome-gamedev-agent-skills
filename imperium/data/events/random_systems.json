@@ -1,0 +1,2008 @@
+[
+ {
+  "id": "g_royal_birth",
+  "category": "succession",
+  "historical": false,
+  "title": {
+   "en": "A Child Is Born to the Dynasty",
+   "tr": "Hanedana Bir Çocuk Doğdu"
+  },
+  "text": {
+   "en": "The queen of {country} has been delivered of a healthy child. The court wants a celebration worthy of the house, the treasurer would prefer a modest one.",
+   "tr": "{country} kraliçesi sağlıklı bir çocuk dünyaya getirdi. Saray hanedana yakışır bir şölen istiyor, haznedar ise gösterişsiz bir kutlama tercih ediyor."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 8,
+   "conds": [
+    {
+     "type": "is_hereditary"
+    },
+    {
+     "type": "royals_below",
+     "value": 7
+    }
+   ]
+  },
+  "mtth": 70,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "feast",
+    "name": {
+     "en": "Hold a great feast",
+     "tr": "Büyük bir şölen ver"
+    },
+    "tip": {
+     "en": "The people cheer; the treasury pays.",
+     "tr": "Halk sevinir, hazine öder."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -45
+     },
+     {
+      "type": "add_royal"
+     },
+     {
+      "type": "prestige",
+      "value": 4
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 4
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 45
+     }
+    ]
+   },
+   {
+    "id": "thanks",
+    "name": {
+     "en": "A quiet thanksgiving at the cathedral",
+     "tr": "Katedralde sessiz bir şükran ayini"
+    },
+    "tip": {
+     "en": "The clergy approve; the court shrugs.",
+     "tr": "Din adamları memnun olur, saray omuz silker."
+    },
+    "effects": [
+     {
+      "type": "add_royal"
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 5
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": -2
+     }
+    ],
+    "ai_weight": 2
+   }
+  ]
+ },
+ {
+  "id": "g_royal_illness",
+  "category": "succession",
+  "historical": false,
+  "title": {
+   "en": "The Ruler Falls Gravely Ill",
+   "tr": "Hükümdar Ağır Hastalandı"
+  },
+  "text": {
+   "en": "{ruler} of {country} has been in a fever for days. Physicians quarrel at the bedside while the court counts the days to a funeral.",
+   "tr": "{country} hükümdarı {ruler} günlerdir ateşler içinde. Hekimler yatağın başında tartışırken saray cenaze gününü hesaplıyor."
+  },
+  "image": "plague",
+  "trigger": {
+   "min_turn": 10,
+   "conds": [
+    {
+     "type": "ruler_age_above",
+     "value": 38
+    }
+   ]
+  },
+  "mtth": 90,
+  "cooldown": 50,
+  "options": [
+   {
+    "id": "physicians",
+    "name": {
+     "en": "Summon the finest physicians",
+     "tr": "En iyi hekimleri çağır"
+    },
+    "tip": {
+     "en": "Costly, but the ruler is likely to recover.",
+     "tr": "Pahalı ama hükümdarın iyileşmesi muhtemel."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "ruler_health",
+      "value": 18
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "pilgrimage",
+    "name": {
+     "en": "Order prayers and a pilgrimage",
+     "tr": "Dua ve hac yolculuğu emret"
+    },
+    "tip": {
+     "en": "The clergy rally behind the throne.",
+     "tr": "Din adamları tahtın arkasında birleşir."
+    },
+    "effects": [
+     {
+      "type": "ruler_health",
+      "value": 6
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 6
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "wait",
+    "name": {
+     "en": "Leave it to fate",
+     "tr": "Kaderine bırak"
+    },
+    "tip": {
+     "en": "The realm holds its breath; the court begins to scheme.",
+     "tr": "Ülke nefesini tutar, saray entrikalara başlar."
+    },
+    "effects": [
+     {
+      "type": "ruler_health",
+      "value": -10
+     },
+     {
+      "type": "legitimacy",
+      "value": -2
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_heir_tutor",
+  "category": "succession",
+  "historical": false,
+  "title": {
+   "en": "Who Shall Teach the Heir?",
+   "tr": "Veliahdı Kim Yetiştirecek?"
+  },
+  "text": {
+   "en": "The heir of {country} is old enough for formal tuition. The chancellor, a famous general and a learned bishop each recommend a different master.",
+   "tr": "{country} veliahdı resmî eğitim çağına geldi. Şansölye, ünlü bir komutan ve bilgili bir piskopos farklı hocalar öneriyor."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 12,
+   "conds": [
+    {
+     "type": "heir_exists"
+    },
+    {
+     "type": "is_hereditary"
+    }
+   ]
+  },
+  "mtth": 100,
+  "cooldown": 80,
+  "options": [
+   {
+    "id": "chancellor",
+    "name": {
+     "en": "The chancellor's jurist",
+     "tr": "Şansölyenin hukukçusu"
+    },
+    "tip": {
+     "en": "The heir learns statecraft.",
+     "tr": "Veliaht devlet yönetimini öğrenir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "heir_skill",
+      "skill": "adm",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "id": "general",
+    "name": {
+     "en": "The old general",
+     "tr": "Yaşlı komutan"
+    },
+    "tip": {
+     "en": "The heir learns war.",
+     "tr": "Veliaht savaşı öğrenir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "heir_skill",
+      "skill": "mil",
+      "value": 1
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "id": "bishop",
+    "name": {
+     "en": "The bishop's envoy",
+     "tr": "Piskoposun elçisi"
+    },
+    "tip": {
+     "en": "The heir learns diplomacy and piety.",
+     "tr": "Veliaht diplomasi ve takvayı öğrenir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "heir_skill",
+      "skill": "dip",
+      "value": 1
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "g_frontier_autonomy",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "A Frontier Lord Demands Autonomy",
+   "tr": "Sınır Beyi Özerklik İstiyor"
+  },
+  "text": {
+   "en": "The lord of {province}, far from the capital of {country}, has held his marches against all comers and now wants his reward: a title of his own and freedom from the royal tax collectors.",
+   "tr": "{country} başkentinden uzaktaki {province} beyi, sınırı herkese karşı korudu ve şimdi ödülünü istiyor: kendi unvanı ve kraliyet vergi memurlarından muafiyet."
+  },
+  "image": "uprising",
+  "trigger": {
+   "min_turn": 15,
+   "conds": [
+    {
+     "type": "provinces_above",
+     "value": 5
+    },
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 110,
+  "cooldown": 60,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "unrest_above",
+    "value": 8
+   },
+   {
+    "type": "terrain_is",
+    "value": "hills"
+   }
+  ],
+  "options": [
+   {
+    "id": "vassal",
+    "name": {
+     "en": "Raise him to a vassal duke",
+     "tr": "Onu tabi dük yap"
+    },
+    "tip": {
+     "en": "The province becomes a loyal vassal state.",
+     "tr": "Eyalet sadık bir tabi devlet olur."
+    },
+    "effects": [
+     {
+      "type": "create_vassal"
+     },
+     {
+      "type": "prestige",
+      "value": 4
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "buy",
+    "name": {
+     "en": "Buy his loyalty with gold and privileges",
+     "tr": "Sadakatini altın ve imtiyazla satın al"
+    },
+    "tip": {
+     "en": "Quiet for now; the nobles note your generosity.",
+     "tr": "Şimdilik sükûnet; soylular cömertliğini not eder."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "province_unrest",
+      "value": -20
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Refuse and send tax collectors with an escort",
+     "tr": "Reddet; vergi memurlarını muhafızla gönder"
+    },
+    "tip": {
+     "en": "The province seethes.",
+     "tr": "Eyalet öfkelenir."
+    },
+    "effects": [
+     {
+      "type": "province_unrest",
+      "value": 15
+     },
+     {
+      "type": "spawn_rebels",
+      "size": 2
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_border_exchange",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Border Settlement Is Proposed",
+   "tr": "Sınır Anlaşması Teklif Edildi"
+  },
+  "text": {
+   "en": "A neighbour, {other}, offers to settle their long quarrel with {country}: a disputed march changes hands and they will stand beside you.",
+   "tr": "Komşu {other}, {country} ile uzun süren anlaşmazlığını bitirmeyi öneriyor: tartışmalı bir sınır bölgesi el değiştirir ve karşılığında yanınızda yer alırlar."
+  },
+  "image": "treaty",
+  "trigger": {
+   "min_turn": 20,
+   "conds": [
+    {
+     "type": "provinces_above",
+     "value": 4
+    },
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 140,
+  "cooldown": 80,
+  "options": [
+   {
+    "id": "cede",
+    "name": {
+     "en": "Cede the march for an alliance",
+     "tr": "Sınır bölgesini ittifak karşılığında bırak"
+    },
+    "tip": {
+     "en": "You lose a province; you gain a friend.",
+     "tr": "Bir eyalet kaybedersiniz, bir dost kazanırsınız."
+    },
+    "effects": [
+     {
+      "type": "transfer_province",
+      "direction": "give",
+      "target": "other"
+     },
+     {
+      "type": "alliance",
+      "target": "other"
+     },
+     {
+      "type": "prestige",
+      "value": 6
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "take",
+    "name": {
+     "en": "Press your own claim on a border province",
+     "tr": "Kendi hakkını bir sınır eyaletinde ileri sür"
+    },
+    "tip": {
+     "en": "A province is yours; the neighbour is furious.",
+     "tr": "Bir eyalet sizin olur; komşu çok öfkelidir."
+    },
+    "effects": [
+     {
+      "type": "transfer_province",
+      "direction": "take",
+      "target": "other",
+      "core": true
+     },
+     {
+      "type": "relation",
+      "target": "other",
+      "value": -40
+     },
+     {
+      "type": "prestige",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "armies_at_least",
+      "value": 3
+     }
+    ]
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Decline politely",
+     "tr": "Nazikçe reddet"
+    },
+    "tip": {
+     "en": "Nothing changes between you.",
+     "tr": "İlişkiler aynı kalır."
+    },
+    "effects": [
+     {
+      "type": "relation",
+      "target": "other",
+      "value": -3
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2
+   }
+  ]
+ },
+ {
+  "id": "g_captain_offer",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "A Famous Captain Offers His Sword",
+   "tr": "Ünlü Bir Kaptan Hizmet Teklif Ediyor"
+  },
+  "text": {
+   "en": "A veteran captain, whose name is known from one frontier to the other, arrives at the court of {country} with his sworn companions and offers his service for a price.",
+   "tr": "Adı bir sınırdan diğerine bilinen kıdemli bir kaptan, yeminli arkadaşlarıyla {country} sarayına gelip bedeli karşılığında hizmet sunuyor."
+  },
+  "image": "battle",
+  "trigger": {
+   "min_turn": 10,
+   "conds": [
+    {
+     "type": "armies_at_least",
+     "value": 1
+    }
+   ]
+  },
+  "mtth": 90,
+  "cooldown": 50,
+  "options": [
+   {
+    "id": "hire",
+    "name": {
+     "en": "Give him a command",
+     "tr": "Ona bir komuta ver"
+    },
+    "tip": {
+     "en": "Your best army gains a gifted commander.",
+     "tr": "En iyi ordunuz yetenekli bir komutan kazanır."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "spawn_general",
+      "mil": 7,
+      "trait": "veteran"
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "hire_lord",
+    "name": {
+     "en": "Make him a master of siege warfare",
+     "tr": "Onu kuşatma ustası yap"
+    },
+    "tip": {
+     "en": "A siege specialist leads one of your armies.",
+     "tr": "Bir ordunuza kuşatma uzmanı komuta eder."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "spawn_general",
+      "mil": 6,
+      "trait": "siege_master"
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "decline",
+    "name": {
+     "en": "Send him away with a purse",
+     "tr": "Bir kese ile geri gönder"
+    },
+    "tip": {
+     "en": "A small gesture; the army grumbles.",
+     "tr": "Küçük bir jest; ordu söylenir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -10
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_veterans_muster",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "Veterans Offer to Muster",
+   "tr": "Gaziler Orduya Katılmak İstiyor"
+  },
+  "text": {
+   "en": "As war drags on, veterans of earlier campaigns in {country} gather at the market squares and offer to take up arms once more, if their old wounds are honoured.",
+   "tr": "Savaş uzadıkça {country} topraklarında eski seferlerin gazileri meydanlarda toplanıp, eski yaraları onurlandırılırsa yeniden silaha sarılmayı teklif ediyor."
+  },
+  "image": "battle",
+  "trigger": {
+   "min_turn": 12,
+   "conds": [
+    {
+     "type": "at_war"
+    },
+    {
+     "type": "manpower_below",
+     "value": 40
+    }
+   ]
+  },
+  "mtth": 60,
+  "cooldown": 40,
+  "options": [
+   {
+    "id": "raise",
+    "name": {
+     "en": "Form a veteran army",
+     "tr": "Gazilerden bir ordu kur"
+    },
+    "tip": {
+     "en": "A new army with a commander appears at the capital.",
+     "tr": "Başkentte komutanlı yeni bir ordu belirir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "spawn_army",
+      "class": "infantry",
+      "n": 3
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "pension",
+    "name": {
+     "en": "Grant them pensions instead",
+     "tr": "Bunun yerine emekli maaşı bağla"
+    },
+    "tip": {
+     "en": "The veterans are grateful and the countryside is calmer.",
+     "tr": "Gaziler minnettar, kırsal sakinleşir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -25
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 5
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 3
+     },
+     {
+      "type": "manpower",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 25
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "g_shipyard_fleet",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "The Shipwrights Propose a Fleet",
+   "tr": "Tersane Ustaları Bir Donanma Öneriyor"
+  },
+  "text": {
+   "en": "The shipwrights of the harbour of {country} have timber, tar and idle hands, and they say a small fleet could be on the water by the next season if the crown stands surety.",
+   "tr": "{country} limanının tersane ustalarının kereste, katran ve boş elleri var; hazine kefil olursa küçük bir donanma gelecek mevsim suda olabilirmiş."
+  },
+  "image": "harbor",
+  "trigger": {
+   "min_turn": 15,
+   "conds": [
+    {
+     "type": "capital_coastal"
+    },
+    {
+     "type": "naval_regiments_at_least",
+     "value": 0
+    }
+   ]
+  },
+  "mtth": 100,
+  "cooldown": 60,
+  "options": [
+   {
+    "id": "build",
+    "name": {
+     "en": "Stand surety and build the fleet",
+     "tr": "Kefil ol, donanmayı inşa ettir"
+    },
+    "tip": {
+     "en": "A fleet joins the navy; the merchants prosper.",
+     "tr": "Donanmaya yeni gemiler katılır; tüccarlar kazanır."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "spawn_fleet",
+      "n": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 4
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "loan",
+    "name": {
+     "en": "Let merchants fund trade ships instead",
+     "tr": "Tüccarlar ticaret gemilerini finanse etsin"
+    },
+    "tip": {
+     "en": "Trade benefits at once.",
+     "tr": "Ticaret hemen kazanır."
+    },
+    "effects": [
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.06
+      },
+      "turns": 10
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 6
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_foreign_agents",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "Foreign Agents at Court",
+   "tr": "Sarayda Yabancı Ajanlar"
+  },
+  "text": {
+   "en": "The chamberlain of {country} reports that a servant in the royal household has been passing letters to {other}. More may be hidden in the chancery.",
+   "tr": "{country} saray nazırı, hanedan hizmetkârlarından birinin {other} ülkesine mektup ilettiğini bildiriyor. Kançılaryada daha fazlası saklı olabilir."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 15,
+   "conds": [
+    {
+     "type": "treasury_above",
+     "value": 40
+    }
+   ]
+  },
+  "mtth": 120,
+  "cooldown": 70,
+  "options": [
+   {
+    "id": "counter",
+    "name": {
+     "en": "Establish a counter-intelligence office",
+     "tr": "Karşı istihbarat bürosu kur"
+    },
+    "tip": {
+     "en": "Your spy-catchers get better.",
+     "tr": "Casus avcılarınız güçlenir."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "ci_level",
+      "value": 1
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "turn",
+    "name": {
+     "en": "Turn the servant and feed them lies",
+     "tr": "Hizmetkârı çevir, yalanlarla besle"
+    },
+    "tip": {
+     "en": "You gain a foothold in the other court.",
+     "tr": "Karşı sarayda bir dayanak noktası kazanırsınız."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "spy_network",
+      "target": "other",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "id": "hang",
+    "name": {
+     "en": "Hang him and protest loudly",
+     "tr": "Onu astır, yüksek sesle protesto et"
+    },
+    "tip": {
+     "en": "Justice is seen; relations suffer.",
+     "tr": "Adalet görülür, ilişkiler bozulur."
+    },
+    "effects": [
+     {
+      "type": "relation",
+      "target": "other",
+      "value": -12
+     },
+     {
+      "type": "prestige",
+      "value": 3
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_informer_sells",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Courtier Sells Secrets",
+   "tr": "Bir Saray Mensubu Sır Satıyor"
+  },
+  "text": {
+   "en": "A disgruntled official at the court of {other} approaches your envoy in {country} and offers to sell what he knows, for gold and protection.",
+   "tr": "{other} sarayında hoşnutsuz bir görevli, {country} elçisine yaklaşıp bildiklerini altın ve koruma karşılığında satmayı öneriyor."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "min_turn": 12,
+   "conds": [
+    {
+     "type": "treasury_above",
+     "value": 60
+    }
+   ]
+  },
+  "mtth": 130,
+  "cooldown": 70,
+  "options": [
+   {
+    "id": "buy",
+    "name": {
+     "en": "Buy his silence and his letters",
+     "tr": "Sessizliğini ve mektuplarını satın al"
+    },
+    "tip": {
+     "en": "A spy network forms in the other country.",
+     "tr": "Karşı ülkede bir casus ağı oluşur."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "spy_network",
+      "target": "other",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "expose",
+    "name": {
+     "en": "Expose him to his own king",
+     "tr": "Onu kendi kralına ifşa et"
+    },
+    "tip": {
+     "en": "The other ruler is grateful; you lose a source.",
+     "tr": "Karşı hükümdar minnettar kalır, bir kaynağı kaybedersiniz."
+    },
+    "effects": [
+     {
+      "type": "relation",
+      "target": "other",
+      "value": 10
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_bank_failure",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "A Great Banking House Totters",
+   "tr": "Büyük Bir Bankerlik Evi Sarsılıyor"
+  },
+  "text": {
+   "en": "A counting house that has lent to half the courts of the region cannot meet its notes. The merchants of {country} beg the crown to step in before the panic spreads.",
+   "tr": "Bölgedeki saraylarının yarısına borç veren bir banker evi senetlerini ödeyemiyor. {country} tüccarları panik yayılmadan hazinenin devreye girmesini istiyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "min_turn": 20,
+   "conds": [
+    {
+     "type": "treasury_above",
+     "value": 120
+    }
+   ]
+  },
+  "mtth": 150,
+  "cooldown": 80,
+  "options": [
+   {
+    "id": "bailout",
+    "name": {
+     "en": "Bail the house out",
+     "tr": "Bankerlik evini kurtar"
+    },
+    "tip": {
+     "en": "Costly, but the panic is stopped.",
+     "tr": "Pahalıdır ama panik durdurulur."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -120
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 6
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 120
+     }
+    ]
+   },
+   {
+    "id": "let_fail",
+    "name": {
+     "en": "Let it fail",
+     "tr": "Batmasına izin ver"
+    },
+    "tip": {
+     "en": "A slump follows; the treasury is spared.",
+     "tr": "Bir durgunluk gelir; hazine korunur."
+    },
+    "effects": [
+     {
+      "type": "eco_phase",
+      "phase": "slump",
+      "turns": 6
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -6
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "regulate",
+    "name": {
+     "en": "Regulate the lenders",
+     "tr": "Borç verenleri denetle"
+    },
+    "tip": {
+     "en": "Slower trade, but a firmer state.",
+     "tr": "Ticaret yavaşlar, devlet sağlamlaşır."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "eco_phase",
+      "phase": "normal",
+      "turns": 4
+     },
+     {
+      "type": "corruption",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "g_trade_boom",
+  "category": "economic",
+  "historical": false,
+  "title": {
+   "en": "A New Trade Route Opens",
+   "tr": "Yeni Bir Ticaret Yolu Açılıyor"
+  },
+  "text": {
+   "en": "Caravans and ships from far away have found their way to the markets of {country}. The merchants ask for a charter and for the roads to be policed.",
+   "tr": "Uzak diyarlardan kervanlar ve gemiler {country} pazarlarına ulaştı. Tüccarlar bir ferman ve yolların korunmasını istiyor."
+  },
+  "image": "trade",
+  "trigger": {
+   "min_turn": 12,
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 40
+    }
+   ]
+  },
+  "mtth": 110,
+  "cooldown": 60,
+  "options": [
+   {
+    "id": "charter",
+    "name": {
+     "en": "Grant a charter and escorts",
+     "tr": "Ferman ve muhafız ver"
+    },
+    "tip": {
+     "en": "A boom for a few seasons.",
+     "tr": "Birkaç mevsim süren bir canlanma."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "eco_phase",
+      "phase": "boom",
+      "turns": 8
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 4
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "tax",
+    "name": {
+     "en": "Tax the caravans heavily",
+     "tr": "Kervanlara ağır vergi koy"
+    },
+    "tip": {
+     "en": "Quick gold, less trade.",
+     "tr": "Hızlı altın, daha az ticaret."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 60
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": -5
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": -0.05
+      },
+      "turns": 6
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_estates_charter",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "The Estates Demand a Charter",
+   "tr": "Meclisler Bir Fermân İstiyor"
+  },
+  "text": {
+   "en": "Burghers, lords and clergy of {country} have met without being summoned. They want a written charter that binds the crown to consult them on taxes and war.",
+   "tr": "{country} şehirlileri, beyleri ve din adamları çağrılmadan toplandı. Vergi ve savaşta kendilerine danışmayı hükümdara zorunlu kılan yazılı bir ferman istiyorlar."
+  },
+  "image": "parliament",
+  "trigger": {
+   "min_turn": 25,
+   "conds": [
+    {
+     "type": "gov_is",
+     "value": "absolute_monarchy"
+    },
+    {
+     "type": "stability_below",
+     "value": 55
+    },
+    {
+     "type": "faction_loyalty_below",
+     "faction": "nobility",
+     "value": 55
+    }
+   ]
+  },
+  "mtth": 100,
+  "cooldown": 100,
+  "options": [
+   {
+    "id": "grant",
+    "name": {
+     "en": "Grant the charter",
+     "tr": "Fermanı kabul et"
+    },
+    "tip": {
+     "en": "The government becomes a constitutional monarchy.",
+     "tr": "Hükümet meşrutî monarşiye dönüşür."
+    },
+    "effects": [
+     {
+      "type": "force_government",
+      "to": "constitutional_monarchy"
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": 10
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": 10
+     },
+     {
+      "type": "prestige",
+      "value": -5
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "promise",
+    "name": {
+     "en": "Promise to consult them more often",
+     "tr": "Onlara daha sık danışmayı vaat et"
+    },
+    "tip": {
+     "en": "Words only; the estates are half satisfied.",
+     "tr": "Yalnızca söz; meclisler yarı memnun."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": -2
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": 4
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": 4
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "dissolve",
+    "name": {
+     "en": "Dissolve the assembly by force",
+     "tr": "Meclisi zorla dağıt"
+    },
+    "tip": {
+     "en": "The throne holds, for now.",
+     "tr": "Taht şimdilik ayakta kalır."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -5
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": -10
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": -8
+     },
+     {
+      "type": "corruption",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_generals_ultimatum",
+  "category": "uprising",
+  "historical": false,
+  "title": {
+   "en": "The Generals Deliver an Ultimatum",
+   "tr": "Generaller Bir Ültimatom Sunuyor"
+  },
+  "text": {
+   "en": "The generals of {country} have not been paid for months. They send word that if their arrears and honours are not settled, the army will settle the matter itself.",
+   "tr": "{country} generallerine aylardır maaş ödenmedi. Birikmiş alacakları ve rütbeleri çözülmezse sorunu ordunun kendisinin çözeceğini bildiriyorlar."
+  },
+  "image": "uprising",
+  "trigger": {
+   "min_turn": 20,
+   "conds": [
+    {
+     "type": "faction_loyalty_below",
+     "faction": "military",
+     "value": 30
+    },
+    {
+     "type": "provinces_above",
+     "value": 5
+    }
+   ]
+  },
+  "mtth": 90,
+  "cooldown": 120,
+  "options": [
+   {
+    "id": "pay",
+    "name": {
+     "en": "Pay the arrears in full",
+     "tr": "Alacakları tam ödeyin"
+    },
+    "tip": {
+     "en": "The army returns to its barracks.",
+     "tr": "Ordu kışlasına döner."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -130
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "military",
+      "value": 25
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 130
+     }
+    ]
+   },
+   {
+    "id": "promote",
+    "name": {
+     "en": "Promote the ringleaders and share power",
+     "tr": "Elebaşılarını terfi ettir, iktidarı paylaş"
+    },
+    "tip": {
+     "en": "The army is placated; the crown is weaker.",
+     "tr": "Ordu yatışır, taht zayıflar."
+    },
+    "effects": [
+     {
+      "type": "faction_loyalty",
+      "faction": "military",
+      "value": 15
+     },
+     {
+      "type": "legitimacy",
+      "value": -8
+     },
+     {
+      "type": "corruption",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "defy",
+    "name": {
+     "en": "Defy them and call them traitors",
+     "tr": "Meydan oku, onlara hain de"
+    },
+    "tip": {
+     "en": "Civil war breaks out.",
+     "tr": "İç savaş çıkar."
+    },
+    "effects": [
+     {
+      "type": "civil_war",
+      "faction": "military",
+      "reason": "unpaid_army"
+     },
+     {
+      "type": "stability",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_marriage_alliance",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Marriage Alliance Is Offered",
+   "tr": "Evlilik İttifakı Teklif Ediliyor"
+  },
+  "text": {
+   "en": "{other} proposes to bind their house to that of {country} by marriage. An alliance would follow, though the court of {country} has its own ideas of rank.",
+   "tr": "{other}, hanedanını {country} hanedanına evlilikle bağlamayı öneriyor. Bir ittifak izleyecek, ancak {country} sarayının rütbe konusunda kendi fikirleri var."
+  },
+  "image": "treaty",
+  "trigger": {
+   "min_turn": 15,
+   "conds": [
+    {
+     "type": "is_hereditary"
+    },
+    {
+     "type": "not_at_war"
+    }
+   ]
+  },
+  "mtth": 130,
+  "cooldown": 80,
+  "options": [
+   {
+    "id": "accept",
+    "name": {
+     "en": "Accept the match",
+     "tr": "Evliliği kabul et"
+    },
+    "tip": {
+     "en": "An alliance, a new royal and a friend abroad.",
+     "tr": "Bir ittifak, yeni bir hanedan üyesi ve yurtdışında bir dost."
+    },
+    "effects": [
+     {
+      "type": "alliance",
+      "target": "other"
+     },
+     {
+      "type": "add_royal"
+     },
+     {
+      "type": "prestige",
+      "value": 5
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "demand",
+    "name": {
+     "en": "Accept only with a dowry",
+     "tr": "Yalnızca çeyizle kabul et"
+    },
+    "tip": {
+     "en": "Gold now, a cooler friendship.",
+     "tr": "Şimdi altın, daha soğuk bir dostluk."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 90
+     },
+     {
+      "type": "relation",
+      "target": "other",
+      "value": 4
+     },
+     {
+      "type": "prestige",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "refuse",
+    "name": {
+     "en": "Refuse the offer",
+     "tr": "Teklifi reddet"
+    },
+    "tip": {
+     "en": "The slight is remembered.",
+     "tr": "Hakaret unutulmaz."
+    },
+    "effects": [
+     {
+      "type": "relation",
+      "target": "other",
+      "value": -10
+     },
+     {
+      "type": "legitimacy",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_protection_plea",
+  "category": "diplomatic",
+  "historical": false,
+  "title": {
+   "en": "A Weak Neighbour Seeks Protection",
+   "tr": "Zayıf Bir Komşu Himaye İstiyor"
+  },
+  "text": {
+   "en": "{other}, pressed on all sides, sends an embassy to {country}: in exchange for protection, they will swear fealty and pay tribute.",
+   "tr": "Her yandan sıkıştırılan {other}, {country} nezdine bir elçilik gönderdi: himaye karşılığında bağlılık yemini edip haraç ödeyecekler."
+  },
+  "image": "diplomacy",
+  "trigger": {
+   "min_turn": 25,
+   "conds": [
+    {
+     "type": "provinces_above",
+     "value": 6
+    },
+    {
+     "type": "not_at_war"
+    },
+    {
+     "type": "stability_above",
+     "value": 45
+    }
+   ]
+  },
+  "mtth": 160,
+  "cooldown": 100,
+  "options": [
+   {
+    "id": "accept",
+    "name": {
+     "en": "Accept their fealty",
+     "tr": "Bağlılıklarını kabul et"
+    },
+    "tip": {
+     "en": "They become your vassal.",
+     "tr": "Tabiniz olurlar."
+    },
+    "effects": [
+     {
+      "type": "vassalize",
+      "target": "other"
+     },
+     {
+      "type": "prestige",
+      "value": 6
+     },
+     {
+      "type": "gold",
+      "value": 20
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "decline",
+    "name": {
+     "en": "Decline: the burden is too great",
+     "tr": "Reddet: yük çok ağır"
+    },
+    "tip": {
+     "en": "A courteous refusal.",
+     "tr": "Nazik bir ret."
+    },
+    "effects": [
+     {
+      "type": "relation",
+      "target": "other",
+      "value": 3
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_land_charter",
+  "category": "political",
+  "historical": false,
+  "title": {
+   "en": "Peasants Petition for Hereditary Tenure",
+   "tr": "Köylüler Miras Hakkı İstiyor"
+  },
+  "text": {
+   "en": "The peasants and townsmen of {province} petition {country}'s crown to confirm their ancient rights and treat their land as an old and secure part of the realm.",
+   "tr": "{province} köylüleri ve kentlileri, {country} tacından eski haklarını onaylamasını ve topraklarının ülkenin köklü ve güvenli bir parçası sayılmasını istiyor."
+  },
+  "image": "court",
+  "trigger": {
+   "min_turn": 15,
+   "conds": [
+    {
+     "type": "stability_above",
+     "value": 30
+    }
+   ]
+  },
+  "mtth": 110,
+  "cooldown": 60,
+  "scope": "province",
+  "pconds": [
+   {
+    "type": "unrest_above",
+    "value": 5
+   }
+  ],
+  "options": [
+   {
+    "id": "confirm",
+    "name": {
+     "en": "Confirm the charter",
+     "tr": "Fermanı onayla"
+    },
+    "tip": {
+     "en": "The province becomes a core of your realm and calmer.",
+     "tr": "Eyalet ülkenin çekirdek toprağı olur ve sakinleşir."
+    },
+    "effects": [
+     {
+      "type": "add_core"
+     },
+     {
+      "type": "province_unrest",
+      "value": -12
+     },
+     {
+      "type": "gold",
+      "value": -20
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 20
+     }
+    ]
+   },
+   {
+    "id": "ignore",
+    "name": {
+     "en": "Ignore the petition",
+     "tr": "Dilekçeyi yok say"
+    },
+    "tip": {
+     "en": "Resentment lingers.",
+     "tr": "Kırgınlık sürer."
+    },
+    "effects": [
+     {
+      "type": "province_unrest",
+      "value": 6
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "g_plague_court",
+  "category": "disaster",
+  "historical": false,
+  "title": {
+   "en": "Plague Reaches the Palace",
+   "tr": "Veba Saraya Ulaştı"
+  },
+  "text": {
+   "en": "Sickness has passed from the harbours into the very household of {country}. Courtiers flee; the chancery empties; some say it is a judgement.",
+   "tr": "Hastalık limanlardan {country} hanedanına kadar sızdı. Saraylılar kaçıyor, kançılarya boşalıyor; kimileri bunun bir ceza olduğunu söylüyor."
+  },
+  "image": "plague",
+  "trigger": {
+   "min_turn": 15,
+   "conds": [
+    {
+     "type": "season_is",
+     "value": "summer"
+    }
+   ]
+  },
+  "mtth": 140,
+  "cooldown": 80,
+  "options": [
+   {
+    "id": "flee",
+    "name": {
+     "en": "Leave the capital for the countryside",
+     "tr": "Başkentten kırsala çekil"
+    },
+    "tip": {
+     "en": "The ruler is safe; the capital is shaken.",
+     "tr": "Hükümdar güvende, başkent sarsılır."
+    },
+    "effects": [
+     {
+      "type": "ruler_health",
+      "value": 5
+     },
+     {
+      "type": "stability",
+      "value": -3
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "stay",
+    "name": {
+     "en": "Stay and organise relief",
+     "tr": "Kal ve yardım organize et"
+    },
+    "tip": {
+     "en": "A brave example, a real risk.",
+     "tr": "Cesur bir örnek, gerçek bir risk."
+    },
+    "effects": [
+     {
+      "type": "ruler_health",
+      "value": -8
+     },
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": 6
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "quarantine",
+    "name": {
+     "en": "Close the harbours and quarantine the sick",
+     "tr": "Limanları kapat, hastaları karantinaya al"
+    },
+    "tip": {
+     "en": "Trade suffers, lives are saved.",
+     "tr": "Ticaret zarar görür, canlar kurtulur."
+    },
+    "effects": [
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": -0.06,
+       "pop_growth": 0.003
+      },
+      "turns": 6
+     },
+     {
+      "type": "pop_pct",
+      "value": -1
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 2
+   }
+  ]
+ },
+ {
+  "id": "g_mutiny_fleet",
+  "category": "military",
+  "historical": false,
+  "title": {
+   "en": "A Fleet on the Edge of Mutiny",
+   "tr": "İsyanın Eşiğinde Bir Donanma"
+  },
+  "text": {
+   "en": "The crews of the fleet of {country} have gone unpaid and their rations have rotted. A delegation of sailors asks to speak to the admiral, and then to {ruler}.",
+   "tr": "{country} donanmasının mürettebatı maaş alamadı, erzakları çürüdü. Bir denizci heyeti amirale, sonra da {ruler}'e konuşmak istiyor."
+  },
+  "image": "storm",
+  "trigger": {
+   "min_turn": 20,
+   "conds": [
+    {
+     "type": "naval_regiments_at_least",
+     "value": 3
+    },
+    {
+     "type": "income_below",
+     "value": 30
+    }
+   ]
+  },
+  "mtth": 140,
+  "cooldown": 80,
+  "options": [
+   {
+    "id": "pay",
+    "name": {
+     "en": "Pay the crews and replace the rations",
+     "tr": "Mürettebata ödeme yap, erzakı yenile"
+    },
+    "tip": {
+     "en": "The sailors return to duty.",
+     "tr": "Denizciler göreve döner."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 4
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   },
+   {
+    "id": "flog",
+    "name": {
+     "en": "Flog the ringleaders",
+     "tr": "Elebaşılarını kırbaçla"
+    },
+    "tip": {
+     "en": "Order restored, resentment smoulders.",
+     "tr": "Düzen sağlanır, kin için için yanar."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": -1
+     },
+     {
+      "type": "spawn_general",
+      "naval": true,
+      "mil": 5
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ }
+]

@@ -183,7 +183,8 @@
     "inf_atk": 0.08,
     "inf_def": 0.06
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "infantry_tactics_2": {
    "id": "infantry_tactics_2",
@@ -207,7 +208,8 @@
     "inf_atk": 0.08,
     "inf_def": 0.06
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1450
   },
   "infantry_tactics_3": {
    "id": "infantry_tactics_3",
@@ -231,7 +233,8 @@
     "inf_atk": 0.08,
     "inf_def": 0.06
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1690
   },
   "infantry_tactics_4": {
    "id": "infantry_tactics_4",
@@ -255,7 +258,8 @@
     "inf_atk": 0.092,
     "inf_def": 0.069
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "cavalry_doctrine_1": {
    "id": "cavalry_doctrine_1",
@@ -277,7 +281,8 @@
     "cav_atk": 0.1,
     "move": 0.04
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "cavalry_doctrine_2": {
    "id": "cavalry_doctrine_2",
@@ -302,7 +307,8 @@
     "cav_atk": 0.1,
     "move": 0.04
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1250
   },
   "cavalry_doctrine_3": {
    "id": "cavalry_doctrine_3",
@@ -327,7 +333,8 @@
     "cav_atk": 0.1,
     "move": 0.04
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "cavalry_doctrine_4": {
    "id": "cavalry_doctrine_4",
@@ -352,7 +359,8 @@
     "cav_atk": 0.115,
     "move": 0.046
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "artillery_1": {
    "id": "artillery_1",
@@ -374,7 +382,8 @@
     "art_atk": 0.1,
     "siege": 0.1
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "artillery_2": {
    "id": "artillery_2",
@@ -399,7 +408,8 @@
     "art_atk": 0.1,
     "siege": 0.1
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1450
   },
   "artillery_3": {
    "id": "artillery_3",
@@ -424,7 +434,8 @@
     "art_atk": 0.1,
     "siege": 0.1
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1680
   },
   "artillery_4": {
    "id": "artillery_4",
@@ -449,7 +460,8 @@
     "art_atk": 0.115,
     "siege": 0.115
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "logistics_1": {
    "id": "logistics_1",
@@ -471,7 +483,8 @@
     "supply": 0.15,
     "attrition": -0.1
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "logistics_2": {
    "id": "logistics_2",
@@ -496,7 +509,8 @@
     "supply": 0.15,
     "attrition": -0.1
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1550
   },
   "logistics_3": {
    "id": "logistics_3",
@@ -521,7 +535,8 @@
     "supply": 0.15,
     "attrition": -0.1
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1750
   },
   "logistics_4": {
    "id": "logistics_4",
@@ -546,7 +561,8 @@
     "supply": 0.172,
     "attrition": -0.115
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "fortification_1": {
    "id": "fortification_1",
@@ -568,7 +584,8 @@
     "fort_def": 0.15,
     "siege_def": 0.1
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "fortification_2": {
    "id": "fortification_2",
@@ -592,7 +609,8 @@
     "fort_def": 0.15,
     "siege_def": 0.1
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1500
   },
   "fortification_3": {
    "id": "fortification_3",
@@ -616,7 +634,8 @@
     "fort_def": 0.15,
     "siege_def": 0.1
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1600
   },
   "fortification_4": {
    "id": "fortification_4",
@@ -640,7 +659,8 @@
     "fort_def": 0.172,
     "siege_def": 0.115
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "naval_warfare_1": {
    "id": "naval_warfare_1",
@@ -662,7 +682,8 @@
     "naval_atk": 0.12,
     "naval_transport": 0.1
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "naval_warfare_2": {
    "id": "naval_warfare_2",
@@ -687,7 +708,8 @@
     "naval_atk": 0.12,
     "naval_transport": 0.1
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1450
   },
   "naval_warfare_3": {
    "id": "naval_warfare_3",
@@ -712,7 +734,8 @@
     "naval_atk": 0.12,
     "naval_transport": 0.1
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1690
   },
   "naval_warfare_4": {
    "id": "naval_warfare_4",
@@ -737,7 +760,8 @@
     "naval_atk": 0.138,
     "naval_transport": 0.115
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1840
   },
   "agriculture_1": {
    "id": "agriculture_1",
@@ -759,7 +783,8 @@
     "food": 0.12,
     "pop_growth": 0.03
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "agriculture_2": {
    "id": "agriculture_2",
@@ -783,7 +808,8 @@
     "food": 0.12,
     "pop_growth": 0.03
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1100
   },
   "agriculture_3": {
    "id": "agriculture_3",
@@ -807,7 +833,8 @@
     "food": 0.12,
     "pop_growth": 0.03
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "agriculture_4": {
    "id": "agriculture_4",
@@ -831,7 +858,8 @@
     "food": 0.138,
     "pop_growth": 0.034
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "trade_1": {
    "id": "trade_1",
@@ -853,7 +881,8 @@
     "trade": 0.12,
     "tariff": 0.02
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "trade_2": {
    "id": "trade_2",
@@ -878,7 +907,8 @@
     "trade": 0.12,
     "tariff": 0.02
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1150
   },
   "trade_3": {
    "id": "trade_3",
@@ -903,7 +933,8 @@
     "trade": 0.12,
     "tariff": 0.02
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1600
   },
   "trade_4": {
    "id": "trade_4",
@@ -928,7 +959,8 @@
     "trade": 0.138,
     "tariff": 0.023
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "banking_1": {
    "id": "banking_1",
@@ -950,7 +982,8 @@
     "interest": -0.12,
     "credit": 0.15
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "banking_2": {
    "id": "banking_2",
@@ -975,7 +1008,8 @@
     "interest": -0.12,
     "credit": 0.15
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1300
   },
   "banking_3": {
    "id": "banking_3",
@@ -1000,7 +1034,8 @@
     "interest": -0.12,
     "credit": 0.15
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1690
   },
   "banking_4": {
    "id": "banking_4",
@@ -1025,7 +1060,8 @@
     "interest": -0.138,
     "credit": 0.172
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "industry_1": {
    "id": "industry_1",
@@ -1047,7 +1083,8 @@
     "prod": 0.1,
     "build_cost": -0.04
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "industry_2": {
    "id": "industry_2",
@@ -1072,7 +1109,8 @@
     "prod": 0.1,
     "build_cost": -0.04
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1500
   },
   "industry_3": {
    "id": "industry_3",
@@ -1097,7 +1135,8 @@
     "prod": 0.1,
     "build_cost": -0.04
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1770
   },
   "industry_4": {
    "id": "industry_4",
@@ -1122,7 +1161,8 @@
     "prod": 0.115,
     "build_cost": -0.046
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "infrastructure_1": {
    "id": "infrastructure_1",
@@ -1144,7 +1184,8 @@
     "infra": 0.15,
     "build_speed": 0.05
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "infrastructure_2": {
    "id": "infrastructure_2",
@@ -1168,7 +1209,8 @@
     "infra": 0.15,
     "build_speed": 0.05
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1500
   },
   "infrastructure_3": {
    "id": "infrastructure_3",
@@ -1192,7 +1234,8 @@
     "infra": 0.15,
     "build_speed": 0.05
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1750
   },
   "infrastructure_4": {
    "id": "infrastructure_4",
@@ -1216,7 +1259,8 @@
     "infra": 0.172,
     "build_speed": 0.057
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1830
   },
   "resource_extraction_1": {
    "id": "resource_extraction_1",
@@ -1237,7 +1281,8 @@
    "effects": {
     "mine": 0.15
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "resource_extraction_2": {
    "id": "resource_extraction_2",
@@ -1260,7 +1305,8 @@
    "effects": {
     "mine": 0.15
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1400
   },
   "resource_extraction_3": {
    "id": "resource_extraction_3",
@@ -1283,7 +1329,8 @@
    "effects": {
     "mine": 0.15
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1760
   },
   "resource_extraction_4": {
    "id": "resource_extraction_4",
@@ -1306,7 +1353,8 @@
    "effects": {
     "mine": 0.172
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "bureaucracy_1": {
    "id": "bureaucracy_1",
@@ -1328,7 +1376,8 @@
     "admin_cap": 0.15,
     "corruption": -0.08
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "bureaucracy_2": {
    "id": "bureaucracy_2",
@@ -1352,7 +1401,8 @@
     "admin_cap": 0.15,
     "corruption": -0.08
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1300
   },
   "bureaucracy_3": {
    "id": "bureaucracy_3",
@@ -1376,7 +1426,8 @@
     "admin_cap": 0.15,
     "corruption": -0.08
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "bureaucracy_4": {
    "id": "bureaucracy_4",
@@ -1400,7 +1451,8 @@
     "admin_cap": 0.172,
     "corruption": -0.092
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "taxation_1": {
    "id": "taxation_1",
@@ -1421,7 +1473,8 @@
    "effects": {
     "tax": 0.1
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "taxation_2": {
    "id": "taxation_2",
@@ -1445,7 +1498,8 @@
    "effects": {
     "tax": 0.1
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1300
   },
   "taxation_3": {
    "id": "taxation_3",
@@ -1469,7 +1523,8 @@
    "effects": {
     "tax": 0.1
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "taxation_4": {
    "id": "taxation_4",
@@ -1493,7 +1548,8 @@
    "effects": {
     "tax": 0.115
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "public_admin_1": {
    "id": "public_admin_1",
@@ -1515,7 +1571,8 @@
     "stability": 1,
     "unrest": -0.08
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "public_admin_2": {
    "id": "public_admin_2",
@@ -1540,7 +1597,8 @@
     "stability": 1,
     "unrest": -0.08
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1400
   },
   "public_admin_3": {
    "id": "public_admin_3",
@@ -1565,7 +1623,8 @@
     "stability": 1,
     "unrest": -0.08
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1790
   },
   "public_admin_4": {
    "id": "public_admin_4",
@@ -1590,7 +1649,8 @@
     "stability": 1.15,
     "unrest": -0.092
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "centralization_1": {
    "id": "centralization_1",
@@ -1612,7 +1672,8 @@
     "legit": 0.4,
     "reform_cost": -0.08
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "centralization_2": {
    "id": "centralization_2",
@@ -1637,7 +1698,8 @@
     "legit": 0.4,
     "reform_cost": -0.08
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1450
   },
   "centralization_3": {
    "id": "centralization_3",
@@ -1662,7 +1724,8 @@
     "legit": 0.4,
     "reform_cost": -0.08
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1650
   },
   "centralization_4": {
    "id": "centralization_4",
@@ -1687,7 +1750,8 @@
     "legit": 0.46,
     "reform_cost": -0.092
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "legal_reform_1": {
    "id": "legal_reform_1",
@@ -1709,7 +1773,8 @@
     "stability": 1,
     "diplo": 0.08
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "legal_reform_2": {
    "id": "legal_reform_2",
@@ -1734,7 +1799,8 @@
     "stability": 1,
     "diplo": 0.08
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1450
   },
   "legal_reform_3": {
    "id": "legal_reform_3",
@@ -1759,7 +1825,8 @@
     "stability": 1,
     "diplo": 0.08
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1790
   },
   "legal_reform_4": {
    "id": "legal_reform_4",
@@ -1784,7 +1851,8 @@
     "stability": 1.15,
     "diplo": 0.092
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "education_1": {
    "id": "education_1",
@@ -1806,7 +1874,8 @@
     "research": 0.12,
     "literacy": 0.03
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "education_2": {
    "id": "education_2",
@@ -1830,7 +1899,8 @@
     "research": 0.12,
     "literacy": 0.03
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1200
   },
   "education_3": {
    "id": "education_3",
@@ -1854,7 +1924,8 @@
     "research": 0.12,
     "literacy": 0.03
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "education_4": {
    "id": "education_4",
@@ -1878,7 +1949,8 @@
     "research": 0.138,
     "literacy": 0.034
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1870
   },
   "medicine_1": {
    "id": "medicine_1",
@@ -1900,7 +1972,8 @@
     "disease": -0.15,
     "pop_growth": 0.02
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "medicine_2": {
    "id": "medicine_2",
@@ -1925,7 +1998,8 @@
     "disease": -0.15,
     "pop_growth": 0.02
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1500
   },
   "medicine_3": {
    "id": "medicine_3",
@@ -1950,7 +2024,8 @@
     "disease": -0.15,
     "pop_growth": 0.02
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1790
   },
   "medicine_4": {
    "id": "medicine_4",
@@ -1975,7 +2050,8 @@
     "disease": -0.172,
     "pop_growth": 0.023
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "printing_1": {
    "id": "printing_1",
@@ -1997,7 +2073,8 @@
     "literacy": 0.04,
     "prestige": 0.05
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "printing_2": {
    "id": "printing_2",
@@ -2022,7 +2099,8 @@
     "literacy": 0.04,
     "prestige": 0.05
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1450
   },
   "printing_3": {
    "id": "printing_3",
@@ -2047,7 +2125,8 @@
     "literacy": 0.04,
     "prestige": 0.05
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "printing_4": {
    "id": "printing_4",
@@ -2072,7 +2151,8 @@
     "literacy": 0.046,
     "prestige": 0.057
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1860
   },
   "engineering_1": {
    "id": "engineering_1",
@@ -2094,7 +2174,8 @@
     "build_cost": -0.06,
     "build_speed": 0.06
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "engineering_2": {
    "id": "engineering_2",
@@ -2119,7 +2200,8 @@
     "build_cost": -0.06,
     "build_speed": 0.06
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1450
   },
   "engineering_3": {
    "id": "engineering_3",
@@ -2144,7 +2226,8 @@
     "build_cost": -0.06,
     "build_speed": 0.06
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "engineering_4": {
    "id": "engineering_4",
@@ -2169,7 +2252,8 @@
     "build_cost": -0.069,
     "build_speed": 0.069
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1850
   },
   "science_1": {
    "id": "science_1",
@@ -2190,7 +2274,8 @@
    "effects": {
     "research": 0.15
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "science_2": {
    "id": "science_2",
@@ -2214,7 +2299,8 @@
    "effects": {
     "research": 0.15
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1550
   },
   "science_3": {
    "id": "science_3",
@@ -2238,7 +2324,8 @@
    "effects": {
     "research": 0.15
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1700
   },
   "science_4": {
    "id": "science_4",
@@ -2262,7 +2349,8 @@
    "effects": {
     "research": 0.172
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1870
   },
   "culture_1": {
    "id": "culture_1",
@@ -2284,7 +2372,8 @@
     "prestige": 0.08,
     "happiness": 2
    },
-   "era": 1
+   "era": 1,
+   "era_year": 1000
   },
   "culture_2": {
    "id": "culture_2",
@@ -2309,7 +2398,8 @@
     "prestige": 0.08,
     "happiness": 2
    },
-   "era": 2
+   "era": 2,
+   "era_year": 1400
   },
   "culture_3": {
    "id": "culture_3",
@@ -2334,7 +2424,8 @@
     "prestige": 0.08,
     "happiness": 2
    },
-   "era": 3
+   "era": 3,
+   "era_year": 1790
   },
   "culture_4": {
    "id": "culture_4",
@@ -2359,7 +2450,1393 @@
     "prestige": 0.092,
     "happiness": 2.3
    },
-   "era": 4
+   "era": 4,
+   "era_year": 1880
+  },
+  "infantry_tactics_a": {
+   "id": "infantry_tactics_a",
+   "line": "infantry_tactics",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Militia Levies",
+    "tr": "Milis Seferberliği"
+   },
+   "desc": {
+    "en": "Call up village levies to swell the host.",
+    "tr": "Köy milislerini orduya katarak seferberlik gücünü artırır."
+   },
+   "line_name": {
+    "en": "Infantry Tactics",
+    "tr": "Piyade Taktikleri"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "infantry_tactics_1"
+   ],
+   "effects": {
+    "manpower": 0.06,
+    "army_upkeep": -0.03
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "infantry_tactics_b": {
+   "id": "infantry_tactics_b",
+   "line": "infantry_tactics",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Drill Regulations",
+    "tr": "Talim Nizamnamesi"
+   },
+   "desc": {
+    "en": "Standard drill manuals raise discipline across the line.",
+    "tr": "Standart talim kılavuzları tüm hatta disiplini artırır."
+   },
+   "line_name": {
+    "en": "Infantry Tactics",
+    "tr": "Piyade Taktikleri"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "infantry_tactics_3"
+   ],
+   "effects": {
+    "morale": 0.04,
+    "inf_def": 0.04
+   },
+   "era": 3,
+   "era_year": 1700,
+   "spec": true
+  },
+  "cavalry_doctrine_a": {
+   "id": "cavalry_doctrine_a",
+   "line": "cavalry_doctrine",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Remount Depots",
+    "tr": "Binek Depoları"
+   },
+   "desc": {
+    "en": "State stables keep the cavalry mounted.",
+    "tr": "Devlet ahırları süvarinin atsız kalmasını önler."
+   },
+   "line_name": {
+    "en": "Cavalry Doctrine",
+    "tr": "Süvari Doktrini"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "cavalry_doctrine_1"
+   ],
+   "effects": {
+    "cav_atk": 0.05,
+    "supply": 0.04
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "cavalry_doctrine_b": {
+   "id": "cavalry_doctrine_b",
+   "line": "cavalry_doctrine",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Dragoon Companies",
+    "tr": "Dragon Bölükleri"
+   },
+   "desc": {
+    "en": "Mounted infantry give commanders flexible striking power.",
+    "tr": "Atlı piyade komutanlara esnek vuruş gücü verir."
+   },
+   "line_name": {
+    "en": "Cavalry Doctrine",
+    "tr": "Süvari Doktrini"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "cavalry_doctrine_3",
+    "infantry_tactics_2"
+   ],
+   "effects": {
+    "move": 0.05,
+    "inf_atk": 0.03
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "artillery_a": {
+   "id": "artillery_a",
+   "line": "artillery",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Gunfounders' Guild",
+    "tr": "Dökümcüler Loncası"
+   },
+   "desc": {
+    "en": "Master founders cut the cost of heavy ordnance.",
+    "tr": "Usta dökümcüler ağır top maliyetini düşürür."
+   },
+   "line_name": {
+    "en": "Artillery",
+    "tr": "Topçuluk"
+   },
+   "cost_rp": 434,
+   "cost_gold": 108,
+   "prereq": [
+    "artillery_2",
+    "resource_extraction_1"
+   ],
+   "effects": {
+    "recruit_cost": -0.05,
+    "art_atk": 0.04
+   },
+   "era": 2,
+   "era_year": 1480,
+   "spec": true
+  },
+  "artillery_b": {
+   "id": "artillery_b",
+   "line": "artillery",
+   "branch": "military",
+   "level": 4,
+   "name": {
+    "en": "Counter-Battery Fire",
+    "tr": "Karşı Batarya Ateşi"
+   },
+   "desc": {
+    "en": "Spotting and ranging make guns decisive in siege and field.",
+    "tr": "Gözetleme ve nişan alma topları kuşatmada ve sahada belirleyici kılar."
+   },
+   "line_name": {
+    "en": "Artillery",
+    "tr": "Topçuluk"
+   },
+   "cost_rp": 1295,
+   "cost_gold": 323,
+   "prereq": [
+    "artillery_4"
+   ],
+   "effects": {
+    "siege": 0.1,
+    "art_atk": 0.05
+   },
+   "era": 4,
+   "era_year": 1860,
+   "spec": true
+  },
+  "logistics_a": {
+   "id": "logistics_a",
+   "line": "logistics",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Military Roads",
+    "tr": "Askeri Yollar"
+   },
+   "desc": {
+    "en": "Dedicated roads speed the march of armies.",
+    "tr": "Özel yollar orduların yürüyüşünü hızlandırır."
+   },
+   "line_name": {
+    "en": "Logistics",
+    "tr": "Lojistik"
+   },
+   "cost_rp": 434,
+   "cost_gold": 108,
+   "prereq": [
+    "logistics_2",
+    "infrastructure_1"
+   ],
+   "effects": {
+    "move": 0.06,
+    "attrition": -0.04
+   },
+   "era": 2,
+   "era_year": 1500,
+   "spec": true
+  },
+  "logistics_b": {
+   "id": "logistics_b",
+   "line": "logistics",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Field Hospitals",
+    "tr": "Sahra Hastaneleri"
+   },
+   "desc": {
+    "en": "Surgeons follow the army and save the wounded.",
+    "tr": "Cerrahlar orduyu izler ve yaralıları kurtarır."
+   },
+   "line_name": {
+    "en": "Logistics",
+    "tr": "Lojistik"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "logistics_3"
+   ],
+   "effects": {
+    "attrition": -0.08,
+    "disease": -0.05
+   },
+   "era": 3,
+   "era_year": 1750,
+   "spec": true
+  },
+  "fortification_a": {
+   "id": "fortification_a",
+   "line": "fortification",
+   "branch": "military",
+   "level": 1,
+   "name": {
+    "en": "Moats and Palisades",
+    "tr": "Hendekler ve Sur Kazıkları"
+   },
+   "desc": {
+    "en": "Cheap earthworks protect towns and garrisons.",
+    "tr": "Ucuz toprak tahkimatlar kasabaları ve garnizonları korur."
+   },
+   "line_name": {
+    "en": "Fortification",
+    "tr": "Tahkimat"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "fortification_1"
+   ],
+   "effects": {
+    "fort_def": 0.05,
+    "build_cost": -0.02
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "fortification_b": {
+   "id": "fortification_b",
+   "line": "fortification",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Garrison Engineers",
+    "tr": "Garnizon Mühendisleri"
+   },
+   "desc": {
+    "en": "Resident engineers keep fortresses in repair and shorten sieges.",
+    "tr": "Yerleşik mühendisler kaleleri onarır ve kuşatmaları kısaltır."
+   },
+   "line_name": {
+    "en": "Fortification",
+    "tr": "Tahkimat"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "fortification_3",
+    "engineering_2"
+   ],
+   "effects": {
+    "siege": 0.05,
+    "fort_def": 0.06
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "naval_warfare_a": {
+   "id": "naval_warfare_a",
+   "line": "naval_warfare",
+   "branch": "military",
+   "level": 2,
+   "name": {
+    "en": "Naval Ordnance",
+    "tr": "Deniz Topçuluğu"
+   },
+   "desc": {
+    "en": "Broadside guns standardised across the fleet.",
+    "tr": "Borda topları tüm donanmada standartlaştırılır."
+   },
+   "line_name": {
+    "en": "Naval Warfare",
+    "tr": "Deniz Harbi"
+   },
+   "cost_rp": 434,
+   "cost_gold": 108,
+   "prereq": [
+    "naval_warfare_2"
+   ],
+   "effects": {
+    "naval_atk": 0.08
+   },
+   "era": 2,
+   "era_year": 1520,
+   "spec": true
+  },
+  "naval_warfare_b": {
+   "id": "naval_warfare_b",
+   "line": "naval_warfare",
+   "branch": "military",
+   "level": 3,
+   "name": {
+    "en": "Merchant Convoys",
+    "tr": "Ticaret Konvoyları"
+   },
+   "desc": {
+    "en": "Armed convoys protect trade at sea.",
+    "tr": "Silahlı konvoylar deniz ticaretini korur."
+   },
+   "line_name": {
+    "en": "Naval Warfare",
+    "tr": "Deniz Harbi"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "naval_warfare_3",
+    "trade_2"
+   ],
+   "effects": {
+    "trade": 0.05,
+    "naval_transport": 0.1
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "agriculture_a": {
+   "id": "agriculture_a",
+   "line": "agriculture",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Irrigation Works",
+    "tr": "Sulama Tesisleri"
+   },
+   "desc": {
+    "en": "Channels and wells extend fertile land.",
+    "tr": "Kanallar ve kuyular verimli toprağı genişletir."
+   },
+   "line_name": {
+    "en": "Agriculture",
+    "tr": "Tarım"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "agriculture_1"
+   ],
+   "effects": {
+    "food": 0.05
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "agriculture_b": {
+   "id": "agriculture_b",
+   "line": "agriculture",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Selective Breeding",
+    "tr": "Seçici Üretim"
+   },
+   "desc": {
+    "en": "Improved livestock and seed stock raise yields.",
+    "tr": "Gelişmiş hayvan ve tohum ırkları verimi artırır."
+   },
+   "line_name": {
+    "en": "Agriculture",
+    "tr": "Tarım"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "agriculture_3",
+    "science_1"
+   ],
+   "effects": {
+    "food": 0.08,
+    "pop_growth": 0.02
+   },
+   "era": 3,
+   "era_year": 1700,
+   "spec": true
+  },
+  "trade_a": {
+   "id": "trade_a",
+   "line": "trade",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Caravan Routes",
+    "tr": "Kervan Yolları"
+   },
+   "desc": {
+    "en": "Organised caravans link distant markets.",
+    "tr": "Düzenli kervanlar uzak pazarları birbirine bağlar."
+   },
+   "line_name": {
+    "en": "Trade",
+    "tr": "Ticaret"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "trade_1"
+   ],
+   "effects": {
+    "trade": 0.05
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "trade_b": {
+   "id": "trade_b",
+   "line": "trade",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Trade Treaty Network",
+    "tr": "Ticaret Antlaşmaları Ağı"
+   },
+   "desc": {
+    "en": "A web of commercial treaties lowers tariffs and builds goodwill.",
+    "tr": "Ticaret antlaşmaları ağı gümrükleri düşürür ve dostluk yaratır."
+   },
+   "line_name": {
+    "en": "Trade",
+    "tr": "Ticaret"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "trade_3",
+    "legal_reform_1"
+   ],
+   "effects": {
+    "tariff": 0.02,
+    "diplo": 0.05
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "banking_a": {
+   "id": "banking_a",
+   "line": "banking",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Bills of Exchange",
+    "tr": "Poliçe Sistemi"
+   },
+   "desc": {
+    "en": "Paper credit moves money without moving coin.",
+    "tr": "Kâğıt kredi parayı taşımadan aktarır."
+   },
+   "line_name": {
+    "en": "Banking",
+    "tr": "Bankacılık"
+   },
+   "cost_rp": 434,
+   "cost_gold": 108,
+   "prereq": [
+    "banking_2"
+   ],
+   "effects": {
+    "credit": 0.1
+   },
+   "era": 2,
+   "era_year": 1350,
+   "spec": true
+  },
+  "banking_b": {
+   "id": "banking_b",
+   "line": "banking",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Public Debt Office",
+    "tr": "Kamu Borcu İdaresi"
+   },
+   "desc": {
+    "en": "A trusted debt office lowers the price of borrowing.",
+    "tr": "Güvenilir bir borç idaresi borçlanma maliyetini düşürür."
+   },
+   "line_name": {
+    "en": "Banking",
+    "tr": "Bankacılık"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "banking_3",
+    "taxation_2"
+   ],
+   "effects": {
+    "interest": -0.1,
+    "credit": 0.1
+   },
+   "era": 3,
+   "era_year": 1690,
+   "spec": true
+  },
+  "industry_a": {
+   "id": "industry_a",
+   "line": "industry",
+   "branch": "economic",
+   "level": 2,
+   "name": {
+    "en": "Mill Power",
+    "tr": "Değirmen Gücü"
+   },
+   "desc": {
+    "en": "Water and wind mills multiply artisan output.",
+    "tr": "Su ve yel değirmenleri zanaatkâr üretimini katlar."
+   },
+   "line_name": {
+    "en": "Industrial Production",
+    "tr": "Sanayi Üretimi"
+   },
+   "cost_rp": 434,
+   "cost_gold": 108,
+   "prereq": [
+    "industry_2"
+   ],
+   "effects": {
+    "prod": 0.06
+   },
+   "era": 2,
+   "era_year": 1300,
+   "spec": true
+  },
+  "industry_b": {
+   "id": "industry_b",
+   "line": "industry",
+   "branch": "economic",
+   "level": 4,
+   "name": {
+    "en": "Assembly Lines",
+    "tr": "Montaj Hatları"
+   },
+   "desc": {
+    "en": "Division of labour in great factories puts whole districts to work.",
+    "tr": "Büyük fabrikalarda iş bölümü bütün mahalleleri çalıştırır."
+   },
+   "line_name": {
+    "en": "Industrial Production",
+    "tr": "Sanayi Üretimi"
+   },
+   "cost_rp": 1295,
+   "cost_gold": 323,
+   "prereq": [
+    "industry_4",
+    "infrastructure_3"
+   ],
+   "effects": {
+    "prod": 0.06,
+    "employment": 0.06
+   },
+   "era": 4,
+   "era_year": 1870,
+   "spec": true
+  },
+  "infrastructure_a": {
+   "id": "infrastructure_a",
+   "line": "infrastructure",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Corvée Roads",
+    "tr": "Angarya Yolları"
+   },
+   "desc": {
+    "en": "Seasonal labour repairs the roads.",
+    "tr": "Mevsimlik emek yolları onarır."
+   },
+   "line_name": {
+    "en": "Infrastructure",
+    "tr": "Altyapı"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "infrastructure_1"
+   ],
+   "effects": {
+    "infra": 0.06,
+    "build_cost": -0.02
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "infrastructure_b": {
+   "id": "infrastructure_b",
+   "line": "infrastructure",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Signal Posts",
+    "tr": "İşaret Kuleleri"
+   },
+   "desc": {
+    "en": "Optical signals carry orders across the realm.",
+    "tr": "Görsel işaretler emirleri ülke genelinde taşır."
+   },
+   "line_name": {
+    "en": "Infrastructure",
+    "tr": "Altyapı"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "infrastructure_3",
+    "engineering_2"
+   ],
+   "effects": {
+    "admin_cap": 0.04,
+    "move": 0.03
+   },
+   "era": 3,
+   "era_year": 1790,
+   "spec": true
+  },
+  "resource_extraction_a": {
+   "id": "resource_extraction_a",
+   "line": "resource_extraction",
+   "branch": "economic",
+   "level": 1,
+   "name": {
+    "en": "Prospecting Charters",
+    "tr": "Maden Arama Ruhsatları"
+   },
+   "desc": {
+    "en": "Licensed prospectors find new veins.",
+    "tr": "Ruhsatlı arayıcılar yeni damarlar bulur."
+   },
+   "line_name": {
+    "en": "Resource Extraction",
+    "tr": "Kaynak Çıkarımı"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "resource_extraction_1"
+   ],
+   "effects": {
+    "mine": 0.06
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "resource_extraction_b": {
+   "id": "resource_extraction_b",
+   "line": "resource_extraction",
+   "branch": "economic",
+   "level": 3,
+   "name": {
+    "en": "Mining Engineers",
+    "tr": "Maden Mühendisleri"
+   },
+   "desc": {
+    "en": "Trained engineers drain and shore deeper shafts.",
+    "tr": "Eğitimli mühendisler daha derin kuyuları kurutur ve destekler."
+   },
+   "line_name": {
+    "en": "Resource Extraction",
+    "tr": "Kaynak Çıkarımı"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "resource_extraction_3",
+    "engineering_1"
+   ],
+   "effects": {
+    "mine": 0.1,
+    "build_cost": -0.02
+   },
+   "era": 3,
+   "era_year": 1720,
+   "spec": true
+  },
+  "bureaucracy_a": {
+   "id": "bureaucracy_a",
+   "line": "bureaucracy",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Archive Reform",
+    "tr": "Arşiv Reformu"
+   },
+   "desc": {
+    "en": "Orderly archives make officials accountable.",
+    "tr": "Düzenli arşivler memurları hesap verebilir kılar."
+   },
+   "line_name": {
+    "en": "Bureaucracy",
+    "tr": "Bürokrasi"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "bureaucracy_1"
+   ],
+   "effects": {
+    "corruption": -0.05
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "bureaucracy_b": {
+   "id": "bureaucracy_b",
+   "line": "bureaucracy",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Audit Courts",
+    "tr": "Denetim Mahkemeleri"
+   },
+   "desc": {
+    "en": "Independent auditors catch embezzlement.",
+    "tr": "Bağımsız denetçiler zimmeti yakalar."
+   },
+   "line_name": {
+    "en": "Bureaucracy",
+    "tr": "Bürokrasi"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "bureaucracy_3",
+    "taxation_1"
+   ],
+   "effects": {
+    "corruption": -0.08,
+    "tax": 0.03
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "taxation_a": {
+   "id": "taxation_a",
+   "line": "taxation",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Customs Houses",
+    "tr": "Gümrük Daireleri"
+   },
+   "desc": {
+    "en": "Collectors at borders and ports tax the flow of goods.",
+    "tr": "Sınır ve limanlardaki tahsildarlar mal akışını vergilendirir."
+   },
+   "line_name": {
+    "en": "Taxation",
+    "tr": "Vergilendirme"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "taxation_1"
+   ],
+   "effects": {
+    "tariff": 0.01,
+    "tax": 0.03
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "taxation_b": {
+   "id": "taxation_b",
+   "line": "taxation",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Cadastral Survey",
+    "tr": "Kadastro Taraması"
+   },
+   "desc": {
+    "en": "Land is measured and every holding assessed fairly.",
+    "tr": "Topraklar ölçülür ve her mülk adilce değerlendirilir."
+   },
+   "line_name": {
+    "en": "Taxation",
+    "tr": "Vergilendirme"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "taxation_3",
+    "engineering_2"
+   ],
+   "effects": {
+    "tax": 0.05,
+    "unrest": -0.02
+   },
+   "era": 3,
+   "era_year": 1700,
+   "spec": true
+  },
+  "public_admin_a": {
+   "id": "public_admin_a",
+   "line": "public_admin",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Watchmen and Wardens",
+    "tr": "Bekçiler ve Muhafızlar"
+   },
+   "desc": {
+    "en": "Local watchmen keep order and report plots.",
+    "tr": "Yerel bekçiler düzeni korur ve entrikaları bildirir."
+   },
+   "line_name": {
+    "en": "Public Administration",
+    "tr": "Kamu İdaresi"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "public_admin_1"
+   ],
+   "effects": {
+    "unrest": -0.03,
+    "counter_intel": 0.1
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "public_admin_b": {
+   "id": "public_admin_b",
+   "line": "public_admin",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Secret Chancery",
+    "tr": "Gizli Kançılarya"
+   },
+   "desc": {
+    "en": "A secret office reads foreign letters and recruits agents.",
+    "tr": "Gizli bir daire yabancı mektupları okur ve ajan devşirir."
+   },
+   "line_name": {
+    "en": "Public Administration",
+    "tr": "Kamu İdaresi"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "public_admin_3"
+   ],
+   "effects": {
+    "spy_net": 0.1,
+    "counter_intel": 0.1
+   },
+   "era": 3,
+   "era_year": 1550,
+   "spec": true
+  },
+  "centralization_a": {
+   "id": "centralization_a",
+   "line": "centralization",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Royal Household Offices",
+    "tr": "Hanedan Saray Daireleri"
+   },
+   "desc": {
+    "en": "A disciplined household strengthens the crown's authority and trains its heirs.",
+    "tr": "Disiplinli bir saray teşkilatı tacın otoritesini güçlendirir ve veliahtları yetiştirir."
+   },
+   "line_name": {
+    "en": "Centralization",
+    "tr": "Merkezileşme"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "centralization_1"
+   ],
+   "effects": {
+    "legit": 0.1,
+    "heir_quality": 0.1
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "centralization_b": {
+   "id": "centralization_b",
+   "line": "centralization",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Court Etiquette",
+    "tr": "Saray Protokolü"
+   },
+   "desc": {
+    "en": "Elaborate ritual binds the great families to the court.",
+    "tr": "Ayrıntılı törenler büyük aileleri saraya bağlar."
+   },
+   "line_name": {
+    "en": "Centralization",
+    "tr": "Merkezileşme"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "centralization_3"
+   ],
+   "effects": {
+    "faction_loyalty": 0.05,
+    "prestige": 0.05
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "legal_reform_a": {
+   "id": "legal_reform_a",
+   "line": "legal_reform",
+   "branch": "administration",
+   "level": 1,
+   "name": {
+    "en": "Charters of Liberties",
+    "tr": "Hürriyet Fermanları"
+   },
+   "desc": {
+    "en": "Written guarantees calm the privileged orders.",
+    "tr": "Yazılı güvenceler imtiyazlı zümreleri yatıştırır."
+   },
+   "line_name": {
+    "en": "Legal Reform",
+    "tr": "Hukuk Reformu"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "legal_reform_1"
+   ],
+   "effects": {
+    "faction_loyalty": 0.05,
+    "unrest": -0.02
+   },
+   "era": 1,
+   "era_year": 1100,
+   "spec": true
+  },
+  "legal_reform_b": {
+   "id": "legal_reform_b",
+   "line": "legal_reform",
+   "branch": "administration",
+   "level": 3,
+   "name": {
+    "en": "Diplomatic Law",
+    "tr": "Diplomasi Hukuku"
+   },
+   "desc": {
+    "en": "Settled rules for envoys and treaties build trust.",
+    "tr": "Elçiler ve antlaşmalar için yerleşik kurallar güven yaratır."
+   },
+   "line_name": {
+    "en": "Legal Reform",
+    "tr": "Hukuk Reformu"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "legal_reform_3"
+   ],
+   "effects": {
+    "diplo": 0.1,
+    "legit": 0.1
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "education_a": {
+   "id": "education_a",
+   "line": "education",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Cathedral Schools",
+    "tr": "Katedral Okulları"
+   },
+   "desc": {
+    "en": "Church schools train clerks and scholars.",
+    "tr": "Kilise okulları katip ve âlim yetiştirir."
+   },
+   "line_name": {
+    "en": "Education",
+    "tr": "Eğitim"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "education_1"
+   ],
+   "effects": {
+    "literacy": 0.01,
+    "research": 0.03
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "education_b": {
+   "id": "education_b",
+   "line": "education",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Technical Schools",
+    "tr": "Teknik Okullar"
+   },
+   "desc": {
+    "en": "Practical schooling trains engineers and managers.",
+    "tr": "Uygulamalı eğitim mühendis ve yönetici yetiştirir."
+   },
+   "line_name": {
+    "en": "Education",
+    "tr": "Eğitim"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "education_3"
+   ],
+   "effects": {
+    "research": 0.05,
+    "build_speed": 0.04
+   },
+   "era": 3,
+   "era_year": 1780,
+   "spec": true
+  },
+  "medicine_a": {
+   "id": "medicine_a",
+   "line": "medicine",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Herbals and Apothecaries",
+    "tr": "Bitkisel İlaçlar ve Eczacılar"
+   },
+   "desc": {
+    "en": "Apothecaries spread proven remedies and tend the royal household.",
+    "tr": "Eczacılar denenmiş ilaçları yayar ve hanedanın sağlığına bakar."
+   },
+   "line_name": {
+    "en": "Medicine",
+    "tr": "Tıp"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "medicine_1"
+   ],
+   "effects": {
+    "disease": -0.05,
+    "royal_health": 0.05
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "medicine_b": {
+   "id": "medicine_b",
+   "line": "medicine",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Public Sanitation",
+    "tr": "Kamu Sağlığı"
+   },
+   "desc": {
+    "en": "Sewers and clean water cut the toll of epidemics.",
+    "tr": "Kanalizasyon ve temiz su salgınların kaybını azaltır."
+   },
+   "line_name": {
+    "en": "Medicine",
+    "tr": "Tıp"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "medicine_3"
+   ],
+   "effects": {
+    "disease": -0.1,
+    "pop_growth": 0.02
+   },
+   "era": 3,
+   "era_year": 1750,
+   "spec": true
+  },
+  "printing_a": {
+   "id": "printing_a",
+   "line": "printing",
+   "branch": "society",
+   "level": 2,
+   "name": {
+    "en": "Broadsheets and Pamphlets",
+    "tr": "Bildiriler ve Risaleler"
+   },
+   "desc": {
+    "en": "Cheap print carries the ruler's word to every town.",
+    "tr": "Ucuz basım hükümdarın sözünü her kasabaya taşır."
+   },
+   "line_name": {
+    "en": "Printing",
+    "tr": "Matbaa"
+   },
+   "cost_rp": 434,
+   "cost_gold": 108,
+   "prereq": [
+    "printing_2"
+   ],
+   "effects": {
+    "legit": 0.1,
+    "literacy": 0.01
+   },
+   "era": 2,
+   "era_year": 1500,
+   "spec": true
+  },
+  "printing_b": {
+   "id": "printing_b",
+   "line": "printing",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Postal Service",
+    "tr": "Posta Teşkilatı"
+   },
+   "desc": {
+    "en": "A regular post binds the realm and carries confidential reports.",
+    "tr": "Düzenli posta ülkeyi birbirine bağlar ve gizli raporları taşır."
+   },
+   "line_name": {
+    "en": "Printing",
+    "tr": "Matbaa"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "printing_3"
+   ],
+   "effects": {
+    "admin_cap": 0.05,
+    "spy_net": 0.05
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
+  },
+  "engineering_a": {
+   "id": "engineering_a",
+   "line": "engineering",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Guild Masons",
+    "tr": "Duvarcı Loncaları"
+   },
+   "desc": {
+    "en": "Masons' lodges pass on building craft.",
+    "tr": "Duvarcı locaları yapı sanatını aktarır."
+   },
+   "line_name": {
+    "en": "Engineering",
+    "tr": "Mühendislik"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "engineering_1"
+   ],
+   "effects": {
+    "build_cost": -0.03
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "engineering_b": {
+   "id": "engineering_b",
+   "line": "engineering",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Canal Engineering",
+    "tr": "Kanal Mühendisliği"
+   },
+   "desc": {
+    "en": "Locks and cuts open new trade routes.",
+    "tr": "Havuzlar ve kanallar yeni ticaret yolları açar."
+   },
+   "line_name": {
+    "en": "Engineering",
+    "tr": "Mühendislik"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "engineering_3",
+    "infrastructure_2"
+   ],
+   "effects": {
+    "infra": 0.08,
+    "trade": 0.04
+   },
+   "era": 3,
+   "era_year": 1700,
+   "spec": true
+  },
+  "science_a": {
+   "id": "science_a",
+   "line": "science",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Scholarly Societies",
+    "tr": "İlim Cemiyetleri"
+   },
+   "desc": {
+    "en": "Learned circles exchange discoveries.",
+    "tr": "İlim halkaları keşifleri paylaşır."
+   },
+   "line_name": {
+    "en": "Scientific Development",
+    "tr": "Bilimsel Gelişme"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "science_1"
+   ],
+   "effects": {
+    "research": 0.04
+   },
+   "era": 1,
+   "era_year": 1400,
+   "spec": true
+  },
+  "science_b": {
+   "id": "science_b",
+   "line": "science",
+   "branch": "society",
+   "level": 4,
+   "name": {
+    "en": "Laboratories",
+    "tr": "Laboratuvarlar"
+   },
+   "desc": {
+    "en": "Systematic experiment becomes routine.",
+    "tr": "Sistemli deney olağanlaşır."
+   },
+   "line_name": {
+    "en": "Scientific Development",
+    "tr": "Bilimsel Gelişme"
+   },
+   "cost_rp": 1295,
+   "cost_gold": 323,
+   "prereq": [
+    "science_4"
+   ],
+   "effects": {
+    "research": 0.08,
+    "prod": 0.03
+   },
+   "era": 4,
+   "era_year": 1860,
+   "spec": true
+  },
+  "culture_a": {
+   "id": "culture_a",
+   "line": "culture",
+   "branch": "society",
+   "level": 1,
+   "name": {
+    "en": "Royal Patronage of Poets",
+    "tr": "Şairlere Saray Himayesi"
+   },
+   "desc": {
+    "en": "Poets and chroniclers glorify the dynasty.",
+    "tr": "Şairler ve vakanüvisler hanedanı yüceltir."
+   },
+   "line_name": {
+    "en": "Cultural Advancement",
+    "tr": "Kültürel Gelişim"
+   },
+   "cost_rp": 182,
+   "cost_gold": 45,
+   "prereq": [
+    "culture_1"
+   ],
+   "effects": {
+    "prestige": 0.06,
+    "happiness": 1
+   },
+   "era": 1,
+   "era_year": 1000,
+   "spec": true
+  },
+  "culture_b": {
+   "id": "culture_b",
+   "line": "culture",
+   "branch": "society",
+   "level": 3,
+   "name": {
+    "en": "Public Festivals",
+    "tr": "Halk Şenlikleri"
+   },
+   "desc": {
+    "en": "Seasonal festivals channel discontent into celebration.",
+    "tr": "Mevsimlik şenlikler hoşnutsuzluğu kutlamaya dönüştürür."
+   },
+   "line_name": {
+    "en": "Cultural Advancement",
+    "tr": "Kültürel Gelişim"
+   },
+   "cost_rp": 805,
+   "cost_gold": 201,
+   "prereq": [
+    "culture_3"
+   ],
+   "effects": {
+    "happiness": 1,
+    "unrest": -0.03
+   },
+   "era": 3,
+   "era_year": 1650,
+   "spec": true
   }
  }
 }

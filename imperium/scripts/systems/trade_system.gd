@@ -56,6 +56,8 @@ static func edge_ok(s: Dictionary, pa: String, pb: String, link: String) -> bool
 	var cb: String = b["controller"]
 	if ca == "" or cb == "":
 		return ca == cb or ca == "" or cb == ""
+	if ca == cb and link == "land" and a["owner"] == b["owner"]:
+		return true   # inside one country: no war, embargo or blockade can apply
 	if GS.at_war(s, ca, cb) or GS.at_war(s, a["owner"], b["owner"]):
 		return false
 	if ca != cb:
@@ -71,12 +73,27 @@ static func edge_ok(s: Dictionary, pa: String, pb: String, link: String) -> bool
 	return true
 
 static func _blockaded_province(s: Dictionary, pid: String) -> bool:
-	var owner: String = s["provinces"][pid]["controller"]
-	for aid in GS.armies_at(s, pid):
-		var a: Dictionary = s["armies"][aid]
-		if a.get("naval", false) and a["owner"] != owner and GS.at_war(s, a["owner"], owner):
-			return true
-	return false
+	return NavalSystem.is_blockaded(s, pid)
+
+## Static graph edges of a province ([neighbour, kind, cost]); the graph only depends on the active map set.
+static var _edge_cache: Dictionary = {}
+static var _edge_cache_set := ""
+
+static func _edges_of(pid: String) -> Array:
+	if _edge_cache_set != Defs.map_set:
+		_edge_cache.clear()
+		_edge_cache_set = Defs.map_set
+	var cached: Variant = _edge_cache.get(pid)
+	if cached != null:
+		return cached
+	var edges: Array = []
+	for nb in Defs.neighbors(pid):
+		edges.append([nb, "land", 1.0])
+	for sl in Defs.sea_links(pid):
+		var cost := 1.0 + float(sl[2]) / 900.0 if sl[1] == "lane" else 1.6
+		edges.append([sl[0], str(sl[1]), cost])
+	_edge_cache[pid] = edges
+	return edges
 
 static func compute(s: Dictionary) -> Dictionary:
 	var ids: Array = Defs.province_ids
@@ -116,12 +133,7 @@ static func compute(s: Dictionary) -> Dictionary:
 		if du > dist[u]:
 			continue
 		var upid: String = ids[u]
-		var edges: Array = []
-		for nb in Defs.neighbors(upid):
-			edges.append([nb, "land", 1.0])
-		for sl in Defs.sea_links(upid):
-			var cost := 1.0 + float(sl[2]) / 900.0 if sl[1] == "lane" else 1.6
-			edges.append([sl[0], str(sl[1]), cost])
+		var edges: Array = _edges_of(upid)
 		var infra := float(Mods.province(s, upid).get("infra", 0.0))
 		for e in edges:
 			var v: int = idx[e[0]]
@@ -140,6 +152,7 @@ static func compute(s: Dictionary) -> Dictionary:
 	var by_province := {}
 	var flows: Array = []
 	var foreign_goods := {}
+	var commerce_total := 0.0
 	for i in n:
 		var pid: String = ids[i]
 		var p: Dictionary = s["provinces"][pid]
@@ -147,6 +160,7 @@ static func compute(s: Dictionary) -> Dictionary:
 		if owner == "" or owner == "REB":
 			continue
 		var cv := float(EconomySystem.province_calc(s, pid)["commerce"])
+		commerce_total += cv
 		var payee: String = p["controller"]
 		if payee != owner:
 			# occupation: the occupier takes a share, the owner loses it
@@ -169,8 +183,8 @@ static func compute(s: Dictionary) -> Dictionary:
 			var cown: String = s["provinces"][cpid]["controller"]
 			if cur != i and cown != owner and cown != "" and cown != hub_owner:
 				var rr := GS.rel(s, owner, cown)
-				var tf := BASE_TARIFF * (0.5 if rr["trade"] else 1.0)
-				tf = maxf(0.0, tf - 0.02 * 0.0)
+				var tf := (BASE_TARIFF + Mods.get_mod(s, cown, "tariff")) * (0.5 if rr["trade"] else 1.0)
+				tf = clampf(tf, 0.0, 0.1)
 				tariffs += tf
 				tariff_payees.append([cown, tf])
 			hops += 1
@@ -181,8 +195,7 @@ static func compute(s: Dictionary) -> Dictionary:
 			fee = 0.06 + 0.02 * minf(float(power.get(h, 1.0)), 4.0)
 			var rr2 := GS.rel(s, owner, hub_owner)
 			if rr2["trade"]:
-				gross *= 1.10
-				fee *= 0.75
+				fee *= 0.75   # a trade agreement lowers the hub's fee; it never creates money
 			income[hub_owner] = float(income.get(hub_owner, 0.0)) + gross * fee
 			foreign_goods[hub_owner] = float(foreign_goods.get(hub_owner, 0.0)) + gross
 		for tp in tariff_payees:
@@ -191,7 +204,18 @@ static func compute(s: Dictionary) -> Dictionary:
 		by_province[pid] = {"hub": hpid, "value": gross, "hops": hops}
 		if hops >= 1 and hops <= 12:
 			flows.append([pid, hpid, gross])
-	var res := {"turn": s["turn"], "income": income, "by_province": by_province, "flows": flows, "power": power}
+	var res := {"turn": s["turn"], "paid": 0.0, "commerce": commerce_total, "income": income, "by_province": by_province, "flows": flows, "power": power}
+	NavalSystem.adjust_trade(s, res)   # blockades / raiding change the incomes
+	var paid := 0.0
+	for k in res["income"]:
+		paid += float(res["income"][k])
+	# invariant: trade only redistributes money. Merchant-fleet bonuses must not make payouts exceed the commerce generated.
+	if paid > commerce_total and paid > 0.0:
+		var k := commerce_total / paid
+		for cid2 in res["income"]:
+			res["income"][cid2] = float(res["income"][cid2]) * k
+		paid = commerce_total
+	res["paid"] = paid
 	s["_c"]["trade"] = res
 	return res
 
@@ -234,12 +258,14 @@ static func record_use(s: Dictionary, res: String, amount: float) -> void:
 
 ## Update global market prices from this turn's production and demand.
 static func update_market(s: Dictionary, production: Dictionary, demand: Dictionary) -> void:
+	var extra := EconomyDepth.demand_extra(s)
 	for k in ["iron", "wood", "stone", "coal", "lux", "food"]:
 		var sup := float(production.get(k, 0.0)) + 60.0
-		var dem := float(demand.get(k, 0.0)) + 60.0
+		var dem := float(demand.get(k, 0.0)) + float(extra.get(k, 0.0)) + 60.0
 		var base := float(EconomySystem.BASE_PRICE[k])
 		var target := base * pow(clampf(dem / sup, 0.55, 1.9), 0.55)
 		var m: Dictionary = s["market"][k]
 		m["price"] = snappedf(lerpf(float(m["price"]), target, 0.3), 0.001)
 		m["supply"] = sup
 		m["demand"] = dem
+	EconomyDepth.record_history(s)
