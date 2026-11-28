@@ -1,0 +1,2365 @@
+[
+ {
+  "id": "hyw_sluys",
+  "category": "military",
+  "historical": true,
+  "source": "Battle of Sluys, 24 June 1340",
+  "reference": "Froissart, Chroniques; J. Sumption, The Hundred Years War I: Trial by Battle (1990)",
+  "title": {
+   "en": "Battle of Sluys",
+   "tr": "Sluys Deniz Savaşı"
+  },
+  "text": {
+   "en": "In the Zwin estuary the French fleet of ships hired from Genoa and Castile lies chained together at anchor. Edward III's fleet comes down on them with the tide. {ruler} of {country} must decide how the war at sea is to be fought.",
+   "tr": "Zwin ağzında Cenova ve Kastilya'dan kiralanan gemilerden oluşan Fransız filosu zincirlenmiş halde demirli duruyor. III. Edward'ın filosu gelgitle üzerlerine geliyor. {country} hükümdarı {ruler} deniz savaşının nasıl yürütüleceğine karar vermelidir."
+  },
+  "image": "harbor",
+  "trigger": {
+   "date_from": {
+    "year": 1340,
+    "month": 4
+   },
+   "date_to": {
+    "year": 1340,
+    "month": 7
+   },
+   "scenarios": [
+    "hundred_years_war"
+   ],
+   "countries": [
+    "ENG",
+    "FRA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "board",
+    "name": {
+     "en": "Grapple and fight hand to hand",
+     "tr": "Kenetlen ve göğüs göğüse savaş"
+    },
+    "tip": {
+     "en": "A bloody, decisive sea battle.",
+     "tr": "Kanlı ve belirleyici bir deniz savaşı."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 14
+     },
+     {
+      "type": "manpower",
+      "value": -8
+     },
+     {
+      "type": "spawn_general",
+      "naval": true,
+      "mil": 6
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "shy",
+    "name": {
+     "en": "Avoid battle and keep the fleet in port",
+     "tr": "Savaştan kaçın, donanmayı limanda tut"
+    },
+    "tip": {
+     "en": "The fleet is spared; so is your pride.",
+     "tr": "Donanma korunur, gurur zedelenir."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -4
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "gold",
+      "value": 20
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "fund",
+    "name": {
+     "en": "Hire foreign galleys at great cost",
+     "tr": "Yüksek bedelle yabancı kadırga kirala"
+    },
+    "tip": {
+     "en": "A stronger fleet, an emptier treasury.",
+     "tr": "Daha güçlü bir donanma, daha boş bir hazine."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "spawn_fleet",
+      "n": 2
+     },
+     {
+      "type": "prestige",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "hyw_orleans_fra",
+  "category": "military",
+  "historical": true,
+  "source": "Relief of Orléans, 8 May 1429",
+  "reference": "Journal du siège d'Orléans; Régine Pernoud, Joan of Arc: By Herself and Her Witnesses (1964)",
+  "title": {
+   "en": "Joan of Arc and the Relief of Orléans",
+   "tr": "Jeanne d'Arc ve Orléans'ın Kurtuluşu"
+  },
+  "text": {
+   "en": "Orléans has been besieged for months by the English. A young peasant woman from Lorraine claims that voices have told her to lift the siege and have the Dauphin crowned. The court is doubtful, the soldiers are desperate. {ruler} must decide.",
+   "tr": "Orléans aylardır İngilizler tarafından kuşatılmış durumda. Lorraine'li genç bir köylü kız, seslerin kendisine kuşatmayı kaldırmasını ve Dauphin'i taç giydirmesini söylediğini iddia ediyor. Saray kuşkulu, askerler çaresiz. {ruler} karar vermelidir."
+  },
+  "image": "battle",
+  "trigger": {
+   "date_from": {
+    "year": 1429,
+    "month": 3
+   },
+   "date_to": {
+    "year": 1429,
+    "month": 6
+   },
+   "scenarios": [
+    "hundred_years_war"
+   ],
+   "countries": [
+    "FRA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "trust",
+    "name": {
+     "en": "Let her join the relief army",
+     "tr": "Ordunun yanına katılmasına izin ver"
+    },
+    "tip": {
+     "en": "Morale surges; an inspiring leader joins the host.",
+     "tr": "Moral yükselir; orduya ilham veren bir komutan katılır."
+    },
+    "effects": [
+     {
+      "type": "spawn_general",
+      "mil": 8,
+      "trait": "inspiring"
+     },
+     {
+      "type": "legitimacy",
+      "value": 10
+     },
+     {
+      "type": "prestige",
+      "value": 15
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "morale": 0.12
+      },
+      "turns": 8
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "doubt",
+    "name": {
+     "en": "Have clerics examine her first",
+     "tr": "Önce din adamları onu sınasın"
+    },
+    "tip": {
+     "en": "Slow, cautious and orthodox.",
+     "tr": "Yavaş, temkinli ve ortodoks."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     },
+     {
+      "type": "gold",
+      "value": -15
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "ignore",
+    "name": {
+     "en": "Send her home and wait for the garrison to bargain",
+     "tr": "Eve gönder, garnizonun pazarlık etmesini bekle"
+    },
+    "tip": {
+     "en": "The old paths are safe and uninspiring.",
+     "tr": "Eski yollar güvenli ama ilhamsız."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -2
+     },
+     {
+      "type": "legitimacy",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "hyw_orleans_eng",
+  "category": "military",
+  "historical": true,
+  "source": "Siege of Orléans, October 1428 - May 1429",
+  "reference": "Journal du siège d'Orléans; Anne Curry, The Hundred Years' War (2003)",
+  "title": {
+   "en": "The Siege of Orléans",
+   "tr": "Orléans Kuşatması"
+  },
+  "text": {
+   "en": "The siege lines around Orléans are long and thin. Rumours in the camp speak of a maid from Lorraine who is gathering the French around the Dauphin. {ruler} of {country} must decide how to hold the siege.",
+   "tr": "Orléans çevresindeki kuşatma hatları uzun ve ince. Kampta, Dauphin etrafında Fransızları toplayan Lorraine'li bir kızdan söz ediliyor. {country} hükümdarı {ruler} kuşatmayı nasıl sürdüreceğine karar vermelidir."
+  },
+  "image": "siege",
+  "trigger": {
+   "date_from": {
+    "year": 1429,
+    "month": 3
+   },
+   "date_to": {
+    "year": 1429,
+    "month": 6
+   },
+   "scenarios": [
+    "hundred_years_war"
+   ],
+   "countries": [
+    "ENG"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "reinforce",
+    "name": {
+     "en": "Reinforce the lines with fresh levies",
+     "tr": "Hatları yeni levent birlikleriyle takviye et"
+    },
+    "tip": {
+     "en": "A stronger siege, a poorer country.",
+     "tr": "Daha güçlü bir kuşatma, daha yoksul bir ülke."
+    },
+    "effects": [
+     {
+      "type": "manpower",
+      "value": -10
+     },
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "prestige",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "lift",
+    "name": {
+     "en": "Withdraw to the Loire strongholds",
+     "tr": "Loire kalelerine çekil"
+    },
+    "tip": {
+     "en": "Save the army, lose the initiative.",
+     "tr": "Ordu kurtarılır, inisiyatif kaybedilir."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -8
+     },
+     {
+      "type": "stability",
+      "value": -1
+     },
+     {
+      "type": "manpower",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "terror",
+    "name": {
+     "en": "Burn the countryside to starve the garrison",
+     "tr": "Garnizonu aç bırakmak için köyleri yak"
+    },
+    "tip": {
+     "en": "A harsh method: the province pays.",
+     "tr": "Sert bir yöntem: eyalet bedel öder."
+    },
+    "effects": [
+     {
+      "type": "province_devastation",
+      "value": 0.1
+     },
+     {
+      "type": "prestige",
+      "value": -3
+     },
+     {
+      "type": "relation",
+      "target": "enemy",
+      "value": -8
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "hyw_troyes",
+  "category": "diplomatic",
+  "historical": true,
+  "source": "Treaty of Troyes, 21 May 1420",
+  "reference": "Rymer, Foedera; Christopher Allmand, Henry V (1992)",
+  "title": {
+   "en": "Treaty of Troyes",
+   "tr": "Troyes Antlaşması"
+  },
+  "text": {
+   "en": "Charles VI of France, mad and under Burgundian influence, is to disinherit his son the Dauphin and recognise Henry V of England as heir and regent. The terms are drawn up in Troyes. {ruler} of {country} must decide how to answer them.",
+   "tr": "Akıl sağlığı bozuk ve Burgonya etkisindeki Fransa Kralı VI. Charles, oğlu Dauphin'i mirastan men edip İngiltere Kralı V. Henry'yi varis ve naip olarak tanıyacak. Şartlar Troyes'te hazırlanıyor. {country} hükümdarı {ruler} bu şartlara nasıl yanıt vereceğine karar vermelidir."
+  },
+  "image": "treaty",
+  "trigger": {
+   "date_from": {
+    "year": 1420,
+    "month": 3
+   },
+   "date_to": {
+    "year": 1420,
+    "month": 7
+   },
+   "scenarios": [
+    "hundred_years_war"
+   ],
+   "countries": [
+    "ENG",
+    "FRA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "sign",
+    "name": {
+     "en": "Sign and seal the treaty",
+     "tr": "Antlaşmayı imzala ve mühürle"
+    },
+    "tip": {
+     "en": "A great diplomatic prize with a heavy price.",
+     "tr": "Büyük bir diplomatik kazanç, ağır bir bedel."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 12
+     },
+     {
+      "type": "legitimacy",
+      "value": 6
+     },
+     {
+      "type": "add_claim",
+      "target": "other"
+     },
+     {
+      "type": "stability",
+      "value": -3
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "reject",
+    "name": {
+     "en": "Reject it as an unlawful disinheritance",
+     "tr": "Hukuka aykırı bir mirastan yoksun bırakma diyerek reddet"
+    },
+    "tip": {
+     "en": "Defiance rallies the loyal and enrages the enemy.",
+     "tr": "Meydan okuma sadıkları toplar, düşmanı öfkelendirir."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 8
+     },
+     {
+      "type": "relation",
+      "target": "other",
+      "value": -15
+     },
+     {
+      "type": "class_sat",
+      "class": "nobility",
+      "value": 4
+     },
+     {
+      "type": "manpower",
+      "value": -4
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "delay",
+    "name": {
+     "en": "Stall with embassies",
+     "tr": "Elçilik heyetleriyle oyalamaya çalış"
+    },
+    "tip": {
+     "en": "Neither peace nor war.",
+     "tr": "Ne barış ne savaş."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -20
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "prestige",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 20
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "medieval_dyrrhachium",
+  "category": "military",
+  "historical": true,
+  "source": "Battle of Dyrrhachium, 18 October 1081",
+  "reference": "Anna Komnene, Alexiad, Book IV; Geoffrey Malaterra, De rebus gestis Rogerii",
+  "title": {
+   "en": "Battle of Dyrrhachium",
+   "tr": "Dyrrhachium Muharebesi"
+  },
+  "text": {
+   "en": "Robert Guiscard's Normans besiege Dyrrhachium on the Adriatic coast. The Emperor Alexios Komnenos marches to its relief with an army of Byzantines, Varangians and Turkish mercenaries. {ruler} of {country} must decide how to meet the other.",
+   "tr": "Robert Guiscard'ın Normanları Adriyatik kıyısındaki Dyrrhachium'u kuşatıyor. İmparator Aleksios Komnenos Bizans, Varang ve Türk paralı askerlerinden oluşan bir orduyla yardıma yürüyor. {country} hükümdarı {ruler} diğer tarafla nasıl karşılaşacağına karar vermelidir."
+  },
+  "image": "battle",
+  "trigger": {
+   "date_from": {
+    "year": 1081,
+    "month": 5
+   },
+   "date_to": {
+    "year": 1081,
+    "month": 11
+   },
+   "scenarios": [
+    "medieval_europe"
+   ],
+   "countries": [
+    "NIT",
+    "BYZ"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "charge",
+    "name": {
+     "en": "Order the heavy cavalry to charge",
+     "tr": "Ağır süvarilere hücum emri ver"
+    },
+    "tip": {
+     "en": "A bold stroke with heavy risk.",
+     "tr": "Cesur ve riskli bir hamle."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 12
+     },
+     {
+      "type": "manpower",
+      "value": -12
+     },
+     {
+      "type": "spawn_general",
+      "mil": 7,
+      "trait": "aggressive"
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "hold",
+    "name": {
+     "en": "Hold a defensive line and wait for them",
+     "tr": "Savunma hattında bekle"
+    },
+    "tip": {
+     "en": "Steady, costly in prestige.",
+     "tr": "Sağlam, prestij kaybı yaratır."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 3
+     },
+     {
+      "type": "manpower",
+      "value": -5
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "morale": 0.05
+      },
+      "turns": 6
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "buy",
+    "name": {
+     "en": "Bribe the enemy's allies",
+     "tr": "Düşmanın müttefiklerine rüşvet ver"
+    },
+    "tip": {
+     "en": "Gold works where steel might not.",
+     "tr": "Altın, çeliğin başaramadığı yerde işe yarar."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "relation",
+      "target": "enemy",
+      "value": -10
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "medieval_jerusalem",
+  "category": "religious",
+  "historical": true,
+  "source": "Siege and capture of Jerusalem, 7 June - 15 July 1099",
+  "reference": "Fulcher of Chartres, Historia Hierosolymitana; Gesta Francorum; Raymond of Aguilers",
+  "title": {
+   "en": "The Taking of Jerusalem",
+   "tr": "Kudüs'ün Alınışı"
+  },
+  "text": {
+   "en": "After a siege of five weeks the crusaders of the First Crusade storm the walls of Jerusalem on 15 July 1099. The city's capture and the massacre that follows will echo for centuries. {ruler} of {country} must decide how this news is to be received at home.",
+   "tr": "Beş haftalık bir kuşatmanın ardından Birinci Haçlı Seferi'nin haçlıları 15 Temmuz 1099'da Kudüs surlarına hücum ediyor. Şehrin alınışı ve ardından gelen katliam yüzyıllarca yankılanacak. {country} hükümdarı {ruler} bu haberin ülkede nasıl karşılanacağına karar vermelidir."
+  },
+  "image": "church",
+  "trigger": {
+   "date_from": {
+    "year": 1099,
+    "month": 6
+   },
+   "date_to": {
+    "year": 1099,
+    "month": 12
+   },
+   "scenarios": [
+    "medieval_europe"
+   ],
+   "countries": [
+    "TOU",
+    "NRM",
+    "FLA",
+    "NIT"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "celebrate",
+    "name": {
+     "en": "Proclaim a thanksgiving and send reinforcements",
+     "tr": "Şükran ilan et ve takviye gönder"
+    },
+    "tip": {
+     "en": "The Church rejoices; the levies pay the price.",
+     "tr": "Kilise sevinir, levent birlikler bedeli öder."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 8
+     },
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "manpower",
+      "value": -6
+     },
+     {
+      "type": "gold",
+      "value": -30
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   },
+   {
+    "id": "quiet",
+    "name": {
+     "en": "Receive the news quietly",
+     "tr": "Haberi sessizce karşıla"
+    },
+    "tip": {
+     "en": "Little changes at home.",
+     "tr": "Evde pek bir şey değişmez."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 2
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "trade",
+    "name": {
+     "en": "Open the new ports to merchants",
+     "tr": "Yeni limanları tüccarlara aç"
+    },
+    "tip": {
+     "en": "Merchants see profit in the East.",
+     "tr": "Tüccarlar Doğu'da kâr görür."
+    },
+    "effects": [
+     {
+      "type": "temp_mod",
+      "mods": {
+       "trade": 0.05
+      },
+      "turns": 12
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "medieval_worms_concordat",
+  "category": "religious",
+  "historical": true,
+  "source": "Concordat of Worms (Pactum Calixtinum), 23 September 1122",
+  "reference": "MGH Constitutiones I, no. 107-108; I. S. Robinson, The Papacy 1073-1198 (1990)",
+  "title": {
+   "en": "Concordat of Worms",
+   "tr": "Worms Konkordatosu"
+  },
+  "text": {
+   "en": "After half a century of struggle over who may invest bishops with ring and staff, the emperor and the pope's envoys reach a compromise at Worms. {ruler} of {country} must decide whether to accept it.",
+   "tr": "Piskoposlara yüzük ve asa verme yetkisi konusunda yarım yüzyıl süren mücadelenin ardından imparator ve papalık elçileri Worms'ta bir uzlaşmaya varıyor. {country} hükümdarı {ruler} bunu kabul edip etmeyeceğine karar vermelidir."
+  },
+  "image": "treaty",
+  "trigger": {
+   "date_from": {
+    "year": 1122,
+    "month": 6
+   },
+   "date_to": {
+    "year": 1122,
+    "month": 12
+   },
+   "scenarios": [
+    "medieval_europe"
+   ],
+   "countries": [
+    "HRE"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "accept",
+    "name": {
+     "en": "Accept the compromise",
+     "tr": "Uzlaşmayı kabul et"
+    },
+    "tip": {
+     "en": "Peace with the Church at the price of imperial control.",
+     "tr": "Kilise ile barış, imparatorluk denetimi pahasına."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 8
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     },
+     {
+      "type": "prestige",
+      "value": 4
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": -2
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "hold",
+    "name": {
+     "en": "Insist on the old rights",
+     "tr": "Eski haklarda ısrar et"
+    },
+    "tip": {
+     "en": "Independence of the crown, tension with Rome.",
+     "tr": "Tacın bağımsızlığı, Roma ile gerilim."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 2
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -8
+     },
+     {
+      "type": "stability",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "bargain",
+    "name": {
+     "en": "Accept in exchange for estates",
+     "tr": "Mülkler karşılığında kabul et"
+    },
+    "tip": {
+     "en": "A compromise paid for in land and gold.",
+     "tr": "Toprak ve altınla ödenen bir uzlaşma."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 50
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 3
+     },
+     {
+      "type": "stability",
+      "value": -1
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "em_pavia_fra",
+  "category": "military",
+  "historical": true,
+  "source": "Battle of Pavia, 24 February 1525",
+  "reference": "Francesco Guicciardini, Storia d'Italia, XV; Robert Knecht, Renaissance Warrior and Patron: The Reign of Francis I (1994)",
+  "title": {
+   "en": "Battle of Pavia",
+   "tr": "Pavia Muharebesi"
+  },
+  "text": {
+   "en": "Francis I besieges Pavia in the dead of winter while imperial relief armies gather. His captains advise withdrawal; the king wants a battle. {ruler} of {country} must decide.",
+   "tr": "I. François kışın ortasında Pavia'yı kuşatırken imparatorluk takviye orduları toplanıyor. Komutanları çekilmeyi öğütlüyor; kral savaş istiyor. {country} hükümdarı {ruler} karar vermelidir."
+  },
+  "image": "battle",
+  "trigger": {
+   "date_from": {
+    "year": 1525,
+    "month": 1
+   },
+   "date_to": {
+    "year": 1525,
+    "month": 3
+   },
+   "scenarios": [
+    "early_modern"
+   ],
+   "countries": [
+    "FRA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "fight",
+    "name": {
+     "en": "Hold the siege and give battle",
+     "tr": "Kuşatmayı sürdür ve savaşa gir"
+    },
+    "tip": {
+     "en": "The king's honour against the odds.",
+     "tr": "Kralın onuru, olasılıklara karşı."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "manpower",
+      "value": -15
+     },
+     {
+      "type": "spawn_general",
+      "mil": 7
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "withdraw",
+    "name": {
+     "en": "Withdraw to Milan and keep the army",
+     "tr": "Milano'ya çekil, ordu korunsun"
+    },
+    "tip": {
+     "en": "A safe course that costs prestige.",
+     "tr": "Güvenli ama prestij kaybettiren bir yol."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -8
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "manpower",
+      "value": 3
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "hire",
+    "name": {
+     "en": "Hire more Swiss pikemen",
+     "tr": "Daha fazla İsviçreli mızraklı kirala"
+    },
+    "tip": {
+     "en": "More steel, a lighter purse.",
+     "tr": "Daha fazla çelik, daha hafif bir kese."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -70
+     },
+     {
+      "type": "add_regiments",
+      "unit": "pikemen",
+      "n": 3
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 70
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "em_pavia_spa",
+  "category": "military",
+  "historical": true,
+  "source": "Battle of Pavia, 24 February 1525",
+  "reference": "Francesco Guicciardini, Storia d'Italia, XV; Geoffrey Parker, The Army of Flanders (1972)",
+  "title": {
+   "en": "Battle of Pavia",
+   "tr": "Pavia Muharebesi"
+  },
+  "text": {
+   "en": "The French king besieges Pavia and the imperial army under Pescara and Lannoy marches to relieve the city. {ruler} of {country} must decide how to support them.",
+   "tr": "Fransız kralı Pavia'yı kuşatıyor, Pescara ve Lannoy komutasındaki imparatorluk ordusu şehri kurtarmak için yürüyor. {country} hükümdarı {ruler} onlara nasıl destek vereceğine karar vermelidir."
+  },
+  "image": "battle",
+  "trigger": {
+   "date_from": {
+    "year": 1525,
+    "month": 1
+   },
+   "date_to": {
+    "year": 1525,
+    "month": 3
+   },
+   "scenarios": [
+    "early_modern"
+   ],
+   "countries": [
+    "SPA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "fund",
+    "name": {
+     "en": "Find the gold to pay the troops",
+     "tr": "Askerleri ödemek için altın bul"
+    },
+    "tip": {
+     "en": "A decisive victory is possible.",
+     "tr": "Belirleyici bir zafer mümkün."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -80
+     },
+     {
+      "type": "prestige",
+      "value": 12
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 5
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 80
+     }
+    ]
+   },
+   {
+    "id": "careful",
+    "name": {
+     "en": "Order caution",
+     "tr": "Temkinli olunmasını emret"
+    },
+    "tip": {
+     "en": "Fewer risks, fewer laurels.",
+     "tr": "Daha az risk, daha az defne."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 2
+     },
+     {
+      "type": "stability",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "em_trent",
+  "category": "religious",
+  "historical": true,
+  "source": "Council of Trent, first session opened 13 December 1545",
+  "reference": "Hubert Jedin, A History of the Council of Trent; Canones et decreta concilii Tridentini",
+  "title": {
+   "en": "Opening of the Council of Trent",
+   "tr": "Trent Konsili'nin Açılışı"
+  },
+  "text": {
+   "en": "After decades of delay a general council of the Church finally opens at Trent. Catholic princes must decide what role their clergy and delegates will play in answering the Reformation.",
+   "tr": "On yıllık gecikmeden sonra Kilise'nin genel konsili sonunda Trent'te açılıyor. Katolik prensler, Reform'a karşı din adamlarının ve temsilcilerinin ne rol oynayacağına karar vermelidir."
+  },
+  "image": "church",
+  "trigger": {
+   "date_from": {
+    "year": 1545,
+    "month": 6
+   },
+   "date_to": {
+    "year": 1546,
+    "month": 6
+   },
+   "scenarios": [
+    "early_modern"
+   ],
+   "countries": [
+    "PAP",
+    "SPA",
+    "AUS",
+    "FRA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "embrace",
+    "name": {
+     "en": "Send delegates and enforce the reforms",
+     "tr": "Temsilciler gönder ve reformları uygula"
+    },
+    "tip": {
+     "en": "The clergy are strengthened.",
+     "tr": "Din adamları güçlenir."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 8
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     },
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "corruption",
+      "value": -3
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   },
+   {
+    "id": "boycott",
+    "name": {
+     "en": "Keep a distance from Rome's council",
+     "tr": "Roma'nın konsilinden uzak dur"
+    },
+    "tip": {
+     "en": "National interest over the Church.",
+     "tr": "Ulusal çıkar Kilise'nin önünde."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "tolerate",
+    "name": {
+     "en": "Seek a compromise with the Protestants",
+     "tr": "Protestanlarla uzlaşma ara"
+    },
+    "tip": {
+     "en": "A bridge-builder's path.",
+     "tr": "Köprü kuranın yolu."
+    },
+    "effects": [
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -3
+     },
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 5
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "em_st_bartholomew",
+  "category": "religious",
+  "historical": true,
+  "source": "St Bartholomew's Day massacre, 24 August 1572",
+  "reference": "Mémoires of Marguerite de Valois; Robert Knecht, The French Wars of Religion 1559-1598 (1996)",
+  "title": {
+   "en": "The Massacre of St Bartholomew's Day",
+   "tr": "Aziz Bartholomeus Katliamı"
+  },
+  "text": {
+   "en": "In Paris the marriage of Henri of Navarre to the king's sister has drawn the Huguenot leaders to the capital. After the failed attempt on Admiral Coligny, rumours of a plot spread, and the royal council debates a terrible measure. {ruler} must decide.",
+   "tr": "Paris'te Navarra'lı Henri'nin kralın kız kardeşiyle evliliği Huguenot liderlerini başkente çekti. Amiral Coligny'ye yönelik başarısız suikast girişiminden sonra bir komplo söylentisi yayılıyor ve kraliyet konseyi korkunç bir tedbiri tartışıyor. {ruler} karar vermelidir."
+  },
+  "image": "uprising",
+  "trigger": {
+   "date_from": {
+    "year": 1572,
+    "month": 6
+   },
+   "date_to": {
+    "year": 1572,
+    "month": 11
+   },
+   "scenarios": [
+    "early_modern"
+   ],
+   "countries": [
+    "FRA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "protect",
+    "name": {
+     "en": "Order the guards to protect all Parisians",
+     "tr": "Muhafızlara tüm Parislileri korumalarını emret"
+    },
+    "tip": {
+     "en": "The violence is contained, the court divided.",
+     "tr": "Şiddet sınırlanır, saray bölünür."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 3
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": -3
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "restrict",
+    "name": {
+     "en": "Limit the measure to the leaders",
+     "tr": "Tedbiri liderlerle sınırla"
+    },
+    "tip": {
+     "en": "Fewer deaths, a hardened conflict.",
+     "tr": "Daha az ölüm, sertleşen bir çatışma."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": -3
+     },
+     {
+      "type": "prestige",
+      "value": -6
+     },
+     {
+      "type": "spawn_rebels",
+      "size": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "allow",
+    "name": {
+     "en": "Let the killings run their course",
+     "tr": "Katliamın akışına bırak"
+    },
+    "tip": {
+     "en": "A moral and political catastrophe.",
+     "tr": "Ahlaki ve siyasi bir felaket."
+    },
+    "effects": [
+     {
+      "type": "spawn_rebels",
+      "size": 3
+     },
+     {
+      "type": "prestige",
+      "value": -15
+     },
+     {
+      "type": "legitimacy",
+      "value": -8
+     },
+     {
+      "type": "stability",
+      "value": -6
+     },
+     {
+      "type": "class_sat",
+      "class": "clergy",
+      "value": 4
+     }
+    ],
+    "ai_weight": 0.3
+   }
+  ]
+ },
+ {
+  "id": "em_utrecht",
+  "category": "political",
+  "historical": true,
+  "source": "Union of Utrecht, 23 January 1579",
+  "reference": "Geoffrey Parker, The Dutch Revolt (1977); Jonathan Israel, The Dutch Republic (1995)",
+  "title": {
+   "en": "Union of Utrecht",
+   "tr": "Utrecht Birliği"
+  },
+  "text": {
+   "en": "The northern provinces of the Low Countries, tired of Spanish tax collectors and garrisons, sign a defensive union at Utrecht. {ruler} of {country} must decide how to respond to the new league.",
+   "tr": "Alçak Ülkeler'in kuzey eyaletleri, İspanyol vergi memurlarından ve garnizonlardan bıkarak Utrecht'te bir savunma birliği imzalıyor. {country} hükümdarı {ruler} bu yeni birliğe nasıl yanıt vereceğine karar vermelidir."
+  },
+  "image": "treaty",
+  "trigger": {
+   "date_from": {
+    "year": 1579,
+    "month": 1
+   },
+   "date_to": {
+    "year": 1579,
+    "month": 6
+   },
+   "scenarios": [
+    "early_modern"
+   ],
+   "countries": [
+    "NLD",
+    "SPA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "support",
+    "name": {
+     "en": "Back the union",
+     "tr": "Birliği destekle"
+    },
+    "tip": {
+     "en": "A rising republic gains confidence.",
+     "tr": "Yükselen bir cumhuriyet güven kazanır."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 8
+     },
+     {
+      "type": "class_sat",
+      "class": "merchants",
+      "value": 6
+     },
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": 10
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "crush",
+    "name": {
+     "en": "Respond with troops",
+     "tr": "Askerle karşılık ver"
+    },
+    "tip": {
+     "en": "Force may break the league or harden it.",
+     "tr": "Güç birliği ya kırar ya da sertleştirir."
+    },
+    "effects": [
+     {
+      "type": "manpower",
+      "value": -10
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     },
+     {
+      "type": "gold",
+      "value": -50
+     },
+     {
+      "type": "spawn_rebels",
+      "size": 2
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 50
+     }
+    ]
+   },
+   {
+    "id": "talk",
+    "name": {
+     "en": "Seek conciliation",
+     "tr": "Uzlaşma ara"
+    },
+    "tip": {
+     "en": "Costly, but war weariness eases.",
+     "tr": "Pahalı ama savaş yorgunluğu hafifler."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "war_exhaustion",
+      "value": -8
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rev_valmy",
+  "category": "military",
+  "historical": true,
+  "source": "Battle of Valmy, 20 September 1792 (cannonade)",
+  "reference": "Goethe, Campagne in Frankreich; Timothy Blanning, The French Revolutionary Wars 1787-1802 (1996)",
+  "title": {
+   "en": "Battle of Valmy",
+   "tr": "Valmy Muharebesi"
+  },
+  "text": {
+   "en": "The Prussian army marches into Champagne to restore the French king. The French army of the Revolution, young and half-trained, takes a stand on the hill of Valmy. {ruler} of {country} must decide.",
+   "tr": "Prusya ordusu Fransız kralını yeniden tahta çıkarmak için Champagne'a yürüyor. Genç ve yarı eğitimli Devrim ordusu Valmy tepesinde direniyor. {country} hükümdarı {ruler} karar vermelidir."
+  },
+  "image": "battle",
+  "trigger": {
+   "date_from": {
+    "year": 1792,
+    "month": 8
+   },
+   "date_to": {
+    "year": 1792,
+    "month": 11
+   },
+   "scenarios": [
+    "age_of_revolutions"
+   ],
+   "countries": [
+    "FRA",
+    "PRU"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "stand",
+    "name": {
+     "en": "Hold the heights under cannon fire",
+     "tr": "Top ateşi altında tepeyi tut"
+    },
+    "tip": {
+     "en": "An improbable victory for the new army.",
+     "tr": "Yeni ordu için olası görünmeyen bir zafer."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 10
+     },
+     {
+      "type": "legitimacy",
+      "value": 5
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 4
+     },
+     {
+      "type": "manpower",
+      "value": -4
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "retreat",
+    "name": {
+     "en": "Withdraw",
+     "tr": "Geri çekil"
+    },
+    "tip": {
+     "en": "The campaign is lost, the army saved.",
+     "tr": "Sefer kaybedilir, ordu kurtarılır."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -5
+     },
+     {
+      "type": "stability",
+      "value": -2
+     },
+     {
+      "type": "manpower",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "negotiate",
+    "name": {
+     "en": "Seek terms through envoys",
+     "tr": "Elçilerle şartlar ara"
+    },
+    "tip": {
+     "en": "Words in place of cannon.",
+     "tr": "Top yerine söz."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -30
+     },
+     {
+      "type": "relation",
+      "target": "enemy",
+      "value": 5
+     },
+     {
+      "type": "prestige",
+      "value": 1
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 30
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rev_louisiana",
+  "category": "diplomatic",
+  "historical": true,
+  "source": "Louisiana Purchase Treaty, 30 April 1803",
+  "reference": "Treaty text, 30 April 1803; Alexander DeConde, This Affair of Louisiana (1976)",
+  "title": {
+   "en": "The Louisiana Purchase",
+   "tr": "Louisiana Satın Alması"
+  },
+  "text": {
+   "en": "Facing a new war in Europe and the loss of Saint-Domingue, Napoleon's government offers the whole of Louisiana for sale. {ruler} of {country} must decide.",
+   "tr": "Avrupa'da yeni bir savaşla ve Saint-Domingue'in kaybıyla karşı karşıya kalan Napolyon hükümeti Louisiana'nın tamamını satışa çıkarıyor. {country} hükümdarı {ruler} karar vermelidir."
+  },
+  "image": "treaty",
+  "trigger": {
+   "date_from": {
+    "year": 1803,
+    "month": 1
+   },
+   "date_to": {
+    "year": 1803,
+    "month": 9
+   },
+   "scenarios": [
+    "age_of_revolutions"
+   ],
+   "countries": [
+    "USA",
+    "FRA"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "sign",
+    "name": {
+     "en": "Conclude the deal",
+     "tr": "Anlaşmayı tamamla"
+    },
+    "tip": {
+     "en": "Land for gold: one gains, the other is funded for war.",
+     "tr": "Altın karşılığı toprak: biri kazanır, diğeri savaşı finanse eder."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 100
+     },
+     {
+      "type": "prestige",
+      "value": 8
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "tax": 0.03
+      },
+      "turns": 10
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "hold",
+    "name": {
+     "en": "Refuse to sell or buy",
+     "tr": "Satmayı ya da almayı reddet"
+    },
+    "tip": {
+     "en": "The status quo.",
+     "tr": "Mevcut durum."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "prestige",
+      "value": -2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "rev_tilsit",
+  "category": "diplomatic",
+  "historical": true,
+  "source": "Treaties of Tilsit, 7 and 9 July 1807",
+  "reference": "Albert Vandal, Napoléon et Alexandre Ier; Dominic Lieven, Russia against Napoleon (2009)",
+  "title": {
+   "en": "Treaties of Tilsit",
+   "tr": "Tilsit Antlaşmaları"
+  },
+  "text": {
+   "en": "After the defeat at Friedland, Tsar Alexander meets Napoleon on a raft in the Neman river. Peace is to be bought at Prussia's expense, and an alliance is offered. {ruler} of {country} must decide.",
+   "tr": "Friedland yenilgisinden sonra Çar Aleksandr, Neman Nehri'nde bir sal üzerinde Napolyon ile buluşuyor. Barış Prusya'nın pahasına alınacak ve bir ittifak öneriliyor. {country} hükümdarı {ruler} karar vermelidir."
+  },
+  "image": "treaty",
+  "trigger": {
+   "date_from": {
+    "year": 1807,
+    "month": 5
+   },
+   "date_to": {
+    "year": 1807,
+    "month": 10
+   },
+   "scenarios": [
+    "age_of_revolutions"
+   ],
+   "countries": [
+    "FRA",
+    "RUS",
+    "PRU"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "accept",
+    "name": {
+     "en": "Accept the settlement",
+     "tr": "Düzenlemeyi kabul et"
+    },
+    "tip": {
+     "en": "Peace and an ally; the price falls on others.",
+     "tr": "Barış ve bir müttefik; bedeli başkaları öder."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 6
+     },
+     {
+      "type": "alliance",
+      "target": "other"
+     },
+     {
+      "type": "stability",
+      "value": 2
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "resist",
+    "name": {
+     "en": "Refuse and prepare for more war",
+     "tr": "Reddet ve yeni bir savaşa hazırlan"
+    },
+    "tip": {
+     "en": "National pride, exhausted armies.",
+     "tr": "Ulusal gurur, yorgun ordular."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 4
+     },
+     {
+      "type": "manpower",
+      "value": -6
+     },
+     {
+      "type": "war_exhaustion",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "delay",
+    "name": {
+     "en": "Accept in public, plan in secret",
+     "tr": "Alenen kabul et, gizlice plan yap"
+    },
+    "tip": {
+     "en": "A cynical peace.",
+     "tr": "Sinik bir barış."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 1
+     },
+     {
+      "type": "spy_network",
+      "target": "other",
+      "value": 1
+     },
+     {
+      "type": "gold",
+      "value": -20
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 20
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rev_russia_1812",
+  "category": "military",
+  "historical": true,
+  "source": "Russian campaign of 1812; Battle of Borodino, 7 September 1812",
+  "reference": "Clausewitz, The Campaign of 1812 in Russia; Adam Zamoyski, 1812: Napoleon's Fatal March on Moscow (2004)",
+  "title": {
+   "en": "The Invasion of Russia",
+   "tr": "Rusya Seferi"
+  },
+  "text": {
+   "en": "In June 1812 the Grande Armée of over half a million men crosses the Neman. The Russian armies fall back. At Borodino on 7 September the greatest battle of the campaign is fought before Moscow. {ruler} of {country} must decide how to meet it.",
+   "tr": "Haziran 1812'de yarım milyonu aşan Grande Armée Neman'ı geçiyor. Rus orduları geri çekiliyor. 7 Eylül'de Moskova önünde seferin en büyük muharebesi Borodino'da yapılıyor. {country} hükümdarı {ruler} bununla nasıl yüzleşeceğine karar vermelidir."
+  },
+  "image": "battle",
+  "trigger": {
+   "date_from": {
+    "year": 1812,
+    "month": 5
+   },
+   "date_to": {
+    "year": 1812,
+    "month": 12
+   },
+   "scenarios": [
+    "age_of_revolutions"
+   ],
+   "countries": [
+    "FRA",
+    "RUS"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "advance",
+    "name": {
+     "en": "Press on to Moscow",
+     "tr": "Moskova'ya doğru ilerle"
+    },
+    "tip": {
+     "en": "Glory and a long, hungry road.",
+     "tr": "Zafer ve uzun, aç bir yol."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 14
+     },
+     {
+      "type": "manpower",
+      "value": -18
+     },
+     {
+      "type": "disband_pct",
+      "value": 15
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "burn",
+    "name": {
+     "en": "Retreat and burn the land",
+     "tr": "Geri çekil ve toprağı yak"
+    },
+    "tip": {
+     "en": "Time and distance are weapons.",
+     "tr": "Zaman ve mesafe birer silahtır."
+    },
+    "effects": [
+     {
+      "type": "province_devastation",
+      "value": 0.1
+     },
+     {
+      "type": "prestige",
+      "value": 4
+     },
+     {
+      "type": "legitimacy",
+      "value": 4
+     },
+     {
+      "type": "class_sat",
+      "class": "peasants",
+      "value": -4
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "fort",
+    "name": {
+     "en": "Hold a fortified line",
+     "tr": "Tahkimli bir hatta tutun"
+    },
+    "tip": {
+     "en": "A cautious plan.",
+     "tr": "Temkinli bir plan."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -40
+     },
+     {
+      "type": "temp_mod",
+      "mods": {
+       "morale": 0.06
+      },
+      "turns": 8
+     },
+     {
+      "type": "prestige",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 40
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "id": "rev_leipzig",
+  "category": "military",
+  "historical": true,
+  "source": "Battle of Leipzig, 16-19 October 1813",
+  "reference": "Digby Smith, 1813: Leipzig (2001); Frederick Maude, The Leipzig Campaign",
+  "title": {
+   "en": "Battle of Nations at Leipzig",
+   "tr": "Leipzig Uluslar Muharebesi"
+  },
+  "text": {
+   "en": "From 16 to 19 October 1813 the largest battle yet fought in Europe is fought at Leipzig. The coalition armies close around Napoleon. {ruler} of {country} must decide.",
+   "tr": "16-19 Ekim 1813 arasında Leipzig'te Avrupa'da o zamana dek yapılan en büyük muharebe veriliyor. Koalisyon orduları Napolyon'un etrafını kuşatıyor. {country} hükümdarı {ruler} karar vermelidir."
+  },
+  "image": "battle",
+  "trigger": {
+   "date_from": {
+    "year": 1813,
+    "month": 7
+   },
+   "date_to": {
+    "year": 1813,
+    "month": 12
+   },
+   "scenarios": [
+    "age_of_revolutions"
+   ],
+   "countries": [
+    "FRA",
+    "PRU",
+    "RUS",
+    "AUT"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "press",
+    "name": {
+     "en": "Commit every reserve",
+     "tr": "Tüm ihtiyatları sürüle"
+    },
+    "tip": {
+     "en": "All or nothing.",
+     "tr": "Ya hep ya hiç."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 12
+     },
+     {
+      "type": "manpower",
+      "value": -16
+     },
+     {
+      "type": "class_sat",
+      "class": "military",
+      "value": 4
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "hold",
+    "name": {
+     "en": "Fight on, preserving the army",
+     "tr": "Savaşı sürdür, ordu korunsun"
+    },
+    "tip": {
+     "en": "A measured fight.",
+     "tr": "Ölçülü bir mücadele."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": 4
+     },
+     {
+      "type": "manpower",
+      "value": -6
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "retreat",
+    "name": {
+     "en": "Break contact and retreat",
+     "tr": "Temas kes ve geri çekil"
+    },
+    "tip": {
+     "en": "Lose ground, save the army.",
+     "tr": "Toprak kaybı, ordu kurtulur."
+    },
+    "effects": [
+     {
+      "type": "prestige",
+      "value": -6
+     },
+     {
+      "type": "stability",
+      "value": -1
+     },
+     {
+      "type": "manpower",
+      "value": 2
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "ind_meiji_constitution",
+  "category": "political",
+  "historical": true,
+  "source": "Constitution of the Empire of Japan, promulgated 11 February 1889",
+  "reference": "Ito Hirobumi, Commentaries on the Constitution of the Empire of Japan; Marius Jansen, The Making of Modern Japan (2000)",
+  "title": {
+   "en": "The Meiji Constitution",
+   "tr": "Meiji Anayasası"
+  },
+  "text": {
+   "en": "After years of drafting under Ito Hirobumi, a constitution is to be promulgated as a gift from the Emperor to his people on 11 February 1889. {ruler} of {country} must decide the character of the new order.",
+   "tr": "Ito Hirobumi'nin yıllar süren hazırlıkları ardından, 11 Şubat 1889'da Hükümdar'ın halkına bir armağanı olarak bir anayasa ilan edilecek. {country} hükümdarı {ruler} yeni düzenin karakterine karar vermelidir."
+  },
+  "image": "parliament",
+  "trigger": {
+   "date_from": {
+    "year": 1888,
+    "month": 6
+   },
+   "date_to": {
+    "year": 1889,
+    "month": 6
+   },
+   "scenarios": [
+    "industrial_era"
+   ],
+   "countries": [
+    "JPN"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "promulgate",
+    "name": {
+     "en": "Promulgate a constitution with a strong monarch",
+     "tr": "Güçlü bir hükümdarlı anayasa ilan et"
+    },
+    "tip": {
+     "en": "A constitutional order under the crown.",
+     "tr": "Taç altında anayasal bir düzen."
+    },
+    "effects": [
+     {
+      "type": "force_government",
+      "to": "constitutional_monarchy"
+     },
+     {
+      "type": "legitimacy",
+      "value": 6
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "nobility",
+      "value": 4
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": 6
+     }
+    ],
+    "ai_weight": 2
+   },
+   {
+    "id": "delay",
+    "name": {
+     "en": "Delay the constitution",
+     "tr": "Anayasayı ertele"
+    },
+    "tip": {
+     "en": "Stability today, demands tomorrow.",
+     "tr": "Bugün istikrar, yarın talepler."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "merchants",
+      "value": -6
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "popular",
+      "value": -4
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ },
+ {
+  "id": "ind_bismarck_dismissed",
+  "category": "political",
+  "historical": true,
+  "source": "Resignation of Otto von Bismarck, 18 March 1890",
+  "reference": "Christopher Clark, Iron Kingdom (2006); Lothar Gall, Bismarck: The White Revolutionary",
+  "title": {
+   "en": "Bismarck Dismissed",
+   "tr": "Bismarck'ın Azli"
+  },
+  "text": {
+   "en": "Kaiser Wilhelm II, young and impatient, falls out with the Chancellor who built the Reich. On 18 March 1890 the Chancellor submits his resignation. {ruler} of {country} must decide.",
+   "tr": "Genç ve sabırsız Kaiser II. Wilhelm, Reich'ı kuran Şansölye ile anlaşmazlığa düşüyor. 18 Mart 1890'da Şansölye istifasını sunuyor. {country} hükümdarı {ruler} karar vermelidir."
+  },
+  "image": "court",
+  "trigger": {
+   "date_from": {
+    "year": 1890,
+    "month": 1
+   },
+   "date_to": {
+    "year": 1890,
+    "month": 6
+   },
+   "scenarios": [
+    "industrial_era"
+   ],
+   "countries": [
+    "GER"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "accept",
+    "name": {
+     "en": "Accept the resignation and rule personally",
+     "tr": "İstifayı kabul et ve kişisel yönetime geç"
+    },
+    "tip": {
+     "en": "A new course, with new risks.",
+     "tr": "Yeni bir rota, yeni riskler."
+    },
+    "effects": [
+     {
+      "type": "legitimacy",
+      "value": 3
+     },
+     {
+      "type": "prestige",
+      "value": 3
+     },
+     {
+      "type": "corruption",
+      "value": 3
+     },
+     {
+      "type": "relation",
+      "target": "random_neighbor",
+      "value": -6
+     }
+    ],
+    "ai_weight": 1
+   },
+   {
+    "id": "reconcile",
+    "name": {
+     "en": "Persuade the Chancellor to stay",
+     "tr": "Şansölyeyi kalmaya ikna et"
+    },
+    "tip": {
+     "en": "Continuity at the price of tension.",
+     "tr": "Süreklilik, gerginlik pahasına."
+    },
+    "effects": [
+     {
+      "type": "stability",
+      "value": 2
+     },
+     {
+      "type": "faction_loyalty",
+      "faction": "court",
+      "value": -4
+     },
+     {
+      "type": "prestige",
+      "value": -2
+     }
+    ],
+    "ai_weight": 2
+   }
+  ]
+ },
+ {
+  "id": "ind_wright",
+  "category": "tech",
+  "historical": true,
+  "source": "First flight of the Wright Flyer, Kitty Hawk, 17 December 1903",
+  "reference": "Tom Crouch, The Bishop's Boys (1989); Library of Congress, Wilbur and Orville Wright papers",
+  "title": {
+   "en": "The First Powered Flight",
+   "tr": "İlk Motorlu Uçuş"
+  },
+  "text": {
+   "en": "On 17 December 1903 two bicycle makers from Dayton, Ohio, fly a powered aircraft for twelve seconds near Kitty Hawk. Few newspapers pay attention. {ruler} of {country} must decide whether the new invention deserves public money.",
+   "tr": "17 Aralık 1903'te Ohio'nun Dayton kentinden iki bisiklet imalatçısı Kitty Hawk yakınında motorlu bir uçakla on iki saniye uçuyor. Çok az gazete ilgilenmiş. {country} hükümdarı {ruler} bu yeni icadın kamu parasını hak edip etmediğine karar vermelidir."
+  },
+  "image": "science",
+  "trigger": {
+   "date_from": {
+    "year": 1903,
+    "month": 10
+   },
+   "date_to": {
+    "year": 1904,
+    "month": 6
+   },
+   "scenarios": [
+    "industrial_era"
+   ],
+   "countries": [
+    "USA",
+    "GBR",
+    "FRA",
+    "GER"
+   ]
+  },
+  "mtth": 1,
+  "once": true,
+  "options": [
+   {
+    "id": "fund",
+    "name": {
+     "en": "Fund experiments",
+     "tr": "Deneyleri finanse et"
+    },
+    "tip": {
+     "en": "A bet on the future.",
+     "tr": "Geleceğe bir bahis."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -60
+     },
+     {
+      "type": "research_points",
+      "value": 40
+     },
+     {
+      "type": "prestige",
+      "value": 3
+     }
+    ],
+    "ai_weight": 1,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 60
+     }
+    ]
+   },
+   {
+    "id": "observe",
+    "name": {
+     "en": "Send observers",
+     "tr": "Gözlemci gönder"
+    },
+    "tip": {
+     "en": "A modest outlay.",
+     "tr": "Mütevazı bir harcama."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": -15
+     },
+     {
+      "type": "research_points",
+      "value": 10
+     }
+    ],
+    "ai_weight": 2,
+    "requires": [
+     {
+      "type": "treasury_above",
+      "value": 15
+     }
+    ]
+   },
+   {
+    "id": "dismiss",
+    "name": {
+     "en": "Dismiss it as a curiosity",
+     "tr": "Merak konusu diyerek geç"
+    },
+    "tip": {
+     "en": "The money is saved.",
+     "tr": "Para korunur."
+    },
+    "effects": [
+     {
+      "type": "gold",
+      "value": 15
+     },
+     {
+      "type": "prestige",
+      "value": -1
+     }
+    ],
+    "ai_weight": 1
+   }
+  ]
+ }
+]
