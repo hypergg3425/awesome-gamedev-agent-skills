@@ -7,8 +7,13 @@ extends RefCounted
 const MARGIN := 8.0
 const GAP := 6.0
 const MODE_COLUMNS := 5
+const MODE_COLUMNS_MAX := 8
 const MODE_BTN_W := 146.0
 const LEGEND_W := 190.0
+
+## Width of one map-mode button: icon + name on roomy screens, icon only (touch size) on phones.
+static func mode_button_width(btn: float, compact: bool) -> float:
+	return btn if compact else MODE_BTN_W
 
 ## Returns {hud, toolbar, toolbar_vertical, end, province, sheet, sheet_hides_province, modes, legend, toast, move, avail, tb}.
 static func compute(vs: Vector2, ins: Dictionary, banner: float, tool_count: int, tb: float = 52.0, province_open: bool = false, mode_count: int = 15) -> Dictionary:
@@ -50,9 +55,13 @@ static func compute(vs: Vector2, ins: Dictionary, banner: float, tool_count: int
 			sheet_w = minf(800.0, a.end.x - MARGIN - sx)
 	var sheet := Rect2(sx, hud.end.y + MARGIN, maxf(300.0, sheet_w), maxf(160.0, sheet_bottom - hud.end.y - MARGIN))
 	# map-mode strip (horizontal pill next to / above the toolbar)
+	var mode_btn := mode_button_width(btn, compact)
+	var mode_room := ((toolbar.end.y if vertical else toolbar.position.y - GAP) - hud.end.y - MARGIN)
 	var mode_cols := mini(mode_count, MODE_COLUMNS)
-	var mode_rows := int(ceil(float(mode_count) / float(MODE_COLUMNS)))
-	var mode_w := float(mode_cols) * (MODE_BTN_W + 4.0) + 20.0
+	while mode_cols < mini(mode_count, MODE_COLUMNS_MAX) and float(int(ceil(float(mode_count) / float(mode_cols)))) * (btn + 4.0) + 12.0 > mode_room:
+		mode_cols += 1   # short screens: more columns instead of more rows
+	var mode_rows := int(ceil(float(mode_count) / float(mode_cols)))
+	var mode_w := float(mode_cols) * (mode_btn + 4.0) + 20.0
 	var mode_h := float(mode_rows) * (btn + 4.0) + 12.0
 	var modes := Rect2(Vector2(toolbar.end.x + MARGIN, toolbar.end.y - mode_h), Vector2(mode_w, mode_h)) if vertical \
 			else Rect2(Vector2(toolbar.position.x, toolbar.position.y - mode_h - GAP), Vector2(mode_w, mode_h))
@@ -73,4 +82,4 @@ static func compute(vs: Vector2, ins: Dictionary, banner: float, tool_count: int
 	if move.end.x > end.position.x - MARGIN and move.end.y > end.position.y:
 		move.size.x = maxf(240.0, end.position.x - MARGIN - move.position.x)
 	return {"avail": a, "hud": hud, "toolbar": toolbar, "toolbar_vertical": vertical, "end": end, "province": province, "sheet": sheet,
-		"sheet_hides_province": hides, "modes": modes, "legend": legend, "toast": toast, "move": move, "tb": btn, "compact": compact, "province_open": province_open}
+		"sheet_hides_province": hides, "modes": modes, "mode_cols": mode_cols, "legend": legend, "toast": toast, "move": move, "tb": btn, "compact": compact, "province_open": province_open}

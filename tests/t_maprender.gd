@@ -345,10 +345,13 @@ func test_mode_strip_layout() -> void:
 		var modes: Rect2 = l["modes"]
 		var avail: Rect2 = l["avail"]
 		ok(avail.grow(1.0).encloses(modes), "%s: 15-mode strip fits the screen %s in %s" % [str(vs), str(modes), str(avail)])
-		ok(modes.size.x >= 5.0 * CampaignLayout.MODE_BTN_W, "%s: strip is wide enough for 5 columns" % str(vs))
-		ok(modes.size.y >= 3.0 * 52.0, "%s: strip has 3 rows of touch-size buttons" % str(vs))
+		var bw := CampaignLayout.mode_button_width(float(l["tb"]), bool(l["compact"]))
+		var cols: int = l["mode_cols"]
+		ok(cols >= 5, "%s: at least 5 columns" % str(vs))
+		ok(modes.size.x >= float(cols) * bw, "%s: strip is wide enough for %d columns (button %.0f)" % [str(vs), cols, bw])
+		ok(modes.size.y >= float(ceili(15.0 / float(cols))) * float(l["tb"]), "%s: strip has room for every row of touch-size buttons" % str(vs))
 		ok(not modes.intersects(l["hud"]), "%s: strip does not cover the HUD" % str(vs))
 		var lg: Rect2 = l["legend"]
 		ok(not lg.intersects(l["hud"]) and not lg.intersects(l["end"]), "%s: legend clear of HUD and end-turn" % str(vs))
 	var one := CampaignLayout.compute(Vector2(1280, 720), {"left": 0.0, "top": 0.0, "right": 0.0, "bottom": 0.0}, 0.0, 9, 52.0, false, 8)
-	ok((one["modes"] as Rect2).size.y < 3.0 * 52.0, "8 modes need fewer rows")
+	ok((one["modes"] as Rect2).size.y <= 2.0 * float(one["tb"]) + 20.0, "8 modes fit in two rows or less")

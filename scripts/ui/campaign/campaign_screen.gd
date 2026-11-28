@@ -25,6 +25,7 @@ var end_btn: Button
 var mode_strip: PanelContainer
 var mode_row: GridContainer
 var legend: MapLegend
+var _mode_compact := false
 var province_panel: ProvincePanel
 var move_bar: PanelContainer
 var move_label: Label
@@ -171,15 +172,22 @@ func _build_mode_strip() -> void:
 	ui_root.add_child(legend)
 
 func _fill_mode_strip() -> void:
+	_mode_compact = Layout.compact(get_viewport_rect().size)
 	for m in MODES:
 		var mm: String = m
-		var b := UI.button(Loc.t("MODE_" + mm.to_upper()), func() -> void: set_map_mode(mm), "Primary" if cmap and cmap.mode == mm else "", "mode_" + mm)
-		b.tooltip_text = Loc.t("MODE_" + mm.to_upper())
-		b.custom_minimum_size = Vector2(CampaignLayout.MODE_BTN_W, _tb())
-		b.add_theme_font_size_override("font_size", UI.fs(12))
-		b.add_theme_constant_override("icon_max_width", 20)
-		b.add_theme_constant_override("h_separation", 4)
-		b.clip_text = true
+		var sel := "Primary" if cmap and cmap.mode == mm else ""
+		var name := Loc.t("MODE_" + mm.to_upper())
+		var b: Button
+		if _mode_compact:
+			b = UI.icon_button("mode_" + mm, func() -> void: set_map_mode(mm), name, _tb(), sel)
+		else:
+			b = UI.button(name, func() -> void: set_map_mode(mm), sel, "mode_" + mm)
+			b.tooltip_text = name
+			b.custom_minimum_size = Vector2(CampaignLayout.MODE_BTN_W, _tb())
+			b.add_theme_font_size_override("font_size", UI.fs(12))
+			b.add_theme_constant_override("icon_max_width", 20)
+			b.add_theme_constant_override("h_separation", 4)
+			b.clip_text = true
 		b.set_meta("mode", mm)
 		mode_row.add_child(b)
 
@@ -240,6 +248,10 @@ func _apply_layout() -> void:
 	for b in toolbar.get_children():
 		(b as Control).custom_minimum_size = Vector2(tb, tb)
 	_place(end_btn, layout["end"])
+	if _mode_compact != bool(layout["compact"]):
+		UI.clear(mode_row)
+		_fill_mode_strip()
+	mode_row.columns = int(layout["mode_cols"])
 	_place(mode_strip, layout["modes"])
 	legend.position = (layout["legend"] as Rect2).position
 	var drop := (layout["toast"] as Rect2)
